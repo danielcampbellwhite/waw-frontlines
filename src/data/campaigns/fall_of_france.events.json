@@ -1,0 +1,392 @@
+{
+ "campaignId": "fall_of_france",
+ "note": "Historical event template DATA for the events engine. date is UTC ISO date; scenario converts to minutes via startDate. Sources resolve against scenario sources[].",
+ "events": [
+  {
+   "id": "fof.ev.invasion",
+   "date": "1940-05-10",
+   "title": "Germany attacks in the West",
+   "body": "German forces invade the Netherlands, Belgium and Luxembourg. Army Group A begins its advance through the Ardennes; airborne troops land around The Hague, Rotterdam and Eben-Emael.",
+   "pos": [
+    5.68,
+    50.8
+   ],
+   "src": [
+    "S06",
+    "S07",
+    "S09"
+   ],
+   "effectHints": [
+    "Allied 1st Army Group may begin Plan D advance",
+    "NED and BEL at war"
+   ],
+   "kind": "historical",
+   "minutesFromStd": 0
+  },
+  {
+   "id": "fof.ev.sedan_reached",
+   "date": "1940-05-12",
+   "title": "Guderian reaches Sedan",
+   "body": "XIX Panzer Corps enters Sedan. The Meuse line is now directly threatened.",
+   "pos": [
+    4.94,
+    49.7
+   ],
+   "side": "allies",
+   "src": [
+    "S08"
+   ],
+   "effectHints": [],
+   "kind": "historical",
+   "minutesFromStd": 2880
+  },
+  {
+   "id": "fof.ev.sedan_crossing",
+   "date": "1940-05-13",
+   "title": "The Meuse is crossed at Sedan",
+   "body": "After an eight-hour Luftwaffe bombardment, the 1st, 2nd and 10th Panzer Divisions cross the Meuse at Gaulier, Donchery and Wadelincourt. French morale at Sedan collapses.",
+   "pos": [
+    4.94,
+    49.7
+   ],
+   "src": [
+    "S08"
+   ],
+   "effectHints": [
+    "Morale penalty to French units near Sedan",
+    "Bridgehead bonus to Germans"
+   ],
+   "kind": "historical",
+   "minutesFromStd": 4320
+  },
+  {
+   "id": "fof.ev.rotterdam",
+   "date": "1940-05-14",
+   "title": "Rotterdam bombed",
+   "body": "The Luftwaffe bombs Rotterdam; German forces threaten further cities.",
+   "pos": [
+    4.48,
+    51.92
+   ],
+   "src": [
+    "S09"
+   ],
+   "effectHints": [
+    "Netherlands may capitulate within 24h"
+   ],
+   "kind": "historical",
+   "minutesFromStd": 5760
+  },
+  {
+   "id": "fof.ev.dutch_capitulation",
+   "date": "1940-05-15",
+   "title": "The Netherlands capitulates",
+   "body": "The main Dutch forces surrender. Fighting continues in Zeeland until 17 May. (S09 summary gives 14 May for the surrender; S06 gives 15 May.)",
+   "pos": [
+    4.3,
+    52.08
+   ],
+   "src": [
+    "S06",
+    "S09"
+   ],
+   "effectHints": [
+    "NED units removed from play except Zeeland until 17 May"
+   ],
+   "effects": [
+    {
+     "op": "location_owner",
+     "locationId": "the_hague",
+     "owner": "GER"
+    },
+    {
+     "op": "location_owner",
+     "locationId": "rotterdam",
+     "owner": "GER"
+    },
+    {
+     "op": "location_owner",
+     "locationId": "amsterdam",
+     "owner": "GER"
+    },
+    {
+     "op": "unit_manpower",
+     "nation": "NED",
+     "fraction": -1
+    },
+    {
+     "op": "log",
+     "text": "The Netherlands has capitulated; Dutch field forces are disbanded (Zeeland resistance to 17 May is abstracted away, S09).",
+     "severity": "critical"
+    }
+   ],
+   "effectsNote": "Restates S06/S09: main Dutch forces surrendered and the cities passed to German control. Zeeland holdout to 17 May is not modelled.",
+   "kind": "historical",
+   "minutesFromStd": 7200
+  },
+  {
+   "id": "fof.ev.channel",
+   "date": "1940-05-20",
+   "title": "German armour reaches the Channel",
+   "body": "Panzer units reach the coast around Abbeville, separating the Allied northern armies from the south.",
+   "pos": [
+    1.83,
+    50.11
+   ],
+   "src": [
+    "S06",
+    "S08"
+   ],
+   "effectHints": [
+    "Allied northern armies cut off from southern supply"
+   ],
+   "kind": "historical",
+   "minutesFromStd": 14400
+  },
+  {
+   "id": "fof.ev.arras",
+   "date": "1940-05-21",
+   "title": "Counter-attack at Arras",
+   "body": "British Frankforce (1st Army Tank Brigade with elements of the 5th and 50th Divisions) attacks the flank of the German advance near Arras. It is withdrawn after dark but unsettles the German high command.",
+   "pos": [
+    2.78,
+    50.29
+   ],
+   "side": "allies",
+   "src": [
+    "S10"
+   ],
+   "effectHints": [],
+   "kind": "historical",
+   "minutesFromStd": 15840
+  },
+  {
+   "id": "fof.ev.halt_order",
+   "date": "1940-05-24",
+   "title": "Halt order before Dunkirk",
+   "body": "Hitler approves a halt order issued the previous night by Rundstedt; it is rescinded on 26 May.",
+   "pos": [
+    2.38,
+    51.04
+   ],
+   "src": [
+    "S11"
+   ],
+   "effectHints": [
+    "German armour held back from the Dunkirk pocket until 26 May"
+   ],
+   "kind": "historical",
+   "minutesFromStd": 20160
+  },
+  {
+   "id": "fof.ev.dynamo_start",
+   "date": "1940-05-26",
+   "title": "Operation Dynamo begins; Calais falls",
+   "body": "Evacuation from Dunkirk begins. The British garrison at Calais surrenders the same day.",
+   "pos": [
+    2.38,
+    51.04
+   ],
+   "src": [
+    "S11"
+   ],
+   "effectHints": [
+    "Allied evacuation from Dunkirk enabled",
+    "Calais lost"
+   ],
+   "kind": "historical",
+   "minutesFromStd": 23040
+  },
+  {
+   "id": "fof.ev.belgium",
+   "date": "1940-05-28",
+   "title": "Belgium capitulates",
+   "body": "King Leopold III surrenders the Belgian Army, against the advice of his government.",
+   "pos": [
+    4.35,
+    50.85
+   ],
+   "src": [
+    "S14"
+   ],
+   "effectHints": [
+    "BEL units removed from play",
+    "Allied northern flank opened"
+   ],
+   "effects": [
+    {
+     "op": "unit_manpower",
+     "nation": "BEL",
+     "fraction": -1
+    },
+    {
+     "op": "log",
+     "text": "King Leopold III has surrendered the Belgian Army; Belgian forces cease to fight.",
+     "severity": "critical"
+    }
+   ],
+   "effectsNote": "Restates S14: Belgian army capitulated on 28 May. No territory transfer is scripted because the sources retrieved do not date the fall of individual Belgian cities.",
+   "kind": "historical",
+   "minutesFromStd": 25920
+  },
+  {
+   "id": "fof.ev.dynamo_end",
+   "date": "1940-06-04",
+   "title": "Operation Dynamo ends",
+   "body": "The evacuation ends after 338,226 Allied troops were lifted from Dunkirk and the surrounding beaches.",
+   "pos": [
+    2.38,
+    51.04
+   ],
+   "src": [
+    "S11"
+   ],
+   "effectHints": [],
+   "kind": "historical",
+   "minutesFromStd": 36000
+  },
+  {
+   "id": "fof.ev.fall_rot",
+   "date": "1940-06-05",
+   "title": "Fall Rot begins",
+   "body": "Germany launches the second phase against the French defence line on the Somme and Aisne.",
+   "pos": [
+    2.3,
+    49.89
+   ],
+   "src": [
+    "S06"
+   ],
+   "effectHints": [],
+   "kind": "historical",
+   "minutesFromStd": 37440
+  },
+  {
+   "id": "fof.ev.italy",
+   "date": "1940-06-10",
+   "title": "Italy declares war; Paris declared an open city",
+   "body": "Italy enters the war against France and Britain. Paris is declared an open city.",
+   "pos": [
+    2.35,
+    48.86
+   ],
+   "src": [
+    "S06"
+   ],
+   "effectHints": [
+    "ITA enters war on Axis side (Alpine front)"
+   ],
+   "kind": "historical",
+   "minutesFromStd": 44640
+  },
+  {
+   "id": "fof.ev.st_valery",
+   "date": "1940-06-12",
+   "title": "Surrender at Saint-Valery-en-Caux",
+   "body": "The 7th Panzer Division forces the surrender of the British 51st (Highland) Division and French IX Corps.",
+   "pos": [
+    0.71,
+    49.87
+   ],
+   "side": "allies",
+   "src": [
+    "S06"
+   ],
+   "effectHints": [
+    "51st Highland Division destroyed/captured"
+   ],
+   "kind": "historical",
+   "minutesFromStd": 47520
+  },
+  {
+   "id": "fof.ev.paris",
+   "date": "1940-06-14",
+   "title": "German troops enter Paris",
+   "body": "Paris is occupied without resistance.",
+   "pos": [
+    2.35,
+    48.86
+   ],
+   "src": [
+    "S06"
+   ],
+   "effectHints": [
+    "Paris transfers to Germany if undefended"
+   ],
+   "kind": "historical",
+   "minutesFromStd": 50400
+  },
+  {
+   "id": "fof.ev.tiger",
+   "date": "1940-06-15",
+   "title": "Operation Tiger and Operation Aerial",
+   "body": "Army Group C attacks across the Rhine against the Maginot Line (Operation Tiger). British evacuation from French Atlantic ports (Operation Aerial) begins and runs to 25 June.",
+   "pos": [
+    7.75,
+    48.58
+   ],
+   "src": [
+    "S06",
+    "S12"
+   ],
+   "effectHints": [
+    "Maginot sector attacked",
+    "BEF evacuation via western ports"
+   ],
+   "kind": "historical",
+   "minutesFromStd": 51840
+  },
+  {
+   "id": "fof.ev.petain",
+   "date": "1940-06-16",
+   "title": "Reynaud resigns; Pétain takes office",
+   "body": "Paul Reynaud resigns and is succeeded by Marshal Pétain.",
+   "pos": [
+    2.35,
+    48.86
+   ],
+   "src": [
+    "S06"
+   ],
+   "effectHints": [
+    "French resolve reduced"
+   ],
+   "kind": "historical",
+   "minutesFromStd": 53280
+  },
+  {
+   "id": "fof.ev.cherbourg",
+   "date": "1940-06-18",
+   "title": "Cherbourg captured",
+   "body": "German forces capture Cherbourg.",
+   "pos": [
+    -1.62,
+    49.64
+   ],
+   "src": [
+    "S06"
+   ],
+   "effectHints": [],
+   "kind": "historical",
+   "minutesFromStd": 56160
+  },
+  {
+   "id": "fof.ev.armistice",
+   "date": "1940-06-22",
+   "title": "Armistice signed at Compiègne",
+   "body": "France and Germany sign an armistice; it takes effect at 00:35 on 25 June.",
+   "pos": [
+    2.9,
+    49.42
+   ],
+   "src": [
+    "S06"
+   ],
+   "effectHints": [
+    "Scenario ends 25 June"
+   ],
+   "kind": "historical",
+   "minutesFromStd": 61920
+  }
+ ]
+}

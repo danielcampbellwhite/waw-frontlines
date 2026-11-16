@@ -1,0 +1,78 @@
+[
+ {
+  "id": "westeurope",
+  "title": "Western Europe (Fall of France)",
+  "bbox": {
+   "west": -6,
+   "south": 44,
+   "east": 10,
+   "north": 55
+  },
+  "cellDeg": 0.05,
+  "files": {
+   "terrain": "terrain_westeurope.json",
+   "infra": "infra_westeurope.json",
+   "cities": "cities_westeurope.json",
+   "boundaries": "boundaries_1940.json",
+   "land": "basemap_land.json",
+   "lakes": "basemap_lakes.json"
+  }
+ },
+ {
+  "id": "ardennes",
+  "title": "Ardennes / Eifel (Battle of the Bulge)",
+  "bbox": {
+   "west": 4,
+   "south": 49.2,
+   "east": 8,
+   "north": 51.2
+  },
+  "cellDeg": 0.02,
+  "files": {
+   "terrain": "terrain_ardennes.json",
+   "infra": "infra_ardennes.json",
+   "cities": "cities_ardennes.json",
+   "boundaries": "boundaries_ardennes.json",
+   "land": "basemap_land_ardennes.json",
+   "lakes": "basemap_lakes_ardennes.json"
+  }
+ },
+ {
+  "id": "northafrica",
+  "title": "Libya / Western Desert (Operation Crusader)",
+  "bbox": {
+   "west": 19,
+   "south": 28.5,
+   "east": 30.5,
+   "north": 33
+  },
+  "cellDeg": 0.03,
+  "files": {
+   "terrain": "terrain_northafrica.json",
+   "infra": "infra_northafrica.json",
+   "cities": "cities_northafrica.json",
+   "boundaries": "boundaries_northafrica.json",
+   "land": "basemap_land_northafrica.json",
+   "lakes": "basemap_lakes_northafrica.json"
+  }
+ },
+ {
+  "id": "stalingrad",
+  "title": "Stalingrad / Don bend (Operation Uranus)",
+  "bbox": {
+   "west": 40.5,
+   "south": 47,
+   "east": 46.5,
+   "north": 50
+  },
+  "cellDeg": 0.03,
+  "files": {
+   "terrain": "terrain_stalingrad.json",
+   "infra": "infra_stalingrad.json",
+   "cities": "cities_stalingrad.json",
+   "boundaries": "boundaries_stalingrad.json",
+   "land": "basemap_land_stalingrad.json",
+   "lakes": "basemap_lakes_stalingrad.json"
+  }
+ }
+]

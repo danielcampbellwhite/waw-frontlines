@@ -1,0 +1,2251 @@
+{
+ "schema": 1,
+ "id": "crusader.short",
+ "campaignId": "crusader",
+ "title": "Operation Crusader (18 Nov 1941 - 1 Jan 1942)",
+ "scale": "short",
+ "startDate": "1941-11-18T00:00:00Z",
+ "endDate": "1942-01-01T00:00:00Z",
+ "bbox": {
+  "west": 19,
+  "south": 28.5,
+  "east": 30.5,
+  "north": 33
+ },
+ "estimatedPlayMinutes": [
+  60,
+  150
+ ],
+ "mapSize": "large",
+ "complexity": 4,
+ "briefing": {
+  "historical": "On 18 November 1941 the British Eighth Army launched Operation Crusader to relieve the besieged fortress of Tobruk and retake Cyrenaica from Panzergruppe Afrika (N02). Tank battles around Sidi Rezegh, Rommel's dash to the wire and a severe Axis fuel shortage ended with the Axis retreat to El Agheila by late December.",
+  "situation": "The Allies must break the Axis ring around Tobruk and destroy the Afrika Korps; the Axis must hold the Tobruk siege, protect the frontier garrisons and their thin, fuel-starved supply line. Start positions are approximate sector anchors."
+ },
+ "playableNations": [
+  {
+   "nation": "GBR",
+   "difficultyRating": 3,
+   "summary": "Eighth Army: relieve Tobruk and drive the Axis out of Cyrenaica.",
+   "objectiveIds": [
+    "o.all.tobruk",
+    "o.all.rezegh",
+    "o.all.bardia",
+    "o.all.gazala",
+    "o.all.benghazi"
+   ]
+  },
+  {
+   "nation": "GER",
+   "difficultyRating": 4,
+   "summary": "Afrika Korps: win the armoured battle with scarce fuel and capture Tobruk.",
+   "objectiveIds": [
+    "o.ger.tobruk",
+    "o.ger.hold_gazala",
+    "o.ger.hold_benghazi",
+    "o.ger.hold_bardia",
+    "o.ger.rezegh",
+    "o.ger.matruh"
+   ]
+  },
+  {
+   "nation": "ITA",
+   "difficultyRating": 4,
+   "summary": "Italian infantry and armour: hold the siege lines and the frontier.",
+   "objectiveIds": [
+    "o.ger.tobruk",
+    "o.ger.hold_gazala",
+    "o.ger.hold_benghazi",
+    "o.ger.hold_bardia",
+    "o.ger.rezegh",
+    "o.ger.matruh"
+   ]
+  }
+ ],
+ "nations": [
+  {
+   "id": "GBR",
+   "side": "allies",
+   "name": "United Kingdom",
+   "playable": true,
+   "resources": {
+    "manpower": 7845,
+    "fuel": 1500,
+    "ammo": 1500,
+    "equipment": 1500,
+    "supplyPoints": 600
+   },
+   "income": {
+    "manpower": 15,
+    "fuel": 2,
+    "ammo": 3,
+    "equipment": 6,
+    "supplyPoints": 5
+   },
+   "reinforcements": []
+  },
+  {
+   "id": "NZL",
+   "side": "allies",
+   "name": "New Zealand",
+   "playable": false,
+   "resources": {
+    "manpower": 2000,
+    "fuel": 1500,
+    "ammo": 1500,
+    "equipment": 1500,
+    "supplyPoints": 600
+   },
+   "income": {
+    "manpower": 4,
+    "fuel": 1,
+    "ammo": 2,
+    "equipment": 2,
+    "supplyPoints": 5
+   },
+   "reinforcements": []
+  },
+  {
+   "id": "IND",
+   "side": "allies",
+   "name": "India",
+   "playable": false,
+   "resources": {
+    "manpower": 2475,
+    "fuel": 1500,
+    "ammo": 1500,
+    "equipment": 1500,
+    "supplyPoints": 600
+   },
+   "income": {
+    "manpower": 5,
+    "fuel": 1,
+    "ammo": 2,
+    "equipment": 2,
+    "supplyPoints": 5
+   },
+   "reinforcements": []
+  },
+  {
+   "id": "RSA",
+   "side": "allies",
+   "name": "South Africa",
+   "playable": false,
+   "resources": {
+    "manpower": 4050,
+    "fuel": 1500,
+    "ammo": 1500,
+    "equipment": 1500,
+    "supplyPoints": 600
+   },
+   "income": {
+    "manpower": 8,
+    "fuel": 1,
+    "ammo": 2,
+    "equipment": 2,
+    "supplyPoints": 5
+   },
+   "reinforcements": []
+  },
+  {
+   "id": "POL",
+   "side": "allies",
+   "name": "Poland",
+   "playable": false,
+   "resources": {
+    "manpower": 2000,
+    "fuel": 1500,
+    "ammo": 1500,
+    "equipment": 1500,
+    "supplyPoints": 600
+   },
+   "income": {
+    "manpower": 2,
+    "fuel": 1,
+    "ammo": 2,
+    "equipment": 2,
+    "supplyPoints": 5
+   },
+   "reinforcements": []
+  },
+  {
+   "id": "GER",
+   "side": "axis",
+   "name": "Germany",
+   "playable": true,
+   "resources": {
+    "manpower": 5130,
+    "fuel": 1500,
+    "ammo": 1500,
+    "equipment": 1500,
+    "supplyPoints": 600
+   },
+   "income": {
+    "manpower": 10,
+    "fuel": 1,
+    "ammo": 2,
+    "equipment": 2,
+    "supplyPoints": 5
+   },
+   "reinforcements": []
+  },
+  {
+   "id": "ITA",
+   "side": "axis",
+   "name": "Italy",
+   "playable": true,
+   "resources": {
+    "manpower": 11880,
+    "fuel": 1500,
+    "ammo": 1500,
+    "equipment": 1500,
+    "supplyPoints": 600
+   },
+   "income": {
+    "manpower": 23,
+    "fuel": 1,
+    "ammo": 2,
+    "equipment": 4,
+    "supplyPoints": 5
+   },
+   "reinforcements": []
+  }
+ ],
+ "locations": [
+  {
+   "id": "tobruk",
+   "name": "Tobruk",
+   "kind": "port",
+   "pos": [
+    23.96,
+    32.08
+   ],
+   "owner": "GBR",
+   "originalOwner": "GBR",
+   "value": 10,
+   "supplyCapacity": 40,
+   "throughputTonsPerDay": 1500
+  },
+  {
+   "id": "tobruk_perimeter",
+   "name": "Tobruk perimeter (Italian-built strongpoints and anti-tank ditch)",
+   "kind": "fortress",
+   "pos": [
+    23.97,
+    32.05
+   ],
+   "owner": "GBR",
+   "originalOwner": "GBR",
+   "value": 4
+  },
+  {
+   "id": "el_adem",
+   "name": "El Adem",
+   "kind": "airfield",
+   "pos": [
+    23.88,
+    31.85
+   ],
+   "owner": "GBR",
+   "originalOwner": "GBR",
+   "value": 3,
+   "supplyCapacity": 20
+  },
+  {
+   "id": "ed_duda",
+   "name": "Ed Duda",
+   "kind": "town",
+   "pos": [
+    23.99,
+    32
+   ],
+   "owner": "GBR",
+   "originalOwner": "GBR",
+   "value": 4
+  },
+  {
+   "id": "sidi_rezegh",
+   "name": "Sidi Rezegh",
+   "kind": "airfield",
+   "pos": [
+    24.05,
+    31.93
+   ],
+   "owner": "ITA",
+   "originalOwner": "ITA",
+   "value": 6,
+   "supplyCapacity": 20
+  },
+  {
+   "id": "belhamed",
+   "name": "Belhamed",
+   "kind": "town",
+   "pos": [
+    24.08,
+    31.99
+   ],
+   "owner": "ITA",
+   "originalOwner": "ITA",
+   "value": 3
+  },
+  {
+   "id": "bir_el_gubi",
+   "name": "Bir el Gubi",
+   "kind": "town",
+   "pos": [
+    23.95,
+    31.4
+   ],
+   "owner": "ITA",
+   "originalOwner": "ITA",
+   "value": 3
+  },
+  {
+   "id": "gabr_saleh",
+   "name": "Gabr Saleh",
+   "kind": "town",
+   "pos": [
+    24.9,
+    31.4
+   ],
+   "owner": "NEUTRAL",
+   "originalOwner": "ITA",
+   "value": 3
+  },
+  {
+   "id": "sidi_omar",
+   "name": "Sidi Omar",
+   "kind": "town",
+   "pos": [
+    25.07,
+    31.53
+   ],
+   "owner": "ITA",
+   "originalOwner": "ITA",
+   "value": 3
+  },
+  {
+   "id": "fort_capuzzo",
+   "name": "Fort Capuzzo",
+   "kind": "fortress",
+   "pos": [
+    25.05,
+    31.6
+   ],
+   "owner": "ITA",
+   "originalOwner": "ITA",
+   "value": 4
+  },
+  {
+   "id": "sollum",
+   "name": "Sollum",
+   "kind": "port",
+   "pos": [
+    25.17,
+    31.52
+   ],
+   "owner": "ITA",
+   "originalOwner": "ITA",
+   "value": 3,
+   "supplyCapacity": 40
+  },
+  {
+   "id": "halfaya",
+   "name": "Halfaya Pass",
+   "kind": "fortress",
+   "pos": [
+    25.2,
+    31.52
+   ],
+   "owner": "ITA",
+   "originalOwner": "ITA",
+   "value": 4
+  },
+  {
+   "id": "bardia",
+   "name": "Bardia",
+   "kind": "port",
+   "pos": [
+    25.1,
+    31.72
+   ],
+   "owner": "ITA",
+   "originalOwner": "ITA",
+   "value": 5,
+   "supplyCapacity": 40
+  },
+  {
+   "id": "gambut",
+   "name": "Gambut",
+   "kind": "airfield",
+   "pos": [
+    24.55,
+    31.95
+   ],
+   "owner": "ITA",
+   "originalOwner": "ITA",
+   "value": 3,
+   "supplyCapacity": 20
+  },
+  {
+   "id": "acroma",
+   "name": "Acroma",
+   "kind": "town",
+   "pos": [
+    23.77,
+    32.05
+   ],
+   "owner": "ITA",
+   "originalOwner": "ITA",
+   "value": 2
+  },
+  {
+   "id": "gazala",
+   "name": "Gazala",
+   "kind": "town",
+   "pos": [
+    23.2,
+    32.17
+   ],
+   "owner": "ITA",
+   "originalOwner": "ITA",
+   "value": 4
+  },
+  {
+   "id": "derna",
+   "name": "Derna",
+   "kind": "port",
+   "pos": [
+    22.65,
+    32.72
+   ],
+   "owner": "ITA",
+   "originalOwner": "ITA",
+   "value": 4,
+   "supplyCapacity": 40
+  },
+  {
+   "id": "benghazi",
+   "name": "Benghazi",
+   "kind": "port",
+   "pos": [
+    20.07,
+    32.12
+   ],
+   "owner": "ITA",
+   "originalOwner": "ITA",
+   "value": 8,
+   "supplyCapacity": 40,
+   "throughputTonsPerMonth": 15000
+  },
+  {
+   "id": "agedabia",
+   "name": "Agedabia",
+   "kind": "town",
+   "pos": [
+    20.23,
+    30.76
+   ],
+   "owner": "ITA",
+   "originalOwner": "ITA",
+   "value": 4
+  },
+  {
+   "id": "el_agheila",
+   "name": "El Agheila",
+   "kind": "town",
+   "pos": [
+    19.2,
+    30.26
+   ],
+   "owner": "ITA",
+   "originalOwner": "ITA",
+   "value": 4
+  },
+  {
+   "id": "sidi_barrani",
+   "name": "Sidi Barrani",
+   "kind": "town",
+   "pos": [
+    25.92,
+    31.6
+   ],
+   "owner": "GBR",
+   "originalOwner": "GBR",
+   "value": 3
+  },
+  {
+   "id": "mersa_matruh",
+   "name": "Mersa Matruh",
+   "kind": "port",
+   "pos": [
+    27.23,
+    31.35
+   ],
+   "owner": "GBR",
+   "originalOwner": "GBR",
+   "value": 6,
+   "supplyCapacity": 40
+  },
+  {
+   "id": "alexandria",
+   "name": "Alexandria",
+   "kind": "port",
+   "pos": [
+    29.92,
+    31.2
+   ],
+   "owner": "GBR",
+   "originalOwner": "GBR",
+   "value": 8,
+   "supplyCapacity": 40
+  },
+  {
+   "id": "maaten_bagush",
+   "name": "Maaten Bagush (AHQ Western Desert)",
+   "kind": "airfield",
+   "pos": [
+    27,
+    31.43
+   ],
+   "owner": "GBR",
+   "originalOwner": "GBR",
+   "value": 3,
+   "supplyCapacity": 20
+  }
+ ],
+ "units": [
+  {
+   "id": "gbr.army8",
+   "name": "Eighth Army (Cunningham)",
+   "shortName": "8th Army",
+   "nation": "GBR",
+   "side": "allies",
+   "type": "hq",
+   "domain": "land",
+   "pos": [
+    26.125,
+    31.41
+   ],
+   "manpower": 600,
+   "manpowerMax": 600,
+   "equipment": {
+    "held": {
+     "rifle": 600
+    },
+    "authorised": {
+     "rifle": 600
+    }
+   },
+   "organisation": 90,
+   "morale": 76,
+   "experience": 55,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 0,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "hold",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "gbr.c.XXX",
+   "name": "XXX Corps (Norrie)",
+   "shortName": "XXX Corps",
+   "nation": "GBR",
+   "side": "allies",
+   "type": "hq",
+   "domain": "land",
+   "parentId": "gbr.army8",
+   "pos": [
+    25.275,
+    31.11
+   ],
+   "manpower": 600,
+   "manpowerMax": 600,
+   "equipment": {
+    "held": {
+     "rifle": 600
+    },
+    "authorised": {
+     "rifle": 600
+    }
+   },
+   "organisation": 90,
+   "morale": 76,
+   "experience": 55,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 0,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "hold",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "gbr.7ad",
+   "name": "7th Armoured Division (Gott)",
+   "shortName": "7th Armd",
+   "nation": "GBR",
+   "side": "allies",
+   "type": "armoured",
+   "domain": "land",
+   "parentId": "gbr.c.XXX",
+   "pos": [
+    25.325,
+    31.11
+   ],
+   "manpower": 12000,
+   "manpowerMax": 12000,
+   "equipment": {
+    "held": {
+     "tank_medium": 100,
+     "tank_light": 30,
+     "gun_arty": 24,
+     "truck": 60
+    },
+    "authorised": {
+     "tank_medium": 100,
+     "tank_light": 30,
+     "gun_arty": 24,
+     "truck": 60
+    }
+   },
+   "organisation": 90,
+   "morale": 76,
+   "experience": 55,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 0,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "hold",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "gbr.4ab",
+   "name": "4th Armoured Brigade",
+   "shortName": "4 Armd Bde",
+   "nation": "GBR",
+   "side": "allies",
+   "type": "armoured",
+   "domain": "land",
+   "parentId": "gbr.7ad",
+   "pos": [
+    25.375,
+    31.11
+   ],
+   "manpower": 3500,
+   "manpowerMax": 3500,
+   "equipment": {
+    "held": {
+     "tank_medium": 100,
+     "tank_light": 30,
+     "gun_arty": 24,
+     "truck": 60
+    },
+    "authorised": {
+     "tank_medium": 100,
+     "tank_light": 30,
+     "gun_arty": 24,
+     "truck": 60
+    }
+   },
+   "organisation": 90,
+   "morale": 76,
+   "experience": 55,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 0,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "hold",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "gbr.7ab",
+   "name": "7th Armoured Brigade",
+   "shortName": "7 Armd Bde",
+   "nation": "GBR",
+   "side": "allies",
+   "type": "armoured",
+   "domain": "land",
+   "parentId": "gbr.7ad",
+   "pos": [
+    25.425,
+    31.11
+   ],
+   "manpower": 3500,
+   "manpowerMax": 3500,
+   "equipment": {
+    "held": {
+     "tank_medium": 100,
+     "tank_light": 30,
+     "gun_arty": 24,
+     "truck": 60
+    },
+    "authorised": {
+     "tank_medium": 100,
+     "tank_light": 30,
+     "gun_arty": 24,
+     "truck": 60
+    }
+   },
+   "organisation": 90,
+   "morale": 76,
+   "experience": 55,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 0,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "hold",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "gbr.22ab",
+   "name": "22nd Armoured Brigade",
+   "shortName": "22 Armd Bde",
+   "nation": "GBR",
+   "side": "allies",
+   "type": "armoured",
+   "domain": "land",
+   "parentId": "gbr.7ad",
+   "pos": [
+    25.275,
+    31.15
+   ],
+   "manpower": 3500,
+   "manpowerMax": 3500,
+   "equipment": {
+    "held": {
+     "tank_medium": 100,
+     "tank_light": 30,
+     "gun_arty": 24,
+     "truck": 60
+    },
+    "authorised": {
+     "tank_medium": 100,
+     "tank_light": 30,
+     "gun_arty": 24,
+     "truck": 60
+    }
+   },
+   "organisation": 90,
+   "morale": 76,
+   "experience": 55,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 0,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "hold",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "gbr.7sg",
+   "name": "7th Support Group",
+   "shortName": "7 Sup Gp",
+   "nation": "GBR",
+   "side": "allies",
+   "type": "motorised",
+   "domain": "land",
+   "parentId": "gbr.7ad",
+   "pos": [
+    25.325,
+    31.15
+   ],
+   "manpower": 3000,
+   "manpowerMax": 3000,
+   "equipment": {
+    "held": {
+     "rifle": 80,
+     "gun_arty": 40,
+     "truck": 60
+    },
+    "authorised": {
+     "rifle": 80,
+     "gun_arty": 40,
+     "truck": 60
+    }
+   },
+   "organisation": 90,
+   "morale": 76,
+   "experience": 55,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 0,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "hold",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "rsa.1div",
+   "name": "1st South African Division (Brink)",
+   "shortName": "1 SA Div",
+   "nation": "RSA",
+   "side": "allies",
+   "type": "infantry",
+   "domain": "land",
+   "parentId": "gbr.c.XXX",
+   "pos": [
+    25.325,
+    31.21
+   ],
+   "manpower": 13000,
+   "manpowerMax": 13000,
+   "equipment": {
+    "held": {
+     "rifle": 100,
+     "gun_arty": 50,
+     "gun_at": 30
+    },
+    "authorised": {
+     "rifle": 100,
+     "gun_arty": 50,
+     "gun_at": 30
+    }
+   },
+   "organisation": 90,
+   "morale": 74,
+   "experience": 45,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 0,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "hold",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "gbr.22gb",
+   "name": "22nd Guards Brigade",
+   "shortName": "22 Gds Bde",
+   "nation": "GBR",
+   "side": "allies",
+   "type": "infantry",
+   "domain": "land",
+   "parentId": "gbr.c.XXX",
+   "pos": [
+    25.375,
+    31.21
+   ],
+   "manpower": 3500,
+   "manpowerMax": 3500,
+   "equipment": {
+    "held": {
+     "rifle": 100,
+     "gun_arty": 50,
+     "gun_at": 30
+    },
+    "authorised": {
+     "rifle": 100,
+     "gun_arty": 50,
+     "gun_at": 30
+    }
+   },
+   "organisation": 90,
+   "morale": 76,
+   "experience": 55,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 0,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "hold",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "gbr.c.XIII",
+   "name": "XIII Corps (Godwin-Austen)",
+   "shortName": "XIII Corps",
+   "nation": "GBR",
+   "side": "allies",
+   "type": "hq",
+   "domain": "land",
+   "parentId": "gbr.army8",
+   "pos": [
+    25.425,
+    31.46
+   ],
+   "manpower": 600,
+   "manpowerMax": 600,
+   "equipment": {
+    "held": {
+     "rifle": 600
+    },
+    "authorised": {
+     "rifle": 600
+    }
+   },
+   "organisation": 90,
+   "morale": 76,
+   "experience": 55,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 0,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "hold",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "nzl.2div",
+   "name": "2nd New Zealand Division (Freyberg)",
+   "shortName": "2 NZ Div",
+   "nation": "NZL",
+   "side": "allies",
+   "type": "infantry",
+   "domain": "land",
+   "parentId": "gbr.c.XIII",
+   "pos": [
+    25.475,
+    31.46
+   ],
+   "manpower": 13000,
+   "manpowerMax": 13000,
+   "equipment": {
+    "held": {
+     "rifle": 100,
+     "gun_arty": 50,
+     "gun_at": 30
+    },
+    "authorised": {
+     "rifle": 100,
+     "gun_arty": 50,
+     "gun_at": 30
+    }
+   },
+   "organisation": 90,
+   "morale": 82,
+   "experience": 60,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 0,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "hold",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "ind.4div",
+   "name": "4th Indian Infantry Division (Messervy)",
+   "shortName": "4 Ind Div",
+   "nation": "IND",
+   "side": "allies",
+   "type": "infantry",
+   "domain": "land",
+   "parentId": "gbr.c.XIII",
+   "pos": [
+    25.525,
+    31.46
+   ],
+   "manpower": 13000,
+   "manpowerMax": 13000,
+   "equipment": {
+    "held": {
+     "rifle": 100,
+     "gun_arty": 50,
+     "gun_at": 30
+    },
+    "authorised": {
+     "rifle": 100,
+     "gun_arty": 50,
+     "gun_at": 30
+    }
+   },
+   "organisation": 90,
+   "morale": 76,
+   "experience": 50,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 0,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "hold",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "gbr.1atb",
+   "name": "1st Army Tank Brigade",
+   "shortName": "1 ATB",
+   "nation": "GBR",
+   "side": "allies",
+   "type": "armoured",
+   "domain": "land",
+   "parentId": "gbr.c.XIII",
+   "pos": [
+    25.575,
+    31.46
+   ],
+   "manpower": 3000,
+   "manpowerMax": 3000,
+   "equipment": {
+    "held": {
+     "tank_medium": 100,
+     "tank_light": 30,
+     "gun_arty": 24,
+     "truck": 60
+    },
+    "authorised": {
+     "tank_medium": 100,
+     "tank_light": 30,
+     "gun_arty": 24,
+     "truck": 60
+    }
+   },
+   "organisation": 90,
+   "morale": 76,
+   "experience": 55,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 0,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "hold",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "gbr.70div",
+   "name": "70th Infantry Division (Scobie) - Tobruk",
+   "shortName": "70 Div",
+   "nation": "GBR",
+   "side": "allies",
+   "type": "infantry",
+   "domain": "land",
+   "pos": [
+    23.885,
+    32
+   ],
+   "manpower": 13000,
+   "manpowerMax": 13000,
+   "equipment": {
+    "held": {
+     "rifle": 100,
+     "gun_arty": 50,
+     "gun_at": 30
+    },
+    "authorised": {
+     "rifle": 100,
+     "gun_arty": 50,
+     "gun_at": 30
+    }
+   },
+   "organisation": 90,
+   "morale": 76,
+   "experience": 55,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 70,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "entrench",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "pol.carp",
+   "name": "Polish Independent Carpathian Rifle Brigade - Tobruk",
+   "shortName": "Carpathian",
+   "nation": "POL",
+   "side": "allies",
+   "type": "infantry",
+   "domain": "land",
+   "pos": [
+    23.935,
+    32
+   ],
+   "manpower": 5000,
+   "manpowerMax": 5000,
+   "equipment": {
+    "held": {
+     "rifle": 100,
+     "gun_arty": 50,
+     "gun_at": 30
+    },
+    "authorised": {
+     "rifle": 100,
+     "gun_arty": 50,
+     "gun_at": 30
+    }
+   },
+   "organisation": 90,
+   "morale": 85,
+   "experience": 50,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 70,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "entrench",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "gbr.32atb",
+   "name": "32nd Army Tank Brigade - Tobruk",
+   "shortName": "32 ATB",
+   "nation": "GBR",
+   "side": "allies",
+   "type": "armoured",
+   "domain": "land",
+   "pos": [
+    23.925,
+    31.98
+   ],
+   "manpower": 3000,
+   "manpowerMax": 3000,
+   "equipment": {
+    "held": {
+     "tank_medium": 100,
+     "tank_light": 30,
+     "gun_arty": 24,
+     "truck": 60
+    },
+    "authorised": {
+     "tank_medium": 100,
+     "tank_light": 30,
+     "gun_arty": 24,
+     "truck": 60
+    }
+   },
+   "organisation": 90,
+   "morale": 76,
+   "experience": 55,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 70,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "entrench",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "gbr.4aa",
+   "name": "4th Anti-Aircraft Brigade - Tobruk",
+   "shortName": "4 AA Bde",
+   "nation": "GBR",
+   "side": "allies",
+   "type": "infantry",
+   "domain": "land",
+   "pos": [
+    23.985,
+    32
+   ],
+   "manpower": 2500,
+   "manpowerMax": 2500,
+   "equipment": {
+    "held": {
+     "rifle": 100,
+     "gun_arty": 50,
+     "gun_at": 30
+    },
+    "authorised": {
+     "rifle": 100,
+     "gun_arty": 50,
+     "gun_at": 30
+    }
+   },
+   "organisation": 90,
+   "morale": 76,
+   "experience": 55,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 70,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "entrench",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "ind.29bde",
+   "name": "29th Indian Infantry Brigade (Oasis Force)",
+   "shortName": "29 Ind Bde",
+   "nation": "IND",
+   "side": "allies",
+   "type": "infantry",
+   "domain": "land",
+   "pos": [
+    24.445,
+    29.7
+   ],
+   "manpower": 3500,
+   "manpowerMax": 3500,
+   "equipment": {
+    "held": {
+     "rifle": 100,
+     "gun_arty": 50,
+     "gun_at": 30
+    },
+    "authorised": {
+     "rifle": 100,
+     "gun_arty": 50,
+     "gun_at": 30
+    }
+   },
+   "organisation": 90,
+   "morale": 76,
+   "experience": 50,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 0,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "hold",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "rsa.6arm",
+   "name": "6th South African Armoured Car Regiment (Oasis Force)",
+   "shortName": "6 SA ACR",
+   "nation": "RSA",
+   "side": "allies",
+   "type": "recon",
+   "domain": "land",
+   "pos": [
+    24.495,
+    29.7
+   ],
+   "manpower": 1000,
+   "manpowerMax": 1000,
+   "equipment": {
+    "held": {
+     "rifle": 40,
+     "armoured_car": 30
+    },
+    "authorised": {
+     "rifle": 40,
+     "armoured_car": 30
+    }
+   },
+   "organisation": 90,
+   "morale": 74,
+   "experience": 45,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 0,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "hold",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "rsa.2div",
+   "name": "2nd South African Division (de Villiers) - Army Reserve",
+   "shortName": "2 SA Div",
+   "nation": "RSA",
+   "side": "allies",
+   "type": "infantry",
+   "domain": "land",
+   "parentId": "gbr.army8",
+   "pos": [
+    26.425,
+    31.46
+   ],
+   "manpower": 13000,
+   "manpowerMax": 13000,
+   "equipment": {
+    "held": {
+     "rifle": 100,
+     "gun_arty": 50,
+     "gun_at": 30
+    },
+    "authorised": {
+     "rifle": 100,
+     "gun_arty": 50,
+     "gun_at": 30
+    }
+   },
+   "organisation": 90,
+   "morale": 74,
+   "experience": 45,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 0,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "hold",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "ger.pga",
+   "name": "Panzergruppe Afrika (Rommel)",
+   "shortName": "PzGr Afrika",
+   "nation": "GER",
+   "side": "axis",
+   "type": "hq",
+   "domain": "land",
+   "pos": [
+    24.225,
+    31.96
+   ],
+   "manpower": 600,
+   "manpowerMax": 600,
+   "equipment": {
+    "held": {
+     "rifle": 600
+    },
+    "authorised": {
+     "rifle": 600
+    }
+   },
+   "organisation": 90,
+   "morale": 80,
+   "experience": 60,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 10,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "defend",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "ger.dak",
+   "name": "Deutsches Afrika Korps (Crüwell)",
+   "shortName": "DAK",
+   "nation": "GER",
+   "side": "axis",
+   "type": "hq",
+   "domain": "land",
+   "parentId": "ger.pga",
+   "pos": [
+    24.275,
+    31.96
+   ],
+   "manpower": 600,
+   "manpowerMax": 600,
+   "equipment": {
+    "held": {
+     "rifle": 600
+    },
+    "authorised": {
+     "rifle": 600
+    }
+   },
+   "organisation": 90,
+   "morale": 80,
+   "experience": 60,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 10,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "defend",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "ger.15pz",
+   "name": "15. Panzer-Division (Neumann-Silkow)",
+   "shortName": "15.PzD",
+   "nation": "GER",
+   "side": "axis",
+   "type": "armoured",
+   "domain": "land",
+   "parentId": "ger.dak",
+   "pos": [
+    24.625,
+    31.91
+   ],
+   "manpower": 12000,
+   "manpowerMax": 12000,
+   "equipment": {
+    "held": {
+     "tank_medium": 100,
+     "tank_light": 30,
+     "gun_arty": 24,
+     "truck": 60
+    },
+    "authorised": {
+     "tank_medium": 100,
+     "tank_light": 30,
+     "gun_arty": 24,
+     "truck": 60
+    }
+   },
+   "organisation": 90,
+   "morale": 80,
+   "experience": 60,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 10,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "defend",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "ger.21pz",
+   "name": "21. Panzer-Division (v. Ravenstein)",
+   "shortName": "21.PzD",
+   "nation": "GER",
+   "side": "axis",
+   "type": "armoured",
+   "domain": "land",
+   "parentId": "ger.dak",
+   "pos": [
+    24.125,
+    31.84
+   ],
+   "manpower": 12000,
+   "manpowerMax": 12000,
+   "equipment": {
+    "held": {
+     "tank_medium": 100,
+     "tank_light": 30,
+     "gun_arty": 24,
+     "truck": 60
+    },
+    "authorised": {
+     "tank_medium": 100,
+     "tank_light": 30,
+     "gun_arty": 24,
+     "truck": 60
+    }
+   },
+   "organisation": 90,
+   "morale": 80,
+   "experience": 60,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 10,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "defend",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "ger.90lt",
+   "name": "Division z.b.V. Afrika / 90. leichte Afrika-Division (Sümmermann)",
+   "shortName": "90.leDiv",
+   "nation": "GER",
+   "side": "axis",
+   "type": "motorised",
+   "domain": "land",
+   "parentId": "ger.dak",
+   "pos": [
+    25.025,
+    31.71
+   ],
+   "manpower": 9000,
+   "manpowerMax": 9000,
+   "equipment": {
+    "held": {
+     "rifle": 80,
+     "gun_arty": 40,
+     "truck": 60
+    },
+    "authorised": {
+     "rifle": 80,
+     "gun_arty": 40,
+     "truck": 60
+    }
+   },
+   "organisation": 90,
+   "morale": 80,
+   "experience": 60,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 10,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "defend",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "ita.55sav",
+   "name": "55a Divisione fanteria \"Savona\" (de Giorgis)",
+   "shortName": "Savona",
+   "nation": "ITA",
+   "side": "axis",
+   "type": "infantry",
+   "domain": "land",
+   "parentId": "ger.pga",
+   "pos": [
+    25.095,
+    31.54
+   ],
+   "manpower": 13000,
+   "manpowerMax": 13000,
+   "equipment": {
+    "held": {
+     "rifle": 100,
+     "gun_arty": 50,
+     "gun_at": 30
+    },
+    "authorised": {
+     "rifle": 100,
+     "gun_arty": 50,
+     "gun_at": 30
+    }
+   },
+   "organisation": 90,
+   "morale": 68,
+   "experience": 40,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 10,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "defend",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "ita.c.XX",
+   "name": "XX Corpo d'Armata (Gambara)",
+   "shortName": "XX CA",
+   "nation": "ITA",
+   "side": "axis",
+   "type": "hq",
+   "domain": "land",
+   "parentId": "ger.pga",
+   "pos": [
+    23.875,
+    31.38
+   ],
+   "manpower": 600,
+   "manpowerMax": 600,
+   "equipment": {
+    "held": {
+     "rifle": 600
+    },
+    "authorised": {
+     "rifle": 600
+    }
+   },
+   "organisation": 90,
+   "morale": 68,
+   "experience": 40,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 10,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "defend",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "ita.132ar",
+   "name": "132a Divisione corazzata \"Ariete\" (Balotta)",
+   "shortName": "Ariete",
+   "nation": "ITA",
+   "side": "axis",
+   "type": "armoured",
+   "domain": "land",
+   "parentId": "ita.c.XX",
+   "pos": [
+    23.925,
+    31.38
+   ],
+   "manpower": 8000,
+   "manpowerMax": 8000,
+   "equipment": {
+    "held": {
+     "tank_medium": 100,
+     "tank_light": 30,
+     "gun_arty": 24,
+     "truck": 60
+    },
+    "authorised": {
+     "tank_medium": 100,
+     "tank_light": 30,
+     "gun_arty": 24,
+     "truck": 60
+    }
+   },
+   "organisation": 90,
+   "morale": 68,
+   "experience": 45,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 10,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "defend",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "ita.101tri",
+   "name": "101a Divisione motorizzata \"Trieste\"",
+   "shortName": "Trieste",
+   "nation": "ITA",
+   "side": "axis",
+   "type": "motorised",
+   "domain": "land",
+   "parentId": "ita.c.XX",
+   "pos": [
+    23.825,
+    31.56
+   ],
+   "manpower": 9000,
+   "manpowerMax": 9000,
+   "equipment": {
+    "held": {
+     "rifle": 80,
+     "gun_arty": 40,
+     "truck": 60
+    },
+    "authorised": {
+     "rifle": 80,
+     "gun_arty": 40,
+     "truck": 60
+    }
+   },
+   "organisation": 90,
+   "morale": 68,
+   "experience": 40,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 10,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "defend",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "ita.c.XXI",
+   "name": "XXI Corpo d'Armata (Navarini)",
+   "shortName": "XXI CA",
+   "nation": "ITA",
+   "side": "axis",
+   "type": "hq",
+   "domain": "land",
+   "parentId": "ger.pga",
+   "pos": [
+    23.725,
+    31.96
+   ],
+   "manpower": 600,
+   "manpowerMax": 600,
+   "equipment": {
+    "held": {
+     "rifle": 600
+    },
+    "authorised": {
+     "rifle": 600
+    }
+   },
+   "organisation": 90,
+   "morale": 68,
+   "experience": 40,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 10,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "defend",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "ita.17pav",
+   "name": "17a Divisione fanteria \"Pavia\"",
+   "shortName": "Pavia",
+   "nation": "ITA",
+   "side": "axis",
+   "type": "infantry",
+   "domain": "land",
+   "parentId": "ita.c.XXI",
+   "pos": [
+    23.425,
+    31.91
+   ],
+   "manpower": 13000,
+   "manpowerMax": 13000,
+   "equipment": {
+    "held": {
+     "rifle": 100,
+     "gun_arty": 50,
+     "gun_at": 30
+    },
+    "authorised": {
+     "rifle": 100,
+     "gun_arty": 50,
+     "gun_at": 30
+    }
+   },
+   "organisation": 90,
+   "morale": 68,
+   "experience": 40,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 10,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "defend",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "ita.25bol",
+   "name": "25a Divisione fanteria \"Bologna\"",
+   "shortName": "Bologna",
+   "nation": "ITA",
+   "side": "axis",
+   "type": "infantry",
+   "domain": "land",
+   "parentId": "ita.c.XXI",
+   "pos": [
+    23.725,
+    31.91
+   ],
+   "manpower": 13000,
+   "manpowerMax": 13000,
+   "equipment": {
+    "held": {
+     "rifle": 100,
+     "gun_arty": 50,
+     "gun_at": 30
+    },
+    "authorised": {
+     "rifle": 100,
+     "gun_arty": 50,
+     "gun_at": 30
+    }
+   },
+   "organisation": 90,
+   "morale": 68,
+   "experience": 40,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 10,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "defend",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "ita.27bre",
+   "name": "27a Divisione fanteria \"Brescia\"",
+   "shortName": "Brescia",
+   "nation": "ITA",
+   "side": "axis",
+   "type": "infantry",
+   "domain": "land",
+   "parentId": "ita.c.XXI",
+   "pos": [
+    23.925,
+    31.93
+   ],
+   "manpower": 13000,
+   "manpowerMax": 13000,
+   "equipment": {
+    "held": {
+     "rifle": 100,
+     "gun_arty": 50,
+     "gun_at": 30
+    },
+    "authorised": {
+     "rifle": 100,
+     "gun_arty": 50,
+     "gun_at": 30
+    }
+   },
+   "organisation": 90,
+   "morale": 68,
+   "experience": 40,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 10,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "defend",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "ita.102tre",
+   "name": "102a Divisione motorizzata \"Trento\"",
+   "shortName": "Trento",
+   "nation": "ITA",
+   "side": "axis",
+   "type": "motorised",
+   "domain": "land",
+   "parentId": "ita.c.XXI",
+   "pos": [
+    24.025,
+    31.96
+   ],
+   "manpower": 9000,
+   "manpowerMax": 9000,
+   "equipment": {
+    "held": {
+     "rifle": 80,
+     "gun_arty": 40,
+     "truck": 60
+    },
+    "authorised": {
+     "rifle": 80,
+     "gun_arty": 40,
+     "truck": 60
+    }
+   },
+   "organisation": 90,
+   "morale": 68,
+   "experience": 40,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 10,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "defend",
+   "orders": [],
+   "kills": 0
+  }
+ ],
+ "reinforcements": [],
+ "objectives": [
+  {
+   "id": "o.ger.tobruk",
+   "tier": "primary",
+   "side": "axis",
+   "title": "Take Tobruk",
+   "description": "Capture Tobruk and end the relief attempt.",
+   "condition": {
+    "kind": "capture_location",
+    "locationId": "tobruk"
+   },
+   "points": 250,
+   "status": "pending"
+  },
+  {
+   "id": "o.ger.hold_gazala",
+   "tier": "secondary",
+   "side": "axis",
+   "title": "Hold the Gazala position",
+   "description": "Hold Gazala to the end (Axis occupied it 7-8 Dec, N02).",
+   "condition": {
+    "kind": "hold_location",
+    "locationId": "gazala",
+    "untilMinutes": 63360
+   },
+   "points": 100,
+   "status": "pending"
+  },
+  {
+   "id": "o.ger.hold_benghazi",
+   "tier": "primary",
+   "side": "axis",
+   "title": "Keep Benghazi",
+   "description": "Keep Benghazi, the forward port.",
+   "condition": {
+    "kind": "hold_location",
+    "locationId": "benghazi",
+    "untilMinutes": 63360
+   },
+   "points": 150,
+   "status": "pending"
+  },
+  {
+   "id": "o.ger.hold_bardia",
+   "tier": "secondary",
+   "side": "axis",
+   "title": "Hold Bardia and the frontier",
+   "description": "Bardia, Sollum and Halfaya were ordered held (8 Dec, N02).",
+   "condition": {
+    "kind": "hold_location",
+    "locationId": "bardia",
+    "untilMinutes": 63360
+   },
+   "points": 80,
+   "status": "pending"
+  },
+  {
+   "id": "o.ger.rezegh",
+   "tier": "secondary",
+   "side": "axis",
+   "title": "Secure Sidi Rezegh",
+   "description": "Hold the Sidi Rezegh escarpment (retaken by 21st Panzer 22 Nov, N02).",
+   "condition": {
+    "kind": "hold_location",
+    "locationId": "sidi_rezegh",
+    "untilMinutes": 63360
+   },
+   "points": 100,
+   "status": "pending"
+  },
+  {
+   "id": "o.ger.matruh",
+   "tier": "strategic",
+   "side": "axis",
+   "title": "Stretch goal: Mersa Matruh",
+   "description": "Capture Mersa Matruh, the Eighth Army base.",
+   "condition": {
+    "kind": "capture_location",
+    "locationId": "mersa_matruh"
+   },
+   "points": 250,
+   "status": "pending"
+  },
+  {
+   "id": "o.all.tobruk",
+   "tier": "primary",
+   "side": "allies",
+   "title": "Relieve Tobruk",
+   "description": "Link up with the garrison and hold Tobruk (27 Nov, N02).",
+   "condition": {
+    "kind": "hold_location",
+    "locationId": "tobruk",
+    "untilMinutes": 63360
+   },
+   "points": 250,
+   "status": "pending"
+  },
+  {
+   "id": "o.all.rezegh",
+   "tier": "primary",
+   "side": "allies",
+   "title": "Take Sidi Rezegh",
+   "description": "Capture the Sidi Rezegh airfield and escarpment.",
+   "condition": {
+    "kind": "capture_location",
+    "locationId": "sidi_rezegh"
+   },
+   "points": 150,
+   "status": "pending"
+  },
+  {
+   "id": "o.all.bardia",
+   "tier": "secondary",
+   "side": "allies",
+   "title": "Take Bardia",
+   "description": "Capture the Bardia fortified port.",
+   "condition": {
+    "kind": "capture_location",
+    "locationId": "bardia"
+   },
+   "points": 100,
+   "status": "pending"
+  },
+  {
+   "id": "o.all.gazala",
+   "tier": "secondary",
+   "side": "allies",
+   "title": "Take Gazala",
+   "description": "Capture the Gazala position (reached by the Axis 8 Dec, N02).",
+   "condition": {
+    "kind": "capture_location",
+    "locationId": "gazala"
+   },
+   "points": 120,
+   "status": "pending"
+  },
+  {
+   "id": "o.all.benghazi",
+   "tier": "strategic",
+   "side": "allies",
+   "title": "Retake Cyrenaica: Benghazi",
+   "description": "Capture Benghazi.",
+   "condition": {
+    "kind": "capture_location",
+    "locationId": "benghazi"
+   },
+   "points": 250,
+   "status": "pending"
+  }
+ ],
+ "terrainFile": "terrain_northafrica.json",
+ "infraFile": "infra_northafrica.json",
+ "supplySources": {
+  "GBR": [
+   "alexandria",
+   "mersa_matruh",
+   "sidi_barrani",
+   "tobruk"
+  ],
+  "GER": [
+   "benghazi",
+   "derna"
+  ],
+  "ITA": [
+   "benghazi",
+   "derna"
+  ]
+ },
+ "initialControl": [
+  {
+   "nation": "ITA",
+   "polygon": [
+    [
+     19,
+     28.5
+    ],
+    [
+     30.5,
+     28.5
+    ],
+    [
+     30.5,
+     33
+    ],
+    [
+     19,
+     33
+    ]
+   ]
+  },
+  {
+   "nation": "GBR",
+   "polygon": [
+    [
+     25.15,
+     28.5
+    ],
+    [
+     30.5,
+     28.5
+    ],
+    [
+     30.5,
+     33
+    ],
+    [
+     25.15,
+     33
+    ]
+   ]
+  },
+  {
+   "nation": "GBR",
+   "polygon": [
+    [
+     23.8,
+     31.95
+    ],
+    [
+     24.1,
+     31.95
+    ],
+    [
+     24.1,
+     32.15
+    ],
+    [
+     23.8,
+     32.15
+    ]
+   ]
+  }
+ ],
+ "weatherProfile": [
+  {
+   "month": 11,
+   "probs": {
+    "clear": 0.7,
+    "cloud": 0.15,
+    "sandstorm": 0.1,
+    "rain": 0.05
+   },
+   "tempC": 20
+  },
+  {
+   "month": 12,
+   "probs": {
+    "clear": 0.6,
+    "cloud": 0.2,
+    "rain": 0.1,
+    "sandstorm": 0.1
+   },
+   "tempC": 16
+  }
+ ],
+ "eventTemplateIds": [
+  "cru.ev.start",
+  "cru.ev.gubi",
+  "cru.ev.tobruk_breakout",
+  "cru.ev.totensonntag",
+  "cru.ev.wire",
+  "cru.ev.ritchie",
+  "cru.ev.relief",
+  "cru.ev.retreat",
+  "cru.ev.hold",
+  "cru.ev.gazala",
+  "cru.ev.convoys",
+  "cru.ev.ajedabia"
+ ],
+ "specialSystems": [],
+ "victoryTiers": {
+  "axis": {
+   "decisive": 0.8,
+   "strategic": 0.6,
+   "limited": 0.4,
+   "stalemate": 0.2
+  },
+  "allies": {
+   "decisive": 0.8,
+   "strategic": 0.6,
+   "limited": 0.4,
+   "stalemate": 0.2
+  }
+ },
+ "sources": [
+  {
+   "id": "N01",
+   "citation": "Wikipedia, \"Operation Crusader order of battle\" (ground forces only; no air section; Italian divisional commanders partly missing).",
+   "url": "https://en.wikipedia.org/wiki/Operation_Crusader_order_of_battle"
+  },
+  {
+   "id": "N02",
+   "citation": "Wikipedia, \"Operation Crusader\" (timeline 18 Nov-Dec 1941; strengths; fuel shortage and convoys; weather).",
+   "url": "https://en.wikipedia.org/wiki/Operation_Crusader"
+  },
+  {
+   "id": "N04",
+   "citation": "Wikipedia, \"Desert Air Force\" (AHQ Western Desert wing/squadron table, 18 Nov 1941-19 May 1942; WEAK for Crusader-day positions; no Axis air).",
+   "url": "https://en.wikipedia.org/wiki/Desert_Air_Force"
+  },
+  {
+   "id": "N05",
+   "citation": "Wikipedia, \"Siege of Tobruk\" (port capacity, garrison changes, Via Balbia, Tripoli/Benghazi throughput, Tobruk coordinates).",
+   "url": "https://en.wikipedia.org/wiki/Siege_of_Tobruk"
+  },
+  {
+   "id": "G01",
+   "citation": "GAME-SCALE ABSTRACTION (internal): manpower, equipment, morale/experience, resources, objective points and thresholds are nominal game values, not historical strengths. Axis fuel pool scaled down to reflect the sourced fuel shortage (N02)."
+  },
+  {
+   "id": "G02",
+   "citation": "Modern gazetteer coordinates rounded to 0.01 deg, recalled by the author; accuracy +/-0.05 deg towns, +/-0.15 deg desert features (Gabr Saleh, Bir el Gubi, Sidi Rezegh, Belhamed, Ed Duda).",
+   "url": "https://www.geonames.org/"
+  },
+  {
+   "id": "G03",
+   "citation": "POSITION POLICY (internal): no source gives start coordinates. Positions are approximate sector anchors from the named places in N01/N02 (e.g. Ariete at Bir el Gubi on 19 Nov) with a small deterministic spread; Allied start inside Egypt near the frontier (offensive crossed into Libya near Fort Maddalena)."
+  },
+  {
+   "id": "G04",
+   "citation": "BORDER POLICY (internal): initialControl is a coarse 1941 split: Italian Libya (ITA) west of the Egyptian frontier (~25.15E), Egypt (GBR-held) east, Tobruk perimeter GBR."
+  }
+ ]
+}

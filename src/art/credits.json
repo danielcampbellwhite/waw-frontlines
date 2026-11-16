@@ -1,0 +1,803 @@
+[
+  {
+    "id": "ger_pz3_maastricht",
+    "nation": "GER",
+    "subject": "Panzer III, Maastricht, May 1940",
+    "author": "Bundesarchiv / Unknown author",
+    "license": "CC BY-SA 3.0 de",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Bundesarchiv_Bild_146-1981-084-34,_Maastricht,_Panzer_III_in_Marschpause.jpg",
+    "retrieved": "2026-11-16"
+  },
+  {
+    "id": "ger_pz4_d",
+    "nation": "GER",
+    "subject": "Panzer IV Ausf. D, March 1940",
+    "author": "Bundesarchiv / Gutjahr",
+    "license": "CC BY-SA 3.0 de",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Bundesarchiv_Bild_101I-124-0211-18,_Im_Westen,_Panzer_IV.jpg",
+    "retrieved": "2026-11-16"
+  },
+  {
+    "id": "ger_pz4_france",
+    "nation": "GER",
+    "subject": "Panzer IV, Western Front 1940",
+    "author": "Bundesarchiv / Hinz",
+    "license": "CC BY-SA 3.0 de",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Bundesarchiv_Bild_101I-124-0250-39,_Im_Westen,_Panzer_IV.jpg",
+    "retrieved": "2026-11-16"
+  },
+  {
+    "id": "ger_pz2",
+    "nation": "GER",
+    "subject": "Panzer II, Western Front 1940",
+    "author": "Bundesarchiv / Böcker",
+    "license": "CC BY-SA 3.0 de",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Bundesarchiv_Bild_101I-382-0248-33A,_Im_Westen,_Panzer_II_und_Panzer_I.jpg",
+    "retrieved": "2026-11-16"
+  },
+  {
+    "id": "ger_pz38t",
+    "nation": "GER",
+    "subject": "Panzer 38(t) with infantry, Eastern Front 1941",
+    "author": "Bundesarchiv / Gebauer",
+    "license": "CC BY-SA 3.0 de",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Bundesarchiv_Bild_101I-213-0267-12,_Russland-Nord,_Panzer_38(t)_und_Infanterie.jpg",
+    "retrieved": "2026-11-16"
+  },
+  {
+    "id": "ger_pz38t_crew",
+    "nation": "GER",
+    "subject": "Panzer 38(t) and crewman, France 1940",
+    "author": "Bundesarchiv / Borchert, Erich (Eric)",
+    "license": "CC BY-SA 3.0 de",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Bundesarchiv_Bild_101I-769-0229-26,_Frankreich,_Panzersoldat,_Panzer_38(t).jpg",
+    "retrieved": "2026-11-16"
+  },
+  {
+    "id": "ger_sdkfz231",
+    "nation": "GER",
+    "subject": "Six-wheeled heavy armoured car (Sd.Kfz. 231 type), 1930s manoeuvres",
+    "author": "Bundesarchiv / Unknown author",
+    "license": "CC BY-SA 3.0 de",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Bundesarchiv_Bild_136-B3092,_Herbstman%C3%B6ver_des_IX._Armeekorps.2.jpg",
+    "retrieved": "2026-11-16"
+  },
+  {
+    "id": "ger_flak88_a",
+    "nation": "GER",
+    "subject": "8.8 cm Flak gun in action (also used as anti-tank gun)",
+    "author": "Bundesarchiv / Briecke",
+    "license": "CC BY-SA 3.0 de",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Bundesarchiv_Bild_101I-724-0135-13,_Schwere_Flak_in_Russland.jpg",
+    "retrieved": "2026-11-16"
+  },
+  {
+    "id": "ger_flak88_b",
+    "nation": "GER",
+    "subject": "8.8 cm Flak gun being emplaced",
+    "author": "Bundesarchiv / Briecke",
+    "license": "CC BY-SA 3.0 de",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Bundesarchiv_Bild_101I-724-0135-11,_Schwere_Flak_in_Russland.jpg",
+    "retrieved": "2026-11-16"
+  },
+  {
+    "id": "ger_lefh18_a",
+    "nation": "GER",
+    "subject": "10.5 cm leichte Feldhaubitze with crew",
+    "author": "Bundesarchiv / Maier",
+    "license": "CC BY-SA 3.0 de",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Bundesarchiv_Bild_101I-031-2415-16,_Russland,_Soldaten_an_leichter_Haubitze.jpg",
+    "retrieved": "2026-11-16"
+  },
+  {
+    "id": "ger_lefh18_b",
+    "nation": "GER",
+    "subject": "Light field howitzer on the move (horse-drawn)",
+    "author": "Bundesarchiv / Vack",
+    "license": "CC BY-SA 3.0 de",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Bundesarchiv_Bild_101I-316-1160-21A,_Italien,_Feldhaubitze_in_Fahrstellung.jpg",
+    "retrieved": "2026-11-16"
+  },
+  {
+    "id": "ger_inf_march",
+    "nation": "GER",
+    "subject": "German infantry on the march, France 1940",
+    "author": "Bundesarchiv / Bauer",
+    "license": "CC BY-SA 3.0 de",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Bundesarchiv_Bild_146-1981-060-03,_Frankreich,_Infanterie_auf_dem_Marsch.jpg",
+    "retrieved": "2026-11-16"
+  },
+  {
+    "id": "ger_para_oslo",
+    "nation": "GER",
+    "subject": "Fallschirmjäger, Oslo airfield, April 1940",
+    "author": "Bundesarchiv / Ruge, Willi",
+    "license": "CC BY-SA 3.0 de",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Bundesarchiv_Bild_101I-757-0023-32,_Oslo,_Fallschirmj%C3%A4ger_auf_Flugplatz.jpg",
+    "retrieved": "2026-11-16"
+  },
+  {
+    "id": "ger_para_eben",
+    "nation": "GER",
+    "subject": "Fallschirmjäger at Eben-Emael, Belgium, 1940",
+    "author": "Bundesarchiv / Büttner",
+    "license": "CC BY-SA 3.0 de",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Bundesarchiv_Billd_146-1971-011-27,_Belgien,_Eben_Emael,_Fallschirmj%C3%A4ger.jpg",
+    "retrieved": "2026-11-16"
+  },
+  {
+    "id": "ger_blitz",
+    "nation": "GER",
+    "subject": "Opel Blitz truck carrying troops",
+    "author": "Bundesarchiv / Funke",
+    "license": "CC BY-SA 3.0 de",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Bundesarchiv_Bild_101I-303-0554-24,_Italien,_Soldaten_auf_LKW_Opel-Blitz.jpg",
+    "retrieved": "2026-11-16"
+  },
+  {
+    "id": "ger_251_a",
+    "nation": "GER",
+    "subject": "Sd.Kfz. 251 half-track",
+    "author": "Bundesarchiv / Habedank, Gerd",
+    "license": "CC BY-SA 3.0 de",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Bundesarchiv_Bild_101I-792-0138-21A,_Russland,_Sch%C3%BCtzenpanzer_Sd.Kfz._251.jpg",
+    "retrieved": "2026-11-16"
+  },
+  {
+    "id": "ger_251_b",
+    "nation": "GER",
+    "subject": "Sd.Kfz. 251 half-track in a French port",
+    "author": "Bundesarchiv / Baumann",
+    "license": "CC BY-SA 3.0 de",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Bundesarchiv_Bild_101I-258-1320-06,_S%C3%BCdfrankreich,_Hafen,_Sch%C3%BCtzenpanzer.jpg",
+    "retrieved": "2026-11-16"
+  },
+  {
+    "id": "ger_krad_a",
+    "nation": "GER",
+    "subject": "Motorcycle riflemen (Kradschützen), France 1940",
+    "author": "Bundesarchiv / Weber, Robert",
+    "license": "CC BY-SA 3.0 de",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Bundesarchiv_Bild_101I-055-1570-06A,_Frankreich,_Kradsch%C3%BCtzen_in_zerst%C3%B6rter_Stadt.jpg",
+    "retrieved": "2026-11-16"
+  },
+  {
+    "id": "ger_krad_b",
+    "nation": "GER",
+    "subject": "Motorcycle-sidecar column, France 1940",
+    "author": "Bundesarchiv / Schweizer",
+    "license": "CC BY-SA 3.0 de",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Bundesarchiv_Bild_101I-054-1525-09,_Frankreich,_Kolonne_von_Kradfahrern_mit_Beiwagen.jpg",
+    "retrieved": "2026-11-16"
+  },
+  {
+    "id": "ger_stuka",
+    "nation": "GER",
+    "subject": "Junkers Ju 87 B-1 Stuka being prepared for a sortie",
+    "author": "Unknown author",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Junkers_Ju_87_B-1_eines_unbek._Stuka-Geschwaders_in_Einsatzvorbereitung.jpg",
+    "retrieved": "2026-11-16"
+  },
+  {
+    "id": "ger_stuka_pilots",
+    "nation": "GER",
+    "subject": "Ju 87 crews at a briefing, France 1940",
+    "author": "Bundesarchiv / Stift",
+    "license": "CC BY-SA 3.0 de",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Bundesarchiv_Bild_101I-383-0338-03,_Frankreich,_Piloten_bei_Lagebesprechung_vor_Ju_87.jpg",
+    "retrieved": "2026-11-16"
+  },
+  {
+    "id": "ger_bf109",
+    "nation": "GER",
+    "subject": "Bf 109 E on a field airfield, France 1940",
+    "author": "Bundesarchiv / Eckert, Erhardt",
+    "license": "CC BY-SA 3.0 de",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Bundesarchiv_Bild_101I-058-1784A-14,_Frankreich,_Jagdflugzeuge_Me_109_auf_Feldflugplatz.jpg",
+    "retrieved": "2026-11-16"
+  },
+  {
+    "id": "ger_he111_a",
+    "nation": "GER",
+    "subject": "Heinkel He 111 in flight, 1940",
+    "author": "Bundesarchiv / Schödl (e)",
+    "license": "CC BY-SA 3.0 de",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Bundesarchiv_Bild_101I-343-0694-21,_Belgien-Frankreich,_Flugzeug_Heinkel_He_111.jpg",
+    "retrieved": "2026-11-16"
+  },
+  {
+    "id": "ger_he111_b",
+    "nation": "GER",
+    "subject": "Heinkel He 111 on an airfield",
+    "author": "Bundesarchiv / Wanderer, W.",
+    "license": "CC BY-SA 3.0 de",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Bundesarchiv_Bild_101I-385-0560-22,_Flugzeug_Heinkel_He_111.jpg",
+    "retrieved": "2026-11-16"
+  },
+  {
+    "id": "ger_eng_maastricht",
+    "nation": "GER",
+    "subject": "Pioniere (combat engineers) building a bridge, Maastricht 1940",
+    "author": "Bundesarchiv / Unknown author",
+    "license": "CC BY-SA 3.0 de",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Bundesarchiv_Bild_146-1969-125-75,_Maastricht,_Pioniere_beim_Bau_einer_Br%C3%BCcke.jpg",
+    "retrieved": "2026-11-16"
+  },
+  {
+    "id": "ger_eng_ferry",
+    "nation": "GER",
+    "subject": "Pontoon ferry carrying a Panzer, Western campaign 1940",
+    "author": "Bundesarchiv / Unknown author",
+    "license": "CC BY-SA 3.0 de",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Bundesarchiv_Bild_146-1991-042-32A,_Westfeldzug,_Pontonf%C3%A4hre.jpg",
+    "retrieved": "2026-11-16"
+  },
+  {
+    "id": "ger_eng_floing",
+    "nation": "GER",
+    "subject": "German pontoon bridge over the Meuse at Floing, 1940",
+    "author": "Bundesarchiv / Unknown author",
+    "license": "CC BY-SA 3.0 de",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Bundesarchiv_Bild_146-1978-062-24,_Floing,_Pontonbr%C3%BCcke_%C3%BCber_die_Maas.jpg",
+    "retrieved": "2026-11-16"
+  },
+  {
+    "id": "ger_hq",
+    "nation": "GER",
+    "subject": "Command post: staff officers in conference, Western campaign 1940",
+    "author": "Bundesarchiv / Unknown author",
+    "license": "CC BY-SA 3.0 de",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Bundesarchiv_Bild_146-1972-045-08,_Westfeldzug,_Rommel_bei_Besprechung_mit_Offizieren.jpg",
+    "retrieved": "2026-11-16"
+  },
+  {
+    "id": "ger_cruiser",
+    "nation": "GER",
+    "subject": "Heavy cruiser Admiral Hipper",
+    "author": "Bundesarchiv / Unknown author",
+    "license": "CC BY-SA 3.0 de",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Bundesarchiv_DVM_10_Bild-23-63-24,_Schwerer_Kreuzer_%22Admiral_Hipper%22.jpg",
+    "retrieved": "2026-11-16"
+  },
+  {
+    "id": "fra_b1_museum",
+    "nation": "FRA",
+    "subject": "Char B1 bis (preserved vehicle)",
+    "author": "The shadock",
+    "license": "CC BY-SA 3.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Char_B1_bis_Flandres.JPG",
+    "retrieved": "2026-11-16"
+  },
+  {
+    "id": "fra_b1_1940",
+    "nation": "FRA",
+    "subject": "Char B1 bis, June 1940",
+    "author": "André Lecolinet",
+    "license": "CC0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Juin_1940,_Aubigny-sur-N%C3%A8re,_Char_B1_bis.jpg",
+    "retrieved": "2026-11-16"
+  },
+  {
+    "id": "fra_s35_a",
+    "nation": "FRA",
+    "subject": "SOMUA S35 (preserved vehicle)",
+    "author": "User:Fat yankey",
+    "license": "CC BY-SA 2.5",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:SOMUA-S35-Aberdeen.0003hdbq.jpg",
+    "retrieved": "2026-11-16"
+  },
+  {
+    "id": "fra_s35_b",
+    "nation": "FRA",
+    "subject": "SOMUA S35 (preserved vehicle, Bovington)",
+    "author": "Hohum",
+    "license": "CC BY-SA 3.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Bovington_102_Somua_S35_1.jpg",
+    "retrieved": "2026-11-16"
+  },
+  {
+    "id": "fra_r35_a",
+    "nation": "FRA",
+    "subject": "Renault R35 (preserved vehicle)",
+    "author": "Bukvoed",
+    "license": "CC BY 2.5",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Renault-R-35-latrun-2.jpg",
+    "retrieved": "2026-11-16"
+  },
+  {
+    "id": "fra_r35_b",
+    "nation": "FRA",
+    "subject": "Renault R35 (preserved vehicle)",
+    "author": "G.Garitan",
+    "license": "CC BY-SA 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Renault_R35_Berry_au_bac_13148.jpg",
+    "retrieved": "2026-11-16"
+  },
+  {
+    "id": "fra_h39",
+    "nation": "FRA",
+    "subject": "Hotchkiss H39 (preserved vehicle)",
+    "author": "Alan Wilson from Stilton, Peterborough, Cambs, UK",
+    "license": "CC BY-SA 2.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Hotchkiss_H39_%E2%80%98123%E2%80%99_(37632011810).jpg",
+    "retrieved": "2026-11-16"
+  },
+  {
+    "id": "fra_amd_a",
+    "nation": "FRA",
+    "subject": "Panhard 178 (AMD 35) armoured car (preserved vehicle)",
+    "author": "PpPachy",
+    "license": "CC BY-SA 2.5",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:AMD_Panhard_178_Saumur.jpg",
+    "retrieved": "2026-11-16"
+  },
+  {
+    "id": "fra_amd_b",
+    "nation": "FRA",
+    "subject": "Panhard 178 (AMD 35) armoured car, Saumur tank museum",
+    "author": "Alan Wilson from Peterborough, Cambs, UK",
+    "license": "CC BY-SA 2.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Panhard_AMD_178_%E2%80%98M_99834%E2%80%99_at_Mus%C3%A9e_des_Blind%C3%A9s,_Saumur,_France_(53316756186).jpg",
+    "retrieved": "2026-11-16"
+  },
+  {
+    "id": "fra_75",
+    "nation": "FRA",
+    "subject": "Canon de 75 modèle 1897 (preserved)",
+    "author": "Jean-Pol GRANDMONT",
+    "license": "CC BY 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:0_Canon_de_75_mm_mod%C3%A8le_1897_-_Mus%C3%A9e_de_l%27arm%C3%A9e_%C3%A0_Paris.JPG",
+    "retrieved": "2026-11-16"
+  },
+  {
+    "id": "fra_75b",
+    "nation": "FRA",
+    "subject": "Canon de 75 modèle 1897 (preserved)",
+    "author": "Rama",
+    "license": "CC BY-SA 3.0 fr",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Canon_de_75_Mod%C3%A8le_1897,_MDLA.jpg",
+    "retrieved": "2026-11-16"
+  },
+  {
+    "id": "fra_25at",
+    "nation": "FRA",
+    "subject": "25 mm Hotchkiss anti-tank gun (SA 34/37 family, preserved)",
+    "author": "PpPachy",
+    "license": "CC BY 2.5",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:25_mm_SA_mle_1934_Saumur_01.jpg",
+    "retrieved": "2026-11-16"
+  },
+  {
+    "id": "fra_inf",
+    "nation": "FRA",
+    "subject": "French colonial infantryman in Adrian helmet, 1940",
+    "author": "Bundesarchiv / Unknown author",
+    "license": "CC BY-SA 3.0 de",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Bundesarchiv_Bild_121-0420,_Franz%C3%B6sischer_Kriegsgefangener.jpg",
+    "retrieved": "2026-11-16"
+  },
+  {
+    "id": "fra_ms406",
+    "nation": "FRA",
+    "subject": "Morane-Saulnier M.S.406 fighter",
+    "author": "Unknown author",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Morane-Saulnier_M.S.406.jpg",
+    "retrieved": "2026-11-16"
+  },
+  {
+    "id": "fra_ms405",
+    "nation": "FRA",
+    "subject": "Morane-Saulnier M.S.405 (prototype/forerunner of the M.S.406), 1938",
+    "author": "Unknown author",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Morane-Saulnier_MS.405_1938.jpg",
+    "retrieved": "2026-11-16"
+  },
+  {
+    "id": "fra_potez63",
+    "nation": "FRA",
+    "subject": "Potez 63.11 reconnaissance/bomber aircraft",
+    "author": "Halicki",
+    "license": "CC BY-SA 3.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Potez_63.11.JPG",
+    "retrieved": "2026-11-16"
+  },
+  {
+    "id": "fra_potez63b",
+    "nation": "FRA",
+    "subject": "Potez 63.11, Aleppo 1941",
+    "author": "G. Silk, Australian armed forces",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Potez_63.11_at_Aleppo_1941.jpg",
+    "retrieved": "2026-11-16"
+  },
+  {
+    "id": "gbr_matilda_a",
+    "nation": "GBR",
+    "subject": "Matilda II infantry tank",
+    "author": "No. 1 Army Film & Photographic Unit",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:MatildaII.jpg",
+    "retrieved": "2026-11-16"
+  },
+  {
+    "id": "gbr_matilda_b",
+    "nation": "GBR",
+    "subject": "Matilda II (A12) infantry tank",
+    "author": "Press Agency photographer",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:THE_INFANTRY_TANK_MK_II_(A12)_MATILDA_II_KY4549B.jpg",
+    "retrieved": "2026-11-16"
+  },
+  {
+    "id": "gbr_cruiser1",
+    "nation": "GBR",
+    "subject": "Cruiser Tank Mk I (A9)",
+    "author": "Unknown author",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Cruiser_Tank_Mk_I.jpg",
+    "retrieved": "2026-11-16"
+  },
+  {
+    "id": "gbr_cruiser3",
+    "nation": "GBR",
+    "subject": "Cruiser Tank Mk III (A13)",
+    "author": "Unknown author",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:IWM-KID-358-Cruiser-MkIII.jpg",
+    "retrieved": "2026-11-16"
+  },
+  {
+    "id": "gbr_cruiser4",
+    "nation": "GBR",
+    "subject": "Cruiser Mk IV (A13 Mk II) tanks, July 1940",
+    "author": "Malindine E G (Lt), War Office official photographer",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Cruiser_Mk_IV_tanks_of_5th_Royal_Tank_Regiment,_1st_Armoured_Division,_driving_through_a_Surrey_village,_July_1940._H2491.jpg",
+    "retrieved": "2026-11-16"
+  },
+  {
+    "id": "gbr_lt6",
+    "nation": "GBR",
+    "subject": "Vickers Light Tank Mk VI, 1940",
+    "author": "Puttnam (Mr), War Office official photographer",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Vickers_Mk_VI_light_tanks_pass_through_the_village_of_Linton_in_Cambridgeshire,_30_August_1940._H3541.jpg",
+    "retrieved": "2026-11-16"
+  },
+  {
+    "id": "gbr_bren_a",
+    "nation": "GBR",
+    "subject": "Bren gun carriers of 13/18th Hussars, Arras, October 1939",
+    "author": "Keating G (Lt), War Office official photographer",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:The_British_Army_in_France_1939-40_O733.jpg",
+    "retrieved": "2026-11-16"
+  },
+  {
+    "id": "gbr_bren_b",
+    "nation": "GBR",
+    "subject": "Bren gun carrier, 13/18th Hussars, October 1939",
+    "author": "Keating G (Lt), War Office official photographer",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:The_British_Army_in_France_1939-40_O570.jpg",
+    "retrieved": "2026-11-16"
+  },
+  {
+    "id": "gbr_25pdr_a",
+    "nation": "GBR",
+    "subject": "25-pdr Short field gun, 1944",
+    "author": "Unknown author",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:25_pounder_Short_1944.jpg",
+    "retrieved": "2026-11-16"
+  },
+  {
+    "id": "gbr_25pdr_b",
+    "nation": "GBR",
+    "subject": "25-pdr field gun inspected at Bachy, December 1939",
+    "author": "Keating G (Lt), War Office official photographer",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:The_British_Army_in_France_1939-40_O2167.jpg",
+    "retrieved": "2026-11-16"
+  },
+  {
+    "id": "gbr_2pdr_a",
+    "nation": "GBR",
+    "subject": "2-pdr anti-tank gun, 13th Anti-Tank Regiment, February 1940",
+    "author": "Davies (Lt), Puttnam L A (Lt), War Office official photographer",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:The_British_Army_in_France_1940_F2606.jpg",
+    "retrieved": "2026-11-16"
+  },
+  {
+    "id": "gbr_2pdr_b",
+    "nation": "GBR",
+    "subject": "2-pdr anti-tank guns, Shoeburyness, November 1939",
+    "author": "Console (Capt), War Office official photographer",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:The_British_Army_in_the_United_Kingdom_1939-45_H165.jpg",
+    "retrieved": "2026-11-16"
+  },
+  {
+    "id": "gbr_inf_51hd",
+    "nation": "GBR",
+    "subject": "51st Highland Division troops on the Maginot Line, November 1939",
+    "author": "Keating G (Lt), War Office official photographer",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Troops_of_51st_Highland_Division_march_over_a_drawbridge_into_Fort_de_Sainghain_on_the_Maginot_Line,_3_November_1939._O227.jpg",
+    "retrieved": "2026-11-16"
+  },
+  {
+    "id": "gbr_truck_cs8",
+    "nation": "GBR",
+    "subject": "Morris-Commercial CS8 15cwt truck and vehicles at a LAD, January 1940",
+    "author": "Keating G (Lt), War Office official photographer",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:The_British_Army_in_France_1939-40_O838.jpg",
+    "retrieved": "2026-11-16"
+  },
+  {
+    "id": "gbr_hurricane",
+    "nation": "GBR",
+    "subject": "Hawker Hurricane Mk I, No. 85 Squadron RAF, 1940",
+    "author": "Daventry B J (Mr), Royal Air Force official photographer",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Hawker_Hurricane_Mk_I_of_No._85_Squadron_RAF,_October_1940._CH1501.jpg",
+    "retrieved": "2026-11-16"
+  },
+  {
+    "id": "gbr_spitfire",
+    "nation": "GBR",
+    "subject": "Supermarine Spitfire Mk I being re-armed, September 1940",
+    "author": "Stanley Arthur Devon",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:A_Supermarine_Spitfire_Mk_1_of_No._19_Squadron_RAF_being_re-armed_between_sorties_at_Fowlmere,_near_Duxford,_September_1940._CH1367.jpg",
+    "retrieved": "2026-11-16"
+  },
+  {
+    "id": "gbr_blenheim_a",
+    "nation": "GBR",
+    "subject": "Bristol Blenheim Mk I bomber",
+    "author": "Unknown author",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Bristol_blenheim_1_ExCC.jpg",
+    "retrieved": "2026-11-16"
+  },
+  {
+    "id": "gbr_blenheim_b",
+    "nation": "GBR",
+    "subject": "Bristol Blenheim bomber",
+    "author": "Canadian Forces (expired Crown copyright)",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Bristol_Type_142M_Blenheim_ExCC.jpg",
+    "retrieved": "2026-11-16"
+  },
+  {
+    "id": "gbr_destroyer",
+    "nation": "GBR",
+    "subject": "Hunt-class destroyer HMS Quorn",
+    "author": "Royal Navy official photographer",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:HMS_Quorn_1940_IWM_A_7063.jpg",
+    "retrieved": "2026-11-16"
+  },
+  {
+    "id": "bel_inf_louvain",
+    "nation": "BEL",
+    "subject": "Belgian troops resting at Louvain, 14 May 1940 (a British Morris CS8 truck passes)",
+    "author": "Malindine E G (Lt), War Office official photographer",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:The_British_Army_in_France_and_Belgium_1940_F4444.jpg",
+    "retrieved": "2026-11-16"
+  },
+  {
+    "id": "ned_inf_guard",
+    "nation": "NED",
+    "subject": "Dutch soldiers on guard at a coastal infantry position, winter 1940",
+    "author": "Wiel van der Randen",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Tweede_Wereldoorlog,_SFA001000454_01.jpg",
+    "retrieved": "2026-11-16"
+  },
+  {
+    "id": "ger_hq_radio",
+    "nation": "GER",
+    "subject": "Signals: radio station of a bomber group headquarters",
+    "author": "Bundesarchiv / Kindt",
+    "license": "CC BY-SA 3.0 de",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Bundesarchiv_Bild_146-2007-0047,_Funkstelle_einer_Kampffliegergruppe.jpg",
+    "retrieved": "2026-11-16"
+  },
+  {
+    "id": "ger_hq_enigma",
+    "nation": "GER",
+    "subject": "Command post vehicle with Enigma cipher machine and signals staff, France 1940",
+    "author": "Bundesarchiv / Borchert, Erich (Eric)",
+    "license": "CC BY-SA 3.0 de",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Bundesarchiv_Bild_101I-769-0229-10A,_Frankreich,_Guderian,_%22Enigma%22.jpg",
+    "retrieved": "2026-11-16"
+  },
+  {
+    "id": "gbr_hq_ironside",
+    "nation": "GBR",
+    "subject": "Headquarters staff: Generals Ironside and Gort over a map",
+    "author": "War Office official photographer : Console (Capt)",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ironside_and_Gort_WWII_IWM_H2.jpg",
+    "retrieved": "2026-11-16"
+  },
+  {
+    "id": "gbr_hq_lunch",
+    "nation": "GBR",
+    "subject": "BEF headquarters staff officers with Lord Gort, Arras, October 1939",
+    "author": "Keating G (Lt), War Office official photographer",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Lord_Gort_(centre)_at_a_lunch_with_senior_officers_and_war_correspondents_at_the_Hotel_Moderne_in_Arras,_France,_15_October_1939._O454.jpg",
+    "retrieved": "2026-11-16"
+  },
+  {
+    "id": "gbr_hq_georges",
+    "nation": "GBR",
+    "subject": "Allied command: General Georges and Lord Gort at Arras (staff conference)",
+    "author": "War Office official photographer : Puttnam L A (Lt) : Davies (Lt)",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Georges_and_Gort_at_Arras_WWII_IWM_F_2094.jpg",
+    "retrieved": "2026-11-16"
+  },
+  {
+    "id": "fra_hq_georges",
+    "nation": "FRA",
+    "subject": "French headquarters staff: General Georges with Lord Gort at Arras",
+    "author": "War Office official photographer : Puttnam L A (Lt) : Davies (Lt)",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Georges_and_Gort_at_Arras_WWII_IWM_F_2094.jpg",
+    "retrieved": "2026-11-16"
+  },
+  {
+    "id": "ger_inf_stellung",
+    "nation": "GER",
+    "subject": "German riflemen in a firing position, northern France",
+    "author": "Bundesarchiv / Müller, Karl",
+    "license": "CC BY-SA 3.0 de",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Bundesarchiv_Bild_101I-296-1683-19A,_Nordfrankreich,_Infanterie_in_Stellung.jpg",
+    "retrieved": "2026-11-16"
+  },
+  {
+    "id": "ger_inf_maas",
+    "nation": "GER",
+    "subject": "German infantry crossing the Meuse, Western campaign 1940",
+    "author": "Bundesarchiv / Unknown author",
+    "license": "CC BY-SA 3.0 de",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Bundesarchiv_Bild_146-1981-064-18A,_Westfeldzug,_%C3%9Cbergang_%C3%BCber_die_Maas.jpg",
+    "retrieved": "2026-11-16"
+  },
+  {
+    "id": "ger_heavy_how",
+    "nation": "GER",
+    "subject": "Gun crew with a heavy howitzer, France 1940",
+    "author": "Bundesarchiv / Bauer",
+    "license": "CC BY-SA 3.0 de",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Bundesarchiv_Bild_101I-054-1527-14,_Frankreich,_Artilleristen_am_Gesch%C3%BCtz.jpg",
+    "retrieved": "2026-11-16"
+  },
+  {
+    "id": "ger_bf110_a",
+    "nation": "GER",
+    "subject": "Messerschmitt Bf 110 heavy fighters on an airfield",
+    "author": "Bundesarchiv / Wanderer, W.",
+    "license": "CC BY-SA 3.0 de",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Bundesarchiv_Bild_101I-360-2095-23,_Flugzeuge_Messerschmitt_Me_110.jpg",
+    "retrieved": "2026-11-16"
+  },
+  {
+    "id": "ger_bf110_b",
+    "nation": "GER",
+    "subject": "Pilot boarding a Messerschmitt Bf 110, western France 1940",
+    "author": "Bundesarchiv / Folkerts",
+    "license": "CC BY-SA 3.0 de",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Bundesarchiv_Bild_101I-341-0496-33,_Westfrankreich,_Theodor_Rossiwall_an_Me_110.jpg",
+    "retrieved": "2026-11-16"
+  },
+  {
+    "id": "gbr_hurr_ground",
+    "nation": "GBR",
+    "subject": "Hawker Hurricane Mk I on the ground, 1940",
+    "author": "Press Agency photographer",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Hawker_Hurricane_at_Castle_Camps_-_RAF_Fighter_Command_1940_HU104483.jpg",
+    "retrieved": "2026-11-16"
+  },
+  {
+    "id": "gbr_hurr_formation",
+    "nation": "GBR",
+    "subject": "Hawker Hurricane Mk Is of No. 85 Squadron in formation, 1940",
+    "author": "Daventry B J (Mr), Royal Air Force official photographer",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Hawker_Hurricane_Mk_Is_of_No._85_Squadron_RAF,_October_1940._CH1510.jpg",
+    "retrieved": "2026-11-16"
+  },
+  {
+    "id": "gbr_hurr_museum",
+    "nation": "GBR",
+    "subject": "Hawker Hurricane Mk I, a Battle of France veteran (preserved aircraft)",
+    "author": "Gary Todd from Xinzheng, China",
+    "license": "CC0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Hawker_Hurricane,_Veteran_of_Battle_of_France_(9817832126).jpg",
+    "retrieved": "2026-11-16"
+  },
+  {
+    "id": "gbr_spitfire_flight",
+    "nation": "GBR",
+    "subject": "Supermarine Spitfire Mk Ia (preserved aircraft in flight)",
+    "author": "Alan Wilson from Stilton, Peterborough, Cambs, UK",
+    "license": "CC BY-SA 2.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Supermarine_Spitfire_Ia_%27N3200_-_QV%27_(G-CFGJ)_(19795184486).jpg",
+    "retrieved": "2026-11-16"
+  },
+  {
+    "id": "gbr_blenheim_museum",
+    "nation": "GBR",
+    "subject": "Bristol Blenheim Mk I (preserved aircraft)",
+    "author": "Ad Meskens You are free to use this picture for any purpose as long as you credit its author, Ad Meskens. Example: © Ad Meskens / Wikimedia Commons If you use this work outside of the Wikimedia projects, a message or a copy is very much appreciated. This image is not in the public domain. A statement such as \"From Wikimedia Commons\" or similar is not by itself sufficient. If you do not provide clear attribution to the author you do not comply with the terms of the file's license and you may not use this file. If you are unable or unwilling to provide attribution you should contact Ad Meskens to negotiate a different license.",
+    "license": "CC BY-SA 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Antwerp_Bristol_Blenheim_Mk.I_L6739_(G-BPIV)_01.jpg",
+    "retrieved": "2026-11-16"
+  },
+  {
+    "id": "gbr_matilda_museum",
+    "nation": "GBR",
+    "subject": "Matilda II infantry tank (preserved vehicle)",
+    "author": "Jim Linwood from London",
+    "license": "CC BY 2.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Matilda_II_Tank,_Bovington_Tank_Museum_-_Dorset._(5977195830).jpg",
+    "retrieved": "2026-11-16"
+  },
+  {
+    "id": "gbr_cruiser3_museum",
+    "nation": "GBR",
+    "subject": "Cruiser Mk III (A13) tank (preserved vehicle)",
+    "author": "Jonathan Cardy",
+    "license": "CC BY-SA 3.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Cruiser_Mk_III_in_the_Bovington_Tank_Museum_(side).jpg",
+    "retrieved": "2026-11-16"
+  },
+  {
+    "id": "gbr_bedford",
+    "nation": "GBR",
+    "subject": "Bedford QL 3-ton truck (preserved vehicle)",
+    "author": "Alf van Beem",
+    "license": "CC0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Bedford_QL_truck_pic1.JPG",
+    "retrieved": "2026-11-16"
+  },
+  {
+    "id": "gbr_inf_gas",
+    "nation": "GBR",
+    "subject": "BEF soldiers in gas masks on the Maginot Line, November 1939",
+    "author": "Keating G (Lt), War Office official photographer",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Soldiers_of_the_51st_Highland_Division_wearing_gasmasks_while_on_duty_in_a_fort_on_the_Maginot_Line_in_France,_3_November_1939._O229.jpg",
+    "retrieved": "2026-11-16"
+  },
+  {
+    "id": "fra_ms406_fin",
+    "nation": "FRA",
+    "subject": "Morane-Saulnier M.S.406 fighter on an airfield (Finnish-service aircraft)",
+    "author": "Sot.virk. L. Johnsson",
+    "license": "CC BY 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Morane-Saulnier_M.S.406_(SA-kuva_21068).jpg",
+    "retrieved": "2026-11-16"
+  },
+  {
+    "id": "ned_inf_skates",
+    "nation": "NED",
+    "subject": "Armed Dutch soldiers on the frozen water line, winter 1940",
+    "author": "Wiel van der Randen",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Nederlandse_waterlinie,_winter_1940_bewapende_soldaten_op_de_schaats,_SFA001000445_01.jpg",
+    "retrieved": "2026-11-16"
+  }
+]

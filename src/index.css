@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;700;800;900&family=Barlow+Semi+Condensed:wght@400;500;600;700&display=swap');
+
+/*
+ * WORLD AT WAR: FRONTLINES — design tokens & global base (owner: UI agent)
+ * Aesthetic: wartime staff-table. Slate-green blackboard, brass fittings, grease-pencil signal red,
+ * Allied slate blue vs Axis field grey-rust. Headings in Big Shoulders (stencil-industrial),
+ * body in Barlow Semi Condensed (tabular figures for data).
+ */
+:root {
+  --ink: #0b0f0e;
+  --board: #101614;
+  --panel: #151c19;
+  --panel-2: #1b2420;
+  --panel-3: #232e29;
+  --line: #2c3a33;
+  --line-hi: #41564b;
+  --text: #cdd5c8;
+  --text-dim: #8a978c;
+  --text-faint: #5d6a60;
+  --brass: #c9a24a;
+  --brass-dim: #8a6f31;
+  --signal: #e0572f;
+  --ok: #7fae6a;
+  --warn: #e0a83a;
+  --crit: #e0572f;
+  --allies: #6c9bc4;
+  --axis: #c0705a;
+  --neutral: #9a9f8f;
+  --parchment: #d8cfae;
+
+  --display: 'Big Shoulders Display', 'Bahnschrift', 'Arial Narrow', Impact, sans-serif;
+  --body: 'Barlow Semi Condensed', 'Bahnschrift', 'Segoe UI', system-ui, sans-serif;
+
+  --ui-scale: 1;
+  font-size: calc(14px * var(--ui-scale));
+  font-family: var(--body);
+  color: var(--text);
+  background: var(--ink);
+  color-scheme: dark;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html, body, #root { height: 100%; margin: 0; }
+body {
+  background: var(--ink);
+  overflow: hidden;
+  font-variant-numeric: tabular-nums;
+  line-height: 1.35;
+  user-select: none;
+}
+button, input, select, textarea { font: inherit; color: inherit; }
+button { cursor: pointer; }
+::selection { background: var(--brass-dim); color: #fff; }
+:focus-visible { outline: 2px solid var(--brass); outline-offset: 1px; }
+
+* { scrollbar-width: thin; scrollbar-color: var(--line-hi) transparent; }
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-thumb { background: var(--line-hi); border-radius: 0; }
+::-webkit-scrollbar-track { background: transparent; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+}

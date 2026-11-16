@@ -1,0 +1,2733 @@
+[
+ {
+  "id": "ger_pz3_maastricht",
+  "file": "Bundesarchiv Bild 146-1981-084-34, Maastricht, Panzer III in Marschpause.jpg",
+  "nation": "GER",
+  "category": "armoured",
+  "subject": "Panzer III, Maastricht, May 1940",
+  "equipmentKeys": [
+   "tank_medium"
+  ],
+  "tags": [
+   "panzer iii",
+   "pz iii"
+  ],
+  "thumbCrop": {
+   "x": 0.3,
+   "y": 0,
+   "w": 0.69
+  },
+  "recrop": true
+ },
+ {
+  "id": "ger_pz4_d",
+  "file": "Bundesarchiv Bild 101I-124-0211-18, Im Westen, Panzer IV.jpg",
+  "nation": "GER",
+  "category": "armoured",
+  "subject": "Panzer IV Ausf. D, March 1940",
+  "equipmentKeys": [
+   "tank_medium"
+  ],
+  "tags": [
+   "panzer iv",
+   "pz iv"
+  ]
+ },
+ {
+  "id": "ger_pz4_france",
+  "file": "Bundesarchiv Bild 101I-124-0250-39, Im Westen, Panzer IV.jpg",
+  "nation": "GER",
+  "category": "armoured",
+  "subject": "Panzer IV, Western Front 1940",
+  "equipmentKeys": [
+   "tank_medium"
+  ],
+  "tags": [
+   "panzer iv",
+   "pz iv"
+  ]
+ },
+ {
+  "id": "ger_pz2",
+  "file": "Bundesarchiv Bild 101I-382-0248-33A, Im Westen, Panzer II und Panzer I.jpg",
+  "nation": "GER",
+  "category": "armoured",
+  "subject": "Panzer II, Western Front 1940",
+  "equipmentKeys": [
+   "tank_light"
+  ],
+  "tags": [
+   "panzer ii",
+   "pz ii"
+  ]
+ },
+ {
+  "id": "ger_pz38t",
+  "file": "Bundesarchiv Bild 101I-213-0267-12, Russland-Nord, Panzer 38(t) und Infanterie.jpg",
+  "nation": "GER",
+  "category": "armoured",
+  "subject": "Panzer 38(t) with infantry, Eastern Front 1941",
+  "equipmentKeys": [
+   "tank_light"
+  ],
+  "tags": [
+   "panzer 38(t)",
+   "pz 38t"
+  ],
+  "thumbCrop": {
+   "x": 0,
+   "y": 0,
+   "w": 0.64
+  },
+  "recrop": true
+ },
+ {
+  "id": "ger_pz38t_crew",
+  "file": "Bundesarchiv Bild 101I-769-0229-26, Frankreich, Panzersoldat, Panzer 38(t).jpg",
+  "nation": "GER",
+  "category": "armoured",
+  "subject": "Panzer 38(t) and crewman, France 1940",
+  "equipmentKeys": [
+   "tank_light"
+  ],
+  "tags": [
+   "panzer 38(t)"
+  ]
+ },
+ {
+  "id": "ger_sdkfz231",
+  "file": "Bundesarchiv Bild 136-B3092, Herbstmanöver des IX. Armeekorps.2.jpg",
+  "nation": "GER",
+  "category": "recon",
+  "subject": "Six-wheeled heavy armoured car (Sd.Kfz. 231 type), 1930s manoeuvres",
+  "equipmentKeys": [
+   "armoured_car"
+  ],
+  "tags": [
+   "sd.kfz. 231",
+   "armoured car"
+  ]
+ },
+ {
+  "id": "ger_flak88_a",
+  "file": "Bundesarchiv Bild 101I-724-0135-13, Schwere Flak in Russland.jpg",
+  "nation": "GER",
+  "category": "antitank",
+  "subject": "8.8 cm Flak gun in action (also used as anti-tank gun)",
+  "equipmentKeys": [
+   "gun_at",
+   "gun_aa"
+  ],
+  "tags": [
+   "8.8",
+   "flak",
+   "pak"
+  ]
+ },
+ {
+  "id": "ger_flak88_b",
+  "file": "Bundesarchiv Bild 101I-724-0135-11, Schwere Flak in Russland.jpg",
+  "nation": "GER",
+  "category": "antitank",
+  "subject": "8.8 cm Flak gun being emplaced",
+  "equipmentKeys": [
+   "gun_at",
+   "gun_aa"
+  ],
+  "tags": [
+   "8.8",
+   "flak"
+  ]
+ },
+ {
+  "id": "ger_lefh18_a",
+  "file": "Bundesarchiv Bild 101I-031-2415-16, Russland, Soldaten an leichter Haubitze.jpg",
+  "nation": "GER",
+  "category": "artillery",
+  "subject": "10.5 cm leichte Feldhaubitze with crew",
+  "equipmentKeys": [
+   "gun_arty"
+  ],
+  "tags": [
+   "lefh 18",
+   "10.5",
+   "howitzer"
+  ]
+ },
+ {
+  "id": "ger_lefh18_b",
+  "file": "Bundesarchiv Bild 101I-316-1160-21A, Italien, Feldhaubitze in Fahrstellung.jpg",
+  "nation": "GER",
+  "category": "artillery",
+  "subject": "Light field howitzer on the move (horse-drawn)",
+  "equipmentKeys": [
+   "gun_arty"
+  ],
+  "tags": [
+   "howitzer"
+  ]
+ },
+ {
+  "id": "ger_inf_march",
+  "file": "Bundesarchiv Bild 146-1981-060-03, Frankreich, Infanterie auf dem Marsch.jpg",
+  "nation": "GER",
+  "category": "infantry",
+  "subject": "German infantry on the march, France 1940",
+  "equipmentKeys": [
+   "rifle"
+  ],
+  "tags": [
+   "wehrmacht",
+   "riflemen"
+  ]
+ },
+ {
+  "id": "ger_para_oslo",
+  "file": "Bundesarchiv Bild 101I-757-0023-32, Oslo, Fallschirmjäger auf Flugplatz.jpg",
+  "nation": "GER",
+  "category": "paratroop",
+  "subject": "Fallschirmjäger, Oslo airfield, April 1940",
+  "equipmentKeys": [
+   "rifle"
+  ],
+  "tags": [
+   "fallschirmjager",
+   "paratroop"
+  ]
+ },
+ {
+  "id": "ger_para_eben",
+  "file": "Bundesarchiv Billd 146-1971-011-27, Belgien, Eben Emael, Fallschirmjäger.jpg",
+  "nation": "GER",
+  "category": "paratroop",
+  "subject": "Fallschirmjäger at Eben-Emael, Belgium, 1940",
+  "equipmentKeys": [
+   "rifle"
+  ],
+  "tags": [
+   "fallschirmjager",
+   "paratroop"
+  ]
+ },
+ {
+  "id": "ger_blitz",
+  "file": "Bundesarchiv Bild 101I-303-0554-24, Italien, Soldaten auf LKW Opel-Blitz.jpg",
+  "nation": "GER",
+  "category": "logistics",
+  "subject": "Opel Blitz truck carrying troops",
+  "equipmentKeys": [
+   "truck"
+  ],
+  "tags": [
+   "opel blitz"
+  ],
+  "alsoTypes": [
+   "motorised"
+  ]
+ },
+ {
+  "id": "ger_251_a",
+  "file": "Bundesarchiv Bild 101I-792-0138-21A, Russland, Schützenpanzer Sd.Kfz. 251.jpg",
+  "nation": "GER",
+  "category": "mechanised",
+  "subject": "Sd.Kfz. 251 half-track",
+  "equipmentKeys": [
+   "halftrack"
+  ],
+  "tags": [
+   "sd.kfz. 251",
+   "halftrack"
+  ]
+ },
+ {
+  "id": "ger_251_b",
+  "file": "Bundesarchiv Bild 101I-258-1320-06, Südfrankreich, Hafen, Schützenpanzer.jpg",
+  "nation": "GER",
+  "category": "mechanised",
+  "subject": "Sd.Kfz. 251 half-track in a French port",
+  "equipmentKeys": [
+   "halftrack"
+  ],
+  "tags": [
+   "sd.kfz. 251"
+  ]
+ },
+ {
+  "id": "ger_krad_a",
+  "file": "Bundesarchiv Bild 101I-055-1570-06A, Frankreich, Kradschützen in zerstörter Stadt.jpg",
+  "nation": "GER",
+  "category": "motorised",
+  "subject": "Motorcycle riflemen (Kradschützen), France 1940",
+  "equipmentKeys": [
+   "motorcycle"
+  ],
+  "tags": [
+   "kradschutzen",
+   "motorcycle"
+  ]
+ },
+ {
+  "id": "ger_krad_b",
+  "file": "Bundesarchiv Bild 101I-054-1525-09, Frankreich, Kolonne von Kradfahrern mit Beiwagen.jpg",
+  "nation": "GER",
+  "category": "motorised",
+  "subject": "Motorcycle-sidecar column, France 1940",
+  "equipmentKeys": [
+   "motorcycle"
+  ],
+  "tags": [
+   "kradschutzen",
+   "motorcycle"
+  ]
+ },
+ {
+  "id": "ger_stuka",
+  "file": "Junkers Ju 87 B-1 eines unbek. Stuka-Geschwaders in Einsatzvorbereitung.jpg",
+  "nation": "GER",
+  "category": "air_bomber",
+  "subject": "Junkers Ju 87 B-1 Stuka being prepared for a sortie",
+  "equipmentKeys": [
+   "aircraft_bomber"
+  ],
+  "tags": [
+   "stuka",
+   "ju 87"
+  ]
+ },
+ {
+  "id": "ger_stuka_pilots",
+  "file": "Bundesarchiv Bild 101I-383-0338-03, Frankreich, Piloten bei Lagebesprechung vor Ju 87.jpg",
+  "nation": "GER",
+  "category": "air_bomber",
+  "subject": "Ju 87 crews at a briefing, France 1940",
+  "equipmentKeys": [
+   "aircraft_bomber"
+  ],
+  "tags": [
+   "stuka",
+   "ju 87"
+  ]
+ },
+ {
+  "id": "ger_bf109",
+  "file": "Bundesarchiv Bild 101I-058-1784A-14, Frankreich, Jagdflugzeuge Me 109 auf Feldflugplatz.jpg",
+  "nation": "GER",
+  "category": "air_fighter",
+  "subject": "Bf 109 E on a field airfield, France 1940",
+  "equipmentKeys": [
+   "aircraft_fighter"
+  ],
+  "tags": [
+   "bf 109",
+   "me 109"
+  ]
+ },
+ {
+  "id": "ger_he111_a",
+  "file": "Bundesarchiv Bild 101I-343-0694-21, Belgien-Frankreich, Flugzeug Heinkel He 111.jpg",
+  "nation": "GER",
+  "category": "air_bomber",
+  "subject": "Heinkel He 111 in flight, 1940",
+  "equipmentKeys": [
+   "aircraft_bomber"
+  ],
+  "tags": [
+   "he 111"
+  ]
+ },
+ {
+  "id": "ger_he111_b",
+  "file": "Bundesarchiv Bild 101I-385-0560-22, Flugzeug Heinkel He 111.jpg",
+  "nation": "GER",
+  "category": "air_bomber",
+  "subject": "Heinkel He 111 on an airfield",
+  "equipmentKeys": [
+   "aircraft_bomber"
+  ],
+  "tags": [
+   "he 111"
+  ]
+ },
+ {
+  "id": "ger_eng_maastricht",
+  "file": "Bundesarchiv Bild 146-1969-125-75, Maastricht, Pioniere beim Bau einer Brücke.jpg",
+  "nation": "GER",
+  "category": "engineer",
+  "subject": "Pioniere (combat engineers) building a bridge, Maastricht 1940",
+  "equipmentKeys": [
+   "engineers"
+  ],
+  "tags": [
+   "pioniere",
+   "bridging"
+  ]
+ },
+ {
+  "id": "ger_eng_ferry",
+  "file": "Bundesarchiv Bild 146-1991-042-32A, Westfeldzug, Pontonfähre.jpg",
+  "nation": "GER",
+  "category": "engineer",
+  "subject": "Pontoon ferry carrying a Panzer, Western campaign 1940",
+  "equipmentKeys": [
+   "engineers"
+  ],
+  "tags": [
+   "pontoon",
+   "bridging"
+  ]
+ },
+ {
+  "id": "ger_eng_floing",
+  "file": "Bundesarchiv Bild 146-1978-062-24, Floing, Pontonbrücke über die Maas.jpg",
+  "nation": "GER",
+  "category": "engineer",
+  "subject": "German pontoon bridge over the Meuse at Floing, 1940",
+  "equipmentKeys": [
+   "engineers"
+  ],
+  "tags": [
+   "pontoon",
+   "bridging",
+   "meuse"
+  ]
+ },
+ {
+  "id": "ger_hq",
+  "file": "Bundesarchiv Bild 146-1972-045-08, Westfeldzug, Rommel bei Besprechung mit Offizieren.jpg",
+  "nation": "GER",
+  "category": "hq",
+  "subject": "Command post: staff officers in conference, Western campaign 1940",
+  "equipmentKeys": [
+   "staff"
+  ],
+  "tags": [
+   "command post",
+   "conference",
+   "headquarters",
+   "staff"
+  ]
+ },
+ {
+  "id": "ger_cruiser",
+  "file": "Bundesarchiv DVM 10 Bild-23-63-24, Schwerer Kreuzer \"Admiral Hipper\".jpg",
+  "nation": "GER",
+  "category": "naval",
+  "subject": "Heavy cruiser Admiral Hipper",
+  "equipmentKeys": [
+   "warship"
+  ],
+  "tags": [
+   "cruiser"
+  ]
+ },
+ {
+  "id": "fra_b1_museum",
+  "file": "Char B1 bis Flandres.JPG",
+  "nation": "FRA",
+  "category": "armoured",
+  "subject": "Char B1 bis (preserved vehicle)",
+  "equipmentKeys": [
+   "tank_heavy",
+   "tank_medium"
+  ],
+  "tags": [
+   "char b1",
+   "b1 bis"
+  ]
+ },
+ {
+  "id": "fra_b1_1940",
+  "file": "Juin 1940, Aubigny-sur-Nère, Char B1 bis.jpg",
+  "nation": "FRA",
+  "category": "armoured",
+  "subject": "Char B1 bis, June 1940",
+  "equipmentKeys": [
+   "tank_heavy",
+   "tank_medium"
+  ],
+  "tags": [
+   "char b1",
+   "b1 bis"
+  ]
+ },
+ {
+  "id": "fra_s35_a",
+  "file": "SOMUA-S35-Aberdeen.0003hdbq.jpg",
+  "nation": "FRA",
+  "category": "armoured",
+  "subject": "SOMUA S35 (preserved vehicle)",
+  "equipmentKeys": [
+   "tank_medium"
+  ],
+  "tags": [
+   "somua",
+   "s35"
+  ]
+ },
+ {
+  "id": "fra_s35_b",
+  "file": "Bovington 102 Somua S35 1.jpg",
+  "nation": "FRA",
+  "category": "armoured",
+  "subject": "SOMUA S35 (preserved vehicle, Bovington)",
+  "equipmentKeys": [
+   "tank_medium"
+  ],
+  "tags": [
+   "somua",
+   "s35"
+  ]
+ },
+ {
+  "id": "fra_r35_a",
+  "file": "Renault-R-35-latrun-2.jpg",
+  "nation": "FRA",
+  "category": "armoured",
+  "subject": "Renault R35 (preserved vehicle)",
+  "equipmentKeys": [
+   "tank_light"
+  ],
+  "tags": [
+   "renault r35",
+   "r35"
+  ]
+ },
+ {
+  "id": "fra_r35_b",
+  "file": "Renault R35 Berry au bac 13148.jpg",
+  "nation": "FRA",
+  "category": "armoured",
+  "subject": "Renault R35 (preserved vehicle)",
+  "equipmentKeys": [
+   "tank_light"
+  ],
+  "tags": [
+   "renault r35",
+   "r35"
+  ]
+ },
+ {
+  "id": "fra_h39",
+  "file": "Hotchkiss H39 ‘123’ (37632011810).jpg",
+  "nation": "FRA",
+  "category": "armoured",
+  "subject": "Hotchkiss H39 (preserved vehicle)",
+  "equipmentKeys": [
+   "tank_light"
+  ],
+  "tags": [
+   "hotchkiss",
+   "h35",
+   "h39"
+  ]
+ },
+ {
+  "id": "fra_amd_a",
+  "file": "AMD Panhard 178 Saumur.jpg",
+  "nation": "FRA",
+  "category": "recon",
+  "subject": "Panhard 178 (AMD 35) armoured car (preserved vehicle)",
+  "equipmentKeys": [
+   "armoured_car"
+  ],
+  "tags": [
+   "panhard 178",
+   "amd 35"
+  ]
+ },
+ {
+  "id": "fra_amd_b",
+  "file": "Panhard AMD 178 ‘M 99834’ at Musée des Blindés, Saumur, France (53316756186).jpg",
+  "nation": "FRA",
+  "category": "recon",
+  "subject": "Panhard 178 (AMD 35) armoured car, Saumur tank museum",
+  "equipmentKeys": [
+   "armoured_car"
+  ],
+  "tags": [
+   "panhard 178",
+   "amd 35"
+  ]
+ },
+ {
+  "id": "fra_75",
+  "file": "0 Canon de 75 mm modèle 1897 - Musée de l'armée à Paris.JPG",
+  "nation": "FRA",
+  "category": "artillery",
+  "subject": "Canon de 75 modèle 1897 (preserved)",
+  "equipmentKeys": [
+   "gun_arty"
+  ],
+  "tags": [
+   "75mm",
+   "soixante-quinze"
+  ]
+ },
+ {
+  "id": "fra_75b",
+  "file": "Canon de 75 Modèle 1897, MDLA.jpg",
+  "nation": "FRA",
+  "category": "artillery",
+  "subject": "Canon de 75 modèle 1897 (preserved)",
+  "equipmentKeys": [
+   "gun_arty"
+  ],
+  "tags": [
+   "75mm"
+  ]
+ },
+ {
+  "id": "fra_25at",
+  "file": "25 mm SA mle 1934 Saumur 01.jpg",
+  "nation": "FRA",
+  "category": "antitank",
+  "subject": "25 mm Hotchkiss anti-tank gun (SA 34/37 family, preserved)",
+  "equipmentKeys": [
+   "gun_at"
+  ],
+  "tags": [
+   "25mm",
+   "hotchkiss"
+  ]
+ },
+ {
+  "id": "fra_inf",
+  "file": "Bundesarchiv Bild 121-0420, Französischer Kriegsgefangener.jpg",
+  "nation": "FRA",
+  "category": "infantry",
+  "subject": "French colonial infantryman in Adrian helmet, 1940",
+  "equipmentKeys": [
+   "rifle"
+  ],
+  "tags": [
+   "poilu",
+   "infantry"
+  ]
+ },
+ {
+  "id": "fra_ms406",
+  "file": "Morane-Saulnier M.S.406.jpg",
+  "nation": "FRA",
+  "category": "air_fighter",
+  "subject": "Morane-Saulnier M.S.406 fighter",
+  "equipmentKeys": [
+   "aircraft_fighter"
+  ],
+  "tags": [
+   "ms.406",
+   "morane"
+  ],
+  "thumbCrop": {
+   "x": 0.3,
+   "y": 0,
+   "w": 0.38
+  },
+  "recrop": true
+ },
+ {
+  "id": "fra_ms405",
+  "file": "Morane-Saulnier MS.405 1938.jpg",
+  "nation": "FRA",
+  "category": "air_fighter",
+  "subject": "Morane-Saulnier M.S.405 (prototype/forerunner of the M.S.406), 1938",
+  "equipmentKeys": [
+   "aircraft_fighter"
+  ],
+  "tags": [
+   "ms.405",
+   "morane"
+  ]
+ },
+ {
+  "id": "fra_potez63",
+  "file": "Potez 63.11.JPG",
+  "nation": "FRA",
+  "category": "air_bomber",
+  "subject": "Potez 63.11 reconnaissance/bomber aircraft",
+  "equipmentKeys": [
+   "aircraft_bomber"
+  ],
+  "tags": [
+   "potez 63"
+  ]
+ },
+ {
+  "id": "fra_potez63b",
+  "file": "Potez 63.11 at Aleppo 1941.jpg",
+  "nation": "FRA",
+  "category": "air_bomber",
+  "subject": "Potez 63.11, Aleppo 1941",
+  "equipmentKeys": [
+   "aircraft_bomber"
+  ],
+  "tags": [
+   "potez 63"
+  ]
+ },
+ {
+  "id": "gbr_matilda_a",
+  "file": "MatildaII.jpg",
+  "nation": "GBR",
+  "category": "armoured",
+  "subject": "Matilda II infantry tank",
+  "equipmentKeys": [
+   "tank_medium",
+   "tank_heavy"
+  ],
+  "tags": [
+   "matilda"
+  ]
+ },
+ {
+  "id": "gbr_matilda_b",
+  "file": "THE INFANTRY TANK MK II (A12) MATILDA II KY4549B.jpg",
+  "nation": "GBR",
+  "category": "armoured",
+  "subject": "Matilda II (A12) infantry tank",
+  "equipmentKeys": [
+   "tank_medium",
+   "tank_heavy"
+  ],
+  "tags": [
+   "matilda"
+  ]
+ },
+ {
+  "id": "gbr_cruiser1",
+  "file": "Cruiser Tank Mk I.jpg",
+  "nation": "GBR",
+  "category": "armoured",
+  "subject": "Cruiser Tank Mk I (A9)",
+  "equipmentKeys": [
+   "tank_medium"
+  ],
+  "tags": [
+   "cruiser",
+   "a9"
+  ]
+ },
+ {
+  "id": "gbr_cruiser3",
+  "file": "IWM-KID-358-Cruiser-MkIII.jpg",
+  "nation": "GBR",
+  "category": "armoured",
+  "subject": "Cruiser Tank Mk III (A13)",
+  "equipmentKeys": [
+   "tank_medium"
+  ],
+  "tags": [
+   "cruiser",
+   "a13"
+  ],
+  "thumbCrop": {
+   "x": 0.2,
+   "y": 0,
+   "w": 0.49
+  },
+  "recrop": true
+ },
+ {
+  "id": "gbr_cruiser4",
+  "file": "Cruiser Mk IV tanks of 5th Royal Tank Regiment, 1st Armoured Division, driving through a Surrey village, July 1940. H2491.jpg",
+  "nation": "GBR",
+  "category": "armoured",
+  "subject": "Cruiser Mk IV (A13 Mk II) tanks, July 1940",
+  "equipmentKeys": [
+   "tank_medium"
+  ],
+  "tags": [
+   "cruiser",
+   "a13"
+  ]
+ },
+ {
+  "id": "gbr_lt6",
+  "file": "Vickers Mk VI light tanks pass through the village of Linton in Cambridgeshire, 30 August 1940. H3541.jpg",
+  "nation": "GBR",
+  "category": "armoured",
+  "subject": "Vickers Light Tank Mk VI, 1940",
+  "equipmentKeys": [
+   "tank_light"
+  ],
+  "tags": [
+   "light tank",
+   "mk vi"
+  ],
+  "alsoTypes": [
+   "recon"
+  ],
+  "thumbCrop": {
+   "x": 0,
+   "y": 0.25,
+   "w": 0.55
+  },
+  "recrop": true
+ },
+ {
+  "id": "gbr_bren_a",
+  "file": "The British Army in France 1939-40 O733.jpg",
+  "nation": "GBR",
+  "category": "mechanised",
+  "subject": "Bren gun carriers of 13/18th Hussars, Arras, October 1939",
+  "equipmentKeys": [
+   "carrier"
+  ],
+  "tags": [
+   "bren carrier",
+   "universal carrier"
+  ],
+  "alsoTypes": [
+   "recon"
+  ]
+ },
+ {
+  "id": "gbr_bren_b",
+  "file": "The British Army in France 1939-40 O570.jpg",
+  "nation": "GBR",
+  "category": "mechanised",
+  "subject": "Bren gun carrier, 13/18th Hussars, October 1939",
+  "equipmentKeys": [
+   "carrier"
+  ],
+  "tags": [
+   "bren carrier"
+  ],
+  "alsoTypes": [
+   "recon"
+  ]
+ },
+ {
+  "id": "gbr_25pdr_a",
+  "file": "25 pounder Short 1944.jpg",
+  "nation": "GBR",
+  "category": "artillery",
+  "subject": "25-pdr Short field gun, 1944",
+  "equipmentKeys": [
+   "gun_arty"
+  ],
+  "tags": [
+   "25-pdr",
+   "25 pounder"
+  ]
+ },
+ {
+  "id": "gbr_25pdr_b",
+  "file": "The British Army in France 1939-40 O2167.jpg",
+  "nation": "GBR",
+  "category": "artillery",
+  "subject": "25-pdr field gun inspected at Bachy, December 1939",
+  "equipmentKeys": [
+   "gun_arty"
+  ],
+  "tags": [
+   "25-pdr",
+   "25 pounder"
+  ]
+ },
+ {
+  "id": "gbr_2pdr_a",
+  "file": "The British Army in France 1940 F2606.jpg",
+  "nation": "GBR",
+  "category": "antitank",
+  "subject": "2-pdr anti-tank gun, 13th Anti-Tank Regiment, February 1940",
+  "equipmentKeys": [
+   "gun_at"
+  ],
+  "tags": [
+   "2-pdr",
+   "2 pounder"
+  ]
+ },
+ {
+  "id": "gbr_2pdr_b",
+  "file": "The British Army in the United Kingdom 1939-45 H165.jpg",
+  "nation": "GBR",
+  "category": "antitank",
+  "subject": "2-pdr anti-tank guns, Shoeburyness, November 1939",
+  "equipmentKeys": [
+   "gun_at"
+  ],
+  "tags": [
+   "2-pdr",
+   "2 pounder"
+  ]
+ },
+ {
+  "id": "gbr_inf_51hd",
+  "file": "Troops of 51st Highland Division march over a drawbridge into Fort de Sainghain on the Maginot Line, 3 November 1939. O227.jpg",
+  "nation": "GBR",
+  "category": "infantry",
+  "subject": "51st Highland Division troops on the Maginot Line, November 1939",
+  "equipmentKeys": [
+   "rifle"
+  ],
+  "tags": [
+   "bef",
+   "infantry"
+  ]
+ },
+ {
+  "id": "gbr_truck_cs8",
+  "file": "The British Army in France 1939-40 O838.jpg",
+  "nation": "GBR",
+  "category": "logistics",
+  "subject": "Morris-Commercial CS8 15cwt truck and vehicles at a LAD, January 1940",
+  "equipmentKeys": [
+   "truck"
+  ],
+  "tags": [
+   "morris",
+   "truck"
+  ],
+  "alsoTypes": [
+   "motorised"
+  ]
+ },
+ {
+  "id": "gbr_hurricane",
+  "file": "Hawker Hurricane Mk I of No. 85 Squadron RAF, October 1940. CH1501.jpg",
+  "nation": "GBR",
+  "category": "air_fighter",
+  "subject": "Hawker Hurricane Mk I, No. 85 Squadron RAF, 1940",
+  "equipmentKeys": [
+   "aircraft_fighter"
+  ],
+  "tags": [
+   "hurricane"
+  ],
+  "thumbCrop": {
+   "x": 0.02,
+   "y": 0,
+   "w": 0.7
+  },
+  "recrop": true
+ },
+ {
+  "id": "gbr_spitfire",
+  "file": "A Supermarine Spitfire Mk 1 of No. 19 Squadron RAF being re-armed between sorties at Fowlmere, near Duxford, September 1940. CH1367.jpg",
+  "nation": "GBR",
+  "category": "air_fighter",
+  "subject": "Supermarine Spitfire Mk I being re-armed, September 1940",
+  "equipmentKeys": [
+   "aircraft_fighter"
+  ],
+  "tags": [
+   "spitfire"
+  ]
+ },
+ {
+  "id": "gbr_blenheim_a",
+  "file": "Bristol blenheim 1 ExCC.jpg",
+  "nation": "GBR",
+  "category": "air_bomber",
+  "subject": "Bristol Blenheim Mk I bomber",
+  "equipmentKeys": [
+   "aircraft_bomber"
+  ],
+  "tags": [
+   "blenheim"
+  ]
+ },
+ {
+  "id": "gbr_blenheim_b",
+  "file": "Bristol Type 142M Blenheim ExCC.jpg",
+  "nation": "GBR",
+  "category": "air_bomber",
+  "subject": "Bristol Blenheim bomber",
+  "equipmentKeys": [
+   "aircraft_bomber"
+  ],
+  "tags": [
+   "blenheim"
+  ]
+ },
+ {
+  "id": "gbr_destroyer",
+  "file": "HMS Quorn 1940 IWM A 7063.jpg",
+  "nation": "GBR",
+  "category": "naval",
+  "subject": "Hunt-class destroyer HMS Quorn",
+  "equipmentKeys": [
+   "warship"
+  ],
+  "tags": [
+   "destroyer"
+  ]
+ },
+ {
+  "id": "bel_inf_louvain",
+  "file": "The British Army in France and Belgium 1940 F4444.jpg",
+  "nation": "BEL",
+  "category": "infantry",
+  "subject": "Belgian troops resting at Louvain, 14 May 1940 (a British Morris CS8 truck passes)",
+  "equipmentKeys": [
+   "rifle"
+  ],
+  "tags": [
+   "belgian",
+   "infantry"
+  ]
+ },
+ {
+  "id": "ned_inf_guard",
+  "file": "Tweede Wereldoorlog, SFA001000454 01.jpg",
+  "nation": "NED",
+  "category": "infantry",
+  "subject": "Dutch soldiers on guard at a coastal infantry position, winter 1940",
+  "equipmentKeys": [
+   "rifle"
+  ],
+  "tags": [
+   "dutch",
+   "infantry"
+  ]
+ },
+ {
+  "id": "ger_hq_radio",
+  "file": "Bundesarchiv Bild 146-2007-0047, Funkstelle einer Kampffliegergruppe.jpg",
+  "nation": "GER",
+  "category": "hq",
+  "subject": "Signals: radio station of a bomber group headquarters",
+  "equipmentKeys": [
+   "staff"
+  ],
+  "tags": [
+   "signals",
+   "headquarters",
+   "staff",
+   "radio"
+  ]
+ },
+ {
+  "id": "ger_hq_enigma",
+  "file": "Bundesarchiv Bild 101I-769-0229-10A, Frankreich, Guderian, \"Enigma\".jpg",
+  "nation": "GER",
+  "category": "hq",
+  "subject": "Command post vehicle with Enigma cipher machine and signals staff, France 1940",
+  "equipmentKeys": [
+   "staff"
+  ],
+  "tags": [
+   "command post",
+   "signals",
+   "headquarters",
+   "staff",
+   "enigma"
+  ]
+ },
+ {
+  "id": "gbr_hq_ironside",
+  "file": "Ironside and Gort WWII IWM H2.jpg",
+  "nation": "GBR",
+  "category": "hq",
+  "subject": "Headquarters staff: Generals Ironside and Gort over a map",
+  "equipmentKeys": [
+   "staff"
+  ],
+  "tags": [
+   "headquarters",
+   "staff",
+   "command post"
+  ]
+ },
+ {
+  "id": "gbr_hq_lunch",
+  "file": "Lord Gort (centre) at a lunch with senior officers and war correspondents at the Hotel Moderne in Arras, France, 15 October 1939. O454.jpg",
+  "nation": "GBR",
+  "category": "hq",
+  "subject": "BEF headquarters staff officers with Lord Gort, Arras, October 1939",
+  "equipmentKeys": [
+   "staff"
+  ],
+  "tags": [
+   "headquarters",
+   "staff"
+  ]
+ },
+ {
+  "id": "gbr_hq_georges",
+  "file": "Georges and Gort at Arras WWII IWM F 2094.jpg",
+  "nation": "GBR",
+  "category": "hq",
+  "subject": "Allied command: General Georges and Lord Gort at Arras (staff conference)",
+  "equipmentKeys": [
+   "staff"
+  ],
+  "tags": [
+   "headquarters",
+   "staff",
+   "command post"
+  ],
+  "thumbCrop": {
+   "x": 0.4,
+   "y": 0,
+   "w": 0.6
+  },
+  "recrop": true
+ },
+ {
+  "id": "fra_hq_georges",
+  "file": "Georges and Gort at Arras WWII IWM F 2094.jpg",
+  "nation": "FRA",
+  "category": "hq",
+  "subject": "French headquarters staff: General Georges with Lord Gort at Arras",
+  "equipmentKeys": [
+   "staff"
+  ],
+  "tags": [
+   "headquarters",
+   "staff",
+   "command post"
+  ],
+  "thumbCrop": {
+   "x": 0.15,
+   "y": 0,
+   "w": 0.6
+  },
+  "recrop": true
+ },
+ {
+  "id": "ger_inf_stellung",
+  "file": "Bundesarchiv Bild 101I-296-1683-19A, Nordfrankreich, Infanterie in Stellung.jpg",
+  "nation": "GER",
+  "category": "infantry",
+  "subject": "German riflemen in a firing position, northern France",
+  "equipmentKeys": [
+   "rifle"
+  ],
+  "tags": [
+   "wehrmacht",
+   "riflemen"
+  ]
+ },
+ {
+  "id": "ger_inf_maas",
+  "file": "Bundesarchiv Bild 146-1981-064-18A, Westfeldzug, Übergang über die Maas.jpg",
+  "nation": "GER",
+  "category": "infantry",
+  "subject": "German infantry crossing the Meuse, Western campaign 1940",
+  "equipmentKeys": [
+   "rifle"
+  ],
+  "tags": [
+   "wehrmacht",
+   "riflemen",
+   "meuse"
+  ],
+  "alsoTypes": [
+   "engineer"
+  ]
+ },
+ {
+  "id": "ger_heavy_how",
+  "file": "Bundesarchiv Bild 101I-054-1527-14, Frankreich, Artilleristen am Geschütz.jpg",
+  "nation": "GER",
+  "category": "artillery",
+  "subject": "Gun crew with a heavy howitzer, France 1940",
+  "equipmentKeys": [
+   "gun_arty"
+  ],
+  "tags": [
+   "howitzer",
+   "heavy"
+  ]
+ },
+ {
+  "id": "ger_bf110_a",
+  "file": "Bundesarchiv Bild 101I-360-2095-23, Flugzeuge Messerschmitt Me 110.jpg",
+  "nation": "GER",
+  "category": "air_fighter",
+  "subject": "Messerschmitt Bf 110 heavy fighters on an airfield",
+  "equipmentKeys": [
+   "aircraft_fighter"
+  ],
+  "tags": [
+   "bf 110",
+   "me 110",
+   "zerstorer"
+  ]
+ },
+ {
+  "id": "ger_bf110_b",
+  "file": "Bundesarchiv Bild 101I-341-0496-33, Westfrankreich, Theodor Rossiwall an Me 110.jpg",
+  "nation": "GER",
+  "category": "air_fighter",
+  "subject": "Pilot boarding a Messerschmitt Bf 110, western France 1940",
+  "equipmentKeys": [
+   "aircraft_fighter"
+  ],
+  "tags": [
+   "bf 110",
+   "me 110",
+   "zerstorer"
+  ]
+ },
+ {
+  "id": "gbr_hurr_ground",
+  "file": "Hawker Hurricane at Castle Camps - RAF Fighter Command 1940 HU104483.jpg",
+  "nation": "GBR",
+  "category": "air_fighter",
+  "subject": "Hawker Hurricane Mk I on the ground, 1940",
+  "equipmentKeys": [
+   "aircraft_fighter"
+  ],
+  "tags": [
+   "hurricane"
+  ]
+ },
+ {
+  "id": "gbr_hurr_formation",
+  "file": "Hawker Hurricane Mk Is of No. 85 Squadron RAF, October 1940. CH1510.jpg",
+  "nation": "GBR",
+  "category": "air_fighter",
+  "subject": "Hawker Hurricane Mk Is of No. 85 Squadron in formation, 1940",
+  "equipmentKeys": [
+   "aircraft_fighter"
+  ],
+  "tags": [
+   "hurricane"
+  ]
+ },
+ {
+  "id": "gbr_hurr_museum",
+  "file": "Hawker Hurricane, Veteran of Battle of France (9817832126).jpg",
+  "nation": "GBR",
+  "category": "air_fighter",
+  "subject": "Hawker Hurricane Mk I, a Battle of France veteran (preserved aircraft)",
+  "equipmentKeys": [
+   "aircraft_fighter"
+  ],
+  "tags": [
+   "hurricane"
+  ],
+  "thumbCrop": {
+   "x": 0.05,
+   "y": 0,
+   "w": 0.67
+  },
+  "recrop": true
+ },
+ {
+  "id": "gbr_spitfire_flight",
+  "file": "Supermarine Spitfire Ia 'N3200 - QV' (G-CFGJ) (19795184486).jpg",
+  "nation": "GBR",
+  "category": "air_fighter",
+  "subject": "Supermarine Spitfire Mk Ia (preserved aircraft in flight)",
+  "equipmentKeys": [
+   "aircraft_fighter"
+  ],
+  "tags": [
+   "spitfire"
+  ],
+  "thumbCrop": {
+   "x": 0.1,
+   "y": 0,
+   "w": 0.67
+  },
+  "recrop": true
+ },
+ {
+  "id": "gbr_blenheim_museum",
+  "file": "Antwerp Bristol Blenheim Mk.I L6739 (G-BPIV) 01.jpg",
+  "nation": "GBR",
+  "category": "air_bomber",
+  "subject": "Bristol Blenheim Mk I (preserved aircraft)",
+  "equipmentKeys": [
+   "aircraft_bomber"
+  ],
+  "tags": [
+   "blenheim"
+  ]
+ },
+ {
+  "id": "gbr_matilda_museum",
+  "file": "Matilda II Tank, Bovington Tank Museum - Dorset. (5977195830).jpg",
+  "nation": "GBR",
+  "category": "armoured",
+  "subject": "Matilda II infantry tank (preserved vehicle)",
+  "equipmentKeys": [
+   "tank_medium",
+   "tank_heavy"
+  ],
+  "tags": [
+   "matilda"
+  ]
+ },
+ {
+  "id": "gbr_cruiser3_museum",
+  "file": "Cruiser Mk III in the Bovington Tank Museum (side).jpg",
+  "nation": "GBR",
+  "category": "armoured",
+  "subject": "Cruiser Mk III (A13) tank (preserved vehicle)",
+  "equipmentKeys": [
+   "tank_medium"
+  ],
+  "tags": [
+   "cruiser",
+   "a13"
+  ]
+ },
+ {
+  "id": "gbr_bedford",
+  "file": "Bedford QL truck pic1.JPG",
+  "nation": "GBR",
+  "category": "logistics",
+  "subject": "Bedford QL 3-ton truck (preserved vehicle)",
+  "equipmentKeys": [
+   "truck"
+  ],
+  "tags": [
+   "bedford",
+   "truck"
+  ],
+  "alsoTypes": [
+   "motorised"
+  ]
+ },
+ {
+  "id": "gbr_inf_gas",
+  "file": "Soldiers of the 51st Highland Division wearing gasmasks while on duty in a fort on the Maginot Line in France, 3 November 1939. O229.jpg",
+  "nation": "GBR",
+  "category": "infantry",
+  "subject": "BEF soldiers in gas masks on the Maginot Line, November 1939",
+  "equipmentKeys": [
+   "rifle"
+  ],
+  "tags": [
+   "bef",
+   "infantry"
+  ]
+ },
+ {
+  "id": "fra_ms406_fin",
+  "file": "Morane-Saulnier M.S.406 (SA-kuva 21068).jpg",
+  "nation": "FRA",
+  "category": "air_fighter",
+  "subject": "Morane-Saulnier M.S.406 fighter on an airfield (Finnish-service aircraft)",
+  "equipmentKeys": [
+   "aircraft_fighter"
+  ],
+  "tags": [
+   "ms.406",
+   "morane"
+  ]
+ },
+ {
+  "id": "ned_inf_skates",
+  "file": "Nederlandse waterlinie, winter 1940 bewapende soldaten op de schaats, SFA001000445 01.jpg",
+  "nation": "NED",
+  "category": "infantry",
+  "subject": "Armed Dutch soldiers on the frozen water line, winter 1940",
+  "equipmentKeys": [
+   "rifle"
+  ],
+  "tags": [
+   "dutch",
+   "infantry"
+  ]
+ },
+ {
+  "id": "usa_m4_stvith",
+  "file": "M4 Sherman tanks of the U.S. 7th Armored Division near St. Vith, Belgium, 24 January 1945 (148727210).jpg",
+  "nation": "USA",
+  "category": "armoured",
+  "subject": "M4 Sherman tanks, 7th Armored Division, St. Vith, January 1945",
+  "equipmentKeys": [
+   "tank_medium"
+  ],
+  "tags": [
+   "sherman",
+   "m4"
+  ],
+  "thumbCrop": {
+   "x": 0.4,
+   "y": 0.15,
+   "w": 0.6
+  },
+  "recrop": true
+ },
+ {
+  "id": "usa_m5_normandy",
+  "file": "M5 Stuart Normandy.jpg",
+  "nation": "USA",
+  "category": "armoured",
+  "subject": "M5 Stuart light tank with infantry, Normandy 1944",
+  "equipmentKeys": [
+   "tank_light"
+  ],
+  "tags": [
+   "stuart",
+   "m5",
+   "light tank"
+  ],
+  "thumbCrop": {
+   "x": 0,
+   "y": 0,
+   "w": 0.6
+  },
+  "recrop": true
+ },
+ {
+  "id": "usa_m10_bailey",
+  "file": "M10 tank destroyers crossing a Bailey bridge.jpg",
+  "nation": "USA",
+  "category": "antitank",
+  "subject": "M10 tank destroyer crossing a Bailey bridge",
+  "equipmentKeys": [
+   "gun_at"
+  ],
+  "tags": [
+   "m10",
+   "tank destroyer",
+   "wolverine"
+  ]
+ },
+ {
+  "id": "usa_m10_saar",
+  "file": "M10 tank destroyer crossing the Saar, December 1944.jpg",
+  "nation": "USA",
+  "category": "antitank",
+  "subject": "M10 tank destroyer crossing the Saar, December 1944",
+  "equipmentKeys": [
+   "gun_at"
+  ],
+  "tags": [
+   "m10",
+   "tank destroyer"
+  ]
+ },
+ {
+  "id": "usa_m10_dreux",
+  "file": "M10 Wolverine of 628th TDs in Dreux.jpg",
+  "nation": "USA",
+  "category": "antitank",
+  "subject": "M10 Wolverine tank destroyer, 628th TD Battalion, Dreux 1944",
+  "equipmentKeys": [
+   "gun_at"
+  ],
+  "tags": [
+   "m10",
+   "wolverine",
+   "tank destroyer"
+  ]
+ },
+ {
+  "id": "usa_m18_museum",
+  "file": "M18 Hellcat – Kubinka Tank Museum (26177911609).jpg",
+  "nation": "USA",
+  "category": "antitank",
+  "subject": "M18 Hellcat tank destroyer (preserved vehicle)",
+  "equipmentKeys": [
+   "gun_at"
+  ],
+  "tags": [
+   "m18",
+   "hellcat",
+   "tank destroyer"
+  ]
+ },
+ {
+  "id": "usa_m8_kinz",
+  "file": "SC 196666 - An M8 reconnaissance armored car of the 30th Infantry Div., rolls through the streets of Kinzweiler, November 21, 1944.jpg",
+  "nation": "USA",
+  "category": "recon",
+  "subject": "M8 Greyhound armoured car, 30th Infantry Division, Kinzweiler, November 1944",
+  "equipmentKeys": [
+   "armoured_car"
+  ],
+  "tags": [
+   "m8",
+   "greyhound",
+   "armored car"
+  ]
+ },
+ {
+  "id": "usa_m8_museum",
+  "file": "Light Armored Car M8 Greyhound, Army registration number USA 603332 pic2.JPG",
+  "nation": "USA",
+  "category": "recon",
+  "subject": "M8 Greyhound armoured car (preserved vehicle)",
+  "equipmentKeys": [
+   "armoured_car"
+  ],
+  "tags": [
+   "m8",
+   "greyhound"
+  ]
+ },
+ {
+  "id": "usa_m3_ht",
+  "file": "M3 half track.jpg",
+  "nation": "USA",
+  "category": "mechanised",
+  "subject": "M3 half-track",
+  "equipmentKeys": [
+   "halftrack"
+  ],
+  "tags": [
+   "m3",
+   "half-track",
+   "halftrack"
+  ],
+  "alsoTypes": [
+   "motorised"
+  ]
+ },
+ {
+  "id": "usa_at_bastogne",
+  "file": "SC 329955 - Anti-tank gun on guard against attempted German breakthrough on Bastogne. 26 December, 1944. (52594081643).jpg",
+  "nation": "USA",
+  "category": "antitank",
+  "subject": "Anti-tank gun guarding the approaches to Bastogne, 26 December 1944",
+  "equipmentKeys": [
+   "gun_at"
+  ],
+  "tags": [
+   "anti-tank",
+   "at gun",
+   "57 mm"
+  ]
+ },
+ {
+  "id": "usa_101_bastogne",
+  "file": "101st Airborne troops move out of Bastogne.jpg",
+  "nation": "USA",
+  "category": "paratroop",
+  "subject": "101st Airborne troops, Bastogne, December 1944",
+  "equipmentKeys": [
+   "rifle"
+  ],
+  "tags": [
+   "101st",
+   "airborne",
+   "bastogne"
+  ],
+  "alsoTypes": [
+   "infantry"
+  ]
+ },
+ {
+  "id": "usa_101_xmas",
+  "file": "101st Airborne in Bastogne, Christmas 1944.JPG",
+  "nation": "USA",
+  "category": "infantry",
+  "subject": "101st Airborne infantry in ruined Bastogne, Christmas 1944",
+  "equipmentKeys": [
+   "rifle"
+  ],
+  "tags": [
+   "101st",
+   "bastogne"
+  ],
+  "alsoTypes": [
+   "paratroop"
+  ]
+ },
+ {
+  "id": "usa_para_bastogne",
+  "file": "Paratroopers Of The 101st Airborne Moving Up To Bastogne.jpg",
+  "nation": "USA",
+  "category": "paratroop",
+  "subject": "101st Airborne paratroopers moving up to Bastogne",
+  "equipmentKeys": [
+   "rifle"
+  ],
+  "tags": [
+   "101st",
+   "airborne",
+   "paratroopers"
+  ],
+  "alsoTypes": [
+   "infantry"
+  ]
+ },
+ {
+  "id": "usa_para_stvith",
+  "file": "Parachute Infantry Move on Snow-Covered Ground Toward the Front to Keep Up the Pressure Being Applied to the Germans Beyond St. Vith, Belgium - DPLA - 978cb65a6389b5e1d4cc1a8a8dd2b5f9.jpg",
+  "nation": "USA",
+  "category": "infantry",
+  "subject": "US parachute infantry advancing in snow, St. Vith, January 1945",
+  "equipmentKeys": [
+   "rifle"
+  ],
+  "tags": [
+   "airborne",
+   "infantry"
+  ],
+  "alsoTypes": [
+   "paratroop"
+  ]
+ },
+ {
+  "id": "usa_eng_stug",
+  "file": "291st Combat Engineers disarm Sturmgeschütz III.jpg",
+  "nation": "USA",
+  "category": "engineer",
+  "subject": "291st Combat Engineers with a captured Sturmgeschütz III, Ardennes 1945",
+  "equipmentKeys": [
+   "rifle"
+  ],
+  "tags": [
+   "engineers",
+   "combat engineers"
+  ]
+ },
+ {
+  "id": "usa_jeep",
+  "file": "Jeep Willys de la 101st Airborne Division del US Army (28901418600).jpg",
+  "nation": "USA",
+  "category": "logistics",
+  "subject": "Willys Jeep, 101st Airborne markings (re-enactment vehicle)",
+  "equipmentKeys": [
+   "truck"
+  ],
+  "tags": [
+   "jeep",
+   "willys"
+  ],
+  "alsoTypes": [
+   "motorised",
+   "recon"
+  ]
+ },
+ {
+  "id": "usa_gmc",
+  "file": "GMC CCKW 353 (1944) owned by Allan Cornwall pic2.JPG",
+  "nation": "USA",
+  "category": "logistics",
+  "subject": "GMC CCKW 2.5-ton truck (preserved vehicle)",
+  "equipmentKeys": [
+   "truck"
+  ],
+  "tags": [
+   "gmc",
+   "cckw",
+   "truck"
+  ],
+  "alsoTypes": [
+   "motorised"
+  ]
+ },
+ {
+  "id": "usa_p47_luxeuil",
+  "file": "P-47 Thunderbolt at BA116 Luxeuil, 1945.jpg",
+  "nation": "USA",
+  "category": "air_fighter",
+  "subject": "P-47 Thunderbolt fighter, 1945",
+  "equipmentKeys": [
+   "fighter"
+  ],
+  "tags": [
+   "p-47",
+   "thunderbolt"
+  ]
+ },
+ {
+  "id": "usa_p47_62d",
+  "file": "62d Fighter Squadron P-47 Thunderbolts - 1944.jpg",
+  "nation": "USA",
+  "category": "air_fighter",
+  "subject": "62nd Fighter Squadron P-47 Thunderbolts in flight, 1944",
+  "equipmentKeys": [
+   "fighter"
+  ],
+  "tags": [
+   "p-47",
+   "thunderbolt"
+  ]
+ },
+ {
+  "id": "usa_p47_bodney",
+  "file": "RAF Bodney - 352d Fighter Group - P-47 Thunderbolt Dallas Blonde.jpg",
+  "nation": "USA",
+  "category": "air_fighter",
+  "subject": "P-47 Thunderbolt \"Dallas Blonde\", 352nd Fighter Group",
+  "equipmentKeys": [
+   "fighter"
+  ],
+  "tags": [
+   "p-47",
+   "thunderbolt"
+  ]
+ },
+ {
+  "id": "usa_p51",
+  "file": "North American P-51D Mustang of the 362nd Fighter Squadron (USAAF) at Coulommiers, France, circa in 1944 (FRE 13476).jpg",
+  "nation": "USA",
+  "category": "air_fighter",
+  "subject": "P-51D Mustang, 362nd Fighter Squadron, France 1944",
+  "equipmentKeys": [
+   "fighter"
+  ],
+  "tags": [
+   "p-51",
+   "mustang"
+  ]
+ },
+ {
+  "id": "usa_c47_museum",
+  "file": "C-47B “Skytrain” (49871320496).jpg",
+  "nation": "USA",
+  "category": "air_bomber",
+  "subject": "C-47 Skytrain transport aircraft (preserved aircraft)",
+  "equipmentKeys": [
+   "bomber"
+  ],
+  "tags": [
+   "c-47",
+   "skytrain",
+   "transport"
+  ]
+ },
+ {
+  "id": "usa_hq_mcauliffe",
+  "file": "Brig. Gen. Anthony McAuliffe and his staff gathered inside Bastogne's Heintz Barracks for Christmas dinner Dec. 25th, 1944.jpg",
+  "nation": "USA",
+  "category": "hq",
+  "subject": "Brig. Gen. McAuliffe and the 101st Airborne headquarters staff, Bastogne, Christmas 1944",
+  "equipmentKeys": [
+   "staff"
+  ],
+  "tags": [
+   "headquarters",
+   "staff",
+   "command post"
+  ]
+ },
+ {
+  "id": "ger_tiger2_budapest",
+  "file": "Bundesarchiv Bild 101I-680-8282A-03A, Budapest, Panzer VI (Tiger II, Königstiger).jpg",
+  "nation": "GER",
+  "category": "armoured",
+  "subject": "Tiger II, Budapest 1944",
+  "equipmentKeys": [
+   "tank_heavy"
+  ],
+  "tags": [
+   "tiger ii",
+   "konigstiger",
+   "tiger"
+  ]
+ },
+ {
+  "id": "ger_tiger2_canteloup",
+  "file": "Bundesarchiv Bild 101I-721-0359-37, Canteloup, Panzer VI (Tiger II, Königstiger).jpg",
+  "nation": "GER",
+  "category": "armoured",
+  "subject": "Tiger II, Normandy 1944",
+  "equipmentKeys": [
+   "tank_heavy"
+  ],
+  "tags": [
+   "tiger ii",
+   "konigstiger",
+   "tiger"
+  ]
+ },
+ {
+  "id": "ger_panther_hay",
+  "file": "Bundesarchiv Bild 101I-477-2124-06A, Italien, Panzer V (Panther).jpg",
+  "nation": "GER",
+  "category": "armoured",
+  "subject": "Panther camouflaged with straw, Italy 1944",
+  "equipmentKeys": [
+   "tank_medium",
+   "tank_heavy"
+  ],
+  "tags": [
+   "panther"
+  ]
+ },
+ {
+  "id": "ger_panther_italy",
+  "file": "Bundesarchiv Bild 101I-478-2164-28, Italien, Panzer V (Panther) im Gelände.jpg",
+  "nation": "GER",
+  "category": "armoured",
+  "subject": "Panther in the field, Italy 1944",
+  "equipmentKeys": [
+   "tank_medium",
+   "tank_heavy"
+  ],
+  "tags": [
+   "panther"
+  ]
+ },
+ {
+  "id": "ger_stug_skirts",
+  "file": "Bundesarchiv Bild 101I-154-1986-05, Russland, Sturmgeschütz III mit Seitenschürzen.jpg",
+  "nation": "GER",
+  "category": "armoured",
+  "subject": "Sturmgeschütz III with side skirts, Russia",
+  "equipmentKeys": [
+   "tank_medium"
+  ],
+  "tags": [
+   "stug",
+   "sturmgeschutz"
+  ]
+ },
+ {
+  "id": "ger_stug_italy",
+  "file": "Bundesarchiv Bild 101I-310-0884-08, Italien, Sturmgeschütz III auf Landstraße.jpg",
+  "nation": "GER",
+  "category": "armoured",
+  "subject": "Sturmgeschütz III on a road, Italy 1944",
+  "equipmentKeys": [
+   "tank_medium"
+  ],
+  "tags": [
+   "stug",
+   "sturmgeschutz"
+  ]
+ },
+ {
+  "id": "ger_stug_stalingrad",
+  "file": "Bundesarchiv Bild 183-B22188, Russland, Kampf um Stalingrad, Sturmgeschütz.jpg",
+  "nation": "GER",
+  "category": "armoured",
+  "subject": "Sturmgeschütz III with infantry, Stalingrad, October 1942",
+  "equipmentKeys": [
+   "tank_medium"
+  ],
+  "tags": [
+   "stug",
+   "sturmgeschutz",
+   "stalingrad"
+  ]
+ },
+ {
+  "id": "ger_stug_stalingrad2",
+  "file": "Bundesarchiv Bild 183-J21826, Russland, Kampf um Stalingrad, Sturmgeschütz.jpg",
+  "nation": "GER",
+  "category": "armoured",
+  "subject": "Sturmgeschütz III advancing, Stalingrad sector 1942",
+  "equipmentKeys": [
+   "tank_medium"
+  ],
+  "tags": [
+   "stug",
+   "sturmgeschutz",
+   "stalingrad"
+  ]
+ },
+ {
+  "id": "ger_pz4_late",
+  "file": "Bundesarchiv Bild 101I-696-0427-03, Mittlere Ostfront (Polen), Panzer IV.jpg",
+  "nation": "GER",
+  "category": "armoured",
+  "subject": "Panzer IV with skirt armour, Eastern Front, August 1944",
+  "equipmentKeys": [
+   "tank_medium"
+  ],
+  "tags": [
+   "panzer iv",
+   "pz iv"
+  ]
+ },
+ {
+  "id": "ger_pz4_woods",
+  "file": "Bundesarchiv Bild 101I-695-0406-03, Russland, Panzer IV am Waldrand.jpg",
+  "nation": "GER",
+  "category": "armoured",
+  "subject": "Panzer IV Ausf. H at a forest edge, Russia",
+  "equipmentKeys": [
+   "tank_medium"
+  ],
+  "tags": [
+   "panzer iv",
+   "pz iv"
+  ]
+ },
+ {
+  "id": "ger_pz4_africa",
+  "file": "Bundesarchiv Bild 101I-788-0017-19, Nordafrika, Panzer IV und Krad.jpg",
+  "nation": "GER",
+  "category": "armoured",
+  "subject": "Panzer IV and motorcyclist, North Africa 1943",
+  "equipmentKeys": [
+   "tank_medium"
+  ],
+  "tags": [
+   "panzer iv",
+   "afrika korps"
+  ],
+  "thumbCrop": {
+   "x": 0.3,
+   "y": 0.1,
+   "w": 0.6
+  },
+  "recrop": true
+ },
+ {
+  "id": "ger_pz3_africa",
+  "file": "Bundesarchiv Bild 101I-782-0015-03A, Nordafrika, Panzer III in Fahrt.jpg",
+  "nation": "GER",
+  "category": "armoured",
+  "subject": "Panzer III, North Africa",
+  "equipmentKeys": [
+   "tank_medium"
+  ],
+  "tags": [
+   "panzer iii",
+   "afrika korps"
+  ]
+ },
+ {
+  "id": "ger_spah_africa",
+  "file": "Bundesarchiv Bild 101I-424-0269-17, Nordafrika, Spähpanzer.jpg",
+  "nation": "GER",
+  "category": "recon",
+  "subject": "Armoured reconnaissance car with radio mast, North Africa",
+  "equipmentKeys": [
+   "armoured_car"
+  ],
+  "tags": [
+   "spahpanzer",
+   "armoured car",
+   "sd.kfz",
+   "afrika korps"
+  ]
+ },
+ {
+  "id": "ger_flak_africa",
+  "file": "Bundesarchiv Bild 101I-443-1599-20, Nordafrika, bei Bir Hacheim, feuernde Flak.jpg",
+  "nation": "GER",
+  "category": "antitank",
+  "subject": "8.8 cm Flak gun firing near Bir Hacheim, North Africa",
+  "equipmentKeys": [
+   "gun_at",
+   "gun_aa"
+  ],
+  "tags": [
+   "8.8",
+   "flak",
+   "afrika korps"
+  ]
+ },
+ {
+  "id": "ger_bf109_africa",
+  "file": "Bundesarchiv Bild 101I-428-0485-13A, Nordafrika, Me 109 vor Einsatz.jpg",
+  "nation": "GER",
+  "category": "air_fighter",
+  "subject": "Bf 109 ground crew before a sortie, North Africa 1941",
+  "equipmentKeys": [
+   "fighter"
+  ],
+  "tags": [
+   "bf 109",
+   "me 109"
+  ]
+ },
+ {
+  "id": "ger_bf109_paint",
+  "file": "Bundesarchiv Bild 101I-431-0710-29A, Nordafrika, Flugzeug Messerschmitt Me 109.jpg",
+  "nation": "GER",
+  "category": "air_fighter",
+  "subject": "Bf 109 being painted, North Africa",
+  "equipmentKeys": [
+   "fighter"
+  ],
+  "tags": [
+   "bf 109",
+   "me 109"
+  ]
+ },
+ {
+  "id": "ger_ju87_africa",
+  "file": "Bundesarchiv Bild 146-1981-064-16A, Nordafrika, Demontage einer Junkers Ju 87.jpg",
+  "nation": "GER",
+  "category": "air_bomber",
+  "subject": "Junkers Ju 87 Stuka being serviced, North Africa",
+  "equipmentKeys": [
+   "bomber"
+  ],
+  "tags": [
+   "ju 87",
+   "stuka"
+  ]
+ },
+ {
+  "id": "ger_inf_stalingrad",
+  "file": "Bundesarchiv Bild 183-B22173, Russland, Kampf um Stalingrad, Infanterist.jpg",
+  "nation": "GER",
+  "category": "infantry",
+  "subject": "German infantryman, Stalingrad, 1942",
+  "equipmentKeys": [
+   "rifle"
+  ],
+  "tags": [
+   "stalingrad",
+   "landser"
+  ]
+ },
+ {
+  "id": "ger_inf_flame",
+  "file": "Bundesarchiv Bild 101I-083-3371-11, Stalingrad, Infanterie mit Flammenwerfer.jpg",
+  "nation": "GER",
+  "category": "engineer",
+  "subject": "Assault pioneers with flamethrower, Stalingrad",
+  "equipmentKeys": [
+   "rifle"
+  ],
+  "tags": [
+   "flamethrower",
+   "pioneers",
+   "stalingrad"
+  ],
+  "alsoTypes": [
+   "infantry"
+  ]
+ },
+ {
+  "id": "ger_inf_house",
+  "file": "Bundesarchiv Bild 101I-617-2571-04, Stalingrad, Soldaten beim Häuserkampf.jpg",
+  "nation": "GER",
+  "category": "infantry",
+  "subject": "German soldiers in house fighting, Stalingrad",
+  "equipmentKeys": [
+   "rifle"
+  ],
+  "tags": [
+   "stalingrad",
+   "urban"
+  ]
+ },
+ {
+  "id": "ger_inf_ardennes",
+  "file": "Bundesarchiv Bild 183-1985-0104-501, Ardennenoffensive, Grenadiere in Luxemburg.jpg",
+  "nation": "GER",
+  "category": "infantry",
+  "subject": "Volksgrenadiere, Ardennes offensive, December 1944",
+  "equipmentKeys": [
+   "rifle"
+  ],
+  "tags": [
+   "volksgrenadier",
+   "ardennes",
+   "grenadiers"
+  ]
+ },
+ {
+  "id": "ger_inf_ardennes2",
+  "file": "Bundesarchiv Bild 183-J28510, Ardennenoffensive, deutsche Infanterie geht im Wald vor..jpg",
+  "nation": "GER",
+  "category": "infantry",
+  "subject": "German infantry advancing through woods, Ardennes 1944",
+  "equipmentKeys": [
+   "rifle"
+  ],
+  "tags": [
+   "ardennes",
+   "grenadiers"
+  ]
+ },
+ {
+  "id": "ger_251_ardennes",
+  "file": "Bundesarchiv Bild 183-J28519, Ardennenoffensive, Soldaten in Schützenpanzer.jpg",
+  "nation": "GER",
+  "category": "mechanised",
+  "subject": "Grenadiers in a half-track, Ardennes offensive 1944",
+  "equipmentKeys": [
+   "halftrack"
+  ],
+  "tags": [
+   "sd.kfz. 251",
+   "ardennes"
+  ]
+ },
+ {
+  "id": "ger_hq_ardennes",
+  "file": "Bundesarchiv Bild 183-J28477, Ardennenoffensive, Lagebesprechnung.jpg",
+  "nation": "GER",
+  "category": "hq",
+  "subject": "Officers' map conference (command post), Ardennes offensive 1944",
+  "equipmentKeys": [
+   "staff"
+  ],
+  "tags": [
+   "headquarters",
+   "staff",
+   "command post"
+  ]
+ },
+ {
+  "id": "ger_para_vw",
+  "file": "Bundesarchiv Bild 101I-585-2182-31A, Frankreich, Fallschirmjäger auf VW-Kübel.jpg",
+  "nation": "GER",
+  "category": "paratroop",
+  "subject": "Fallschirmjäger on a Kübelwagen, 1944",
+  "equipmentKeys": [
+   "rifle"
+  ],
+  "tags": [
+   "fallschirmjager",
+   "paratroop"
+  ]
+ },
+ {
+  "id": "ger_para_italy",
+  "file": "Bundesarchiv Bild 101I-575-1822-22A, Italien, Fallschirmjäger bei Besprechung.jpg",
+  "nation": "GER",
+  "category": "paratroop",
+  "subject": "Fallschirmjäger conference, Italy 1944",
+  "equipmentKeys": [
+   "rifle"
+  ],
+  "tags": [
+   "fallschirmjager",
+   "paratroop"
+  ]
+ },
+ {
+  "id": "ger_pak_denmark",
+  "file": "Bundesarchiv Bild 101I-755-0194-08, Dänemark, Pak an der Küste.jpg",
+  "nation": "GER",
+  "category": "antitank",
+  "subject": "Anti-tank gun on a coast, 1940",
+  "equipmentKeys": [
+   "gun_at"
+  ],
+  "tags": [
+   "pak",
+   "anti-tank"
+  ]
+ },
+ {
+  "id": "ger_pak_75",
+  "file": "Bundesarchiv Bild 101I-024-3543-09, Ostfront, Soldaten an 7,5cm Pak.jpg",
+  "nation": "GER",
+  "category": "antitank",
+  "subject": "7.5 cm Pak 40 crew, Eastern Front",
+  "equipmentKeys": [
+   "gun_at"
+  ],
+  "tags": [
+   "pak 40",
+   "7.5",
+   "anti-tank"
+  ]
+ },
+ {
+  "id": "sov_katyusha_battery",
+  "file": "RIAN archive 303890 A battery of Katyusha during the 1941-1945 Great Patriotic War.jpg",
+  "nation": "SOV",
+  "category": "artillery",
+  "subject": "Battery of Katyusha rocket launchers in action",
+  "equipmentKeys": [
+   "gun_arty",
+   "rocket"
+  ],
+  "tags": [
+   "katyusha",
+   "bm-13"
+  ]
+ },
+ {
+  "id": "sov_katyusha_museum",
+  "file": "Katyusha Rocket Launcher - Artillery Museum - St. Petersburg - Russia.jpg",
+  "nation": "SOV",
+  "category": "artillery",
+  "subject": "BM-13 Katyusha rocket launcher (preserved vehicle)",
+  "equipmentKeys": [
+   "gun_arty",
+   "rocket"
+  ],
+  "tags": [
+   "katyusha",
+   "bm-13"
+  ]
+ },
+ {
+  "id": "sov_hq_stalingrad",
+  "file": "RIAN archive 882837 The defenders of Stalingrad.jpg",
+  "nation": "SOV",
+  "category": "hq",
+  "subject": "Stalingrad Front military council at a map table (headquarters staff)",
+  "equipmentKeys": [
+   "staff"
+  ],
+  "tags": [
+   "headquarters",
+   "staff",
+   "command post"
+  ]
+ },
+ {
+  "id": "sov_naval_inf",
+  "file": "Автоматчики морской пехоты ведут бой.jpg",
+  "nation": "SOV",
+  "category": "infantry",
+  "subject": "Soviet naval infantry submachine-gunners in action",
+  "equipmentKeys": [
+   "rifle"
+  ],
+  "tags": [
+   "naval infantry",
+   "marines"
+  ]
+ },
+ {
+  "id": "sov_cavalry",
+  "file": "Конная атака.jpg",
+  "nation": "SOV",
+  "category": "recon",
+  "subject": "Soviet cavalry attack",
+  "equipmentKeys": [
+   "horse"
+  ],
+  "tags": [
+   "cavalry"
+  ],
+  "alsoTypes": [
+   "infantry"
+  ]
+ },
+ {
+  "id": "sov_kv1_crew",
+  "file": "KV-1 tank crew (17th Tank Bridage).jpg",
+  "nation": "SOV",
+  "category": "armoured",
+  "subject": "KV-1 heavy tank and crew, 17th Tank Brigade",
+  "equipmentKeys": [
+   "tank_heavy"
+  ],
+  "tags": [
+   "kv-1",
+   "kv"
+  ]
+ },
+ {
+  "id": "sov_t34_museum",
+  "file": "T-34-76 Sevastopol 2009 G1.jpg",
+  "nation": "SOV",
+  "category": "armoured",
+  "subject": "T-34-76 medium tank (monument vehicle)",
+  "equipmentKeys": [
+   "tank_medium"
+  ],
+  "tags": [
+   "t-34",
+   "t-34-76"
+  ]
+ },
+ {
+  "id": "sov_t70_museum",
+  "file": "T-70, technical museum, Togliatti-1.jpg",
+  "nation": "SOV",
+  "category": "armoured",
+  "subject": "T-70 light tank (preserved vehicle)",
+  "equipmentKeys": [
+   "tank_light"
+  ],
+  "tags": [
+   "t-70"
+  ]
+ },
+ {
+  "id": "sov_kv1_museum",
+  "file": "KV-1 m 1942 Parola tank museum.jpg",
+  "nation": "SOV",
+  "category": "armoured",
+  "subject": "KV-1 heavy tank (preserved vehicle, Finnish-captured, Parola)",
+  "equipmentKeys": [
+   "tank_heavy"
+  ],
+  "tags": [
+   "kv-1",
+   "kv"
+  ]
+ },
+ {
+  "id": "sov_bt7_museum",
+  "file": "BT-7 in the Togliatti Technical Museum 03.jpg",
+  "nation": "SOV",
+  "category": "armoured",
+  "subject": "BT-7 light tank (preserved vehicle)",
+  "equipmentKeys": [
+   "tank_light"
+  ],
+  "tags": [
+   "bt-7"
+  ]
+ },
+ {
+  "id": "sov_su76",
+  "file": "SU-76 spb.JPG",
+  "nation": "SOV",
+  "category": "artillery",
+  "subject": "SU-76 self-propelled gun (preserved vehicle)",
+  "equipmentKeys": [
+   "gun_arty",
+   "tank_light"
+  ],
+  "tags": [
+   "su-76"
+  ],
+  "alsoTypes": [
+   "antitank",
+   "armoured"
+  ]
+ },
+ {
+  "id": "sov_zis3",
+  "file": "76 mm divisional gun M1942 (ZiS-3) 001.jpg",
+  "nation": "SOV",
+  "category": "artillery",
+  "subject": "76 mm divisional gun ZiS-3 (preserved gun)",
+  "equipmentKeys": [
+   "gun_arty",
+   "gun_at"
+  ],
+  "tags": [
+   "zis-3",
+   "76 mm"
+  ],
+  "alsoTypes": [
+   "antitank"
+  ]
+ },
+ {
+  "id": "sov_il2_wreck",
+  "file": "Szovjet IL2 Sturmovik csatarepülőgép roncsa. Fortepan 30244.jpg",
+  "nation": "SOV",
+  "category": "air_bomber",
+  "subject": "Wrecked Il-2 Sturmovik, displayed in a captured-aircraft exhibition",
+  "equipmentKeys": [
+   "bomber"
+  ],
+  "tags": [
+   "il-2",
+   "sturmovik"
+  ]
+ },
+ {
+  "id": "ita_m13_desert",
+  "file": "Italian M13-40 tank in the desert 1942.jpg",
+  "nation": "ITA",
+  "category": "armoured",
+  "subject": "Italian M13/40 tank in the desert, 1942",
+  "equipmentKeys": [
+   "tank_medium"
+  ],
+  "tags": [
+   "m13/40",
+   "m13"
+  ],
+  "thumbCrop": {
+   "x": 0.28,
+   "y": 0.2,
+   "w": 0.45
+  },
+  "recrop": true
+ },
+ {
+  "id": "ita_m13_surrender",
+  "file": "The British Army in North Africa 1941 E7304.jpg",
+  "nation": "ITA",
+  "category": "armoured",
+  "subject": "Italian M13/40 tank crew surrendering near Gazala, 1941",
+  "equipmentKeys": [
+   "tank_medium"
+  ],
+  "tags": [
+   "m13/40",
+   "m13"
+  ],
+  "thumbCrop": {
+   "x": 0.25,
+   "y": 0.1,
+   "w": 0.7
+  },
+  "recrop": true
+ },
+ {
+  "id": "ita_m13_museum",
+  "file": "M13-40.jpg",
+  "nation": "ITA",
+  "category": "armoured",
+  "subject": "M13/40 medium tank (preserved vehicle)",
+  "equipmentKeys": [
+   "tank_medium"
+  ],
+  "tags": [
+   "m13/40",
+   "m13"
+  ]
+ },
+ {
+  "id": "ita_l3_museum",
+  "file": "Carro Veloce CV-35 (L3-35) - Patriot Museum, Kubinka (37687204344).jpg",
+  "nation": "ITA",
+  "category": "armoured",
+  "subject": "L3/35 Carro Veloce tankette (preserved vehicle)",
+  "equipmentKeys": [
+   "tank_light"
+  ],
+  "tags": [
+   "l3",
+   "cv-35",
+   "tankette"
+  ]
+ },
+ {
+  "id": "ita_gun7527",
+  "file": "Cannone 75-27 Mod. 1912.JPG",
+  "nation": "ITA",
+  "category": "artillery",
+  "subject": "Cannone da 75/27 Mod. 1911 field gun",
+  "equipmentKeys": [
+   "gun_arty"
+  ],
+  "tags": [
+   "75/27",
+   "cannone"
+  ]
+ },
+ {
+  "id": "ita_gun7527_b",
+  "file": "Cannone 75 27 Bergamo.jpg",
+  "nation": "ITA",
+  "category": "artillery",
+  "subject": "Cannone da 75/27 field gun (preserved gun)",
+  "equipmentKeys": [
+   "gun_arty"
+  ],
+  "tags": [
+   "75/27",
+   "cannone"
+  ]
+ },
+ {
+  "id": "ita_breda20",
+  "file": "Cannone Mitragliera da 20mm mod.35.jpg",
+  "nation": "ITA",
+  "category": "antitank",
+  "subject": "Breda 20 mm Mod. 35 gun (preserved gun)",
+  "equipmentKeys": [
+   "gun_aa",
+   "gun_at"
+  ],
+  "tags": [
+   "breda",
+   "20 mm"
+  ]
+ },
+ {
+  "id": "ita_bersaglieri",
+  "file": "Bundesarchiv B 145 Bild-F016230-0009A, Bersaglieri in Jugoslawien.jpg",
+  "nation": "ITA",
+  "category": "infantry",
+  "subject": "Bersaglieri, Yugoslavia 1941",
+  "equipmentKeys": [
+   "rifle"
+  ],
+  "tags": [
+   "bersaglieri"
+  ]
+ },
+ {
+  "id": "ita_gunners",
+  "file": "Bundesarchiv Bild 101I-316-1198-27, Italien, italienische Soldaten mit Geschütz.jpg",
+  "nation": "ITA",
+  "category": "artillery",
+  "subject": "Italian soldiers with a field gun",
+  "equipmentKeys": [
+   "gun_arty"
+  ],
+  "tags": [
+   "gun crew"
+  ]
+ },
+ {
+  "id": "ita_cr42",
+  "file": "Fiat CR 42 Falco fighter parked.jpg",
+  "nation": "ITA",
+  "category": "air_fighter",
+  "subject": "Fiat CR.42 Falco fighter",
+  "equipmentKeys": [
+   "fighter"
+  ],
+  "tags": [
+   "cr.42",
+   "falco"
+  ]
+ },
+ {
+  "id": "rou_inf_a",
+  "file": "Bundesarchiv Bild 101I-218-0501-27, Russland-Süd, rumänische Soldaten.jpg",
+  "nation": "ROU",
+  "category": "infantry",
+  "subject": "Romanian soldiers, southern Russia 1942",
+  "equipmentKeys": [
+   "rifle"
+  ],
+  "tags": [
+   "romanian"
+  ]
+ },
+ {
+  "id": "rou_inf_cav",
+  "file": "Bundesarchiv Bild 101I-218-0502-32, Russland-Süd, rumänische Soldaten.jpg",
+  "nation": "ROU",
+  "category": "recon",
+  "subject": "Romanian cavalry and infantry, southern Russia 1942",
+  "equipmentKeys": [
+   "horse"
+  ],
+  "tags": [
+   "romanian",
+   "cavalry"
+  ],
+  "alsoTypes": [
+   "infantry"
+  ]
+ },
+ {
+  "id": "rou_inf_march",
+  "file": "Bundesarchiv N 1603 Bild-241, Rumänische Infanterie auf dem Marsch.jpg",
+  "nation": "ROU",
+  "category": "infantry",
+  "subject": "Romanian infantry on the march",
+  "equipmentKeys": [
+   "rifle"
+  ],
+  "tags": [
+   "romanian"
+  ]
+ },
+ {
+  "id": "rou_r2",
+  "file": "Lehký tank LT vz. 35.jpg",
+  "nation": "ROU",
+  "category": "armoured",
+  "subject": "LT vz.35 light tank, the type Romania used as the R-2 (preserved vehicle)",
+  "equipmentKeys": [
+   "tank_light"
+  ],
+  "tags": [
+   "r-2",
+   "lt vz.35",
+   "vz.35"
+  ]
+ },
+ {
+  "id": "gbr_crusader_battle",
+  "file": "The British Army in North Africa 1941 E6752.jpg",
+  "nation": "GBR",
+  "category": "armoured",
+  "subject": "Crusader tank passing a burning Panzer IV, Western Desert, November 1941",
+  "equipmentKeys": [
+   "tank_medium",
+   "tank_light"
+  ],
+  "tags": [
+   "crusader"
+  ],
+  "thumbCrop": {
+   "x": 0,
+   "y": 0.2,
+   "w": 0.55
+  },
+  "recrop": true
+ },
+ {
+  "id": "gbr_crusader_trans",
+  "file": "The British Army in North Africa 1941 E7014.jpg",
+  "nation": "GBR",
+  "category": "armoured",
+  "subject": "Crusader tank on a transporter, Western Desert, 1941",
+  "equipmentKeys": [
+   "tank_medium",
+   "tank_light"
+  ],
+  "tags": [
+   "crusader"
+  ]
+ },
+ {
+  "id": "gbr_crusader_pair",
+  "file": "IWM-E-6724-Crusader-19411126.jpg",
+  "nation": "GBR",
+  "category": "armoured",
+  "subject": "Crusader tanks, Western Desert, November 1941",
+  "equipmentKeys": [
+   "tank_medium",
+   "tank_light"
+  ],
+  "tags": [
+   "crusader"
+  ]
+ },
+ {
+  "id": "gbr_crusader_museum",
+  "file": "Crusader MkIII ‘T126272’ (36590905746).jpg",
+  "nation": "GBR",
+  "category": "armoured",
+  "subject": "Crusader Mk III cruiser tank (preserved vehicle)",
+  "equipmentKeys": [
+   "tank_medium",
+   "tank_light"
+  ],
+  "tags": [
+   "crusader"
+  ]
+ },
+ {
+  "id": "gbr_valentine_desert",
+  "file": "The British Army in North Africa 1941 E7002.jpg",
+  "nation": "GBR",
+  "category": "armoured",
+  "subject": "Valentine tank under repair, Western Desert, December 1941",
+  "equipmentKeys": [
+   "tank_medium"
+  ],
+  "tags": [
+   "valentine"
+  ],
+  "thumbCrop": {
+   "x": 0.15,
+   "y": 0.2,
+   "w": 0.6
+  },
+  "recrop": true
+ },
+ {
+  "id": "gbr_valentine_museum",
+  "file": "Tank Infantry Mark III, Valentine IX (4536617118).jpg",
+  "nation": "GBR",
+  "category": "armoured",
+  "subject": "Valentine IX infantry tank (preserved vehicle)",
+  "equipmentKeys": [
+   "tank_medium"
+  ],
+  "tags": [
+   "valentine"
+  ]
+ },
+ {
+  "id": "gbr_stuart_museum",
+  "file": "M3A1 Stuart III ‘T37765’ “Clementine” (44431850175).jpg",
+  "nation": "GBR",
+  "category": "armoured",
+  "subject": "M3A1 Stuart III in British desert colours (preserved vehicle, re-enactment)",
+  "equipmentKeys": [
+   "tank_light"
+  ],
+  "tags": [
+   "stuart"
+  ]
+ },
+ {
+  "id": "gbr_carrier_desert",
+  "file": "The British Army in North Africa 1941 E6924.jpg",
+  "nation": "GBR",
+  "category": "mechanised",
+  "subject": "Bren gun carrier passing a burning Panzer III, December 1941",
+  "equipmentKeys": [
+   "carrier"
+  ],
+  "tags": [
+   "bren carrier",
+   "universal carrier"
+  ],
+  "alsoTypes": [
+   "recon"
+  ],
+  "thumbCrop": {
+   "x": 0.05,
+   "y": 0.2,
+   "w": 0.8
+  },
+  "recrop": true
+ },
+ {
+  "id": "ind_carrier_desert",
+  "file": "The British Army in North Africa 1941 E6924.jpg",
+  "nation": "IND",
+  "category": "mechanised",
+  "subject": "Indian Bren gun carrier passing a burning Panzer III, December 1941",
+  "equipmentKeys": [
+   "carrier"
+  ],
+  "tags": [
+   "bren carrier"
+  ],
+  "alsoTypes": [
+   "recon"
+  ],
+  "thumbCrop": {
+   "x": 0.05,
+   "y": 0.2,
+   "w": 0.8
+  },
+  "recrop": true
+ },
+ {
+  "id": "nzl_inf_matilda",
+  "file": "The British Army in North Africa 1941 E6920.jpg",
+  "nation": "NZL",
+  "category": "infantry",
+  "subject": "New Zealand infantry with a Matilda tank at Tobruk, December 1941",
+  "equipmentKeys": [
+   "rifle"
+  ],
+  "tags": [
+   "new zealand",
+   "tobruk"
+  ]
+ },
+ {
+  "id": "aus_inf_bardia",
+  "file": "Commonwealth Forces in North Africa 1941 E1573.jpg",
+  "nation": "AUS",
+  "category": "infantry",
+  "subject": "Australian infantry advancing at Bardia, January 1941",
+  "equipmentKeys": [
+   "rifle"
+  ],
+  "tags": [
+   "australian",
+   "bardia"
+  ]
+ },
+ {
+  "id": "aus_inf_wadi",
+  "file": "The British Army in North Africa 1941 E1636.jpg",
+  "nation": "AUS",
+  "category": "infantry",
+  "subject": "Australian infantry after storming the Wadi at Bardia, January 1941",
+  "equipmentKeys": [
+   "rifle"
+  ],
+  "tags": [
+   "australian",
+   "bardia"
+  ]
+ },
+ {
+  "id": "gbr_hurr_80sqn",
+  "file": "Royal Air Force Operations in the Middle East and North Africa, 1939-1943. CM1725.jpg",
+  "nation": "GBR",
+  "category": "air_fighter",
+  "subject": "Hurricane Mk I of No. 80 Squadron with pilots, Western Desert",
+  "equipmentKeys": [
+   "fighter"
+  ],
+  "tags": [
+   "hurricane"
+  ]
+ },
+ {
+  "id": "gbr_hurr_33sqn",
+  "file": "33 Squadron RAF Hurricanes Egypt IWM CM 140.jpg",
+  "nation": "GBR",
+  "category": "air_fighter",
+  "subject": "Hurricane Mk Is of No. 33 Squadron landing at Fuka, Egypt",
+  "equipmentKeys": [
+   "fighter"
+  ],
+  "tags": [
+   "hurricane"
+  ]
+ }
+]

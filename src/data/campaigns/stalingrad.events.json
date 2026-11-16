@@ -1,0 +1,216 @@
+{
+ "campaignId": "stalingrad",
+ "note": "Historical event template data. Sources resolve against scenario sources[].",
+ "events": [
+  {
+   "id": "sg.ev.uranus",
+   "date": "1942-11-19T07:20:00Z",
+   "title": "Operation Uranus begins",
+   "body": "An 80-minute artillery bombardment opens at 07:20 Moscow time, aimed mainly at the non-German Axis units; at 08:50 the 21st, 65th and 5th Tank Armies attack the Romanian Third Army. The Romanian rout begins by the end of the day and about 27,000 Romanians are captured.",
+   "pos": [
+    42.7,
+    49.55
+   ],
+   "src": [
+    "E01"
+   ],
+   "effectHints": [],
+   "kind": "historical",
+   "minutesFromStd": 440
+  },
+  {
+   "id": "sg.ev.stfront",
+   "date": "1942-11-20T00:00:00Z",
+   "title": "The Stalingrad Front attacks",
+   "body": "The Stalingrad Front (Yeryomenko) attacks from the south; the 51st Army hits the Romanian 6th Corps and the 57th Army joins. The 26th Tank Corps takes Perelazovsky.",
+   "pos": [
+    44,
+    48
+   ],
+   "src": [
+    "E01"
+   ],
+   "effectHints": [],
+   "kind": "historical",
+   "minutesFromStd": 1440
+  },
+  {
+   "id": "sg.ev.fortress",
+   "date": "1942-11-21T00:00:00Z",
+   "title": "\"Fortress Stalingrad\"",
+   "body": "Paulus is told Soviet forces are less than 40 km from his headquarters. Hitler orders an all-round defensive position and designates \"Fortress Stalingrad\", rejecting a breakout.",
+   "pos": [
+    44.5,
+    48.7
+   ],
+   "side": "axis",
+   "src": [
+    "E01"
+   ],
+   "effectHints": [],
+   "kind": "historical",
+   "minutesFromStd": 2880
+  },
+  {
+   "id": "sg.ev.kalach",
+   "date": "1942-11-22T00:00:00Z",
+   "title": "Kalach falls",
+   "body": "Soviet forces cross the Don and Kalach falls by mid-morning; the 26th and 4th Tank Corps link up with the 4th Mechanized Corps. The page describes the encirclement as completed this day (see the link-up on 23 Nov).",
+   "pos": [
+    43.52,
+    48.7
+   ],
+   "src": [
+    "E01"
+   ],
+   "effectHints": [],
+   "kind": "historical",
+   "minutesFromStd": 4320
+  },
+  {
+   "id": "sg.ev.linkup",
+   "date": "1942-11-23T16:00:00Z",
+   "title": "The ring closes at Sovetsky",
+   "body": "Around 16:00 near Sovetsky the 4th Mechanized Corps (Stalingrad Front) and the 4th Tank Corps (Southwestern Front) link up. Between 23 and 24 November Hitler decides to hold and resupply by air. Sources disagree: the lead of the page says late on 22 Nov at Kalach, the body gives 23 Nov; this scenario uses 23 Nov, the more detailed account.",
+   "pos": [
+    43.6,
+    48.55
+   ],
+   "src": [
+    "E01"
+   ],
+   "effectHints": [],
+   "kind": "historical",
+   "minutesFromStd": 6720
+  },
+  {
+   "id": "sg.ev.saturn_plan",
+   "date": "1942-11-24T00:00:00Z",
+   "title": "Stavka plans Operation Saturn",
+   "body": "The outer encirclement is about 320 km long, with about 16 km between the inner and outer rings; Stavka plans Operation Saturn for about 10 December.",
+   "src": [
+    "E01"
+   ],
+   "effectHints": [],
+   "kind": "historical",
+   "minutesFromStd": 7200
+  },
+  {
+   "id": "sg.ev.winter_storm",
+   "date": "1942-12-12T00:00:00Z",
+   "title": "Operation Winter Storm",
+   "body": "LVII Panzer Corps of the 4th Panzer Army begins the relief drive towards the 6th Army. The Luftwaffe airlift, with about 500 transports, delivers less than 20% of the 680 tonnes a day the pocket needs.",
+   "pos": [
+    43.15,
+    47.63
+   ],
+   "side": "axis",
+   "src": [
+    "E01",
+    "E03"
+   ],
+   "effectHints": [],
+   "kind": "historical",
+   "minutesFromStd": 33120
+  },
+  {
+   "id": "sg.ev.kumsky",
+   "date": "1942-12-13T00:00:00Z",
+   "title": "Verkhnekumsky and the 2nd Guards Army",
+   "body": "The 6th Panzer Division contacts the 5th Tank Army and a three-day armoured battle opens at Verkhnekumsky; Stalin authorises the transfer of the 2nd Guards Army (about 90,000 men).",
+   "pos": [
+    43.44,
+    48.09
+   ],
+   "src": [
+    "E03"
+   ],
+   "effectHints": [],
+   "kind": "historical",
+   "minutesFromStd": 34560
+  },
+  {
+   "id": "sg.ev.little_saturn",
+   "date": "1942-12-16T00:00:00Z",
+   "title": "Operation Little Saturn",
+   "body": "The 1st and 3rd Guards Armies, with the 6th Army, launch Little Saturn, which partly overruns the Italian 8th Army by 18 December and threatens the Army Group Don flank.",
+   "pos": [
+    41.1,
+    49.7
+   ],
+   "src": [
+    "E03"
+   ],
+   "effectHints": [],
+   "kind": "historical",
+   "minutesFromStd": 38880
+  },
+  {
+   "id": "sg.ev.mech_rename",
+   "date": "1942-12-18T00:00:00Z",
+   "title": "4th Mechanized Corps becomes 3rd Guards",
+   "body": "The 4th Mechanized Corps, down to barely 100 operable tanks, is renamed the 3rd Guards Mechanized Corps and withdrawn to refit.",
+   "pos": [
+    43.44,
+    48.09
+   ],
+   "side": "allies",
+   "src": [
+    "E03"
+   ],
+   "effectHints": [],
+   "kind": "historical",
+   "minutesFromStd": 41760
+  },
+  {
+   "id": "sg.ev.myshkova",
+   "date": "1942-12-19T00:00:00Z",
+   "title": "The Myshkova River",
+   "body": "The 6th Panzer Division crosses the Myshkova; LVII Panzer Corps is within 48 km of the southern edge of the 6th Army front.",
+   "pos": [
+    43.8,
+    48
+   ],
+   "side": "axis",
+   "src": [
+    "E03"
+   ],
+   "effectHints": [],
+   "kind": "historical",
+   "minutesFromStd": 43200
+  },
+  {
+   "id": "sg.ev.halted",
+   "date": "1942-12-23T00:00:00Z",
+   "title": "Manstein calls off Winter Storm",
+   "body": "Manstein calls off the assault and orders the 6th Panzer Division to redeploy to the Chir; the 4th Panzer Army is in full retreat by 24 December.",
+   "pos": [
+    43.8,
+    48
+   ],
+   "src": [
+    "E03"
+   ],
+   "effectHints": [],
+   "kind": "historical",
+   "minutesFromStd": 48960
+  },
+  {
+   "id": "sg.ev.tatsinskaya",
+   "date": "1942-12-24T00:00:00Z",
+   "title": "Tatsinskaya airfield lost",
+   "body": "A Soviet raid destroys the Tatsinskaya airfield and several dozen aircraft; the 6th Army runs out of food. The date of 24 December is approximate: E03 gives no date in the text read.",
+   "pos": [
+    41.28,
+    48.19
+   ],
+   "side": "axis",
+   "src": [
+    "E03"
+   ],
+   "effectHints": [],
+   "kind": "historical",
+   "minutesFromStd": 50400
+  }
+ ]
+}

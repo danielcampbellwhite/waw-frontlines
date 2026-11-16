@@ -1,0 +1,1722 @@
+{
+ "scenarioId": "stalingrad.short",
+ "note": "Per-fact source references.",
+ "units": {
+  "sov.f.sw": {
+   "sources": [
+    "E05",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "sov.f.don": {
+   "sources": [
+    "E05",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "sov.f.st": {
+   "sources": [
+    "E05",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "sov.a.1g": {
+   "sources": [
+    "E05",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "sov.rd.1": {
+   "sources": [
+    "E05",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "sov.rd.153": {
+   "sources": [
+    "E05",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "sov.rd.197": {
+   "sources": [
+    "E05",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "sov.rd.203": {
+   "sources": [
+    "E05",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "sov.rd.266": {
+   "sources": [
+    "E05",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "sov.rd.278": {
+   "sources": [
+    "E05",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "sov.mc.1g": {
+   "sources": [
+    "E05",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "sov.a.5t": {
+   "sources": [
+    "E05",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "sov.rd.g14": {
+   "sources": [
+    "E05",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "sov.rd.g47": {
+   "sources": [
+    "E05",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "sov.rd.g50": {
+   "sources": [
+    "E05",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "sov.rd.119": {
+   "sources": [
+    "E05",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "sov.rd.159": {
+   "sources": [
+    "E05",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "sov.rd.346": {
+   "sources": [
+    "E05",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "sov.tc.1": {
+   "sources": [
+    "E05",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "sov.tc.26": {
+   "sources": [
+    "E05",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "sov.cc.8": {
+   "sources": [
+    "E05",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "sov.a.21": {
+   "sources": [
+    "E05",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "sov.rd.63": {
+   "sources": [
+    "E05",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "sov.rd.76": {
+   "sources": [
+    "E05",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "sov.rd.96": {
+   "sources": [
+    "E05",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "sov.rd.277": {
+   "sources": [
+    "E05",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "sov.rd.293": {
+   "sources": [
+    "E05",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "sov.rd.333": {
+   "sources": [
+    "E05",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "sov.tc.4": {
+   "sources": [
+    "E05",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "sov.cc.3g": {
+   "sources": [
+    "E05",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "sov.a.24": {
+   "sources": [
+    "E05",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "sov.rd.49": {
+   "sources": [
+    "E05",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "sov.rd.84": {
+   "sources": [
+    "E05",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "sov.rd.120": {
+   "sources": [
+    "E05",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "sov.rd.173": {
+   "sources": [
+    "E05",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "sov.rd.214": {
+   "sources": [
+    "E05",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "sov.rd.233": {
+   "sources": [
+    "E05",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "sov.rd.260": {
+   "sources": [
+    "E05",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "sov.rd.273": {
+   "sources": [
+    "E05",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "sov.rd.298": {
+   "sources": [
+    "E05",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "sov.tc.16": {
+   "sources": [
+    "E05",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "sov.a.65": {
+   "sources": [
+    "E05",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "sov.rd.g4": {
+   "sources": [
+    "E05",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "sov.rd.g27": {
+   "sources": [
+    "E05",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "sov.rd.g40": {
+   "sources": [
+    "E05",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "sov.rd.23": {
+   "sources": [
+    "E05",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "sov.rd.24": {
+   "sources": [
+    "E05",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "sov.rd.252": {
+   "sources": [
+    "E05",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "sov.rd.258": {
+   "sources": [
+    "E05",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "sov.rd.304": {
+   "sources": [
+    "E05",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "sov.rd.321": {
+   "sources": [
+    "E05",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "sov.tb.91": {
+   "sources": [
+    "E05",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "sov.tb.121": {
+   "sources": [
+    "E05",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "sov.a.66": {
+   "sources": [
+    "E05",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "sov.rd.64": {
+   "sources": [
+    "E05",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "sov.rd.99": {
+   "sources": [
+    "E05",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "sov.rd.116": {
+   "sources": [
+    "E05",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "sov.rd.226": {
+   "sources": [
+    "E05",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "sov.rd.299": {
+   "sources": [
+    "E05",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "sov.rd.343": {
+   "sources": [
+    "E05",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "sov.tb.58": {
+   "sources": [
+    "E05",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "sov.a.62": {
+   "sources": [
+    "E05",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "sov.rd.g13": {
+   "sources": [
+    "E05",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "sov.rd.g37": {
+   "sources": [
+    "E05",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "sov.rd.g39": {
+   "sources": [
+    "E05",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "sov.rd.45": {
+   "sources": [
+    "E05",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "sov.rd.95": {
+   "sources": [
+    "E05",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "sov.rd.112": {
+   "sources": [
+    "E05",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "sov.rd.138": {
+   "sources": [
+    "E05",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "sov.rd.193": {
+   "sources": [
+    "E05",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "sov.rd.308": {
+   "sources": [
+    "E05",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "sov.rb.42": {
+   "sources": [
+    "E05",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "sov.rb.92": {
+   "sources": [
+    "E05",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "sov.rb.115": {
+   "sources": [
+    "E05",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "sov.rb.124": {
+   "sources": [
+    "E05",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "sov.rb.149": {
+   "sources": [
+    "E05",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "sov.rb.160": {
+   "sources": [
+    "E05",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "sov.tb.84": {
+   "sources": [
+    "E05",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "sov.a.64": {
+   "sources": [
+    "E05",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "sov.rd.g36": {
+   "sources": [
+    "E05",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "sov.rd.29": {
+   "sources": [
+    "E05",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "sov.rd.38": {
+   "sources": [
+    "E05",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "sov.rd.157": {
+   "sources": [
+    "E05",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "sov.rd.204": {
+   "sources": [
+    "E05",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "sov.rb.93": {
+   "sources": [
+    "E05",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "sov.rb.96": {
+   "sources": [
+    "E05",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "sov.rb.97": {
+   "sources": [
+    "E05",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "sov.nb.66": {
+   "sources": [
+    "E05",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "sov.nb.154": {
+   "sources": [
+    "E05",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "sov.tb.13": {
+   "sources": [
+    "E05",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "sov.tb.56": {
+   "sources": [
+    "E05",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "sov.a.51": {
+   "sources": [
+    "E05",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "sov.rd.g15": {
+   "sources": [
+    "E05",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "sov.rd.91": {
+   "sources": [
+    "E05",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "sov.rd.126": {
+   "sources": [
+    "E05",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "sov.rd.302": {
+   "sources": [
+    "E05",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "sov.mc.4": {
+   "sources": [
+    "E05",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "sov.cc.4": {
+   "sources": [
+    "E05",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "sov.tb.254": {
+   "sources": [
+    "E05",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "sov.a.57": {
+   "sources": [
+    "E05",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "sov.rd.169": {
+   "sources": [
+    "E05",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "sov.rd.422": {
+   "sources": [
+    "E05",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "sov.mc.13": {
+   "sources": [
+    "E05",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "sov.tb.90": {
+   "sources": [
+    "E05",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "sov.tb.235": {
+   "sources": [
+    "E05",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "sov.a.28": {
+   "sources": [
+    "E05",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "sov.rd.g34": {
+   "sources": [
+    "E05",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "sov.rd.248": {
+   "sources": [
+    "E05",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "sov.tb.g6": {
+   "sources": [
+    "E05",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "sov.rd.300": {
+   "sources": [
+    "E05",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "ger.abB": {
+   "sources": [
+    "E06",
+    "E02",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "ger.a6": {
+   "sources": [
+    "E06",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "ger.c.IV": {
+   "sources": [
+    "E06",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "ger.d.29": {
+   "sources": [
+    "E06",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "ger.d.297": {
+   "sources": [
+    "E06",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "ger.d.371": {
+   "sources": [
+    "E06",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "ger.c.VIII": {
+   "sources": [
+    "E06",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "ger.d.76": {
+   "sources": [
+    "E06",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "ger.d.113": {
+   "sources": [
+    "E06",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "ger.c.XI": {
+   "sources": [
+    "E06",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "ger.d.44": {
+   "sources": [
+    "E06",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "ger.d.376": {
+   "sources": [
+    "E06",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "ger.d.384": {
+   "sources": [
+    "E06",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "ger.c.XIV": {
+   "sources": [
+    "E06",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "ger.d.3": {
+   "sources": [
+    "E06",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "ger.d.60": {
+   "sources": [
+    "E06",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "ger.d.16pz": {
+   "sources": [
+    "E06",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "ger.c.LI": {
+   "sources": [
+    "E06",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "ger.d.71": {
+   "sources": [
+    "E06",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "ger.d.79": {
+   "sources": [
+    "E06",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "ger.d.94": {
+   "sources": [
+    "E06",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "ger.d.295": {
+   "sources": [
+    "E06",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "ger.d.305": {
+   "sources": [
+    "E06",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "ger.d.389": {
+   "sources": [
+    "E06",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "ger.d.100j": {
+   "sources": [
+    "E06",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "ger.d.14pz": {
+   "sources": [
+    "E06",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "ger.d.24pz": {
+   "sources": [
+    "E06",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "ger.a4p": {
+   "sources": [
+    "E06",
+    "E02",
+    "E03",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "ger.c.XLVIII": {
+   "sources": [
+    "E06",
+    "E01",
+    "E03",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "ger.d.22pz": {
+   "sources": [
+    "E06",
+    "E01",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "rou.a3": {
+   "sources": [
+    "E06",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "rou.c.1": {
+   "sources": [
+    "E06",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "rou.d.7": {
+   "sources": [
+    "E06",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "rou.d.11": {
+   "sources": [
+    "E06",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "rou.c.2": {
+   "sources": [
+    "E06",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "rou.d.9": {
+   "sources": [
+    "E06",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "rou.d.14": {
+   "sources": [
+    "E06",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "rou.d.7c": {
+   "sources": [
+    "E06",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "rou.c.4": {
+   "sources": [
+    "E06",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "rou.d.13": {
+   "sources": [
+    "E06",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "rou.d.15": {
+   "sources": [
+    "E06",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "rou.d.1c": {
+   "sources": [
+    "E06",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "rou.c.5": {
+   "sources": [
+    "E06",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "rou.d.5": {
+   "sources": [
+    "E06",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "rou.d.6": {
+   "sources": [
+    "E06",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "rou.d.1a": {
+   "sources": [
+    "E06",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "rou.a4": {
+   "sources": [
+    "E06",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "rou.c.6": {
+   "sources": [
+    "E06",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "rou.d.1": {
+   "sources": [
+    "E06",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "rou.d.2": {
+   "sources": [
+    "E06",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "rou.d.18": {
+   "sources": [
+    "E06",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "rou.d.20": {
+   "sources": [
+    "E06",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "rou.c.7": {
+   "sources": [
+    "E06",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "rou.d.4": {
+   "sources": [
+    "E06",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "rou.d.5c": {
+   "sources": [
+    "E06",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "rou.d.8c": {
+   "sources": [
+    "E06",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "ita.a8": {
+   "sources": [
+    "E03",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  }
+ },
+ "locations": {
+  "stalingrad": {
+   "sources": [
+    "E07",
+    "E02",
+    "G02"
+   ]
+  },
+  "mamayev_kurgan": {
+   "sources": [
+    "E07",
+    "G02"
+   ]
+  },
+  "pitomnik": {
+   "sources": [
+    "E10",
+    "G02"
+   ]
+  },
+  "svetly_yar": {
+   "sources": [
+    "E08",
+    "G02"
+   ]
+  },
+  "tinguta": {
+   "sources": [
+    "E08",
+    "G02"
+   ]
+  },
+  "gumrak": {
+   "sources": [
+    "E07",
+    "G02"
+   ]
+  },
+  "krasnoslobodsk": {
+   "sources": [
+    "E09",
+    "G02"
+   ]
+  },
+  "beketovka": {
+   "sources": [
+    "E08",
+    "G02"
+   ]
+  },
+  "kalach": {
+   "sources": [
+    "E07",
+    "E01",
+    "G02"
+   ]
+  },
+  "marinovka": {
+   "sources": [
+    "E08",
+    "G02"
+   ]
+  },
+  "vertyachy": {
+   "sources": [
+    "E08",
+    "G02"
+   ]
+  },
+  "kotluban": {
+   "sources": [
+    "E08",
+    "G02"
+   ]
+  },
+  "kletskaya": {
+   "sources": [
+    "E07",
+    "G02"
+   ]
+  },
+  "serafimovich": {
+   "sources": [
+    "E08",
+    "G02"
+   ]
+  },
+  "perelazovsky": {
+   "sources": [
+    "E08",
+    "E01",
+    "G02"
+   ]
+  },
+  "bokovskaya": {
+   "sources": [
+    "E07",
+    "G02"
+   ]
+  },
+  "surovikino": {
+   "sources": [
+    "E07",
+    "G02"
+   ]
+  },
+  "oblivskaya": {
+   "sources": [
+    "E07",
+    "G02"
+   ]
+  },
+  "morozovsk": {
+   "sources": [
+    "E07",
+    "E03",
+    "G02"
+   ]
+  },
+  "tatsinskaya": {
+   "sources": [
+    "E08",
+    "E03",
+    "G02"
+   ]
+  },
+  "kotelnikovo": {
+   "sources": [
+    "E07",
+    "G02"
+   ]
+  },
+  "verkhnekumsky": {
+   "sources": [
+    "E08",
+    "E03",
+    "G02"
+   ]
+  },
+  "abganerovo": {
+   "sources": [
+    "E08",
+    "G02"
+   ]
+  }
+ },
+ "reinforcements": {
+  "reinf.sov.a.3g": {
+   "sources": [
+    "E03",
+    "G03"
+   ],
+   "approximate": true,
+   "note": "Little Saturn launched 16 Dec by 1st and 3rd Guards Armies (E03); 3rd Guards Army start position not retrieved."
+  },
+  "reinf.sov.a.2g": {
+   "sources": [
+    "E03",
+    "G03"
+   ],
+   "approximate": true,
+   "note": "Transfer authorised 13 Dec, ready 15 Dec (E03); date it entered combat and its arrival area are not retrieved."
+  },
+  "reinf.ger.c.LVII": {
+   "sources": [
+    "E03",
+    "G03"
+   ],
+   "approximate": true,
+   "note": "Drive began 12 Dec (E03); jump-off point not named in the text read (Kotelnikovo is the proposed assembly point)."
+  },
+  "reinf.ger.d.6pz": {
+   "sources": [
+    "E03",
+    "G03"
+   ],
+   "approximate": true,
+   "note": "Transferred from Western Europe, complete (E03); the page says it unloaded at Morozovsk (undated); jump-off area approximate."
+  },
+  "reinf.ger.d.23pz": {
+   "sources": [
+    "E03",
+    "G03"
+   ],
+   "approximate": true,
+   "note": "Took part in the 12 Dec drive (E03); jump-off area approximate."
+  }
+ },
+ "nations": {
+  "SOV": {
+   "sources": [
+    "G01"
+   ],
+   "gameScale": true
+  },
+  "GER": {
+   "sources": [
+    "G01"
+   ],
+   "gameScale": true
+  },
+  "ROU": {
+   "sources": [
+    "G01"
+   ],
+   "gameScale": true
+  },
+  "ITA": {
+   "sources": [
+    "G01"
+   ],
+   "gameScale": true
+  }
+ },
+ "objectives": {
+  "o.sov.kalach": {
+   "sources": [
+    "E01",
+    "G01"
+   ]
+  },
+  "o.sov.surovikino": {
+   "sources": [
+    "E01",
+    "G01"
+   ]
+  },
+  "o.sov.kletskaya": {
+   "sources": [
+    "E01",
+    "G01"
+   ]
+  },
+  "o.sov.tatsinskaya": {
+   "sources": [
+    "E01",
+    "G01"
+   ]
+  },
+  "o.sov.morozovsk": {
+   "sources": [
+    "E01",
+    "G01"
+   ]
+  },
+  "o.sov.deny_relief": {
+   "sources": [
+    "E01",
+    "G01"
+   ]
+  },
+  "o.sov.stalingrad": {
+   "sources": [
+    "E01",
+    "G01"
+   ]
+  },
+  "o.ger.hold_stalingrad": {
+   "sources": [
+    "E01",
+    "G01"
+   ]
+  },
+  "o.ger.hold_gumrak": {
+   "sources": [
+    "E01",
+    "G01"
+   ]
+  },
+  "o.ger.beketovka": {
+   "sources": [
+    "E01",
+    "G01"
+   ]
+  },
+  "o.ger.tatsinskaya": {
+   "sources": [
+    "E01",
+    "G01"
+   ]
+  },
+  "o.ger.kotelnikovo": {
+   "sources": [
+    "E01",
+    "G01"
+   ]
+  },
+  "o.ger.kotluban": {
+   "sources": [
+    "E01",
+    "G01"
+   ]
+  },
+  "o.ger.surovikino": {
+   "sources": [
+    "E01",
+    "G01"
+   ]
+  }
+ },
+ "uncertain": [
+  {
+   "item": "Order-of-battle depth",
+   "note": "Soviet side is at corps/division/brigade level (E05, as of 19 Nov 1942). German 6th Army and Romanian armies are at corps/division level (E06), but E06 spans Sep 1942-Feb 1943: presence on 19 Nov of each German division is not confirmed by it. 4th Panzer Army: only the XLVIII Panzer Corps, 22nd Panzer and Romanian 1st Armoured (E01) are included; its other formations, the 11th Panzer, 17th Panzer, Army Detachment Hollidt and the 15th Luftwaffe Field Division are omitted (no arrival dates). Italian 8th Army: one army-level element only (corps/divisions not retrieved). Hungarian 2nd Army omitted."
+  },
+  {
+   "item": "Omitted Soviet sub-units",
+   "note": "Fortified regions, anti-tank rifle battalions, armoured-car battalions, armoured trains, air armies, the Volga Flotilla and the Stalingrad air-defence corps are listed in E05 but omitted (positions and sizes unknown; no air or naval model)."
+  },
+  {
+   "item": "All start positions",
+   "note": "Approximate sector anchors (G03); not from any positional source. Soviet bridgeheads, the Stalingrad pocket sectors and the Romanian Don front are inferred from the place names in E01/E02/E05."
+  },
+  {
+   "item": "Air units",
+   "note": "OMITTED: no sourced Luftwaffe or Soviet airfield order of battle and the airlift is an abstraction (see pool note)."
+  },
+  {
+   "item": "Airlift / supply",
+   "note": "E03: requirement 680 t/day, under 20% delivered, about 500 transports. No delivered tonnage per day, no Pitomnik data, no Volga ferry data. Modelled only by a German fuel/supply pool at 50% scale (G01) and by Tatsinskaya/Morozovsk as the only German supply sources; the pocket is cut off from them by terrain/enemy control, not by an airlift flow (engine gap, see docs/EASTERN_FRONT_RESEARCH.md)."
+  },
+  {
+   "item": "River ice (iceFromHour 168, iceFullHour 504)",
+   "note": "GAME-SCALE (G01), not sourced: ice begins on day 7 (26 Nov) and is load-bearing on day 21 (10 Dec). No thaw (iceThawHour unset) because the scenario ends in January. Needs a sourced Volga/Don freeze date to replace it."
+  },
+  {
+   "item": "Gumrak and Pitomnik airliftTonsPerDay 68 each",
+   "note": "Upper bound derived from E03 (under 20% of 680 t/day delivered); the real delivered daily tonnage and the Pitomnik field are not in the sources read. Other airfields have no airlift field (unsourced)."
+  },
+  {
+   "item": "Soviet Volga-bank supply source (krasnoslobodsk)",
+   "note": "Position from E09 (Wikipedia coordinates). Beketovka is also a Soviet supply source (game-scale). Their role as a Soviet supply source is GAME-SCALE (G01), added so the Stalingrad Front mechanised corps are not cut from supply; no ferry, tonnage or crossing facts are sourced (E02 only says the defenders were pressed against the Volga)."
+  },
+  {
+   "item": "Rivers",
+   "note": "Terrain/infra rebuilt by map-engineer with OSM rivers (Chir, Myshkova, Don, Volga, etc.); river-flag cells make the Chir a real obstacle as in Dec 1942, so movement and probe results changed from earlier runs."
+  },
+  {
+   "item": "Gumrak/Pitomnik garrison and airlift split",
+   "note": "The 60th Motorized Infantry Division (sourced OOB, E06) is anchored at Gumrak so the field is not empty at start; its position is approximate (G03) and no source places it there. Pitomnik position is from E10. Airlift cap 136 t/day (20% of 680, E03 bound) is split 68/68 between Gumrak and Pitomnik, a game-scale split."
+  },
+  {
+   "item": "Southern Soviet supply points (svetly_yar, tinguta)",
+   "note": "Positions from OSM Nominatim (E08). Their role as Soviet supply sources is GAME-SCALE (G01): the southern Stalingrad Front start area was otherwise 100+ km from any source. No railhead or depot facts are sourced."
+  },
+  {
+   "item": "Stalingrad Front 51st/57th Army start positions",
+   "note": "Moved north (to about 47.95N and 48.22N) from an earlier 47.4-47.95N placement that left 12 units more than 70 km from any Soviet supply source (permanently cut off). No source gives these positions; the new ones sit within about 20-50 km of the Tinguta/Svetly Yar supply points. Approximate (G03)."
+  },
+  {
+   "item": "Link-up date conflict",
+   "note": "E01 lead: ring closed late 22 Nov at Kalach; body: Kalach captured 22 Nov, link-up at Sovetsky about 16:00 on 23 Nov. Both are recorded as events (sg.ev.kalach, sg.ev.linkup); 23 Nov is used as the closure (more detailed)."
+  },
+  {
+   "item": "Reinforcements",
+   "note": "2nd Guards Army (ready 15 Dec), 3rd Guards Army (Little Saturn 16 Dec), LVII Panzer Corps with 6th and 23rd Panzer (12 Dec): dates from E03; arrival points are approximate; 6th Panzer is said to have unloaded at Morozovsk but is placed at the proposed Kotelnikovo jump-off."
+  },
+  {
+   "item": "Locations",
+   "note": "Coordinates from Wikipedia (E07) or OSM Nominatim (E08); Beketovka is the OSM aerodrome object (approximate); Pitomnik, Sovetsky, Nizhne-Chirskaya and Chernyshkovskaya omitted (no coordinate found). Gumrak uses the Volgograd airport position (modern)."
+  },
+  {
+   "item": "Tatsinskaya date",
+   "note": "24 Dec used for the airfield loss; E03 gives no date in the text read."
+  },
+  {
+   "item": "Weather",
+   "note": "Qualitative only (E02: temperatures tens of degrees below freezing); probabilities and temperatures are game-scale (G01). Volga/Don ice is not modelled."
+  },
+  {
+   "item": "Nation resources / strengths / morale",
+   "note": "Game-scale (G01). Romanian morale/experience set low and Soviet 45/76; E01 supports only the qualitative statements (bombardment aimed at non-German units; Romanian rout)."
+  }
+ ]
+}

@@ -1,0 +1,4118 @@
+{
+ "schema": 1,
+ "id": "bulge.short",
+ "campaignId": "bulge",
+ "title": "Battle of the Bulge (16 Dec 1944 - 25 Jan 1945)",
+ "scale": "short",
+ "startDate": "1944-12-16T00:00:00Z",
+ "endDate": "1945-01-25T00:00:00Z",
+ "bbox": {
+  "west": 4.5,
+  "south": 49.5,
+  "east": 7.5,
+  "north": 51
+ },
+ "estimatedPlayMinutes": [
+  60,
+  150
+ ],
+ "mapSize": "medium",
+ "complexity": 3,
+ "briefing": {
+  "historical": "In the early hours of 16 December 1944 Germany launched its last major offensive in the West through the Ardennes, aiming at the Meuse and the port of Antwerp (B02). Three German armies - Sixth Panzer, Fifth Panzer and Seventh - struck a thinly held, quiet sector. Stubborn defence at Elsenborn Ridge and Bastogne and the arrival of reinforcements broke the timetable; the weather cleared on 23 December, Bastogne was relieved on 26 December and the salient was reduced by late January. Reinforcement arrival points and some arrival days are approximate.",
+  "situation": "Germany must break through the American line, seize the road hubs of St. Vith and Bastogne and reach the Meuse before Allied reserves and air power arrive; its fuel is scarce, so capturing American fuel dumps is vital. The Allies must hold the shoulders at Elsenborn and Bastogne, delay the panzers, keep the Meuse crossings at Dinant, Namur and Huy, and then counter-attack. Start positions are approximate sector anchors."
+ },
+ "playableNations": [
+  {
+   "nation": "GER",
+   "difficultyRating": 4,
+   "summary": "Armoured breakthrough with scarce fuel against a thin line that will be reinforced day by day.",
+   "objectiveIds": [
+    "o.ger.bastogne",
+    "o.ger.stvith",
+    "o.ger.stavelot",
+    "o.ger.elsenborn",
+    "o.ger.dinant",
+    "o.ger.namur",
+    "o.ger.huy",
+    "o.ger.liege",
+    "o.ger.region"
+   ]
+  },
+  {
+   "nation": "USA",
+   "difficultyRating": 3,
+   "summary": "Absorb the surprise, hold the shoulders and the hubs, then counter-attack.",
+   "objectiveIds": [
+    "o.all.elsenborn",
+    "o.all.bastogne",
+    "o.all.stvith",
+    "o.all.meuse",
+    "o.all.namur",
+    "o.all.huy",
+    "o.all.liege",
+    "o.all.attrition",
+    "o.all.fuel"
+   ]
+  },
+  {
+   "nation": "GBR",
+   "difficultyRating": 2,
+   "summary": "Command XXX Corps on the Meuse: a stop-line behind the Americans.",
+   "objectiveIds": [
+    "o.all.elsenborn",
+    "o.all.bastogne",
+    "o.all.stvith",
+    "o.all.meuse",
+    "o.all.namur",
+    "o.all.huy",
+    "o.all.liege",
+    "o.all.attrition",
+    "o.all.fuel"
+   ]
+  }
+ ],
+ "nations": [
+  {
+   "id": "GER",
+   "side": "axis",
+   "name": "Germany",
+   "playable": true,
+   "resources": {
+    "manpower": 41055,
+    "fuel": 1500,
+    "ammo": 1750,
+    "equipment": 3500,
+    "supplyPoints": 600
+   },
+   "income": {
+    "manpower": 86,
+    "fuel": 3,
+    "ammo": 7,
+    "equipment": 14,
+    "supplyPoints": 5
+   },
+   "reinforcements": []
+  },
+  {
+   "id": "USA",
+   "side": "allies",
+   "name": "United States",
+   "playable": true,
+   "resources": {
+    "manpower": 30829,
+    "fuel": 1500,
+    "ammo": 1500,
+    "equipment": 2700,
+    "supplyPoints": 600
+   },
+   "income": {
+    "manpower": 65,
+    "fuel": 5,
+    "ammo": 6,
+    "equipment": 11,
+    "supplyPoints": 5
+   },
+   "reinforcements": []
+  },
+  {
+   "id": "GBR",
+   "side": "allies",
+   "name": "United Kingdom (XXX Corps)",
+   "playable": true,
+   "resources": {
+    "manpower": 2000,
+    "fuel": 1500,
+    "ammo": 1500,
+    "equipment": 1500,
+    "supplyPoints": 600
+   },
+   "income": {
+    "manpower": 2,
+    "fuel": 1,
+    "ammo": 2,
+    "equipment": 2,
+    "supplyPoints": 5
+   },
+   "reinforcements": []
+  },
+  {
+   "id": "BEL",
+   "side": "allies",
+   "name": "Belgium",
+   "playable": false,
+   "resources": {
+    "manpower": 2000,
+    "fuel": 1500,
+    "ammo": 1500,
+    "equipment": 1500,
+    "supplyPoints": 600
+   },
+   "income": {
+    "manpower": 2,
+    "fuel": 1,
+    "ammo": 2,
+    "equipment": 2,
+    "supplyPoints": 5
+   },
+   "reinforcements": []
+  },
+  {
+   "id": "FRA",
+   "side": "allies",
+   "name": "France",
+   "playable": false,
+   "resources": {
+    "manpower": 2000,
+    "fuel": 1500,
+    "ammo": 1500,
+    "equipment": 1500,
+    "supplyPoints": 600
+   },
+   "income": {
+    "manpower": 2,
+    "fuel": 1,
+    "ammo": 2,
+    "equipment": 2,
+    "supplyPoints": 5
+   },
+   "reinforcements": []
+  },
+  {
+   "id": "NED",
+   "side": "allies",
+   "name": "Netherlands",
+   "playable": false,
+   "resources": {
+    "manpower": 2000,
+    "fuel": 1500,
+    "ammo": 1500,
+    "equipment": 1500,
+    "supplyPoints": 600
+   },
+   "income": {
+    "manpower": 2,
+    "fuel": 1,
+    "ammo": 2,
+    "equipment": 2,
+    "supplyPoints": 5
+   },
+   "reinforcements": []
+  }
+ ],
+ "locations": [
+  {
+   "id": "bastogne",
+   "name": "Bastogne",
+   "kind": "town",
+   "pos": [
+    5.72,
+    50
+   ],
+   "owner": "USA",
+   "originalOwner": "USA",
+   "value": 9
+  },
+  {
+   "id": "st_vith",
+   "name": "St. Vith",
+   "kind": "town",
+   "pos": [
+    6.13,
+    50.28
+   ],
+   "owner": "USA",
+   "originalOwner": "USA",
+   "value": 7
+  },
+  {
+   "id": "malmedy",
+   "name": "Malmedy",
+   "kind": "town",
+   "pos": [
+    6.03,
+    50.42
+   ],
+   "owner": "USA",
+   "originalOwner": "USA",
+   "value": 5
+  },
+  {
+   "id": "stavelot",
+   "name": "Stavelot",
+   "kind": "town",
+   "pos": [
+    5.93,
+    50.39
+   ],
+   "owner": "USA",
+   "originalOwner": "USA",
+   "value": 5
+  },
+  {
+   "id": "trois_ponts",
+   "name": "Trois-Ponts",
+   "kind": "bridge",
+   "pos": [
+    5.87,
+    50.37
+   ],
+   "owner": "USA",
+   "originalOwner": "USA",
+   "value": 4
+  },
+  {
+   "id": "stoumont",
+   "name": "Stoumont",
+   "kind": "town",
+   "pos": [
+    5.8,
+    50.4
+   ],
+   "owner": "USA",
+   "originalOwner": "USA",
+   "value": 3
+  },
+  {
+   "id": "la_gleize",
+   "name": "La Gleize",
+   "kind": "town",
+   "pos": [
+    5.9,
+    50.4
+   ],
+   "owner": "USA",
+   "originalOwner": "USA",
+   "value": 3
+  },
+  {
+   "id": "houffalize",
+   "name": "Houffalize",
+   "kind": "town",
+   "pos": [
+    5.79,
+    50.13
+   ],
+   "owner": "USA",
+   "originalOwner": "USA",
+   "value": 4
+  },
+  {
+   "id": "la_roche",
+   "name": "La Roche-en-Ardenne",
+   "kind": "town",
+   "pos": [
+    5.58,
+    50.18
+   ],
+   "owner": "USA",
+   "originalOwner": "USA",
+   "value": 3
+  },
+  {
+   "id": "vielsalm",
+   "name": "Vielsalm",
+   "kind": "town",
+   "pos": [
+    5.92,
+    50.28
+   ],
+   "owner": "USA",
+   "originalOwner": "USA",
+   "value": 3
+  },
+  {
+   "id": "marche",
+   "name": "Marche-en-Famenne",
+   "kind": "town",
+   "pos": [
+    5.34,
+    50.23
+   ],
+   "owner": "USA",
+   "originalOwner": "USA",
+   "value": 4
+  },
+  {
+   "id": "noville",
+   "name": "Noville",
+   "kind": "town",
+   "pos": [
+    5.77,
+    50.08
+   ],
+   "owner": "USA",
+   "originalOwner": "USA",
+   "value": 2
+  },
+  {
+   "id": "longvilly",
+   "name": "Longvilly",
+   "kind": "town",
+   "pos": [
+    5.8,
+    50.02
+   ],
+   "owner": "USA",
+   "originalOwner": "USA",
+   "value": 2
+  },
+  {
+   "id": "assenois",
+   "name": "Assenois",
+   "kind": "town",
+   "pos": [
+    5.68,
+    49.9
+   ],
+   "owner": "USA",
+   "originalOwner": "USA",
+   "value": 2
+  },
+  {
+   "id": "elsenborn",
+   "name": "Elsenborn Ridge",
+   "kind": "fortress",
+   "pos": [
+    6.22,
+    50.46
+   ],
+   "owner": "USA",
+   "originalOwner": "USA",
+   "value": 8
+  },
+  {
+   "id": "krinkelt_rocherath",
+   "name": "Krinkelt-Rocherath",
+   "kind": "town",
+   "pos": [
+    6.2,
+    50.43
+   ],
+   "owner": "USA",
+   "originalOwner": "USA",
+   "value": 4
+  },
+  {
+   "id": "bullingen",
+   "name": "Büllingen",
+   "kind": "town",
+   "pos": [
+    6.26,
+    50.41
+   ],
+   "owner": "USA",
+   "originalOwner": "USA",
+   "value": 3
+  },
+  {
+   "id": "lanzerath",
+   "name": "Lanzerath",
+   "kind": "town",
+   "pos": [
+    6.22,
+    50.37
+   ],
+   "owner": "USA",
+   "originalOwner": "USA",
+   "value": 3
+  },
+  {
+   "id": "hofen",
+   "name": "Höfen",
+   "kind": "town",
+   "pos": [
+    6.22,
+    50.56
+   ],
+   "owner": "GER",
+   "originalOwner": "GER",
+   "value": 3
+  },
+  {
+   "id": "monschau",
+   "name": "Monschau",
+   "kind": "town",
+   "pos": [
+    6.24,
+    50.55
+   ],
+   "owner": "USA",
+   "originalOwner": "GER",
+   "value": 4
+  },
+  {
+   "id": "spa",
+   "name": "Spa",
+   "kind": "town",
+   "pos": [
+    5.87,
+    50.49
+   ],
+   "owner": "USA",
+   "originalOwner": "USA",
+   "value": 3
+  },
+  {
+   "id": "verviers",
+   "name": "Verviers",
+   "kind": "town",
+   "pos": [
+    5.86,
+    50.59
+   ],
+   "owner": "USA",
+   "originalOwner": "USA",
+   "value": 4
+  },
+  {
+   "id": "eupen",
+   "name": "Eupen",
+   "kind": "town",
+   "pos": [
+    6.03,
+    50.63
+   ],
+   "owner": "USA",
+   "originalOwner": "USA",
+   "value": 3
+  },
+  {
+   "id": "liege",
+   "name": "Liège",
+   "kind": "city",
+   "pos": [
+    5.57,
+    50.63
+   ],
+   "owner": "USA",
+   "originalOwner": "USA",
+   "value": 9,
+   "supplyCapacity": 20
+  },
+  {
+   "id": "huy",
+   "name": "Huy (Meuse bridges)",
+   "kind": "bridge",
+   "pos": [
+    5.24,
+    50.52
+   ],
+   "owner": "GBR",
+   "originalOwner": "GBR",
+   "value": 5
+  },
+  {
+   "id": "namur",
+   "name": "Namur (Meuse bridges)",
+   "kind": "bridge",
+   "pos": [
+    4.87,
+    50.47
+   ],
+   "owner": "GBR",
+   "originalOwner": "GBR",
+   "value": 7
+  },
+  {
+   "id": "dinant",
+   "name": "Dinant (Meuse bridges)",
+   "kind": "bridge",
+   "pos": [
+    4.91,
+    50.26
+   ],
+   "owner": "GBR",
+   "originalOwner": "GBR",
+   "value": 7
+  },
+  {
+   "id": "givet",
+   "name": "Givet (Meuse bridges)",
+   "kind": "bridge",
+   "pos": [
+    4.83,
+    50.14
+   ],
+   "owner": "FRA",
+   "originalOwner": "FRA",
+   "value": 5
+  },
+  {
+   "id": "foy_notre_dame",
+   "name": "Foy-Notre-Dame",
+   "kind": "town",
+   "pos": [
+    5.02,
+    50.22
+   ],
+   "owner": "USA",
+   "originalOwner": "USA",
+   "value": 4
+  },
+  {
+   "id": "arlon",
+   "name": "Arlon",
+   "kind": "town",
+   "pos": [
+    5.82,
+    49.68
+   ],
+   "owner": "USA",
+   "originalOwner": "USA",
+   "value": 3
+  },
+  {
+   "id": "clervaux",
+   "name": "Clervaux",
+   "kind": "town",
+   "pos": [
+    6.03,
+    50.05
+   ],
+   "owner": "USA",
+   "originalOwner": "NEUTRAL",
+   "value": 4
+  },
+  {
+   "id": "wiltz",
+   "name": "Wiltz",
+   "kind": "town",
+   "pos": [
+    5.93,
+    49.97
+   ],
+   "owner": "USA",
+   "originalOwner": "NEUTRAL",
+   "value": 3
+  },
+  {
+   "id": "diekirch",
+   "name": "Diekirch",
+   "kind": "town",
+   "pos": [
+    6.17,
+    49.87
+   ],
+   "owner": "USA",
+   "originalOwner": "NEUTRAL",
+   "value": 2
+  },
+  {
+   "id": "echternach",
+   "name": "Echternach",
+   "kind": "town",
+   "pos": [
+    6.42,
+    49.81
+   ],
+   "owner": "USA",
+   "originalOwner": "NEUTRAL",
+   "value": 3
+  },
+  {
+   "id": "luxembourg_city",
+   "name": "Luxembourg City",
+   "kind": "city",
+   "pos": [
+    6.13,
+    49.61
+   ],
+   "owner": "USA",
+   "originalOwner": "NEUTRAL",
+   "value": 7,
+   "supplyCapacity": 20
+  },
+  {
+   "id": "pruem",
+   "name": "Prüm",
+   "kind": "town",
+   "pos": [
+    6.42,
+    50.21
+   ],
+   "owner": "GER",
+   "originalOwner": "GER",
+   "value": 3
+  },
+  {
+   "id": "schleiden",
+   "name": "Schleiden",
+   "kind": "town",
+   "pos": [
+    6.47,
+    50.53
+   ],
+   "owner": "GER",
+   "originalOwner": "GER",
+   "value": 2
+  },
+  {
+   "id": "bitburg",
+   "name": "Bitburg",
+   "kind": "town",
+   "pos": [
+    6.53,
+    49.97
+   ],
+   "owner": "GER",
+   "originalOwner": "GER",
+   "value": 3
+  },
+  {
+   "id": "trier",
+   "name": "Trier",
+   "kind": "city",
+   "pos": [
+    6.64,
+    49.76
+   ],
+   "owner": "GER",
+   "originalOwner": "GER",
+   "value": 5,
+   "supplyCapacity": 20
+  },
+  {
+   "id": "euskirchen",
+   "name": "Euskirchen",
+   "kind": "town",
+   "pos": [
+    6.79,
+    50.66
+   ],
+   "owner": "GER",
+   "originalOwner": "GER",
+   "value": 4
+  },
+  {
+   "id": "maastricht",
+   "name": "Maastricht",
+   "kind": "city",
+   "pos": [
+    5.69,
+    50.85
+   ],
+   "owner": "NED",
+   "originalOwner": "NED",
+   "value": 4,
+   "supplyCapacity": 20
+  },
+  {
+   "id": "af_sint_truiden",
+   "name": "Sint-Truiden airfield (A-92)",
+   "kind": "airfield",
+   "pos": [
+    5.2,
+    50.79
+   ],
+   "owner": "BEL",
+   "originalOwner": "BEL",
+   "value": 2
+  },
+  {
+   "id": "af_asch",
+   "name": "Asch airfield (Y-29)",
+   "kind": "airfield",
+   "pos": [
+    5.55,
+    50.98
+   ],
+   "owner": "BEL",
+   "originalOwner": "BEL",
+   "value": 2
+  },
+  {
+   "id": "bullingen_fuel",
+   "name": "Büllingen fuel dump",
+   "kind": "depot",
+   "pos": [
+    6.27,
+    50.4
+   ],
+   "owner": "USA",
+   "originalOwner": "USA",
+   "value": 4,
+   "supplyCapacity": 40
+  },
+  {
+   "id": "stavelot_fuel",
+   "name": "Stavelot-La Gleize fuel dump (contents uncertain)",
+   "kind": "depot",
+   "pos": [
+    5.9,
+    50.43
+   ],
+   "owner": "USA",
+   "originalOwner": "USA",
+   "value": 5,
+   "supplyCapacity": 40
+  }
+ ],
+ "units": [
+  {
+   "id": "ger.hq.hgb",
+   "name": "Heeresgruppe B (Model)",
+   "shortName": "HGr B",
+   "nation": "GER",
+   "side": "axis",
+   "type": "hq",
+   "domain": "land",
+   "pos": [
+    6.69,
+    50.57
+   ],
+   "manpower": 600,
+   "manpowerMax": 600,
+   "equipment": {
+    "held": {
+     "rifle": 600
+    },
+    "authorised": {
+     "rifle": 600
+    }
+   },
+   "organisation": 90,
+   "morale": 78,
+   "experience": 55,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 0,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "hold",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "ger.a6",
+   "name": "6. Panzerarmee (Dietrich)",
+   "shortName": "6.PzArmee",
+   "nation": "GER",
+   "side": "axis",
+   "type": "hq",
+   "domain": "land",
+   "parentId": "ger.hq.hgb",
+   "pos": [
+    6.54,
+    50.42
+   ],
+   "manpower": 600,
+   "manpowerMax": 600,
+   "equipment": {
+    "held": {
+     "rifle": 600
+    },
+    "authorised": {
+     "rifle": 600
+    }
+   },
+   "organisation": 90,
+   "morale": 78,
+   "experience": 55,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 0,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "hold",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "ger.c.ISS",
+   "name": "I. SS-Panzerkorps (Priess)",
+   "shortName": "I.SS-PzK",
+   "nation": "GER",
+   "side": "axis",
+   "type": "hq",
+   "domain": "land",
+   "parentId": "ger.a6",
+   "pos": [
+    6.44,
+    50.45
+   ],
+   "manpower": 600,
+   "manpowerMax": 600,
+   "equipment": {
+    "held": {
+     "rifle": 600
+    },
+    "authorised": {
+     "rifle": 600
+    }
+   },
+   "organisation": 90,
+   "morale": 78,
+   "experience": 55,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 0,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "hold",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "ger.1ss",
+   "name": "1. SS-Panzer-Division \"Leibstandarte Adolf Hitler\" (Mohnke)",
+   "shortName": "1.SS-PzD",
+   "nation": "GER",
+   "side": "axis",
+   "type": "armoured",
+   "domain": "land",
+   "parentId": "ger.c.ISS",
+   "pos": [
+    6.48,
+    50.45
+   ],
+   "manpower": 12000,
+   "manpowerMax": 12000,
+   "equipment": {
+    "held": {
+     "tank_medium": 100,
+     "tank_light": 20,
+     "gun_arty": 24,
+     "truck": 60
+    },
+    "authorised": {
+     "tank_medium": 100,
+     "tank_light": 20,
+     "gun_arty": 24,
+     "truck": 60
+    }
+   },
+   "organisation": 90,
+   "morale": 78,
+   "experience": 55,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 0,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "hold",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "ger.kg.peiper",
+   "name": "Kampfgruppe Peiper (1. SS-Panzer-Regiment)",
+   "shortName": "KG Peiper",
+   "nation": "GER",
+   "side": "axis",
+   "type": "armoured",
+   "domain": "land",
+   "parentId": "ger.1ss",
+   "pos": [
+    6.36,
+    50.32
+   ],
+   "manpower": 5000,
+   "manpowerMax": 5000,
+   "equipment": {
+    "held": {
+     "tank_medium": 100,
+     "tank_light": 20,
+     "gun_arty": 24,
+     "truck": 60
+    },
+    "authorised": {
+     "tank_medium": 100,
+     "tank_light": 20,
+     "gun_arty": 24,
+     "truck": 60
+    }
+   },
+   "organisation": 90,
+   "morale": 78,
+   "experience": 55,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 0,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "hold",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "ger.12ss",
+   "name": "12. SS-Panzer-Division \"Hitlerjugend\" (Kraas)",
+   "shortName": "12.SS-PzD",
+   "nation": "GER",
+   "side": "axis",
+   "type": "armoured",
+   "domain": "land",
+   "parentId": "ger.c.ISS",
+   "pos": [
+    6.52,
+    50.45
+   ],
+   "manpower": 12000,
+   "manpowerMax": 12000,
+   "equipment": {
+    "held": {
+     "tank_medium": 100,
+     "tank_light": 20,
+     "gun_arty": 24,
+     "truck": 60
+    },
+    "authorised": {
+     "tank_medium": 100,
+     "tank_light": 20,
+     "gun_arty": 24,
+     "truck": 60
+    }
+   },
+   "organisation": 90,
+   "morale": 78,
+   "experience": 55,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 0,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "hold",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "ger.3fj",
+   "name": "3. Fallschirmjäger-Division (Wadehn)",
+   "shortName": "3.FJD",
+   "nation": "GER",
+   "side": "axis",
+   "type": "infantry",
+   "domain": "land",
+   "parentId": "ger.c.ISS",
+   "pos": [
+    6.27,
+    50.31
+   ],
+   "manpower": 13000,
+   "manpowerMax": 13000,
+   "equipment": {
+    "held": {
+     "rifle": 100,
+     "gun_arty": 50,
+     "gun_at": 30
+    },
+    "authorised": {
+     "rifle": 100,
+     "gun_arty": 50,
+     "gun_at": 30
+    }
+   },
+   "organisation": 90,
+   "morale": 78,
+   "experience": 40,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 0,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "hold",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "ger.12vg",
+   "name": "12. Volksgrenadier-Division (Engel)",
+   "shortName": "12.VGD",
+   "nation": "GER",
+   "side": "axis",
+   "type": "infantry",
+   "domain": "land",
+   "parentId": "ger.c.ISS",
+   "pos": [
+    6.36,
+    50.37
+   ],
+   "manpower": 13000,
+   "manpowerMax": 13000,
+   "equipment": {
+    "held": {
+     "rifle": 100,
+     "gun_arty": 50,
+     "gun_at": 30
+    },
+    "authorised": {
+     "rifle": 100,
+     "gun_arty": 50,
+     "gun_at": 30
+    }
+   },
+   "organisation": 90,
+   "morale": 78,
+   "experience": 45,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 0,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "hold",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "ger.277vg",
+   "name": "277. Volksgrenadier-Division (Viebig)",
+   "shortName": "277.VGD",
+   "nation": "GER",
+   "side": "axis",
+   "type": "infantry",
+   "domain": "land",
+   "parentId": "ger.c.ISS",
+   "pos": [
+    6.34,
+    50.44
+   ],
+   "manpower": 13000,
+   "manpowerMax": 13000,
+   "equipment": {
+    "held": {
+     "rifle": 100,
+     "gun_arty": 50,
+     "gun_at": 30
+    },
+    "authorised": {
+     "rifle": 100,
+     "gun_arty": 50,
+     "gun_at": 30
+    }
+   },
+   "organisation": 90,
+   "morale": 78,
+   "experience": 45,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 0,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "hold",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "ger.150pzb",
+   "name": "150. Panzer-Brigade (Skorzeny) (Operation Greif)",
+   "shortName": "150.PzBrig",
+   "nation": "GER",
+   "side": "axis",
+   "type": "armoured",
+   "domain": "land",
+   "parentId": "ger.a6",
+   "pos": [
+    6.49,
+    50.25
+   ],
+   "manpower": 3500,
+   "manpowerMax": 3500,
+   "equipment": {
+    "held": {
+     "tank_medium": 100,
+     "tank_light": 20,
+     "gun_arty": 24,
+     "truck": 60
+    },
+    "authorised": {
+     "tank_medium": 100,
+     "tank_light": 20,
+     "gun_arty": 24,
+     "truck": 60
+    }
+   },
+   "organisation": 90,
+   "morale": 78,
+   "experience": 40,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 0,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "hold",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "ger.c.LXVII",
+   "name": "LXVII. Armeekorps (Hitzfeld)",
+   "shortName": "LXVII.AK",
+   "nation": "GER",
+   "side": "axis",
+   "type": "hq",
+   "domain": "land",
+   "parentId": "ger.a6",
+   "pos": [
+    6.32,
+    50.55
+   ],
+   "manpower": 600,
+   "manpowerMax": 600,
+   "equipment": {
+    "held": {
+     "rifle": 600
+    },
+    "authorised": {
+     "rifle": 600
+    }
+   },
+   "organisation": 90,
+   "morale": 78,
+   "experience": 55,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 0,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "hold",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "ger.326vg",
+   "name": "326. Volksgrenadier-Division (Kaschner)",
+   "shortName": "326.VGD",
+   "nation": "GER",
+   "side": "axis",
+   "type": "infantry",
+   "domain": "land",
+   "parentId": "ger.c.LXVII",
+   "pos": [
+    6.36,
+    50.55
+   ],
+   "manpower": 13000,
+   "manpowerMax": 13000,
+   "equipment": {
+    "held": {
+     "rifle": 100,
+     "gun_arty": 50,
+     "gun_at": 30
+    },
+    "authorised": {
+     "rifle": 100,
+     "gun_arty": 50,
+     "gun_at": 30
+    }
+   },
+   "organisation": 90,
+   "morale": 78,
+   "experience": 45,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 0,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "hold",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "ger.272vg",
+   "name": "272. Volksgrenadier-Division (König)",
+   "shortName": "272.VGD",
+   "nation": "GER",
+   "side": "axis",
+   "type": "infantry",
+   "domain": "land",
+   "parentId": "ger.c.LXVII",
+   "pos": [
+    6.37,
+    50.49
+   ],
+   "manpower": 13000,
+   "manpowerMax": 13000,
+   "equipment": {
+    "held": {
+     "rifle": 100,
+     "gun_arty": 50,
+     "gun_at": 30
+    },
+    "authorised": {
+     "rifle": 100,
+     "gun_arty": 50,
+     "gun_at": 30
+    }
+   },
+   "organisation": 90,
+   "morale": 78,
+   "experience": 45,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 0,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "hold",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "ger.c.IISS",
+   "name": "II. SS-Panzerkorps (Bittrich)",
+   "shortName": "II.SS-PzK",
+   "nation": "GER",
+   "side": "axis",
+   "type": "hq",
+   "domain": "land",
+   "parentId": "ger.a6",
+   "pos": [
+    6.84,
+    50.39
+   ],
+   "manpower": 600,
+   "manpowerMax": 600,
+   "equipment": {
+    "held": {
+     "rifle": 600
+    },
+    "authorised": {
+     "rifle": 600
+    }
+   },
+   "organisation": 90,
+   "morale": 78,
+   "experience": 55,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 0,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "hold",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "ger.2ss",
+   "name": "2. SS-Panzer-Division \"Das Reich\" (Lammerding)",
+   "shortName": "2.SS-PzD",
+   "nation": "GER",
+   "side": "axis",
+   "type": "armoured",
+   "domain": "land",
+   "parentId": "ger.c.IISS",
+   "pos": [
+    6.88,
+    50.39
+   ],
+   "manpower": 12000,
+   "manpowerMax": 12000,
+   "equipment": {
+    "held": {
+     "tank_medium": 100,
+     "tank_light": 20,
+     "gun_arty": 24,
+     "truck": 60
+    },
+    "authorised": {
+     "tank_medium": 100,
+     "tank_light": 20,
+     "gun_arty": 24,
+     "truck": 60
+    }
+   },
+   "organisation": 90,
+   "morale": 78,
+   "experience": 55,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 0,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "hold",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "ger.9ss",
+   "name": "9. SS-Panzer-Division \"Hohenstaufen\" (Stadler)",
+   "shortName": "9.SS-PzD",
+   "nation": "GER",
+   "side": "axis",
+   "type": "armoured",
+   "domain": "land",
+   "parentId": "ger.c.IISS",
+   "pos": [
+    6.92,
+    50.39
+   ],
+   "manpower": 12000,
+   "manpowerMax": 12000,
+   "equipment": {
+    "held": {
+     "tank_medium": 100,
+     "tank_light": 20,
+     "gun_arty": 24,
+     "truck": 60
+    },
+    "authorised": {
+     "tank_medium": 100,
+     "tank_light": 20,
+     "gun_arty": 24,
+     "truck": 60
+    }
+   },
+   "organisation": 90,
+   "morale": 78,
+   "experience": 55,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 0,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "hold",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "ger.a5",
+   "name": "5. Panzerarmee (v. Manteuffel)",
+   "shortName": "5.PzArmee",
+   "nation": "GER",
+   "side": "axis",
+   "type": "hq",
+   "domain": "land",
+   "parentId": "ger.hq.hgb",
+   "pos": [
+    6.64,
+    50.12
+   ],
+   "manpower": 600,
+   "manpowerMax": 600,
+   "equipment": {
+    "held": {
+     "rifle": 600
+    },
+    "authorised": {
+     "rifle": 600
+    }
+   },
+   "organisation": 90,
+   "morale": 78,
+   "experience": 55,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 0,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "hold",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "ger.c.LXVI",
+   "name": "LXVI. Armeekorps (Lucht)",
+   "shortName": "LXVI.AK",
+   "nation": "GER",
+   "side": "axis",
+   "type": "hq",
+   "domain": "land",
+   "parentId": "ger.a5",
+   "pos": [
+    6.24,
+    50.23
+   ],
+   "manpower": 600,
+   "manpowerMax": 600,
+   "equipment": {
+    "held": {
+     "rifle": 600
+    },
+    "authorised": {
+     "rifle": 600
+    }
+   },
+   "organisation": 90,
+   "morale": 78,
+   "experience": 55,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 0,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "hold",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "ger.18vg",
+   "name": "18. Volksgrenadier-Division (Hoffmann-Schönborn)",
+   "shortName": "18.VGD",
+   "nation": "GER",
+   "side": "axis",
+   "type": "infantry",
+   "domain": "land",
+   "parentId": "ger.c.LXVI",
+   "pos": [
+    6.28,
+    50.23
+   ],
+   "manpower": 13000,
+   "manpowerMax": 13000,
+   "equipment": {
+    "held": {
+     "rifle": 100,
+     "gun_arty": 50,
+     "gun_at": 30
+    },
+    "authorised": {
+     "rifle": 100,
+     "gun_arty": 50,
+     "gun_at": 30
+    }
+   },
+   "organisation": 90,
+   "morale": 78,
+   "experience": 45,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 0,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "hold",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "ger.62vg",
+   "name": "62. Volksgrenadier-Division (Kittel)",
+   "shortName": "62.VGD",
+   "nation": "GER",
+   "side": "axis",
+   "type": "infantry",
+   "domain": "land",
+   "parentId": "ger.c.LXVI",
+   "pos": [
+    6.24,
+    50.14
+   ],
+   "manpower": 13000,
+   "manpowerMax": 13000,
+   "equipment": {
+    "held": {
+     "rifle": 100,
+     "gun_arty": 50,
+     "gun_at": 30
+    },
+    "authorised": {
+     "rifle": 100,
+     "gun_arty": 50,
+     "gun_at": 30
+    }
+   },
+   "organisation": 90,
+   "morale": 78,
+   "experience": 45,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 0,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "hold",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "ger.c.LVIII",
+   "name": "LVIII. Panzerkorps (Krüger)",
+   "shortName": "LVIII.PzK",
+   "nation": "GER",
+   "side": "axis",
+   "type": "hq",
+   "domain": "land",
+   "parentId": "ger.a5",
+   "pos": [
+    6.3,
+    50.09
+   ],
+   "manpower": 600,
+   "manpowerMax": 600,
+   "equipment": {
+    "held": {
+     "rifle": 600
+    },
+    "authorised": {
+     "rifle": 600
+    }
+   },
+   "organisation": 90,
+   "morale": 78,
+   "experience": 55,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 0,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "hold",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "ger.116pz",
+   "name": "116. Panzer-Division (v. Waldenburg)",
+   "shortName": "116.PzD",
+   "nation": "GER",
+   "side": "axis",
+   "type": "armoured",
+   "domain": "land",
+   "parentId": "ger.c.LVIII",
+   "pos": [
+    6.34,
+    50.09
+   ],
+   "manpower": 12000,
+   "manpowerMax": 12000,
+   "equipment": {
+    "held": {
+     "tank_medium": 100,
+     "tank_light": 20,
+     "gun_arty": 24,
+     "truck": 60
+    },
+    "authorised": {
+     "tank_medium": 100,
+     "tank_light": 20,
+     "gun_arty": 24,
+     "truck": 60
+    }
+   },
+   "organisation": 90,
+   "morale": 78,
+   "experience": 55,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 0,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "hold",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "ger.560vg",
+   "name": "560. Volksgrenadier-Division (Langhauser)",
+   "shortName": "560.VGD",
+   "nation": "GER",
+   "side": "axis",
+   "type": "infantry",
+   "domain": "land",
+   "parentId": "ger.c.LVIII",
+   "pos": [
+    6.38,
+    50.09
+   ],
+   "manpower": 13000,
+   "manpowerMax": 13000,
+   "equipment": {
+    "held": {
+     "rifle": 100,
+     "gun_arty": 50,
+     "gun_at": 30
+    },
+    "authorised": {
+     "rifle": 100,
+     "gun_arty": 50,
+     "gun_at": 30
+    }
+   },
+   "organisation": 90,
+   "morale": 78,
+   "experience": 45,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 0,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "hold",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "ger.c.XLVII",
+   "name": "XLVII. Panzerkorps (v. Lüttwitz)",
+   "shortName": "XLVII.PzK",
+   "nation": "GER",
+   "side": "axis",
+   "type": "hq",
+   "domain": "land",
+   "parentId": "ger.a5",
+   "pos": [
+    6.32,
+    49.97
+   ],
+   "manpower": 600,
+   "manpowerMax": 600,
+   "equipment": {
+    "held": {
+     "rifle": 600
+    },
+    "authorised": {
+     "rifle": 600
+    }
+   },
+   "organisation": 90,
+   "morale": 78,
+   "experience": 55,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 0,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "hold",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "ger.2pz",
+   "name": "2. Panzer-Division (v. Lauchert)",
+   "shortName": "2.PzD",
+   "nation": "GER",
+   "side": "axis",
+   "type": "armoured",
+   "domain": "land",
+   "parentId": "ger.c.XLVII",
+   "pos": [
+    6.36,
+    49.97
+   ],
+   "manpower": 12000,
+   "manpowerMax": 12000,
+   "equipment": {
+    "held": {
+     "tank_medium": 100,
+     "tank_light": 20,
+     "gun_arty": 24,
+     "truck": 60
+    },
+    "authorised": {
+     "tank_medium": 100,
+     "tank_light": 20,
+     "gun_arty": 24,
+     "truck": 60
+    }
+   },
+   "organisation": 90,
+   "morale": 78,
+   "experience": 55,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 0,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "hold",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "ger.pzl",
+   "name": "Panzer-Lehr-Division (Bayerlein)",
+   "shortName": "Pz-Lehr",
+   "nation": "GER",
+   "side": "axis",
+   "type": "armoured",
+   "domain": "land",
+   "parentId": "ger.c.XLVII",
+   "pos": [
+    6.4,
+    49.97
+   ],
+   "manpower": 12000,
+   "manpowerMax": 12000,
+   "equipment": {
+    "held": {
+     "tank_medium": 100,
+     "tank_light": 20,
+     "gun_arty": 24,
+     "truck": 60
+    },
+    "authorised": {
+     "tank_medium": 100,
+     "tank_light": 20,
+     "gun_arty": 24,
+     "truck": 60
+    }
+   },
+   "organisation": 90,
+   "morale": 78,
+   "experience": 55,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 0,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "hold",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "ger.26vg",
+   "name": "26. Volksgrenadier-Division (Kokott)",
+   "shortName": "26.VGD",
+   "nation": "GER",
+   "side": "axis",
+   "type": "infantry",
+   "domain": "land",
+   "parentId": "ger.c.XLVII",
+   "pos": [
+    6.44,
+    49.97
+   ],
+   "manpower": 13000,
+   "manpowerMax": 13000,
+   "equipment": {
+    "held": {
+     "rifle": 100,
+     "gun_arty": 50,
+     "gun_at": 30
+    },
+    "authorised": {
+     "rifle": 100,
+     "gun_arty": 50,
+     "gun_at": 30
+    }
+   },
+   "organisation": 90,
+   "morale": 78,
+   "experience": 45,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 0,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "hold",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "ger.fbb",
+   "name": "Führer-Begleit-Brigade (Remer)",
+   "shortName": "FBB",
+   "nation": "GER",
+   "side": "axis",
+   "type": "armoured",
+   "domain": "land",
+   "parentId": "ger.c.XLVII",
+   "pos": [
+    6.79,
+    50.17
+   ],
+   "manpower": 6000,
+   "manpowerMax": 6000,
+   "equipment": {
+    "held": {
+     "tank_medium": 100,
+     "tank_light": 20,
+     "gun_arty": 24,
+     "truck": 60
+    },
+    "authorised": {
+     "tank_medium": 100,
+     "tank_light": 20,
+     "gun_arty": 24,
+     "truck": 60
+    }
+   },
+   "organisation": 90,
+   "morale": 78,
+   "experience": 55,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 0,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "hold",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "ger.a7",
+   "name": "7. Armee (Brandenberger)",
+   "shortName": "7.Armee",
+   "nation": "GER",
+   "side": "axis",
+   "type": "hq",
+   "domain": "land",
+   "parentId": "ger.hq.hgb",
+   "pos": [
+    6.74,
+    49.82
+   ],
+   "manpower": 600,
+   "manpowerMax": 600,
+   "equipment": {
+    "held": {
+     "rifle": 600
+    },
+    "authorised": {
+     "rifle": 600
+    }
+   },
+   "organisation": 90,
+   "morale": 78,
+   "experience": 55,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 0,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "hold",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "ger.c.LXXXV",
+   "name": "LXXXV. Armeekorps (Kniess)",
+   "shortName": "LXXXV.AK",
+   "nation": "GER",
+   "side": "axis",
+   "type": "hq",
+   "domain": "land",
+   "parentId": "ger.a7",
+   "pos": [
+    6.39,
+    49.9
+   ],
+   "manpower": 600,
+   "manpowerMax": 600,
+   "equipment": {
+    "held": {
+     "rifle": 600
+    },
+    "authorised": {
+     "rifle": 600
+    }
+   },
+   "organisation": 90,
+   "morale": 78,
+   "experience": 55,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 0,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "hold",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "ger.5fj",
+   "name": "5. Fallschirmjäger-Division (Heilmann)",
+   "shortName": "5.FJD",
+   "nation": "GER",
+   "side": "axis",
+   "type": "infantry",
+   "domain": "land",
+   "parentId": "ger.c.LXXXV",
+   "pos": [
+    6.43,
+    49.9
+   ],
+   "manpower": 13000,
+   "manpowerMax": 13000,
+   "equipment": {
+    "held": {
+     "rifle": 100,
+     "gun_arty": 50,
+     "gun_at": 30
+    },
+    "authorised": {
+     "rifle": 100,
+     "gun_arty": 50,
+     "gun_at": 30
+    }
+   },
+   "organisation": 90,
+   "morale": 78,
+   "experience": 40,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 0,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "hold",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "ger.352vg",
+   "name": "352. Volksgrenadier-Division (Schmidt)",
+   "shortName": "352.VGD",
+   "nation": "GER",
+   "side": "axis",
+   "type": "infantry",
+   "domain": "land",
+   "parentId": "ger.c.LXXXV",
+   "pos": [
+    6.44,
+    49.82
+   ],
+   "manpower": 13000,
+   "manpowerMax": 13000,
+   "equipment": {
+    "held": {
+     "rifle": 100,
+     "gun_arty": 50,
+     "gun_at": 30
+    },
+    "authorised": {
+     "rifle": 100,
+     "gun_arty": 50,
+     "gun_at": 30
+    }
+   },
+   "organisation": 90,
+   "morale": 78,
+   "experience": 45,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 0,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "hold",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "ger.c.LXXX",
+   "name": "LXXX. Armeekorps (Beyer)",
+   "shortName": "LXXX.AK",
+   "nation": "GER",
+   "side": "axis",
+   "type": "hq",
+   "domain": "land",
+   "parentId": "ger.a7",
+   "pos": [
+    6.44,
+    49.75
+   ],
+   "manpower": 600,
+   "manpowerMax": 600,
+   "equipment": {
+    "held": {
+     "rifle": 600
+    },
+    "authorised": {
+     "rifle": 600
+    }
+   },
+   "organisation": 90,
+   "morale": 78,
+   "experience": 55,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 0,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "hold",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "ger.212vg",
+   "name": "212. Volksgrenadier-Division (Sensfuss)",
+   "shortName": "212.VGD",
+   "nation": "GER",
+   "side": "axis",
+   "type": "infantry",
+   "domain": "land",
+   "parentId": "ger.c.LXXX",
+   "pos": [
+    6.48,
+    49.75
+   ],
+   "manpower": 13000,
+   "manpowerMax": 13000,
+   "equipment": {
+    "held": {
+     "rifle": 100,
+     "gun_arty": 50,
+     "gun_at": 30
+    },
+    "authorised": {
+     "rifle": 100,
+     "gun_arty": 50,
+     "gun_at": 30
+    }
+   },
+   "organisation": 90,
+   "morale": 78,
+   "experience": 45,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 0,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "hold",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "usa.hq.1a",
+   "name": "US First Army (Hodges)",
+   "shortName": "First Army",
+   "nation": "USA",
+   "side": "allies",
+   "type": "hq",
+   "domain": "land",
+   "pos": [
+    5.81,
+    50.46
+   ],
+   "manpower": 600,
+   "manpowerMax": 600,
+   "equipment": {
+    "held": {
+     "rifle": 600
+    },
+    "authorised": {
+     "rifle": 600
+    }
+   },
+   "organisation": 90,
+   "morale": 75,
+   "experience": 55,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 15,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "defend",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "usa.c.V",
+   "name": "V Corps (Gerow)",
+   "shortName": "V Corps",
+   "nation": "USA",
+   "side": "allies",
+   "type": "hq",
+   "domain": "land",
+   "parentId": "usa.hq.1a",
+   "pos": [
+    5.97,
+    50.6
+   ],
+   "manpower": 600,
+   "manpowerMax": 600,
+   "equipment": {
+    "held": {
+     "rifle": 600
+    },
+    "authorised": {
+     "rifle": 600
+    }
+   },
+   "organisation": 90,
+   "morale": 75,
+   "experience": 55,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 15,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "defend",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "usa.99id",
+   "name": "99th Infantry Division (Lauer)",
+   "shortName": "99th ID",
+   "nation": "USA",
+   "side": "allies",
+   "type": "infantry",
+   "domain": "land",
+   "parentId": "usa.c.V",
+   "pos": [
+    6.21,
+    50.4
+   ],
+   "manpower": 13000,
+   "manpowerMax": 13000,
+   "equipment": {
+    "held": {
+     "rifle": 100,
+     "gun_arty": 50,
+     "gun_at": 30
+    },
+    "authorised": {
+     "rifle": 100,
+     "gun_arty": 50,
+     "gun_at": 30
+    }
+   },
+   "organisation": 90,
+   "morale": 75,
+   "experience": 55,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 15,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "defend",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "usa.2id",
+   "name": "2nd Infantry Division (Robertson)",
+   "shortName": "2nd ID",
+   "nation": "USA",
+   "side": "allies",
+   "type": "infantry",
+   "domain": "land",
+   "parentId": "usa.c.V",
+   "pos": [
+    6.19,
+    50.46
+   ],
+   "manpower": 13000,
+   "manpowerMax": 13000,
+   "equipment": {
+    "held": {
+     "rifle": 100,
+     "gun_arty": 50,
+     "gun_at": 30
+    },
+    "authorised": {
+     "rifle": 100,
+     "gun_arty": 50,
+     "gun_at": 30
+    }
+   },
+   "organisation": 90,
+   "morale": 75,
+   "experience": 55,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 15,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "defend",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "usa.38cav",
+   "name": "38th Cavalry Squadron",
+   "shortName": "38th Cav",
+   "nation": "USA",
+   "side": "allies",
+   "type": "recon",
+   "domain": "land",
+   "parentId": "usa.c.V",
+   "pos": [
+    6.18,
+    50.52
+   ],
+   "manpower": 3000,
+   "manpowerMax": 3000,
+   "equipment": {
+    "held": {
+     "rifle": 40,
+     "armoured_car": 30
+    },
+    "authorised": {
+     "rifle": 40,
+     "armoured_car": 30
+    }
+   },
+   "organisation": 90,
+   "morale": 75,
+   "experience": 55,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 15,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "defend",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "usa.14cavg",
+   "name": "14th Cavalry Group",
+   "shortName": "14th CavGp",
+   "nation": "USA",
+   "side": "allies",
+   "type": "recon",
+   "domain": "land",
+   "parentId": "usa.c.VIII",
+   "pos": [
+    6.16,
+    50.31
+   ],
+   "manpower": 3000,
+   "manpowerMax": 3000,
+   "equipment": {
+    "held": {
+     "rifle": 40,
+     "armoured_car": 30
+    },
+    "authorised": {
+     "rifle": 40,
+     "armoured_car": 30
+    }
+   },
+   "organisation": 90,
+   "morale": 75,
+   "experience": 55,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 15,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "defend",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "usa.c.VIII",
+   "name": "VIII Corps (Middleton)",
+   "shortName": "VIII Corps",
+   "nation": "USA",
+   "side": "allies",
+   "type": "hq",
+   "domain": "land",
+   "parentId": "usa.hq.1a",
+   "pos": [
+    5.66,
+    49.97
+   ],
+   "manpower": 600,
+   "manpowerMax": 600,
+   "equipment": {
+    "held": {
+     "rifle": 600
+    },
+    "authorised": {
+     "rifle": 600
+    }
+   },
+   "organisation": 90,
+   "morale": 75,
+   "experience": 55,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 15,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "defend",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "usa.28id",
+   "name": "28th Infantry Division (Cota)",
+   "shortName": "28th ID",
+   "nation": "USA",
+   "side": "allies",
+   "type": "infantry",
+   "domain": "land",
+   "parentId": "usa.c.VIII",
+   "pos": [
+    5.97,
+    49.99
+   ],
+   "manpower": 13000,
+   "manpowerMax": 13000,
+   "equipment": {
+    "held": {
+     "rifle": 100,
+     "gun_arty": 50,
+     "gun_at": 30
+    },
+    "authorised": {
+     "rifle": 100,
+     "gun_arty": 50,
+     "gun_at": 30
+    }
+   },
+   "organisation": 90,
+   "morale": 75,
+   "experience": 55,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 15,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "defend",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "usa.106id",
+   "name": "106th Infantry Division (Jones)",
+   "shortName": "106th ID",
+   "nation": "USA",
+   "side": "allies",
+   "type": "infantry",
+   "domain": "land",
+   "parentId": "usa.c.VIII",
+   "pos": [
+    6.11,
+    50.22
+   ],
+   "manpower": 13000,
+   "manpowerMax": 13000,
+   "equipment": {
+    "held": {
+     "rifle": 100,
+     "gun_arty": 50,
+     "gun_at": 30
+    },
+    "authorised": {
+     "rifle": 100,
+     "gun_arty": 50,
+     "gun_at": 30
+    }
+   },
+   "organisation": 90,
+   "morale": 65,
+   "experience": 20,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 15,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "defend",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "usa.9ad.ccb",
+   "name": "Combat Command B, 9th Armored Division (Hoge)",
+   "shortName": "CCB/9AD",
+   "nation": "USA",
+   "side": "allies",
+   "type": "armoured",
+   "domain": "land",
+   "parentId": "usa.c.VIII",
+   "pos": [
+    5.99,
+    50.31
+   ],
+   "manpower": 4500,
+   "manpowerMax": 4500,
+   "equipment": {
+    "held": {
+     "tank_medium": 100,
+     "tank_light": 20,
+     "gun_arty": 24,
+     "truck": 60
+    },
+    "authorised": {
+     "tank_medium": 100,
+     "tank_light": 20,
+     "gun_arty": 24,
+     "truck": 60
+    }
+   },
+   "organisation": 90,
+   "morale": 75,
+   "experience": 55,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 15,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "defend",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "usa.9ad.ccr",
+   "name": "Combat Command Reserve, 9th Armored Division (Gilbreth)",
+   "shortName": "CCR/9AD",
+   "nation": "USA",
+   "side": "allies",
+   "type": "armoured",
+   "domain": "land",
+   "parentId": "usa.c.VIII",
+   "pos": [
+    5.72,
+    49.97
+   ],
+   "manpower": 4000,
+   "manpowerMax": 4000,
+   "equipment": {
+    "held": {
+     "tank_medium": 100,
+     "tank_light": 20,
+     "gun_arty": 24,
+     "truck": 60
+    },
+    "authorised": {
+     "tank_medium": 100,
+     "tank_light": 20,
+     "gun_arty": 24,
+     "truck": 60
+    }
+   },
+   "organisation": 90,
+   "morale": 75,
+   "experience": 55,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 15,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "defend",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "usa.4id",
+   "name": "4th Infantry Division (Barton)",
+   "shortName": "4th ID",
+   "nation": "USA",
+   "side": "allies",
+   "type": "infantry",
+   "domain": "land",
+   "parentId": "usa.c.VIII",
+   "pos": [
+    6.26,
+    49.75
+   ],
+   "manpower": 13000,
+   "manpowerMax": 13000,
+   "equipment": {
+    "held": {
+     "rifle": 100,
+     "gun_arty": 50,
+     "gun_at": 30
+    },
+    "authorised": {
+     "rifle": 100,
+     "gun_arty": 50,
+     "gun_at": 30
+    }
+   },
+   "organisation": 90,
+   "morale": 75,
+   "experience": 55,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 15,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "defend",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "usa.xxx.hq",
+   "name": "British XXX Corps (Horrocks)",
+   "shortName": "XXX Corps",
+   "nation": "GBR",
+   "side": "allies",
+   "type": "hq",
+   "domain": "land",
+   "pos": [
+    4.94,
+    50.52
+   ],
+   "manpower": 600,
+   "manpowerMax": 600,
+   "equipment": {
+    "held": {
+     "rifle": 600
+    },
+    "authorised": {
+     "rifle": 600
+    }
+   },
+   "organisation": 90,
+   "morale": 80,
+   "experience": 65,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 15,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "defend",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "usa.air.48fg",
+   "name": "48th Fighter Group (USAAF)",
+   "shortName": "48th FG",
+   "nation": "USA",
+   "side": "allies",
+   "type": "air_fighter",
+   "domain": "air",
+   "pos": [
+    5.2,
+    50.79
+   ],
+   "manpower": 432,
+   "manpowerMax": 432,
+   "equipment": {
+    "held": {
+     "aircraft_fighter": 36
+    },
+    "authorised": {
+     "aircraft_fighter": 36
+    }
+   },
+   "organisation": 90,
+   "morale": 75,
+   "experience": 55,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 0,
+   "readiness": 90,
+   "entrenchment": 0,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "defend",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "usa.air.404fg",
+   "name": "404th Fighter Group (USAAF)",
+   "shortName": "404th FG",
+   "nation": "USA",
+   "side": "allies",
+   "type": "air_fighter",
+   "domain": "air",
+   "pos": [
+    5.2,
+    50.79
+   ],
+   "manpower": 432,
+   "manpowerMax": 432,
+   "equipment": {
+    "held": {
+     "aircraft_fighter": 36
+    },
+    "authorised": {
+     "aircraft_fighter": 36
+    }
+   },
+   "organisation": 90,
+   "morale": 75,
+   "experience": 55,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 0,
+   "readiness": 90,
+   "entrenchment": 0,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "defend",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "usa.air.352fg",
+   "name": "352nd Fighter Group (USAAF)",
+   "shortName": "352nd FG",
+   "nation": "USA",
+   "side": "allies",
+   "type": "air_fighter",
+   "domain": "air",
+   "pos": [
+    5.55,
+    50.98
+   ],
+   "manpower": 432,
+   "manpowerMax": 432,
+   "equipment": {
+    "held": {
+     "aircraft_fighter": 36
+    },
+    "authorised": {
+     "aircraft_fighter": 36
+    }
+   },
+   "organisation": 90,
+   "morale": 75,
+   "experience": 55,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 0,
+   "readiness": 90,
+   "entrenchment": 0,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "defend",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "usa.air.366fg",
+   "name": "366th Fighter Group (USAAF)",
+   "shortName": "366th FG",
+   "nation": "USA",
+   "side": "allies",
+   "type": "air_fighter",
+   "domain": "air",
+   "pos": [
+    5.55,
+    50.98
+   ],
+   "manpower": 432,
+   "manpowerMax": 432,
+   "equipment": {
+    "held": {
+     "aircraft_fighter": 36
+    },
+    "authorised": {
+     "aircraft_fighter": 36
+    }
+   },
+   "organisation": 90,
+   "morale": 75,
+   "experience": 55,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 0,
+   "readiness": 90,
+   "entrenchment": 0,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "defend",
+   "orders": [],
+   "kills": 0
+  }
+ ],
+ "reinforcements": [
+  {
+   "id": "reinf.usa.1id",
+   "atMinutes": 1440,
+   "pos": [
+    6.2,
+    50.45
+   ],
+   "unit": {
+    "id": "usa.1id",
+    "name": "US 1st Infantry Division (Andrus) - 26th Infantry reached Elsenborn from 16/17 Dec",
+    "shortName": "1st ID",
+    "nation": "USA",
+    "side": "allies",
+    "type": "infantry",
+    "domain": "land",
+    "pos": [
+     6.2,
+     50.45
+    ],
+    "manpower": 13000,
+    "manpowerMax": 13000,
+    "equipment": {
+     "held": {
+      "rifle": 100,
+      "gun_arty": 50,
+      "gun_at": 30
+     },
+     "authorised": {
+      "rifle": 100,
+      "gun_arty": 50,
+      "gun_at": 30
+     }
+    },
+    "organisation": 75,
+    "morale": 75,
+    "experience": 55,
+    "fuel": 100,
+    "ammo": 100,
+    "supply": 100,
+    "fatigue": 15,
+    "readiness": 75,
+    "entrenchment": 15,
+    "moveStatus": "stationary",
+    "combatStatus": "idle",
+    "posture": "defend",
+    "orders": [],
+    "kills": 0
+   }
+  },
+  {
+   "id": "reinf.usa.7ad",
+   "atMinutes": 1920,
+   "pos": [
+    5.92,
+    50.28
+   ],
+   "unit": {
+    "id": "usa.7ad",
+    "name": "7th Armored Division (Hasbrouck)",
+    "shortName": "7th AD",
+    "nation": "USA",
+    "side": "allies",
+    "type": "armoured",
+    "domain": "land",
+    "pos": [
+     5.92,
+     50.28
+    ],
+    "manpower": 12000,
+    "manpowerMax": 12000,
+    "equipment": {
+     "held": {
+      "tank_medium": 100,
+      "tank_light": 20,
+      "gun_arty": 24,
+      "truck": 60
+     },
+     "authorised": {
+      "tank_medium": 100,
+      "tank_light": 20,
+      "gun_arty": 24,
+      "truck": 60
+     }
+    },
+    "organisation": 75,
+    "morale": 75,
+    "experience": 55,
+    "fuel": 100,
+    "ammo": 100,
+    "supply": 100,
+    "fatigue": 15,
+    "readiness": 75,
+    "entrenchment": 15,
+    "moveStatus": "stationary",
+    "combatStatus": "idle",
+    "posture": "defend",
+    "orders": [],
+    "kills": 0
+   }
+  },
+  {
+   "id": "reinf.usa.10ad.ccb",
+   "atMinutes": 2880,
+   "pos": [
+    5.72,
+    50
+   ],
+   "unit": {
+    "id": "usa.10ad.ccb",
+    "name": "Combat Command B, 10th Armored Division (Roberts)",
+    "shortName": "CCB/10AD",
+    "nation": "USA",
+    "side": "allies",
+    "type": "armoured",
+    "domain": "land",
+    "pos": [
+     5.72,
+     50
+    ],
+    "manpower": 4500,
+    "manpowerMax": 4500,
+    "equipment": {
+     "held": {
+      "tank_medium": 100,
+      "tank_light": 20,
+      "gun_arty": 24,
+      "truck": 60
+     },
+     "authorised": {
+      "tank_medium": 100,
+      "tank_light": 20,
+      "gun_arty": 24,
+      "truck": 60
+     }
+    },
+    "organisation": 75,
+    "morale": 75,
+    "experience": 55,
+    "fuel": 100,
+    "ammo": 100,
+    "supply": 100,
+    "fatigue": 15,
+    "readiness": 75,
+    "entrenchment": 15,
+    "moveStatus": "stationary",
+    "combatStatus": "idle",
+    "posture": "defend",
+    "orders": [],
+    "kills": 0
+   }
+  },
+  {
+   "id": "reinf.usa.30id",
+   "atMinutes": 3600,
+   "pos": [
+    6.03,
+    50.42
+   ],
+   "unit": {
+    "id": "usa.30id",
+    "name": "30th Infantry Division (Hobbs)",
+    "shortName": "30th ID",
+    "nation": "USA",
+    "side": "allies",
+    "type": "infantry",
+    "domain": "land",
+    "pos": [
+     6.03,
+     50.42
+    ],
+    "manpower": 13000,
+    "manpowerMax": 13000,
+    "equipment": {
+     "held": {
+      "rifle": 100,
+      "gun_arty": 50,
+      "gun_at": 30
+     },
+     "authorised": {
+      "rifle": 100,
+      "gun_arty": 50,
+      "gun_at": 30
+     }
+    },
+    "organisation": 75,
+    "morale": 75,
+    "experience": 55,
+    "fuel": 100,
+    "ammo": 100,
+    "supply": 100,
+    "fatigue": 15,
+    "readiness": 75,
+    "entrenchment": 15,
+    "moveStatus": "stationary",
+    "combatStatus": "idle",
+    "posture": "defend",
+    "orders": [],
+    "kills": 0
+   }
+  },
+  {
+   "id": "reinf.usa.82abn",
+   "atMinutes": 5040,
+   "pos": [
+    5.72,
+    50.35
+   ],
+   "unit": {
+    "id": "usa.82abn",
+    "name": "82nd Airborne Division (Gavin)",
+    "shortName": "82nd Abn",
+    "nation": "USA",
+    "side": "allies",
+    "type": "paratroop",
+    "domain": "land",
+    "pos": [
+     5.72,
+     50.35
+    ],
+    "manpower": 9000,
+    "manpowerMax": 9000,
+    "equipment": {
+     "held": {
+      "rifle": 90,
+      "gun_arty": 30,
+      "gun_at": 12
+     },
+     "authorised": {
+      "rifle": 90,
+      "gun_arty": 30,
+      "gun_at": 12
+     }
+    },
+    "organisation": 75,
+    "morale": 75,
+    "experience": 55,
+    "fuel": 100,
+    "ammo": 100,
+    "supply": 100,
+    "fatigue": 15,
+    "readiness": 75,
+    "entrenchment": 0,
+    "moveStatus": "stationary",
+    "combatStatus": "idle",
+    "posture": "defend",
+    "orders": [],
+    "kills": 0
+   }
+  },
+  {
+   "id": "reinf.usa.101abn",
+   "atMinutes": 5040,
+   "pos": [
+    5.72,
+    50
+   ],
+   "unit": {
+    "id": "usa.101abn",
+    "name": "101st Airborne Division (McAuliffe)",
+    "shortName": "101st Abn",
+    "nation": "USA",
+    "side": "allies",
+    "type": "paratroop",
+    "domain": "land",
+    "pos": [
+     5.72,
+     50
+    ],
+    "manpower": 9000,
+    "manpowerMax": 9000,
+    "equipment": {
+     "held": {
+      "rifle": 90,
+      "gun_arty": 30,
+      "gun_at": 12
+     },
+     "authorised": {
+      "rifle": 90,
+      "gun_arty": 30,
+      "gun_at": 12
+     }
+    },
+    "organisation": 75,
+    "morale": 75,
+    "experience": 55,
+    "fuel": 100,
+    "ammo": 100,
+    "supply": 100,
+    "fatigue": 15,
+    "readiness": 75,
+    "entrenchment": 0,
+    "moveStatus": "stationary",
+    "combatStatus": "idle",
+    "posture": "defend",
+    "orders": [],
+    "kills": 0
+   }
+  },
+  {
+   "id": "reinf.usa.26id",
+   "atMinutes": 7920,
+   "pos": [
+    5.7,
+    49.57
+   ],
+   "unit": {
+    "id": "usa.26id",
+    "name": "26th Infantry Division (moved to Luxembourg 19-21 Dec)",
+    "shortName": "26th ID",
+    "nation": "USA",
+    "side": "allies",
+    "type": "infantry",
+    "domain": "land",
+    "pos": [
+     5.7,
+     49.57
+    ],
+    "manpower": 13000,
+    "manpowerMax": 13000,
+    "equipment": {
+     "held": {
+      "rifle": 100,
+      "gun_arty": 50,
+      "gun_at": 30
+     },
+     "authorised": {
+      "rifle": 100,
+      "gun_arty": 50,
+      "gun_at": 30
+     }
+    },
+    "organisation": 75,
+    "morale": 75,
+    "experience": 55,
+    "fuel": 100,
+    "ammo": 100,
+    "supply": 100,
+    "fatigue": 15,
+    "readiness": 75,
+    "entrenchment": 15,
+    "moveStatus": "stationary",
+    "combatStatus": "idle",
+    "posture": "defend",
+    "orders": [],
+    "kills": 0
+   }
+  },
+  {
+   "id": "reinf.usa.6ad",
+   "atMinutes": 10800,
+   "pos": [
+    6,
+    49.57
+   ],
+   "unit": {
+    "id": "usa.6ad",
+    "name": "6th Armored Division (ordered north 23 Dec)",
+    "shortName": "6th AD",
+    "nation": "USA",
+    "side": "allies",
+    "type": "armoured",
+    "domain": "land",
+    "pos": [
+     6,
+     49.57
+    ],
+    "manpower": 12000,
+    "manpowerMax": 12000,
+    "equipment": {
+     "held": {
+      "tank_medium": 100,
+      "tank_light": 20,
+      "gun_arty": 24,
+      "truck": 60
+     },
+     "authorised": {
+      "tank_medium": 100,
+      "tank_light": 20,
+      "gun_arty": 24,
+      "truck": 60
+     }
+    },
+    "organisation": 75,
+    "morale": 75,
+    "experience": 55,
+    "fuel": 100,
+    "ammo": 100,
+    "supply": 100,
+    "fatigue": 15,
+    "readiness": 75,
+    "entrenchment": 15,
+    "moveStatus": "stationary",
+    "combatStatus": "idle",
+    "posture": "defend",
+    "orders": [],
+    "kills": 0
+   }
+  },
+  {
+   "id": "reinf.usa.87id",
+   "atMinutes": 19440,
+   "pos": [
+    5.45,
+    49.6
+   ],
+   "unit": {
+    "id": "usa.87id",
+    "name": "87th Infantry Division (committed 29 Dec)",
+    "shortName": "87th ID",
+    "nation": "USA",
+    "side": "allies",
+    "type": "infantry",
+    "domain": "land",
+    "pos": [
+     5.45,
+     49.6
+    ],
+    "manpower": 13000,
+    "manpowerMax": 13000,
+    "equipment": {
+     "held": {
+      "rifle": 100,
+      "gun_arty": 50,
+      "gun_at": 30
+     },
+     "authorised": {
+      "rifle": 100,
+      "gun_arty": 50,
+      "gun_at": 30
+     }
+    },
+    "organisation": 75,
+    "morale": 75,
+    "experience": 55,
+    "fuel": 100,
+    "ammo": 100,
+    "supply": 100,
+    "fatigue": 15,
+    "readiness": 75,
+    "entrenchment": 15,
+    "moveStatus": "stationary",
+    "combatStatus": "idle",
+    "posture": "defend",
+    "orders": [],
+    "kills": 0
+   }
+  },
+  {
+   "id": "reinf.gbr.29arm",
+   "atMinutes": 5040,
+   "pos": [
+    4.88,
+    50.36
+   ],
+   "unit": {
+    "id": "gbr.29arm",
+    "name": "29th Armoured Brigade (Harvey)",
+    "shortName": "29 Armd Bde",
+    "nation": "GBR",
+    "side": "allies",
+    "type": "armoured",
+    "domain": "land",
+    "pos": [
+     4.88,
+     50.36
+    ],
+    "manpower": 3500,
+    "manpowerMax": 3500,
+    "equipment": {
+     "held": {
+      "tank_medium": 100,
+      "tank_light": 20,
+      "gun_arty": 24,
+      "truck": 60
+     },
+     "authorised": {
+      "tank_medium": 100,
+      "tank_light": 20,
+      "gun_arty": 24,
+      "truck": 60
+     }
+    },
+    "organisation": 75,
+    "morale": 80,
+    "experience": 65,
+    "fuel": 100,
+    "ammo": 100,
+    "supply": 100,
+    "fatigue": 15,
+    "readiness": 75,
+    "entrenchment": 15,
+    "moveStatus": "stationary",
+    "combatStatus": "idle",
+    "posture": "defend",
+    "orders": [],
+    "kills": 0
+   }
+  },
+  {
+   "id": "reinf.usa.4ad",
+   "atMinutes": 9000,
+   "pos": [
+    5.8,
+    49.56
+   ],
+   "unit": {
+    "id": "usa.4ad",
+    "name": "4th Armored Division (Gaffey)",
+    "shortName": "4th AD",
+    "nation": "USA",
+    "side": "allies",
+    "type": "armoured",
+    "domain": "land",
+    "pos": [
+     5.8,
+     49.56
+    ],
+    "manpower": 12000,
+    "manpowerMax": 12000,
+    "equipment": {
+     "held": {
+      "tank_medium": 100,
+      "tank_light": 20,
+      "gun_arty": 24,
+      "truck": 60
+     },
+     "authorised": {
+      "tank_medium": 100,
+      "tank_light": 20,
+      "gun_arty": 24,
+      "truck": 60
+     }
+    },
+    "organisation": 75,
+    "morale": 75,
+    "experience": 55,
+    "fuel": 100,
+    "ammo": 100,
+    "supply": 100,
+    "fatigue": 15,
+    "readiness": 75,
+    "entrenchment": 15,
+    "moveStatus": "stationary",
+    "combatStatus": "idle",
+    "posture": "defend",
+    "orders": [],
+    "kills": 0
+   }
+  },
+  {
+   "id": "reinf.usa.2ad",
+   "atMinutes": 10800,
+   "pos": [
+    5.1,
+    50.2
+   ],
+   "unit": {
+    "id": "usa.2ad",
+    "name": "2nd Armored Division (Harmon)",
+    "shortName": "2nd AD",
+    "nation": "USA",
+    "side": "allies",
+    "type": "armoured",
+    "domain": "land",
+    "pos": [
+     5.1,
+     50.2
+    ],
+    "manpower": 12000,
+    "manpowerMax": 12000,
+    "equipment": {
+     "held": {
+      "tank_medium": 100,
+      "tank_light": 20,
+      "gun_arty": 24,
+      "truck": 60
+     },
+     "authorised": {
+      "tank_medium": 100,
+      "tank_light": 20,
+      "gun_arty": 24,
+      "truck": 60
+     }
+    },
+    "organisation": 75,
+    "morale": 75,
+    "experience": 55,
+    "fuel": 100,
+    "ammo": 100,
+    "supply": 100,
+    "fatigue": 15,
+    "readiness": 75,
+    "entrenchment": 15,
+    "moveStatus": "stationary",
+    "combatStatus": "idle",
+    "posture": "defend",
+    "orders": [],
+    "kills": 0
+   }
+  },
+  {
+   "id": "reinf.ger.15pg",
+   "atMinutes": 12240,
+   "pos": [
+    6,
+    50
+   ],
+   "unit": {
+    "id": "ger.15pg",
+    "name": "15. Panzergrenadier-Division (Deckert)",
+    "shortName": "15.PzGrD",
+    "nation": "GER",
+    "side": "axis",
+    "type": "motorised",
+    "domain": "land",
+    "pos": [
+     6,
+     50
+    ],
+    "manpower": 12000,
+    "manpowerMax": 12000,
+    "equipment": {
+     "held": {
+      "rifle": 80,
+      "gun_arty": 40,
+      "truck": 60
+     },
+     "authorised": {
+      "rifle": 80,
+      "gun_arty": 40,
+      "truck": 60
+     }
+    },
+    "organisation": 75,
+    "morale": 78,
+    "experience": 55,
+    "fuel": 100,
+    "ammo": 100,
+    "supply": 100,
+    "fatigue": 15,
+    "readiness": 75,
+    "entrenchment": 0,
+    "moveStatus": "stationary",
+    "combatStatus": "idle",
+    "posture": "hold",
+    "orders": [],
+    "kills": 0
+   }
+  }
+ ],
+ "objectives": [
+  {
+   "id": "o.ger.bastogne",
+   "tier": "primary",
+   "side": "axis",
+   "title": "Take Bastogne",
+   "description": "Capture the road hub at Bastogne (seven roads converge there, B07).",
+   "condition": {
+    "kind": "capture_location",
+    "locationId": "bastogne"
+   },
+   "points": 150,
+   "status": "pending"
+  },
+  {
+   "id": "o.ger.stvith",
+   "tier": "secondary",
+   "side": "axis",
+   "title": "Take St. Vith",
+   "description": "Capture St. Vith, the key road junction.",
+   "condition": {
+    "kind": "capture_location",
+    "locationId": "st_vith"
+   },
+   "points": 100,
+   "status": "pending"
+  },
+  {
+   "id": "o.ger.stavelot",
+   "tier": "secondary",
+   "side": "axis",
+   "title": "Break through at Stavelot",
+   "description": "Capture Stavelot and the fuel stores beyond it.",
+   "condition": {
+    "kind": "capture_location",
+    "locationId": "stavelot"
+   },
+   "points": 60,
+   "status": "pending"
+  },
+  {
+   "id": "o.ger.elsenborn",
+   "tier": "secondary",
+   "side": "axis",
+   "title": "Overrun Elsenborn Ridge",
+   "description": "Capture the ridge that blocks the northern shoulder.",
+   "condition": {
+    "kind": "capture_location",
+    "locationId": "elsenborn"
+   },
+   "points": 100,
+   "status": "pending"
+  },
+  {
+   "id": "o.ger.dinant",
+   "tier": "primary",
+   "side": "axis",
+   "title": "Reach the Meuse at Dinant",
+   "description": "Capture Dinant and its Meuse bridges.",
+   "condition": {
+    "kind": "capture_location",
+    "locationId": "dinant"
+   },
+   "points": 200,
+   "status": "pending"
+  },
+  {
+   "id": "o.ger.namur",
+   "tier": "secondary",
+   "side": "axis",
+   "title": "Seize Namur",
+   "description": "Capture the Meuse crossings at Namur.",
+   "condition": {
+    "kind": "capture_location",
+    "locationId": "namur"
+   },
+   "points": 100,
+   "status": "pending"
+  },
+  {
+   "id": "o.ger.huy",
+   "tier": "secondary",
+   "side": "axis",
+   "title": "Seize Huy",
+   "description": "Capture the Meuse crossings at Huy.",
+   "condition": {
+    "kind": "capture_location",
+    "locationId": "huy"
+   },
+   "points": 80,
+   "status": "pending"
+  },
+  {
+   "id": "o.ger.liege",
+   "tier": "strategic",
+   "side": "axis",
+   "title": "Stretch goal: Liège and beyond",
+   "description": "Capture Liège, opening the road to Antwerp (Hitler's objective, B02; Antwerp lies outside this map).",
+   "condition": {
+    "kind": "capture_location",
+    "locationId": "liege"
+   },
+   "points": 250,
+   "status": "pending"
+  },
+  {
+   "id": "o.ger.region",
+   "tier": "strategic",
+   "side": "axis",
+   "title": "Carve out the salient",
+   "description": "Control 45% of the theatre.",
+   "condition": {
+    "kind": "control_fraction",
+    "fraction": 0.45
+   },
+   "points": 150,
+   "status": "pending"
+  },
+  {
+   "id": "o.all.elsenborn",
+   "tier": "primary",
+   "side": "allies",
+   "title": "Hold Elsenborn Ridge",
+   "description": "Hold the northern shoulder to the end (B02).",
+   "condition": {
+    "kind": "hold_location",
+    "locationId": "elsenborn",
+    "untilMinutes": 57600
+   },
+   "points": 150,
+   "status": "pending"
+  },
+  {
+   "id": "o.all.bastogne",
+   "tier": "primary",
+   "side": "allies",
+   "title": "Hold Bastogne",
+   "description": "Keep Bastogne until the end.",
+   "condition": {
+    "kind": "hold_location",
+    "locationId": "bastogne",
+    "untilMinutes": 57600
+   },
+   "points": 200,
+   "status": "pending"
+  },
+  {
+   "id": "o.all.stvith",
+   "tier": "secondary",
+   "side": "allies",
+   "title": "Delay at St. Vith",
+   "description": "Hold St. Vith until 21 Dec (evacuated on that date historically, B08).",
+   "condition": {
+    "kind": "hold_location",
+    "locationId": "st_vith",
+    "untilMinutes": 7200
+   },
+   "points": 80,
+   "status": "pending"
+  },
+  {
+   "id": "o.all.meuse",
+   "tier": "primary",
+   "side": "allies",
+   "title": "Deny the Meuse",
+   "description": "Hold Dinant, the key Meuse crossing.",
+   "condition": {
+    "kind": "hold_location",
+    "locationId": "dinant",
+    "untilMinutes": 57600
+   },
+   "points": 200,
+   "status": "pending"
+  },
+  {
+   "id": "o.all.namur",
+   "tier": "secondary",
+   "side": "allies",
+   "title": "Hold Namur",
+   "description": "Hold the Namur crossings.",
+   "condition": {
+    "kind": "hold_location",
+    "locationId": "namur",
+    "untilMinutes": 57600
+   },
+   "points": 80,
+   "status": "pending"
+  },
+  {
+   "id": "o.all.huy",
+   "tier": "secondary",
+   "side": "allies",
+   "title": "Hold Huy",
+   "description": "Hold the Huy crossings.",
+   "condition": {
+    "kind": "hold_location",
+    "locationId": "huy",
+    "untilMinutes": 57600
+   },
+   "points": 60,
+   "status": "pending"
+  },
+  {
+   "id": "o.all.liege",
+   "tier": "strategic",
+   "side": "allies",
+   "title": "Protect Liège",
+   "description": "Keep Liège in Allied hands.",
+   "condition": {
+    "kind": "hold_location",
+    "locationId": "liege",
+    "untilMinutes": 57600
+   },
+   "points": 150,
+   "status": "pending"
+  },
+  {
+   "id": "o.all.attrition",
+   "tier": "secondary",
+   "side": "allies",
+   "title": "Grind down the offensive",
+   "description": "Destroy a third of the German units; the offensive was exhausted by attrition and fuel shortage (B02, B06).",
+   "condition": {
+    "kind": "destroy_units",
+    "side": "axis",
+    "fraction": 0.33
+   },
+   "points": 150,
+   "status": "pending"
+  },
+  {
+   "id": "o.all.fuel",
+   "tier": "secondary",
+   "side": "allies",
+   "title": "Deny the fuel",
+   "description": "Keep the Büllingen fuel dump out of German hands.",
+   "condition": {
+    "kind": "hold_location",
+    "locationId": "bullingen_fuel",
+    "untilMinutes": 2880
+   },
+   "points": 60,
+   "status": "pending"
+  }
+ ],
+ "terrainFile": "terrain_ardennes.json",
+ "infraFile": "infra_ardennes.json",
+ "supplySources": {
+  "GER": [
+   "euskirchen",
+   "trier",
+   "pruem"
+  ],
+  "USA": [
+   "liege",
+   "verviers",
+   "luxembourg_city",
+   "spa"
+  ],
+  "GBR": [
+   "namur",
+   "huy"
+  ],
+  "BEL": []
+ },
+ "initialControl": [
+  {
+   "nation": "NEUTRAL",
+   "polygon": [
+    [
+     4.5,
+     49.5
+    ],
+    [
+     7.5,
+     49.5
+    ],
+    [
+     7.5,
+     51
+    ],
+    [
+     4.5,
+     51
+    ]
+   ]
+  },
+  {
+   "nation": "FRA",
+   "polygon": [
+    [
+     4.5,
+     50
+    ],
+    [
+     4.83,
+     50.14
+    ],
+    [
+     5,
+     49.95
+    ],
+    [
+     5.4,
+     49.55
+    ],
+    [
+     5.8,
+     49.5
+    ],
+    [
+     4.5,
+     49.5
+    ]
+   ]
+  },
+  {
+   "nation": "BEL",
+   "polygon": [
+    [
+     4.5,
+     51
+    ],
+    [
+     5.5,
+     51
+    ],
+    [
+     5.7,
+     50.75
+    ],
+    [
+     6.03,
+     50.75
+    ],
+    [
+     6.15,
+     50.62
+    ],
+    [
+     6.2,
+     50.5
+    ],
+    [
+     6.35,
+     50.4
+    ],
+    [
+     6.4,
+     50.32
+    ],
+    [
+     6.13,
+     50.13
+    ],
+    [
+     5.97,
+     50
+    ],
+    [
+     5.82,
+     49.8
+    ],
+    [
+     5.8,
+     49.55
+    ],
+    [
+     5.4,
+     49.55
+    ],
+    [
+     5,
+     49.95
+    ],
+    [
+     4.83,
+     50.14
+    ],
+    [
+     4.5,
+     50
+    ]
+   ]
+  },
+  {
+   "nation": "NED",
+   "polygon": [
+    [
+     5.5,
+     51
+    ],
+    [
+     5.7,
+     50.75
+    ],
+    [
+     6.03,
+     50.75
+    ],
+    [
+     6.1,
+     51
+    ]
+   ]
+  },
+  {
+   "nation": "USA",
+   "polygon": [
+    [
+     6.13,
+     50.13
+    ],
+    [
+     6.3,
+     49.97
+    ],
+    [
+     6.42,
+     49.81
+    ],
+    [
+     6.37,
+     49.5
+    ],
+    [
+     5.8,
+     49.5
+    ],
+    [
+     5.8,
+     49.55
+    ],
+    [
+     5.82,
+     49.8
+    ],
+    [
+     5.97,
+     50
+    ]
+   ]
+  },
+  {
+   "nation": "GER",
+   "polygon": [
+    [
+     6.1,
+     51
+    ],
+    [
+     6.03,
+     50.75
+    ],
+    [
+     6.15,
+     50.62
+    ],
+    [
+     6.2,
+     50.5
+    ],
+    [
+     6.35,
+     50.4
+    ],
+    [
+     6.4,
+     50.32
+    ],
+    [
+     6.13,
+     50.13
+    ],
+    [
+     6.3,
+     49.97
+    ],
+    [
+     6.42,
+     49.81
+    ],
+    [
+     6.37,
+     49.5
+    ],
+    [
+     7.5,
+     49.5
+    ],
+    [
+     7.5,
+     51
+    ]
+   ]
+  }
+ ],
+ "weatherProfile": [
+  {
+   "month": 12,
+   "probs": {
+    "fog": 0.3,
+    "cloud": 0.3,
+    "snow": 0.2,
+    "clear": 0.1,
+    "rain": 0.1
+   },
+   "tempC": -1
+  },
+  {
+   "month": 1,
+   "probs": {
+    "snow": 0.25,
+    "cloud": 0.3,
+    "fog": 0.15,
+    "clear": 0.25,
+    "rain": 0.05
+   },
+   "tempC": -5
+  }
+ ],
+ "eventTemplateIds": [
+  "bulge.ev.offensive",
+  "bulge.ev.bullingen",
+  "bulge.ev.stavelot",
+  "bulge.ev.meuse_order",
+  "bulge.ev.schnee_eifel",
+  "bulge.ev.bastogne_cut",
+  "bulge.ev.st_vith_lost",
+  "bulge.ev.nuts",
+  "bulge.ev.clearing",
+  "bulge.ev.foy_notre_dame",
+  "bulge.ev.relief",
+  "bulge.ev.bodenplatte",
+  "bulge.ev.counteroffensive",
+  "bulge.ev.houffalize",
+  "bulge.ev.sixth_army",
+  "bulge.ev.stvith_retaken",
+  "bulge.ev.end"
+ ],
+ "specialSystems": [],
+ "victoryTiers": {
+  "axis": {
+   "decisive": 0.9,
+   "strategic": 0.75,
+   "limited": 0.55,
+   "stalemate": 0.35
+  },
+  "allies": {
+   "decisive": 0.75,
+   "strategic": 0.6,
+   "limited": 0.4,
+   "stalemate": 0.2
+  }
+ },
+ "sources": [
+  {
+   "id": "B01",
+   "citation": "Wikipedia, \"Battle of the Bulge order of battle\" (German armies/corps/divisions with commanders; US First and Third Army corps/divisions; XXX Corps; air commands). The page states it reflects a point near the end of the campaign, not 16 Dec, so unit presence on 16 Dec relies on other sources where possible.",
+   "url": "https://en.wikipedia.org/wiki/Battle_of_the_Bulge_order_of_battle"
+  },
+  {
+   "id": "B02",
+   "citation": "Wikipedia, \"Battle of the Bulge\" (timeline: 16 Dec barrage 05:30; 17 Dec Büllingen fuel and Malmedy; 18 Dec Stavelot; 19 Dec Stoumont, Meuse bridges ordered held, 101st at Bastogne; 20 Dec Bastogne cut off, Montgomery commands First/Ninth Armies; 21 Dec St Vith evacuated; 22 Dec ultimatum; 23 Dec weather clears; 24 Dec Foy-Notre-Dame; 26 Dec 16:50 relief; 1 Jan Bodenplatte; 3 Jan counter-offensive; 16 Jan Houffalize; 22 Jan 6th Pz Army cedes sector; 23 Jan St Vith recaptured; 25 Jan end; strengths).",
+   "url": "https://en.wikipedia.org/wiki/Battle_of_the_Bulge"
+  },
+  {
+   "id": "B03",
+   "citation": "US Army (C. B. MacDonald), \"The Ardennes: Battle of the Bulge\", Ch. V \"The Sixth Panzer Army Attack\" (HyperWar): 99th and 2nd Infantry Divisions, 14th Cavalry Group, 38th Cavalry Squadron, 1st Division 26th Infantry, German I SS Panzer Corps / LXVII Corps divisions, Kampfgruppe Peiper route 16-17 Dec.",
+   "url": "https://ibiblio.org/hyperwar/USA/USA-E-Ardennes/USA-E-Ardennes-5.html"
+  },
+  {
+   "id": "B04",
+   "citation": "US Army (MacDonald), \"The Ardennes\", Ch. XII \"The First Attacks at St. Vith\" (HyperWar): 106th Infantry Division, CCB 9th Armored, 7th Armored Division arrival 17 Dec, 14th Cavalry Group, 112th Infantry, German LXVI Corps, Fuehrer Begleit Brigade, 116th Panzer, 9th SS Panzer (19 Dec), 82nd and 101st Airborne approach.",
+   "url": "https://ibiblio.org/hyperwar/USA/USA-E-Ardennes/USA-E-Ardennes-12.html"
+  },
+  {
+   "id": "B05",
+   "citation": "US Army (MacDonald), \"The Ardennes\", Ch. XIX \"The Battle of Bastogne\" (HyperWar): 101st Airborne (arrived 19 Dec), CCB 10th Armored, CCR 9th Armored destroyed 18-19 Dec, 28th Division remnants, Panzer Lehr, 26th VGD, 2nd Panzer, 15th Panzergrenadier (Christmas Day), 5th Parachute, airdrops 23 Dec, relief 26 Dec.",
+   "url": "https://ibiblio.org/hyperwar/USA/USA-E-Ardennes/USA-E-Ardennes-19.html"
+  },
+  {
+   "id": "B06",
+   "citation": "US Army (MacDonald), \"The Ardennes\", Ch. III \"Troops and Terrain\" (HyperWar): German planning debate; start delayed (27 Nov to 16 Dec) by fuel and supply shortages; 4SS panzer divisions and 2nd Panzer held free for the offensive.",
+   "url": "https://ibiblio.org/hyperwar/USA/USA-E-Ardennes/USA-E-Ardennes-3.html"
+  },
+  {
+   "id": "B07",
+   "citation": "Wikipedia, \"Siege of Bastogne\" (20-26 Dec; 101st Airborne, CCB 10th Armored, Team Desobry at Noville, 705th TD Bn; \"NUTS\" 22 Dec; 4th Armored relief 26 Dec).",
+   "url": "https://en.wikipedia.org/wiki/Siege_of_Bastogne"
+  },
+  {
+   "id": "B08",
+   "citation": "Wikipedia, \"Battle of St. Vith\" (106th Division new and poorly equipped; ~7,000 surrendered on Schnee Eifel 19 Dec; Clarke withdrew 21 Dec on Montgomery's orders).",
+   "url": "https://en.wikipedia.org/wiki/Battle_of_St._Vith"
+  },
+  {
+   "id": "B09",
+   "citation": "Secondary accounts of Peiper at Büllingen (warfarehistorynetwork.com \"Adolf Hitler Sends Joachim Peiper to the Bulge\"; liberationroute.com \"Battle of Büllingen\"): fuel dump captured 17 Dec; figures conflict (about 50,000 gallons vs 200,000 litres); larger depot figures near Stavelot/La Gleize (2-3 million gallons) conflict and one account says the Stavelot supplies were destroyed. Uncertain.",
+   "url": "https://www.liberationroute.com/pois/1869/battle-of-bullingen"
+  },
+  {
+   "id": "B10",
+   "citation": "Secondary accounts of the weather (ww2gp.org Ardennes pages; US Air Force Mildenhall \"A look at air power in the Battle of the Bulge\"; DTIC ADA121480 meteorology report): thick overcast, fog and snow 16-22 Dec grounded Allied aircraft; high pressure and clear, much colder weather from 23 Dec; air drops to Bastogne from 23 Dec. No numeric temperatures retrieved.",
+   "url": "https://www.ww2gp.org/ardennes"
+  },
+  {
+   "id": "B11",
+   "citation": "US Army (MacDonald), \"The Ardennes\", chapter text on the Meuse screen (as quoted in search snippets of sonsoflibertymuseum.org Ch. 22): XXX Corps (Horrocks) ordered to hold the Meuse as a stop-line; 29th Armoured Brigade refitting in western Belgium ordered to the Namur-Dinant sector; British armoured cars screened Liège-Namur. Only snippet-level retrieval; division list and dates not confirmed.",
+   "url": "https://www.sonsoflibertymuseum.org/wwii-ardennes-battle-of-the-bulge-ch22.html"
+  },
+  {
+   "id": "B13",
+   "citation": "Wikipedia unit articles: 26th Infantry Division (United States) (moved north to Luxembourg 19-21 Dec 1944); 6th Armored Division (United States) (ordered north of Metz 23 Dec 1944); 87th Infantry Division (United States) (SHAEF reserve 24-28 Dec, committed in Belgium 29 Dec 1944). Arrival areas are not given.",
+   "url": "https://en.wikipedia.org/wiki/87th_Infantry_Division_(United_States)"
+  },
+  {
+   "id": "B12",
+   "citation": "Wikipedia, \"Operation Bodenplatte\" (1 Jan 1945 targets and Allied units based there: Sint-Truiden A-92 with the 48th and 404th Fighter Groups; Asch Y-29 with the 352nd and 366th Fighter Groups). WEAK for 16 Dec: it documents basing on 1 Jan 1945 only. No Luftwaffe airfield coordinates or Allied strengths given; Luftwaffe JG units omitted.",
+   "url": "https://en.wikipedia.org/wiki/Operation_Bodenplatte"
+  },
+  {
+   "id": "G01",
+   "citation": "GAME-SCALE ABSTRACTION (internal): manpower, equipment points, morale/experience/organisation, nation resources and income, objective points and victory thresholds are nominal game values, NOT historical strengths. German fuel scarcity is represented by a reduced game-scale fuel pool and income (sourced qualitatively by B06)."
+  },
+  {
+   "id": "G02",
+   "citation": "Modern gazetteer coordinates (Wikipedia/GeoNames) rounded to 0.01 deg, recalled by the author; accuracy +/-0.05 deg towns, +/-0.1 deg depots/ridges.",
+   "url": "https://www.geonames.org/"
+  },
+  {
+   "id": "G03",
+   "citation": "POSITION POLICY (internal): no source gives division start coordinates. Start positions are approximate sector anchors inferred from the named towns/sectors in B03-B05 with a small deterministic spread. Reinforcement arrival times marked approximate where the source gives only the day or only the event."
+  },
+  {
+   "id": "G04",
+   "citation": "BORDER POLICY (internal): initialControl polygons are coarse approximations of the 16 Dec 1944 front (all Belgium, Luxembourg and liberated France Allied-held; Germany east of the border incl. West Wall); small US-held pockets inside Germany (e.g. around Monschau) are ignored."
+  }
+ ]
+}

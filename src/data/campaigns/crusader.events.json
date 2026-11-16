@@ -1,0 +1,216 @@
+{
+ "campaignId": "crusader",
+ "note": "Historical event template data. Sources resolve against scenario sources[].",
+ "events": [
+  {
+   "id": "cru.ev.start",
+   "date": "1941-11-18T00:00:00Z",
+   "title": "Operation Crusader opens",
+   "body": "Eighth Army advances west from Mersa Matruh and crosses into Libya near Fort Maddalena. Storms the night before ground aircraft on both sides.",
+   "pos": [
+    25,
+    31.2
+   ],
+   "src": [
+    "N02"
+   ],
+   "effects": [
+    {
+     "op": "weather",
+     "kind": "storm",
+     "intensity": 0.6,
+     "durationMinutes": 720
+    }
+   ],
+   "effectsNote": "Restates N02: storms on 17/18 Nov grounded aircraft on both sides; duration game-scale.",
+   "effectHints": [],
+   "kind": "historical",
+   "minutesFromStd": 0
+  },
+  {
+   "id": "cru.ev.gubi",
+   "date": "1941-11-19T00:00:00Z",
+   "title": "Bir el Gubi and Sidi Rezegh",
+   "body": "22nd Armoured Brigade fights the Ariete Division at Bir el Gubi; 7th Armoured Brigade reaches Sidi Rezegh airfield.",
+   "pos": [
+    23.95,
+    31.4
+   ],
+   "src": [
+    "N02"
+   ],
+   "effectHints": [],
+   "kind": "historical",
+   "minutesFromStd": 1440
+  },
+  {
+   "id": "cru.ev.tobruk_breakout",
+   "date": "1941-11-21T00:00:00Z",
+   "title": "Tobruk breakout",
+   "body": "The 70th Division breaks out towards Ed Duda while heavy fighting begins around Sidi Rezegh.",
+   "pos": [
+    23.99,
+    32
+   ],
+   "src": [
+    "N02"
+   ],
+   "effectHints": [],
+   "kind": "historical",
+   "minutesFromStd": 4320
+  },
+  {
+   "id": "cru.ev.totensonntag",
+   "date": "1941-11-23T00:00:00Z",
+   "title": "Totensonntag",
+   "body": "15th Panzer overruns the 5th South African Brigade near Sidi Rezegh; both sides lose heavily.",
+   "pos": [
+    24.05,
+    31.93
+   ],
+   "src": [
+    "N02"
+   ],
+   "effectHints": [],
+   "kind": "historical",
+   "minutesFromStd": 7200
+  },
+  {
+   "id": "cru.ev.wire",
+   "date": "1941-11-24T00:00:00Z",
+   "title": "Rommel's dash to the wire",
+   "body": "Rommel takes direct command of the Afrika Korps and Ariete and drives towards the Egyptian frontier to cut off the British.",
+   "pos": [
+    25,
+    31.5
+   ],
+   "side": "axis",
+   "src": [
+    "N02"
+   ],
+   "effectHints": [],
+   "kind": "historical",
+   "minutesFromStd": 8640
+  },
+  {
+   "id": "cru.ev.ritchie",
+   "date": "1941-11-26T00:00:00Z",
+   "title": "Cunningham replaced by Ritchie",
+   "body": "Lt-Gen Neil Ritchie takes over Eighth Army.",
+   "src": [
+    "N02"
+   ],
+   "effectHints": [],
+   "kind": "historical",
+   "minutesFromStd": 11520
+  },
+  {
+   "id": "cru.ev.relief",
+   "date": "1941-11-27T00:00:00Z",
+   "title": "Tobruk relieved",
+   "body": "The New Zealand Division links up with the Tobruk garrison near Ed Duda, but Rommel turns the Afrika Korps back towards Tobruk.",
+   "pos": [
+    23.99,
+    32
+   ],
+   "src": [
+    "N02",
+    "N05"
+   ],
+   "effectHints": [],
+   "effects": [
+    {
+     "op": "port_relief",
+     "locationId": "tobruk"
+    }
+   ],
+   "effectsNote": "Restates N02 (link-up with the garrison, 27 Nov) and N05 (Tobruk supplied by sea during the siege): the besieged port keeps its throughput share from the link-up. besiegedShare is the engine default (game-scale).",
+   "kind": "historical",
+   "minutesFromStd": 12960
+  },
+  {
+   "id": "cru.ev.retreat",
+   "date": "1941-12-06T00:00:00Z",
+   "title": "Rommel orders the retreat",
+   "body": "Rommel orders a retreat west; Neumann-Silkow is mortally wounded. The Axis occupy the Gazala positions by 8 December.",
+   "pos": [
+    23.2,
+    32.17
+   ],
+   "side": "axis",
+   "src": [
+    "N02"
+   ],
+   "effectHints": [],
+   "kind": "historical",
+   "minutesFromStd": 25920
+  },
+  {
+   "id": "cru.ev.hold",
+   "date": "1941-12-08T00:00:00Z",
+   "title": "Bardia, Sollum and Halfaya ordered to hold",
+   "body": "Axis garrisons on the frontier are ordered to hold as long as possible.",
+   "pos": [
+    25.1,
+    31.72
+   ],
+   "side": "axis",
+   "src": [
+    "N02"
+   ],
+   "effectHints": [],
+   "kind": "historical",
+   "minutesFromStd": 28800
+  },
+  {
+   "id": "cru.ev.gazala",
+   "date": "1941-12-13T00:00:00Z",
+   "title": "Fighting at the Gazala line",
+   "body": "Eighth Army attacks the Gazala line; on 15/16 December Rommel orders it evacuated.",
+   "pos": [
+    23.2,
+    32.17
+   ],
+   "src": [
+    "N02"
+   ],
+   "effectHints": [],
+   "kind": "historical",
+   "minutesFromStd": 36000
+  },
+  {
+   "id": "cru.ev.convoys",
+   "date": "1941-12-16T00:00:00Z",
+   "title": "Italian warships carry fuel to Libya",
+   "body": "Fuel is carried to Derna and Benghazi by Italian warships; the Luftwaffe is limited to about one sortie per day.",
+   "pos": [
+    20.07,
+    32.12
+   ],
+   "side": "axis",
+   "src": [
+    "N02"
+   ],
+   "effectHints": [],
+   "kind": "historical",
+   "minutesFromStd": 40320
+  },
+  {
+   "id": "cru.ev.ajedabia",
+   "date": "1941-12-25T00:00:00Z",
+   "title": "Axis hold Ajedabia-El Haseia",
+   "body": "The Axis hold a line between Ajedabia and El Haseia for about ten days after the retreat.",
+   "pos": [
+    20.23,
+    30.76
+   ],
+   "side": "axis",
+   "src": [
+    "N02"
+   ],
+   "effectHints": [],
+   "kind": "historical",
+   "minutesFromStd": 53280
+  }
+ ]
+}

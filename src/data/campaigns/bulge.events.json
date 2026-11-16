@@ -1,0 +1,300 @@
+{
+ "campaignId": "bulge",
+ "note": "Historical event template DATA. Sources resolve against scenario sources[].",
+ "events": [
+  {
+   "id": "bulge.ev.offensive",
+   "date": "1944-12-16T05:30:00Z",
+   "title": "Wacht am Rhein: the German offensive begins",
+   "body": "A 90-minute barrage from about 1,600 guns opens the German offensive along a 130 km front. Thick overcast, fog and snow keep Allied aircraft grounded. Skorzeny's 150th Panzer Brigade stands ready for Operation Greif.",
+   "pos": [
+    6.3,
+    50.35
+   ],
+   "src": [
+    "B02",
+    "B10"
+   ],
+   "effects": [
+    {
+     "op": "weather",
+     "kind": "fog",
+     "intensity": 0.8,
+     "durationMinutes": 10080
+    }
+   ],
+   "effectsNote": "Restates B10: overcast, fog and snow grounded Allied aircraft 16-22 Dec.",
+   "effectHints": [],
+   "kind": "historical",
+   "minutesFromStd": 330
+  },
+  {
+   "id": "bulge.ev.bullingen",
+   "date": "1944-12-17T06:00:00Z",
+   "title": "Peiper captures fuel at Büllingen; Malmedy massacre",
+   "body": "Kampfgruppe Peiper seizes an American fuel depot at Büllingen and refuels its tanks; later at Malmedy crossroads at least 84 American prisoners are killed.",
+   "pos": [
+    6.26,
+    50.4
+   ],
+   "src": [
+    "B02",
+    "B03",
+    "B09"
+   ],
+   "effectHints": [
+    "German fuel relief if Büllingen depot captured"
+   ],
+   "kind": "historical",
+   "minutesFromStd": 1800
+  },
+  {
+   "id": "bulge.ev.stavelot",
+   "date": "1944-12-18T00:00:00Z",
+   "title": "Peiper takes Stavelot; Trois-Ponts bridge blown",
+   "body": "Peiper's column takes Stavelot, but US engineers blow the bridge at Trois-Ponts. Stoumont falls the next day.",
+   "pos": [
+    5.93,
+    50.39
+   ],
+   "src": [
+    "B02"
+   ],
+   "effectHints": [],
+   "kind": "historical",
+   "minutesFromStd": 2880
+  },
+  {
+   "id": "bulge.ev.meuse_order",
+   "date": "1944-12-19T00:00:00Z",
+   "title": "Montgomery orders the Meuse bridges held",
+   "body": "Montgomery orders the Meuse bridges at Givet, Dinant and Namur held; XXX Corps is ordered to hold the Meuse as a stop-line and the 29th Armoured Brigade moves to the Namur-Dinant sector. The 101st Airborne reaches Bastogne.",
+   "pos": [
+    4.91,
+    50.26
+   ],
+   "src": [
+    "B02",
+    "B11"
+   ],
+   "effectHints": [],
+   "kind": "historical",
+   "minutesFromStd": 4320
+  },
+  {
+   "id": "bulge.ev.schnee_eifel",
+   "date": "1944-12-19T00:00:00Z",
+   "title": "Schnee Eifel surrender",
+   "body": "About 7,000 American soldiers of the 106th Division surrender on the Schnee Eifel, the largest US defeat in the European Theater.",
+   "pos": [
+    6.25,
+    50.25
+   ],
+   "side": "allies",
+   "src": [
+    "B08"
+   ],
+   "effectHints": [],
+   "kind": "historical",
+   "minutesFromStd": 4320
+  },
+  {
+   "id": "bulge.ev.bastogne_cut",
+   "date": "1944-12-20T00:00:00Z",
+   "title": "Bastogne cut off; Montgomery takes the northern shoulder",
+   "body": "The roads into Bastogne are cut and the 101st Airborne is surrounded. Eisenhower places the US First and Ninth Armies under Montgomery.",
+   "pos": [
+    5.72,
+    50
+   ],
+   "src": [
+    "B02",
+    "B05"
+   ],
+   "effectHints": [],
+   "kind": "historical",
+   "minutesFromStd": 5760
+  },
+  {
+   "id": "bulge.ev.st_vith_lost",
+   "date": "1944-12-21T00:00:00Z",
+   "title": "St. Vith evacuated",
+   "body": "On Montgomery's orders Brig. Gen. Clarke withdraws from St. Vith after delaying the German timetable.",
+   "pos": [
+    6.13,
+    50.28
+   ],
+   "side": "allies",
+   "src": [
+    "B02",
+    "B08"
+   ],
+   "effectHints": [],
+   "kind": "historical",
+   "minutesFromStd": 7200
+  },
+  {
+   "id": "bulge.ev.nuts",
+   "date": "1944-12-22T00:00:00Z",
+   "title": "\"Nuts!\"",
+   "body": "The Germans demand the surrender of Bastogne. McAuliffe replies \"NUTS!\"",
+   "pos": [
+    5.72,
+    50
+   ],
+   "src": [
+    "B02",
+    "B07"
+   ],
+   "effectHints": [],
+   "kind": "historical",
+   "minutesFromStd": 8640
+  },
+  {
+   "id": "bulge.ev.clearing",
+   "date": "1944-12-23T00:00:00Z",
+   "title": "The weather clears",
+   "body": "The skies clear and much colder air arrives. Allied air attacks begin and 241 transport aircraft drop supplies to Bastogne; Peiper breaks out from La Gleize.",
+   "pos": [
+    5.72,
+    50
+   ],
+   "src": [
+    "B02",
+    "B05",
+    "B10"
+   ],
+   "effects": [
+    {
+     "op": "weather",
+     "kind": "clear",
+     "intensity": 0.9,
+     "durationMinutes": 4320
+    }
+   ],
+   "effectsNote": "Restates B02/B10: weather cleared on 23 Dec. The 3-day duration is a game-scale choice; sources disagree on when clear weather ended.",
+   "effectHints": [],
+   "kind": "historical",
+   "minutesFromStd": 10080
+  },
+  {
+   "id": "bulge.ev.foy_notre_dame",
+   "date": "1944-12-24T00:00:00Z",
+   "title": "High-water mark at Foy-Notre-Dame",
+   "body": "The US 2nd Armored Division stops the German advance at Foy-Notre-Dame, short of the Meuse at Dinant. Manteuffel asks for a halt; Hitler refuses.",
+   "pos": [
+    5.02,
+    50.22
+   ],
+   "src": [
+    "B02"
+   ],
+   "effectHints": [],
+   "kind": "historical",
+   "minutesFromStd": 11520
+  },
+  {
+   "id": "bulge.ev.relief",
+   "date": "1944-12-26T16:50:00Z",
+   "title": "Bastogne relieved",
+   "body": "Company D, 37th Tank Battalion, 4th Armored Division reaches Bastogne from the south, ending the siege. The German push to the Meuse is effectively over by 27 December.",
+   "pos": [
+    5.68,
+    49.9
+   ],
+   "src": [
+    "B02",
+    "B05",
+    "B07"
+   ],
+   "effectHints": [],
+   "kind": "historical",
+   "minutesFromStd": 15410
+  },
+  {
+   "id": "bulge.ev.bodenplatte",
+   "date": "1945-01-01T00:00:00Z",
+   "title": "Operation Bodenplatte",
+   "body": "The Luftwaffe attacks Allied airfields; about 465 Allied aircraft are destroyed or damaged but the Luftwaffe loses 277 aircraft and is largely ineffective for the rest of the war.",
+   "src": [
+    "B02"
+   ],
+   "effectHints": [],
+   "kind": "historical",
+   "minutesFromStd": 23040
+  },
+  {
+   "id": "bulge.ev.counteroffensive",
+   "date": "1945-01-03T00:00:00Z",
+   "title": "Montgomery's counter-offensive begins",
+   "body": "The northern counter-offensive begins; Hitler agrees on 7/8 January to withdraw gradually from the tip of the salient.",
+   "pos": [
+    5.9,
+    50.4
+   ],
+   "src": [
+    "B02"
+   ],
+   "effectHints": [],
+   "kind": "historical",
+   "minutesFromStd": 25920
+  },
+  {
+   "id": "bulge.ev.houffalize",
+   "date": "1945-01-16T00:00:00Z",
+   "title": "First and Third Armies link up at Houffalize",
+   "body": "The Third and First Armies link up with the capture of Houffalize; First Army returns to 12th Army Group command.",
+   "pos": [
+    5.79,
+    50.13
+   ],
+   "src": [
+    "B02"
+   ],
+   "effectHints": [],
+   "kind": "historical",
+   "minutesFromStd": 44640
+  },
+  {
+   "id": "bulge.ev.sixth_army",
+   "date": "1945-01-22T00:00:00Z",
+   "title": "Sixth Panzer Army cedes its sector",
+   "body": "Sixth Panzer Army cedes its sector to Fifth Panzer Army.",
+   "src": [
+    "B02"
+   ],
+   "side": "axis",
+   "effectHints": [],
+   "kind": "historical",
+   "minutesFromStd": 53280
+  },
+  {
+   "id": "bulge.ev.stvith_retaken",
+   "date": "1945-01-23T00:00:00Z",
+   "title": "St. Vith recaptured",
+   "body": "American forces recapture St. Vith.",
+   "pos": [
+    6.13,
+    50.28
+   ],
+   "src": [
+    "B02"
+   ],
+   "effectHints": [],
+   "kind": "historical",
+   "minutesFromStd": 54720
+  },
+  {
+   "id": "bulge.ev.end",
+   "date": "1945-01-25T00:00:00Z",
+   "title": "The Ardennes battle ends",
+   "body": "The battle is considered ended on 25 January (the infobox of the primary source gives 28 January).",
+   "src": [
+    "B02"
+   ],
+   "effectHints": [],
+   "kind": "historical",
+   "minutesFromStd": 57600
+  }
+ ]
+}

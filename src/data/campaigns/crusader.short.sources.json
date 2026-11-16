@@ -1,0 +1,595 @@
+{
+ "scenarioId": "crusader.short",
+ "note": "Per-fact source references.",
+ "units": {
+  "gbr.army8": {
+   "sources": [
+    "N01",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "gbr.c.XXX": {
+   "sources": [
+    "N01",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "gbr.7ad": {
+   "sources": [
+    "N01",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "gbr.4ab": {
+   "sources": [
+    "N01",
+    "N02",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "gbr.7ab": {
+   "sources": [
+    "N01",
+    "N02",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "gbr.22ab": {
+   "sources": [
+    "N01",
+    "N02",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "gbr.7sg": {
+   "sources": [
+    "N01",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "rsa.1div": {
+   "sources": [
+    "N01",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "gbr.22gb": {
+   "sources": [
+    "N01",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "gbr.c.XIII": {
+   "sources": [
+    "N01",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "nzl.2div": {
+   "sources": [
+    "N01",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "ind.4div": {
+   "sources": [
+    "N01",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "gbr.1atb": {
+   "sources": [
+    "N01",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "gbr.70div": {
+   "sources": [
+    "N01",
+    "N05",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "pol.carp": {
+   "sources": [
+    "N01",
+    "N05",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "gbr.32atb": {
+   "sources": [
+    "N01",
+    "N05",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "gbr.4aa": {
+   "sources": [
+    "N01",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "ind.29bde": {
+   "sources": [
+    "N01",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "rsa.6arm": {
+   "sources": [
+    "N01",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "rsa.2div": {
+   "sources": [
+    "N01",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "ger.pga": {
+   "sources": [
+    "N01",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "ger.dak": {
+   "sources": [
+    "N01",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "ger.15pz": {
+   "sources": [
+    "N01",
+    "N02",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "ger.21pz": {
+   "sources": [
+    "N01",
+    "N02",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "ger.90lt": {
+   "sources": [
+    "N01",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "ita.55sav": {
+   "sources": [
+    "N01",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "ita.c.XX": {
+   "sources": [
+    "N01",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "ita.132ar": {
+   "sources": [
+    "N01",
+    "N02",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "ita.101tri": {
+   "sources": [
+    "N01",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "ita.c.XXI": {
+   "sources": [
+    "N01",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "ita.17pav": {
+   "sources": [
+    "N01",
+    "N05",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "ita.25bol": {
+   "sources": [
+    "N01",
+    "N05",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "ita.27bre": {
+   "sources": [
+    "N01",
+    "N05",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "ita.102tre": {
+   "sources": [
+    "N01",
+    "N05",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  }
+ },
+ "locations": {
+  "tobruk": {
+   "sources": [
+    "N05",
+    "G02"
+   ]
+  },
+  "tobruk_perimeter": {
+   "sources": [
+    "N05",
+    "G02"
+   ]
+  },
+  "el_adem": {
+   "sources": [
+    "N02",
+    "G02"
+   ]
+  },
+  "ed_duda": {
+   "sources": [
+    "N02",
+    "G02"
+   ]
+  },
+  "sidi_rezegh": {
+   "sources": [
+    "N02",
+    "G02"
+   ]
+  },
+  "belhamed": {
+   "sources": [
+    "N02",
+    "G02"
+   ]
+  },
+  "bir_el_gubi": {
+   "sources": [
+    "N02",
+    "G02"
+   ]
+  },
+  "gabr_saleh": {
+   "sources": [
+    "N02",
+    "G02"
+   ]
+  },
+  "sidi_omar": {
+   "sources": [
+    "N02",
+    "G02"
+   ]
+  },
+  "fort_capuzzo": {
+   "sources": [
+    "N02",
+    "G02"
+   ]
+  },
+  "sollum": {
+   "sources": [
+    "N02",
+    "G02"
+   ]
+  },
+  "halfaya": {
+   "sources": [
+    "N02",
+    "G02"
+   ]
+  },
+  "bardia": {
+   "sources": [
+    "N02",
+    "G02"
+   ]
+  },
+  "gambut": {
+   "sources": [
+    "N02",
+    "G02"
+   ]
+  },
+  "acroma": {
+   "sources": [
+    "N05",
+    "G02"
+   ]
+  },
+  "gazala": {
+   "sources": [
+    "N02",
+    "G02"
+   ]
+  },
+  "derna": {
+   "sources": [
+    "N02",
+    "G02"
+   ]
+  },
+  "benghazi": {
+   "sources": [
+    "N02",
+    "N05",
+    "G02"
+   ]
+  },
+  "agedabia": {
+   "sources": [
+    "N02",
+    "G02"
+   ]
+  },
+  "el_agheila": {
+   "sources": [
+    "N02",
+    "G02"
+   ]
+  },
+  "sidi_barrani": {
+   "sources": [
+    "G02"
+   ]
+  },
+  "mersa_matruh": {
+   "sources": [
+    "N02",
+    "G02"
+   ]
+  },
+  "alexandria": {
+   "sources": [
+    "G02"
+   ]
+  },
+  "maaten_bagush": {
+   "sources": [
+    "N04",
+    "G02"
+   ]
+  }
+ },
+ "reinforcements": {},
+ "nations": {
+  "GBR": {
+   "sources": [
+    "G01"
+   ],
+   "gameScale": true
+  },
+  "NZL": {
+   "sources": [
+    "G01"
+   ],
+   "gameScale": true
+  },
+  "IND": {
+   "sources": [
+    "G01"
+   ],
+   "gameScale": true
+  },
+  "RSA": {
+   "sources": [
+    "G01"
+   ],
+   "gameScale": true
+  },
+  "POL": {
+   "sources": [
+    "G01"
+   ],
+   "gameScale": true
+  },
+  "GER": {
+   "sources": [
+    "G01"
+   ],
+   "gameScale": true
+  },
+  "ITA": {
+   "sources": [
+    "G01"
+   ],
+   "gameScale": true
+  }
+ },
+ "objectives": {
+  "o.ger.tobruk": {
+   "sources": [
+    "N02",
+    "G01"
+   ]
+  },
+  "o.ger.hold_gazala": {
+   "sources": [
+    "N02",
+    "G01"
+   ]
+  },
+  "o.ger.hold_benghazi": {
+   "sources": [
+    "N02",
+    "G01"
+   ]
+  },
+  "o.ger.hold_bardia": {
+   "sources": [
+    "N02",
+    "G01"
+   ]
+  },
+  "o.ger.rezegh": {
+   "sources": [
+    "N02",
+    "G01"
+   ]
+  },
+  "o.ger.matruh": {
+   "sources": [
+    "N02",
+    "G01"
+   ]
+  },
+  "o.all.tobruk": {
+   "sources": [
+    "N02",
+    "G01"
+   ]
+  },
+  "o.all.rezegh": {
+   "sources": [
+    "N02",
+    "G01"
+   ]
+  },
+  "o.all.bardia": {
+   "sources": [
+    "N02",
+    "G01"
+   ]
+  },
+  "o.all.gazala": {
+   "sources": [
+    "N02",
+    "G01"
+   ]
+  },
+  "o.all.benghazi": {
+   "sources": [
+    "N02",
+    "G01"
+   ]
+  }
+ },
+ "uncertain": [
+  {
+   "item": "DRAFT",
+   "note": "Not registered in src/data/index.ts and not audited: terrain/infra files (terrain_northafrica.json/infra_northafrica.json are placeholder names) do not exist yet."
+  },
+  {
+   "item": "Unit start positions",
+   "note": "Approximate anchors (G03). Only Ariete at Bir el Gubi (19 Nov) and the Tobruk garrison are source-anchored."
+  },
+  {
+   "item": "Axis air and Allied air",
+   "note": "OMITTED: no sourced Axis air order of battle or Crusader-day airfields; RAF wing table (N04) is undated to Crusader."
+  },
+  {
+   "item": "Italian divisional commanders",
+   "note": "Pavia, Bologna, Brescia, Trento and Trieste commanders not in N01; names omitted."
+  },
+  {
+   "item": "Bardia/Sollum/Halfaya garrisons",
+   "note": "Not sourced (N05 gap); Savona at Sollum/Halfaya and 90th Light at Bardia are approximate placements only."
+  },
+  {
+   "item": "Reinforcements",
+   "note": "None: no sourced arrival dates."
+  },
+  {
+   "item": "Oasis Force position",
+   "note": "Placed at Jaghbub/Jarabub (24.52E 29.74N, Wikipedia coordinates API) because the sourced deception plan used a Jarabub axis (N02); the Oasis Force location itself is not stated in N01/N02, so approximate."
+  },
+  {
+   "item": "Port throughput caps",
+   "note": "Tobruk 1,500 long tons/day and Benghazi about 15,000 long tons (read as per month) are from N05; besiegedShare is the engine default (game-scale). Tripoli is off-map."
+  },
+  {
+   "item": "Water",
+   "note": "Not modelled (unsourced)."
+  },
+  {
+   "item": "Tobruk start control",
+   "note": "initialControl around Tobruk is a coarse rectangle, not the real perimeter (N05: about 48 km long)."
+  },
+  {
+   "item": "Nation resources / strengths / morale",
+   "note": "Game-scale (G01). Axis fuel pool at 40% scale for the sourced fuel shortage (N02)."
+  }
+ ]
+}

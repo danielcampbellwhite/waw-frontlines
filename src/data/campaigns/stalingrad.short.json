@@ -1,0 +1,8260 @@
+{
+ "schema": 1,
+ "id": "stalingrad.short",
+ "campaignId": "stalingrad",
+ "title": "Stalingrad: Operation Uranus (19 Nov 1942 - 2 Jan 1943)",
+ "scale": "short",
+ "startDate": "1942-11-19T00:00:00Z",
+ "endDate": "1943-01-02T00:00:00Z",
+ "bbox": {
+  "west": 40.5,
+  "south": 47,
+  "east": 46.5,
+  "north": 50
+ },
+ "estimatedPlayMinutes": [
+  90,
+  180
+ ],
+ "mapSize": "large",
+ "complexity": 4,
+ "briefing": {
+  "historical": "On 19 November 1942 the Red Army launched Operation Uranus against the Romanian armies guarding the flanks of the German 6th Army at Stalingrad. The Southwestern, Don and Stalingrad Fronts closed the ring around the city on 23 November; Hitler ordered the pocket held and supplied by air, the Luftwaffe delivered less than 20 percent of the 680 tonnes a day required, and Manstein's Winter Storm relief attempt of 12-23 December failed (E01, E03).",
+  "situation": "The Soviets must close and hold the ring, defeat the Romanian armies and stop the German relief. The Germans must hold Stalingrad and the airfields, keep the supply line open and relieve the pocket; their fuel and air supply are scarce. Start positions are approximate sector anchors; Italian 8th Army corps and divisions are not included (not retrieved)."
+ },
+ "playableNations": [
+  {
+   "nation": "SOV",
+   "difficultyRating": 3,
+   "summary": "Three fronts: encircle the 6th Army and stop the relief.",
+   "objectiveIds": [
+    "o.sov.kalach",
+    "o.sov.surovikino",
+    "o.sov.kletskaya",
+    "o.sov.tatsinskaya",
+    "o.sov.morozovsk",
+    "o.sov.deny_relief",
+    "o.sov.stalingrad"
+   ]
+  },
+  {
+   "nation": "GER",
+   "difficultyRating": 5,
+   "summary": "Hold the pocket and break the ring with scarce fuel and a failing airlift.",
+   "objectiveIds": [
+    "o.ger.hold_stalingrad",
+    "o.ger.hold_gumrak",
+    "o.ger.beketovka",
+    "o.ger.tatsinskaya",
+    "o.ger.kotelnikovo",
+    "o.ger.kotluban",
+    "o.ger.surovikino"
+   ]
+  }
+ ],
+ "nations": [
+  {
+   "id": "SOV",
+   "side": "allies",
+   "name": "Soviet Union",
+   "playable": true,
+   "resources": {
+    "manpower": 122010,
+    "fuel": 4480,
+    "ammo": 5600,
+    "equipment": 11200,
+    "supplyPoints": 600
+   },
+   "income": {
+    "manpower": 232,
+    "fuel": 17,
+    "ammo": 23,
+    "equipment": 45,
+    "supplyPoints": 5
+   },
+   "reinforcements": []
+  },
+  {
+   "id": "GER",
+   "side": "axis",
+   "name": "Germany",
+   "playable": true,
+   "resources": {
+    "manpower": 42300,
+    "fuel": 1500,
+    "ammo": 1650,
+    "equipment": 3300,
+    "supplyPoints": 600
+   },
+   "income": {
+    "manpower": 81,
+    "fuel": 3,
+    "ammo": 7,
+    "equipment": 14,
+    "supplyPoints": 5
+   },
+   "reinforcements": []
+  },
+  {
+   "id": "ROU",
+   "side": "axis",
+   "name": "Romania",
+   "playable": false,
+   "resources": {
+    "manpower": 27120,
+    "fuel": 1500,
+    "ammo": 1500,
+    "equipment": 2600,
+    "supplyPoints": 600
+   },
+   "income": {
+    "manpower": 52,
+    "fuel": 2,
+    "ammo": 6,
+    "equipment": 11,
+    "supplyPoints": 5
+   },
+   "reinforcements": []
+  },
+  {
+   "id": "ITA",
+   "side": "axis",
+   "name": "Italy",
+   "playable": false,
+   "resources": {
+    "manpower": 3000,
+    "fuel": 1500,
+    "ammo": 1500,
+    "equipment": 1500,
+    "supplyPoints": 600
+   },
+   "income": {
+    "manpower": 6,
+    "fuel": 1,
+    "ammo": 2,
+    "equipment": 2,
+    "supplyPoints": 5
+   },
+   "reinforcements": []
+  }
+ ],
+ "locations": [
+  {
+   "id": "stalingrad",
+   "name": "Stalingrad",
+   "kind": "city",
+   "pos": [
+    44.515,
+    48.709
+   ],
+   "owner": "GER",
+   "originalOwner": "GER",
+   "value": 10,
+   "supplyCapacity": 40
+  },
+  {
+   "id": "mamayev_kurgan",
+   "name": "Mamayev Kurgan",
+   "kind": "fortress",
+   "pos": [
+    44.537,
+    48.743
+   ],
+   "owner": "GER",
+   "originalOwner": "GER",
+   "value": 4
+  },
+  {
+   "id": "pitomnik",
+   "name": "Pitomnik (airfield)",
+   "kind": "airfield",
+   "pos": [
+    44.25,
+    48.7425
+   ],
+   "owner": "GER",
+   "originalOwner": "GER",
+   "value": 4,
+   "supplyCapacity": 20,
+   "airliftTonsPerDay": 68
+  },
+  {
+   "id": "svetly_yar",
+   "name": "Svetly Yar",
+   "kind": "town",
+   "pos": [
+    44.785,
+    48.477
+   ],
+   "owner": "SOV",
+   "originalOwner": "SOV",
+   "value": 2
+  },
+  {
+   "id": "tinguta",
+   "name": "Tinguta (hamlet)",
+   "kind": "town",
+   "pos": [
+    44.271,
+    48.285
+   ],
+   "owner": "SOV",
+   "originalOwner": "SOV",
+   "value": 2
+  },
+  {
+   "id": "gumrak",
+   "name": "Gumrak (airfield)",
+   "kind": "airfield",
+   "pos": [
+    44.347,
+    48.782
+   ],
+   "owner": "GER",
+   "originalOwner": "GER",
+   "value": 4,
+   "supplyCapacity": 20,
+   "airliftTonsPerDay": 68
+  },
+  {
+   "id": "krasnoslobodsk",
+   "name": "Krasnoslobodsk (Volga east bank)",
+   "kind": "town",
+   "pos": [
+    44.567,
+    48.7
+   ],
+   "owner": "SOV",
+   "originalOwner": "SOV",
+   "value": 2
+  },
+  {
+   "id": "beketovka",
+   "name": "Beketovka (approximate)",
+   "kind": "town",
+   "pos": [
+    44.363,
+    48.563
+   ],
+   "owner": "SOV",
+   "originalOwner": "SOV",
+   "value": 3
+  },
+  {
+   "id": "kalach",
+   "name": "Kalach-na-Donu",
+   "kind": "town",
+   "pos": [
+    43.517,
+    48.7
+   ],
+   "owner": "GER",
+   "originalOwner": "GER",
+   "value": 7
+  },
+  {
+   "id": "marinovka",
+   "name": "Marinovka",
+   "kind": "town",
+   "pos": [
+    43.832,
+    48.692
+   ],
+   "owner": "GER",
+   "originalOwner": "GER",
+   "value": 2
+  },
+  {
+   "id": "vertyachy",
+   "name": "Vertyachy",
+   "kind": "town",
+   "pos": [
+    43.911,
+    48.945
+   ],
+   "owner": "GER",
+   "originalOwner": "GER",
+   "value": 2
+  },
+  {
+   "id": "kotluban",
+   "name": "Kotluban",
+   "kind": "town",
+   "pos": [
+    44.231,
+    49.02
+   ],
+   "owner": "SOV",
+   "originalOwner": "SOV",
+   "value": 3
+  },
+  {
+   "id": "kletskaya",
+   "name": "Kletskaya",
+   "kind": "town",
+   "pos": [
+    43.062,
+    49.315
+   ],
+   "owner": "ROU",
+   "originalOwner": "ROU",
+   "value": 5
+  },
+  {
+   "id": "serafimovich",
+   "name": "Serafimovich",
+   "kind": "town",
+   "pos": [
+    42.733,
+    49.583
+   ],
+   "owner": "SOV",
+   "originalOwner": "SOV",
+   "value": 5
+  },
+  {
+   "id": "perelazovsky",
+   "name": "Perelazovsky",
+   "kind": "town",
+   "pos": [
+    42.574,
+    49.143
+   ],
+   "owner": "ROU",
+   "originalOwner": "ROU",
+   "value": 3
+  },
+  {
+   "id": "bokovskaya",
+   "name": "Bokovskaya",
+   "kind": "town",
+   "pos": [
+    41.834,
+    49.222
+   ],
+   "owner": "ROU",
+   "originalOwner": "ROU",
+   "value": 3
+  },
+  {
+   "id": "surovikino",
+   "name": "Surovikino",
+   "kind": "town",
+   "pos": [
+    42.85,
+    48.6
+   ],
+   "owner": "GER",
+   "originalOwner": "GER",
+   "value": 4
+  },
+  {
+   "id": "oblivskaya",
+   "name": "Oblivskaya",
+   "kind": "town",
+   "pos": [
+    42.494,
+    48.537
+   ],
+   "owner": "GER",
+   "originalOwner": "GER",
+   "value": 3
+  },
+  {
+   "id": "morozovsk",
+   "name": "Morozovsk",
+   "kind": "town",
+   "pos": [
+    41.833,
+    48.367
+   ],
+   "owner": "GER",
+   "originalOwner": "GER",
+   "value": 5
+  },
+  {
+   "id": "tatsinskaya",
+   "name": "Tatsinskaya (airfield)",
+   "kind": "airfield",
+   "pos": [
+    41.281,
+    48.194
+   ],
+   "owner": "GER",
+   "originalOwner": "GER",
+   "value": 5,
+   "supplyCapacity": 20
+  },
+  {
+   "id": "kotelnikovo",
+   "name": "Kotelnikovo",
+   "kind": "town",
+   "pos": [
+    43.15,
+    47.633
+   ],
+   "owner": "ROU",
+   "originalOwner": "ROU",
+   "value": 5
+  },
+  {
+   "id": "verkhnekumsky",
+   "name": "Verkhnekumsky",
+   "kind": "town",
+   "pos": [
+    43.439,
+    48.09
+   ],
+   "owner": "ROU",
+   "originalOwner": "ROU",
+   "value": 3
+  },
+  {
+   "id": "abganerovo",
+   "name": "Abganerovo",
+   "kind": "town",
+   "pos": [
+    44.111,
+    48.136
+   ],
+   "owner": "ROU",
+   "originalOwner": "ROU",
+   "value": 3
+  }
+ ],
+ "units": [
+  {
+   "id": "sov.f.sw",
+   "name": "Southwestern Front (Vatutin)",
+   "shortName": "SW Front",
+   "nation": "SOV",
+   "side": "allies",
+   "type": "hq",
+   "domain": "land",
+   "pos": [
+    42.4,
+    49.79
+   ],
+   "manpower": 600,
+   "manpowerMax": 600,
+   "equipment": {
+    "held": {
+     "rifle": 600
+    },
+    "authorised": {
+     "rifle": 600
+    }
+   },
+   "organisation": 90,
+   "morale": 76,
+   "experience": 45,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 10,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "defend",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "sov.f.don",
+   "name": "Don Front (Rokossovsky)",
+   "shortName": "Don Front",
+   "nation": "SOV",
+   "side": "allies",
+   "type": "hq",
+   "domain": "land",
+   "pos": [
+    43.8,
+    49.44
+   ],
+   "manpower": 600,
+   "manpowerMax": 600,
+   "equipment": {
+    "held": {
+     "rifle": 600
+    },
+    "authorised": {
+     "rifle": 600
+    }
+   },
+   "organisation": 90,
+   "morale": 76,
+   "experience": 45,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 10,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "defend",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "sov.f.st",
+   "name": "Stalingrad Front (Yeryomenko)",
+   "shortName": "Stalin. Front",
+   "nation": "SOV",
+   "side": "allies",
+   "type": "hq",
+   "domain": "land",
+   "pos": [
+    44.6,
+    48.14
+   ],
+   "manpower": 600,
+   "manpowerMax": 600,
+   "equipment": {
+    "held": {
+     "rifle": 600
+    },
+    "authorised": {
+     "rifle": 600
+    }
+   },
+   "organisation": 90,
+   "morale": 76,
+   "experience": 45,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 10,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "defend",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "sov.a.1g",
+   "name": "1st Guards Army (Lelyushenko)",
+   "shortName": "1G Army",
+   "nation": "SOV",
+   "side": "allies",
+   "type": "hq",
+   "domain": "land",
+   "parentId": "sov.f.sw",
+   "pos": [
+    41.5,
+    49.49
+   ],
+   "manpower": 600,
+   "manpowerMax": 600,
+   "equipment": {
+    "held": {
+     "rifle": 600
+    },
+    "authorised": {
+     "rifle": 600
+    }
+   },
+   "organisation": 90,
+   "morale": 76,
+   "experience": 45,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 10,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "defend",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "sov.rd.1",
+   "name": "1st Rifle Division",
+   "shortName": "1 RD",
+   "nation": "SOV",
+   "side": "allies",
+   "type": "infantry",
+   "domain": "land",
+   "parentId": "sov.a.1g",
+   "pos": [
+    41.55,
+    49.49
+   ],
+   "manpower": 10000,
+   "manpowerMax": 10000,
+   "equipment": {
+    "held": {
+     "rifle": 100,
+     "mg": 30,
+     "gun_arty": 40,
+     "gun_at": 20
+    },
+    "authorised": {
+     "rifle": 100,
+     "mg": 30,
+     "gun_arty": 40,
+     "gun_at": 20
+    }
+   },
+   "organisation": 90,
+   "morale": 76,
+   "experience": 45,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 10,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "defend",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "sov.rd.153",
+   "name": "153rd Rifle Division",
+   "shortName": "153 RD",
+   "nation": "SOV",
+   "side": "allies",
+   "type": "infantry",
+   "domain": "land",
+   "parentId": "sov.a.1g",
+   "pos": [
+    41.6,
+    49.49
+   ],
+   "manpower": 10000,
+   "manpowerMax": 10000,
+   "equipment": {
+    "held": {
+     "rifle": 100,
+     "mg": 30,
+     "gun_arty": 40,
+     "gun_at": 20
+    },
+    "authorised": {
+     "rifle": 100,
+     "mg": 30,
+     "gun_arty": 40,
+     "gun_at": 20
+    }
+   },
+   "organisation": 90,
+   "morale": 76,
+   "experience": 45,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 10,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "defend",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "sov.rd.197",
+   "name": "197th Rifle Division",
+   "shortName": "197 RD",
+   "nation": "SOV",
+   "side": "allies",
+   "type": "infantry",
+   "domain": "land",
+   "parentId": "sov.a.1g",
+   "pos": [
+    41.65,
+    49.49
+   ],
+   "manpower": 10000,
+   "manpowerMax": 10000,
+   "equipment": {
+    "held": {
+     "rifle": 100,
+     "mg": 30,
+     "gun_arty": 40,
+     "gun_at": 20
+    },
+    "authorised": {
+     "rifle": 100,
+     "mg": 30,
+     "gun_arty": 40,
+     "gun_at": 20
+    }
+   },
+   "organisation": 90,
+   "morale": 76,
+   "experience": 45,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 10,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "defend",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "sov.rd.203",
+   "name": "203rd Rifle Division",
+   "shortName": "203 RD",
+   "nation": "SOV",
+   "side": "allies",
+   "type": "infantry",
+   "domain": "land",
+   "parentId": "sov.a.1g",
+   "pos": [
+    41.7,
+    49.49
+   ],
+   "manpower": 10000,
+   "manpowerMax": 10000,
+   "equipment": {
+    "held": {
+     "rifle": 100,
+     "mg": 30,
+     "gun_arty": 40,
+     "gun_at": 20
+    },
+    "authorised": {
+     "rifle": 100,
+     "mg": 30,
+     "gun_arty": 40,
+     "gun_at": 20
+    }
+   },
+   "organisation": 90,
+   "morale": 76,
+   "experience": 45,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 10,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "defend",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "sov.rd.266",
+   "name": "266th Rifle Division",
+   "shortName": "266 RD",
+   "nation": "SOV",
+   "side": "allies",
+   "type": "infantry",
+   "domain": "land",
+   "parentId": "sov.a.1g",
+   "pos": [
+    41.5,
+    49.53
+   ],
+   "manpower": 10000,
+   "manpowerMax": 10000,
+   "equipment": {
+    "held": {
+     "rifle": 100,
+     "mg": 30,
+     "gun_arty": 40,
+     "gun_at": 20
+    },
+    "authorised": {
+     "rifle": 100,
+     "mg": 30,
+     "gun_arty": 40,
+     "gun_at": 20
+    }
+   },
+   "organisation": 90,
+   "morale": 76,
+   "experience": 45,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 10,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "defend",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "sov.rd.278",
+   "name": "278th Rifle Division",
+   "shortName": "278 RD",
+   "nation": "SOV",
+   "side": "allies",
+   "type": "infantry",
+   "domain": "land",
+   "parentId": "sov.a.1g",
+   "pos": [
+    41.55,
+    49.53
+   ],
+   "manpower": 10000,
+   "manpowerMax": 10000,
+   "equipment": {
+    "held": {
+     "rifle": 100,
+     "mg": 30,
+     "gun_arty": 40,
+     "gun_at": 20
+    },
+    "authorised": {
+     "rifle": 100,
+     "mg": 30,
+     "gun_arty": 40,
+     "gun_at": 20
+    }
+   },
+   "organisation": 90,
+   "morale": 76,
+   "experience": 45,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 10,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "defend",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "sov.mc.1g",
+   "name": "1st Guards Mechanized Corps (Russiyanov)",
+   "shortName": "1G MC",
+   "nation": "SOV",
+   "side": "allies",
+   "type": "mechanised",
+   "domain": "land",
+   "parentId": "sov.a.1g",
+   "pos": [
+    41.6,
+    49.53
+   ],
+   "manpower": 9000,
+   "manpowerMax": 9000,
+   "equipment": {
+    "held": {
+     "tank_light": 40,
+     "rifle": 50,
+     "gun_arty": 24
+    },
+    "authorised": {
+     "tank_light": 40,
+     "rifle": 50,
+     "gun_arty": 24
+    }
+   },
+   "organisation": 90,
+   "morale": 76,
+   "experience": 45,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 10,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "defend",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "sov.a.5t",
+   "name": "5th Tank Army (Romanenko)",
+   "shortName": "5TA",
+   "nation": "SOV",
+   "side": "allies",
+   "type": "hq",
+   "domain": "land",
+   "parentId": "sov.f.sw",
+   "pos": [
+    42.55,
+    49.49
+   ],
+   "manpower": 600,
+   "manpowerMax": 600,
+   "equipment": {
+    "held": {
+     "rifle": 600
+    },
+    "authorised": {
+     "rifle": 600
+    }
+   },
+   "organisation": 90,
+   "morale": 76,
+   "experience": 45,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 10,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "defend",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "sov.rd.g14",
+   "name": "14th Guards Rifle Division",
+   "shortName": "14G RD",
+   "nation": "SOV",
+   "side": "allies",
+   "type": "infantry",
+   "domain": "land",
+   "parentId": "sov.a.5t",
+   "pos": [
+    42.6,
+    49.49
+   ],
+   "manpower": 10000,
+   "manpowerMax": 10000,
+   "equipment": {
+    "held": {
+     "rifle": 100,
+     "mg": 30,
+     "gun_arty": 40,
+     "gun_at": 20
+    },
+    "authorised": {
+     "rifle": 100,
+     "mg": 30,
+     "gun_arty": 40,
+     "gun_at": 20
+    }
+   },
+   "organisation": 90,
+   "morale": 76,
+   "experience": 45,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 10,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "defend",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "sov.rd.g47",
+   "name": "47th Guards Rifle Division",
+   "shortName": "47G RD",
+   "nation": "SOV",
+   "side": "allies",
+   "type": "infantry",
+   "domain": "land",
+   "parentId": "sov.a.5t",
+   "pos": [
+    42.65,
+    49.49
+   ],
+   "manpower": 10000,
+   "manpowerMax": 10000,
+   "equipment": {
+    "held": {
+     "rifle": 100,
+     "mg": 30,
+     "gun_arty": 40,
+     "gun_at": 20
+    },
+    "authorised": {
+     "rifle": 100,
+     "mg": 30,
+     "gun_arty": 40,
+     "gun_at": 20
+    }
+   },
+   "organisation": 90,
+   "morale": 76,
+   "experience": 45,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 10,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "defend",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "sov.rd.g50",
+   "name": "50th Guards Rifle Division",
+   "shortName": "50G RD",
+   "nation": "SOV",
+   "side": "allies",
+   "type": "infantry",
+   "domain": "land",
+   "parentId": "sov.a.5t",
+   "pos": [
+    42.7,
+    49.49
+   ],
+   "manpower": 10000,
+   "manpowerMax": 10000,
+   "equipment": {
+    "held": {
+     "rifle": 100,
+     "mg": 30,
+     "gun_arty": 40,
+     "gun_at": 20
+    },
+    "authorised": {
+     "rifle": 100,
+     "mg": 30,
+     "gun_arty": 40,
+     "gun_at": 20
+    }
+   },
+   "organisation": 90,
+   "morale": 76,
+   "experience": 45,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 10,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "defend",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "sov.rd.119",
+   "name": "119th Rifle Division",
+   "shortName": "119 RD",
+   "nation": "SOV",
+   "side": "allies",
+   "type": "infantry",
+   "domain": "land",
+   "parentId": "sov.a.5t",
+   "pos": [
+    42.75,
+    49.49
+   ],
+   "manpower": 10000,
+   "manpowerMax": 10000,
+   "equipment": {
+    "held": {
+     "rifle": 100,
+     "mg": 30,
+     "gun_arty": 40,
+     "gun_at": 20
+    },
+    "authorised": {
+     "rifle": 100,
+     "mg": 30,
+     "gun_arty": 40,
+     "gun_at": 20
+    }
+   },
+   "organisation": 90,
+   "morale": 76,
+   "experience": 45,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 10,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "defend",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "sov.rd.159",
+   "name": "159th Rifle Division",
+   "shortName": "159 RD",
+   "nation": "SOV",
+   "side": "allies",
+   "type": "infantry",
+   "domain": "land",
+   "parentId": "sov.a.5t",
+   "pos": [
+    42.55,
+    49.53
+   ],
+   "manpower": 10000,
+   "manpowerMax": 10000,
+   "equipment": {
+    "held": {
+     "rifle": 100,
+     "mg": 30,
+     "gun_arty": 40,
+     "gun_at": 20
+    },
+    "authorised": {
+     "rifle": 100,
+     "mg": 30,
+     "gun_arty": 40,
+     "gun_at": 20
+    }
+   },
+   "organisation": 90,
+   "morale": 76,
+   "experience": 45,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 10,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "defend",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "sov.rd.346",
+   "name": "346th Rifle Division",
+   "shortName": "346 RD",
+   "nation": "SOV",
+   "side": "allies",
+   "type": "infantry",
+   "domain": "land",
+   "parentId": "sov.a.5t",
+   "pos": [
+    42.6,
+    49.53
+   ],
+   "manpower": 10000,
+   "manpowerMax": 10000,
+   "equipment": {
+    "held": {
+     "rifle": 100,
+     "mg": 30,
+     "gun_arty": 40,
+     "gun_at": 20
+    },
+    "authorised": {
+     "rifle": 100,
+     "mg": 30,
+     "gun_arty": 40,
+     "gun_at": 20
+    }
+   },
+   "organisation": 90,
+   "morale": 76,
+   "experience": 45,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 10,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "defend",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "sov.tc.1",
+   "name": "1st Tank Corps (Butkov)",
+   "shortName": "1 TC",
+   "nation": "SOV",
+   "side": "allies",
+   "type": "armoured",
+   "domain": "land",
+   "parentId": "sov.a.5t",
+   "pos": [
+    42.65,
+    49.53
+   ],
+   "manpower": 7000,
+   "manpowerMax": 7000,
+   "equipment": {
+    "held": {
+     "tank_medium": 100,
+     "tank_light": 20,
+     "gun_arty": 24,
+     "truck": 60
+    },
+    "authorised": {
+     "tank_medium": 100,
+     "tank_light": 20,
+     "gun_arty": 24,
+     "truck": 60
+    }
+   },
+   "organisation": 90,
+   "morale": 76,
+   "experience": 45,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 10,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "defend",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "sov.tc.26",
+   "name": "26th Tank Corps (Rodin)",
+   "shortName": "26 TC",
+   "nation": "SOV",
+   "side": "allies",
+   "type": "armoured",
+   "domain": "land",
+   "parentId": "sov.a.5t",
+   "pos": [
+    42.7,
+    49.53
+   ],
+   "manpower": 7000,
+   "manpowerMax": 7000,
+   "equipment": {
+    "held": {
+     "tank_medium": 100,
+     "tank_light": 20,
+     "gun_arty": 24,
+     "truck": 60
+    },
+    "authorised": {
+     "tank_medium": 100,
+     "tank_light": 20,
+     "gun_arty": 24,
+     "truck": 60
+    }
+   },
+   "organisation": 90,
+   "morale": 76,
+   "experience": 45,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 10,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "defend",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "sov.cc.8",
+   "name": "8th Cavalry Corps (Borisov)",
+   "shortName": "8 CC",
+   "nation": "SOV",
+   "side": "allies",
+   "type": "infantry",
+   "domain": "land",
+   "parentId": "sov.a.5t",
+   "pos": [
+    42.75,
+    49.53
+   ],
+   "manpower": 8000,
+   "manpowerMax": 8000,
+   "equipment": {
+    "held": {
+     "rifle": 100,
+     "mg": 30,
+     "gun_arty": 40,
+     "gun_at": 20
+    },
+    "authorised": {
+     "rifle": 100,
+     "mg": 30,
+     "gun_arty": 40,
+     "gun_at": 20
+    }
+   },
+   "organisation": 90,
+   "morale": 76,
+   "experience": 45,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 10,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "defend",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "sov.a.21",
+   "name": "21st Army (Chistyakov)",
+   "shortName": "21 Army",
+   "nation": "SOV",
+   "side": "allies",
+   "type": "hq",
+   "domain": "land",
+   "parentId": "sov.f.sw",
+   "pos": [
+    42.95,
+    49.39
+   ],
+   "manpower": 600,
+   "manpowerMax": 600,
+   "equipment": {
+    "held": {
+     "rifle": 600
+    },
+    "authorised": {
+     "rifle": 600
+    }
+   },
+   "organisation": 90,
+   "morale": 76,
+   "experience": 45,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 10,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "defend",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "sov.rd.63",
+   "name": "63rd Rifle Division",
+   "shortName": "63 RD",
+   "nation": "SOV",
+   "side": "allies",
+   "type": "infantry",
+   "domain": "land",
+   "parentId": "sov.a.21",
+   "pos": [
+    43,
+    49.39
+   ],
+   "manpower": 10000,
+   "manpowerMax": 10000,
+   "equipment": {
+    "held": {
+     "rifle": 100,
+     "mg": 30,
+     "gun_arty": 40,
+     "gun_at": 20
+    },
+    "authorised": {
+     "rifle": 100,
+     "mg": 30,
+     "gun_arty": 40,
+     "gun_at": 20
+    }
+   },
+   "organisation": 90,
+   "morale": 76,
+   "experience": 45,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 10,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "defend",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "sov.rd.76",
+   "name": "76th Rifle Division",
+   "shortName": "76 RD",
+   "nation": "SOV",
+   "side": "allies",
+   "type": "infantry",
+   "domain": "land",
+   "parentId": "sov.a.21",
+   "pos": [
+    43.05,
+    49.39
+   ],
+   "manpower": 10000,
+   "manpowerMax": 10000,
+   "equipment": {
+    "held": {
+     "rifle": 100,
+     "mg": 30,
+     "gun_arty": 40,
+     "gun_at": 20
+    },
+    "authorised": {
+     "rifle": 100,
+     "mg": 30,
+     "gun_arty": 40,
+     "gun_at": 20
+    }
+   },
+   "organisation": 90,
+   "morale": 76,
+   "experience": 45,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 10,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "defend",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "sov.rd.96",
+   "name": "96th Rifle Division",
+   "shortName": "96 RD",
+   "nation": "SOV",
+   "side": "allies",
+   "type": "infantry",
+   "domain": "land",
+   "parentId": "sov.a.21",
+   "pos": [
+    43.1,
+    49.39
+   ],
+   "manpower": 10000,
+   "manpowerMax": 10000,
+   "equipment": {
+    "held": {
+     "rifle": 100,
+     "mg": 30,
+     "gun_arty": 40,
+     "gun_at": 20
+    },
+    "authorised": {
+     "rifle": 100,
+     "mg": 30,
+     "gun_arty": 40,
+     "gun_at": 20
+    }
+   },
+   "organisation": 90,
+   "morale": 76,
+   "experience": 45,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 10,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "defend",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "sov.rd.277",
+   "name": "277th Rifle Division",
+   "shortName": "277 RD",
+   "nation": "SOV",
+   "side": "allies",
+   "type": "infantry",
+   "domain": "land",
+   "parentId": "sov.a.21",
+   "pos": [
+    43.15,
+    49.39
+   ],
+   "manpower": 10000,
+   "manpowerMax": 10000,
+   "equipment": {
+    "held": {
+     "rifle": 100,
+     "mg": 30,
+     "gun_arty": 40,
+     "gun_at": 20
+    },
+    "authorised": {
+     "rifle": 100,
+     "mg": 30,
+     "gun_arty": 40,
+     "gun_at": 20
+    }
+   },
+   "organisation": 90,
+   "morale": 76,
+   "experience": 45,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 10,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "defend",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "sov.rd.293",
+   "name": "293rd Rifle Division",
+   "shortName": "293 RD",
+   "nation": "SOV",
+   "side": "allies",
+   "type": "infantry",
+   "domain": "land",
+   "parentId": "sov.a.21",
+   "pos": [
+    42.95,
+    49.43
+   ],
+   "manpower": 10000,
+   "manpowerMax": 10000,
+   "equipment": {
+    "held": {
+     "rifle": 100,
+     "mg": 30,
+     "gun_arty": 40,
+     "gun_at": 20
+    },
+    "authorised": {
+     "rifle": 100,
+     "mg": 30,
+     "gun_arty": 40,
+     "gun_at": 20
+    }
+   },
+   "organisation": 90,
+   "morale": 76,
+   "experience": 45,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 10,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "defend",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "sov.rd.333",
+   "name": "333rd Rifle Division",
+   "shortName": "333 RD",
+   "nation": "SOV",
+   "side": "allies",
+   "type": "infantry",
+   "domain": "land",
+   "parentId": "sov.a.21",
+   "pos": [
+    43,
+    49.43
+   ],
+   "manpower": 10000,
+   "manpowerMax": 10000,
+   "equipment": {
+    "held": {
+     "rifle": 100,
+     "mg": 30,
+     "gun_arty": 40,
+     "gun_at": 20
+    },
+    "authorised": {
+     "rifle": 100,
+     "mg": 30,
+     "gun_arty": 40,
+     "gun_at": 20
+    }
+   },
+   "organisation": 90,
+   "morale": 76,
+   "experience": 45,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 10,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "defend",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "sov.tc.4",
+   "name": "4th Tank Corps (Kravchenko)",
+   "shortName": "4 TC",
+   "nation": "SOV",
+   "side": "allies",
+   "type": "armoured",
+   "domain": "land",
+   "parentId": "sov.a.21",
+   "pos": [
+    43.05,
+    49.43
+   ],
+   "manpower": 7000,
+   "manpowerMax": 7000,
+   "equipment": {
+    "held": {
+     "tank_medium": 100,
+     "tank_light": 20,
+     "gun_arty": 24,
+     "truck": 60
+    },
+    "authorised": {
+     "tank_medium": 100,
+     "tank_light": 20,
+     "gun_arty": 24,
+     "truck": 60
+    }
+   },
+   "organisation": 90,
+   "morale": 76,
+   "experience": 45,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 10,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "defend",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "sov.cc.3g",
+   "name": "3rd Guards Cavalry Corps (Pliyev)",
+   "shortName": "3G CC",
+   "nation": "SOV",
+   "side": "allies",
+   "type": "infantry",
+   "domain": "land",
+   "parentId": "sov.a.21",
+   "pos": [
+    43.1,
+    49.43
+   ],
+   "manpower": 8000,
+   "manpowerMax": 8000,
+   "equipment": {
+    "held": {
+     "rifle": 100,
+     "mg": 30,
+     "gun_arty": 40,
+     "gun_at": 20
+    },
+    "authorised": {
+     "rifle": 100,
+     "mg": 30,
+     "gun_arty": 40,
+     "gun_at": 20
+    }
+   },
+   "organisation": 90,
+   "morale": 76,
+   "experience": 45,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 10,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "defend",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "sov.a.24",
+   "name": "24th Army (Galanin)",
+   "shortName": "24 Army",
+   "nation": "SOV",
+   "side": "allies",
+   "type": "hq",
+   "domain": "land",
+   "parentId": "sov.f.don",
+   "pos": [
+    44.05,
+    49.19
+   ],
+   "manpower": 600,
+   "manpowerMax": 600,
+   "equipment": {
+    "held": {
+     "rifle": 600
+    },
+    "authorised": {
+     "rifle": 600
+    }
+   },
+   "organisation": 90,
+   "morale": 76,
+   "experience": 45,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 10,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "defend",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "sov.rd.49",
+   "name": "49th Rifle Division",
+   "shortName": "49 RD",
+   "nation": "SOV",
+   "side": "allies",
+   "type": "infantry",
+   "domain": "land",
+   "parentId": "sov.a.24",
+   "pos": [
+    44.1,
+    49.19
+   ],
+   "manpower": 10000,
+   "manpowerMax": 10000,
+   "equipment": {
+    "held": {
+     "rifle": 100,
+     "mg": 30,
+     "gun_arty": 40,
+     "gun_at": 20
+    },
+    "authorised": {
+     "rifle": 100,
+     "mg": 30,
+     "gun_arty": 40,
+     "gun_at": 20
+    }
+   },
+   "organisation": 90,
+   "morale": 76,
+   "experience": 45,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 10,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "defend",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "sov.rd.84",
+   "name": "84th Rifle Division",
+   "shortName": "84 RD",
+   "nation": "SOV",
+   "side": "allies",
+   "type": "infantry",
+   "domain": "land",
+   "parentId": "sov.a.24",
+   "pos": [
+    44.15,
+    49.19
+   ],
+   "manpower": 10000,
+   "manpowerMax": 10000,
+   "equipment": {
+    "held": {
+     "rifle": 100,
+     "mg": 30,
+     "gun_arty": 40,
+     "gun_at": 20
+    },
+    "authorised": {
+     "rifle": 100,
+     "mg": 30,
+     "gun_arty": 40,
+     "gun_at": 20
+    }
+   },
+   "organisation": 90,
+   "morale": 76,
+   "experience": 45,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 10,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "defend",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "sov.rd.120",
+   "name": "120th Rifle Division",
+   "shortName": "120 RD",
+   "nation": "SOV",
+   "side": "allies",
+   "type": "infantry",
+   "domain": "land",
+   "parentId": "sov.a.24",
+   "pos": [
+    44.2,
+    49.19
+   ],
+   "manpower": 10000,
+   "manpowerMax": 10000,
+   "equipment": {
+    "held": {
+     "rifle": 100,
+     "mg": 30,
+     "gun_arty": 40,
+     "gun_at": 20
+    },
+    "authorised": {
+     "rifle": 100,
+     "mg": 30,
+     "gun_arty": 40,
+     "gun_at": 20
+    }
+   },
+   "organisation": 90,
+   "morale": 76,
+   "experience": 45,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 10,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "defend",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "sov.rd.173",
+   "name": "173rd Rifle Division",
+   "shortName": "173 RD",
+   "nation": "SOV",
+   "side": "allies",
+   "type": "infantry",
+   "domain": "land",
+   "parentId": "sov.a.24",
+   "pos": [
+    44.25,
+    49.19
+   ],
+   "manpower": 10000,
+   "manpowerMax": 10000,
+   "equipment": {
+    "held": {
+     "rifle": 100,
+     "mg": 30,
+     "gun_arty": 40,
+     "gun_at": 20
+    },
+    "authorised": {
+     "rifle": 100,
+     "mg": 30,
+     "gun_arty": 40,
+     "gun_at": 20
+    }
+   },
+   "organisation": 90,
+   "morale": 76,
+   "experience": 45,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 10,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "defend",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "sov.rd.214",
+   "name": "214th Rifle Division",
+   "shortName": "214 RD",
+   "nation": "SOV",
+   "side": "allies",
+   "type": "infantry",
+   "domain": "land",
+   "parentId": "sov.a.24",
+   "pos": [
+    44.05,
+    49.23
+   ],
+   "manpower": 10000,
+   "manpowerMax": 10000,
+   "equipment": {
+    "held": {
+     "rifle": 100,
+     "mg": 30,
+     "gun_arty": 40,
+     "gun_at": 20
+    },
+    "authorised": {
+     "rifle": 100,
+     "mg": 30,
+     "gun_arty": 40,
+     "gun_at": 20
+    }
+   },
+   "organisation": 90,
+   "morale": 76,
+   "experience": 45,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 10,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "defend",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "sov.rd.233",
+   "name": "233rd Rifle Division",
+   "shortName": "233 RD",
+   "nation": "SOV",
+   "side": "allies",
+   "type": "infantry",
+   "domain": "land",
+   "parentId": "sov.a.24",
+   "pos": [
+    44.1,
+    49.23
+   ],
+   "manpower": 10000,
+   "manpowerMax": 10000,
+   "equipment": {
+    "held": {
+     "rifle": 100,
+     "mg": 30,
+     "gun_arty": 40,
+     "gun_at": 20
+    },
+    "authorised": {
+     "rifle": 100,
+     "mg": 30,
+     "gun_arty": 40,
+     "gun_at": 20
+    }
+   },
+   "organisation": 90,
+   "morale": 76,
+   "experience": 45,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 10,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "defend",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "sov.rd.260",
+   "name": "260th Rifle Division",
+   "shortName": "260 RD",
+   "nation": "SOV",
+   "side": "allies",
+   "type": "infantry",
+   "domain": "land",
+   "parentId": "sov.a.24",
+   "pos": [
+    44.15,
+    49.23
+   ],
+   "manpower": 10000,
+   "manpowerMax": 10000,
+   "equipment": {
+    "held": {
+     "rifle": 100,
+     "mg": 30,
+     "gun_arty": 40,
+     "gun_at": 20
+    },
+    "authorised": {
+     "rifle": 100,
+     "mg": 30,
+     "gun_arty": 40,
+     "gun_at": 20
+    }
+   },
+   "organisation": 90,
+   "morale": 76,
+   "experience": 45,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 10,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "defend",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "sov.rd.273",
+   "name": "273rd Rifle Division",
+   "shortName": "273 RD",
+   "nation": "SOV",
+   "side": "allies",
+   "type": "infantry",
+   "domain": "land",
+   "parentId": "sov.a.24",
+   "pos": [
+    44.2,
+    49.23
+   ],
+   "manpower": 10000,
+   "manpowerMax": 10000,
+   "equipment": {
+    "held": {
+     "rifle": 100,
+     "mg": 30,
+     "gun_arty": 40,
+     "gun_at": 20
+    },
+    "authorised": {
+     "rifle": 100,
+     "mg": 30,
+     "gun_arty": 40,
+     "gun_at": 20
+    }
+   },
+   "organisation": 90,
+   "morale": 76,
+   "experience": 45,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 10,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "defend",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "sov.rd.298",
+   "name": "298th Rifle Division",
+   "shortName": "298 RD",
+   "nation": "SOV",
+   "side": "allies",
+   "type": "infantry",
+   "domain": "land",
+   "parentId": "sov.a.24",
+   "pos": [
+    44.25,
+    49.23
+   ],
+   "manpower": 10000,
+   "manpowerMax": 10000,
+   "equipment": {
+    "held": {
+     "rifle": 100,
+     "mg": 30,
+     "gun_arty": 40,
+     "gun_at": 20
+    },
+    "authorised": {
+     "rifle": 100,
+     "mg": 30,
+     "gun_arty": 40,
+     "gun_at": 20
+    }
+   },
+   "organisation": 90,
+   "morale": 76,
+   "experience": 45,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 10,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "defend",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "sov.tc.16",
+   "name": "16th Tank Corps (Maslov)",
+   "shortName": "16 TC",
+   "nation": "SOV",
+   "side": "allies",
+   "type": "armoured",
+   "domain": "land",
+   "parentId": "sov.a.24",
+   "pos": [
+    44.05,
+    49.27
+   ],
+   "manpower": 7000,
+   "manpowerMax": 7000,
+   "equipment": {
+    "held": {
+     "tank_medium": 100,
+     "tank_light": 20,
+     "gun_arty": 24,
+     "truck": 60
+    },
+    "authorised": {
+     "tank_medium": 100,
+     "tank_light": 20,
+     "gun_arty": 24,
+     "truck": 60
+    }
+   },
+   "organisation": 90,
+   "morale": 76,
+   "experience": 45,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 10,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "defend",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "sov.a.65",
+   "name": "65th Army (Batov)",
+   "shortName": "65 Army",
+   "nation": "SOV",
+   "side": "allies",
+   "type": "hq",
+   "domain": "land",
+   "parentId": "sov.f.don",
+   "pos": [
+    43.85,
+    49.24
+   ],
+   "manpower": 600,
+   "manpowerMax": 600,
+   "equipment": {
+    "held": {
+     "rifle": 600
+    },
+    "authorised": {
+     "rifle": 600
+    }
+   },
+   "organisation": 90,
+   "morale": 76,
+   "experience": 45,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 10,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "defend",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "sov.rd.g4",
+   "name": "4th Guards Rifle Division",
+   "shortName": "4G RD",
+   "nation": "SOV",
+   "side": "allies",
+   "type": "infantry",
+   "domain": "land",
+   "parentId": "sov.a.65",
+   "pos": [
+    43.9,
+    49.24
+   ],
+   "manpower": 10000,
+   "manpowerMax": 10000,
+   "equipment": {
+    "held": {
+     "rifle": 100,
+     "mg": 30,
+     "gun_arty": 40,
+     "gun_at": 20
+    },
+    "authorised": {
+     "rifle": 100,
+     "mg": 30,
+     "gun_arty": 40,
+     "gun_at": 20
+    }
+   },
+   "organisation": 90,
+   "morale": 76,
+   "experience": 45,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 10,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "defend",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "sov.rd.g27",
+   "name": "27th Guards Rifle Division",
+   "shortName": "27G RD",
+   "nation": "SOV",
+   "side": "allies",
+   "type": "infantry",
+   "domain": "land",
+   "parentId": "sov.a.65",
+   "pos": [
+    43.95,
+    49.24
+   ],
+   "manpower": 10000,
+   "manpowerMax": 10000,
+   "equipment": {
+    "held": {
+     "rifle": 100,
+     "mg": 30,
+     "gun_arty": 40,
+     "gun_at": 20
+    },
+    "authorised": {
+     "rifle": 100,
+     "mg": 30,
+     "gun_arty": 40,
+     "gun_at": 20
+    }
+   },
+   "organisation": 90,
+   "morale": 76,
+   "experience": 45,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 10,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "defend",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "sov.rd.g40",
+   "name": "40th Guards Rifle Division",
+   "shortName": "40G RD",
+   "nation": "SOV",
+   "side": "allies",
+   "type": "infantry",
+   "domain": "land",
+   "parentId": "sov.a.65",
+   "pos": [
+    44,
+    49.24
+   ],
+   "manpower": 10000,
+   "manpowerMax": 10000,
+   "equipment": {
+    "held": {
+     "rifle": 100,
+     "mg": 30,
+     "gun_arty": 40,
+     "gun_at": 20
+    },
+    "authorised": {
+     "rifle": 100,
+     "mg": 30,
+     "gun_arty": 40,
+     "gun_at": 20
+    }
+   },
+   "organisation": 90,
+   "morale": 76,
+   "experience": 45,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 10,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "defend",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "sov.rd.23",
+   "name": "23rd Rifle Division",
+   "shortName": "23 RD",
+   "nation": "SOV",
+   "side": "allies",
+   "type": "infantry",
+   "domain": "land",
+   "parentId": "sov.a.65",
+   "pos": [
+    44.05,
+    49.24
+   ],
+   "manpower": 10000,
+   "manpowerMax": 10000,
+   "equipment": {
+    "held": {
+     "rifle": 100,
+     "mg": 30,
+     "gun_arty": 40,
+     "gun_at": 20
+    },
+    "authorised": {
+     "rifle": 100,
+     "mg": 30,
+     "gun_arty": 40,
+     "gun_at": 20
+    }
+   },
+   "organisation": 90,
+   "morale": 76,
+   "experience": 45,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 10,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "defend",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "sov.rd.24",
+   "name": "24th Rifle Division",
+   "shortName": "24 RD",
+   "nation": "SOV",
+   "side": "allies",
+   "type": "infantry",
+   "domain": "land",
+   "parentId": "sov.a.65",
+   "pos": [
+    43.85,
+    49.28
+   ],
+   "manpower": 10000,
+   "manpowerMax": 10000,
+   "equipment": {
+    "held": {
+     "rifle": 100,
+     "mg": 30,
+     "gun_arty": 40,
+     "gun_at": 20
+    },
+    "authorised": {
+     "rifle": 100,
+     "mg": 30,
+     "gun_arty": 40,
+     "gun_at": 20
+    }
+   },
+   "organisation": 90,
+   "morale": 76,
+   "experience": 45,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 10,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "defend",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "sov.rd.252",
+   "name": "252nd Rifle Division",
+   "shortName": "252 RD",
+   "nation": "SOV",
+   "side": "allies",
+   "type": "infantry",
+   "domain": "land",
+   "parentId": "sov.a.65",
+   "pos": [
+    43.9,
+    49.28
+   ],
+   "manpower": 10000,
+   "manpowerMax": 10000,
+   "equipment": {
+    "held": {
+     "rifle": 100,
+     "mg": 30,
+     "gun_arty": 40,
+     "gun_at": 20
+    },
+    "authorised": {
+     "rifle": 100,
+     "mg": 30,
+     "gun_arty": 40,
+     "gun_at": 20
+    }
+   },
+   "organisation": 90,
+   "morale": 76,
+   "experience": 45,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 10,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "defend",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "sov.rd.258",
+   "name": "258th Rifle Division",
+   "shortName": "258 RD",
+   "nation": "SOV",
+   "side": "allies",
+   "type": "infantry",
+   "domain": "land",
+   "parentId": "sov.a.65",
+   "pos": [
+    43.95,
+    49.28
+   ],
+   "manpower": 10000,
+   "manpowerMax": 10000,
+   "equipment": {
+    "held": {
+     "rifle": 100,
+     "mg": 30,
+     "gun_arty": 40,
+     "gun_at": 20
+    },
+    "authorised": {
+     "rifle": 100,
+     "mg": 30,
+     "gun_arty": 40,
+     "gun_at": 20
+    }
+   },
+   "organisation": 90,
+   "morale": 76,
+   "experience": 45,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 10,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "defend",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "sov.rd.304",
+   "name": "304th Rifle Division",
+   "shortName": "304 RD",
+   "nation": "SOV",
+   "side": "allies",
+   "type": "infantry",
+   "domain": "land",
+   "parentId": "sov.a.65",
+   "pos": [
+    44,
+    49.28
+   ],
+   "manpower": 10000,
+   "manpowerMax": 10000,
+   "equipment": {
+    "held": {
+     "rifle": 100,
+     "mg": 30,
+     "gun_arty": 40,
+     "gun_at": 20
+    },
+    "authorised": {
+     "rifle": 100,
+     "mg": 30,
+     "gun_arty": 40,
+     "gun_at": 20
+    }
+   },
+   "organisation": 90,
+   "morale": 76,
+   "experience": 45,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 10,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "defend",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "sov.rd.321",
+   "name": "321st Rifle Division",
+   "shortName": "321 RD",
+   "nation": "SOV",
+   "side": "allies",
+   "type": "infantry",
+   "domain": "land",
+   "parentId": "sov.a.65",
+   "pos": [
+    44.05,
+    49.28
+   ],
+   "manpower": 10000,
+   "manpowerMax": 10000,
+   "equipment": {
+    "held": {
+     "rifle": 100,
+     "mg": 30,
+     "gun_arty": 40,
+     "gun_at": 20
+    },
+    "authorised": {
+     "rifle": 100,
+     "mg": 30,
+     "gun_arty": 40,
+     "gun_at": 20
+    }
+   },
+   "organisation": 90,
+   "morale": 76,
+   "experience": 45,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 10,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "defend",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "sov.tb.91",
+   "name": "91st Tank Brigade",
+   "shortName": "91 TB",
+   "nation": "SOV",
+   "side": "allies",
+   "type": "armoured",
+   "domain": "land",
+   "parentId": "sov.a.65",
+   "pos": [
+    43.85,
+    49.32
+   ],
+   "manpower": 1500,
+   "manpowerMax": 1500,
+   "equipment": {
+    "held": {
+     "tank_medium": 100,
+     "tank_light": 20,
+     "gun_arty": 24,
+     "truck": 60
+    },
+    "authorised": {
+     "tank_medium": 100,
+     "tank_light": 20,
+     "gun_arty": 24,
+     "truck": 60
+    }
+   },
+   "organisation": 90,
+   "morale": 76,
+   "experience": 45,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 10,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "defend",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "sov.tb.121",
+   "name": "121st Tank Brigade",
+   "shortName": "121 TB",
+   "nation": "SOV",
+   "side": "allies",
+   "type": "armoured",
+   "domain": "land",
+   "parentId": "sov.a.65",
+   "pos": [
+    43.9,
+    49.32
+   ],
+   "manpower": 1500,
+   "manpowerMax": 1500,
+   "equipment": {
+    "held": {
+     "tank_medium": 100,
+     "tank_light": 20,
+     "gun_arty": 24,
+     "truck": 60
+    },
+    "authorised": {
+     "tank_medium": 100,
+     "tank_light": 20,
+     "gun_arty": 24,
+     "truck": 60
+    }
+   },
+   "organisation": 90,
+   "morale": 76,
+   "experience": 45,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 10,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "defend",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "sov.a.66",
+   "name": "66th Army (Zhadov)",
+   "shortName": "66 Army",
+   "nation": "SOV",
+   "side": "allies",
+   "type": "hq",
+   "domain": "land",
+   "parentId": "sov.f.don",
+   "pos": [
+    44.35,
+    49.04
+   ],
+   "manpower": 600,
+   "manpowerMax": 600,
+   "equipment": {
+    "held": {
+     "rifle": 600
+    },
+    "authorised": {
+     "rifle": 600
+    }
+   },
+   "organisation": 90,
+   "morale": 76,
+   "experience": 45,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 10,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "defend",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "sov.rd.64",
+   "name": "64th Rifle Division",
+   "shortName": "64 RD",
+   "nation": "SOV",
+   "side": "allies",
+   "type": "infantry",
+   "domain": "land",
+   "parentId": "sov.a.66",
+   "pos": [
+    44.4,
+    49.04
+   ],
+   "manpower": 10000,
+   "manpowerMax": 10000,
+   "equipment": {
+    "held": {
+     "rifle": 100,
+     "mg": 30,
+     "gun_arty": 40,
+     "gun_at": 20
+    },
+    "authorised": {
+     "rifle": 100,
+     "mg": 30,
+     "gun_arty": 40,
+     "gun_at": 20
+    }
+   },
+   "organisation": 90,
+   "morale": 76,
+   "experience": 45,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 10,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "defend",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "sov.rd.99",
+   "name": "99th Rifle Division",
+   "shortName": "99 RD",
+   "nation": "SOV",
+   "side": "allies",
+   "type": "infantry",
+   "domain": "land",
+   "parentId": "sov.a.66",
+   "pos": [
+    44.45,
+    49.04
+   ],
+   "manpower": 10000,
+   "manpowerMax": 10000,
+   "equipment": {
+    "held": {
+     "rifle": 100,
+     "mg": 30,
+     "gun_arty": 40,
+     "gun_at": 20
+    },
+    "authorised": {
+     "rifle": 100,
+     "mg": 30,
+     "gun_arty": 40,
+     "gun_at": 20
+    }
+   },
+   "organisation": 90,
+   "morale": 76,
+   "experience": 45,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 10,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "defend",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "sov.rd.116",
+   "name": "116th Rifle Division",
+   "shortName": "116 RD",
+   "nation": "SOV",
+   "side": "allies",
+   "type": "infantry",
+   "domain": "land",
+   "parentId": "sov.a.66",
+   "pos": [
+    44.5,
+    49.04
+   ],
+   "manpower": 10000,
+   "manpowerMax": 10000,
+   "equipment": {
+    "held": {
+     "rifle": 100,
+     "mg": 30,
+     "gun_arty": 40,
+     "gun_at": 20
+    },
+    "authorised": {
+     "rifle": 100,
+     "mg": 30,
+     "gun_arty": 40,
+     "gun_at": 20
+    }
+   },
+   "organisation": 90,
+   "morale": 76,
+   "experience": 45,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 10,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "defend",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "sov.rd.226",
+   "name": "226th Rifle Division",
+   "shortName": "226 RD",
+   "nation": "SOV",
+   "side": "allies",
+   "type": "infantry",
+   "domain": "land",
+   "parentId": "sov.a.66",
+   "pos": [
+    44.55,
+    49.04
+   ],
+   "manpower": 10000,
+   "manpowerMax": 10000,
+   "equipment": {
+    "held": {
+     "rifle": 100,
+     "mg": 30,
+     "gun_arty": 40,
+     "gun_at": 20
+    },
+    "authorised": {
+     "rifle": 100,
+     "mg": 30,
+     "gun_arty": 40,
+     "gun_at": 20
+    }
+   },
+   "organisation": 90,
+   "morale": 76,
+   "experience": 45,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 10,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "defend",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "sov.rd.299",
+   "name": "299th Rifle Division",
+   "shortName": "299 RD",
+   "nation": "SOV",
+   "side": "allies",
+   "type": "infantry",
+   "domain": "land",
+   "parentId": "sov.a.66",
+   "pos": [
+    44.35,
+    49.08
+   ],
+   "manpower": 10000,
+   "manpowerMax": 10000,
+   "equipment": {
+    "held": {
+     "rifle": 100,
+     "mg": 30,
+     "gun_arty": 40,
+     "gun_at": 20
+    },
+    "authorised": {
+     "rifle": 100,
+     "mg": 30,
+     "gun_arty": 40,
+     "gun_at": 20
+    }
+   },
+   "organisation": 90,
+   "morale": 76,
+   "experience": 45,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 10,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "defend",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "sov.rd.343",
+   "name": "343rd Rifle Division",
+   "shortName": "343 RD",
+   "nation": "SOV",
+   "side": "allies",
+   "type": "infantry",
+   "domain": "land",
+   "parentId": "sov.a.66",
+   "pos": [
+    44.4,
+    49.08
+   ],
+   "manpower": 10000,
+   "manpowerMax": 10000,
+   "equipment": {
+    "held": {
+     "rifle": 100,
+     "mg": 30,
+     "gun_arty": 40,
+     "gun_at": 20
+    },
+    "authorised": {
+     "rifle": 100,
+     "mg": 30,
+     "gun_arty": 40,
+     "gun_at": 20
+    }
+   },
+   "organisation": 90,
+   "morale": 76,
+   "experience": 45,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 10,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "defend",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "sov.tb.58",
+   "name": "58th Tank Brigade",
+   "shortName": "58 TB",
+   "nation": "SOV",
+   "side": "allies",
+   "type": "armoured",
+   "domain": "land",
+   "parentId": "sov.a.66",
+   "pos": [
+    44.45,
+    49.08
+   ],
+   "manpower": 1500,
+   "manpowerMax": 1500,
+   "equipment": {
+    "held": {
+     "tank_medium": 100,
+     "tank_light": 20,
+     "gun_arty": 24,
+     "truck": 60
+    },
+    "authorised": {
+     "tank_medium": 100,
+     "tank_light": 20,
+     "gun_arty": 24,
+     "truck": 60
+    }
+   },
+   "organisation": 90,
+   "morale": 76,
+   "experience": 45,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 10,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "defend",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "sov.a.62",
+   "name": "62nd Army (Chuikov)",
+   "shortName": "62 Army",
+   "nation": "SOV",
+   "side": "allies",
+   "type": "hq",
+   "domain": "land",
+   "parentId": "sov.f.st",
+   "pos": [
+    44.35,
+    48.66
+   ],
+   "manpower": 600,
+   "manpowerMax": 600,
+   "equipment": {
+    "held": {
+     "rifle": 600
+    },
+    "authorised": {
+     "rifle": 600
+    }
+   },
+   "organisation": 90,
+   "morale": 76,
+   "experience": 45,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 10,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "defend",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "sov.rd.g13",
+   "name": "13th Guards Rifle Division",
+   "shortName": "13G RD",
+   "nation": "SOV",
+   "side": "allies",
+   "type": "infantry",
+   "domain": "land",
+   "parentId": "sov.a.62",
+   "pos": [
+    44.4,
+    48.66
+   ],
+   "manpower": 10000,
+   "manpowerMax": 10000,
+   "equipment": {
+    "held": {
+     "rifle": 100,
+     "mg": 30,
+     "gun_arty": 40,
+     "gun_at": 20
+    },
+    "authorised": {
+     "rifle": 100,
+     "mg": 30,
+     "gun_arty": 40,
+     "gun_at": 20
+    }
+   },
+   "organisation": 90,
+   "morale": 76,
+   "experience": 45,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 10,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "defend",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "sov.rd.g37",
+   "name": "37th Guards Rifle Division",
+   "shortName": "37G RD",
+   "nation": "SOV",
+   "side": "allies",
+   "type": "infantry",
+   "domain": "land",
+   "parentId": "sov.a.62",
+   "pos": [
+    44.45,
+    48.66
+   ],
+   "manpower": 10000,
+   "manpowerMax": 10000,
+   "equipment": {
+    "held": {
+     "rifle": 100,
+     "mg": 30,
+     "gun_arty": 40,
+     "gun_at": 20
+    },
+    "authorised": {
+     "rifle": 100,
+     "mg": 30,
+     "gun_arty": 40,
+     "gun_at": 20
+    }
+   },
+   "organisation": 90,
+   "morale": 76,
+   "experience": 45,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 10,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "defend",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "sov.rd.g39",
+   "name": "39th Guards Rifle Division",
+   "shortName": "39G RD",
+   "nation": "SOV",
+   "side": "allies",
+   "type": "infantry",
+   "domain": "land",
+   "parentId": "sov.a.62",
+   "pos": [
+    44.5,
+    48.66
+   ],
+   "manpower": 10000,
+   "manpowerMax": 10000,
+   "equipment": {
+    "held": {
+     "rifle": 100,
+     "mg": 30,
+     "gun_arty": 40,
+     "gun_at": 20
+    },
+    "authorised": {
+     "rifle": 100,
+     "mg": 30,
+     "gun_arty": 40,
+     "gun_at": 20
+    }
+   },
+   "organisation": 90,
+   "morale": 76,
+   "experience": 45,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 10,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "defend",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "sov.rd.45",
+   "name": "45th Rifle Division",
+   "shortName": "45 RD",
+   "nation": "SOV",
+   "side": "allies",
+   "type": "infantry",
+   "domain": "land",
+   "parentId": "sov.a.62",
+   "pos": [
+    44.55,
+    48.66
+   ],
+   "manpower": 10000,
+   "manpowerMax": 10000,
+   "equipment": {
+    "held": {
+     "rifle": 100,
+     "mg": 30,
+     "gun_arty": 40,
+     "gun_at": 20
+    },
+    "authorised": {
+     "rifle": 100,
+     "mg": 30,
+     "gun_arty": 40,
+     "gun_at": 20
+    }
+   },
+   "organisation": 90,
+   "morale": 76,
+   "experience": 45,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 10,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "defend",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "sov.rd.95",
+   "name": "95th Rifle Division",
+   "shortName": "95 RD",
+   "nation": "SOV",
+   "side": "allies",
+   "type": "infantry",
+   "domain": "land",
+   "parentId": "sov.a.62",
+   "pos": [
+    44.35,
+    48.7
+   ],
+   "manpower": 10000,
+   "manpowerMax": 10000,
+   "equipment": {
+    "held": {
+     "rifle": 100,
+     "mg": 30,
+     "gun_arty": 40,
+     "gun_at": 20
+    },
+    "authorised": {
+     "rifle": 100,
+     "mg": 30,
+     "gun_arty": 40,
+     "gun_at": 20
+    }
+   },
+   "organisation": 90,
+   "morale": 76,
+   "experience": 45,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 10,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "defend",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "sov.rd.112",
+   "name": "112th Rifle Division",
+   "shortName": "112 RD",
+   "nation": "SOV",
+   "side": "allies",
+   "type": "infantry",
+   "domain": "land",
+   "parentId": "sov.a.62",
+   "pos": [
+    44.4,
+    48.7
+   ],
+   "manpower": 10000,
+   "manpowerMax": 10000,
+   "equipment": {
+    "held": {
+     "rifle": 100,
+     "mg": 30,
+     "gun_arty": 40,
+     "gun_at": 20
+    },
+    "authorised": {
+     "rifle": 100,
+     "mg": 30,
+     "gun_arty": 40,
+     "gun_at": 20
+    }
+   },
+   "organisation": 90,
+   "morale": 76,
+   "experience": 45,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 10,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "defend",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "sov.rd.138",
+   "name": "138th Rifle Division",
+   "shortName": "138 RD",
+   "nation": "SOV",
+   "side": "allies",
+   "type": "infantry",
+   "domain": "land",
+   "parentId": "sov.a.62",
+   "pos": [
+    44.45,
+    48.7
+   ],
+   "manpower": 10000,
+   "manpowerMax": 10000,
+   "equipment": {
+    "held": {
+     "rifle": 100,
+     "mg": 30,
+     "gun_arty": 40,
+     "gun_at": 20
+    },
+    "authorised": {
+     "rifle": 100,
+     "mg": 30,
+     "gun_arty": 40,
+     "gun_at": 20
+    }
+   },
+   "organisation": 90,
+   "morale": 76,
+   "experience": 45,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 10,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "defend",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "sov.rd.193",
+   "name": "193rd Rifle Division",
+   "shortName": "193 RD",
+   "nation": "SOV",
+   "side": "allies",
+   "type": "infantry",
+   "domain": "land",
+   "parentId": "sov.a.62",
+   "pos": [
+    44.5,
+    48.7
+   ],
+   "manpower": 10000,
+   "manpowerMax": 10000,
+   "equipment": {
+    "held": {
+     "rifle": 100,
+     "mg": 30,
+     "gun_arty": 40,
+     "gun_at": 20
+    },
+    "authorised": {
+     "rifle": 100,
+     "mg": 30,
+     "gun_arty": 40,
+     "gun_at": 20
+    }
+   },
+   "organisation": 90,
+   "morale": 76,
+   "experience": 45,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 10,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "defend",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "sov.rd.308",
+   "name": "308th Rifle Division",
+   "shortName": "308 RD",
+   "nation": "SOV",
+   "side": "allies",
+   "type": "infantry",
+   "domain": "land",
+   "parentId": "sov.a.62",
+   "pos": [
+    44.55,
+    48.7
+   ],
+   "manpower": 10000,
+   "manpowerMax": 10000,
+   "equipment": {
+    "held": {
+     "rifle": 100,
+     "mg": 30,
+     "gun_arty": 40,
+     "gun_at": 20
+    },
+    "authorised": {
+     "rifle": 100,
+     "mg": 30,
+     "gun_arty": 40,
+     "gun_at": 20
+    }
+   },
+   "organisation": 90,
+   "morale": 76,
+   "experience": 45,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 10,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "defend",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "sov.rb.42",
+   "name": "42nd Rifle Brigade",
+   "shortName": "42 RB",
+   "nation": "SOV",
+   "side": "allies",
+   "type": "infantry",
+   "domain": "land",
+   "parentId": "sov.a.62",
+   "pos": [
+    44.35,
+    48.74
+   ],
+   "manpower": 3000,
+   "manpowerMax": 3000,
+   "equipment": {
+    "held": {
+     "rifle": 100,
+     "mg": 30,
+     "gun_arty": 40,
+     "gun_at": 20
+    },
+    "authorised": {
+     "rifle": 100,
+     "mg": 30,
+     "gun_arty": 40,
+     "gun_at": 20
+    }
+   },
+   "organisation": 90,
+   "morale": 76,
+   "experience": 45,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 10,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "defend",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "sov.rb.92",
+   "name": "92nd Rifle Brigade",
+   "shortName": "92 RB",
+   "nation": "SOV",
+   "side": "allies",
+   "type": "infantry",
+   "domain": "land",
+   "parentId": "sov.a.62",
+   "pos": [
+    44.4,
+    48.74
+   ],
+   "manpower": 3000,
+   "manpowerMax": 3000,
+   "equipment": {
+    "held": {
+     "rifle": 100,
+     "mg": 30,
+     "gun_arty": 40,
+     "gun_at": 20
+    },
+    "authorised": {
+     "rifle": 100,
+     "mg": 30,
+     "gun_arty": 40,
+     "gun_at": 20
+    }
+   },
+   "organisation": 90,
+   "morale": 76,
+   "experience": 45,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 10,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "defend",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "sov.rb.115",
+   "name": "115th Rifle Brigade",
+   "shortName": "115 RB",
+   "nation": "SOV",
+   "side": "allies",
+   "type": "infantry",
+   "domain": "land",
+   "parentId": "sov.a.62",
+   "pos": [
+    44.45,
+    48.74
+   ],
+   "manpower": 3000,
+   "manpowerMax": 3000,
+   "equipment": {
+    "held": {
+     "rifle": 100,
+     "mg": 30,
+     "gun_arty": 40,
+     "gun_at": 20
+    },
+    "authorised": {
+     "rifle": 100,
+     "mg": 30,
+     "gun_arty": 40,
+     "gun_at": 20
+    }
+   },
+   "organisation": 90,
+   "morale": 76,
+   "experience": 45,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 10,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "defend",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "sov.rb.124",
+   "name": "124th Rifle Brigade",
+   "shortName": "124 RB",
+   "nation": "SOV",
+   "side": "allies",
+   "type": "infantry",
+   "domain": "land",
+   "parentId": "sov.a.62",
+   "pos": [
+    44.5,
+    48.74
+   ],
+   "manpower": 3000,
+   "manpowerMax": 3000,
+   "equipment": {
+    "held": {
+     "rifle": 100,
+     "mg": 30,
+     "gun_arty": 40,
+     "gun_at": 20
+    },
+    "authorised": {
+     "rifle": 100,
+     "mg": 30,
+     "gun_arty": 40,
+     "gun_at": 20
+    }
+   },
+   "organisation": 90,
+   "morale": 76,
+   "experience": 45,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 10,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "defend",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "sov.rb.149",
+   "name": "149th Rifle Brigade",
+   "shortName": "149 RB",
+   "nation": "SOV",
+   "side": "allies",
+   "type": "infantry",
+   "domain": "land",
+   "parentId": "sov.a.62",
+   "pos": [
+    44.55,
+    48.74
+   ],
+   "manpower": 3000,
+   "manpowerMax": 3000,
+   "equipment": {
+    "held": {
+     "rifle": 100,
+     "mg": 30,
+     "gun_arty": 40,
+     "gun_at": 20
+    },
+    "authorised": {
+     "rifle": 100,
+     "mg": 30,
+     "gun_arty": 40,
+     "gun_at": 20
+    }
+   },
+   "organisation": 90,
+   "morale": 76,
+   "experience": 45,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 10,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "defend",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "sov.rb.160",
+   "name": "160th Rifle Brigade",
+   "shortName": "160 RB",
+   "nation": "SOV",
+   "side": "allies",
+   "type": "infantry",
+   "domain": "land",
+   "parentId": "sov.a.62",
+   "pos": [
+    44.35,
+    48.78
+   ],
+   "manpower": 3000,
+   "manpowerMax": 3000,
+   "equipment": {
+    "held": {
+     "rifle": 100,
+     "mg": 30,
+     "gun_arty": 40,
+     "gun_at": 20
+    },
+    "authorised": {
+     "rifle": 100,
+     "mg": 30,
+     "gun_arty": 40,
+     "gun_at": 20
+    }
+   },
+   "organisation": 90,
+   "morale": 76,
+   "experience": 45,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 10,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "defend",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "sov.tb.84",
+   "name": "84th Tank Brigade",
+   "shortName": "84 TB",
+   "nation": "SOV",
+   "side": "allies",
+   "type": "armoured",
+   "domain": "land",
+   "parentId": "sov.a.62",
+   "pos": [
+    44.4,
+    48.78
+   ],
+   "manpower": 1500,
+   "manpowerMax": 1500,
+   "equipment": {
+    "held": {
+     "tank_medium": 100,
+     "tank_light": 20,
+     "gun_arty": 24,
+     "truck": 60
+    },
+    "authorised": {
+     "tank_medium": 100,
+     "tank_light": 20,
+     "gun_arty": 24,
+     "truck": 60
+    }
+   },
+   "organisation": 90,
+   "morale": 76,
+   "experience": 45,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 10,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "defend",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "sov.a.64",
+   "name": "64th Army (Shumilov)",
+   "shortName": "64 Army",
+   "nation": "SOV",
+   "side": "allies",
+   "type": "hq",
+   "domain": "land",
+   "parentId": "sov.f.st",
+   "pos": [
+    44.25,
+    48.29
+   ],
+   "manpower": 600,
+   "manpowerMax": 600,
+   "equipment": {
+    "held": {
+     "rifle": 600
+    },
+    "authorised": {
+     "rifle": 600
+    }
+   },
+   "organisation": 90,
+   "morale": 76,
+   "experience": 45,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 10,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "defend",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "sov.rd.g36",
+   "name": "36th Guards Rifle Division",
+   "shortName": "36G RD",
+   "nation": "SOV",
+   "side": "allies",
+   "type": "infantry",
+   "domain": "land",
+   "parentId": "sov.a.64",
+   "pos": [
+    44.3,
+    48.29
+   ],
+   "manpower": 10000,
+   "manpowerMax": 10000,
+   "equipment": {
+    "held": {
+     "rifle": 100,
+     "mg": 30,
+     "gun_arty": 40,
+     "gun_at": 20
+    },
+    "authorised": {
+     "rifle": 100,
+     "mg": 30,
+     "gun_arty": 40,
+     "gun_at": 20
+    }
+   },
+   "organisation": 90,
+   "morale": 76,
+   "experience": 45,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 10,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "defend",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "sov.rd.29",
+   "name": "29th Rifle Division",
+   "shortName": "29 RD",
+   "nation": "SOV",
+   "side": "allies",
+   "type": "infantry",
+   "domain": "land",
+   "parentId": "sov.a.64",
+   "pos": [
+    44.35,
+    48.29
+   ],
+   "manpower": 10000,
+   "manpowerMax": 10000,
+   "equipment": {
+    "held": {
+     "rifle": 100,
+     "mg": 30,
+     "gun_arty": 40,
+     "gun_at": 20
+    },
+    "authorised": {
+     "rifle": 100,
+     "mg": 30,
+     "gun_arty": 40,
+     "gun_at": 20
+    }
+   },
+   "organisation": 90,
+   "morale": 76,
+   "experience": 45,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 10,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "defend",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "sov.rd.38",
+   "name": "38th Rifle Division",
+   "shortName": "38 RD",
+   "nation": "SOV",
+   "side": "allies",
+   "type": "infantry",
+   "domain": "land",
+   "parentId": "sov.a.64",
+   "pos": [
+    44.4,
+    48.29
+   ],
+   "manpower": 10000,
+   "manpowerMax": 10000,
+   "equipment": {
+    "held": {
+     "rifle": 100,
+     "mg": 30,
+     "gun_arty": 40,
+     "gun_at": 20
+    },
+    "authorised": {
+     "rifle": 100,
+     "mg": 30,
+     "gun_arty": 40,
+     "gun_at": 20
+    }
+   },
+   "organisation": 90,
+   "morale": 76,
+   "experience": 45,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 10,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "defend",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "sov.rd.157",
+   "name": "157th Rifle Division",
+   "shortName": "157 RD",
+   "nation": "SOV",
+   "side": "allies",
+   "type": "infantry",
+   "domain": "land",
+   "parentId": "sov.a.64",
+   "pos": [
+    44.45,
+    48.29
+   ],
+   "manpower": 10000,
+   "manpowerMax": 10000,
+   "equipment": {
+    "held": {
+     "rifle": 100,
+     "mg": 30,
+     "gun_arty": 40,
+     "gun_at": 20
+    },
+    "authorised": {
+     "rifle": 100,
+     "mg": 30,
+     "gun_arty": 40,
+     "gun_at": 20
+    }
+   },
+   "organisation": 90,
+   "morale": 76,
+   "experience": 45,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 10,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "defend",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "sov.rd.204",
+   "name": "204th Rifle Division",
+   "shortName": "204 RD",
+   "nation": "SOV",
+   "side": "allies",
+   "type": "infantry",
+   "domain": "land",
+   "parentId": "sov.a.64",
+   "pos": [
+    44.25,
+    48.33
+   ],
+   "manpower": 10000,
+   "manpowerMax": 10000,
+   "equipment": {
+    "held": {
+     "rifle": 100,
+     "mg": 30,
+     "gun_arty": 40,
+     "gun_at": 20
+    },
+    "authorised": {
+     "rifle": 100,
+     "mg": 30,
+     "gun_arty": 40,
+     "gun_at": 20
+    }
+   },
+   "organisation": 90,
+   "morale": 76,
+   "experience": 45,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 10,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "defend",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "sov.rb.93",
+   "name": "93rd Rifle Brigade",
+   "shortName": "93 RB",
+   "nation": "SOV",
+   "side": "allies",
+   "type": "infantry",
+   "domain": "land",
+   "parentId": "sov.a.64",
+   "pos": [
+    44.3,
+    48.33
+   ],
+   "manpower": 3000,
+   "manpowerMax": 3000,
+   "equipment": {
+    "held": {
+     "rifle": 100,
+     "mg": 30,
+     "gun_arty": 40,
+     "gun_at": 20
+    },
+    "authorised": {
+     "rifle": 100,
+     "mg": 30,
+     "gun_arty": 40,
+     "gun_at": 20
+    }
+   },
+   "organisation": 90,
+   "morale": 76,
+   "experience": 45,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 10,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "defend",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "sov.rb.96",
+   "name": "96th Rifle Brigade",
+   "shortName": "96 RB",
+   "nation": "SOV",
+   "side": "allies",
+   "type": "infantry",
+   "domain": "land",
+   "parentId": "sov.a.64",
+   "pos": [
+    44.35,
+    48.33
+   ],
+   "manpower": 3000,
+   "manpowerMax": 3000,
+   "equipment": {
+    "held": {
+     "rifle": 100,
+     "mg": 30,
+     "gun_arty": 40,
+     "gun_at": 20
+    },
+    "authorised": {
+     "rifle": 100,
+     "mg": 30,
+     "gun_arty": 40,
+     "gun_at": 20
+    }
+   },
+   "organisation": 90,
+   "morale": 76,
+   "experience": 45,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 10,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "defend",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "sov.rb.97",
+   "name": "97th Rifle Brigade",
+   "shortName": "97 RB",
+   "nation": "SOV",
+   "side": "allies",
+   "type": "infantry",
+   "domain": "land",
+   "parentId": "sov.a.64",
+   "pos": [
+    44.4,
+    48.33
+   ],
+   "manpower": 3000,
+   "manpowerMax": 3000,
+   "equipment": {
+    "held": {
+     "rifle": 100,
+     "mg": 30,
+     "gun_arty": 40,
+     "gun_at": 20
+    },
+    "authorised": {
+     "rifle": 100,
+     "mg": 30,
+     "gun_arty": 40,
+     "gun_at": 20
+    }
+   },
+   "organisation": 90,
+   "morale": 76,
+   "experience": 45,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 10,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "defend",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "sov.nb.66",
+   "name": "66th Naval Rifle Brigade",
+   "shortName": "66 NB",
+   "nation": "SOV",
+   "side": "allies",
+   "type": "infantry",
+   "domain": "land",
+   "parentId": "sov.a.64",
+   "pos": [
+    44.45,
+    48.33
+   ],
+   "manpower": 3000,
+   "manpowerMax": 3000,
+   "equipment": {
+    "held": {
+     "rifle": 100,
+     "mg": 30,
+     "gun_arty": 40,
+     "gun_at": 20
+    },
+    "authorised": {
+     "rifle": 100,
+     "mg": 30,
+     "gun_arty": 40,
+     "gun_at": 20
+    }
+   },
+   "organisation": 90,
+   "morale": 76,
+   "experience": 45,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 10,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "defend",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "sov.nb.154",
+   "name": "154th Naval Rifle Brigade",
+   "shortName": "154 NB",
+   "nation": "SOV",
+   "side": "allies",
+   "type": "infantry",
+   "domain": "land",
+   "parentId": "sov.a.64",
+   "pos": [
+    44.25,
+    48.37
+   ],
+   "manpower": 3000,
+   "manpowerMax": 3000,
+   "equipment": {
+    "held": {
+     "rifle": 100,
+     "mg": 30,
+     "gun_arty": 40,
+     "gun_at": 20
+    },
+    "authorised": {
+     "rifle": 100,
+     "mg": 30,
+     "gun_arty": 40,
+     "gun_at": 20
+    }
+   },
+   "organisation": 90,
+   "morale": 76,
+   "experience": 45,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 10,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "defend",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "sov.tb.13",
+   "name": "13th Tank Brigade",
+   "shortName": "13 TB",
+   "nation": "SOV",
+   "side": "allies",
+   "type": "armoured",
+   "domain": "land",
+   "parentId": "sov.a.64",
+   "pos": [
+    44.3,
+    48.37
+   ],
+   "manpower": 1500,
+   "manpowerMax": 1500,
+   "equipment": {
+    "held": {
+     "tank_medium": 100,
+     "tank_light": 20,
+     "gun_arty": 24,
+     "truck": 60
+    },
+    "authorised": {
+     "tank_medium": 100,
+     "tank_light": 20,
+     "gun_arty": 24,
+     "truck": 60
+    }
+   },
+   "organisation": 90,
+   "morale": 76,
+   "experience": 45,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 10,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "defend",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "sov.tb.56",
+   "name": "56th Tank Brigade",
+   "shortName": "56 TB",
+   "nation": "SOV",
+   "side": "allies",
+   "type": "armoured",
+   "domain": "land",
+   "parentId": "sov.a.64",
+   "pos": [
+    44.35,
+    48.37
+   ],
+   "manpower": 1500,
+   "manpowerMax": 1500,
+   "equipment": {
+    "held": {
+     "tank_medium": 100,
+     "tank_light": 20,
+     "gun_arty": 24,
+     "truck": 60
+    },
+    "authorised": {
+     "tank_medium": 100,
+     "tank_light": 20,
+     "gun_arty": 24,
+     "truck": 60
+    }
+   },
+   "organisation": 90,
+   "morale": 76,
+   "experience": 45,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 10,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "defend",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "sov.a.51",
+   "name": "51st Army (Trufanov)",
+   "shortName": "51 Army",
+   "nation": "SOV",
+   "side": "allies",
+   "type": "hq",
+   "domain": "land",
+   "parentId": "sov.f.st",
+   "pos": [
+    44.55,
+    47.89
+   ],
+   "manpower": 600,
+   "manpowerMax": 600,
+   "equipment": {
+    "held": {
+     "rifle": 600
+    },
+    "authorised": {
+     "rifle": 600
+    }
+   },
+   "organisation": 90,
+   "morale": 76,
+   "experience": 45,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 10,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "defend",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "sov.rd.g15",
+   "name": "15th Guards Rifle Division",
+   "shortName": "15G RD",
+   "nation": "SOV",
+   "side": "allies",
+   "type": "infantry",
+   "domain": "land",
+   "parentId": "sov.a.51",
+   "pos": [
+    44.6,
+    47.89
+   ],
+   "manpower": 10000,
+   "manpowerMax": 10000,
+   "equipment": {
+    "held": {
+     "rifle": 100,
+     "mg": 30,
+     "gun_arty": 40,
+     "gun_at": 20
+    },
+    "authorised": {
+     "rifle": 100,
+     "mg": 30,
+     "gun_arty": 40,
+     "gun_at": 20
+    }
+   },
+   "organisation": 90,
+   "morale": 76,
+   "experience": 45,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 10,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "defend",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "sov.rd.91",
+   "name": "91st Rifle Division",
+   "shortName": "91 RD",
+   "nation": "SOV",
+   "side": "allies",
+   "type": "infantry",
+   "domain": "land",
+   "parentId": "sov.a.51",
+   "pos": [
+    44.65,
+    47.89
+   ],
+   "manpower": 10000,
+   "manpowerMax": 10000,
+   "equipment": {
+    "held": {
+     "rifle": 100,
+     "mg": 30,
+     "gun_arty": 40,
+     "gun_at": 20
+    },
+    "authorised": {
+     "rifle": 100,
+     "mg": 30,
+     "gun_arty": 40,
+     "gun_at": 20
+    }
+   },
+   "organisation": 90,
+   "morale": 76,
+   "experience": 45,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 10,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "defend",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "sov.rd.126",
+   "name": "126th Rifle Division",
+   "shortName": "126 RD",
+   "nation": "SOV",
+   "side": "allies",
+   "type": "infantry",
+   "domain": "land",
+   "parentId": "sov.a.51",
+   "pos": [
+    44.7,
+    47.89
+   ],
+   "manpower": 10000,
+   "manpowerMax": 10000,
+   "equipment": {
+    "held": {
+     "rifle": 100,
+     "mg": 30,
+     "gun_arty": 40,
+     "gun_at": 20
+    },
+    "authorised": {
+     "rifle": 100,
+     "mg": 30,
+     "gun_arty": 40,
+     "gun_at": 20
+    }
+   },
+   "organisation": 90,
+   "morale": 76,
+   "experience": 45,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 10,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "defend",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "sov.rd.302",
+   "name": "302nd Rifle Division",
+   "shortName": "302 RD",
+   "nation": "SOV",
+   "side": "allies",
+   "type": "infantry",
+   "domain": "land",
+   "parentId": "sov.a.51",
+   "pos": [
+    44.75,
+    47.89
+   ],
+   "manpower": 10000,
+   "manpowerMax": 10000,
+   "equipment": {
+    "held": {
+     "rifle": 100,
+     "mg": 30,
+     "gun_arty": 40,
+     "gun_at": 20
+    },
+    "authorised": {
+     "rifle": 100,
+     "mg": 30,
+     "gun_arty": 40,
+     "gun_at": 20
+    }
+   },
+   "organisation": 90,
+   "morale": 76,
+   "experience": 45,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 10,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "defend",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "sov.mc.4",
+   "name": "4th Mechanized Corps (Volsky)",
+   "shortName": "4 MC",
+   "nation": "SOV",
+   "side": "allies",
+   "type": "mechanised",
+   "domain": "land",
+   "parentId": "sov.a.51",
+   "pos": [
+    44.55,
+    47.93
+   ],
+   "manpower": 9000,
+   "manpowerMax": 9000,
+   "equipment": {
+    "held": {
+     "tank_light": 40,
+     "rifle": 50,
+     "gun_arty": 24
+    },
+    "authorised": {
+     "tank_light": 40,
+     "rifle": 50,
+     "gun_arty": 24
+    }
+   },
+   "organisation": 90,
+   "morale": 76,
+   "experience": 45,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 10,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "defend",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "sov.cc.4",
+   "name": "4th Cavalry Corps (Shapkin)",
+   "shortName": "4 CC",
+   "nation": "SOV",
+   "side": "allies",
+   "type": "infantry",
+   "domain": "land",
+   "parentId": "sov.a.51",
+   "pos": [
+    44.6,
+    47.93
+   ],
+   "manpower": 8000,
+   "manpowerMax": 8000,
+   "equipment": {
+    "held": {
+     "rifle": 100,
+     "mg": 30,
+     "gun_arty": 40,
+     "gun_at": 20
+    },
+    "authorised": {
+     "rifle": 100,
+     "mg": 30,
+     "gun_arty": 40,
+     "gun_at": 20
+    }
+   },
+   "organisation": 90,
+   "morale": 76,
+   "experience": 45,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 10,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "defend",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "sov.tb.254",
+   "name": "254th Tank Brigade",
+   "shortName": "254 TB",
+   "nation": "SOV",
+   "side": "allies",
+   "type": "armoured",
+   "domain": "land",
+   "parentId": "sov.a.51",
+   "pos": [
+    44.65,
+    47.93
+   ],
+   "manpower": 1500,
+   "manpowerMax": 1500,
+   "equipment": {
+    "held": {
+     "tank_medium": 100,
+     "tank_light": 20,
+     "gun_arty": 24,
+     "truck": 60
+    },
+    "authorised": {
+     "tank_medium": 100,
+     "tank_light": 20,
+     "gun_arty": 24,
+     "truck": 60
+    }
+   },
+   "organisation": 90,
+   "morale": 76,
+   "experience": 45,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 10,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "defend",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "sov.a.57",
+   "name": "57th Army (Tolbukhin)",
+   "shortName": "57 Army",
+   "nation": "SOV",
+   "side": "allies",
+   "type": "hq",
+   "domain": "land",
+   "parentId": "sov.f.st",
+   "pos": [
+    44.45,
+    48.16
+   ],
+   "manpower": 600,
+   "manpowerMax": 600,
+   "equipment": {
+    "held": {
+     "rifle": 600
+    },
+    "authorised": {
+     "rifle": 600
+    }
+   },
+   "organisation": 90,
+   "morale": 76,
+   "experience": 45,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 10,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "defend",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "sov.rd.169",
+   "name": "169th Rifle Division",
+   "shortName": "169 RD",
+   "nation": "SOV",
+   "side": "allies",
+   "type": "infantry",
+   "domain": "land",
+   "parentId": "sov.a.57",
+   "pos": [
+    44.5,
+    48.16
+   ],
+   "manpower": 10000,
+   "manpowerMax": 10000,
+   "equipment": {
+    "held": {
+     "rifle": 100,
+     "mg": 30,
+     "gun_arty": 40,
+     "gun_at": 20
+    },
+    "authorised": {
+     "rifle": 100,
+     "mg": 30,
+     "gun_arty": 40,
+     "gun_at": 20
+    }
+   },
+   "organisation": 90,
+   "morale": 76,
+   "experience": 45,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 10,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "defend",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "sov.rd.422",
+   "name": "422nd Rifle Division",
+   "shortName": "422 RD",
+   "nation": "SOV",
+   "side": "allies",
+   "type": "infantry",
+   "domain": "land",
+   "parentId": "sov.a.57",
+   "pos": [
+    44.55,
+    48.16
+   ],
+   "manpower": 10000,
+   "manpowerMax": 10000,
+   "equipment": {
+    "held": {
+     "rifle": 100,
+     "mg": 30,
+     "gun_arty": 40,
+     "gun_at": 20
+    },
+    "authorised": {
+     "rifle": 100,
+     "mg": 30,
+     "gun_arty": 40,
+     "gun_at": 20
+    }
+   },
+   "organisation": 90,
+   "morale": 76,
+   "experience": 45,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 10,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "defend",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "sov.mc.13",
+   "name": "13th Mechanized Corps (Tanaschishin)",
+   "shortName": "13 MC",
+   "nation": "SOV",
+   "side": "allies",
+   "type": "mechanised",
+   "domain": "land",
+   "parentId": "sov.a.57",
+   "pos": [
+    44.6,
+    48.16
+   ],
+   "manpower": 9000,
+   "manpowerMax": 9000,
+   "equipment": {
+    "held": {
+     "tank_light": 40,
+     "rifle": 50,
+     "gun_arty": 24
+    },
+    "authorised": {
+     "tank_light": 40,
+     "rifle": 50,
+     "gun_arty": 24
+    }
+   },
+   "organisation": 90,
+   "morale": 76,
+   "experience": 45,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 10,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "defend",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "sov.tb.90",
+   "name": "90th Tank Brigade",
+   "shortName": "90 TB",
+   "nation": "SOV",
+   "side": "allies",
+   "type": "armoured",
+   "domain": "land",
+   "parentId": "sov.a.57",
+   "pos": [
+    44.65,
+    48.16
+   ],
+   "manpower": 1500,
+   "manpowerMax": 1500,
+   "equipment": {
+    "held": {
+     "tank_medium": 100,
+     "tank_light": 20,
+     "gun_arty": 24,
+     "truck": 60
+    },
+    "authorised": {
+     "tank_medium": 100,
+     "tank_light": 20,
+     "gun_arty": 24,
+     "truck": 60
+    }
+   },
+   "organisation": 90,
+   "morale": 76,
+   "experience": 45,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 10,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "defend",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "sov.tb.235",
+   "name": "235th Tank Brigade",
+   "shortName": "235 TB",
+   "nation": "SOV",
+   "side": "allies",
+   "type": "armoured",
+   "domain": "land",
+   "parentId": "sov.a.57",
+   "pos": [
+    44.45,
+    48.2
+   ],
+   "manpower": 1500,
+   "manpowerMax": 1500,
+   "equipment": {
+    "held": {
+     "tank_medium": 100,
+     "tank_light": 20,
+     "gun_arty": 24,
+     "truck": 60
+    },
+    "authorised": {
+     "tank_medium": 100,
+     "tank_light": 20,
+     "gun_arty": 24,
+     "truck": 60
+    }
+   },
+   "organisation": 90,
+   "morale": 76,
+   "experience": 45,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 10,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "defend",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "sov.a.28",
+   "name": "28th Army (Gerasimenko)",
+   "shortName": "28 Army",
+   "nation": "SOV",
+   "side": "allies",
+   "type": "hq",
+   "domain": "land",
+   "parentId": "sov.f.st",
+   "pos": [
+    45.3,
+    47.34
+   ],
+   "manpower": 600,
+   "manpowerMax": 600,
+   "equipment": {
+    "held": {
+     "rifle": 600
+    },
+    "authorised": {
+     "rifle": 600
+    }
+   },
+   "organisation": 90,
+   "morale": 76,
+   "experience": 45,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 10,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "defend",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "sov.rd.g34",
+   "name": "34th Guards Rifle Division",
+   "shortName": "34G RD",
+   "nation": "SOV",
+   "side": "allies",
+   "type": "infantry",
+   "domain": "land",
+   "parentId": "sov.a.28",
+   "pos": [
+    45.35,
+    47.34
+   ],
+   "manpower": 10000,
+   "manpowerMax": 10000,
+   "equipment": {
+    "held": {
+     "rifle": 100,
+     "mg": 30,
+     "gun_arty": 40,
+     "gun_at": 20
+    },
+    "authorised": {
+     "rifle": 100,
+     "mg": 30,
+     "gun_arty": 40,
+     "gun_at": 20
+    }
+   },
+   "organisation": 90,
+   "morale": 76,
+   "experience": 45,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 10,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "defend",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "sov.rd.248",
+   "name": "248th Rifle Division",
+   "shortName": "248 RD",
+   "nation": "SOV",
+   "side": "allies",
+   "type": "infantry",
+   "domain": "land",
+   "parentId": "sov.a.28",
+   "pos": [
+    45.4,
+    47.34
+   ],
+   "manpower": 10000,
+   "manpowerMax": 10000,
+   "equipment": {
+    "held": {
+     "rifle": 100,
+     "mg": 30,
+     "gun_arty": 40,
+     "gun_at": 20
+    },
+    "authorised": {
+     "rifle": 100,
+     "mg": 30,
+     "gun_arty": 40,
+     "gun_at": 20
+    }
+   },
+   "organisation": 90,
+   "morale": 76,
+   "experience": 45,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 10,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "defend",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "sov.tb.g6",
+   "name": "6th Guards Tank Brigade",
+   "shortName": "6G TB",
+   "nation": "SOV",
+   "side": "allies",
+   "type": "armoured",
+   "domain": "land",
+   "parentId": "sov.a.28",
+   "pos": [
+    45.45,
+    47.34
+   ],
+   "manpower": 1500,
+   "manpowerMax": 1500,
+   "equipment": {
+    "held": {
+     "tank_medium": 100,
+     "tank_light": 20,
+     "gun_arty": 24,
+     "truck": 60
+    },
+    "authorised": {
+     "tank_medium": 100,
+     "tank_light": 20,
+     "gun_arty": 24,
+     "truck": 60
+    }
+   },
+   "organisation": 90,
+   "morale": 76,
+   "experience": 45,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 10,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "defend",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "sov.rd.300",
+   "name": "300th Rifle Division (Stalingrad Front)",
+   "shortName": "300 RD",
+   "nation": "SOV",
+   "side": "allies",
+   "type": "infantry",
+   "domain": "land",
+   "parentId": "sov.f.st",
+   "pos": [
+    44.45,
+    48.78
+   ],
+   "manpower": 10000,
+   "manpowerMax": 10000,
+   "equipment": {
+    "held": {
+     "rifle": 100,
+     "mg": 30,
+     "gun_arty": 40,
+     "gun_at": 20
+    },
+    "authorised": {
+     "rifle": 100,
+     "mg": 30,
+     "gun_arty": 40,
+     "gun_at": 20
+    }
+   },
+   "organisation": 90,
+   "morale": 76,
+   "experience": 45,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 10,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "defend",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "ger.abB",
+   "name": "Army Group B (Weichs)",
+   "shortName": "AGp B",
+   "nation": "GER",
+   "side": "axis",
+   "type": "hq",
+   "domain": "land",
+   "pos": [
+    42.2,
+    48.24
+   ],
+   "manpower": 600,
+   "manpowerMax": 600,
+   "equipment": {
+    "held": {
+     "rifle": 600
+    },
+    "authorised": {
+     "rifle": 600
+    }
+   },
+   "organisation": 90,
+   "morale": 80,
+   "experience": 60,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 20,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "hold",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "ger.a6",
+   "name": "6th Army (Paulus)",
+   "shortName": "6.Armee",
+   "nation": "GER",
+   "side": "axis",
+   "type": "hq",
+   "domain": "land",
+   "parentId": "ger.abB",
+   "pos": [
+    44,
+    48.74
+   ],
+   "manpower": 600,
+   "manpowerMax": 600,
+   "equipment": {
+    "held": {
+     "rifle": 600
+    },
+    "authorised": {
+     "rifle": 600
+    }
+   },
+   "organisation": 90,
+   "morale": 80,
+   "experience": 60,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 20,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "hold",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "ger.c.IV",
+   "name": "IV Army Corps (Jaenecke)",
+   "shortName": "IV.AK",
+   "nation": "GER",
+   "side": "axis",
+   "type": "hq",
+   "domain": "land",
+   "parentId": "ger.a6",
+   "pos": [
+    44.25,
+    48.39
+   ],
+   "manpower": 600,
+   "manpowerMax": 600,
+   "equipment": {
+    "held": {
+     "rifle": 600
+    },
+    "authorised": {
+     "rifle": 600
+    }
+   },
+   "organisation": 90,
+   "morale": 80,
+   "experience": 60,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 20,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "hold",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "ger.d.29",
+   "name": "29th Motorized Infantry Division (Leyser)",
+   "shortName": "29.ID(mot)",
+   "nation": "GER",
+   "side": "axis",
+   "type": "motorised",
+   "domain": "land",
+   "parentId": "ger.c.IV",
+   "pos": [
+    44.3,
+    48.39
+   ],
+   "manpower": 12000,
+   "manpowerMax": 12000,
+   "equipment": {
+    "held": {
+     "rifle": 80,
+     "gun_arty": 40,
+     "truck": 60
+    },
+    "authorised": {
+     "rifle": 80,
+     "gun_arty": 40,
+     "truck": 60
+    }
+   },
+   "organisation": 90,
+   "morale": 80,
+   "experience": 60,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 20,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "hold",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "ger.d.297",
+   "name": "297th Infantry Division",
+   "shortName": "297.ID",
+   "nation": "GER",
+   "side": "axis",
+   "type": "infantry",
+   "domain": "land",
+   "parentId": "ger.c.IV",
+   "pos": [
+    44.35,
+    48.39
+   ],
+   "manpower": 12000,
+   "manpowerMax": 12000,
+   "equipment": {
+    "held": {
+     "rifle": 100,
+     "mg": 30,
+     "gun_arty": 40,
+     "gun_at": 20
+    },
+    "authorised": {
+     "rifle": 100,
+     "mg": 30,
+     "gun_arty": 40,
+     "gun_at": 20
+    }
+   },
+   "organisation": 90,
+   "morale": 80,
+   "experience": 60,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 20,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "hold",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "ger.d.371",
+   "name": "371st Infantry Division",
+   "shortName": "371.ID",
+   "nation": "GER",
+   "side": "axis",
+   "type": "infantry",
+   "domain": "land",
+   "parentId": "ger.c.IV",
+   "pos": [
+    44.4,
+    48.39
+   ],
+   "manpower": 12000,
+   "manpowerMax": 12000,
+   "equipment": {
+    "held": {
+     "rifle": 100,
+     "mg": 30,
+     "gun_arty": 40,
+     "gun_at": 20
+    },
+    "authorised": {
+     "rifle": 100,
+     "mg": 30,
+     "gun_arty": 40,
+     "gun_at": 20
+    }
+   },
+   "organisation": 90,
+   "morale": 80,
+   "experience": 60,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 20,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "hold",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "ger.c.VIII",
+   "name": "VIII Army Corps (Heitz)",
+   "shortName": "VIII.AK",
+   "nation": "GER",
+   "side": "axis",
+   "type": "hq",
+   "domain": "land",
+   "parentId": "ger.a6",
+   "pos": [
+    43.2,
+    48.82
+   ],
+   "manpower": 600,
+   "manpowerMax": 600,
+   "equipment": {
+    "held": {
+     "rifle": 600
+    },
+    "authorised": {
+     "rifle": 600
+    }
+   },
+   "organisation": 90,
+   "morale": 80,
+   "experience": 60,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 20,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "hold",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "ger.d.76",
+   "name": "76th Infantry Division (Rodenburg)",
+   "shortName": "76.ID",
+   "nation": "GER",
+   "side": "axis",
+   "type": "infantry",
+   "domain": "land",
+   "parentId": "ger.c.VIII",
+   "pos": [
+    43.25,
+    48.82
+   ],
+   "manpower": 12000,
+   "manpowerMax": 12000,
+   "equipment": {
+    "held": {
+     "rifle": 100,
+     "mg": 30,
+     "gun_arty": 40,
+     "gun_at": 20
+    },
+    "authorised": {
+     "rifle": 100,
+     "mg": 30,
+     "gun_arty": 40,
+     "gun_at": 20
+    }
+   },
+   "organisation": 90,
+   "morale": 80,
+   "experience": 60,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 20,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "hold",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "ger.d.113",
+   "name": "113th Infantry Division (Sixt von Armin)",
+   "shortName": "113.ID",
+   "nation": "GER",
+   "side": "axis",
+   "type": "infantry",
+   "domain": "land",
+   "parentId": "ger.c.VIII",
+   "pos": [
+    43.3,
+    48.82
+   ],
+   "manpower": 12000,
+   "manpowerMax": 12000,
+   "equipment": {
+    "held": {
+     "rifle": 100,
+     "mg": 30,
+     "gun_arty": 40,
+     "gun_at": 20
+    },
+    "authorised": {
+     "rifle": 100,
+     "mg": 30,
+     "gun_arty": 40,
+     "gun_at": 20
+    }
+   },
+   "organisation": 90,
+   "morale": 80,
+   "experience": 60,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 20,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "hold",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "ger.c.XI",
+   "name": "XI Army Corps (Strecker)",
+   "shortName": "XI.AK",
+   "nation": "GER",
+   "side": "axis",
+   "type": "hq",
+   "domain": "land",
+   "parentId": "ger.a6",
+   "pos": [
+    43.7,
+    48.89
+   ],
+   "manpower": 600,
+   "manpowerMax": 600,
+   "equipment": {
+    "held": {
+     "rifle": 600
+    },
+    "authorised": {
+     "rifle": 600
+    }
+   },
+   "organisation": 90,
+   "morale": 80,
+   "experience": 60,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 20,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "hold",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "ger.d.44",
+   "name": "44th Infantry Division (Deboi)",
+   "shortName": "44.ID",
+   "nation": "GER",
+   "side": "axis",
+   "type": "infantry",
+   "domain": "land",
+   "parentId": "ger.c.XI",
+   "pos": [
+    43.75,
+    48.89
+   ],
+   "manpower": 12000,
+   "manpowerMax": 12000,
+   "equipment": {
+    "held": {
+     "rifle": 100,
+     "mg": 30,
+     "gun_arty": 40,
+     "gun_at": 20
+    },
+    "authorised": {
+     "rifle": 100,
+     "mg": 30,
+     "gun_arty": 40,
+     "gun_at": 20
+    }
+   },
+   "organisation": 90,
+   "morale": 80,
+   "experience": 60,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 20,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "hold",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "ger.d.376",
+   "name": "376th Infantry Division (v. Daniels)",
+   "shortName": "376.ID",
+   "nation": "GER",
+   "side": "axis",
+   "type": "infantry",
+   "domain": "land",
+   "parentId": "ger.c.XI",
+   "pos": [
+    43.8,
+    48.89
+   ],
+   "manpower": 12000,
+   "manpowerMax": 12000,
+   "equipment": {
+    "held": {
+     "rifle": 100,
+     "mg": 30,
+     "gun_arty": 40,
+     "gun_at": 20
+    },
+    "authorised": {
+     "rifle": 100,
+     "mg": 30,
+     "gun_arty": 40,
+     "gun_at": 20
+    }
+   },
+   "organisation": 90,
+   "morale": 80,
+   "experience": 60,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 20,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "hold",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "ger.d.384",
+   "name": "384th Infantry Division (v. Gablenz)",
+   "shortName": "384.ID",
+   "nation": "GER",
+   "side": "axis",
+   "type": "infantry",
+   "domain": "land",
+   "parentId": "ger.c.XI",
+   "pos": [
+    43.85,
+    48.89
+   ],
+   "manpower": 12000,
+   "manpowerMax": 12000,
+   "equipment": {
+    "held": {
+     "rifle": 100,
+     "mg": 30,
+     "gun_arty": 40,
+     "gun_at": 20
+    },
+    "authorised": {
+     "rifle": 100,
+     "mg": 30,
+     "gun_arty": 40,
+     "gun_at": 20
+    }
+   },
+   "organisation": 90,
+   "morale": 80,
+   "experience": 60,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 20,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "hold",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "ger.c.XIV",
+   "name": "XIV Panzer Corps (Hube)",
+   "shortName": "XIV.PzK",
+   "nation": "GER",
+   "side": "axis",
+   "type": "hq",
+   "domain": "land",
+   "parentId": "ger.a6",
+   "pos": [
+    44.1,
+    48.82
+   ],
+   "manpower": 600,
+   "manpowerMax": 600,
+   "equipment": {
+    "held": {
+     "rifle": 600
+    },
+    "authorised": {
+     "rifle": 600
+    }
+   },
+   "organisation": 90,
+   "morale": 80,
+   "experience": 60,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 20,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "hold",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "ger.d.3",
+   "name": "3rd Motorized Infantry Division (Schlömer)",
+   "shortName": "3.ID(mot)",
+   "nation": "GER",
+   "side": "axis",
+   "type": "motorised",
+   "domain": "land",
+   "parentId": "ger.c.XIV",
+   "pos": [
+    44.15,
+    48.82
+   ],
+   "manpower": 12000,
+   "manpowerMax": 12000,
+   "equipment": {
+    "held": {
+     "rifle": 80,
+     "gun_arty": 40,
+     "truck": 60
+    },
+    "authorised": {
+     "rifle": 80,
+     "gun_arty": 40,
+     "truck": 60
+    }
+   },
+   "organisation": 90,
+   "morale": 80,
+   "experience": 60,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 20,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "hold",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "ger.d.60",
+   "name": "60th Motorized Infantry Division (v. Arenstorff)",
+   "shortName": "60.ID(mot)",
+   "nation": "GER",
+   "side": "axis",
+   "type": "motorised",
+   "domain": "land",
+   "parentId": "ger.c.XIV",
+   "pos": [
+    44.22,
+    48.71
+   ],
+   "manpower": 12000,
+   "manpowerMax": 12000,
+   "equipment": {
+    "held": {
+     "rifle": 80,
+     "gun_arty": 40,
+     "truck": 60
+    },
+    "authorised": {
+     "rifle": 80,
+     "gun_arty": 40,
+     "truck": 60
+    }
+   },
+   "organisation": 90,
+   "morale": 80,
+   "experience": 60,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 20,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "hold",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "ger.d.16pz",
+   "name": "16th Panzer Division (Angern)",
+   "shortName": "16.PzD",
+   "nation": "GER",
+   "side": "axis",
+   "type": "armoured",
+   "domain": "land",
+   "parentId": "ger.c.XIV",
+   "pos": [
+    44.2,
+    48.82
+   ],
+   "manpower": 12000,
+   "manpowerMax": 12000,
+   "equipment": {
+    "held": {
+     "tank_medium": 100,
+     "tank_light": 20,
+     "gun_arty": 24,
+     "truck": 60
+    },
+    "authorised": {
+     "tank_medium": 100,
+     "tank_light": 20,
+     "gun_arty": 24,
+     "truck": 60
+    }
+   },
+   "organisation": 90,
+   "morale": 80,
+   "experience": 60,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 20,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "hold",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "ger.c.LI",
+   "name": "LI Army Corps (v. Seydlitz-Kurzbach)",
+   "shortName": "LI.AK",
+   "nation": "GER",
+   "side": "axis",
+   "type": "hq",
+   "domain": "land",
+   "parentId": "ger.a6",
+   "pos": [
+    44.3,
+    48.64
+   ],
+   "manpower": 600,
+   "manpowerMax": 600,
+   "equipment": {
+    "held": {
+     "rifle": 600
+    },
+    "authorised": {
+     "rifle": 600
+    }
+   },
+   "organisation": 90,
+   "morale": 80,
+   "experience": 60,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 20,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "hold",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "ger.d.71",
+   "name": "71st Infantry Division (v. Hartmann)",
+   "shortName": "71.ID",
+   "nation": "GER",
+   "side": "axis",
+   "type": "infantry",
+   "domain": "land",
+   "parentId": "ger.c.LI",
+   "pos": [
+    44.35,
+    48.64
+   ],
+   "manpower": 12000,
+   "manpowerMax": 12000,
+   "equipment": {
+    "held": {
+     "rifle": 100,
+     "mg": 30,
+     "gun_arty": 40,
+     "gun_at": 20
+    },
+    "authorised": {
+     "rifle": 100,
+     "mg": 30,
+     "gun_arty": 40,
+     "gun_at": 20
+    }
+   },
+   "organisation": 90,
+   "morale": 80,
+   "experience": 60,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 20,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "hold",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "ger.d.79",
+   "name": "79th Infantry Division (Graf v. Schwerin)",
+   "shortName": "79.ID",
+   "nation": "GER",
+   "side": "axis",
+   "type": "infantry",
+   "domain": "land",
+   "parentId": "ger.c.LI",
+   "pos": [
+    44.4,
+    48.64
+   ],
+   "manpower": 12000,
+   "manpowerMax": 12000,
+   "equipment": {
+    "held": {
+     "rifle": 100,
+     "mg": 30,
+     "gun_arty": 40,
+     "gun_at": 20
+    },
+    "authorised": {
+     "rifle": 100,
+     "mg": 30,
+     "gun_arty": 40,
+     "gun_at": 20
+    }
+   },
+   "organisation": 90,
+   "morale": 80,
+   "experience": 60,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 20,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "hold",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "ger.d.94",
+   "name": "94th Infantry Division (Pfeiffer)",
+   "shortName": "94.ID",
+   "nation": "GER",
+   "side": "axis",
+   "type": "infantry",
+   "domain": "land",
+   "parentId": "ger.c.LI",
+   "pos": [
+    44.45,
+    48.64
+   ],
+   "manpower": 12000,
+   "manpowerMax": 12000,
+   "equipment": {
+    "held": {
+     "rifle": 100,
+     "mg": 30,
+     "gun_arty": 40,
+     "gun_at": 20
+    },
+    "authorised": {
+     "rifle": 100,
+     "mg": 30,
+     "gun_arty": 40,
+     "gun_at": 20
+    }
+   },
+   "organisation": 90,
+   "morale": 80,
+   "experience": 60,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 20,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "hold",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "ger.d.295",
+   "name": "295th Infantry Division (Korfes)",
+   "shortName": "295.ID",
+   "nation": "GER",
+   "side": "axis",
+   "type": "infantry",
+   "domain": "land",
+   "parentId": "ger.c.LI",
+   "pos": [
+    44.5,
+    48.64
+   ],
+   "manpower": 12000,
+   "manpowerMax": 12000,
+   "equipment": {
+    "held": {
+     "rifle": 100,
+     "mg": 30,
+     "gun_arty": 40,
+     "gun_at": 20
+    },
+    "authorised": {
+     "rifle": 100,
+     "mg": 30,
+     "gun_arty": 40,
+     "gun_at": 20
+    }
+   },
+   "organisation": 90,
+   "morale": 80,
+   "experience": 60,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 20,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "hold",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "ger.d.305",
+   "name": "305th Infantry Division (Steinmetz)",
+   "shortName": "305.ID",
+   "nation": "GER",
+   "side": "axis",
+   "type": "infantry",
+   "domain": "land",
+   "parentId": "ger.c.LI",
+   "pos": [
+    44.3,
+    48.68
+   ],
+   "manpower": 12000,
+   "manpowerMax": 12000,
+   "equipment": {
+    "held": {
+     "rifle": 100,
+     "mg": 30,
+     "gun_arty": 40,
+     "gun_at": 20
+    },
+    "authorised": {
+     "rifle": 100,
+     "mg": 30,
+     "gun_arty": 40,
+     "gun_at": 20
+    }
+   },
+   "organisation": 90,
+   "morale": 80,
+   "experience": 60,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 20,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "hold",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "ger.d.389",
+   "name": "389th Infantry Division (Magnus)",
+   "shortName": "389.ID",
+   "nation": "GER",
+   "side": "axis",
+   "type": "infantry",
+   "domain": "land",
+   "parentId": "ger.c.LI",
+   "pos": [
+    44.35,
+    48.68
+   ],
+   "manpower": 12000,
+   "manpowerMax": 12000,
+   "equipment": {
+    "held": {
+     "rifle": 100,
+     "mg": 30,
+     "gun_arty": 40,
+     "gun_at": 20
+    },
+    "authorised": {
+     "rifle": 100,
+     "mg": 30,
+     "gun_arty": 40,
+     "gun_at": 20
+    }
+   },
+   "organisation": 90,
+   "morale": 80,
+   "experience": 60,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 20,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "hold",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "ger.d.100j",
+   "name": "100th Jäger Division (Sanne)",
+   "shortName": "100.JgD",
+   "nation": "GER",
+   "side": "axis",
+   "type": "infantry",
+   "domain": "land",
+   "parentId": "ger.c.LI",
+   "pos": [
+    44.4,
+    48.68
+   ],
+   "manpower": 12000,
+   "manpowerMax": 12000,
+   "equipment": {
+    "held": {
+     "rifle": 100,
+     "mg": 30,
+     "gun_arty": 40,
+     "gun_at": 20
+    },
+    "authorised": {
+     "rifle": 100,
+     "mg": 30,
+     "gun_arty": 40,
+     "gun_at": 20
+    }
+   },
+   "organisation": 90,
+   "morale": 80,
+   "experience": 60,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 20,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "hold",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "ger.d.14pz",
+   "name": "14th Panzer Division",
+   "shortName": "14.PzD",
+   "nation": "GER",
+   "side": "axis",
+   "type": "armoured",
+   "domain": "land",
+   "parentId": "ger.c.LI",
+   "pos": [
+    44.45,
+    48.68
+   ],
+   "manpower": 12000,
+   "manpowerMax": 12000,
+   "equipment": {
+    "held": {
+     "tank_medium": 100,
+     "tank_light": 20,
+     "gun_arty": 24,
+     "truck": 60
+    },
+    "authorised": {
+     "tank_medium": 100,
+     "tank_light": 20,
+     "gun_arty": 24,
+     "truck": 60
+    }
+   },
+   "organisation": 90,
+   "morale": 80,
+   "experience": 60,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 20,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "hold",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "ger.d.24pz",
+   "name": "24th Panzer Division (v. Lenski)",
+   "shortName": "24.PzD",
+   "nation": "GER",
+   "side": "axis",
+   "type": "armoured",
+   "domain": "land",
+   "parentId": "ger.c.LI",
+   "pos": [
+    44.5,
+    48.68
+   ],
+   "manpower": 12000,
+   "manpowerMax": 12000,
+   "equipment": {
+    "held": {
+     "tank_medium": 100,
+     "tank_light": 20,
+     "gun_arty": 24,
+     "truck": 60
+    },
+    "authorised": {
+     "tank_medium": 100,
+     "tank_light": 20,
+     "gun_arty": 24,
+     "truck": 60
+    }
+   },
+   "organisation": 90,
+   "morale": 80,
+   "experience": 60,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 20,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "hold",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "ger.a4p",
+   "name": "4th Panzer Army (Hoth)",
+   "shortName": "4.PzArmee",
+   "nation": "GER",
+   "side": "axis",
+   "type": "hq",
+   "domain": "land",
+   "parentId": "ger.abB",
+   "pos": [
+    44.1,
+    47.89
+   ],
+   "manpower": 600,
+   "manpowerMax": 600,
+   "equipment": {
+    "held": {
+     "rifle": 600
+    },
+    "authorised": {
+     "rifle": 600
+    }
+   },
+   "organisation": 90,
+   "morale": 80,
+   "experience": 60,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 20,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "hold",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "ger.c.XLVIII",
+   "name": "XLVIII Panzer Corps",
+   "shortName": "XLVIII.PzK",
+   "nation": "GER",
+   "side": "axis",
+   "type": "hq",
+   "domain": "land",
+   "parentId": "ger.a4p",
+   "pos": [
+    42.7,
+    48.94
+   ],
+   "manpower": 600,
+   "manpowerMax": 600,
+   "equipment": {
+    "held": {
+     "rifle": 600
+    },
+    "authorised": {
+     "rifle": 600
+    }
+   },
+   "organisation": 90,
+   "morale": 80,
+   "experience": 60,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 20,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "hold",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "ger.d.22pz",
+   "name": "22nd Panzer Division",
+   "shortName": "22.PzD",
+   "nation": "GER",
+   "side": "axis",
+   "type": "armoured",
+   "domain": "land",
+   "parentId": "ger.c.XLVIII",
+   "pos": [
+    42.75,
+    48.94
+   ],
+   "manpower": 12000,
+   "manpowerMax": 12000,
+   "equipment": {
+    "held": {
+     "tank_medium": 100,
+     "tank_light": 20,
+     "gun_arty": 24,
+     "truck": 60
+    },
+    "authorised": {
+     "tank_medium": 100,
+     "tank_light": 20,
+     "gun_arty": 24,
+     "truck": 60
+    }
+   },
+   "organisation": 90,
+   "morale": 80,
+   "experience": 60,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 20,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "hold",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "rou.a3",
+   "name": "Romanian Third Army (Dumitrescu)",
+   "shortName": "RO 3rd Army",
+   "nation": "ROU",
+   "side": "axis",
+   "type": "hq",
+   "domain": "land",
+   "pos": [
+    42.2,
+    49.04
+   ],
+   "manpower": 600,
+   "manpowerMax": 600,
+   "equipment": {
+    "held": {
+     "rifle": 600
+    },
+    "authorised": {
+     "rifle": 600
+    }
+   },
+   "organisation": 90,
+   "morale": 62,
+   "experience": 35,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 20,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "hold",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "rou.c.1",
+   "name": "Romanian 1st Corps (T. Ionescu)",
+   "shortName": "RO I C",
+   "nation": "ROU",
+   "side": "axis",
+   "type": "hq",
+   "domain": "land",
+   "parentId": "rou.a3",
+   "pos": [
+    41.7,
+    49.04
+   ],
+   "manpower": 600,
+   "manpowerMax": 600,
+   "equipment": {
+    "held": {
+     "rifle": 600
+    },
+    "authorised": {
+     "rifle": 600
+    }
+   },
+   "organisation": 90,
+   "morale": 62,
+   "experience": 35,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 20,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "hold",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "rou.d.7",
+   "name": "7th Infantry Division (Trestioreanu)",
+   "shortName": "RO 7",
+   "nation": "ROU",
+   "side": "axis",
+   "type": "infantry",
+   "domain": "land",
+   "parentId": "rou.c.1",
+   "pos": [
+    41.75,
+    49.04
+   ],
+   "manpower": 10000,
+   "manpowerMax": 10000,
+   "equipment": {
+    "held": {
+     "rifle": 100,
+     "mg": 30,
+     "gun_arty": 40,
+     "gun_at": 20
+    },
+    "authorised": {
+     "rifle": 100,
+     "mg": 30,
+     "gun_arty": 40,
+     "gun_at": 20
+    }
+   },
+   "organisation": 90,
+   "morale": 62,
+   "experience": 35,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 20,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "hold",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "rou.d.11",
+   "name": "11th Infantry Division (Nedelea)",
+   "shortName": "RO 11",
+   "nation": "ROU",
+   "side": "axis",
+   "type": "infantry",
+   "domain": "land",
+   "parentId": "rou.c.1",
+   "pos": [
+    41.8,
+    49.04
+   ],
+   "manpower": 10000,
+   "manpowerMax": 10000,
+   "equipment": {
+    "held": {
+     "rifle": 100,
+     "mg": 30,
+     "gun_arty": 40,
+     "gun_at": 20
+    },
+    "authorised": {
+     "rifle": 100,
+     "mg": 30,
+     "gun_arty": 40,
+     "gun_at": 20
+    }
+   },
+   "organisation": 90,
+   "morale": 62,
+   "experience": 35,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 20,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "hold",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "rou.c.2",
+   "name": "Romanian 2nd Corps (Dăscălescu)",
+   "shortName": "RO II C",
+   "nation": "ROU",
+   "side": "axis",
+   "type": "hq",
+   "domain": "land",
+   "parentId": "rou.a3",
+   "pos": [
+    42,
+    49.09
+   ],
+   "manpower": 600,
+   "manpowerMax": 600,
+   "equipment": {
+    "held": {
+     "rifle": 600
+    },
+    "authorised": {
+     "rifle": 600
+    }
+   },
+   "organisation": 90,
+   "morale": 62,
+   "experience": 35,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 20,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "hold",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "rou.d.9",
+   "name": "9th Infantry Division (Panaitiu)",
+   "shortName": "RO 9",
+   "nation": "ROU",
+   "side": "axis",
+   "type": "infantry",
+   "domain": "land",
+   "parentId": "rou.c.2",
+   "pos": [
+    42.05,
+    49.09
+   ],
+   "manpower": 10000,
+   "manpowerMax": 10000,
+   "equipment": {
+    "held": {
+     "rifle": 100,
+     "mg": 30,
+     "gun_arty": 40,
+     "gun_at": 20
+    },
+    "authorised": {
+     "rifle": 100,
+     "mg": 30,
+     "gun_arty": 40,
+     "gun_at": 20
+    }
+   },
+   "organisation": 90,
+   "morale": 62,
+   "experience": 35,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 20,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "hold",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "rou.d.14",
+   "name": "14th Infantry Division (Stavrescu)",
+   "shortName": "RO 14",
+   "nation": "ROU",
+   "side": "axis",
+   "type": "infantry",
+   "domain": "land",
+   "parentId": "rou.c.2",
+   "pos": [
+    42.1,
+    49.09
+   ],
+   "manpower": 10000,
+   "manpowerMax": 10000,
+   "equipment": {
+    "held": {
+     "rifle": 100,
+     "mg": 30,
+     "gun_arty": 40,
+     "gun_at": 20
+    },
+    "authorised": {
+     "rifle": 100,
+     "mg": 30,
+     "gun_arty": 40,
+     "gun_at": 20
+    }
+   },
+   "organisation": 90,
+   "morale": 62,
+   "experience": 35,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 20,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "hold",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "rou.d.7c",
+   "name": "7th Cavalry Division (Munteanu)",
+   "shortName": "RO 7c",
+   "nation": "ROU",
+   "side": "axis",
+   "type": "infantry",
+   "domain": "land",
+   "parentId": "rou.c.2",
+   "pos": [
+    42.15,
+    49.09
+   ],
+   "manpower": 10000,
+   "manpowerMax": 10000,
+   "equipment": {
+    "held": {
+     "rifle": 100,
+     "mg": 30,
+     "gun_arty": 40,
+     "gun_at": 20
+    },
+    "authorised": {
+     "rifle": 100,
+     "mg": 30,
+     "gun_arty": 40,
+     "gun_at": 20
+    }
+   },
+   "organisation": 90,
+   "morale": 62,
+   "experience": 35,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 20,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "hold",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "rou.c.4",
+   "name": "Romanian 4th Corps (Sănătescu)",
+   "shortName": "RO IV C",
+   "nation": "ROU",
+   "side": "axis",
+   "type": "hq",
+   "domain": "land",
+   "parentId": "rou.a3",
+   "pos": [
+    42.4,
+    48.94
+   ],
+   "manpower": 600,
+   "manpowerMax": 600,
+   "equipment": {
+    "held": {
+     "rifle": 600
+    },
+    "authorised": {
+     "rifle": 600
+    }
+   },
+   "organisation": 90,
+   "morale": 62,
+   "experience": 35,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 20,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "hold",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "rou.d.13",
+   "name": "13th Infantry Division (G. Ionescu)",
+   "shortName": "RO 13",
+   "nation": "ROU",
+   "side": "axis",
+   "type": "infantry",
+   "domain": "land",
+   "parentId": "rou.c.4",
+   "pos": [
+    42.45,
+    48.94
+   ],
+   "manpower": 10000,
+   "manpowerMax": 10000,
+   "equipment": {
+    "held": {
+     "rifle": 100,
+     "mg": 30,
+     "gun_arty": 40,
+     "gun_at": 20
+    },
+    "authorised": {
+     "rifle": 100,
+     "mg": 30,
+     "gun_arty": 40,
+     "gun_at": 20
+    }
+   },
+   "organisation": 90,
+   "morale": 62,
+   "experience": 35,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 20,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "hold",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "rou.d.15",
+   "name": "15th Infantry Division (Sion)",
+   "shortName": "RO 15",
+   "nation": "ROU",
+   "side": "axis",
+   "type": "infantry",
+   "domain": "land",
+   "parentId": "rou.c.4",
+   "pos": [
+    42.5,
+    48.94
+   ],
+   "manpower": 10000,
+   "manpowerMax": 10000,
+   "equipment": {
+    "held": {
+     "rifle": 100,
+     "mg": 30,
+     "gun_arty": 40,
+     "gun_at": 20
+    },
+    "authorised": {
+     "rifle": 100,
+     "mg": 30,
+     "gun_arty": 40,
+     "gun_at": 20
+    }
+   },
+   "organisation": 90,
+   "morale": 62,
+   "experience": 35,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 20,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "hold",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "rou.d.1c",
+   "name": "1st Cavalry Division (Brătescu)",
+   "shortName": "RO 1c",
+   "nation": "ROU",
+   "side": "axis",
+   "type": "infantry",
+   "domain": "land",
+   "parentId": "rou.c.4",
+   "pos": [
+    42.55,
+    48.94
+   ],
+   "manpower": 10000,
+   "manpowerMax": 10000,
+   "equipment": {
+    "held": {
+     "rifle": 100,
+     "mg": 30,
+     "gun_arty": 40,
+     "gun_at": 20
+    },
+    "authorised": {
+     "rifle": 100,
+     "mg": 30,
+     "gun_arty": 40,
+     "gun_at": 20
+    }
+   },
+   "organisation": 90,
+   "morale": 62,
+   "experience": 35,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 20,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "hold",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "rou.c.5",
+   "name": "Romanian 5th Corps (Son)",
+   "shortName": "RO V C",
+   "nation": "ROU",
+   "side": "axis",
+   "type": "hq",
+   "domain": "land",
+   "parentId": "rou.a3",
+   "pos": [
+    42.6,
+    49.14
+   ],
+   "manpower": 600,
+   "manpowerMax": 600,
+   "equipment": {
+    "held": {
+     "rifle": 600
+    },
+    "authorised": {
+     "rifle": 600
+    }
+   },
+   "organisation": 90,
+   "morale": 62,
+   "experience": 35,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 20,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "hold",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "rou.d.5",
+   "name": "5th Infantry Division (Mazarini)",
+   "shortName": "RO 5",
+   "nation": "ROU",
+   "side": "axis",
+   "type": "infantry",
+   "domain": "land",
+   "parentId": "rou.c.5",
+   "pos": [
+    42.65,
+    49.14
+   ],
+   "manpower": 10000,
+   "manpowerMax": 10000,
+   "equipment": {
+    "held": {
+     "rifle": 100,
+     "mg": 30,
+     "gun_arty": 40,
+     "gun_at": 20
+    },
+    "authorised": {
+     "rifle": 100,
+     "mg": 30,
+     "gun_arty": 40,
+     "gun_at": 20
+    }
+   },
+   "organisation": 90,
+   "morale": 62,
+   "experience": 35,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 20,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "hold",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "rou.d.6",
+   "name": "6th Infantry Division (Lascăr)",
+   "shortName": "RO 6",
+   "nation": "ROU",
+   "side": "axis",
+   "type": "infantry",
+   "domain": "land",
+   "parentId": "rou.c.5",
+   "pos": [
+    42.7,
+    49.14
+   ],
+   "manpower": 10000,
+   "manpowerMax": 10000,
+   "equipment": {
+    "held": {
+     "rifle": 100,
+     "mg": 30,
+     "gun_arty": 40,
+     "gun_at": 20
+    },
+    "authorised": {
+     "rifle": 100,
+     "mg": 30,
+     "gun_arty": 40,
+     "gun_at": 20
+    }
+   },
+   "organisation": 90,
+   "morale": 62,
+   "experience": 35,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 20,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "hold",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "rou.d.1a",
+   "name": "Romanian 1st Armoured Division (Radu)",
+   "shortName": "RO 1 Armd",
+   "nation": "ROU",
+   "side": "axis",
+   "type": "armoured",
+   "domain": "land",
+   "parentId": "rou.a3",
+   "pos": [
+    42.8,
+    48.94
+   ],
+   "manpower": 6000,
+   "manpowerMax": 6000,
+   "equipment": {
+    "held": {
+     "tank_medium": 100,
+     "tank_light": 20,
+     "gun_arty": 24,
+     "truck": 60
+    },
+    "authorised": {
+     "tank_medium": 100,
+     "tank_light": 20,
+     "gun_arty": 24,
+     "truck": 60
+    }
+   },
+   "organisation": 90,
+   "morale": 62,
+   "experience": 35,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 20,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "hold",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "rou.a4",
+   "name": "Romanian Fourth Army (Constantinescu-Claps)",
+   "shortName": "RO 4th Army",
+   "nation": "ROU",
+   "side": "axis",
+   "type": "hq",
+   "domain": "land",
+   "pos": [
+    43.9,
+    47.74
+   ],
+   "manpower": 600,
+   "manpowerMax": 600,
+   "equipment": {
+    "held": {
+     "rifle": 600
+    },
+    "authorised": {
+     "rifle": 600
+    }
+   },
+   "organisation": 90,
+   "morale": 62,
+   "experience": 35,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 20,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "hold",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "rou.c.6",
+   "name": "Romanian 6th Corps (Dragalina)",
+   "shortName": "RO VI C",
+   "nation": "ROU",
+   "side": "axis",
+   "type": "hq",
+   "domain": "land",
+   "parentId": "rou.a4",
+   "pos": [
+    44.2,
+    48.04
+   ],
+   "manpower": 600,
+   "manpowerMax": 600,
+   "equipment": {
+    "held": {
+     "rifle": 600
+    },
+    "authorised": {
+     "rifle": 600
+    }
+   },
+   "organisation": 90,
+   "morale": 62,
+   "experience": 35,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 20,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "hold",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "rou.d.1",
+   "name": "1st Infantry Division (Mihăescu)",
+   "shortName": "RO 1",
+   "nation": "ROU",
+   "side": "axis",
+   "type": "infantry",
+   "domain": "land",
+   "parentId": "rou.c.6",
+   "pos": [
+    44.25,
+    48.04
+   ],
+   "manpower": 10000,
+   "manpowerMax": 10000,
+   "equipment": {
+    "held": {
+     "rifle": 100,
+     "mg": 30,
+     "gun_arty": 40,
+     "gun_at": 20
+    },
+    "authorised": {
+     "rifle": 100,
+     "mg": 30,
+     "gun_arty": 40,
+     "gun_at": 20
+    }
+   },
+   "organisation": 90,
+   "morale": 62,
+   "experience": 35,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 20,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "hold",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "rou.d.2",
+   "name": "2nd Infantry Division (Tudose)",
+   "shortName": "RO 2",
+   "nation": "ROU",
+   "side": "axis",
+   "type": "infantry",
+   "domain": "land",
+   "parentId": "rou.c.6",
+   "pos": [
+    44.3,
+    48.04
+   ],
+   "manpower": 10000,
+   "manpowerMax": 10000,
+   "equipment": {
+    "held": {
+     "rifle": 100,
+     "mg": 30,
+     "gun_arty": 40,
+     "gun_at": 20
+    },
+    "authorised": {
+     "rifle": 100,
+     "mg": 30,
+     "gun_arty": 40,
+     "gun_at": 20
+    }
+   },
+   "organisation": 90,
+   "morale": 62,
+   "experience": 35,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 20,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "hold",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "rou.d.18",
+   "name": "18th Infantry Division (Băldescu)",
+   "shortName": "RO 18",
+   "nation": "ROU",
+   "side": "axis",
+   "type": "infantry",
+   "domain": "land",
+   "parentId": "rou.c.6",
+   "pos": [
+    44.35,
+    48.04
+   ],
+   "manpower": 10000,
+   "manpowerMax": 10000,
+   "equipment": {
+    "held": {
+     "rifle": 100,
+     "mg": 30,
+     "gun_arty": 40,
+     "gun_at": 20
+    },
+    "authorised": {
+     "rifle": 100,
+     "mg": 30,
+     "gun_arty": 40,
+     "gun_at": 20
+    }
+   },
+   "organisation": 90,
+   "morale": 62,
+   "experience": 35,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 20,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "hold",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "rou.d.20",
+   "name": "20th Infantry Division (Tătăranu)",
+   "shortName": "RO 20",
+   "nation": "ROU",
+   "side": "axis",
+   "type": "infantry",
+   "domain": "land",
+   "parentId": "rou.c.6",
+   "pos": [
+    44.4,
+    48.04
+   ],
+   "manpower": 10000,
+   "manpowerMax": 10000,
+   "equipment": {
+    "held": {
+     "rifle": 100,
+     "mg": 30,
+     "gun_arty": 40,
+     "gun_at": 20
+    },
+    "authorised": {
+     "rifle": 100,
+     "mg": 30,
+     "gun_arty": 40,
+     "gun_at": 20
+    }
+   },
+   "organisation": 90,
+   "morale": 62,
+   "experience": 35,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 20,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "hold",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "rou.c.7",
+   "name": "Romanian 7th Corps (Mitrănescu)",
+   "shortName": "RO VII C",
+   "nation": "ROU",
+   "side": "axis",
+   "type": "hq",
+   "domain": "land",
+   "parentId": "rou.a4",
+   "pos": [
+    43.5,
+    47.64
+   ],
+   "manpower": 600,
+   "manpowerMax": 600,
+   "equipment": {
+    "held": {
+     "rifle": 600
+    },
+    "authorised": {
+     "rifle": 600
+    }
+   },
+   "organisation": 90,
+   "morale": 62,
+   "experience": 35,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 20,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "hold",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "rou.d.4",
+   "name": "4th Infantry Division (Alinescu)",
+   "shortName": "RO 4",
+   "nation": "ROU",
+   "side": "axis",
+   "type": "infantry",
+   "domain": "land",
+   "parentId": "rou.c.7",
+   "pos": [
+    43.55,
+    47.64
+   ],
+   "manpower": 10000,
+   "manpowerMax": 10000,
+   "equipment": {
+    "held": {
+     "rifle": 100,
+     "mg": 30,
+     "gun_arty": 40,
+     "gun_at": 20
+    },
+    "authorised": {
+     "rifle": 100,
+     "mg": 30,
+     "gun_arty": 40,
+     "gun_at": 20
+    }
+   },
+   "organisation": 90,
+   "morale": 62,
+   "experience": 35,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 20,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "hold",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "rou.d.5c",
+   "name": "5th Cavalry Division (Popescu)",
+   "shortName": "RO 5c",
+   "nation": "ROU",
+   "side": "axis",
+   "type": "infantry",
+   "domain": "land",
+   "parentId": "rou.c.7",
+   "pos": [
+    43.6,
+    47.64
+   ],
+   "manpower": 10000,
+   "manpowerMax": 10000,
+   "equipment": {
+    "held": {
+     "rifle": 100,
+     "mg": 30,
+     "gun_arty": 40,
+     "gun_at": 20
+    },
+    "authorised": {
+     "rifle": 100,
+     "mg": 30,
+     "gun_arty": 40,
+     "gun_at": 20
+    }
+   },
+   "organisation": 90,
+   "morale": 62,
+   "experience": 35,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 20,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "hold",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "rou.d.8c",
+   "name": "8th Cavalry Division (Korne)",
+   "shortName": "RO 8c",
+   "nation": "ROU",
+   "side": "axis",
+   "type": "infantry",
+   "domain": "land",
+   "parentId": "rou.c.7",
+   "pos": [
+    43.65,
+    47.64
+   ],
+   "manpower": 10000,
+   "manpowerMax": 10000,
+   "equipment": {
+    "held": {
+     "rifle": 100,
+     "mg": 30,
+     "gun_arty": 40,
+     "gun_at": 20
+    },
+    "authorised": {
+     "rifle": 100,
+     "mg": 30,
+     "gun_arty": 40,
+     "gun_at": 20
+    }
+   },
+   "organisation": 90,
+   "morale": 62,
+   "experience": 35,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 20,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "hold",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "ita.a8",
+   "name": "Italian 8th Army (army-level element only; corps/divisions not retrieved)",
+   "shortName": "IT 8th Army",
+   "nation": "ITA",
+   "side": "axis",
+   "type": "infantry",
+   "domain": "land",
+   "pos": [
+    40.7,
+    49.64
+   ],
+   "manpower": 20000,
+   "manpowerMax": 20000,
+   "equipment": {
+    "held": {
+     "rifle": 100,
+     "mg": 30,
+     "gun_arty": 40,
+     "gun_at": 20
+    },
+    "authorised": {
+     "rifle": 100,
+     "mg": 30,
+     "gun_arty": 40,
+     "gun_at": 20
+    }
+   },
+   "organisation": 90,
+   "morale": 62,
+   "experience": 35,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 20,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "hold",
+   "orders": [],
+   "kills": 0
+  }
+ ],
+ "reinforcements": [
+  {
+   "id": "reinf.sov.a.3g",
+   "atMinutes": 38880,
+   "pos": [
+    41.1,
+    49.85
+   ],
+   "unit": {
+    "id": "sov.a.3g",
+    "name": "3rd Guards Army (Little Saturn)",
+    "shortName": "3G Army",
+    "nation": "SOV",
+    "side": "allies",
+    "type": "infantry",
+    "domain": "land",
+    "pos": [
+     41.1,
+     49.85
+    ],
+    "manpower": 14000,
+    "manpowerMax": 14000,
+    "equipment": {
+     "held": {
+      "rifle": 100,
+      "mg": 30,
+      "gun_arty": 40,
+      "gun_at": 20
+     },
+     "authorised": {
+      "rifle": 100,
+      "mg": 30,
+      "gun_arty": 40,
+      "gun_at": 20
+     }
+    },
+    "organisation": 80,
+    "morale": 76,
+    "experience": 45,
+    "fuel": 100,
+    "ammo": 100,
+    "supply": 100,
+    "fatigue": 10,
+    "readiness": 90,
+    "entrenchment": 0,
+    "moveStatus": "stationary",
+    "combatStatus": "idle",
+    "posture": "defend",
+    "orders": [],
+    "kills": 0
+   }
+  },
+  {
+   "id": "reinf.sov.a.2g",
+   "atMinutes": 37440,
+   "pos": [
+    45.3,
+    48
+   ],
+   "unit": {
+    "id": "sov.a.2g",
+    "name": "2nd Guards Army (3 Guards Rifle Corps)",
+    "shortName": "2G Army",
+    "nation": "SOV",
+    "side": "allies",
+    "type": "infantry",
+    "domain": "land",
+    "pos": [
+     45.3,
+     48
+    ],
+    "manpower": 14000,
+    "manpowerMax": 14000,
+    "equipment": {
+     "held": {
+      "rifle": 100,
+      "mg": 30,
+      "gun_arty": 40,
+      "gun_at": 20
+     },
+     "authorised": {
+      "rifle": 100,
+      "mg": 30,
+      "gun_arty": 40,
+      "gun_at": 20
+     }
+    },
+    "organisation": 80,
+    "morale": 76,
+    "experience": 45,
+    "fuel": 100,
+    "ammo": 100,
+    "supply": 100,
+    "fatigue": 10,
+    "readiness": 90,
+    "entrenchment": 0,
+    "moveStatus": "stationary",
+    "combatStatus": "idle",
+    "posture": "defend",
+    "orders": [],
+    "kills": 0
+   }
+  },
+  {
+   "id": "reinf.ger.c.LVII",
+   "atMinutes": 33120,
+   "pos": [
+    43.15,
+    47.62
+   ],
+   "unit": {
+    "id": "ger.c.LVII",
+    "name": "LVII Panzer Corps (Kirchner)",
+    "shortName": "LVII.PzK",
+    "nation": "GER",
+    "side": "axis",
+    "type": "hq",
+    "domain": "land",
+    "pos": [
+     43.15,
+     47.62
+    ],
+    "manpower": 600,
+    "manpowerMax": 600,
+    "equipment": {
+     "held": {
+      "rifle": 600
+     },
+     "authorised": {
+      "rifle": 600
+     }
+    },
+    "organisation": 80,
+    "morale": 80,
+    "experience": 60,
+    "fuel": 100,
+    "ammo": 100,
+    "supply": 100,
+    "fatigue": 10,
+    "readiness": 90,
+    "entrenchment": 0,
+    "moveStatus": "stationary",
+    "combatStatus": "idle",
+    "posture": "hold",
+    "orders": [],
+    "kills": 0
+   }
+  },
+  {
+   "id": "reinf.ger.d.6pz",
+   "atMinutes": 33120,
+   "pos": [
+    43.17,
+    47.64
+   ],
+   "unit": {
+    "id": "ger.d.6pz",
+    "name": "6th Panzer Division",
+    "shortName": "6.PzD",
+    "nation": "GER",
+    "side": "axis",
+    "type": "armoured",
+    "domain": "land",
+    "pos": [
+     43.17,
+     47.64
+    ],
+    "manpower": 12000,
+    "manpowerMax": 12000,
+    "equipment": {
+     "held": {
+      "tank_medium": 100,
+      "tank_light": 20,
+      "gun_arty": 24,
+      "truck": 60
+     },
+     "authorised": {
+      "tank_medium": 100,
+      "tank_light": 20,
+      "gun_arty": 24,
+      "truck": 60
+     }
+    },
+    "organisation": 80,
+    "morale": 80,
+    "experience": 60,
+    "fuel": 100,
+    "ammo": 100,
+    "supply": 100,
+    "fatigue": 10,
+    "readiness": 90,
+    "entrenchment": 0,
+    "moveStatus": "stationary",
+    "combatStatus": "idle",
+    "posture": "hold",
+    "orders": [],
+    "kills": 0
+   }
+  },
+  {
+   "id": "reinf.ger.d.23pz",
+   "atMinutes": 33120,
+   "pos": [
+    43.13,
+    47.64
+   ],
+   "unit": {
+    "id": "ger.d.23pz",
+    "name": "23rd Panzer Division",
+    "shortName": "23.PzD",
+    "nation": "GER",
+    "side": "axis",
+    "type": "armoured",
+    "domain": "land",
+    "pos": [
+     43.13,
+     47.64
+    ],
+    "manpower": 12000,
+    "manpowerMax": 12000,
+    "equipment": {
+     "held": {
+      "tank_medium": 100,
+      "tank_light": 20,
+      "gun_arty": 24,
+      "truck": 60
+     },
+     "authorised": {
+      "tank_medium": 100,
+      "tank_light": 20,
+      "gun_arty": 24,
+      "truck": 60
+     }
+    },
+    "organisation": 80,
+    "morale": 80,
+    "experience": 60,
+    "fuel": 100,
+    "ammo": 100,
+    "supply": 100,
+    "fatigue": 10,
+    "readiness": 90,
+    "entrenchment": 0,
+    "moveStatus": "stationary",
+    "combatStatus": "idle",
+    "posture": "hold",
+    "orders": [],
+    "kills": 0
+   }
+  }
+ ],
+ "objectives": [
+  {
+   "id": "o.sov.kalach",
+   "tier": "primary",
+   "side": "allies",
+   "title": "Close the ring at Kalach",
+   "description": "Capture Kalach-na-Donu; the 26th and 4th Tank Corps linked up at Sovetsky on 23 Nov (E01).",
+   "condition": {
+    "kind": "capture_location",
+    "locationId": "kalach"
+   },
+   "points": 250,
+   "status": "pending"
+  },
+  {
+   "id": "o.sov.surovikino",
+   "tier": "secondary",
+   "side": "allies",
+   "title": "Push the outer ring: Surovikino",
+   "description": "Take Surovikino on the Chir railway.",
+   "condition": {
+    "kind": "capture_location",
+    "locationId": "surovikino"
+   },
+   "points": 100,
+   "status": "pending"
+  },
+  {
+   "id": "o.sov.kletskaya",
+   "tier": "secondary",
+   "side": "allies",
+   "title": "Break the Romanian Third Army: Kletskaya",
+   "description": "Take Kletskaya on the Don.",
+   "condition": {
+    "kind": "capture_location",
+    "locationId": "kletskaya"
+   },
+   "points": 100,
+   "status": "pending"
+  },
+  {
+   "id": "o.sov.tatsinskaya",
+   "tier": "secondary",
+   "side": "allies",
+   "title": "Take the airlift base: Tatsinskaya",
+   "description": "Capture Tatsinskaya airfield (lost to a Soviet raid, E03).",
+   "condition": {
+    "kind": "capture_location",
+    "locationId": "tatsinskaya"
+   },
+   "points": 150,
+   "status": "pending"
+  },
+  {
+   "id": "o.sov.morozovsk",
+   "tier": "secondary",
+   "side": "allies",
+   "title": "Take Morozovsk",
+   "description": "Capture Morozovsk, the German rail railhead for the relief force (E03).",
+   "condition": {
+    "kind": "capture_location",
+    "locationId": "morozovsk"
+   },
+   "points": 100,
+   "status": "pending"
+  },
+  {
+   "id": "o.sov.deny_relief",
+   "tier": "primary",
+   "side": "allies",
+   "title": "Stop the relief short of the city",
+   "description": "Hold Beketovka until 24 Dec, when Winter Storm collapsed (E03). Beketovka position is approximate.",
+   "condition": {
+    "kind": "hold_location",
+    "locationId": "beketovka",
+    "untilMinutes": 50400
+   },
+   "points": 200,
+   "status": "pending"
+  },
+  {
+   "id": "o.sov.stalingrad",
+   "tier": "strategic",
+   "side": "allies",
+   "title": "Stretch goal: Stalingrad",
+   "description": "Clear the city (the 6th Army surrendered 2 Feb 1943, E02; beyond this scenario window).",
+   "condition": {
+    "kind": "capture_location",
+    "locationId": "stalingrad"
+   },
+   "points": 300,
+   "status": "pending"
+  },
+  {
+   "id": "o.ger.hold_stalingrad",
+   "tier": "primary",
+   "side": "axis",
+   "title": "Hold Stalingrad",
+   "description": "Keep the city (E01: Hitler ordered an all-round defence, \"Fortress Stalingrad\").",
+   "condition": {
+    "kind": "hold_location",
+    "locationId": "stalingrad",
+    "untilMinutes": 63360
+   },
+   "points": 250,
+   "status": "pending"
+  },
+  {
+   "id": "o.ger.hold_gumrak",
+   "tier": "secondary",
+   "side": "axis",
+   "title": "Keep the Gumrak airfield",
+   "description": "Keep the airlift landing ground at Gumrak.",
+   "condition": {
+    "kind": "hold_location",
+    "locationId": "gumrak",
+    "untilMinutes": 63360
+   },
+   "points": 100,
+   "status": "pending"
+  },
+  {
+   "id": "o.ger.beketovka",
+   "tier": "primary",
+   "side": "axis",
+   "title": "Relief breakthrough: Beketovka",
+   "description": "Capture Beketovka south of the city, linking the relief force with the 6th Army (Winter Storm, E03).",
+   "condition": {
+    "kind": "capture_location",
+    "locationId": "beketovka"
+   },
+   "points": 250,
+   "status": "pending"
+  },
+  {
+   "id": "o.ger.tatsinskaya",
+   "tier": "secondary",
+   "side": "axis",
+   "title": "Hold the Tatsinskaya airlift base",
+   "description": "Keep Tatsinskaya (E03).",
+   "condition": {
+    "kind": "hold_location",
+    "locationId": "tatsinskaya",
+    "untilMinutes": 63360
+   },
+   "points": 120,
+   "status": "pending"
+  },
+  {
+   "id": "o.ger.kotelnikovo",
+   "tier": "secondary",
+   "side": "axis",
+   "title": "Hold Kotelnikovo",
+   "description": "Hold the relief force base area.",
+   "condition": {
+    "kind": "hold_location",
+    "locationId": "kotelnikovo",
+    "untilMinutes": 63360
+   },
+   "points": 100,
+   "status": "pending"
+  },
+  {
+   "id": "o.ger.kotluban",
+   "tier": "secondary",
+   "side": "axis",
+   "title": "Break the Don Front north of the city: Kotluban",
+   "description": "Capture Kotluban, Soviet-held at the start.",
+   "condition": {
+    "kind": "capture_location",
+    "locationId": "kotluban"
+   },
+   "points": 100,
+   "status": "pending"
+  },
+  {
+   "id": "o.ger.surovikino",
+   "tier": "secondary",
+   "side": "axis",
+   "title": "Hold Surovikino",
+   "description": "Keep the outer ring from closing on the Chir railway.",
+   "condition": {
+    "kind": "hold_location",
+    "locationId": "surovikino",
+    "untilMinutes": 63360
+   },
+   "points": 100,
+   "status": "pending"
+  }
+ ],
+ "terrainFile": "terrain_stalingrad.json",
+ "infraFile": "infra_stalingrad.json",
+ "iceFromHour": 168,
+ "iceFullHour": 504,
+ "supplySources": {
+  "SOV": [
+   "serafimovich",
+   "kotluban",
+   "krasnoslobodsk",
+   "beketovka",
+   "svetly_yar",
+   "tinguta"
+  ],
+  "GER": [
+   "morozovsk",
+   "tatsinskaya"
+  ],
+  "ROU": [
+   "kotelnikovo",
+   "bokovskaya"
+  ]
+ },
+ "initialControl": [
+  {
+   "nation": "GER",
+   "polygon": [
+    [
+     40.5,
+     47
+    ],
+    [
+     46.5,
+     47
+    ],
+    [
+     46.5,
+     50
+    ],
+    [
+     40.5,
+     50
+    ]
+   ]
+  },
+  {
+   "nation": "SOV",
+   "polygon": [
+    [
+     40.5,
+     50
+    ],
+    [
+     46.5,
+     50
+    ],
+    [
+     46.5,
+     47
+    ],
+    [
+     45.5,
+     47
+    ],
+    [
+     44.8,
+     48
+    ],
+    [
+     44.65,
+     48.7
+    ],
+    [
+     44.75,
+     49
+    ],
+    [
+     44.3,
+     49.05
+    ],
+    [
+     43.6,
+     49.1
+    ],
+    [
+     43.06,
+     49.35
+    ],
+    [
+     42.7,
+     49.5
+    ],
+    [
+     41.8,
+     49.5
+    ],
+    [
+     40.5,
+     49.7
+    ]
+   ]
+  },
+  {
+   "nation": "SOV",
+   "polygon": [
+    [
+     44.6,
+     48.6
+    ],
+    [
+     44.7,
+     48.6
+    ],
+    [
+     44.7,
+     48.8
+    ],
+    [
+     44.6,
+     48.8
+    ]
+   ]
+  }
+ ],
+ "weatherProfile": [
+  {
+   "month": 11,
+   "probs": {
+    "snow": 0.3,
+    "cloud": 0.3,
+    "fog": 0.15,
+    "clear": 0.2,
+    "mud": 0.05
+   },
+   "tempC": -4
+  },
+  {
+   "month": 12,
+   "probs": {
+    "snow": 0.4,
+    "cloud": 0.25,
+    "clear": 0.25,
+    "fog": 0.1
+   },
+   "tempC": -14
+  },
+  {
+   "month": 1,
+   "probs": {
+    "snow": 0.4,
+    "cloud": 0.2,
+    "clear": 0.3,
+    "fog": 0.1
+   },
+   "tempC": -16
+  }
+ ],
+ "eventTemplateIds": [
+  "sg.ev.uranus",
+  "sg.ev.stfront",
+  "sg.ev.fortress",
+  "sg.ev.kalach",
+  "sg.ev.linkup",
+  "sg.ev.saturn_plan",
+  "sg.ev.winter_storm",
+  "sg.ev.kumsky",
+  "sg.ev.little_saturn",
+  "sg.ev.mech_rename",
+  "sg.ev.myshkova",
+  "sg.ev.halted",
+  "sg.ev.tatsinskaya"
+ ],
+ "specialSystems": [],
+ "victoryTiers": {
+  "axis": {
+   "decisive": 0.8,
+   "strategic": 0.6,
+   "limited": 0.4,
+   "stalemate": 0.2
+  },
+  "allies": {
+   "decisive": 0.8,
+   "strategic": 0.6,
+   "limited": 0.4,
+   "stalemate": 0.2
+  }
+ },
+ "sources": [
+  {
+   "id": "E01",
+   "citation": "Wikipedia, \"Operation Uranus\" (D-Day 19 Nov 1942 timeline to 24 Nov, strengths, encirclement; text covers little of December; internal conflict on the link-up date 22 vs 23 Nov).",
+   "url": "https://en.wikipedia.org/wiki/Operation_Uranus"
+  },
+  {
+   "id": "E02",
+   "citation": "Wikipedia, \"Battle of Stalingrad\" (timeline, infobox strengths ambiguous; army-level fronts and Axis armies; winter conditions \"tens of degrees below freezing\").",
+   "url": "https://en.wikipedia.org/wiki/Battle_of_Stalingrad"
+  },
+  {
+   "id": "E03",
+   "citation": "Wikipedia, \"Operation Winter Storm\" (12-23 Dec 1942; Little Saturn from 16 Dec; 2nd Guards Army transfer authorised 13 Dec, ready 15 Dec; airlift requirement 680 t/day, under 20% delivered; Tatsinskaya airfield lost to a raid, date not stated in the text read).",
+   "url": "https://en.wikipedia.org/wiki/Operation_Winter_Storm"
+  },
+  {
+   "id": "E05",
+   "citation": "Wikipedia, \"Operation Uranus Soviet order of battle\" (Soviet units as of 19 Nov 1942, north to south: Southwestern, Don and Stalingrad Fronts; armies, corps, divisions, brigades, commanders; cites Glantz 2014; page flags a \"two field armies\" text/list mismatch, several unlinked entries and an empty Footnotes section).",
+   "url": "https://en.wikipedia.org/wiki/Operation_Uranus_Soviet_order_of_battle"
+  },
+  {
+   "id": "E06",
+   "citation": "Wikipedia, \"Axis order of battle at the Battle of Stalingrad\" (6th Army corps/divisions with commanders; Romanian Third and Fourth Armies; 4th Panzer Army corps). The page spans Sep 1942-Feb 1943 with no single November snapshot, so presence on 19 Nov of each listed division is NOT confirmed by it; Italian 8th Army and Fliegerkorps VIII are not covered.",
+   "url": "https://en.wikipedia.org/wiki/Axis_order_of_battle_at_the_Battle_of_Stalingrad"
+  },
+  {
+   "id": "E07",
+   "citation": "Wikipedia place articles (coordinates in the article infobox via the Wikipedia API): Volgograd, Kalach-na-Donu, Kletskaya, Surovikino, Oblivskaya, Morozovsk, Kotelnikovo, Bokovskaya, Mamayev Kurgan, Volgograd International Airport (at Gumrak).",
+   "url": "https://en.wikipedia.org/wiki/Volgograd"
+  },
+  {
+   "id": "E10",
+   "citation": "Wikipedia, Pitomnik Airfield (coordinates 48.7425N 44.25E via the Wikipedia coordinates API). Position only; no tonnage or garrison facts used.",
+   "url": "https://en.wikipedia.org/wiki/Pitomnik_Airfield"
+  },
+  {
+   "id": "E09",
+   "citation": "Wikipedia, Krasnoslobodsk, Volgograd Oblast (coordinates 48.70N 44.567E via the Wikipedia coordinates API; the town lies on the east (left) bank of the Volga opposite Stalingrad). Used for position only.",
+   "url": "https://en.wikipedia.org/wiki/Krasnoslobodsk,_Volgograd_Oblast"
+  },
+  {
+   "id": "E08",
+   "citation": "OpenStreetMap Nominatim geocoder (data (c) OpenStreetMap contributors, ODbL): Serafimovich, Perelazovsky, Verkhnekumsky, Tatsinskaya, Abganerovo, Marinovka, Kotluban, Vertyachy; Beketovka from the OSM aerodrome object of that name (so approximate).",
+   "url": "https://nominatim.openstreetmap.org/"
+  },
+  {
+   "id": "G01",
+   "citation": "GAME-SCALE ABSTRACTION (internal): manpower, equipment, morale/experience, resources, objective points and thresholds are nominal game values, not historical strengths. German fuel/supply pool scaled to 50% to reflect the sourced airlift shortfall (E03: under 20% of the daily requirement delivered in early December); Romanian and Soviet-reserve quality values are game-scale (E01 states the bombardment targeted non-German units and the Romanian 3rd Army routed)."
+  },
+  {
+   "id": "G02",
+   "citation": "Position/coordinate policy (internal): place coordinates come from E07/E08 where listed; other unit positions are approximate sector anchors."
+  },
+  {
+   "id": "G03",
+   "citation": "POSITION POLICY (internal): no source gives start coordinates for divisions. Positions are approximate sector anchors inferred from named places in E01/E02/E05 (e.g. 62nd Army in Stalingrad on the Volga bank; Serafimovich and Kletskaya bridgeheads on the Don; Stalingrad Front south of the city) with a small deterministic spread; positions are flagged approximate."
+  },
+  {
+   "id": "G04",
+   "citation": "BORDER POLICY (internal): initialControl is a coarse snapshot of 19 Nov 1942: Germans/allies west and south of the Don and in the Stalingrad pocket area, Soviets north of the Don bridgeheads and east of the Volga; no front-line detail."
+  }
+ ]
+}

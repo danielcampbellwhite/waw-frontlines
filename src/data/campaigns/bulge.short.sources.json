@@ -1,0 +1,1078 @@
+{
+ "scenarioId": "bulge.short",
+ "note": "Per-fact source references (ScenarioDefinition has no per-unit sourceRef field).",
+ "units": {
+  "ger.hq.hgb": {
+   "sources": [
+    "B01",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "ger.a6": {
+   "sources": [
+    "B01",
+    "B03",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "ger.c.ISS": {
+   "sources": [
+    "B01",
+    "B03",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "ger.1ss": {
+   "sources": [
+    "B01",
+    "B03",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "ger.kg.peiper": {
+   "sources": [
+    "B03",
+    "B09",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "ger.12ss": {
+   "sources": [
+    "B01",
+    "B03",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "ger.3fj": {
+   "sources": [
+    "B01",
+    "B03",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "ger.12vg": {
+   "sources": [
+    "B01",
+    "B03",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "ger.277vg": {
+   "sources": [
+    "B01",
+    "B03",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "ger.150pzb": {
+   "sources": [
+    "B01",
+    "B02",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "ger.c.LXVII": {
+   "sources": [
+    "B01",
+    "B03",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "ger.326vg": {
+   "sources": [
+    "B01",
+    "B03",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "ger.272vg": {
+   "sources": [
+    "B01",
+    "B03",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "ger.c.IISS": {
+   "sources": [
+    "B01",
+    "B06",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "ger.2ss": {
+   "sources": [
+    "B01",
+    "B06",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "ger.9ss": {
+   "sources": [
+    "B01",
+    "B04",
+    "B06",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "ger.a5": {
+   "sources": [
+    "B01",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "ger.c.LXVI": {
+   "sources": [
+    "B01",
+    "B04",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "ger.18vg": {
+   "sources": [
+    "B01",
+    "B04",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "ger.62vg": {
+   "sources": [
+    "B01",
+    "B04",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "ger.c.LVIII": {
+   "sources": [
+    "B01",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "ger.116pz": {
+   "sources": [
+    "B01",
+    "B04",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "ger.560vg": {
+   "sources": [
+    "B01",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "ger.c.XLVII": {
+   "sources": [
+    "B01",
+    "B05",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "ger.2pz": {
+   "sources": [
+    "B01",
+    "B05",
+    "B06",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "ger.pzl": {
+   "sources": [
+    "B01",
+    "B05",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "ger.26vg": {
+   "sources": [
+    "B01",
+    "B05",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "ger.fbb": {
+   "sources": [
+    "B01",
+    "B04",
+    "B05",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "ger.a7": {
+   "sources": [
+    "B01",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "ger.c.LXXXV": {
+   "sources": [
+    "B01",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "ger.5fj": {
+   "sources": [
+    "B01",
+    "B05",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "ger.352vg": {
+   "sources": [
+    "B01",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "ger.c.LXXX": {
+   "sources": [
+    "B01",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "ger.212vg": {
+   "sources": [
+    "B01",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "usa.hq.1a": {
+   "sources": [
+    "B01",
+    "B02",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "usa.c.V": {
+   "sources": [
+    "B01",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "usa.99id": {
+   "sources": [
+    "B01",
+    "B03",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "usa.2id": {
+   "sources": [
+    "B01",
+    "B03",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "usa.38cav": {
+   "sources": [
+    "B03",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "usa.14cavg": {
+   "sources": [
+    "B03",
+    "B04",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "usa.c.VIII": {
+   "sources": [
+    "B01",
+    "B05",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "usa.28id": {
+   "sources": [
+    "B01",
+    "B05",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "usa.106id": {
+   "sources": [
+    "B01",
+    "B04",
+    "B08",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "usa.9ad.ccb": {
+   "sources": [
+    "B04",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "usa.9ad.ccr": {
+   "sources": [
+    "B05",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "usa.4id": {
+   "sources": [
+    "B01",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "usa.xxx.hq": {
+   "sources": [
+    "B01",
+    "B11",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "usa.air.48fg": {
+   "sources": [
+    "B12",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "usa.air.404fg": {
+   "sources": [
+    "B12",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "usa.air.352fg": {
+   "sources": [
+    "B12",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "usa.air.366fg": {
+   "sources": [
+    "B12",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  }
+ },
+ "locations": {
+  "bastogne": {
+   "sources": [
+    "B05",
+    "B07",
+    "G02"
+   ]
+  },
+  "st_vith": {
+   "sources": [
+    "B04",
+    "B08",
+    "G02"
+   ]
+  },
+  "malmedy": {
+   "sources": [
+    "B02",
+    "B04",
+    "G02"
+   ]
+  },
+  "stavelot": {
+   "sources": [
+    "B02",
+    "G02"
+   ]
+  },
+  "trois_ponts": {
+   "sources": [
+    "B02",
+    "G02"
+   ]
+  },
+  "stoumont": {
+   "sources": [
+    "B02",
+    "G02"
+   ]
+  },
+  "la_gleize": {
+   "sources": [
+    "B02",
+    "G02"
+   ]
+  },
+  "houffalize": {
+   "sources": [
+    "B02",
+    "G02"
+   ]
+  },
+  "la_roche": {
+   "sources": [
+    "B04",
+    "G02"
+   ]
+  },
+  "vielsalm": {
+   "sources": [
+    "B04",
+    "G02"
+   ]
+  },
+  "marche": {
+   "sources": [
+    "G02"
+   ]
+  },
+  "noville": {
+   "sources": [
+    "B05",
+    "B07",
+    "G02"
+   ]
+  },
+  "longvilly": {
+   "sources": [
+    "B05",
+    "G02"
+   ]
+  },
+  "assenois": {
+   "sources": [
+    "B05",
+    "G02"
+   ]
+  },
+  "elsenborn": {
+   "sources": [
+    "B02",
+    "B03",
+    "G02"
+   ]
+  },
+  "krinkelt_rocherath": {
+   "sources": [
+    "B03",
+    "G02"
+   ]
+  },
+  "bullingen": {
+   "sources": [
+    "B03",
+    "G02"
+   ]
+  },
+  "lanzerath": {
+   "sources": [
+    "B03",
+    "G02"
+   ]
+  },
+  "hofen": {
+   "sources": [
+    "B03",
+    "G02"
+   ]
+  },
+  "monschau": {
+   "sources": [
+    "B03",
+    "G02"
+   ]
+  },
+  "spa": {
+   "sources": [
+    "G02"
+   ]
+  },
+  "verviers": {
+   "sources": [
+    "G02"
+   ]
+  },
+  "eupen": {
+   "sources": [
+    "G02"
+   ]
+  },
+  "liege": {
+   "sources": [
+    "B02",
+    "B11",
+    "G02"
+   ]
+  },
+  "huy": {
+   "sources": [
+    "B11",
+    "G02"
+   ]
+  },
+  "namur": {
+   "sources": [
+    "B02",
+    "B11",
+    "G02"
+   ]
+  },
+  "dinant": {
+   "sources": [
+    "B02",
+    "B11",
+    "G02"
+   ]
+  },
+  "givet": {
+   "sources": [
+    "B02",
+    "G02"
+   ]
+  },
+  "foy_notre_dame": {
+   "sources": [
+    "B02",
+    "G02"
+   ]
+  },
+  "arlon": {
+   "sources": [
+    "G02"
+   ]
+  },
+  "clervaux": {
+   "sources": [
+    "B05",
+    "G02"
+   ]
+  },
+  "wiltz": {
+   "sources": [
+    "B05",
+    "G02"
+   ]
+  },
+  "diekirch": {
+   "sources": [
+    "G02"
+   ]
+  },
+  "echternach": {
+   "sources": [
+    "G02"
+   ]
+  },
+  "luxembourg_city": {
+   "sources": [
+    "G02"
+   ]
+  },
+  "pruem": {
+   "sources": [
+    "G02"
+   ]
+  },
+  "schleiden": {
+   "sources": [
+    "G02"
+   ]
+  },
+  "bitburg": {
+   "sources": [
+    "G02"
+   ]
+  },
+  "trier": {
+   "sources": [
+    "G02"
+   ]
+  },
+  "euskirchen": {
+   "sources": [
+    "G02"
+   ]
+  },
+  "maastricht": {
+   "sources": [
+    "G02"
+   ]
+  },
+  "af_sint_truiden": {
+   "sources": [
+    "B12",
+    "G02"
+   ]
+  },
+  "af_asch": {
+   "sources": [
+    "B12",
+    "G02"
+   ]
+  },
+  "bullingen_fuel": {
+   "sources": [
+    "B02",
+    "B09",
+    "G02"
+   ]
+  },
+  "stavelot_fuel": {
+   "sources": [
+    "B09",
+    "G02"
+   ]
+  }
+ },
+ "reinforcements": {
+  "reinf.usa.1id": {
+   "sources": [
+    "B01",
+    "B03",
+    "G03"
+   ],
+   "approximate": true
+  },
+  "reinf.usa.7ad": {
+   "sources": [
+    "B01",
+    "B04",
+    "G03"
+   ],
+   "approximate": false
+  },
+  "reinf.usa.10ad.ccb": {
+   "sources": [
+    "B05",
+    "B07",
+    "G03"
+   ],
+   "approximate": true
+  },
+  "reinf.usa.30id": {
+   "sources": [
+    "B01",
+    "B04",
+    "G03"
+   ],
+   "approximate": true
+  },
+  "reinf.usa.82abn": {
+   "sources": [
+    "B01",
+    "B04",
+    "G03"
+   ],
+   "approximate": true
+  },
+  "reinf.usa.101abn": {
+   "sources": [
+    "B01",
+    "B05",
+    "B07",
+    "G03"
+   ],
+   "approximate": false
+  },
+  "reinf.usa.26id": {
+   "sources": [
+    "B01",
+    "B13",
+    "G03"
+   ],
+   "approximate": true
+  },
+  "reinf.usa.6ad": {
+   "sources": [
+    "B01",
+    "B13",
+    "G03"
+   ],
+   "approximate": true
+  },
+  "reinf.usa.87id": {
+   "sources": [
+    "B01",
+    "B13",
+    "G03"
+   ],
+   "approximate": true
+  },
+  "reinf.gbr.29arm": {
+   "sources": [
+    "B01",
+    "B11",
+    "G03"
+   ],
+   "approximate": true
+  },
+  "reinf.usa.4ad": {
+   "sources": [
+    "B01",
+    "B05",
+    "B07",
+    "G03"
+   ],
+   "approximate": true
+  },
+  "reinf.usa.2ad": {
+   "sources": [
+    "B01",
+    "B02",
+    "G03"
+   ],
+   "approximate": true
+  },
+  "reinf.ger.15pg": {
+   "sources": [
+    "B01",
+    "B05",
+    "G03"
+   ],
+   "approximate": true
+  }
+ },
+ "nations": {
+  "GER": {
+   "sources": [
+    "G01"
+   ],
+   "gameScale": true
+  },
+  "USA": {
+   "sources": [
+    "G01"
+   ],
+   "gameScale": true
+  },
+  "GBR": {
+   "sources": [
+    "G01"
+   ],
+   "gameScale": true
+  },
+  "BEL": {
+   "sources": [
+    "G01"
+   ],
+   "gameScale": true
+  },
+  "FRA": {
+   "sources": [
+    "G01"
+   ],
+   "gameScale": true
+  },
+  "NED": {
+   "sources": [
+    "G01"
+   ],
+   "gameScale": true
+  }
+ },
+ "objectives": {
+  "o.ger.bastogne": {
+   "sources": [
+    "B02",
+    "G01"
+   ]
+  },
+  "o.ger.stvith": {
+   "sources": [
+    "B02",
+    "G01"
+   ]
+  },
+  "o.ger.stavelot": {
+   "sources": [
+    "B02",
+    "G01"
+   ]
+  },
+  "o.ger.elsenborn": {
+   "sources": [
+    "B02",
+    "G01"
+   ]
+  },
+  "o.ger.dinant": {
+   "sources": [
+    "B02",
+    "G01"
+   ]
+  },
+  "o.ger.namur": {
+   "sources": [
+    "B02",
+    "G01"
+   ]
+  },
+  "o.ger.huy": {
+   "sources": [
+    "B02",
+    "G01"
+   ]
+  },
+  "o.ger.liege": {
+   "sources": [
+    "B02",
+    "G01"
+   ]
+  },
+  "o.ger.region": {
+   "sources": [
+    "B02",
+    "G01"
+   ]
+  },
+  "o.all.elsenborn": {
+   "sources": [
+    "B02",
+    "G01"
+   ]
+  },
+  "o.all.bastogne": {
+   "sources": [
+    "B02",
+    "G01"
+   ]
+  },
+  "o.all.stvith": {
+   "sources": [
+    "B02",
+    "G01"
+   ]
+  },
+  "o.all.meuse": {
+   "sources": [
+    "B02",
+    "G01"
+   ]
+  },
+  "o.all.namur": {
+   "sources": [
+    "B02",
+    "G01"
+   ]
+  },
+  "o.all.huy": {
+   "sources": [
+    "B02",
+    "G01"
+   ]
+  },
+  "o.all.liege": {
+   "sources": [
+    "B02",
+    "G01"
+   ]
+  },
+  "o.all.attrition": {
+   "sources": [
+    "B02",
+    "G01"
+   ]
+  },
+  "o.all.fuel": {
+   "sources": [
+    "B02",
+    "G01"
+   ]
+  }
+ },
+ "aiDoctrineHints": {
+  "GER": {
+   "posture": "attack",
+   "armour": "breakthrough",
+   "note": "Schwerpunkt: Sixth Panzer Army north (Elsenborn/Stavelot, Peiper), Fifth Panzer Army centre (St. Vith, Bastogne, then Meuse at Dinant), Seventh Army south shoulder.",
+   "captureLocations": [
+    "st_vith",
+    "bastogne",
+    "stavelot",
+    "houffalize",
+    "marche",
+    "dinant",
+    "namur",
+    "huy",
+    "liege"
+   ],
+   "objectiveScheduleHours": {
+    "stavelot": 36,
+    "st_vith": 120,
+    "bastogne": 120,
+    "houffalize": 150,
+    "marche": 168,
+    "dinant": 192
+   },
+   "fuelAwareness": "prefer routes via bullingen_fuel and stavelot_fuel; low German fuel pool",
+   "sources": [
+    "B02",
+    "B04",
+    "B05"
+   ]
+  },
+  "allies": {
+   "posture": "defend then counter-attack",
+   "priorities": [
+    "elsenborn",
+    "bastogne",
+    "st_vith (until 21 Dec)",
+    "meuse bridges dinant/namur/huy"
+   ],
+   "counterAttackAfterHours": 432,
+   "counterAttackTargets": [
+    "houffalize",
+    "st_vith"
+   ],
+   "sources": [
+    "B02",
+    "B08"
+   ]
+  }
+ },
+ "uncertain": [
+  {
+   "item": "All unit start positions",
+   "note": "Approximate sector anchors (G03); no source gives division start coordinates."
+  },
+  {
+   "item": "Order-of-battle snapshot",
+   "note": "B01 reflects late-campaign assignments. Divisions not confirmed present on 16 Dec by B03-B05 were omitted: US 9th/78th/84th/75th/83rd Inf, 3rd/6th Armored, 17th Airborne, 87th/80th/26th/35th/90th Inf, German 9th Pz, 3rd PzGren, 246th/167th/340th/79th/9th/276th VGD, Fifteenth Army."
+  },
+  {
+   "item": "Reinforcement times",
+   "note": "Day-level only (B02-B05); times of day and the dates for CCB 10th Armored (18 Dec), 30th ID (18 Dec), 82nd Abn (19 Dec), 4th Armored (22 Dec at the map edge), 2nd Armored (23 Dec) and 15th Panzergrenadier (24 Dec) are APPROXIMATE/unverified."
+  },
+  {
+   "item": "Added US reinforcing divisions",
+   "note": "Only the 26th ID (21 Dec), 6th AD (23 Dec) and 87th ID (29 Dec) carry arrival dates from B13; the 3rd AD and the 75th, 78th, 80th, 84th, 35th and 90th were dropped because no arrival date could be sourced. All arrival AREAS are approximate (APPROXIMATE ARRIVAL), as are the days of the other reinforcements."
+  },
+  {
+   "item": "XXX Corps",
+   "note": "Only the corps HQ and 29th Armoured Brigade (B11, snippet-level); 6th Airborne, 51st, 53rd Infantry, Guards Armoured, 43rd and 50th (listed in B01) omitted: no sourced Meuse deployment dates. XXX Corps HQ start position is approximate."
+  },
+  {
+   "item": "4th Infantry Division, 28th Division sector",
+   "note": "4th ID is placed on the southern shoulder from B01 only (XII Corps in the late snapshot); 16 Dec corps assignment unverified. 9th Armored CCA omitted (not sourced)."
+  },
+  {
+   "item": "CCB 9th Armored start position",
+   "note": "B04 says it began moving to St. Vith about 20:00 on 16 Dec; its position at 00:00 is an approximation."
+  },
+  {
+   "item": "Fuel dumps",
+   "note": "Büllingen depot capture is sourced (17 Dec); contents conflict (B09). The Stavelot-La Gleize depot figures (2-3 million gallons) conflict with an account that the Stavelot supplies were destroyed; no Francorchamps dump was found. Depot value/capacity are game-scale."
+  },
+  {
+   "item": "Air formations",
+   "note": "Only four USAAF fighter groups (48th, 404th at Sint-Truiden; 352nd, 366th at Asch) at group level, from B12 which documents basing on 1 Jan 1945 only (weak for 16 Dec); 36 aircraft each is game-scale. Luftwaffe JG units omitted: no sourced German airfield coordinates; Melsbroek/Le Culot/Evere lie at or beyond the bbox edge or have no named group. Asch lies at the bbox north edge (approx)."
+  },
+  {
+   "item": "Weather",
+   "note": "Qualitative only (B10): probabilities and temperatures are game-scale. The clear period after 23 Dec is set to 3 days."
+  },
+  {
+   "item": "Antwerp",
+   "note": "Antwerp lies outside the map bbox; the German stretch goal is Liège."
+  },
+  {
+   "item": "Locations",
+   "note": "Coordinates +/-0.05 deg; Elsenborn Ridge and depots +/-0.1 deg. Luxembourg towns are USA-held with originalOwner NEUTRAL (no Luxembourg NationId)."
+  },
+  {
+   "item": "Nation resources / strengths / experience / morale",
+   "note": "Game-scale (G01). German fuel pool set to 40% of the normal per-unit scale to reflect the sourced shortage (B06). 106th Division experience/morale set low from B08 (new to the front)."
+  }
+ ]
+}

@@ -1,0 +1,1719 @@
+{
+ "scenarioId": "fall_of_france.short",
+ "note": "Per-fact source references (ScenarioDefinition has no per-unit sourceRef field). IDs resolve against def.sources.",
+ "units": {
+  "ger.a4": {
+   "sources": [
+    "S01",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "ger.c.VIII": {
+   "sources": [
+    "S01",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "ger.id.008": {
+   "sources": [
+    "S01",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "ger.id.028": {
+   "sources": [
+    "S01",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "ger.c.XV": {
+   "sources": [
+    "S01",
+    "S07",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "ger.pz.005": {
+   "sources": [
+    "S01",
+    "S07",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "ger.pz.007": {
+   "sources": [
+    "S01",
+    "S07",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "ger.a12": {
+   "sources": [
+    "S01",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "ger.c.III": {
+   "sources": [
+    "S01",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "ger.id.003": {
+   "sources": [
+    "S01",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "ger.id.023": {
+   "sources": [
+    "S01",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "ger.id.052": {
+   "sources": [
+    "S01",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "ger.c.VI": {
+   "sources": [
+    "S01",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "ger.id.016": {
+   "sources": [
+    "S01",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "ger.id.024": {
+   "sources": [
+    "S01",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "ger.c.XVIII": {
+   "sources": [
+    "S01",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "ger.id.005": {
+   "sources": [
+    "S01",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "ger.id.021": {
+   "sources": [
+    "S01",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "ger.id.025": {
+   "sources": [
+    "S01",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "ger.pgk": {
+   "sources": [
+    "S01",
+    "S07",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "ger.c.XIV": {
+   "sources": [
+    "S01",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "ger.mot.002": {
+   "sources": [
+    "S01",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "ger.mot.013": {
+   "sources": [
+    "S01",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "ger.mot.029": {
+   "sources": [
+    "S01",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "ger.c.XLI": {
+   "sources": [
+    "S01",
+    "S07",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "ger.pz.006": {
+   "sources": [
+    "S01",
+    "S07",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "ger.pz.008": {
+   "sources": [
+    "S01",
+    "S07",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "ger.c.XIX": {
+   "sources": [
+    "S01",
+    "S07",
+    "S08",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "ger.pz.001": {
+   "sources": [
+    "S01",
+    "S07",
+    "S08",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "ger.pz.002": {
+   "sources": [
+    "S01",
+    "S07",
+    "S08",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "ger.pz.010": {
+   "sources": [
+    "S01",
+    "S07",
+    "S08",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "ger.ir.gd": {
+   "sources": [
+    "S01",
+    "S08",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "ger.c.XXXX": {
+   "sources": [
+    "S01",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "ger.a6": {
+   "sources": [
+    "S02",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "ger.c.XVI": {
+   "sources": [
+    "S02",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "ger.pz.003": {
+   "sources": [
+    "S02",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "ger.pz.004": {
+   "sources": [
+    "S02",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "ger.id.033": {
+   "sources": [
+    "S02",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "fra.a1": {
+   "sources": [
+    "S04",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "fra.c.cav": {
+   "sources": [
+    "S04",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "fra.dlm.2": {
+   "sources": [
+    "S04",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "fra.dlm.3": {
+   "sources": [
+    "S04",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "fra.c.III": {
+   "sources": [
+    "S04",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "fra.dim.1": {
+   "sources": [
+    "S04",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "fra.dim.1m": {
+   "sources": [
+    "S04",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "fra.dina.2": {
+   "sources": [
+    "S04",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "fra.c.IV": {
+   "sources": [
+    "S04",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "fra.di.032": {
+   "sources": [
+    "S04",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "fra.dim.15": {
+   "sources": [
+    "S04",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "fra.c.V": {
+   "sources": [
+    "S04",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "fra.dina.5": {
+   "sources": [
+    "S04",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "fra.di.101": {
+   "sources": [
+    "S04",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "fra.a2": {
+   "sources": [
+    "S04",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "fra.c.X": {
+   "sources": [
+    "S04",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "fra.di.055": {
+   "sources": [
+    "S04",
+    "S08",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "fra.di.071": {
+   "sources": [
+    "S04",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "fra.dina.3": {
+   "sources": [
+    "S04",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "fra.c.XVIII": {
+   "sources": [
+    "S04",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "fra.dic.1": {
+   "sources": [
+    "S04",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "fra.dic.3": {
+   "sources": [
+    "S04",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "fra.di.041": {
+   "sources": [
+    "S04",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "fra.a9": {
+   "sources": [
+    "S04",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "fra.dina.4": {
+   "sources": [
+    "S04",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "fra.di.053": {
+   "sources": [
+    "S04",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "fra.c.II": {
+   "sources": [
+    "S04",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "fra.dlc.4": {
+   "sources": [
+    "S04",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "fra.dim.5": {
+   "sources": [
+    "S04",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "fra.c.XI": {
+   "sources": [
+    "S04",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "fra.dlc.1": {
+   "sources": [
+    "S04",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "fra.di.018": {
+   "sources": [
+    "S04",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "fra.di.022": {
+   "sources": [
+    "S04",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "fra.c.XLI": {
+   "sources": [
+    "S04",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "fra.di.061": {
+   "sources": [
+    "S04",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "fra.df.102": {
+   "sources": [
+    "S04",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "fra.dcr.1": {
+   "sources": [
+    "S04",
+    "G03",
+    "G01"
+   ],
+   "positionApproximate": true
+  },
+  "fra.dcr.2": {
+   "sources": [
+    "S04",
+    "G03",
+    "G01"
+   ],
+   "positionApproximate": true
+  },
+  "fra.dcr.3": {
+   "sources": [
+    "S04",
+    "G03",
+    "G01"
+   ],
+   "positionApproximate": true
+  },
+  "fra.dim.3": {
+   "sources": [
+    "S04",
+    "G03",
+    "G01"
+   ],
+   "positionApproximate": true
+  },
+  "gbr.hq.bef": {
+   "sources": [
+    "S04",
+    "S12",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "gbr.c.I": {
+   "sources": [
+    "S04",
+    "S12",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "gbr.div.01": {
+   "sources": [
+    "S04",
+    "S12",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "gbr.div.02": {
+   "sources": [
+    "S04",
+    "S12",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "gbr.div.48": {
+   "sources": [
+    "S04",
+    "S12",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "gbr.c.II": {
+   "sources": [
+    "S04",
+    "S12",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "gbr.div.03": {
+   "sources": [
+    "S04",
+    "S12",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "gbr.div.04": {
+   "sources": [
+    "S04",
+    "S12",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "gbr.div.50": {
+   "sources": [
+    "S04",
+    "S12",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "gbr.c.III": {
+   "sources": [
+    "S04",
+    "S12",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "gbr.div.42": {
+   "sources": [
+    "S04",
+    "S12",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "gbr.div.44": {
+   "sources": [
+    "S04",
+    "S12",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "gbr.div.05": {
+   "sources": [
+    "S04",
+    "S12",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "ger.hq.fk8": {
+   "sources": [
+    "S19",
+    "S23",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "ger.hq.fk1": {
+   "sources": [
+    "S19",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "ger.stg.077": {
+   "sources": [
+    "S19",
+    "S23",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "ger.jg.077": {
+   "sources": [
+    "S19",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "fra.hq.zoan": {
+   "sources": [
+    "S20",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "fra.gc.I_1": {
+   "sources": [
+    "S20",
+    "S22",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "fra.gc.III_3": {
+   "sources": [
+    "S20",
+    "S22",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "fra.gc.II_10": {
+   "sources": [
+    "S20",
+    "S22",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "fra.gc.II_2": {
+   "sources": [
+    "S20",
+    "S22",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "fra.gc.III_2": {
+   "sources": [
+    "S20",
+    "S22",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "fra.gc.I_4": {
+   "sources": [
+    "S20",
+    "S22",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "fra.gc.I_5": {
+   "sources": [
+    "S20",
+    "S22",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "fra.gc.III_1": {
+   "sources": [
+    "S20",
+    "S22",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "fra.gc.II_8": {
+   "sources": [
+    "S20",
+    "S22",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "fra.gb.I_12": {
+   "sources": [
+    "S20",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "fra.gb.II_12": {
+   "sources": [
+    "S20",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "fra.gb.I_34": {
+   "sources": [
+    "S20",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "fra.gb.II_34": {
+   "sources": [
+    "S20",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "fra.gb.I_15": {
+   "sources": [
+    "S20",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "gbr.hq.comp": {
+   "sources": [
+    "S21",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "gbr.hq.aasf": {
+   "sources": [
+    "S21",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "gbr.sqn.053": {
+   "sources": [
+    "S21",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "gbr.sqn.059": {
+   "sources": [
+    "S21",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "gbr.sqn.018": {
+   "sources": [
+    "S21",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "gbr.sqn.057": {
+   "sources": [
+    "S21",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "gbr.sqn.085": {
+   "sources": [
+    "S21",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "gbr.sqn.087": {
+   "sources": [
+    "S21",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "gbr.sqn.607": {
+   "sources": [
+    "S21",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "gbr.sqn.615": {
+   "sources": [
+    "S21",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "gbr.sqn.003": {
+   "sources": [
+    "S21",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "gbr.sqn.079": {
+   "sources": [
+    "S21",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "gbr.sqn.105": {
+   "sources": [
+    "S21",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "gbr.sqn.114": {
+   "sources": [
+    "S21",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "gbr.sqn.139": {
+   "sources": [
+    "S21",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "gbr.sqn.150": {
+   "sources": [
+    "S21",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "gbr.sqn.088": {
+   "sources": [
+    "S21",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "gbr.sqn.103": {
+   "sources": [
+    "S21",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "gbr.sqn.218": {
+   "sources": [
+    "S21",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "gbr.sqn.012": {
+   "sources": [
+    "S21",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "gbr.sqn.142": {
+   "sources": [
+    "S21",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "gbr.sqn.226": {
+   "sources": [
+    "S21",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "gbr.sqn.073": {
+   "sources": [
+    "S21",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "gbr.sqn.501": {
+   "sources": [
+    "S21",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  }
+ },
+ "locations": {
+  "paris": {
+   "sources": [
+    "S06",
+    "G02"
+   ]
+  },
+  "sedan": {
+   "sources": [
+    "S08",
+    "G02"
+   ]
+  },
+  "dinant": {
+   "sources": [
+    "S04",
+    "G02"
+   ]
+  },
+  "montherme": {
+   "sources": [
+    "S07",
+    "G02"
+   ]
+  },
+  "namur": {
+   "sources": [
+    "S13",
+    "G02"
+   ]
+  },
+  "liege": {
+   "sources": [
+    "S04",
+    "G02"
+   ]
+  },
+  "eben_emael": {
+   "sources": [
+    "S06",
+    "G02"
+   ]
+  },
+  "maastricht": {
+   "sources": [
+    "S09",
+    "G02"
+   ]
+  },
+  "brussels": {
+   "sources": [
+    "S06",
+    "G02"
+   ]
+  },
+  "ghent": {
+   "sources": [
+    "S04",
+    "G02"
+   ]
+  },
+  "charleroi": {
+   "sources": [
+    "S04",
+    "G02"
+   ]
+  },
+  "gembloux": {
+   "sources": [
+    "S06",
+    "G02"
+   ]
+  },
+  "hannut": {
+   "sources": [
+    "S06",
+    "G02"
+   ]
+  },
+  "bastogne": {
+   "sources": [
+    "S08",
+    "G02"
+   ]
+  },
+  "luxembourg": {
+   "sources": [
+    "S06",
+    "G02"
+   ]
+  },
+  "dunkirk": {
+   "sources": [
+    "S11",
+    "G02"
+   ]
+  },
+  "calais": {
+   "sources": [
+    "S11",
+    "G02"
+   ]
+  },
+  "boulogne": {
+   "sources": [
+    "S06",
+    "G02"
+   ]
+  },
+  "lille": {
+   "sources": [
+    "S04",
+    "G02"
+   ]
+  },
+  "arras": {
+   "sources": [
+    "S10",
+    "G02"
+   ]
+  },
+  "abbeville": {
+   "sources": [
+    "S06",
+    "G02"
+   ]
+  },
+  "amiens": {
+   "sources": [
+    "S06",
+    "G02"
+   ]
+  },
+  "reims": {
+   "sources": [
+    "S04",
+    "G02"
+   ]
+  },
+  "rouen": {
+   "sources": [
+    "S16",
+    "G02"
+   ]
+  },
+  "metz": {
+   "sources": [
+    "S04",
+    "G02"
+   ]
+  },
+  "hackenberg": {
+   "sources": [
+    "S06",
+    "G02"
+   ],
+   "approximate": true
+  },
+  "fermont": {
+   "sources": [
+    "S06",
+    "G02"
+   ],
+   "approximate": true
+  },
+  "dover": {
+   "sources": [
+    "S11",
+    "G02"
+   ]
+  },
+  "aachen": {
+   "sources": [
+    "G02"
+   ]
+  },
+  "cologne": {
+   "sources": [
+    "G02"
+   ]
+  },
+  "trier": {
+   "sources": [
+    "G02"
+   ]
+  },
+  "pruem": {
+   "sources": [
+    "G02"
+   ]
+  },
+  "bitburg": {
+   "sources": [
+    "G02"
+   ]
+  },
+  "af_koeln_butzweiler": {
+   "sources": [
+    "S19",
+    "G05",
+    "G02"
+   ]
+  },
+  "af_peppenhoven": {
+   "sources": [
+    "S19",
+    "G05",
+    "G02"
+   ]
+  },
+  "af_chantilly": {
+   "sources": [
+    "S20",
+    "G05",
+    "G02"
+   ]
+  },
+  "af_beauvais": {
+   "sources": [
+    "S20",
+    "G05",
+    "G02"
+   ]
+  },
+  "af_rouen_boos": {
+   "sources": [
+    "S20",
+    "G05",
+    "G02"
+   ]
+  },
+  "af_laon_chambry": {
+   "sources": [
+    "S20",
+    "G05",
+    "G02"
+   ]
+  },
+  "af_cambrai": {
+   "sources": [
+    "S20",
+    "G05",
+    "G02"
+   ]
+  },
+  "af_wez_thuisy": {
+   "sources": [
+    "S20",
+    "G05",
+    "G02"
+   ]
+  },
+  "af_suippes": {
+   "sources": [
+    "S20",
+    "G05",
+    "G02"
+   ]
+  },
+  "af_norrent_fontes": {
+   "sources": [
+    "S20",
+    "G05",
+    "G02"
+   ]
+  },
+  "af_calais_marck": {
+   "sources": [
+    "S20",
+    "G05",
+    "G02"
+   ]
+  },
+  "af_soissons": {
+   "sources": [
+    "S20",
+    "G05",
+    "G02"
+   ]
+  },
+  "af_persan": {
+   "sources": [
+    "S20",
+    "G05",
+    "G02"
+   ]
+  },
+  "af_montdidier": {
+   "sources": [
+    "S20",
+    "G05",
+    "G02"
+   ]
+  },
+  "af_roye": {
+   "sources": [
+    "S20",
+    "G05",
+    "G02"
+   ]
+  },
+  "af_reims": {
+   "sources": [
+    "S20",
+    "S21",
+    "G05",
+    "G02"
+   ]
+  },
+  "af_seclin": {
+   "sources": [
+    "S21",
+    "G05",
+    "G02"
+   ]
+  },
+  "af_vitry_artois": {
+   "sources": [
+    "S21",
+    "G05",
+    "G02"
+   ]
+  },
+  "af_abbeville": {
+   "sources": [
+    "S21",
+    "G05",
+    "G02"
+   ]
+  },
+  "af_merville": {
+   "sources": [
+    "S21",
+    "G05",
+    "G02"
+   ]
+  },
+  "af_poix": {
+   "sources": [
+    "S21",
+    "G05",
+    "G02"
+   ]
+  },
+  "af_meharicourt": {
+   "sources": [
+    "S21",
+    "G05",
+    "G02"
+   ]
+  },
+  "af_rosieres": {
+   "sources": [
+    "S21",
+    "G05",
+    "G02"
+   ]
+  },
+  "af_vertus": {
+   "sources": [
+    "S21",
+    "G05",
+    "G02"
+   ]
+  },
+  "af_conde_vraux": {
+   "sources": [
+    "S21",
+    "G05",
+    "G02"
+   ]
+  },
+  "af_plivot": {
+   "sources": [
+    "S21",
+    "G05",
+    "G02"
+   ]
+  },
+  "af_ecury": {
+   "sources": [
+    "S21",
+    "G05",
+    "G02"
+   ]
+  },
+  "af_mourmelon": {
+   "sources": [
+    "S21",
+    "G05",
+    "G02"
+   ]
+  },
+  "af_betheniville": {
+   "sources": [
+    "S21",
+    "G05",
+    "G02"
+   ]
+  },
+  "af_auberive": {
+   "sources": [
+    "S21",
+    "G05",
+    "G02"
+   ]
+  },
+  "af_amifontaine": {
+   "sources": [
+    "S21",
+    "G05",
+    "G02"
+   ]
+  },
+  "af_berry_au_bac": {
+   "sources": [
+    "S21",
+    "G05",
+    "G02"
+   ]
+  },
+  "af_rouvres": {
+   "sources": [
+    "S21",
+    "G05",
+    "G02"
+   ]
+  }
+ },
+ "reinforcements": {
+  "reinf.fra.dcr.4": {
+   "sources": [
+    "S04",
+    "G03"
+   ],
+   "approximate": true
+  }
+ },
+ "nations": {
+  "GER": {
+   "sources": [
+    "G01"
+   ],
+   "gameScale": true
+  },
+  "FRA": {
+   "sources": [
+    "G01"
+   ],
+   "gameScale": true
+  },
+  "GBR": {
+   "sources": [
+    "G01"
+   ],
+   "gameScale": true
+  },
+  "BEL": {
+   "sources": [
+    "G01"
+   ],
+   "gameScale": true
+  }
+ },
+ "objectives": {
+  "o.ger.sedan": {
+   "sources": [
+    "S06",
+    "G01"
+   ]
+  },
+  "o.ger.dinant": {
+   "sources": [
+    "S06",
+    "G01"
+   ]
+  },
+  "o.ger.abbeville": {
+   "sources": [
+    "S06",
+    "G01"
+   ]
+  },
+  "o.ger.amiens": {
+   "sources": [
+    "S06",
+    "G01"
+   ]
+  },
+  "o.ger.control": {
+   "sources": [
+    "S06",
+    "G01"
+   ]
+  },
+  "o.all.sedan": {
+   "sources": [
+    "S06",
+    "G01"
+   ]
+  },
+  "o.all.dinant": {
+   "sources": [
+    "S06",
+    "G01"
+   ]
+  },
+  "o.all.abbeville": {
+   "sources": [
+    "S06",
+    "G01"
+   ]
+  },
+  "o.all.amiens": {
+   "sources": [
+    "S06",
+    "G01"
+   ]
+  },
+  "o.all.control": {
+   "sources": [
+    "S06",
+    "G01"
+   ]
+  }
+ },
+ "uncertain": [
+  {
+   "item": "Meuse sector respread and quality classes (Sedan audit)",
+   "note": "S08 sources: 55th Division at Sedan, 71st relieving it (partly by 10 May, completed 13-14 May), both Series B reservists over 30 with little training and short of anti-tank/anti-aircraft guns; X Corps held Remilly-Aillicourt; Ninth/Second Army divisions chiefly poor quality. NOT sourced: which 9th Army division held which Meuse segment, the positions of XVIII Corps divisions (placed Stenay-Longuyon), XXI Corps assembly area (3rd DCR / 3rd DIM placed near Rethel), the series of each division. All start positions are approximate river-segment anchors (G03). Series B experience 25 / morale 62 / organisation 75 / start entrenchment 20 and posture hold (entrenchment cap 40: S08 bunkers incomplete, no mines at Sedan), fortress divisions 35/68 (Maginot 104th/105th start entrenchment 50), other 9th/2nd Army infantry 40/65/80 are GAME-SCALE (G01), not historical."
+  },
+  {
+   "item": "All unit start positions",
+   "note": "Approximate sector/assembly areas (G03); no source gives division start locations."
+  },
+  {
+   "item": "German 15th, 4th Infantry Divisions",
+   "note": "Assigned to different corps/army groups in S01 vs S02; OMITTED."
+  },
+  {
+   "item": "German 211th ID",
+   "note": "Listed under V Corps (S01) and XI Corps (S02); placed under V Corps only."
+  },
+  {
+   "item": "German 3rd ID",
+   "note": "III Corps in S01; unassigned in S02; placed in III Corps (12. Armee)."
+  },
+  {
+   "item": "German 6th Mountain Division, SS-Verfügungstruppe Division, XXXIX Corps",
+   "note": "Listed by sources but unclear/inconsistent for 10 May; OMITTED."
+  },
+  {
+   "item": "Army Group C divisions",
+   "note": "Single source (S03); lower confidence."
+  },
+  {
+   "item": "French armoured reserve positions (1st-3rd DCR, 3rd DIM)",
+   "note": "No location sourced; placed in a reserve area behind the Meuse (approximate). 4th DCR arrival 15 May is approximate/unverified."
+  },
+  {
+   "item": "French 4th Army, Army of the Alps divisions, Polish divisions, 12th/23rd/46th BEF labour divisions, 1st Armoured Division, 52nd/1st Canadian Divisions",
+   "note": "Omitted: role/arrival not verified (S12 gives only Second BEF composition from 2 June)."
+  },
+  {
+   "item": "Belgian and Dutch corps",
+   "note": "Corps-level only; positions are an approximate arc. Divisions omitted."
+  },
+  {
+   "item": "Italian army and Luftwaffe/RAF/Armée de l'Air",
+   "note": "Not modelled; Italy appears only as an event and a nation record."
+  },
+  {
+   "item": "Dutch capitulation date",
+   "note": "S09 summary says 14 May, S06 says 15 May; scenario uses 15 May."
+  },
+  {
+   "item": "Weather profile",
+   "note": "Qualitative only (S15); probabilities and temperatures are game-scale."
+  },
+  {
+   "item": "initialControl polygons",
+   "note": "Coarse; ignore coastline detail (G04)."
+  },
+  {
+   "item": "Short: German-held ground on 12 May",
+   "note": "Extra GER initialControl polygons (Luxembourg, the Ardennes up to the Meuse bend, and the Maastricht-Hannut approach) and Luxembourg City owned by GER on 12 May are APPROXIMATE: S06 sources the 10 May occupation of Luxembourg and S08/Sedan article the 12 May advance through southern Belgium, but not the exact line. Added so the German spearheads do not start inside enemy-owned cells and cut off from supply."
+  },
+  {
+   "item": "Paris garrison and Weygand Line",
+   "note": "Only the existence of a Paris military command (S18) and the reconstituted 10th Army HQ (S17) are sourced. The Paris garrison strength is game-scale; no Somme/Aisne/Paris divisions could be identified from retrievable sources, so none are modelled. French reserve divisions (S04) are placed behind the Maginot Line, not in the Paris region."
+  },
+  {
+   "item": "Air formations",
+   "note": "Luftwaffe (S19) is a low-confidence forum aggregation; aircraft counts are sums of listed Stab/Gruppe strengths. French groupes use escadrilles x 11 (fighters, S22) or x 10 (bombers, game-scale). RAF squadrons use 16 aircraft each (game-scale; S21 gives no strengths). Airfield coordinates +/-0.15 deg. OMITTED: KG 51 and KG 55 (bases outside the map), Lysander squadrons, reconnaissance and army-co-operation groups (no unit type), French GIABSE bomber groups and ZOAA groups (committed later / in formation), UK-based Fighter Command squadrons (no sourced 10 May 1940 mapping found), Italian air force, Dutch and Belgian air forces. StG 2/StG 77 corps assignment conflicts between sources (VIII. vs IV. Fliegerkorps; VIII. used)."
+  },
+  {
+   "item": "Nation resources / income / unit strengths / morale / experience",
+   "note": "Game-scale abstraction (G01), not historical."
+  }
+ ]
+}

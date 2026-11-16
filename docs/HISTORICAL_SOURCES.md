@@ -1,0 +1,155 @@
+# Historical Sources Register
+
+Rule: nothing historical enters `src/data/` without an ID here. Unknown => omitted or marked approximate/unverified.
+Source IDs are mirrored in each scenario's `sources[]` (`src/data/campaigns/_build/sources_register.mjs` is the generator's single source of truth).
+Retrieved via web fetch in the campaign-data session; secondary/tertiary web sources only. **A QA pass against print sources (Frieser, Ellis, Doughty, official histories) is still recommended.**
+
+## Campaign: Fall of France (`fall_of_france.*`)
+
+| ID | Citation | URL | Facts that depend on it |
+|---|---|---|---|
+| S01 | thesecondworldwar.org, Axis OOB - Army Group A | https://www.thesecondworldwar.org/western-front-1939-1940/battle-of-france/axis-order-of-battle/army-group-a | Heeresgruppe A: 4., 12., 16. Armee, Panzergruppe Kleist (XIV, XLI, XIX Corps), XXXX Corps reserve; corps/division assignment and commanders |
+| S02 | thesecondworldwar.org, Axis OOB - Army Group B | https://www.thesecondworldwar.org/western-front-1939-1940/battle-of-france/axis-order-of-battle/army-group-b | Heeresgruppe B: 6. Armee (XVI Corps with 3rd/4th Pz, IV, IX, XI, XXVII), 18. Armee (X, XXVI), 9th Pz, 1st Cav Div, SS regiments, airborne divisions, reserve divisions |
+| S03 | thesecondworldwar.org, Fall Gelb Axis OOB overview | https://www.thesecondworldwar.org/the-western-front/fall-gelb/axis-order-of-battle | Army Group C (1. and 7. Armee) divisions (single source, lower confidence) |
+| S04 | thesecondworldwar.org, Fall Gelb Allied OOB | https://www.thesecondworldwar.org/the-western-front/fall-gelb/allied-order-of-battle | French 1st/2nd/3rd Army Groups, 1st/2nd/3rd/5th/7th/8th/9th Armies, corps and divisions, DCRs, BEF, Belgian and Dutch corps |
+| S05 | Wikipedia, Order of battle for the Battle of France | https://en.wikipedia.org/wiki/Order_of_battle_for_the_Battle_of_France | Army-group-level structure; Belgium 22 divisions / Netherlands four corps; Army of the Alps |
+| S06 | Wikipedia, Battle of France | https://en.wikipedia.org/wiki/Battle_of_France | Dates: 10 May start; Dutch surrender 15 May; Sedan 13 May; Channel ~20 May; Fall Rot 5 Jun; Italy + Paris open city 10 Jun; St-Valery 12 Jun; Paris 14 Jun; Tiger 15 Jun; Pétain 16 Jun; Cherbourg 18 Jun; armistice 22 Jun, effective 25 Jun 00:35 |
+| S07 | Wikipedia, Fall Gelb | https://en.wikipedia.org/wiki/Fall_Gelb | Kleist corps composition (XIX 3 Pz, XLI 2 Pz, XV 2 Pz); Manstein plan; halt orders |
+| S08 | Wikipedia, Battle of Sedan (1940) | https://en.wikipedia.org/wiki/Battle_of_Sedan_(1940) | 12 May Sedan reached; 13 May crossing by 1st/2nd/10th Pz; 14 May bridge; 55th ID collapse |
+| S09 | Wikipedia, Battle of the Netherlands | https://en.wikipedia.org/wiki/Battle_of_the_Netherlands | Rotterdam bombing, Dutch surrender (summary says 14 May; S06 says 15 May - scenario uses 15 May), Zeeland to 17 May |
+| S10 | Wikipedia, Battle of Arras (1940) | https://en.wikipedia.org/wiki/Battle_of_Arras_(1940) | 21 May counter-attack, Frankforce composition |
+| S11 | Wikipedia, Operation Dynamo | https://en.wikipedia.org/wiki/Operation_Dynamo | 26 May - 4 Jun; 338,226 evacuated; halt order 23/24 May, rescinded 26 May; Calais surrender 26 May |
+| S12 | Wikipedia, British Expeditionary Force (WWII) | https://en.wikipedia.org/wiki/British_Expeditionary_Force_(World_War_II) | BEF corps/divisions; Saar Force 51st Highland; labour divisions; Second BEF; Operations Cycle (10-13 Jun) and Aerial (15-25 Jun) |
+| S13 | Wikipedia, Dyle Plan | https://en.wikipedia.org/wiki/Dyle_Plan | Plan D structure; 7th Army to Breda; 9th Army on the Meuse; 2nd Army Sedan; used for sector anchors |
+| S14 | DHM LeMO, Besetzung von Belgien 1940; Wikipedia Belgium in WWII | https://www.dhm.de/lemo/kapitel/der-zweite-weltkrieg/kriegsverlauf/besetzung-von-belgien-1940 | Belgian capitulation 28 May 1940 |
+| S15 | Weather Works Inc., Weather in History: The Evacuation of Dunkirk | https://weatherworksinc.com/news/Dunkirk-Evacuation-Weather | Qualitative: calm seas/cloud late May-early June (weather profile only) |
+| S16 | Wikipedia, Beauman Division; Gort's Despatch (London Gazette supp. 35305) | https://en.wikipedia.org/wiki/Beauman_Division | BEF base ports/depots used as GBR supplySources: Cherbourg, Brest, Nantes, St Nazaire, Le Havre (principal depot), Rouen (base depots). Sources differ on Brest vs Le Havre as main port |
+| S17 | Wikipedia, Fall Rot (+ Britannica, Weygand Line) | https://en.wikipedia.org/wiki/Fall_Rot | Weygand Line ~965 km Sedan-Abbeville, 64 divisions (Britannica: ~49), Tenth Army (Altmayer), 7th/10th Armies reconstituted 23-28 May (10th Army HQ reinforcement), hedgehog towns |
+| S18 | Wikipedia, Henri Dentz; secondary accounts of Gen. Hering (Paris District commander) | https://en.wikipedia.org/wiki/Henri_Dentz | Existence of a Paris military command in June 1940 (garrison strength NOT sourced) |
+| S19 | fr.soc.histoire Google Groups post, "10 mai 1940 - Fall Gelb: ordre de bataille de la Luftwaffe sur le front Ouest" (2008, cites orbat.com) | https://groups.google.com/g/fr.soc.histoire/c/Uq7EChfL2cU | Luftflotte 2/3, Fliegerkorps, Geschwader bases and strengths. **Low confidence** (unverified forum aggregation, internally inconsistent) |
+| S20 | traditions-air.fr, 10 mai 1940 Ordre Général de Bataille (Armée de l'Air) | https://www.traditions-air.fr/unit/chrono/1940-05-10.htm | ZOAN/ZOAE/ZOAS groupes de chasse and bombardement, bases, types |
+| S21 | classicwarbirds.co.uk, British Air Forces in France OOB 10 May 1940 | https://www.classicwarbirds.co.uk/battle-of-britain/british-air-forces-in-france-order-of-battle-10th-may-1940.php | RAF Air Component and AASF squadrons, wings, airfields (secondary) |
+| S22 | Wikipedia, Groupe de Chasse | https://en.wikipedia.org/wiki/Groupe_de_Chasse | 10-12 aircraft per escadrille (French fighter group sizing) |
+| S23 | Wikipedia, StG 2 / StG 77 / KG 27 | https://en.wikipedia.org/wiki/Sturzkampfgeschwader_77 | StG 2/77 under VIII. Fliegerkorps; KG 27 under IV. Fliegerkorps (a wiki mirror conflicts for StG 2/77: IV. Fliegerkorps) |
+| G05 | **Airfield position policy** (internal) | - | Airfield coordinates recalled to 0.01 deg, accuracy +/-0.15 deg; Gruppe base used where the Stab base is off-map |
+| G01 | **Game-scale abstraction** (internal) | - | Unit manpower/equipment points, morale/experience, nation resources & income, reinforcement stats, objective points, victory thresholds. NOT historical figures |
+| G02 | Modern gazetteer coordinates (Wikipedia/GeoNames), rounded 0.01 deg | https://www.geonames.org/ | All location coordinates; Maginot fortress coords approximate (+/-0.05 deg) |
+| G03 | **Position policy** (internal) | - | Every unit start position is an approximate sector/assembly-area anchor inferred from S06-S08/S13, with deterministic spread |
+| G04 | **Border policy** (internal) | - | initialControl polygons: coarse 1939/40 borders; Alsace-Lorraine French, Saar German, Luxembourg unclaimed; coastline ignored |
+
+Nation `resources` (manpower, fuel, ammo, equipment, supplyPoints) and per-tick `income` are **game-scale abstractions (G01)** seeded non-zero for every nation (including Italy) so replenishment works; they are not historical production or stockpile figures. Pools are sized from each nation's own OOB (manpower pool = 15% of OOB manpowerMax, income = 30% of OOB manpower spread over the scenario length in ticks; fuel/ammo/equipment pools = 40/50/100 per unit, income 0.15/0.2/0.4 per unit per tick), calibrated against the replacement rules in `src/military/stats.ts`. `supplySources` locations must be owned at start by that nation or a nation on the same side. UK standard: Dover, London plus French-owned BEF base ports Le Havre, Cherbourg, Rouen, Nantes, St Nazaire, Brest (S16). UK short: Dover plus Rouen (BEF base depots, S16; the only base port inside the short bbox).
+
+## Approximate / uncertain data (also in `<id>.sources.json -> uncertain`)
+
+- **All unit positions**: approximate (G03).
+- **Paris garrison**: only the existence of a Paris military command (S18) is sourced; its strength is game-scale. The reconstituted 10th Army HQ (S17, 28 May) is HQ-only. No Somme/Aisne/Paris divisions could be identified, so none are modelled (the 64-division Weygand Line, S17, is not represented in the OOB). The French reserve divisions from S04 (VII and XXIII Corps, 10th, 14th, 23rd, 28th, 29th, 36th, 43rd Inf, 1st/7th NA, 5th/7th Colonial) are sourced but positioned behind the Maginot Line.
+- Conflicting assignment between S01 and S02: German 15th and 4th ID (omitted), 211th ID (V Corps only), 3rd ID (III Corps).
+- Omitted as unclear for 10 May: German 6th Mountain Div, SS-Verfügungstruppe Div, XXXIX Corps (activated 13 May).
+- Army Group C divisions: single source S03.
+- French DCR / 3rd DIM reserve locations unsourced; 4th DCR arrival on 15 May approximate/unverified.
+- Belgian and Dutch forces are corps-level with an approximate positional arc.
+- Dutch capitulation: 14 vs 15 May across sources.
+- Weather probabilities/temperatures: game-scale; only qualitative support (S15).
+- Planned campaigns (`src/data/planned.ts`): dates are **unverified placeholders** until each campaign is built.
+
+## Air formations (added)
+Standard: 78 air units (Luftwaffe 27 Geschwader + 10 HQs, Armee de l'Air 28 groupes + 3 zone HQs, RAF 23 squadrons + 2 HQs); 71 airfield Locations. Aircraft counts: Luftwaffe = sum of listed Stab/Gruppe strengths (S19, low confidence); French fighter groupes = escadrilles x 11 (S22), bombers x 10 (game-scale); RAF squadrons = 16 each (game-scale, S21 gives no strengths). **Omitted**: KG 51 and KG 55 (all bases outside the map bbox), Lysander and other reconnaissance/army-co-operation units (no unit type), French GIABSE bomber groups and ZOAA groups (committed later / in formation), UK-based Fighter Command squadrons (no sourced 10 May 1940 mapping found), Italian/Belgian/Dutch air forces. Positions for 12 May (short scale) reuse the 10 May bases.
+
+## Research gaps
+
+1. Division-level 10 May start locations (no web source found; would need Niehorster/Frieser maps).
+2. Per-division equipment (tank counts etc.) - deliberately not used; game-scale only.
+3. German/Allied air forces, Italian Army Group West, Luftwaffe airfields.
+4. BEF 12th/23rd/46th labour divisions, 1st Armoured Division, 52nd and 1st Canadian Divisions (arrival dates/ports), French 4th Army, reserve divisions, Polish divisions.
+5. Reinforcement schedule beyond 4th DCR (German redeployment for Fall Rot, Second BEF arrivals).
+6. Quantitative May/June 1940 weather (Met Office / Météo-France records).
+7. Verification of Rotterdam bombing date (14 May) from a source other than the S09 summary; Dinant/Monthermé 13 May crossings (not verified, hence not in event data).
+8. Niehorster.org, Frieser, Doughty could not be fetched; cross-check recommended.
+
+## Map data
+
+Generated by `node scripts/data/fetch.mjs [region] && node scripts/data/build.mjs [region]` (Node 24, no dependencies) into `public/data/`. Optional extras: `fetch-osm.mjs <region> [rivers|roads|rail|tracks]` (Overpass), `fetch-wc.mjs northafrica` (WorldCover). Raw downloads live in `scripts/data/cache/` (git-ignored, not shipped). `scripts/data/audit.mjs` checks every scenario's locations / land unit starts / reinforcements against ITS OWN terrain file.
+
+**Regions** (`scripts/data/regions.mjs`, manifest `public/data/regions.json`; the map picks the region whose bbox matches the scenario's terrain file):
+| id | bbox (W,S,E,N) | cell | scenarios |
+|---|---|---|---|
+| westeurope | -6,44,10,55 | 0.05 deg | Fall of France |
+| ardennes | 4,49.2,8,51.2 | 0.02 deg | Battle of the Bulge |
+| northafrica | 19,28.5,30.5,33 | 0.03 deg | Operation Crusader |
+| stalingrad | 40.5,47,46.5,50 | 0.03 deg | Operation Uranus (WorldCover; hills = relief >= ~65 m per cell, i.e. balkas and Don/Volga bluffs; no low-flat marsh rule because the Volga left bank is dry; Natural Earth's 'Lake Centerline' Don stretch is included as river; NE has only 1 road segment there, rail 62; Chir/Myshkova need OSM) |
+
+**Sources and licences**
+- Natural Earth 10m vector (countries, rivers_lake_centerlines, lakes, land, populated_places_simple, roads, railroads, geography_regions_polys), via github.com/nvkelso/natural-earth-vector. Public domain.
+- Elevation: AWS Terrain Tiles (terrarium; zoom 8 westeurope/northafrica, 9 ardennes), https://registry.opendata.aws/terrain-tiles/ (SRTM, EU-DEM, GMTED etc.; attribution required). Used only for per-cell mean elevation/relief.
+- Land cover, Europe: CORINE Land Cover 2018 (c) European Union, Copernicus Land Monitoring Service, EEA, rendered by the EEA ArcGIS map service and classified by legend colour (forest 311-313, urban fabric 111/112, wetland 411/412/421). MODERN land cover, not 1940 (forest cover is broadly similar; urban areas are much larger today).
+- Land cover, North Africa: ESA WorldCover 2021 v200 (c) ESA WorldCover project / Contains modified Copernicus Sentinel data (2021) processed by ESA WorldCover consortium, CC BY 4.0, read from the public COG overviews (about 74 m). Classes used: tree cover, built-up, wetland, bare/sparse. WorldCover does NOT separate sand from rock.
+- OpenStreetMap contributors (ODbL) via the Overpass API: named rivers for the Ardennes (Meuse/Maas, Ourthe, Salm, Ambleve, Our, Sauer/Sure, Semois, Lesse, Vesdre, Rur, Wiltz, Clerve, Alzette, Kyll, Prum, Urft, Warche, Lienne, Moselle, Sambre, Rhine, Ahr, Erft). Where cached, OSM road/rail extracts REPLACE the Natural Earth ones for that region (see Infrastructure). Derived database shipped in public/data is therefore ODbL; keep the attribution "(c) OpenStreetMap contributors".
+- Basemap tiles (optional, runtime): (c) OpenStreetMap contributors, ODbL, subject to the OSM tile usage policy (replace the tile URL for production).
+- Glyphs `public/data/fonts/`: Open Sans (Apache 2.0) PBF fonts from demotiles.maplibre.org, for offline labels.
+
+**Terrain grid method** - classification is an approximation, not a survey. Rules in `build.mjs`, parameters per region:
+- Sea / Lake: Natural Earth land and lake polygons rasterised; Sea if <50% land, Lake if >=50% lake.
+- Urban: populated place with pop_max >= region threshold (100k westeurope, 20k ardennes/northafrica; 3x3 or 5x5 block for >=500k), or >=35% built-up land cover. Modern populations.
+- Mountains: mean >= 900 m, or >= 500 m with relief >= 500 m. Hills: mean >= region hillMean (350/500/400 m) or in-cell relief >= hillReliefPerKm x cell km (this is how the Libyan escarpment, Halfaya and Sidi Rezegh edges become Hills).
+- Forest: land-cover tree/forest fraction >= 0.4 (0.2 in northafrica, where Jebel Akhdar woodland is sparse juniper/maquis).
+- Marsh: wetland land cover >= 0.4, or very low flat land (mean <= 2 m & relief <= 6 m; northafrica <= 3 m & <= 8 m, which also catches coastal sabkha such as the Gulf of Sirte).
+- Desert (northafrica only): bare/sparse land cover >= 50% inside the Natural Earth polygon "Sarir Kalanshiyu ar Ramli al Kabir" (Calanscio Sand Sea). That polygon is coarse, so sand extent is APPROXIMATE; every other bare land is Plains (hard rocky/gravel plateau, the normal Libyan going). No wadi class exists (flags only carry river/coast). Recommended new Terrain codes if the lead extends the contract: SoftSand, Escarpment, Wadi, Sabkha.
+- Flags: bit 1 = river (Natural Earth scalerank <= 8, plus OSM named rivers) crosses the cell; bit 2 = land cell adjacent to Sea.
+- Scenario anchoring: any scenario location or land unit start (scenarios whose terrainFile is that region's) that falls on a Sea/Lake cell forces that cell to land (Urban for city/port/town, else Plains) and recomputes coast flags. Re-run build + audit when scenario coordinates change.
+
+**Infrastructure** - rivers `historical:true`. Roads and rail are the MODERN networks, `historical:false`. Natural Earth supplies westeurope (Major Highway), ardennes (Major + Secondary Highway; NE is thin there, 112 road segments vs 221 rail) and northafrica (NE has Egyptian roads/rail only: the Alexandria - Mersa Matruh - Sollum railway extension is present; NE has NO Libyan roads). OSM Overpass extracts (trunk/primary/secondary roads, mainline rail, named tracks matching Trigh/Balbia/Capuzzo) replace NE when the cache files exist (`osm_<region>_roads|rail|tracks.json`). `capacity` (road 4/2/1, rail 8) is a gameplay tuning assumption. Historic routes: Trigh Capuzzo and Trigh el Abd are NOT drawn (no sourced geometry); they appear only if OSM carries them under those names. Via Balbia (the coast road, built 1937, so `historical:true`) is drawn in northafrica as a SCHEMATIC polyline (`road_via_balbia`, `approximate:true`, with a `note`): straight segments joining the Natural Earth gazetteer towns Ajdabiya, Banghazi, Al Marj, Shahhat, Darnah, Tubruq, Salum and Matruh. It is not the surveyed alignment (it cuts across the Jebel Akhdar and passes inland of Bardia, which is not in the gazetteer). It is only added while no OSM road extract is cached for the region.
+
+**Boundaries**: Natural Earth MODERN borders (boundaries_1940.json is named for its first use; it is NOT 1940). 1940/1941 differences not represented (e.g. the Egypt/Libya line is modern and the Libyan-Egyptian frontier wire is not drawn; Austria, Saar, Eupen-Malmedy, Alsace-Lorraine, Danzig). Scenario `initialControl` polygons are authoritative.
+
+**Cities**: Natural Earth populated places (>= 20k / 1k ardennes / 5k northafrica, or capitals); modern populations, labels only.
+
+## Battle of the Bulge (bulge.short) sources
+
+Generated from src/data/campaigns/_build/bulge_sources.mjs. G01-G05 above apply (G02 gazetteer, G03 position policy, G04 border policy; airfields G05).
+
+| ID | Citation | URL | Facts that depend on it |
+|---|---|---|---|
+| B01 | Wikipedia, "Battle of the Bulge order of battle" (German armies/corps/divisions with commanders; US First and Third Army corps/divisions; XXX Corps; air commands). The page states it reflects a point near the end of the campaign, not 16 Dec, so unit presence on 16 Dec relies on other sources where possible. | https://en.wikipedia.org/wiki/Battle_of_the_Bulge_order_of_battle | see sidecar bulge.short.sources.json |
+| B02 | Wikipedia, "Battle of the Bulge" (timeline: 16 Dec barrage 05:30; 17 Dec Büllingen fuel and Malmedy; 18 Dec Stavelot; 19 Dec Stoumont, Meuse bridges ordered held, 101st at Bastogne; 20 Dec Bastogne cut off, Montgomery commands First/Ninth Armies; 21 Dec St Vith evacuated; 22 Dec ultimatum; 23 Dec weather clears; 24 Dec Foy-Notre-Dame; 26 Dec 16:50 relief; 1 Jan Bodenplatte; 3 Jan counter-offensive; 16 Jan Houffalize; 22 Jan 6th Pz Army cedes sector; 23 Jan St Vith recaptured; 25 Jan end; strengths). | https://en.wikipedia.org/wiki/Battle_of_the_Bulge | see sidecar bulge.short.sources.json |
+| B03 | US Army (C. B. MacDonald), "The Ardennes: Battle of the Bulge", Ch. V "The Sixth Panzer Army Attack" (HyperWar): 99th and 2nd Infantry Divisions, 14th Cavalry Group, 38th Cavalry Squadron, 1st Division 26th Infantry, German I SS Panzer Corps / LXVII Corps divisions, Kampfgruppe Peiper route 16-17 Dec. | https://ibiblio.org/hyperwar/USA/USA-E-Ardennes/USA-E-Ardennes-5.html | see sidecar bulge.short.sources.json |
+| B04 | US Army (MacDonald), "The Ardennes", Ch. XII "The First Attacks at St. Vith" (HyperWar): 106th Infantry Division, CCB 9th Armored, 7th Armored Division arrival 17 Dec, 14th Cavalry Group, 112th Infantry, German LXVI Corps, Fuehrer Begleit Brigade, 116th Panzer, 9th SS Panzer (19 Dec), 82nd and 101st Airborne approach. | https://ibiblio.org/hyperwar/USA/USA-E-Ardennes/USA-E-Ardennes-12.html | see sidecar bulge.short.sources.json |
+| B05 | US Army (MacDonald), "The Ardennes", Ch. XIX "The Battle of Bastogne" (HyperWar): 101st Airborne (arrived 19 Dec), CCB 10th Armored, CCR 9th Armored destroyed 18-19 Dec, 28th Division remnants, Panzer Lehr, 26th VGD, 2nd Panzer, 15th Panzergrenadier (Christmas Day), 5th Parachute, airdrops 23 Dec, relief 26 Dec. | https://ibiblio.org/hyperwar/USA/USA-E-Ardennes/USA-E-Ardennes-19.html | see sidecar bulge.short.sources.json |
+| B06 | US Army (MacDonald), "The Ardennes", Ch. III "Troops and Terrain" (HyperWar): German planning debate; start delayed (27 Nov to 16 Dec) by fuel and supply shortages; 4SS panzer divisions and 2nd Panzer held free for the offensive. | https://ibiblio.org/hyperwar/USA/USA-E-Ardennes/USA-E-Ardennes-3.html | see sidecar bulge.short.sources.json |
+| B07 | Wikipedia, "Siege of Bastogne" (20-26 Dec; 101st Airborne, CCB 10th Armored, Team Desobry at Noville, 705th TD Bn; "NUTS" 22 Dec; 4th Armored relief 26 Dec). | https://en.wikipedia.org/wiki/Siege_of_Bastogne | see sidecar bulge.short.sources.json |
+| B08 | Wikipedia, "Battle of St. Vith" (106th Division new and poorly equipped; ~7,000 surrendered on Schnee Eifel 19 Dec; Clarke withdrew 21 Dec on Montgomery's orders). | https://en.wikipedia.org/wiki/Battle_of_St._Vith | see sidecar bulge.short.sources.json |
+| B09 | Secondary accounts of Peiper at Büllingen (warfarehistorynetwork.com "Adolf Hitler Sends Joachim Peiper to the Bulge"; liberationroute.com "Battle of Büllingen"): fuel dump captured 17 Dec; figures conflict (about 50,000 gallons vs 200,000 litres); larger depot figures near Stavelot/La Gleize (2-3 million gallons) conflict and one account says the Stavelot supplies were destroyed. Uncertain. | https://www.liberationroute.com/pois/1869/battle-of-bullingen | see sidecar bulge.short.sources.json |
+| B10 | Secondary accounts of the weather (ww2gp.org Ardennes pages; US Air Force Mildenhall "A look at air power in the Battle of the Bulge"; DTIC ADA121480 meteorology report): thick overcast, fog and snow 16-22 Dec grounded Allied aircraft; high pressure and clear, much colder weather from 23 Dec; air drops to Bastogne from 23 Dec. No numeric temperatures retrieved. | https://www.ww2gp.org/ardennes | see sidecar bulge.short.sources.json |
+| B11 | US Army (MacDonald), "The Ardennes", chapter text on the Meuse screen (as quoted in search snippets of sonsoflibertymuseum.org Ch. 22): XXX Corps (Horrocks) ordered to hold the Meuse as a stop-line; 29th Armoured Brigade refitting in western Belgium ordered to the Namur-Dinant sector; British armoured cars screened Liège-Namur. Only snippet-level retrieval; division list and dates not confirmed. | https://www.sonsoflibertymuseum.org/wwii-ardennes-battle-of-the-bulge-ch22.html | see sidecar bulge.short.sources.json |
+| B13 | Wikipedia unit articles: 26th Infantry Division (United States) (moved north to Luxembourg 19-21 Dec 1944); 6th Armored Division (United States) (ordered north of Metz 23 Dec 1944); 87th Infantry Division (United States) (SHAEF reserve 24-28 Dec, committed in Belgium 29 Dec 1944). Arrival areas are not given. | https://en.wikipedia.org/wiki/87th_Infantry_Division_(United_States) | see sidecar bulge.short.sources.json |
+| B12 | Wikipedia, "Operation Bodenplatte" (1 Jan 1945 targets and Allied units based there: Sint-Truiden A-92 with the 48th and 404th Fighter Groups; Asch Y-29 with the 352nd and 366th Fighter Groups). WEAK for 16 Dec: it documents basing on 1 Jan 1945 only. No Luftwaffe airfield coordinates or Allied strengths given; Luftwaffe JG units omitted. | https://en.wikipedia.org/wiki/Operation_Bodenplatte | see sidecar bulge.short.sources.json |
+
+## North Africa research register (RESEARCH ONLY - no scenario references these yet; see docs/NORTH_AFRICA_RESEARCH.md)
+
+| ID | Citation | URL | Facts that depend on it |
+|---|---|---|---|
+| N01 | Wikipedia, "Operation Crusader order of battle" (ground forces only; no air section; some commander gaps and dead links flagged) | https://en.wikipedia.org/wiki/Operation_Crusader_order_of_battle | Eighth Army and Panzergruppe Afrika corps/divisions/brigades |
+| N02 | Wikipedia, "Operation Crusader" (timeline 18 Nov-Dec 1941, strengths, supply, weather; retrieved text ended around late Dec 1941) | https://en.wikipedia.org/wiki/Operation_Crusader | Events, strengths, fuel shortage, convoys |
+| N03 | Wikipedia, "Battle of Gazala" (26 May-21 Jun 1942 corps/division OB, strengths, supply; Tobruk fall date not stated; WEAK for dates) | https://en.wikipedia.org/wiki/Battle_of_Gazala | Alternative scenario candidate |
+| N04 | Wikipedia, "Desert Air Force" (AHQ Western Desert wing/squadron table dated 18 Nov 1941-19 May 1942; no Axis air; no Crusader-day airfields; WEAK) | https://en.wikipedia.org/wiki/Desert_Air_Force | RAF wing structure only |
+| N05 | Wikipedia, "Siege of Tobruk" (port capacity, garrison changes, Via Balbia distances, Tripoli/Benghazi throughput, fuel use, Tobruk coordinates; truncated before end of Crusader) | https://en.wikipedia.org/wiki/Siege_of_Tobruk | Supply and port facts, Tobruk perimeter |
+
+## Eastern Front research register (RESEARCH ONLY - see docs/EASTERN_FRONT_RESEARCH.md)
+
+| ID | Citation | URL | Facts that depend on it |
+|---|---|---|---|
+| E01 | Wikipedia, "Operation Uranus" (D-Day 19 Nov 1942 timeline to 24 Nov, strengths, encirclement; little on December; some internal date conflicts flagged) | https://en.wikipedia.org/wiki/Operation_Uranus | Uranus timeline, army-level OOB, strengths |
+| E02 | Wikipedia, "Battle of Stalingrad" (timeline Jul 1942-2 Feb 1943; infobox strengths ambiguous; text truncated) | https://en.wikipedia.org/wiki/Battle_of_Stalingrad | Army-level OOB, dates |
+| E03 | Wikipedia, "Operation Winter Storm" (12-23 Dec 1942; Little Saturn 16 Dec; airlift requirement 680 t/day, under 20% delivered; Tatsinskaya raid undated) | https://en.wikipedia.org/wiki/Operation_Winter_Storm | Relief attempt, airlift |
+| E04 | Wikipedia, "Operation Barbarossa" (infobox army-level OOB, phase dates; strengths conflict; text truncated) | https://en.wikipedia.org/wiki/Operation_Barbarossa | Barbarossa OOB, phase dates |
+
+## Stalingrad Short (Operation Uranus) sources (E01-E03 above; scenario-specific below)
+
+| ID | Citation | URL | Facts that depend on it |
+|---|---|---|---|
+| E05 | Wikipedia, "Operation Uranus Soviet order of battle" (Soviet units as of 19 Nov 1942, front/army/corps/division/brigade; cites Glantz 2014; page flags a "two field armies" mismatch, unlinked entries and an empty Footnotes section) | https://en.wikipedia.org/wiki/Operation_Uranus_Soviet_order_of_battle | Soviet order of battle |
+| E06 | Wikipedia, "Axis order of battle at the Battle of Stalingrad" (6th Army, Romanian Third/Fourth Armies, 4th Panzer Army corps; spans Sep 1942-Feb 1943, no November snapshot; Italian 8th Army and Fliegerkorps VIII not covered; WEAK for presence on 19 Nov) | https://en.wikipedia.org/wiki/Axis_order_of_battle_at_the_Battle_of_Stalingrad | German/Romanian order of battle |
+| E07 | Wikipedia place articles, coordinates via the Wikipedia API: Volgograd, Kalach-na-Donu, Kletskaya, Surovikino, Oblivskaya, Morozovsk, Kotelnikovo, Bokovskaya, Mamayev Kurgan, Volgograd International Airport (at Gumrak) | https://en.wikipedia.org/wiki/Volgograd | Location coordinates |
+| E10 | "+r10+" | https://en.wikipedia.org/wiki/Pitomnik_Airfield | see sidecar stalingrad.short.sources.json |
+| E09 | "+row+" | https://en.wikipedia.org/wiki/Krasnoslobodsk,_Volgograd_Oblast | see sidecar stalingrad.short.sources.json |
+| E08 | OpenStreetMap Nominatim geocoder (c) OpenStreetMap contributors, ODbL: Serafimovich, Perelazovsky, Verkhnekumsky, Tatsinskaya, Abganerovo, Marinovka, Kotluban, Vertyachy; Beketovka from an OSM aerodrome object (approximate) | https://nominatim.openstreetmap.org/ | Location coordinates |
+

@@ -10,14 +10,15 @@ const here = path.dirname(fileURLToPath(import.meta.url));
 const R = REGIONS[process.argv[2] ?? 'northafrica'];
 const dir = path.join(here, 'cache', 'wc');
 fs.mkdirSync(dir, { recursive: true });
-const LEVEL = 3, N = 4500;
+const LEVEL = R.wcLevel ?? 3, N = 36000 >> LEVEL; // level 3: 4500 px per 3 deg (about 74 m); level 5: 1125 px (about 296 m, for continental-scale regions)
+const SUF = LEVEL === 3 ? '' : `_L${LEVEL}`;
 const base = 'https://esa-worldcover.s3.eu-central-1.amazonaws.com/v200/2021/map/';
 const name = (lat, lon) => `N${String(lat).padStart(2, '0')}E${String(lon).padStart(3, '0')}`;
 const rng = async (url, a, b) => { for (let t = 0; t < 4; t++) { try { const r = await fetch(url, { headers: { Range: `bytes=${a}-${b}`, 'User-Agent': 'mapdata-script/1.0' } }); if (r.status === 404) return null; if (r.ok || r.status === 206) return Buffer.from(await r.arrayBuffer()); } catch { /* retry */ } await new Promise((s) => setTimeout(s, 1500 * (t + 1))); } throw new Error('fetch failed ' + url); };
 const B = R.bbox;
 for (let lat = Math.floor(B.south / 3) * 3; lat < B.north; lat += 3) {
   for (let lon = Math.floor(B.west / 3) * 3; lon < B.east; lon += 3) {
-    const id = name(lat, lon), out = path.join(dir, id + '.raw');
+    const id = name(lat, lon), out = path.join(dir, id + SUF + '.raw');
     if (fs.existsSync(out)) continue;
     const url = `${base}ESA_WorldCover_10m_2021_v200_${id}_Map.tif`;
     const head = await rng(url, 0, 262143);

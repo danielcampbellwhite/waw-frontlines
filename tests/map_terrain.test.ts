@@ -90,3 +90,16 @@ describe('terrain_normandy.json', () => {
     }
   });
 });
+
+describe('terrain_barbarossa.json', () => {
+  const g = validateTerrainGrid(JSON.parse(fs.readFileSync(path.join(dir, 'terrain_barbarossa.json'), 'utf8')) as TerrainGrid);
+  it('real geography sanity checks', () => {
+    expect(g.bbox).toEqual({ west: 18, south: 46, east: 42, north: 60.5 });
+    expect(g.cells.length).toBe(g.cols * g.rows);
+    for (const p of [[30.3, 59.93], [37.62, 55.75], [30.52, 50.45], [27.56, 53.9], [21.0, 52.23]] as [number, number][]) expect(terrainAt(g, p)).toBe(Terrain.Urban); // Leningrad, Moscow, Kyiv, Minsk, Warsaw
+    expect(terrainAt(g, [19, 56])).toBe(Terrain.Sea);               // Baltic
+    expect(terrainAt(g, [31.5, 60.4])).toBe(Terrain.Lake);          // Lake Ladoga
+    let marsh = 0; for (let lat = 51; lat <= 53; lat += 0.1) for (let lon = 24; lon <= 32; lon += 0.1) if (terrainAt(g, [lon, lat]) === Terrain.Marsh) marsh++;
+    expect(marsh).toBeGreaterThan(100);                              // Pripet/Polesie marsh belt present
+  });
+});

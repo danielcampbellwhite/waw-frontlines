@@ -76,6 +76,25 @@
   }
  },
  {
+  "id": "barbarossa",
+  "title": "Barbarossa (Eastern Front 1941)",
+  "bbox": {
+   "west": 18,
+   "south": 46,
+   "east": 42,
+   "north": 60.5
+  },
+  "cellDeg": 0.05,
+  "files": {
+   "terrain": "terrain_barbarossa.json",
+   "infra": "infra_barbarossa.json",
+   "cities": "cities_barbarossa.json",
+   "boundaries": "boundaries_barbarossa.json",
+   "land": "basemap_land_barbarossa.json",
+   "lakes": "basemap_lakes_barbarossa.json"
+  }
+ },
+ {
   "id": "normandy",
   "title": "Normandy (Operation Overlord)",
   "bbox": {

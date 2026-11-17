@@ -76,6 +76,27 @@ export const REGIONS = {
     forestFrac: 0.2,         // shelterbelts and river-valley woods are small
     files: { terrain: 'terrain_stalingrad.json', infra: 'infra_stalingrad.json', cities: 'cities_stalingrad.json', boundaries: 'boundaries_stalingrad.json', land: 'basemap_land_stalingrad.json', lakes: 'basemap_lakes_stalingrad.json' },
   },
+  barbarossa: {
+    id: 'barbarossa',
+    title: 'Barbarossa (Eastern Front 1941)',
+    // Baltic/Poland/Belarus/Ukraine north of 46N, Smolensk-Moscow axis, Leningrad and the Ladoga approaches (north to 60.5N)
+    bbox: { west: 18, south: 46, east: 42, north: 60.5 },
+    cellDeg: 0.05,           // 480 x 290 cells
+    demZoom: 8,
+    rasterRes: 0.01,
+    simplify: 0.006,
+    hillMean: 350,           // Valdai, Smolensk-Moscow uplands and the Carpathian foothills are the real hills
+    hillReliefPerKm: 25,
+    urbanPlacePop: 100000,
+    cityMinPop: 50000,
+    roadTypes: ['Major Highway'],
+    landcover: 'worldcover', // CORINE does not cover Belarus, Ukraine or Russia; one source for the whole region
+    wcLevel: 5,              // 296 m overview (continental scale)
+    forestFrac: 0.5,
+    // Pripet/Polesie marshes: PROXY (WorldCover maps few wetlands there): flat (<= 12 m in-cell relief), <= 180 m cells within 5 cells (~28 km) of the Natural Earth Pripyat line
+    marshAlongRivers: { names: ['Pripyat'], radiusCells: 5, maxElevM: 180, maxReliefM: 12 },
+    files: { terrain: 'terrain_barbarossa.json', infra: 'infra_barbarossa.json', cities: 'cities_barbarossa.json', boundaries: 'boundaries_barbarossa.json', land: 'basemap_land_barbarossa.json', lakes: 'basemap_lakes_barbarossa.json' },
+  },
   normandy: {
     id: 'normandy',
     title: 'Normandy (Operation Overlord)',

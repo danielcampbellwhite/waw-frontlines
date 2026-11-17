@@ -101,9 +101,10 @@ function buildRegion(R) {
   let clcFiles = 0;
   if (R.landcover === 'worldcover') {
     // ESA WorldCover 2021 (74 m overview rasters from fetch-wc.mjs): 10 tree, 20 shrub, 30 grass, 40 crop, 50 built, 60 bare, 80 water, 90 wetland
-    const WN = 4500, WD = 3 / WN;
+    const WLEV = R.wcLevel ?? 3, WN = 36000 >> WLEV, WD = 3 / WN;
+    const wcName = WLEV === 3 ? /^N(\d+)E(\d+)\.raw$/ : new RegExp(`^N(\\d+)E(\\d+)_L${WLEV}\\.raw$`);
     for (const f of fs.readdirSync(path.join(cache, 'wc'))) {
-      const m = /^N(\d+)E(\d+)\.raw$/.exec(f); if (!m) continue;
+      const m = wcName.exec(f); if (!m) continue;
       const s0 = +m[1], w0 = +m[2], buf = fs.readFileSync(path.join(cache, 'wc', f)); if (buf.length < WN * WN) continue;
       if (w0 + 3 <= BBOX.west || w0 >= BBOX.east || s0 + 3 <= BBOX.south || s0 >= BBOX.north) continue;
       clcFiles++;
@@ -259,6 +260,25 @@ function buildRegion(R) {
       }
     }
     console.log('  OSM river ways:', n);
+  }
+
+  // ── marsh belt along named rivers (Pripyat / Polesie wetlands; WorldCover under-maps them): flat low cells within radiusCells of the river line become Marsh ──
+  if (R.marshAlongRivers) {
+    const { names, radiusCells, maxElevM, maxReliefM } = R.marshAlongRivers; const wet = new Uint8Array(N);
+    for (const f of ne('rivers_lake_centerlines').features) {
+      if (!names.includes(f.properties.name)) continue;
+      const g = f.geometry, lines = g.type === 'LineString' ? [g.coordinates] : g.type === 'MultiLineString' ? g.coordinates : [];
+      for (const l of lines) for (let k = 0; k + 1 < l.length; k++) {
+        const [x0, y0] = l[k], [x1, y1] = l[k + 1], steps = Math.max(1, Math.ceil(Math.hypot(x1 - x0, y1 - y0) / (CELL_DEG / 2)));
+        for (let s = 0; s <= steps; s++) {
+          const [c, r] = cellAt(x0 + ((x1 - x0) * s) / steps, y0 + ((y1 - y0) * s) / steps);
+          for (let dy = -radiusCells; dy <= radiusCells; dy++) for (let dx = -radiusCells; dx <= radiusCells; dx++) { const cc = c + dx, rr = r + dy; if (cc >= 0 && rr >= 0 && cc < cols && rr < rows) wet[rr * cols + cc] = 1; }
+        }
+      }
+    }
+    let nm = 0;
+    for (let i = 0; i < N; i++) if (wet[i] && (cells[i] === T.Plains || cells[i] === T.Forest) && elev[i] <= maxElevM && relief[i] <= maxReliefM) { cells[i] = T.Marsh; nm++; }
+    console.log('  marsh-belt cells added along', names.join('/') + ':', nm);
   }
 
   // ── wet river flats (e.g. Carentan / Douve / Taute marshes): low, flat, non-coastal cells on or next to a river become Marsh ──

@@ -12,6 +12,7 @@ const id = process.argv[2] ?? 'ardennes';
 const kinds = process.argv.slice(3).length ? process.argv.slice(3) : ['rivers'];
 const R = REGIONS[id];
 const NAMES = {
+  barbarossa: ['Narew','Нарев','Berezina','Березина','Бярэзіна','Bug','Західний Буг','Zachodni Bug','Буг'], // rivers Natural Earth lacks (Narew, Berezina) plus Bug in local spellings
   normandy: ['Orne', 'Vire', 'Douve', 'Douves', 'Gorget', 'Taute', 'Dives', 'Seine', 'Touques', 'Aure', 'Seulles', 'Odon', 'Merderet', 'Taute', 'Sée', 'Sélune', 'Risle', 'Divette', 'Dromme', 'Lézarde', 'Sienne', 'Soulles', 'Ouve', 'Laize', 'Noireau', 'Muance', 'Mue', 'Thar', 'Couesnon', 'Ay', 'Rouvre', 'Orne Saosnoise'],
   stalingrad: ['Чир', 'Мышкова', 'Аксай Есауловский', 'Аксай', 'Карповка', 'Ахтуба', 'Медведица', 'Иловля', 'Сал', 'Дон', 'Волга', 'Донская Царица', 'Царица', 'Бузулук', 'Хопёр', 'Цимла', 'Червлёная'],
   ardennes: ['Ourthe', 'Ourthe Orientale', 'Ourthe Occidentale', 'Salm', 'Amblève', 'Amel', 'Our', 'Sûre', 'Sauer', 'Semois', 'Lesse', 'Vesdre', 'Rur', 'Roer', 'Wiltz', 'Clerve', 'Clerf', 'Alzette', 'Kyll', 'Prüm', 'Urft', 'Inde', 'Wurm', 'Warche', 'Lienne', 'Moselle', 'Mosel', 'Meuse', 'Maas', 'Sambre', 'Rhein', 'Ahr', 'Erft'],

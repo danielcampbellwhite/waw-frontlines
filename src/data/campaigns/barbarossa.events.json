@@ -1,0 +1,379 @@
+{
+ "campaignId": "barbarossa",
+ "note": "Historical event template data. Sources resolve against scenario sources[].",
+ "events": [
+  {
+   "id": "bb.ev.invasion",
+   "date": "1941-06-22T00:00:00Z",
+   "title": "The invasion begins",
+   "body": "On Sunday 22 June 1941 more than 3.8 million Axis troops attack along a 2,900 km front after a massive ground and air assault; Soviet forces are largely caught unprepared (R01). Exact hour of the first attacks is not retrieved.",
+   "pos": [
+    23.3,
+    52.4
+   ],
+   "src": [
+    "R01"
+   ],
+   "effectHints": [],
+   "kind": "historical",
+   "minutesFromStd": 0
+  },
+  {
+   "id": "bb.ev.airfields",
+   "date": "1941-06-22T01:00:00Z",
+   "title": "The Western Front air force is destroyed on the ground",
+   "body": "In the opening hours the Luftwaffe destroys the Western Front air force on the ground and, with Abwehr-supported fifth columns, paralyses its communications; the 4th Army headquarters is cut off (R01, R04).",
+   "pos": [
+    23.5,
+    52.8
+   ],
+   "src": [
+    "R01",
+    "R04"
+   ],
+   "effectHints": [],
+   "side": "axis",
+   "kind": "historical",
+   "minutesFromStd": 60
+  },
+  {
+   "id": "bb.ev.brest",
+   "date": "1941-06-22T04:00:00Z",
+   "title": "Brest Fortress",
+   "body": "The 45th Infantry Division attacks the fortress after a 29-minute bombardment; about 9,000 defenders hold out; by 24 June 4,000-5,000 Soviet soldiers are captured and fighting continues to about 30 June (R10).",
+   "pos": [
+    23.66,
+    52.13
+   ],
+   "src": [
+    "R10"
+   ],
+   "effectHints": [],
+   "kind": "historical",
+   "minutesFromStd": 240
+  },
+  {
+   "id": "bb.ev.brody",
+   "date": "1941-06-23T00:00:00Z",
+   "title": "Tank battle at Brody-Dubno-Lutsk",
+   "body": "From 23 to 30 June the 1st Panzer Group fights five Soviet mechanised corps in the Dubno-Lutsk-Brody triangle (R11).",
+   "pos": [
+    25.2,
+    50.3
+   ],
+   "src": [
+    "R11"
+   ],
+   "effectHints": [],
+   "kind": "historical",
+   "minutesFromStd": 1440
+  },
+  {
+   "id": "bb.ev.raseiniai",
+   "date": "1941-06-23T12:00:00Z",
+   "title": "Battle of Raseiniai",
+   "body": "The 4th Panzer Group fights the Soviet 3rd and 12th Mechanised Corps near Raseiniai from 23 to 27 June, destroying most of the Northwestern Front armour (R16).",
+   "pos": [
+    23.12,
+    55.37
+   ],
+   "src": [
+    "R16"
+   ],
+   "effectHints": [],
+   "kind": "historical",
+   "minutesFromStd": 2160
+  },
+  {
+   "id": "bb.ev.grodno",
+   "date": "1941-06-24T00:00:00Z",
+   "title": "Counterstrike toward Grodno",
+   "body": "On 24-25 June the 6th and 11th Mechanised Corps and the 6th Cavalry Corps counter-attack toward Grodno on Pavlov order and fail (R01).",
+   "pos": [
+    23.83,
+    53.67
+   ],
+   "src": [
+    "R01"
+   ],
+   "effectHints": [],
+   "side": "allies",
+   "kind": "historical",
+   "minutesFromStd": 2880
+  },
+  {
+   "id": "bb.ev.minsk_link",
+   "date": "1941-06-27T00:00:00Z",
+   "title": "Panzer groups meet east of Minsk",
+   "body": "The 2nd and 3rd Panzer Groups meet near Minsk on 27 June and take the city the next day, closing two pockets around Bialystok and west of Minsk (R04).",
+   "pos": [
+    27.56,
+    53.9
+   ],
+   "src": [
+    "R04"
+   ],
+   "effectHints": [],
+   "side": "axis",
+   "kind": "historical",
+   "minutesFromStd": 7200
+  },
+  {
+   "id": "bb.ev.minsk",
+   "date": "1941-06-28T00:00:00Z",
+   "title": "Minsk falls",
+   "body": "Minsk is captured on 28 June (R04).",
+   "pos": [
+    27.56,
+    53.9
+   ],
+   "src": [
+    "R04"
+   ],
+   "effectHints": [],
+   "side": "axis",
+   "kind": "historical",
+   "minutesFromStd": 8640
+  },
+  {
+   "id": "bb.ev.luga",
+   "date": "1941-06-29T00:00:00Z",
+   "title": "Luga defence line begun",
+   "body": "Construction of the Luga defence fortifications begins on 29 June together with the evacuation of children and women (R09).",
+   "pos": [
+    29.85,
+    58.74
+   ],
+   "src": [
+    "R09"
+   ],
+   "effectHints": [],
+   "side": "allies",
+   "kind": "historical",
+   "minutesFromStd": 10080
+  },
+  {
+   "id": "bb.ev.pavlov",
+   "date": "1941-06-30T00:00:00Z",
+   "title": "Pavlov relieved",
+   "body": "Stalin relieves Pavlov on 30 June; he is tried and executed on 22 July; the Western Front is destroyed in about 18 days (R01, R04).",
+   "src": [
+    "R01",
+    "R04"
+   ],
+   "effectHints": [],
+   "side": "allies",
+   "kind": "historical",
+   "minutesFromStd": 11520
+  },
+  {
+   "id": "bb.ev.rain",
+   "date": "1941-07-02T00:00:00Z",
+   "title": "Early July rainstorms slow the panzers",
+   "body": "On 2 July and through the next six days a rainstorm typical of Belarusian summers slows Army Group Centre panzers while Soviet defences stiffen (R01). Army Group North attacks the Stalin Line on 2 July with the 4th Panzer Group, and Army Group South is joined by the 11th Army and Romanian forces (R01).",
+   "pos": [
+    28.5,
+    54
+   ],
+   "src": [
+    "R01"
+   ],
+   "effectHints": [],
+   "effects": [
+    {
+     "op": "weather",
+     "kind": "rain",
+     "intensity": 0.8,
+     "hours": 144
+    }
+   ],
+   "effectsNote": "Restates R01: a rainstorm from 2 July for six days (hours 144) slows the Army Group Centre panzers.",
+   "kind": "historical",
+   "minutesFromStd": 14400
+  },
+  {
+   "id": "bb.ev.lepiel",
+   "date": "1941-07-06T00:00:00Z",
+   "title": "Soviet mechanised counter-attack near Lepiel",
+   "body": "On 6 July the Soviet 5th and 7th Mechanised Corps (20th Army) counter-attack the German 7th Panzer Division and are virtually wiped out (R05); R01 gives the force as the V and VII Mechanised Corps in a five-day battle with 832 of about 2,000 tanks lost, a discrepancy kept open.",
+   "pos": [
+    28.7,
+    54.85
+   ],
+   "src": [
+    "R01",
+    "R05"
+   ],
+   "effectHints": [],
+   "side": "allies",
+   "kind": "historical",
+   "minutesFromStd": 20160
+  },
+  {
+   "id": "bb.ev.pskov8",
+   "date": "1941-07-08T00:00:00Z",
+   "title": "Pskov reached (8 July per R01)",
+   "body": "R01 gives 8 July for the capture of Pskov by the 4th Panzer Group; R09 gives 10 July for the capture of Ostrov and Pskov. Both dates are kept; this event uses the earlier one.",
+   "pos": [
+    28.33,
+    57.82
+   ],
+   "src": [
+    "R01",
+    "R09"
+   ],
+   "effectHints": [],
+   "side": "axis",
+   "kind": "historical",
+   "minutesFromStd": 23040
+  },
+  {
+   "id": "bb.ev.smolensk",
+   "date": "1941-07-10T00:00:00Z",
+   "title": "Smolensk battle begins",
+   "body": "On 10 July the 2nd Panzer Group crosses the Dnieper; by 13 July it passes Mogilev and the 29th Motorised Division is within 18 km of Smolensk (R05).",
+   "pos": [
+    32.04,
+    54.78
+   ],
+   "src": [
+    "R05"
+   ],
+   "effectHints": [],
+   "kind": "historical",
+   "minutesFromStd": 25920
+  },
+  {
+   "id": "bb.ev.uman",
+   "date": "1941-07-15T00:00:00Z",
+   "title": "Battle of Uman begins",
+   "body": "From 15 July Army Group South moves to encircle the Soviet 6th and 12th Armies near Uman (R06).",
+   "pos": [
+    30.22,
+    48.75
+   ],
+   "src": [
+    "R06"
+   ],
+   "effectHints": [],
+   "kind": "historical",
+   "minutesFromStd": 33120
+  },
+  {
+   "id": "bb.ev.logistics",
+   "date": "1941-07-20T00:00:00Z",
+   "title": "German logistics strain",
+   "body": "Four weeks into the campaign Bock concludes that difficulties are due to logistics; operations are slowed for resupply; by 2 August all three army groups have 179,500 casualties and 47,000 replacements (R01). The date within July is approximate.",
+   "src": [
+    "R01"
+   ],
+   "effectHints": [],
+   "side": "axis",
+   "kind": "historical",
+   "minutesFromStd": 40320
+  },
+  {
+   "id": "bb.ev.smolensk_pocket",
+   "date": "1941-08-05T00:00:00Z",
+   "title": "Smolensk encirclement ends",
+   "body": "The encirclement battle near Smolensk ends on 5 August; Bock reports 309,000 prisoners (R05).",
+   "pos": [
+    32.04,
+    54.78
+   ],
+   "src": [
+    "R05"
+   ],
+   "effectHints": [],
+   "kind": "historical",
+   "minutesFromStd": 63360
+  },
+  {
+   "id": "bb.ev.uman_pocket",
+   "date": "1941-08-08T00:00:00Z",
+   "title": "Uman pocket destroyed",
+   "body": "The Soviet 6th and 12th Armies are annihilated by 8 August (R06).",
+   "pos": [
+    30.22,
+    48.75
+   ],
+   "src": [
+    "R06"
+   ],
+   "effectHints": [],
+   "side": "axis",
+   "kind": "historical",
+   "minutesFromStd": 67680
+  },
+  {
+   "id": "bb.ev.novgorod",
+   "date": "1941-08-16T00:00:00Z",
+   "title": "Novgorod reached",
+   "body": "The 4th Panzer Group reaches Novgorod by 16 August and Leeb takes Kingisepp and Narva on 17 August (R09); by the end of August it is within 48 km of Leningrad (R01).",
+   "pos": [
+    31.27,
+    58.55
+   ],
+   "src": [
+    "R01",
+    "R09"
+   ],
+   "effectHints": [],
+   "side": "axis",
+   "kind": "historical",
+   "minutesFromStd": 79200
+  },
+  {
+   "id": "bb.ev.shlisselburg",
+   "date": "1941-09-07T00:00:00Z",
+   "title": "Leningrad cut off by land",
+   "body": "On 7 September the German 20th Motorised Division seizes Shlisselburg; the road to the city is severed on 8 September (R09).",
+   "pos": [
+    31.04,
+    59.95
+   ],
+   "src": [
+    "R09"
+   ],
+   "effectHints": [],
+   "side": "axis",
+   "kind": "historical",
+   "minutesFromStd": 110880
+  },
+  {
+   "id": "bb.ev.kiev_ring",
+   "date": "1941-09-16T00:00:00Z",
+   "title": "Kiev encirclement closed",
+   "body": "Half of Army Group Centre swings south behind Kiev while Army Group South moves north; the encirclement is achieved on 16 September and Kiev is captured on 19 September (R01); the battle ends 26 September with 452,700 trapped (R07).",
+   "pos": [
+    30.52,
+    50.45
+   ],
+   "src": [
+    "R01",
+    "R07"
+   ],
+   "effectHints": [],
+   "side": "axis",
+   "kind": "historical",
+   "minutesFromStd": 123840
+  },
+  {
+   "id": "bb.ev.typhoon",
+   "date": "1941-09-30T00:00:00Z",
+   "title": "Operation Typhoon begins",
+   "body": "Operation Typhoon, the German drive on Moscow, begins on 30 September (R01).",
+   "pos": [
+    34,
+    54.5
+   ],
+   "src": [
+    "R01"
+   ],
+   "effectHints": [],
+   "side": "axis",
+   "kind": "historical",
+   "minutesFromStd": 144000
+  }
+ ]
+}

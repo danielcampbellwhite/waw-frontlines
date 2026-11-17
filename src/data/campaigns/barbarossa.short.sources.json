@@ -1,0 +1,929 @@
+{
+ "scenarioId": "barbarossa.short",
+ "note": "Per-fact source references. All R-sources are Wikipedia (secondary).",
+ "units": {
+  "ger.agn.hq": {
+   "sources": [
+    "R02",
+    "R03",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "ger.agc.hq": {
+   "sources": [
+    "R02",
+    "R03",
+    "R04",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "ger.ags.hq": {
+   "sources": [
+    "R02",
+    "R03",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "ger.18a": {
+   "sources": [
+    "R03",
+    "R08",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "ger.4pg": {
+   "sources": [
+    "R03",
+    "R08",
+    "R16",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "ger.16a": {
+   "sources": [
+    "R03",
+    "R08",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "ger.3pg": {
+   "sources": [
+    "R03",
+    "R04",
+    "R12",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "ger.9a": {
+   "sources": [
+    "R03",
+    "R04",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "ger.4a": {
+   "sources": [
+    "R03",
+    "R04",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "ger.2pg": {
+   "sources": [
+    "R03",
+    "R04",
+    "R12",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "ger.45id": {
+   "sources": [
+    "R10",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "ger.6a": {
+   "sources": [
+    "R03",
+    "R06",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "ger.1pg": {
+   "sources": [
+    "R03",
+    "R06",
+    "R11",
+    "R12",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "ger.17a": {
+   "sources": [
+    "R03",
+    "R06",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "sov.nwf.hq": {
+   "sources": [
+    "R02",
+    "R08",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "sov.8a": {
+   "sources": [
+    "R08",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "sov.11a": {
+   "sources": [
+    "R08",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "sov.3mc": {
+   "sources": [
+    "R16",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "sov.12mc": {
+   "sources": [
+    "R16",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "sov.wf.hq": {
+   "sources": [
+    "R02",
+    "R04",
+    "R13",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "sov.3a": {
+   "sources": [
+    "R04",
+    "R13",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "sov.10a": {
+   "sources": [
+    "R04",
+    "R13",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "sov.4a": {
+   "sources": [
+    "R04",
+    "R13",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "sov.13a": {
+   "sources": [
+    "R04",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "sov.6mc": {
+   "sources": [
+    "R01",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "sov.11mc": {
+   "sources": [
+    "R01",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "sov.6cav": {
+   "sources": [
+    "R01",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "sov.brestgar": {
+   "sources": [
+    "R10",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "sov.swf.hq": {
+   "sources": [
+    "R02",
+    "R14",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "sov.5a": {
+   "sources": [
+    "R14",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "sov.6a": {
+   "sources": [
+    "R06",
+    "R14",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "sov.26a": {
+   "sources": [
+    "R14",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "sov.12a": {
+   "sources": [
+    "R06",
+    "R14",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "sov.22mc": {
+   "sources": [
+    "R01",
+    "R06",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "sov.15mc": {
+   "sources": [
+    "R01",
+    "R11",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "sov.nf": {
+   "sources": [
+    "R02",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  }
+ },
+ "locations": {
+  "brest": {
+   "sources": [
+    "R17",
+    "R10",
+    "G02"
+   ]
+  },
+  "minsk": {
+   "sources": [
+    "R17",
+    "R04",
+    "G02"
+   ]
+  },
+  "smolensk": {
+   "sources": [
+    "R17",
+    "R05",
+    "G02"
+   ]
+  },
+  "kiev": {
+   "sources": [
+    "R17",
+    "R07",
+    "G02"
+   ]
+  },
+  "riga": {
+   "sources": [
+    "R17",
+    "R08",
+    "G02"
+   ]
+  },
+  "vilnius": {
+   "sources": [
+    "R17",
+    "R01",
+    "G02"
+   ]
+  },
+  "kaunas": {
+   "sources": [
+    "R17",
+    "R08",
+    "G02"
+   ]
+  },
+  "grodno": {
+   "sources": [
+    "R17",
+    "R01",
+    "G02"
+   ]
+  },
+  "bialystok": {
+   "sources": [
+    "R17",
+    "R04",
+    "G02"
+   ]
+  },
+  "lvov": {
+   "sources": [
+    "R17",
+    "R11",
+    "G02"
+   ]
+  },
+  "rovno": {
+   "sources": [
+    "R17",
+    "R11",
+    "G02"
+   ]
+  },
+  "dubno": {
+   "sources": [
+    "R17",
+    "R11",
+    "G02"
+   ]
+  },
+  "lutsk": {
+   "sources": [
+    "R17",
+    "R11",
+    "G02"
+   ]
+  },
+  "kovel": {
+   "sources": [
+    "R17",
+    "R14",
+    "G02"
+   ]
+  },
+  "zhitomir": {
+   "sources": [
+    "R17",
+    "R07",
+    "G02"
+   ]
+  },
+  "berdichev": {
+   "sources": [
+    "R17",
+    "R06",
+    "G02"
+   ]
+  },
+  "uman": {
+   "sources": [
+    "R17",
+    "R06",
+    "G02"
+   ]
+  },
+  "belaya_tserkov": {
+   "sources": [
+    "R17",
+    "R06",
+    "G02"
+   ]
+  },
+  "vitebsk": {
+   "sources": [
+    "R17",
+    "R05",
+    "G02"
+   ]
+  },
+  "mogilev": {
+   "sources": [
+    "R17",
+    "R05",
+    "G02"
+   ]
+  },
+  "borisov": {
+   "sources": [
+    "R17",
+    "R01",
+    "G02"
+   ]
+  },
+  "bobruisk": {
+   "sources": [
+    "R17",
+    "R01",
+    "G02"
+   ]
+  },
+  "orsha": {
+   "sources": [
+    "R17",
+    "R05",
+    "G02"
+   ]
+  },
+  "gomel": {
+   "sources": [
+    "R17",
+    "R05",
+    "G02"
+   ]
+  },
+  "polotsk": {
+   "sources": [
+    "R17",
+    "R05",
+    "G02"
+   ]
+  },
+  "daugavpils": {
+   "sources": [
+    "R17",
+    "R03",
+    "G02"
+   ]
+  },
+  "siauliai": {
+   "sources": [
+    "R17",
+    "R08",
+    "G02"
+   ]
+  },
+  "raseiniai": {
+   "sources": [
+    "R17",
+    "R16",
+    "G02"
+   ]
+  },
+  "pskov": {
+   "sources": [
+    "R17",
+    "R09",
+    "G02"
+   ]
+  },
+  "novgorod": {
+   "sources": [
+    "R17",
+    "R09",
+    "G02"
+   ]
+  },
+  "luga": {
+   "sources": [
+    "R17",
+    "R09",
+    "G02"
+   ]
+  },
+  "narva": {
+   "sources": [
+    "R17",
+    "R09",
+    "G02"
+   ]
+  },
+  "kingisepp": {
+   "sources": [
+    "R17",
+    "R09",
+    "G02"
+   ]
+  },
+  "tallinn": {
+   "sources": [
+    "R17",
+    "R08",
+    "G02"
+   ]
+  },
+  "shlisselburg": {
+   "sources": [
+    "R17",
+    "R09",
+    "G02"
+   ]
+  },
+  "leningrad": {
+   "sources": [
+    "R17",
+    "R09",
+    "G02"
+   ]
+  },
+  "velikiye_luki": {
+   "sources": [
+    "R17",
+    "R05",
+    "G02"
+   ]
+  },
+  "chernigov": {
+   "sources": [
+    "R17",
+    "R07",
+    "G02"
+   ]
+  },
+  "moscow": {
+   "sources": [
+    "R17",
+    "R01",
+    "G02"
+   ]
+  },
+  "kharkov": {
+   "sources": [
+    "R17",
+    "R01",
+    "G02"
+   ]
+  },
+  "warsaw": {
+   "sources": [
+    "R17",
+    "G04",
+    "G02"
+   ]
+  },
+  "lublin": {
+   "sources": [
+    "R17",
+    "G04",
+    "G02"
+   ]
+  },
+  "zamosc": {
+   "sources": [
+    "R17",
+    "G04",
+    "G02"
+   ]
+  },
+  "koenigsberg": {
+   "sources": [
+    "R17",
+    "G04",
+    "G02"
+   ]
+  },
+  "tilsit": {
+   "sources": [
+    "R17",
+    "G04",
+    "G02"
+   ]
+  }
+ },
+ "reinforcements": {
+  "reinf.ger.11a": {
+   "sources": [
+    "R01",
+    "R03",
+    "G03"
+   ],
+   "approximate": true
+  },
+  "reinf.sov.22a": {
+   "sources": [
+    "R05",
+    "G03"
+   ],
+   "approximate": true
+  },
+  "reinf.sov.20a": {
+   "sources": [
+    "R05",
+    "G03"
+   ],
+   "approximate": true
+  },
+  "reinf.sov.5mc": {
+   "sources": [
+    "R01",
+    "R05",
+    "G03"
+   ],
+   "approximate": true
+  },
+  "reinf.sov.7mc": {
+   "sources": [
+    "R01",
+    "R05",
+    "G03"
+   ],
+   "approximate": true
+  },
+  "reinf.sov.21a": {
+   "sources": [
+    "R05",
+    "G03"
+   ],
+   "approximate": true
+  },
+  "reinf.sov.19a": {
+   "sources": [
+    "R05",
+    "G03"
+   ],
+   "approximate": true
+  },
+  "reinf.sov.16a": {
+   "sources": [
+    "R05",
+    "R14",
+    "G03"
+   ],
+   "approximate": true
+  }
+ },
+ "nations": {
+  "GER": {
+   "sources": [
+    "G01"
+   ],
+   "gameScale": true
+  },
+  "SOV": {
+   "sources": [
+    "G01"
+   ],
+   "gameScale": true
+  }
+ },
+ "objectives": {
+  "o.ger.brest": {
+   "sources": [
+    "R01",
+    "G01"
+   ]
+  },
+  "o.ger.minsk": {
+   "sources": [
+    "R01",
+    "G01"
+   ]
+  },
+  "o.ger.smolensk": {
+   "sources": [
+    "R01",
+    "G01"
+   ]
+  },
+  "o.ger.kiev": {
+   "sources": [
+    "R01",
+    "G01"
+   ]
+  },
+  "o.ger.riga": {
+   "sources": [
+    "R01",
+    "G01"
+   ]
+  },
+  "o.ger.pskov": {
+   "sources": [
+    "R01",
+    "G01"
+   ]
+  },
+  "o.ger.novgorod": {
+   "sources": [
+    "R01",
+    "G01"
+   ]
+  },
+  "o.ger.leningrad": {
+   "sources": [
+    "R01",
+    "G01"
+   ]
+  },
+  "o.ger.shlisselburg": {
+   "sources": [
+    "R01",
+    "G01"
+   ]
+  },
+  "o.ger.vitebsk": {
+   "sources": [
+    "R01",
+    "G01"
+   ]
+  },
+  "o.ger.mogilev": {
+   "sources": [
+    "R01",
+    "G01"
+   ]
+  },
+  "o.ger.zhitomir": {
+   "sources": [
+    "R01",
+    "G01"
+   ]
+  },
+  "o.ger.uman": {
+   "sources": [
+    "R01",
+    "G01"
+   ]
+  },
+  "o.sov.minsk": {
+   "sources": [
+    "R01",
+    "G01"
+   ]
+  },
+  "o.sov.smolensk": {
+   "sources": [
+    "R01",
+    "G01"
+   ]
+  },
+  "o.sov.kiev": {
+   "sources": [
+    "R01",
+    "G01"
+   ]
+  },
+  "o.sov.leningrad": {
+   "sources": [
+    "R01",
+    "G01"
+   ]
+  },
+  "o.sov.moscow": {
+   "sources": [
+    "R01",
+    "G01"
+   ]
+  },
+  "o.sov.brest": {
+   "sources": [
+    "R01",
+    "G01"
+   ]
+  },
+  "o.sov.riga": {
+   "sources": [
+    "R01",
+    "G01"
+   ]
+  },
+  "o.sov.pskov": {
+   "sources": [
+    "R01",
+    "G01"
+   ]
+  },
+  "o.sov.novgorod": {
+   "sources": [
+    "R01",
+    "G01"
+   ]
+  },
+  "o.sov.vitebsk": {
+   "sources": [
+    "R01",
+    "G01"
+   ]
+  },
+  "o.sov.uman": {
+   "sources": [
+    "R01",
+    "G01"
+   ]
+  }
+ },
+ "uncertain": [
+  {
+   "item": "Secondary sources only",
+   "note": "Every R-source is a Wikipedia article (secondary). Where the articles cite books they are: Glantz, Colossus Reborn (2005); Krivosheev, Soviet Casualties and Combat Losses in the Twentieth Century (1997); Bishop, The Military Atlas of World War II (2005) (cited by R08). Primary sources (war diaries, Boevoi sostav) are cited by the articles but were not consulted."
+  },
+  {
+   "item": "Order-of-battle depth",
+   "note": "Army and panzer-group level only; division tables did not extract. Strengths are game-scale (G01); sourced aggregates (153 divisions, 799 tanks in Panzer Group 1, Western Front 25+13+7 divisions, Brest garrison 9,000, 45th ID 17,000) anchor them. 799 tanks are entered as medium tanks without a light/medium split (not retrieved); other panzer-group and mechanised-corps tank counts are game-scale."
+  },
+  {
+   "item": "Omitted formations",
+   "note": "Romanian Third and Fourth Armies and Finnish forces (positions and dates not retrieved), the Southern Front, 27th Army (arrival date not given in R08), Soviet second-echelon armies beyond those in R05, Axis security divisions, corps within armies, Luftwaffe and VVS units, naval forces. The Northern Front entry (Leningrad) is a placeholder: R02 gives only the front and its commander."
+  },
+  {
+   "item": "All start and arrival positions",
+   "note": "Approximate sector anchors (G03); no source gives army coordinates. German start areas are inferred from the named border towns (Suwalki, Brest-Terespol, the Bug and San), Soviet start areas from the named frontier towns and fronts (R04, R08, R13, R14)."
+  },
+  {
+   "item": "Soviet reserve arrival dates",
+   "note": "R05 names the 20th, 21st, 22nd (Stavka reserve), 19th (forming at Vitebsk) and 16th (arriving at Smolensk) Armies in place by about 10 July but gives no dates. 20th, 21st, 22nd are set to 28 June 12:00 (so the 20th Army and its 5th and 7th Mechanised Corps are in place for the 6 July Lepiel battle), 19th to 5 July and 16th to 8 July: all approximate. The 5th and 7th Mechanised Corps are attached to the 20th Army arrival."
+  },
+  {
+   "item": "Lepiel battle discrepancy",
+   "note": "R05 says 5th and 7th Mechanised Corps with about 1,500 tanks; R01 says V and VII Mechanised Corps, 832 of 2,000 tanks lost in five days. The scenario enters tank counts as game-scale and keeps the discrepancy in the event text."
+  },
+  {
+   "item": "Pskov capture date",
+   "note": "R01 gives 8 July, R09 gives 10 July for Ostrov and Pskov. Both are recorded; the event uses 8 July and the objective text names both. Not silently resolved."
+  },
+  {
+   "item": "Surprise",
+   "note": "Frontier Soviet units start with readiness 50 and organisation 60 (game-scale, G01) as the abstraction of strategic surprise (R01); the engine has no surprise rule. The Western Front air force destroyed on the ground is not modelled as aircraft (no air units)."
+  },
+  {
+   "item": "Axis air superiority window",
+   "note": "airSupremacy for the Axis runs the first 7 days (R01: air supremacy by the end of the first week), radius 80 km and speed multiplier 0.7 are game-scale; it ends at day 7 because R01 says the Luftwaffe could not extend its dominance over the whole country."
+  },
+  {
+   "item": "Rail-gauge supply stretch",
+   "note": "Not in the retrieved text. Brest, Minsk, Smolensk, Vilnius, Kaunas, Riga, Lvov, Pskov and Kiev are Soviet-owned at start and listed as German capture-activated supply sources with rampHours 240 (game-scale, G06): they supply the Germans only after capture and ramp from 10% to full over 240 h. German home sources are Warsaw, Lublin, Zamosc, Koenigsberg and Tilsit. The engine has no gauge concept, so captured Soviet rail still counts as usable rail for the Axis (too generous; KNOWN_ISSUES)."
+  },
+  {
+   "item": "Soviet supply sources",
+   "note": "Soviet-owned cities listed as sources (Minsk, Lvov, Kiev, Riga, Vilnius, Kaunas, Leningrad, Smolensk, Moscow, Kharkov, Gomel, Vitebsk, Novgorod, Pskov, Rovno, Tallinn) lose their status when captured; capacities are game-scale defaults (G01)."
+  },
+  {
+   "item": "Terrain gaps",
+   "note": "The Narew and Berezina rivers are missing from the terrain (map-engineer fetch pending); the Pripyat marsh is a documented proxy; borders are modern. Do not rely on those rivers for defence modifiers."
+  },
+  {
+   "item": "initialControl",
+   "note": "A coarse German polygon (Poland, East Prussia and the Romanian frontier area, including allied territory, G04) over a Soviet default; the Soviet-held Bialystok salient is east of the polygon edge. No source gives exact lines."
+  },
+  {
+   "item": "Start time",
+   "note": "The scenario starts 22 June 00:00 UTC; the hour of the first attacks is not retrieved."
+  },
+  {
+   "item": "Objective values and tiers",
+   "note": "Game-scale (G01). Hold objectives credit only at the end date. Leningrad, Kiev and Moscow are strategic holds for the Soviets; Leningrad is a strategic German capture although it was never taken."
+  },
+  {
+   "item": "Weather",
+   "note": "Qualitative profile (game-scale). Sourced: the 2 July six-day rainstorm (R01); the autumn rasputitsa is after the scenario end except as a September rain bias."
+  }
+ ]
+}

@@ -194,3 +194,9 @@ All fields used by doctrines.ts exist in AiDoctrine; every location id in armour
 
 ## Logistics simplifications (military-engineer)
 - **L9 (game-scale simplification, Barbarossa)**: the supply network has no rail-gauge concept. Captured Soviet broad-gauge rail is discounted at the same x0.25 as friendly rail, so Axis supply reaches far inland more easily than the real gauge change allowed (Brest to Moscow is about 250 effective km). First Barbarossa pass: Axis-held rail hubs (Brest, Minsk, Smolensk) are listed supply sources with `rampHours` for the conversion lag (ramp runs from capture; 10% to 100%); the generous inter-hub rail stays. Revisit a per-line `setLineGaugeFactor(state, lineId, factor)` (friction on the non-owning side with a conversion rate) after Barbarossa is playable and measured. Interim crude lever if needed: events can set `lineDamage` on captured rail lines (cost x(1 + damage/50), 80+ cuts) and let repair play out.
+
+## Map data gaps, update (map-engineer, 2026-11-17)
+- Normandy OSM rail is fetched and cached (scripts/data/cache/osm_normandy_rail.json, 12 tiles, 4,429 ways). Normandy OSM roads for the new bbox are missing (Overpass 502/504/timeouts). The Normandy rebuild with OSM rail is deliberately held back because it would shift supply and balance; revisit after Barbarossa. Until then Normandy roads and rail stay Natural Earth.
+- Barbarossa region has no OSM data: roads and rail are Natural Earth only. Narew and Berezina rivers are missing unless the pending OSM query lands.
+- Pripet marsh is a proxy (flat low cells within about 28 km of the Pripyat line).
+- Borders are modern, not 1941.

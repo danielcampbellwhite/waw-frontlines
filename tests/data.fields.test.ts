@@ -131,3 +131,19 @@ describe('captureBlockKm', () => {
     }
   });
 });
+
+describe('capture-activated supply hubs', () => {
+  const sid = 'normandy.short';
+  const errs = (d: ReturnType<typeof structuredClone>) => validateScenario(d as never, getScenarioSidecar(sid)).join('|');
+  it('allows an enemy-owned location with rampHours as a source', () => {
+    const d = structuredClone(getScenarioDefinition(sid)!);
+    expect(d.locations.find((l) => l.id === 'cherbourg')!.rampHours).toBeDefined();
+    d.supplySources.USA = [...d.supplySources.USA, 'cherbourg'];
+    expect(errs(d)).toBe('');
+  });
+  it('rejects an enemy-owned location without rampHours', () => {
+    const d = structuredClone(getScenarioDefinition(sid)!);
+    d.supplySources.USA = [...d.supplySources.USA, 'caen'];
+    expect(errs(d)).toMatch(/not the same side/);
+  });
+});

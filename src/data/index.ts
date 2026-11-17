@@ -19,6 +19,9 @@ import stalingradEvents from './campaigns/stalingrad.events.json';
 import normandyShort from './campaigns/normandy.short.json';
 import normandyShortSrc from './campaigns/normandy.short.sources.json';
 import normandyEvents from './campaigns/normandy.events.json';
+import barbarossaShort from './campaigns/barbarossa.short.json';
+import barbarossaShortSrc from './campaigns/barbarossa.short.sources.json';
+import barbarossaEvents from './campaigns/barbarossa.events.json';
 
 export { validateScenario } from './validate.ts';
 export type { ScenarioSidecar } from './validate.ts';
@@ -62,6 +65,7 @@ const REGISTRY: { def: ScenarioDefinition; sidecar: ScenarioSidecar }[] = [
   { def: crusaderShort as unknown as ScenarioDefinition, sidecar: crusaderShortSrc as unknown as ScenarioSidecar },
   { def: stalingradShort as unknown as ScenarioDefinition, sidecar: stalingradShortSrc as unknown as ScenarioSidecar },
   { def: normandyShort as unknown as ScenarioDefinition, sidecar: normandyShortSrc as unknown as ScenarioSidecar },
+  { def: barbarossaShort as unknown as ScenarioDefinition, sidecar: barbarossaShortSrc as unknown as ScenarioSidecar },
 ];
 
 export function listScenarios(): ScenarioMeta[] {
@@ -100,6 +104,7 @@ function allHistoricalEvents(campaignId: string): HistoricalEventData[] {
   if (campaignId === 'crusader') return crusaderEvents.events as unknown as HistoricalEventData[];
   if (campaignId === 'stalingrad') return stalingradEvents.events as unknown as HistoricalEventData[];
   if (campaignId === 'normandy') return normandyEvents.events as unknown as HistoricalEventData[];
+  if (campaignId === 'barbarossa') return barbarossaEvents.events as unknown as HistoricalEventData[];
   return [];
 }
 

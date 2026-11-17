@@ -1,0 +1,3215 @@
+{
+ "schema": 1,
+ "id": "barbarossa.short",
+ "campaignId": "barbarossa",
+ "title": "Barbarossa: the first hundred days (22 Jun - 30 Sep 1941)",
+ "scale": "short",
+ "startDate": "1941-06-22T00:00:00Z",
+ "endDate": "1941-09-30T00:00:00Z",
+ "bbox": {
+  "west": 18,
+  "south": 46,
+  "east": 42,
+  "north": 60.5
+ },
+ "estimatedPlayMinutes": [
+  180,
+  360
+ ],
+ "mapSize": "large",
+ "complexity": 5,
+ "briefing": {
+  "historical": "On 22 June 1941 more than 3.8 million Axis troops invaded the Soviet Union along a 2,900 km front. Army Group North drove through the Baltic states toward Leningrad, Army Group Centre took Brest, Minsk and Smolensk, and Army Group South destroyed Soviet armies at Uman and Kiev. Typhoon, the drive on Moscow, began on 30 September (R01).",
+  "situation": "The Germans must destroy the frontier armies and take the key cities before the logistics, distance and weather wear the offensive down; the Soviets must trade space for time, hold the Dvina-Dnieper and Luga lines and keep Leningrad, Kiev and Moscow. Armies and panzer groups are the units; strengths are game-scale and every start position is approximate. Romanian and Finnish forces, the Southern Front, air and naval forces are not modelled (not retrieved)."
+ },
+ "playableNations": [
+  {
+   "nation": "GER",
+   "difficultyRating": 3,
+   "summary": "Encircle the frontier armies and take Minsk, Smolensk, Kiev and the approaches to Leningrad.",
+   "objectiveIds": [
+    "o.ger.brest",
+    "o.ger.minsk",
+    "o.ger.smolensk",
+    "o.ger.kiev",
+    "o.ger.riga",
+    "o.ger.pskov",
+    "o.ger.novgorod",
+    "o.ger.leningrad",
+    "o.ger.shlisselburg",
+    "o.ger.vitebsk",
+    "o.ger.mogilev",
+    "o.ger.zhitomir",
+    "o.ger.uman"
+   ]
+  },
+  {
+   "nation": "SOV",
+   "difficultyRating": 5,
+   "summary": "Survive the surprise, trade space for time and hold Leningrad, Kiev and Moscow.",
+   "objectiveIds": [
+    "o.sov.minsk",
+    "o.sov.smolensk",
+    "o.sov.kiev",
+    "o.sov.leningrad",
+    "o.sov.moscow",
+    "o.sov.brest",
+    "o.sov.riga",
+    "o.sov.pskov",
+    "o.sov.novgorod",
+    "o.sov.vitebsk",
+    "o.sov.uman"
+   ]
+  }
+ ],
+ "nations": [
+  {
+   "id": "GER",
+   "side": "axis",
+   "name": "Germany (with allies, G04)",
+   "playable": true,
+   "resources": {
+    "manpower": 44670,
+    "fuel": 1500,
+    "ammo": 1500,
+    "equipment": 1500,
+    "supplyPoints": 600
+   },
+   "income": {
+    "manpower": 38,
+    "fuel": 2,
+    "ammo": 3,
+    "equipment": 6,
+    "supplyPoints": 5
+   },
+   "reinforcements": []
+  },
+  {
+   "id": "SOV",
+   "side": "allies",
+   "name": "Soviet Union",
+   "playable": true,
+   "resources": {
+    "manpower": 72810,
+    "fuel": 1500,
+    "ammo": 1500,
+    "equipment": 2900,
+    "supplyPoints": 600
+   },
+   "income": {
+    "manpower": 61,
+    "fuel": 5,
+    "ammo": 6,
+    "equipment": 12,
+    "supplyPoints": 5
+   },
+   "reinforcements": []
+  }
+ ],
+ "locations": [
+  {
+   "id": "brest",
+   "name": "Brest and Brest Fortress",
+   "kind": "fortress",
+   "pos": [
+    23.6569,
+    52.1347
+   ],
+   "owner": "SOV",
+   "originalOwner": "SOV",
+   "value": 8,
+   "supplyCapacity": 30,
+   "rampHours": 240
+  },
+  {
+   "id": "minsk",
+   "name": "Minsk",
+   "kind": "city",
+   "pos": [
+    27.5586,
+    53.9006
+   ],
+   "owner": "SOV",
+   "originalOwner": "SOV",
+   "value": 10,
+   "supplyCapacity": 40,
+   "rampHours": 240
+  },
+  {
+   "id": "smolensk",
+   "name": "Smolensk",
+   "kind": "city",
+   "pos": [
+    32.0453,
+    54.7828
+   ],
+   "owner": "SOV",
+   "originalOwner": "SOV",
+   "value": 10,
+   "supplyCapacity": 40,
+   "rampHours": 240
+  },
+  {
+   "id": "kiev",
+   "name": "Kiev",
+   "kind": "city",
+   "pos": [
+    30.5233,
+    50.45
+   ],
+   "owner": "SOV",
+   "originalOwner": "SOV",
+   "value": 10,
+   "supplyCapacity": 40,
+   "rampHours": 240
+  },
+  {
+   "id": "riga",
+   "name": "Riga",
+   "kind": "city",
+   "pos": [
+    24.1064,
+    56.9489
+   ],
+   "owner": "SOV",
+   "originalOwner": "SOV",
+   "value": 8,
+   "supplyCapacity": 40,
+   "rampHours": 240
+  },
+  {
+   "id": "vilnius",
+   "name": "Vilnius",
+   "kind": "city",
+   "pos": [
+    25.28,
+    54.6872
+   ],
+   "owner": "SOV",
+   "originalOwner": "SOV",
+   "value": 6,
+   "supplyCapacity": 40,
+   "rampHours": 240
+  },
+  {
+   "id": "kaunas",
+   "name": "Kaunas",
+   "kind": "city",
+   "pos": [
+    23.8861,
+    54.8972
+   ],
+   "owner": "SOV",
+   "originalOwner": "SOV",
+   "value": 6,
+   "supplyCapacity": 40,
+   "rampHours": 240
+  },
+  {
+   "id": "grodno",
+   "name": "Grodno",
+   "kind": "town",
+   "pos": [
+    23.8333,
+    53.6667
+   ],
+   "owner": "SOV",
+   "originalOwner": "SOV",
+   "value": 4,
+   "supplyCapacity": 20
+  },
+  {
+   "id": "bialystok",
+   "name": "Bialystok",
+   "kind": "city",
+   "pos": [
+    23.1456,
+    53.1353
+   ],
+   "owner": "SOV",
+   "originalOwner": "SOV",
+   "value": 5,
+   "supplyCapacity": 40
+  },
+  {
+   "id": "lvov",
+   "name": "Lvov",
+   "kind": "city",
+   "pos": [
+    24.0322,
+    49.8425
+   ],
+   "owner": "SOV",
+   "originalOwner": "SOV",
+   "value": 8,
+   "supplyCapacity": 40,
+   "rampHours": 240
+  },
+  {
+   "id": "rovno",
+   "name": "Rovno",
+   "kind": "town",
+   "pos": [
+    26.2519,
+    50.6192
+   ],
+   "owner": "SOV",
+   "originalOwner": "SOV",
+   "value": 4,
+   "supplyCapacity": 20
+  },
+  {
+   "id": "dubno",
+   "name": "Dubno",
+   "kind": "town",
+   "pos": [
+    25.735,
+    50.3931
+   ],
+   "owner": "SOV",
+   "originalOwner": "SOV",
+   "value": 3,
+   "supplyCapacity": 20
+  },
+  {
+   "id": "lutsk",
+   "name": "Lutsk",
+   "kind": "town",
+   "pos": [
+    25.3358,
+    50.75
+   ],
+   "owner": "SOV",
+   "originalOwner": "SOV",
+   "value": 3,
+   "supplyCapacity": 20
+  },
+  {
+   "id": "kovel",
+   "name": "Kovel",
+   "kind": "town",
+   "pos": [
+    24.7167,
+    51.2167
+   ],
+   "owner": "SOV",
+   "originalOwner": "SOV",
+   "value": 3,
+   "supplyCapacity": 20
+  },
+  {
+   "id": "zhitomir",
+   "name": "Zhitomir",
+   "kind": "town",
+   "pos": [
+    28.6667,
+    50.25
+   ],
+   "owner": "SOV",
+   "originalOwner": "SOV",
+   "value": 4,
+   "supplyCapacity": 20
+  },
+  {
+   "id": "berdichev",
+   "name": "Berdichev",
+   "kind": "town",
+   "pos": [
+    28.5667,
+    49.9
+   ],
+   "owner": "SOV",
+   "originalOwner": "SOV",
+   "value": 3,
+   "supplyCapacity": 20
+  },
+  {
+   "id": "uman",
+   "name": "Uman",
+   "kind": "town",
+   "pos": [
+    30.2167,
+    48.75
+   ],
+   "owner": "SOV",
+   "originalOwner": "SOV",
+   "value": 4,
+   "supplyCapacity": 20
+  },
+  {
+   "id": "belaya_tserkov",
+   "name": "Belaya Tserkov",
+   "kind": "town",
+   "pos": [
+    30.1153,
+    49.7989
+   ],
+   "owner": "SOV",
+   "originalOwner": "SOV",
+   "value": 3,
+   "supplyCapacity": 20
+  },
+  {
+   "id": "vitebsk",
+   "name": "Vitebsk",
+   "kind": "city",
+   "pos": [
+    30.2056,
+    55.1917
+   ],
+   "owner": "SOV",
+   "originalOwner": "SOV",
+   "value": 5,
+   "supplyCapacity": 40
+  },
+  {
+   "id": "mogilev",
+   "name": "Mogilev",
+   "kind": "city",
+   "pos": [
+    30.35,
+    53.9167
+   ],
+   "owner": "SOV",
+   "originalOwner": "SOV",
+   "value": 5,
+   "supplyCapacity": 40
+  },
+  {
+   "id": "borisov",
+   "name": "Borisov",
+   "kind": "town",
+   "pos": [
+    28.5,
+    54.2333
+   ],
+   "owner": "SOV",
+   "originalOwner": "SOV",
+   "value": 3,
+   "supplyCapacity": 20
+  },
+  {
+   "id": "bobruisk",
+   "name": "Bobruisk",
+   "kind": "town",
+   "pos": [
+    29.2333,
+    53.15
+   ],
+   "owner": "SOV",
+   "originalOwner": "SOV",
+   "value": 4,
+   "supplyCapacity": 20
+  },
+  {
+   "id": "orsha",
+   "name": "Orsha",
+   "kind": "town",
+   "pos": [
+    30.4258,
+    54.5092
+   ],
+   "owner": "SOV",
+   "originalOwner": "SOV",
+   "value": 4,
+   "supplyCapacity": 20
+  },
+  {
+   "id": "gomel",
+   "name": "Gomel",
+   "kind": "city",
+   "pos": [
+    30.9842,
+    52.4453
+   ],
+   "owner": "SOV",
+   "originalOwner": "SOV",
+   "value": 5,
+   "supplyCapacity": 40
+  },
+  {
+   "id": "polotsk",
+   "name": "Polotsk",
+   "kind": "town",
+   "pos": [
+    28.8,
+    55.4833
+   ],
+   "owner": "SOV",
+   "originalOwner": "SOV",
+   "value": 3,
+   "supplyCapacity": 20
+  },
+  {
+   "id": "daugavpils",
+   "name": "Daugavpils",
+   "kind": "town",
+   "pos": [
+    26.5356,
+    55.875
+   ],
+   "owner": "SOV",
+   "originalOwner": "SOV",
+   "value": 4,
+   "supplyCapacity": 20
+  },
+  {
+   "id": "siauliai",
+   "name": "Siauliai",
+   "kind": "town",
+   "pos": [
+    23.3167,
+    55.9333
+   ],
+   "owner": "SOV",
+   "originalOwner": "SOV",
+   "value": 3,
+   "supplyCapacity": 20
+  },
+  {
+   "id": "raseiniai",
+   "name": "Raseiniai",
+   "kind": "town",
+   "pos": [
+    23.1167,
+    55.3667
+   ],
+   "owner": "SOV",
+   "originalOwner": "SOV",
+   "value": 2,
+   "supplyCapacity": 20
+  },
+  {
+   "id": "pskov",
+   "name": "Pskov",
+   "kind": "city",
+   "pos": [
+    28.3333,
+    57.8167
+   ],
+   "owner": "SOV",
+   "originalOwner": "SOV",
+   "value": 5,
+   "supplyCapacity": 40,
+   "rampHours": 240
+  },
+  {
+   "id": "novgorod",
+   "name": "Novgorod",
+   "kind": "city",
+   "pos": [
+    31.2667,
+    58.55
+   ],
+   "owner": "SOV",
+   "originalOwner": "SOV",
+   "value": 5,
+   "supplyCapacity": 40
+  },
+  {
+   "id": "luga",
+   "name": "Luga",
+   "kind": "town",
+   "pos": [
+    29.8167,
+    58.7333
+   ],
+   "owner": "SOV",
+   "originalOwner": "SOV",
+   "value": 3,
+   "supplyCapacity": 20
+  },
+  {
+   "id": "narva",
+   "name": "Narva",
+   "kind": "town",
+   "pos": [
+    28.1961,
+    59.3758
+   ],
+   "owner": "SOV",
+   "originalOwner": "SOV",
+   "value": 3,
+   "supplyCapacity": 20
+  },
+  {
+   "id": "kingisepp",
+   "name": "Kingisepp",
+   "kind": "town",
+   "pos": [
+    28.6167,
+    59.3667
+   ],
+   "owner": "SOV",
+   "originalOwner": "SOV",
+   "value": 3,
+   "supplyCapacity": 20
+  },
+  {
+   "id": "tallinn",
+   "name": "Tallinn",
+   "kind": "city",
+   "pos": [
+    24.7453,
+    59.4372
+   ],
+   "owner": "SOV",
+   "originalOwner": "SOV",
+   "value": 5,
+   "supplyCapacity": 40
+  },
+  {
+   "id": "shlisselburg",
+   "name": "Shlisselburg",
+   "kind": "town",
+   "pos": [
+    31.0383,
+    59.9536
+   ],
+   "owner": "SOV",
+   "originalOwner": "SOV",
+   "value": 3,
+   "supplyCapacity": 20
+  },
+  {
+   "id": "leningrad",
+   "name": "Leningrad",
+   "kind": "city",
+   "pos": [
+    30.3086,
+    59.9375
+   ],
+   "owner": "SOV",
+   "originalOwner": "SOV",
+   "value": 10,
+   "supplyCapacity": 60
+  },
+  {
+   "id": "velikiye_luki",
+   "name": "Velikiye Luki",
+   "kind": "town",
+   "pos": [
+    30.5333,
+    56.3333
+   ],
+   "owner": "SOV",
+   "originalOwner": "SOV",
+   "value": 3,
+   "supplyCapacity": 20
+  },
+  {
+   "id": "chernigov",
+   "name": "Chernigov",
+   "kind": "town",
+   "pos": [
+    31.2947,
+    51.4939
+   ],
+   "owner": "SOV",
+   "originalOwner": "SOV",
+   "value": 4,
+   "supplyCapacity": 20
+  },
+  {
+   "id": "moscow",
+   "name": "Moscow",
+   "kind": "city",
+   "pos": [
+    37.6178,
+    55.7558
+   ],
+   "owner": "SOV",
+   "originalOwner": "SOV",
+   "value": 10,
+   "supplyCapacity": 80
+  },
+  {
+   "id": "kharkov",
+   "name": "Kharkov",
+   "kind": "city",
+   "pos": [
+    36.2311,
+    49.9925
+   ],
+   "owner": "SOV",
+   "originalOwner": "SOV",
+   "value": 8,
+   "supplyCapacity": 40
+  },
+  {
+   "id": "warsaw",
+   "name": "Warsaw",
+   "kind": "city",
+   "pos": [
+    21.0111,
+    52.23
+   ],
+   "owner": "GER",
+   "originalOwner": "GER",
+   "value": 8,
+   "supplyCapacity": 40
+  },
+  {
+   "id": "lublin",
+   "name": "Lublin",
+   "kind": "city",
+   "pos": [
+    22.5667,
+    51.25
+   ],
+   "owner": "GER",
+   "originalOwner": "GER",
+   "value": 5,
+   "supplyCapacity": 40
+  },
+  {
+   "id": "zamosc",
+   "name": "Zamosc",
+   "kind": "town",
+   "pos": [
+    23.2528,
+    50.7167
+   ],
+   "owner": "GER",
+   "originalOwner": "GER",
+   "value": 3,
+   "supplyCapacity": 20
+  },
+  {
+   "id": "koenigsberg",
+   "name": "Koenigsberg",
+   "kind": "city",
+   "pos": [
+    20.4531,
+    54.7003
+   ],
+   "owner": "GER",
+   "originalOwner": "GER",
+   "value": 8,
+   "supplyCapacity": 40
+  },
+  {
+   "id": "tilsit",
+   "name": "Tilsit",
+   "kind": "town",
+   "pos": [
+    21.8864,
+    55.0808
+   ],
+   "owner": "GER",
+   "originalOwner": "GER",
+   "value": 3,
+   "supplyCapacity": 20
+  }
+ ],
+ "units": [
+  {
+   "id": "ger.agn.hq",
+   "name": "Army Group North HQ (Leeb)",
+   "shortName": "HG Nord",
+   "nation": "GER",
+   "side": "axis",
+   "type": "hq",
+   "domain": "land",
+   "pos": [
+    21.51,
+    54.26
+   ],
+   "manpower": 600,
+   "manpowerMax": 600,
+   "equipment": {
+    "held": {
+     "rifle": 600
+    },
+    "authorised": {
+     "rifle": 600
+    }
+   },
+   "organisation": 90,
+   "morale": 76,
+   "experience": 60,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 0,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "hold",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "ger.agc.hq",
+   "name": "Army Group Centre HQ (Bock)",
+   "shortName": "HG Mitte",
+   "nation": "GER",
+   "side": "axis",
+   "type": "hq",
+   "domain": "land",
+   "pos": [
+    22.11,
+    52.66
+   ],
+   "manpower": 600,
+   "manpowerMax": 600,
+   "equipment": {
+    "held": {
+     "rifle": 600
+    },
+    "authorised": {
+     "rifle": 600
+    }
+   },
+   "organisation": 90,
+   "morale": 76,
+   "experience": 60,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 0,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "hold",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "ger.ags.hq",
+   "name": "Army Group South HQ (Rundstedt)",
+   "shortName": "HG Sued",
+   "nation": "GER",
+   "side": "axis",
+   "type": "hq",
+   "domain": "land",
+   "pos": [
+    22.21,
+    51.11
+   ],
+   "manpower": 600,
+   "manpowerMax": 600,
+   "equipment": {
+    "held": {
+     "rifle": 600
+    },
+    "authorised": {
+     "rifle": 600
+    }
+   },
+   "organisation": 90,
+   "morale": 76,
+   "experience": 60,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 0,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "hold",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "ger.18a",
+   "name": "18th Army",
+   "shortName": "18.A",
+   "nation": "GER",
+   "side": "axis",
+   "type": "infantry",
+   "domain": "land",
+   "pos": [
+    21.46,
+    55.26
+   ],
+   "manpower": 30000,
+   "manpowerMax": 30000,
+   "equipment": {
+    "held": {
+     "rifle": 250,
+     "gun_arty": 120,
+     "gun_at": 60
+    },
+    "authorised": {
+     "rifle": 250,
+     "gun_arty": 120,
+     "gun_at": 60
+    }
+   },
+   "organisation": 90,
+   "morale": 76,
+   "experience": 60,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 0,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "hold",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "ger.4pg",
+   "name": "4th Panzer Group (Hoepner)",
+   "shortName": "4.PzGr",
+   "nation": "GER",
+   "side": "axis",
+   "type": "armoured",
+   "domain": "land",
+   "pos": [
+    22.46,
+    54.51
+   ],
+   "manpower": 18000,
+   "manpowerMax": 18000,
+   "equipment": {
+    "held": {
+     "tank_medium": 500,
+     "gun_arty": 40,
+     "truck": 100
+    },
+    "authorised": {
+     "tank_medium": 500,
+     "gun_arty": 40,
+     "truck": 100
+    }
+   },
+   "organisation": 90,
+   "morale": 76,
+   "experience": 60,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 0,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "hold",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "ger.16a",
+   "name": "16th Army",
+   "shortName": "16.A",
+   "nation": "GER",
+   "side": "axis",
+   "type": "infantry",
+   "domain": "land",
+   "pos": [
+    22.76,
+    54.06
+   ],
+   "manpower": 30000,
+   "manpowerMax": 30000,
+   "equipment": {
+    "held": {
+     "rifle": 250,
+     "gun_arty": 120,
+     "gun_at": 60
+    },
+    "authorised": {
+     "rifle": 250,
+     "gun_arty": 120,
+     "gun_at": 60
+    }
+   },
+   "organisation": 90,
+   "morale": 76,
+   "experience": 60,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 0,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "hold",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "ger.3pg",
+   "name": "3rd Panzer Group (Hoth)",
+   "shortName": "3.PzGr",
+   "nation": "GER",
+   "side": "axis",
+   "type": "armoured",
+   "domain": "land",
+   "pos": [
+    22.31,
+    53.56
+   ],
+   "manpower": 18000,
+   "manpowerMax": 18000,
+   "equipment": {
+    "held": {
+     "tank_medium": 500,
+     "gun_arty": 40,
+     "truck": 100
+    },
+    "authorised": {
+     "tank_medium": 500,
+     "gun_arty": 40,
+     "truck": 100
+    }
+   },
+   "organisation": 90,
+   "morale": 76,
+   "experience": 60,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 0,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "hold",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "ger.9a",
+   "name": "9th Army",
+   "shortName": "9.A",
+   "nation": "GER",
+   "side": "axis",
+   "type": "infantry",
+   "domain": "land",
+   "pos": [
+    22.37,
+    53.56
+   ],
+   "manpower": 30000,
+   "manpowerMax": 30000,
+   "equipment": {
+    "held": {
+     "rifle": 250,
+     "gun_arty": 120,
+     "gun_at": 60
+    },
+    "authorised": {
+     "rifle": 250,
+     "gun_arty": 120,
+     "gun_at": 60
+    }
+   },
+   "organisation": 90,
+   "morale": 76,
+   "experience": 60,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 0,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "hold",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "ger.4a",
+   "name": "4th Army",
+   "shortName": "4.A",
+   "nation": "GER",
+   "side": "axis",
+   "type": "infantry",
+   "domain": "land",
+   "pos": [
+    22.61,
+    52.51
+   ],
+   "manpower": 30000,
+   "manpowerMax": 30000,
+   "equipment": {
+    "held": {
+     "rifle": 250,
+     "gun_arty": 120,
+     "gun_at": 60
+    },
+    "authorised": {
+     "rifle": 250,
+     "gun_arty": 120,
+     "gun_at": 60
+    }
+   },
+   "organisation": 90,
+   "morale": 76,
+   "experience": 60,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 0,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "hold",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "ger.2pg",
+   "name": "2nd Panzer Group (Guderian)",
+   "shortName": "2.PzGr",
+   "nation": "GER",
+   "side": "axis",
+   "type": "armoured",
+   "domain": "land",
+   "pos": [
+    23.11,
+    52.06
+   ],
+   "manpower": 18000,
+   "manpowerMax": 18000,
+   "equipment": {
+    "held": {
+     "tank_medium": 500,
+     "gun_arty": 40,
+     "truck": 100
+    },
+    "authorised": {
+     "tank_medium": 500,
+     "gun_arty": 40,
+     "truck": 100
+    }
+   },
+   "organisation": 90,
+   "morale": 76,
+   "experience": 60,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 0,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "hold",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "ger.45id",
+   "name": "45th Infantry Division",
+   "shortName": "45.ID",
+   "nation": "GER",
+   "side": "axis",
+   "type": "infantry",
+   "domain": "land",
+   "pos": [
+    23.35,
+    52.1
+   ],
+   "manpower": 17000,
+   "manpowerMax": 17000,
+   "equipment": {
+    "held": {
+     "rifle": 250,
+     "gun_arty": 120,
+     "gun_at": 60
+    },
+    "authorised": {
+     "rifle": 250,
+     "gun_arty": 120,
+     "gun_at": 60
+    }
+   },
+   "organisation": 90,
+   "morale": 76,
+   "experience": 60,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 0,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "hold",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "ger.6a",
+   "name": "6th Army",
+   "shortName": "6.A",
+   "nation": "GER",
+   "side": "axis",
+   "type": "infantry",
+   "domain": "land",
+   "pos": [
+    23.06,
+    51.21
+   ],
+   "manpower": 30000,
+   "manpowerMax": 30000,
+   "equipment": {
+    "held": {
+     "rifle": 250,
+     "gun_arty": 120,
+     "gun_at": 60
+    },
+    "authorised": {
+     "rifle": 250,
+     "gun_arty": 120,
+     "gun_at": 60
+    }
+   },
+   "organisation": 90,
+   "morale": 76,
+   "experience": 60,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 0,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "hold",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "ger.1pg",
+   "name": "1st Panzer Group (Kleist)",
+   "shortName": "1.PzGr",
+   "nation": "GER",
+   "side": "axis",
+   "type": "armoured",
+   "domain": "land",
+   "pos": [
+    23.01,
+    50.61
+   ],
+   "manpower": 20000,
+   "manpowerMax": 20000,
+   "equipment": {
+    "held": {
+     "tank_medium": 799,
+     "gun_arty": 40,
+     "truck": 100
+    },
+    "authorised": {
+     "tank_medium": 799,
+     "gun_arty": 40,
+     "truck": 100
+    }
+   },
+   "organisation": 90,
+   "morale": 76,
+   "experience": 60,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 0,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "hold",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "ger.17a",
+   "name": "17th Army",
+   "shortName": "17.A",
+   "nation": "GER",
+   "side": "axis",
+   "type": "infantry",
+   "domain": "land",
+   "pos": [
+    22.36,
+    50.11
+   ],
+   "manpower": 30000,
+   "manpowerMax": 30000,
+   "equipment": {
+    "held": {
+     "rifle": 250,
+     "gun_arty": 120,
+     "gun_at": 60
+    },
+    "authorised": {
+     "rifle": 250,
+     "gun_arty": 120,
+     "gun_at": 60
+    }
+   },
+   "organisation": 90,
+   "morale": 76,
+   "experience": 60,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 0,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "hold",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "sov.nwf.hq",
+   "name": "Northwestern Front HQ (Kuznetsov)",
+   "shortName": "NWF HQ",
+   "nation": "SOV",
+   "side": "allies",
+   "type": "hq",
+   "domain": "land",
+   "pos": [
+    24.01,
+    56.86
+   ],
+   "manpower": 600,
+   "manpowerMax": 600,
+   "equipment": {
+    "held": {
+     "rifle": 600
+    },
+    "authorised": {
+     "rifle": 600
+    }
+   },
+   "organisation": 60,
+   "morale": 58,
+   "experience": 30,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 50,
+   "entrenchment": 10,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "defend",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "sov.8a",
+   "name": "8th Army (Sobennikov)",
+   "shortName": "8th A",
+   "nation": "SOV",
+   "side": "allies",
+   "type": "infantry",
+   "domain": "land",
+   "pos": [
+    23.21,
+    55.86
+   ],
+   "manpower": 25000,
+   "manpowerMax": 25000,
+   "equipment": {
+    "held": {
+     "rifle": 250,
+     "gun_arty": 120,
+     "gun_at": 60
+    },
+    "authorised": {
+     "rifle": 250,
+     "gun_arty": 120,
+     "gun_at": 60
+    }
+   },
+   "organisation": 60,
+   "morale": 58,
+   "experience": 30,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 50,
+   "entrenchment": 10,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "defend",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "sov.11a",
+   "name": "11th Army (Morozov)",
+   "shortName": "11th A",
+   "nation": "SOV",
+   "side": "allies",
+   "type": "infantry",
+   "domain": "land",
+   "pos": [
+    23.91,
+    54.81
+   ],
+   "manpower": 25000,
+   "manpowerMax": 25000,
+   "equipment": {
+    "held": {
+     "rifle": 250,
+     "gun_arty": 120,
+     "gun_at": 60
+    },
+    "authorised": {
+     "rifle": 250,
+     "gun_arty": 120,
+     "gun_at": 60
+    }
+   },
+   "organisation": 60,
+   "morale": 58,
+   "experience": 30,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 50,
+   "entrenchment": 10,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "defend",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "sov.3mc",
+   "name": "3rd Mechanised Corps",
+   "shortName": "3 MC",
+   "nation": "SOV",
+   "side": "allies",
+   "type": "armoured",
+   "domain": "land",
+   "pos": [
+    23.11,
+    55.41
+   ],
+   "manpower": 12000,
+   "manpowerMax": 12000,
+   "equipment": {
+    "held": {
+     "tank_medium": 400,
+     "gun_arty": 40,
+     "truck": 100
+    },
+    "authorised": {
+     "tank_medium": 400,
+     "gun_arty": 40,
+     "truck": 100
+    }
+   },
+   "organisation": 60,
+   "morale": 58,
+   "experience": 30,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 50,
+   "entrenchment": 10,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "defend",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "sov.12mc",
+   "name": "12th Mechanised Corps",
+   "shortName": "12 MC",
+   "nation": "SOV",
+   "side": "allies",
+   "type": "armoured",
+   "domain": "land",
+   "pos": [
+    23.27,
+    55.86
+   ],
+   "manpower": 12000,
+   "manpowerMax": 12000,
+   "equipment": {
+    "held": {
+     "tank_medium": 400,
+     "gun_arty": 40,
+     "truck": 100
+    },
+    "authorised": {
+     "tank_medium": 400,
+     "gun_arty": 40,
+     "truck": 100
+    }
+   },
+   "organisation": 60,
+   "morale": 58,
+   "experience": 30,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 50,
+   "entrenchment": 10,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "defend",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "sov.wf.hq",
+   "name": "Western Front HQ (Pavlov)",
+   "shortName": "WF HQ",
+   "nation": "SOV",
+   "side": "allies",
+   "type": "hq",
+   "domain": "land",
+   "pos": [
+    27.41,
+    53.81
+   ],
+   "manpower": 600,
+   "manpowerMax": 600,
+   "equipment": {
+    "held": {
+     "rifle": 600
+    },
+    "authorised": {
+     "rifle": 600
+    }
+   },
+   "organisation": 60,
+   "morale": 58,
+   "experience": 30,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 50,
+   "entrenchment": 10,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "defend",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "sov.3a",
+   "name": "3rd Army",
+   "shortName": "3rd A",
+   "nation": "SOV",
+   "side": "allies",
+   "type": "infantry",
+   "domain": "land",
+   "pos": [
+    23.71,
+    53.66
+   ],
+   "manpower": 25000,
+   "manpowerMax": 25000,
+   "equipment": {
+    "held": {
+     "rifle": 250,
+     "gun_arty": 120,
+     "gun_at": 60
+    },
+    "authorised": {
+     "rifle": 250,
+     "gun_arty": 120,
+     "gun_at": 60
+    }
+   },
+   "organisation": 60,
+   "morale": 58,
+   "experience": 30,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 50,
+   "entrenchment": 10,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "defend",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "sov.10a",
+   "name": "10th Army",
+   "shortName": "10th A",
+   "nation": "SOV",
+   "side": "allies",
+   "type": "infantry",
+   "domain": "land",
+   "pos": [
+    23.21,
+    53.11
+   ],
+   "manpower": 25000,
+   "manpowerMax": 25000,
+   "equipment": {
+    "held": {
+     "rifle": 250,
+     "gun_arty": 120,
+     "gun_at": 60
+    },
+    "authorised": {
+     "rifle": 250,
+     "gun_arty": 120,
+     "gun_at": 60
+    }
+   },
+   "organisation": 60,
+   "morale": 58,
+   "experience": 30,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 50,
+   "entrenchment": 10,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "defend",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "sov.4a",
+   "name": "4th Army",
+   "shortName": "4th A",
+   "nation": "SOV",
+   "side": "allies",
+   "type": "infantry",
+   "domain": "land",
+   "pos": [
+    24.31,
+    52.21
+   ],
+   "manpower": 25000,
+   "manpowerMax": 25000,
+   "equipment": {
+    "held": {
+     "rifle": 250,
+     "gun_arty": 120,
+     "gun_at": 60
+    },
+    "authorised": {
+     "rifle": 250,
+     "gun_arty": 120,
+     "gun_at": 60
+    }
+   },
+   "organisation": 60,
+   "morale": 58,
+   "experience": 30,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 50,
+   "entrenchment": 10,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "defend",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "sov.13a",
+   "name": "13th Army (HQ only)",
+   "shortName": "13th A",
+   "nation": "SOV",
+   "side": "allies",
+   "type": "hq",
+   "domain": "land",
+   "pos": [
+    27.47,
+    53.81
+   ],
+   "manpower": 600,
+   "manpowerMax": 600,
+   "equipment": {
+    "held": {
+     "rifle": 600
+    },
+    "authorised": {
+     "rifle": 600
+    }
+   },
+   "organisation": 60,
+   "morale": 58,
+   "experience": 30,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 50,
+   "entrenchment": 10,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "defend",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "sov.6mc",
+   "name": "6th Mechanised Corps",
+   "shortName": "6 MC",
+   "nation": "SOV",
+   "side": "allies",
+   "type": "armoured",
+   "domain": "land",
+   "pos": [
+    23.27,
+    53.11
+   ],
+   "manpower": 12000,
+   "manpowerMax": 12000,
+   "equipment": {
+    "held": {
+     "tank_medium": 400,
+     "gun_arty": 40,
+     "truck": 100
+    },
+    "authorised": {
+     "tank_medium": 400,
+     "gun_arty": 40,
+     "truck": 100
+    }
+   },
+   "organisation": 60,
+   "morale": 58,
+   "experience": 30,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 50,
+   "entrenchment": 10,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "defend",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "sov.11mc",
+   "name": "11th Mechanised Corps",
+   "shortName": "11 MC",
+   "nation": "SOV",
+   "side": "allies",
+   "type": "armoured",
+   "domain": "land",
+   "pos": [
+    23.77,
+    53.66
+   ],
+   "manpower": 12000,
+   "manpowerMax": 12000,
+   "equipment": {
+    "held": {
+     "tank_medium": 400,
+     "gun_arty": 40,
+     "truck": 100
+    },
+    "authorised": {
+     "tank_medium": 400,
+     "gun_arty": 40,
+     "truck": 100
+    }
+   },
+   "organisation": 60,
+   "morale": 58,
+   "experience": 30,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 50,
+   "entrenchment": 10,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "defend",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "sov.6cav",
+   "name": "6th Cavalry Corps",
+   "shortName": "6 Cav C",
+   "nation": "SOV",
+   "side": "allies",
+   "type": "recon",
+   "domain": "land",
+   "pos": [
+    23.83,
+    53.66
+   ],
+   "manpower": 8000,
+   "manpowerMax": 8000,
+   "equipment": {
+    "held": {
+     "rifle": 80,
+     "armoured_car": 60
+    },
+    "authorised": {
+     "rifle": 80,
+     "armoured_car": 60
+    }
+   },
+   "organisation": 60,
+   "morale": 58,
+   "experience": 30,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 50,
+   "entrenchment": 10,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "defend",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "sov.brestgar",
+   "name": "Brest Fortress garrison (6th and 42nd Rifle Division elements, NKVD)",
+   "shortName": "Brest Gar",
+   "nation": "SOV",
+   "side": "allies",
+   "type": "infantry",
+   "domain": "land",
+   "pos": [
+    23.66,
+    52.13
+   ],
+   "manpower": 9000,
+   "manpowerMax": 9000,
+   "equipment": {
+    "held": {
+     "rifle": 250,
+     "gun_arty": 120,
+     "gun_at": 60
+    },
+    "authorised": {
+     "rifle": 250,
+     "gun_arty": 120,
+     "gun_at": 60
+    }
+   },
+   "organisation": 60,
+   "morale": 65,
+   "experience": 30,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 50,
+   "entrenchment": 60,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "defend",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "sov.swf.hq",
+   "name": "Southwestern Front HQ (Kirponos)",
+   "shortName": "SWF HQ",
+   "nation": "SOV",
+   "side": "allies",
+   "type": "hq",
+   "domain": "land",
+   "pos": [
+    30.36,
+    50.36
+   ],
+   "manpower": 600,
+   "manpowerMax": 600,
+   "equipment": {
+    "held": {
+     "rifle": 600
+    },
+    "authorised": {
+     "rifle": 600
+    }
+   },
+   "organisation": 60,
+   "morale": 58,
+   "experience": 30,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 50,
+   "entrenchment": 10,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "defend",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "sov.5a",
+   "name": "5th Army",
+   "shortName": "5th A",
+   "nation": "SOV",
+   "side": "allies",
+   "type": "infantry",
+   "domain": "land",
+   "pos": [
+    24.61,
+    51.16
+   ],
+   "manpower": 25000,
+   "manpowerMax": 25000,
+   "equipment": {
+    "held": {
+     "rifle": 250,
+     "gun_arty": 120,
+     "gun_at": 60
+    },
+    "authorised": {
+     "rifle": 250,
+     "gun_arty": 120,
+     "gun_at": 60
+    }
+   },
+   "organisation": 60,
+   "morale": 58,
+   "experience": 30,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 50,
+   "entrenchment": 10,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "defend",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "sov.6a",
+   "name": "6th Army",
+   "shortName": "6th A",
+   "nation": "SOV",
+   "side": "allies",
+   "type": "infantry",
+   "domain": "land",
+   "pos": [
+    23.91,
+    49.81
+   ],
+   "manpower": 25000,
+   "manpowerMax": 25000,
+   "equipment": {
+    "held": {
+     "rifle": 250,
+     "gun_arty": 120,
+     "gun_at": 60
+    },
+    "authorised": {
+     "rifle": 250,
+     "gun_arty": 120,
+     "gun_at": 60
+    }
+   },
+   "organisation": 60,
+   "morale": 58,
+   "experience": 30,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 50,
+   "entrenchment": 10,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "defend",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "sov.26a",
+   "name": "26th Army",
+   "shortName": "26th A",
+   "nation": "SOV",
+   "side": "allies",
+   "type": "infantry",
+   "domain": "land",
+   "pos": [
+    23.91,
+    49.26
+   ],
+   "manpower": 25000,
+   "manpowerMax": 25000,
+   "equipment": {
+    "held": {
+     "rifle": 250,
+     "gun_arty": 120,
+     "gun_at": 60
+    },
+    "authorised": {
+     "rifle": 250,
+     "gun_arty": 120,
+     "gun_at": 60
+    }
+   },
+   "organisation": 60,
+   "morale": 58,
+   "experience": 30,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 50,
+   "entrenchment": 10,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "defend",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "sov.12a",
+   "name": "12th Army",
+   "shortName": "12th A",
+   "nation": "SOV",
+   "side": "allies",
+   "type": "infantry",
+   "domain": "land",
+   "pos": [
+    24.81,
+    48.71
+   ],
+   "manpower": 25000,
+   "manpowerMax": 25000,
+   "equipment": {
+    "held": {
+     "rifle": 250,
+     "gun_arty": 120,
+     "gun_at": 60
+    },
+    "authorised": {
+     "rifle": 250,
+     "gun_arty": 120,
+     "gun_at": 60
+    }
+   },
+   "organisation": 60,
+   "morale": 58,
+   "experience": 30,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 50,
+   "entrenchment": 10,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "defend",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "sov.22mc",
+   "name": "22nd Mechanised Corps",
+   "shortName": "22 MC",
+   "nation": "SOV",
+   "side": "allies",
+   "type": "armoured",
+   "domain": "land",
+   "pos": [
+    25.71,
+    50.46
+   ],
+   "manpower": 12000,
+   "manpowerMax": 12000,
+   "equipment": {
+    "held": {
+     "tank_medium": 400,
+     "gun_arty": 40,
+     "truck": 100
+    },
+    "authorised": {
+     "tank_medium": 400,
+     "gun_arty": 40,
+     "truck": 100
+    }
+   },
+   "organisation": 60,
+   "morale": 58,
+   "experience": 30,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 50,
+   "entrenchment": 10,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "defend",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "sov.15mc",
+   "name": "15th Mechanised Corps",
+   "shortName": "15 MC",
+   "nation": "SOV",
+   "side": "allies",
+   "type": "armoured",
+   "domain": "land",
+   "pos": [
+    24.91,
+    50.06
+   ],
+   "manpower": 12000,
+   "manpowerMax": 12000,
+   "equipment": {
+    "held": {
+     "tank_medium": 400,
+     "gun_arty": 40,
+     "truck": 100
+    },
+    "authorised": {
+     "tank_medium": 400,
+     "gun_arty": 40,
+     "truck": 100
+    }
+   },
+   "organisation": 60,
+   "morale": 58,
+   "experience": 30,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 50,
+   "entrenchment": 10,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "defend",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "sov.nf",
+   "name": "Northern Front forces (Popov) - placeholder, composition not retrieved",
+   "shortName": "North Fr",
+   "nation": "SOV",
+   "side": "allies",
+   "type": "infantry",
+   "domain": "land",
+   "pos": [
+    30.21,
+    59.81
+   ],
+   "manpower": 20000,
+   "manpowerMax": 20000,
+   "equipment": {
+    "held": {
+     "rifle": 250,
+     "gun_arty": 120,
+     "gun_at": 60
+    },
+    "authorised": {
+     "rifle": 250,
+     "gun_arty": 120,
+     "gun_at": 60
+    }
+   },
+   "organisation": 60,
+   "morale": 58,
+   "experience": 30,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 50,
+   "entrenchment": 25,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "defend",
+   "orders": [],
+   "kills": 0
+  }
+ ],
+ "reinforcements": [
+  {
+   "id": "reinf.ger.11a",
+   "atMinutes": 14400,
+   "pos": [
+    27.11,
+    47.26
+   ],
+   "unit": {
+    "id": "ger.11a",
+    "name": "11th Army (with Romanian forces)",
+    "shortName": "11.A",
+    "nation": "GER",
+    "side": "axis",
+    "type": "infantry",
+    "domain": "land",
+    "pos": [
+     27.11,
+     47.26
+    ],
+    "manpower": 25000,
+    "manpowerMax": 25000,
+    "equipment": {
+     "held": {
+      "rifle": 250,
+      "gun_arty": 120,
+      "gun_at": 60
+     },
+     "authorised": {
+      "rifle": 250,
+      "gun_arty": 120,
+      "gun_at": 60
+     }
+    },
+    "organisation": 80,
+    "morale": 76,
+    "experience": 60,
+    "fuel": 100,
+    "ammo": 100,
+    "supply": 100,
+    "fatigue": 10,
+    "readiness": 90,
+    "entrenchment": 0,
+    "moveStatus": "stationary",
+    "combatStatus": "idle",
+    "posture": "hold",
+    "orders": [],
+    "kills": 0
+   }
+  },
+  {
+   "id": "reinf.sov.22a",
+   "atMinutes": 9360,
+   "pos": [
+    30.41,
+    56.21
+   ],
+   "unit": {
+    "id": "sov.22a",
+    "name": "22nd Army (Stavka reserve)",
+    "shortName": "22nd A",
+    "nation": "SOV",
+    "side": "allies",
+    "type": "infantry",
+    "domain": "land",
+    "pos": [
+     30.41,
+     56.21
+    ],
+    "manpower": 25000,
+    "manpowerMax": 25000,
+    "equipment": {
+     "held": {
+      "rifle": 250,
+      "gun_arty": 120,
+      "gun_at": 60
+     },
+     "authorised": {
+      "rifle": 250,
+      "gun_arty": 120,
+      "gun_at": 60
+     }
+    },
+    "organisation": 80,
+    "morale": 62,
+    "experience": 30,
+    "fuel": 100,
+    "ammo": 100,
+    "supply": 100,
+    "fatigue": 10,
+    "readiness": 90,
+    "entrenchment": 0,
+    "moveStatus": "stationary",
+    "combatStatus": "idle",
+    "posture": "defend",
+    "orders": [],
+    "kills": 0
+   }
+  },
+  {
+   "id": "reinf.sov.20a",
+   "atMinutes": 9360,
+   "pos": [
+    28.61,
+    54.81
+   ],
+   "unit": {
+    "id": "sov.20a",
+    "name": "20th Army (Stavka reserve)",
+    "shortName": "20th A",
+    "nation": "SOV",
+    "side": "allies",
+    "type": "infantry",
+    "domain": "land",
+    "pos": [
+     28.61,
+     54.81
+    ],
+    "manpower": 25000,
+    "manpowerMax": 25000,
+    "equipment": {
+     "held": {
+      "rifle": 250,
+      "gun_arty": 120,
+      "gun_at": 60
+     },
+     "authorised": {
+      "rifle": 250,
+      "gun_arty": 120,
+      "gun_at": 60
+     }
+    },
+    "organisation": 80,
+    "morale": 62,
+    "experience": 30,
+    "fuel": 100,
+    "ammo": 100,
+    "supply": 100,
+    "fatigue": 10,
+    "readiness": 90,
+    "entrenchment": 0,
+    "moveStatus": "stationary",
+    "combatStatus": "idle",
+    "posture": "defend",
+    "orders": [],
+    "kills": 0
+   }
+  },
+  {
+   "id": "reinf.sov.5mc",
+   "atMinutes": 9360,
+   "pos": [
+    28.67,
+    54.81
+   ],
+   "unit": {
+    "id": "sov.5mc",
+    "name": "5th Mechanised Corps (20th Army)",
+    "shortName": "5 MC",
+    "nation": "SOV",
+    "side": "allies",
+    "type": "armoured",
+    "domain": "land",
+    "pos": [
+     28.67,
+     54.81
+    ],
+    "manpower": 12000,
+    "manpowerMax": 12000,
+    "equipment": {
+     "held": {
+      "tank_medium": 500,
+      "gun_arty": 40,
+      "truck": 100
+     },
+     "authorised": {
+      "tank_medium": 500,
+      "gun_arty": 40,
+      "truck": 100
+     }
+    },
+    "organisation": 80,
+    "morale": 62,
+    "experience": 30,
+    "fuel": 100,
+    "ammo": 100,
+    "supply": 100,
+    "fatigue": 10,
+    "readiness": 90,
+    "entrenchment": 0,
+    "moveStatus": "stationary",
+    "combatStatus": "idle",
+    "posture": "defend",
+    "orders": [],
+    "kills": 0
+   }
+  },
+  {
+   "id": "reinf.sov.7mc",
+   "atMinutes": 9360,
+   "pos": [
+    28.73,
+    54.81
+   ],
+   "unit": {
+    "id": "sov.7mc",
+    "name": "7th Mechanised Corps (20th Army)",
+    "shortName": "7 MC",
+    "nation": "SOV",
+    "side": "allies",
+    "type": "armoured",
+    "domain": "land",
+    "pos": [
+     28.73,
+     54.81
+    ],
+    "manpower": 12000,
+    "manpowerMax": 12000,
+    "equipment": {
+     "held": {
+      "tank_medium": 500,
+      "gun_arty": 40,
+      "truck": 100
+     },
+     "authorised": {
+      "tank_medium": 500,
+      "gun_arty": 40,
+      "truck": 100
+     }
+    },
+    "organisation": 80,
+    "morale": 62,
+    "experience": 30,
+    "fuel": 100,
+    "ammo": 100,
+    "supply": 100,
+    "fatigue": 10,
+    "readiness": 90,
+    "entrenchment": 0,
+    "moveStatus": "stationary",
+    "combatStatus": "idle",
+    "posture": "defend",
+    "orders": [],
+    "kills": 0
+   }
+  },
+  {
+   "id": "reinf.sov.21a",
+   "atMinutes": 9360,
+   "pos": [
+    30.81,
+    52.41
+   ],
+   "unit": {
+    "id": "sov.21a",
+    "name": "21st Army (Stavka reserve)",
+    "shortName": "21st A",
+    "nation": "SOV",
+    "side": "allies",
+    "type": "infantry",
+    "domain": "land",
+    "pos": [
+     30.81,
+     52.41
+    ],
+    "manpower": 25000,
+    "manpowerMax": 25000,
+    "equipment": {
+     "held": {
+      "rifle": 250,
+      "gun_arty": 120,
+      "gun_at": 60
+     },
+     "authorised": {
+      "rifle": 250,
+      "gun_arty": 120,
+      "gun_at": 60
+     }
+    },
+    "organisation": 80,
+    "morale": 62,
+    "experience": 30,
+    "fuel": 100,
+    "ammo": 100,
+    "supply": 100,
+    "fatigue": 10,
+    "readiness": 90,
+    "entrenchment": 0,
+    "moveStatus": "stationary",
+    "combatStatus": "idle",
+    "posture": "defend",
+    "orders": [],
+    "kills": 0
+   }
+  },
+  {
+   "id": "reinf.sov.19a",
+   "atMinutes": 19440,
+   "pos": [
+    30.11,
+    55.11
+   ],
+   "unit": {
+    "id": "sov.19a",
+    "name": "19th Army (forming at Vitebsk)",
+    "shortName": "19th A",
+    "nation": "SOV",
+    "side": "allies",
+    "type": "infantry",
+    "domain": "land",
+    "pos": [
+     30.11,
+     55.11
+    ],
+    "manpower": 25000,
+    "manpowerMax": 25000,
+    "equipment": {
+     "held": {
+      "rifle": 250,
+      "gun_arty": 120,
+      "gun_at": 60
+     },
+     "authorised": {
+      "rifle": 250,
+      "gun_arty": 120,
+      "gun_at": 60
+     }
+    },
+    "organisation": 80,
+    "morale": 62,
+    "experience": 30,
+    "fuel": 100,
+    "ammo": 100,
+    "supply": 100,
+    "fatigue": 10,
+    "readiness": 90,
+    "entrenchment": 0,
+    "moveStatus": "stationary",
+    "combatStatus": "idle",
+    "posture": "defend",
+    "orders": [],
+    "kills": 0
+   }
+  },
+  {
+   "id": "reinf.sov.16a",
+   "atMinutes": 23760,
+   "pos": [
+    31.91,
+    54.71
+   ],
+   "unit": {
+    "id": "sov.16a",
+    "name": "16th Army (arriving at Smolensk)",
+    "shortName": "16th A",
+    "nation": "SOV",
+    "side": "allies",
+    "type": "infantry",
+    "domain": "land",
+    "pos": [
+     31.91,
+     54.71
+    ],
+    "manpower": 25000,
+    "manpowerMax": 25000,
+    "equipment": {
+     "held": {
+      "rifle": 250,
+      "gun_arty": 120,
+      "gun_at": 60
+     },
+     "authorised": {
+      "rifle": 250,
+      "gun_arty": 120,
+      "gun_at": 60
+     }
+    },
+    "organisation": 80,
+    "morale": 62,
+    "experience": 30,
+    "fuel": 100,
+    "ammo": 100,
+    "supply": 100,
+    "fatigue": 10,
+    "readiness": 90,
+    "entrenchment": 0,
+    "moveStatus": "stationary",
+    "combatStatus": "idle",
+    "posture": "defend",
+    "orders": [],
+    "kills": 0
+   }
+  }
+ ],
+ "objectives": [
+  {
+   "id": "o.ger.brest",
+   "tier": "secondary",
+   "side": "axis",
+   "title": "Take Brest Fortress",
+   "description": "The 45th Infantry Division was to take the fortress on the first day; it took about a week (R10).",
+   "condition": {
+    "kind": "capture_location",
+    "locationId": "brest"
+   },
+   "points": 80,
+   "status": "pending"
+  },
+  {
+   "id": "o.ger.minsk",
+   "tier": "primary",
+   "side": "axis",
+   "title": "Take Minsk",
+   "description": "Minsk fell on 28 June (R04).",
+   "condition": {
+    "kind": "capture_location",
+    "locationId": "minsk"
+   },
+   "points": 250,
+   "status": "pending"
+  },
+  {
+   "id": "o.ger.smolensk",
+   "tier": "primary",
+   "side": "axis",
+   "title": "Take Smolensk",
+   "description": "Smolensk is the road to Moscow; the battle ran 10 July to 10 September (R05).",
+   "condition": {
+    "kind": "capture_location",
+    "locationId": "smolensk"
+   },
+   "points": 250,
+   "status": "pending"
+  },
+  {
+   "id": "o.ger.kiev",
+   "tier": "primary",
+   "side": "axis",
+   "title": "Take Kiev",
+   "description": "Kiev was captured on 19 September (R01).",
+   "condition": {
+    "kind": "capture_location",
+    "locationId": "kiev"
+   },
+   "points": 250,
+   "status": "pending"
+  },
+  {
+   "id": "o.ger.riga",
+   "tier": "secondary",
+   "side": "axis",
+   "title": "Take Riga",
+   "description": "Army Group North objective in the Baltic states (R03).",
+   "condition": {
+    "kind": "capture_location",
+    "locationId": "riga"
+   },
+   "points": 100,
+   "status": "pending"
+  },
+  {
+   "id": "o.ger.pskov",
+   "tier": "secondary",
+   "side": "axis",
+   "title": "Take Pskov",
+   "description": "Pskov was reached by 4th Panzer Group (8 July in R01, 10 July in R09).",
+   "condition": {
+    "kind": "capture_location",
+    "locationId": "pskov"
+   },
+   "points": 100,
+   "status": "pending"
+  },
+  {
+   "id": "o.ger.novgorod",
+   "tier": "secondary",
+   "side": "axis",
+   "title": "Take Novgorod",
+   "description": "Novgorod was reached by 16 August (R09).",
+   "condition": {
+    "kind": "capture_location",
+    "locationId": "novgorod"
+   },
+   "points": 100,
+   "status": "pending"
+  },
+  {
+   "id": "o.ger.leningrad",
+   "tier": "strategic",
+   "side": "axis",
+   "title": "Take Leningrad",
+   "description": "Army Group North strategic goal; Leningrad was cut off by land on 7-8 September but not taken (R03, R09).",
+   "condition": {
+    "kind": "capture_location",
+    "locationId": "leningrad"
+   },
+   "points": 300,
+   "status": "pending"
+  },
+  {
+   "id": "o.ger.shlisselburg",
+   "tier": "secondary",
+   "side": "axis",
+   "title": "Cut Leningrad by land at Shlisselburg",
+   "description": "Shlisselburg was seized on 7 September (R09).",
+   "condition": {
+    "kind": "capture_location",
+    "locationId": "shlisselburg"
+   },
+   "points": 100,
+   "status": "pending"
+  },
+  {
+   "id": "o.ger.vitebsk",
+   "tier": "secondary",
+   "side": "axis",
+   "title": "Take Vitebsk",
+   "description": "Vitebsk and Polotsk fell during the Smolensk operations (R05).",
+   "condition": {
+    "kind": "capture_location",
+    "locationId": "vitebsk"
+   },
+   "points": 80,
+   "status": "pending"
+  },
+  {
+   "id": "o.ger.mogilev",
+   "tier": "secondary",
+   "side": "axis",
+   "title": "Take Mogilev",
+   "description": "Guderian passed Mogilev by 13 July (R05).",
+   "condition": {
+    "kind": "capture_location",
+    "locationId": "mogilev"
+   },
+   "points": 80,
+   "status": "pending"
+  },
+  {
+   "id": "o.ger.zhitomir",
+   "tier": "secondary",
+   "side": "axis",
+   "title": "Take Zhitomir",
+   "description": "On the Army Group South axis to Kiev (R06, R07).",
+   "condition": {
+    "kind": "capture_location",
+    "locationId": "zhitomir"
+   },
+   "points": 60,
+   "status": "pending"
+  },
+  {
+   "id": "o.ger.uman",
+   "tier": "secondary",
+   "side": "axis",
+   "title": "Take Uman",
+   "description": "The Uman pocket was destroyed by 8 August (R06).",
+   "condition": {
+    "kind": "capture_location",
+    "locationId": "uman"
+   },
+   "points": 60,
+   "status": "pending"
+  },
+  {
+   "id": "o.sov.minsk",
+   "tier": "primary",
+   "side": "allies",
+   "title": "Hold Minsk",
+   "description": "Keep Minsk out of German hands (it fell on 28 June, R04).",
+   "condition": {
+    "kind": "hold_location",
+    "locationId": "minsk",
+    "untilMinutes": 144000
+   },
+   "points": 250,
+   "status": "pending"
+  },
+  {
+   "id": "o.sov.smolensk",
+   "tier": "primary",
+   "side": "allies",
+   "title": "Hold Smolensk",
+   "description": "Keep Smolensk (battle 10 July-10 September, R05).",
+   "condition": {
+    "kind": "hold_location",
+    "locationId": "smolensk",
+    "untilMinutes": 144000
+   },
+   "points": 250,
+   "status": "pending"
+  },
+  {
+   "id": "o.sov.kiev",
+   "tier": "primary",
+   "side": "allies",
+   "title": "Hold Kiev",
+   "description": "Keep Kiev (fell 19 September, R01).",
+   "condition": {
+    "kind": "hold_location",
+    "locationId": "kiev",
+    "untilMinutes": 144000
+   },
+   "points": 250,
+   "status": "pending"
+  },
+  {
+   "id": "o.sov.leningrad",
+   "tier": "primary",
+   "side": "allies",
+   "title": "Hold Leningrad",
+   "description": "Leningrad was not taken (R09).",
+   "condition": {
+    "kind": "hold_location",
+    "locationId": "leningrad",
+    "untilMinutes": 144000
+   },
+   "points": 300,
+   "status": "pending"
+  },
+  {
+   "id": "o.sov.moscow",
+   "tier": "strategic",
+   "side": "allies",
+   "title": "Hold Moscow",
+   "description": "Keep the capital (Typhoon begins 30 September, R01).",
+   "condition": {
+    "kind": "hold_location",
+    "locationId": "moscow",
+    "untilMinutes": 144000
+   },
+   "points": 300,
+   "status": "pending"
+  },
+  {
+   "id": "o.sov.brest",
+   "tier": "secondary",
+   "side": "allies",
+   "title": "Hold Brest Fortress",
+   "description": "The garrison held for about a week (R10).",
+   "condition": {
+    "kind": "hold_location",
+    "locationId": "brest",
+    "untilMinutes": 144000
+   },
+   "points": 80,
+   "status": "pending"
+  },
+  {
+   "id": "o.sov.riga",
+   "tier": "secondary",
+   "side": "allies",
+   "title": "Hold Riga",
+   "description": "Delay Army Group North in the Baltic states (R08).",
+   "condition": {
+    "kind": "hold_location",
+    "locationId": "riga",
+    "untilMinutes": 144000
+   },
+   "points": 100,
+   "status": "pending"
+  },
+  {
+   "id": "o.sov.pskov",
+   "tier": "secondary",
+   "side": "allies",
+   "title": "Hold Pskov",
+   "description": "Keep the Luga/Pskov approaches (R09).",
+   "condition": {
+    "kind": "hold_location",
+    "locationId": "pskov",
+    "untilMinutes": 144000
+   },
+   "points": 100,
+   "status": "pending"
+  },
+  {
+   "id": "o.sov.novgorod",
+   "tier": "secondary",
+   "side": "allies",
+   "title": "Hold Novgorod",
+   "description": "Keep Novgorod on the Leningrad approach (R09).",
+   "condition": {
+    "kind": "hold_location",
+    "locationId": "novgorod",
+    "untilMinutes": 144000
+   },
+   "points": 100,
+   "status": "pending"
+  },
+  {
+   "id": "o.sov.vitebsk",
+   "tier": "secondary",
+   "side": "allies",
+   "title": "Hold Vitebsk",
+   "description": "Keep the Dvina line (R05).",
+   "condition": {
+    "kind": "hold_location",
+    "locationId": "vitebsk",
+    "untilMinutes": 144000
+   },
+   "points": 80,
+   "status": "pending"
+  },
+  {
+   "id": "o.sov.uman",
+   "tier": "secondary",
+   "side": "allies",
+   "title": "Hold Uman",
+   "description": "Keep the 6th and 12th Armies out of the Uman pocket (R06).",
+   "condition": {
+    "kind": "hold_location",
+    "locationId": "uman",
+    "untilMinutes": 144000
+   },
+   "points": 60,
+   "status": "pending"
+  }
+ ],
+ "terrainFile": "terrain_barbarossa.json",
+ "infraFile": "infra_barbarossa.json",
+ "supplySources": {
+  "GER": [
+   "warsaw",
+   "lublin",
+   "zamosc",
+   "koenigsberg",
+   "tilsit",
+   "brest",
+   "minsk",
+   "smolensk",
+   "vilnius",
+   "kaunas",
+   "riga",
+   "lvov",
+   "pskov",
+   "kiev"
+  ],
+  "SOV": [
+   "minsk",
+   "lvov",
+   "kiev",
+   "riga",
+   "vilnius",
+   "kaunas",
+   "leningrad",
+   "smolensk",
+   "moscow",
+   "kharkov",
+   "gomel",
+   "vitebsk",
+   "novgorod",
+   "pskov",
+   "rovno",
+   "tallinn"
+  ]
+ },
+ "initialControl": [
+  {
+   "nation": "SOV",
+   "polygon": [
+    [
+     18,
+     46
+    ],
+    [
+     42,
+     46
+    ],
+    [
+     42,
+     60.5
+    ],
+    [
+     18,
+     60.5
+    ]
+   ]
+  },
+  {
+   "nation": "GER",
+   "polygon": [
+    [
+     18,
+     46
+    ],
+    [
+     28.4,
+     46
+    ],
+    [
+     27.9,
+     47
+    ],
+    [
+     27,
+     47.9
+    ],
+    [
+     26.6,
+     48.25
+    ],
+    [
+     24.6,
+     48.2
+    ],
+    [
+     23,
+     48.6
+    ],
+    [
+     22.55,
+     49.1
+    ],
+    [
+     22.77,
+     49.8
+    ],
+    [
+     23.55,
+     50.4
+    ],
+    [
+     23.7,
+     51
+    ],
+    [
+     23.6,
+     52.1
+    ],
+    [
+     22.8,
+     52.7
+    ],
+    [
+     22.3,
+     53.3
+    ],
+    [
+     22.8,
+     53.9
+    ],
+    [
+     22.8,
+     54.45
+    ],
+    [
+     22.8,
+     55.05
+    ],
+    [
+     21.4,
+     55.6
+    ],
+    [
+     21,
+     55.8
+    ],
+    [
+     18,
+     55.8
+    ]
+   ]
+  }
+ ],
+ "weatherProfile": [
+  {
+   "month": 6,
+   "probs": {
+    "clear": 0.45,
+    "cloud": 0.3,
+    "rain": 0.2,
+    "fog": 0.05
+   },
+   "tempC": 18
+  },
+  {
+   "month": 7,
+   "probs": {
+    "clear": 0.4,
+    "cloud": 0.3,
+    "rain": 0.25,
+    "fog": 0.05
+   },
+   "tempC": 20
+  },
+  {
+   "month": 8,
+   "probs": {
+    "clear": 0.4,
+    "cloud": 0.3,
+    "rain": 0.25,
+    "fog": 0.05
+   },
+   "tempC": 19
+  },
+  {
+   "month": 9,
+   "probs": {
+    "clear": 0.3,
+    "cloud": 0.3,
+    "rain": 0.3,
+    "fog": 0.1
+   },
+   "tempC": 13
+  }
+ ],
+ "eventTemplateIds": [
+  "bb.ev.invasion",
+  "bb.ev.airfields",
+  "bb.ev.brest",
+  "bb.ev.brody",
+  "bb.ev.raseiniai",
+  "bb.ev.grodno",
+  "bb.ev.minsk_link",
+  "bb.ev.minsk",
+  "bb.ev.luga",
+  "bb.ev.pavlov",
+  "bb.ev.rain",
+  "bb.ev.lepiel",
+  "bb.ev.pskov8",
+  "bb.ev.smolensk",
+  "bb.ev.uman",
+  "bb.ev.logistics",
+  "bb.ev.smolensk_pocket",
+  "bb.ev.uman_pocket",
+  "bb.ev.novgorod",
+  "bb.ev.shlisselburg",
+  "bb.ev.kiev_ring",
+  "bb.ev.typhoon"
+ ],
+ "specialSystems": [],
+ "airSupremacy": [
+  {
+   "side": "axis",
+   "radiusKm": 80,
+   "speedMul": 0.7,
+   "fromMinutes": 0,
+   "toMinutes": 10080
+  }
+ ],
+ "victoryTiers": {
+  "axis": {
+   "decisive": 0.8,
+   "strategic": 0.6,
+   "limited": 0.4,
+   "stalemate": 0.2
+  },
+  "allies": {
+   "decisive": 0.8,
+   "strategic": 0.6,
+   "limited": 0.4,
+   "stalemate": 0.2
+  }
+ },
+ "sources": [
+  {
+   "id": "R01",
+   "citation": "Wikipedia, \"Operation Barbarossa\" (153 German divisions, 3.8 million Axis personnel, 3,350-3,795 tanks; Luftwaffe air supremacy by the end of the first week; 2 July rainstorm; logistics and 179,500 casualties by 2 August; Kiev 19 September; Typhoon 30 September).",
+   "url": "https://en.wikipedia.org/wiki/Operation_Barbarossa"
+  },
+  {
+   "id": "R02",
+   "citation": "Wikipedia, \"Operation Barbarossa order of battle\" (front and army-group names and commanders only; tables did not extract).",
+   "url": "https://en.wikipedia.org/wiki/Operation_Barbarossa_order_of_battle"
+  },
+  {
+   "id": "R03",
+   "citation": "Wikipedia, \"Army Group North\", \"Army Group Centre\", \"Army Group South\" (armies and panzer groups per army group, objectives).",
+   "url": "https://en.wikipedia.org/wiki/Army_Group_Centre"
+  },
+  {
+   "id": "R04",
+   "citation": "Wikipedia, \"Battle of Bialystok-Minsk\" (22 June-9 July; Army Group Centre 33 infantry divisions and 9 panzer, 6 motorised, 1 cavalry; Western Front 25 rifle and cavalry, 13 tank, 7 motorised divisions; Minsk 28 June).",
+   "url": "https://en.wikipedia.org/wiki/Battle_of_B%C4%99ia%C5%82ystok%E2%80%93Minsk"
+  },
+  {
+   "id": "R05",
+   "citation": "Wikipedia, \"Battle of Smolensk (1941)\" (10 July-10 September; 13th, 20th, 21st, 22nd Armies on the Dvina-Dnieper, 19th forming at Vitebsk, 16th arriving at Smolensk; 6 July Lepiel counter-attack; pocket closed 5 August).",
+   "url": "https://en.wikipedia.org/wiki/Battle_of_Smolensk_(1941)"
+  },
+  {
+   "id": "R06",
+   "citation": "Wikipedia, \"Battle of Uman\" (15 July-8 August; Soviet 6th and 12th Armies; 1st Panzer Group III, XIV, XLVIII Corps).",
+   "url": "https://en.wikipedia.org/wiki/Battle_of_Uman"
+  },
+  {
+   "id": "R07",
+   "citation": "Wikipedia, \"Battle of Kiev (1941)\" (7 July-26 September; encirclement; 452,700 trapped).",
+   "url": "https://en.wikipedia.org/wiki/Battle_of_Kiev_(1941)"
+  },
+  {
+   "id": "R08",
+   "citation": "Wikipedia, \"Baltic Operation\" (22 June-9 July; Northwestern Front 8th, 11th and later 27th Armies; German 18th and 16th Armies and 4th Panzer Group).",
+   "url": "https://en.wikipedia.org/wiki/Baltic_Operation"
+  },
+  {
+   "id": "R09",
+   "citation": "Wikipedia, \"Siege of Leningrad\" (Luga line from 29 June, Pskov and Ostrov 10 July, Novgorod 16 August, Narva 17 August, Shlisselburg 7-8 September).",
+   "url": "https://en.wikipedia.org/wiki/Siege_of_Leningrad"
+  },
+  {
+   "id": "R10",
+   "citation": "Wikipedia, \"Siege of the Brest Fortress\" (garrison about 9,000, 45th Infantry Division about 17,000; fighting from 22 June to about 30 June).",
+   "url": "https://en.wikipedia.org/wiki/Siege_of_the_Brest_Fortress"
+  },
+  {
+   "id": "R11",
+   "citation": "Wikipedia, \"Battle of Brody (1941)\" (23-30 June; 1st Panzer Group III and XLVIII Corps vs five Soviet mechanised corps).",
+   "url": "https://en.wikipedia.org/wiki/Battle_of_Brody_(1941)"
+  },
+  {
+   "id": "R12",
+   "citation": "Wikipedia, \"Panzer Group 1\", \"Panzer Group 2\", \"Panzer Group 3\" (Panzer Group 1: III, XIV, XLVIII Corps, 5 panzer and 4 motorised divisions, 799 tanks; commanders Kleist, Guderian, Hoth; rasputitsa).",
+   "url": "https://en.wikipedia.org/wiki/Panzer_Group_1"
+  },
+  {
+   "id": "R13",
+   "citation": "Wikipedia, \"Soviet Western Front\" (22 June dispositions; Pavlov).",
+   "url": "https://en.wikipedia.org/wiki/Western_Front_(Soviet_Union)"
+  },
+  {
+   "id": "R14",
+   "citation": "Wikipedia, \"Southwestern Front (Soviet Union)\" (5th, 6th, 26th, 12th Armies on the frontier; 16th and 19th in reserve; Kirponos).",
+   "url": "https://en.wikipedia.org/wiki/Southwestern_Front_(Soviet_Union)"
+  },
+  {
+   "id": "R15",
+   "citation": "Wikipedia, \"Stalin Line\" (fortified districts along the old border; Molotov Line unfinished).",
+   "url": "https://en.wikipedia.org/wiki/Stalin_Line"
+  },
+  {
+   "id": "R16",
+   "citation": "Wikipedia, \"Battle of Raseiniai\" (23-27 June; 4th Panzer Group vs Soviet 3rd and 12th Mechanised Corps).",
+   "url": "https://en.wikipedia.org/wiki/Battle_of_Raseiniai"
+  },
+  {
+   "id": "R17",
+   "citation": "Wikipedia coordinates API (prop=coordinates) for Eastern Front place names: Brest, Minsk, Smolensk, Kyiv, Riga, Vilnius, Kaunas, Grodno, Bialystok, Lviv, Rivne, Zhytomyr, Berdychiv, Uman, Vitebsk, Mogilev, Pskov, Novgorod, Narva, Saint Petersburg, Shlisselburg, Luga and others (positions only).",
+   "url": "https://www.mediawiki.org/wiki/API:Coordinates"
+  },
+  {
+   "id": "G01",
+   "citation": "GAME-SCALE ABSTRACTION (internal): manpower, equipment, morale/experience, readiness/organisation, resources, objective points, thresholds, supply capacities, hub ramp times, air-supremacy radius and speed are nominal game values, not historical strengths. Sourced aggregates anchoring them: 153 German divisions (R01), Panzer Group 1 799 tanks (R12), Western Front 25+13+7 divisions (R04), Brest garrison about 9,000 and 45th ID about 17,000 (R10)."
+  },
+  {
+   "id": "G02",
+   "citation": "LOCATION POLICY (internal): locations are real cities/towns placed at Wikipedia (R17) coordinates, nudged to the nearest land cell of the terrain grid where needed."
+  },
+  {
+   "id": "G03",
+   "citation": "POSITION POLICY (internal): no retrieved source gives army or corps start coordinates; unit positions are approximate sector anchors inferred from the named towns and areas in R01-R16, with a small deterministic spread. Every unit position is APPROXIMATE."
+  },
+  {
+   "id": "G04",
+   "citation": "BORDER POLICY (internal): initialControl is a coarse 1941 demarcation line (German-held Poland and East Prussia west of it, Soviet-held ground east of it); no source gives exact lines."
+  },
+  {
+   "id": "G06",
+   "citation": "RAIL-GAUGE POLICY (internal): the Soviet broad-gauge rail needing conversion is not in the retrieved text; Axis forward hubs (Brest, Minsk, Smolensk and others) are capture-activated supply sources with a game-scale throughput ramp (rampHours) standing in for gauge conversion. The engine has no gauge concept, so Soviet rail still counts as usable rail for the Axis (too generous; flagged in KNOWN_ISSUES)."
+  }
+ ]
+}

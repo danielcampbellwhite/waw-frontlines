@@ -7,6 +7,7 @@ const CASES: [string, NationId[]][] = [
   ['fall_of_france.standard', ['GER', 'FRA', 'GBR']], ['fall_of_france.short', ['GER', 'FRA', 'GBR']],
   ['bulge.short', ['GER', 'USA', 'GBR']], ['crusader.short', ['GER', 'GBR', 'ITA']], ['stalingrad.short', ['SOV', 'GER']],
   ['normandy.short', ['USA', 'GBR', 'CAN', 'GER']],
+  ['barbarossa.short', ['GER', 'SOV']],
 ];
 
 describe('start supply: no scenario starts with a pile of unsupplied units', () => {

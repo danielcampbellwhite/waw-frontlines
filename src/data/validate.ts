@@ -189,7 +189,8 @@ export function validateScenario(def: ScenarioDefinition, sidecar?: ScenarioSide
       else {
         const ownerSide = def.nations.find((x) => x.id === loc.owner)?.side;
         const nSide = def.nations.find((x) => x.id === n)?.side;
-        if (loc.owner !== n && (!ownerSide || ownerSide !== nSide)) e(`supplySources ${n}: location ${id} is owned by ${loc.owner}, not the same side, at start`);
+        // A location the enemy owns at start may be listed only as a capture-activated hub: it must set rampHours (the throughput ramp from the capture hour), and it counts as a source for this side only once captured.
+        if (loc.owner !== n && (!ownerSide || ownerSide !== nSide) && loc.rampHours === undefined) e(`supplySources ${n}: location ${id} is owned by ${loc.owner}, not the same side, at start (set rampHours to list it as a capture-activated hub)`);
       }
     }
     const nat = def.nations.find((x) => x.id === n);

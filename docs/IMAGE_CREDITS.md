@@ -175,6 +175,7 @@ Machine-readable list: `src/art/credits.json`. Regenerate with `node scripts/art
 - Commonwealth: no Indian/South African infantry photo; NZL/AUS/IND/CAN/RSA have only infantry (1-2 photos each, when downloads succeeded).
 - Nation-neutral fallback: unitPhoto supports NEUTRAL entries for logistics/motorised/hq but none shipped yet (no genuinely unmarked generic truck/convoy photo verified).
 - Pending retry (Commons 429 throttling blocked download; re-run `node scripts/art/build.mjs scripts/art/picks.json <rawdir>` later): ger_panther_hay ger_stug_italy ger_stug_stalingrad ger_pz4_late ger_pz4_woods ger_pz4_africa ger_pz3_africa ger_flak_africa ger_bf109_africa ger_bf109_paint ger_inf_stalingrad ger_inf_house ger_para_vw ger_para_italy ger_pak_denmark ger_pak_75 ita_m13_desert ita_m13_surrender ita_bersaglieri ita_gunners rou_inf_cav rou_inf_march gbr_carrier_desert ind_carrier_desert nzl_inf_matilda aus_inf_wadi gbr_hurr_80sqn gbr_hurr_33sqn. Bofors still not retried successfully.
+- Barbarossa remaining gaps: no Mosin rifle-infantry photo (SOV infantry units show a labelled naval-infantry photo and a labelled cavalry photo), no Hanomag Sd.Kfz. 251 Barbarossa-era photo beyond the 1940-44 half-track images, no Barbarossa-era Panzer III/IV (only 1940 and later), no Ju 87 over the Eastern Front (Stuka photo is North Africa), only one Soviet HQ photo (Stalingrad Front council); Ju 87/Panzer IV/StuG picks pending Commons throttling.
 
 
 ## Rejected during verification

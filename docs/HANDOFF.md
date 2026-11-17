@@ -3,7 +3,7 @@
 Project: WORLD AT WAR: FRONTLINES - see CLAUDE.md, docs/TECHNICAL_ARCHITECTURE.md. Git: snapshots on master (see `git log`).
 
 ## What works
-Five campaigns playable end to end (Fall of France, Ardennes/Bulge, Crusader, Stalingrad, Normandy; Short scale, FoF also Standard):
+Six campaigns playable end to end (Fall of France, Ardennes/Bulge, Crusader, Stalingrad, Normandy, Barbarossa; Short scale, FoF also Standard). Britain, Italy, Pacific (plus Kursk, Berlin, North Africa 1940-43) are parked as COMING SOON tiles:
 main menu -> campaign -> nation -> briefing -> game, real engine, real map, orders, supply/fuel, combat + reports, fog, AI, events, saves (IndexedDB), audio, photo/illustrated icons.
 Run: `npm run dev` (http://localhost:5173), tests `npx vitest run --no-file-parallelism`, `npx tsc -p tsconfig.app.json --noEmit`, `npx tsc -p tests --noEmit`.
 
@@ -23,11 +23,12 @@ map-engineer, sim-engineer, military-engineer, ai-events-engineer, campaign-engi
 - Normandy: English embarkation ports are in-bbox supply sources; beaches/Mulberries are not sources; `seaSupply`, `captureBlockKm` 6.5 and `weatherControl` stormScale 0 are set.
 
 ## Open items
-1. Map: Normandy OSM rivers/roads/rail (Overpass failing; currently Natural Earth only); Ardennes/N. Africa roads/rail; Via Balbia.
-2. Art: infantry-gets-gun-photo fix confirmation; USA/SOV/ROU/ITA/Commonwealth photo batches; Blenheim credit cleanup; unused-symbol tsc errors in src/art/index.ts.
-3. Not started: Britain, Italy, Pacific campaigns; Standard/Grand scales; naval/air-war systems; tutorial/tour (final polish); human playtest; audio never heard by a human.
-4. Release: public OSM tile URL and Google Fonts are GONE (self-contained basemap, local fonts); decide whether to force historical outcomes (default: no).
-5. Housekeeping: delete tests/military.tmpbis.test.ts (scratch); kill stray vite servers by PID (only this project's).
+1. Human playtest (user-owned): both sides of Barbarossa, first two game days of every campaign with sound on; see docs/RELEASE_CHECKLIST.md. Audio has never been heard by a human.
+2. Map: Normandy OSM rivers/roads/rail (currently Natural Earth; rebuild would need a balance re-measure); Ardennes/N. Africa roads/rail; Via Balbia; Narew/Berezina missing.
+3. Art: 154 photos; documented gaps in scripts/art/gaps.md (Commons throttling).
+4. AI: German AI-as-player vs Soviet AI is weak in Barbarossa; panzer-bypass/pocket seeking deferred (KNOWN_ISSUES.md). Rail gauge has no engine concept (L9).
+5. Parked: Britain, Italy, Pacific campaigns; Standard/Grand scales; naval/air-war systems; tutorial practice scenario.
+6. Release: decide whether to force historical outcomes (default: no).
 
 ## Sim: opening surprise
 Optional `openingSurprise` scenario field (see TECHNICAL_ARCHITECTURE.md "Opening surprise"); campaign-engineer sets it per scenario (e.g. Barbarossa victimNations ['SOV']). Tests: tests/sim.combat.test.ts.

@@ -775,6 +775,7 @@ function planRaids(p: P): void {
 }
 
 function planCounterattacks(p: P): void {
+  if (p.now < p.doc.counterattackFromMinutes) return; // surprise: no counter-attacks in the first days
   if (p.activeOps >= p.doc.maxOperations + 1) return;
   // a unit standing on its garrison position (hold location) never leaves it for a counter-attack
   const onPost = (u: Unit) => { const g = p.mem.garrison?.[u.id]; const l = g ? p.ownLocs.find((x) => x.id === g) : undefined; return !!l && fastKm(u.pos, l.pos) < 12; };
@@ -1125,10 +1126,13 @@ export function aiThink(state: Readonly<GameState>, nation: NationId, ctx: AiCon
   const groupSets: { g: ArmourGroup; set: Set<UnitId> }[] = [];
   if (doc.armourGroups.length && p.posture === 'attack') {
     const book = (mem.armourGroups ??= {});
+    // each group's target strength is its share of the armour actually available (a small force still feeds every axis)
+    const nArm = mine.filter((u) => roleOf(u) === 'armour').length;
+    const sumSize = doc.armourGroups.reduce((a2, g) => a2 + (g.size ?? doc.axisSize), 0);
     for (const g of doc.armourGroups) {
       const ids = (book[g.name] ?? []).filter((id) => state.units[id] && isAlive(state.units[id]) && !p.used.has(id));
       const first = g.objectives.map((id) => state.locations[id]).find((l) => l && sideOfNation(state, l.owner) !== side);
-      const size = g.size ?? doc.axisSize;
+      const size = Math.max(1, Math.min(g.size ?? doc.axisSize, Math.round(nArm * (g.size ?? doc.axisSize) / sumSize)));
       if (ids.length < size && first) {
         const taken = new Set<string>(); for (const k in book) for (const id of book[k]) taken.add(id);
         const armour = mine.filter((u) => roleOf(u) === 'armour' && !ids.includes(u.id) && !taken.has(u.id) && !p.used.has(u.id)).sort((a, b) => fastKm(a.pos, first.pos) - fastKm(b.pos, first.pos) || (a.id < b.id ? -1 : 1));

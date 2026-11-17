@@ -249,33 +249,52 @@ for (const n of ['USA', 'GBR', 'CAN', 'POL', 'FRA'] as const) registerAiDoctrine
 registerAiDoctrine('normandy', 'GER', NORMANDY_GER);
 
 /**
- * Barbarossa (hours from 22 June 1941 00:00 unless the scenario start says otherwise). DRAFT / SCAFFOLD: no location ids yet
- * (waiting for campaign-engineer's scenario plan); only structural behaviour is set. Everything is data-overridable through
- * state.special.aiDoctrine. The AI uses only fogged perception (no cheating): objectives come from the doctrine, not from enemy positions.
+ * Barbarossa (hours from 22 June 1941 00:00; scenario barbarossa.short, 2,400 ticks to 30 Sep 1941). Pacing dates are the campaign's cited
+ * dates (campaign-engineer, docs/BARBAROSSA_RESEARCH.md / normandy-style sources sidecar): Minsk 28 Jun, Pskov 8-10 Jul, Smolensk battle 10 Jul-10 Sep
+ * (pocket closed 5 Aug), Uman pocket destroyed 8 Aug, Novgorod 16 Aug, Kingisepp/Narva 17 Aug, Shlisselburg 7-8 Sep, Kiev encircled 16 Sep, taken 19 Sep.
+ * Three army-group axes, each an armoured group with its own objective list (doctrine.armourGroups). No fog cheating: objectives come from the doctrine.
  */
+const D = 24;
 export const BARBAROSSA_AXIS: AiDoctrine = {
   posture: 'attack',
-  armour: 'breakthrough', // deep armoured thrusts; infantry armies follow and reduce the pockets
+  armour: 'breakthrough', // deep armoured thrusts; the infantry armies follow and take the towns
   encirclement: true,
-  fuelAware: true, // the panzer groups outrun their supply: fuel-bound tempo
-  axisSize: 10, // one Schwerpunkt group per army group axis is wired once the ids exist
+  fuelAware: true, // the panzer groups outrun their supply
+  ratioToAttack: 0.5, // 1941: concentrated, well-led formations attacked at parity or worse and won by manoeuvre
   reserveFraction: 0.15,
   aggressionBias: 0.15,
-  maxOperations: 6,
-  // TODO(barbarossa ids): armourObjectives per army group (North: Baltic/Leningrad; Centre: Minsk, Smolensk, Moscow; South: Kiev), captureLocations,
-  // objectiveSchedule from cited dates, pocketLocations for Axis-held rings, phases (summer drive, autumn mud halt, Typhoon, winter halt at hour ~ 5 Dec)
+  maxOperations: 8,
+  armourGroups: [
+    { name: 'north', size: 5, objectives: ['siauliai', 'daugavpils', 'pskov', 'luga', 'novgorod', 'shlisselburg'] }, // 4th Panzer Group
+    { name: 'centre', size: 8, objectives: ['bialystok', 'minsk', 'vitebsk', 'smolensk'] }, // 2nd and 3rd Panzer Groups
+    { name: 'south', size: 6, objectives: ['lutsk', 'rovno', 'zhitomir', 'uman', 'kiev'] }, // 1st Panzer Group
+  ],
+  captureLocations: ['brest', 'minsk', 'smolensk', 'kiev', 'riga', 'pskov', 'novgorod', 'shlisselburg', 'leningrad'],
+  objectiveSchedule: {
+    ...sched(0, 'brest'), ...sched(5 * D, 'minsk'), // Minsk 28 Jun
+    ...sched(16 * D, 'pskov'), // Pskov 8 Jul
+    ...sched(18 * D, 'smolensk'), // the Smolensk battle opens 10 Jul
+    ...sched(45 * D, 'uman'), // Uman pocket destroyed 8 Aug
+    ...sched(54 * D, 'novgorod', 'luga'), ...sched(55 * D, 'kingisepp', 'narva'), // Novgorod 16 Aug, Kingisepp/Narva 17 Aug
+    ...sched(76 * D, 'shlisselburg'), // Shlisselburg 7-8 Sep
+    ...sched(86 * D, 'kiev'), // Kiev encircled 16 Sep, taken 19 Sep
+    ...sched(120 * D, 'leningrad', 'moscow'), // never reached in the scenario window
+  },
 };
 
 export const BARBAROSSA_SOVIET: AiDoctrine = {
   posture: 'defend',
-  // frontier defence under surprise: slow reaction in the first days, then delay and withdrawal, counter-attacks when the ratio allows
+  // frontier defence under surprise: a slow first reaction, then counter-attacks when the ratio allows
   reactionMinutes: 360,
+  counterattackFromMinutes: 72 * 60, // no counter-attacks for the first 72 h (surprise); then defend / delay / counter-attack
   armour: 'balanced',
   reserveFraction: 0.3,
   maxOperations: 4,
   encirclement: false,
-  // TODO(barbarossa ids): holdLocations (Leningrad, Moscow, Kiev, Odessa, Sevastopol), fallbackLocations for the withdrawal, phases:
-  // defend -> withdraw/delay (summer 1941) -> defend -> counter-attack (Moscow, December 1941), noWithdraw rules at Leningrad/Moscow
+  holdLocations: ['minsk', 'smolensk', 'kiev', 'leningrad', 'moscow', 'vitebsk', 'pskov', 'novgorod'],
+  locationWeights: { minsk: 2, smolensk: 2, kiev: 2, leningrad: 3, moscow: 3 },
+  // delay lines: the Dvina-Dnieper line and the Luga line
+  fallbackLocations: ['vitebsk', 'polotsk', 'orsha', 'mogilev', 'borisov', 'luga', 'novgorod', 'narva', 'kingisepp', 'pskov'],
 };
 
 registerAiDoctrine('barbarossa', 'GER', BARBAROSSA_AXIS);

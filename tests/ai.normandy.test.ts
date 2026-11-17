@@ -96,8 +96,12 @@ describe('barbarossa doctrine scaffold', () => {
     expect(ger.posture).toBe('attack');
     expect(ger.fuelAware).toBe(true);
     expect(ger.encirclement).toBe(true);
+    expect(ger.armourGroups.map((g) => g.name)).toEqual(['north', 'centre', 'south']);
+    expect(ger.objectiveSchedule.minsk).toBe(5 * 24 * 60); // Minsk 28 Jun
+    expect(ger.objectiveSchedule.kiev).toBeGreaterThan(ger.objectiveSchedule.uman);
     expect(sov.posture).toBe('defend');
     expect(sov.reactionMinutes).toBeGreaterThan(120);
+    expect(sov.holdLocations).toContain('leningrad');
   });
 });
 

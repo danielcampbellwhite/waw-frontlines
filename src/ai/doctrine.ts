@@ -74,6 +74,8 @@ export interface AiDoctrine {
    * replaces `armourObjectives`/`axisSize`; each group is refilled from the armour nearest its first open objective and thrusts independently.
    */
   armourGroups?: ArmourGroup[];
+  /** No counter-attacks before this sim minute (surprise: the frontier armies are not yet in a position to counter-attack). Default 0. */
+  counterattackFromMinutes?: number;
 }
 
 export interface ArmourGroup { name: string; objectives: LocationId[]; size?: number }
@@ -106,6 +108,7 @@ export interface ResolvedDoctrine {
   pocketLocations: LocationId[];
   reserveReleases: ReserveRelease[];
   armourGroups: ArmourGroup[];
+  counterattackFromMinutes: number;
 }
 
 export const DEFAULT_DOCTRINE: ResolvedDoctrine = {
@@ -134,6 +137,7 @@ export const DEFAULT_DOCTRINE: ResolvedDoctrine = {
   pocketLocations: [],
   reserveReleases: [],
   armourGroups: [],
+  counterattackFromMinutes: 0,
 };
 
 const POSTURES = ['attack', 'defend', 'withdraw', 'consolidate'];
@@ -197,6 +201,7 @@ export function resolveDoctrine(state: Readonly<GameState>, nation: NationId): R
       d.armourGroups.push({ name: g.name, objectives, size: isNum(g.size) ? clamp(Math.floor(g.size), 2, 16) : undefined });
     }
   }
+  if (isNum(raw.counterattackFromMinutes)) d.counterattackFromMinutes = Math.max(0, raw.counterattackFromMinutes);
   if (isNum(raw.axisSize)) d.axisSize = clamp(Math.floor(raw.axisSize), 2, 16);
   return d;
 }

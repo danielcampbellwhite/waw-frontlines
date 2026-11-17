@@ -284,14 +284,15 @@ export const BARBAROSSA_AXIS: AiDoctrine = {
 
 export const BARBAROSSA_SOVIET: AiDoctrine = {
   posture: 'defend',
+  phases: [{ fromMinutes: 0, posture: 'withdraw' }, { fromMinutes: 300 * 60, posture: 'defend' }], // surprised frontier armies fall back before they stand
   // frontier defence under surprise: a slow first reaction, then counter-attacks when the ratio allows
-  reactionMinutes: 360,
-  counterattackFromMinutes: 72 * 60, // no counter-attacks for the first 72 h (surprise); then defend / delay / counter-attack
+  reactionMinutes: 720,
+  counterattackFromMinutes: 168 * 60, // no counter-attacks for the first week (surprise); then defend / delay / counter-attack
   armour: 'balanced',
-  reserveFraction: 0.3,
+  reserveFraction: 0.15,
   maxOperations: 4,
   encirclement: false,
-  holdLocations: ['minsk', 'smolensk', 'kiev', 'leningrad', 'moscow', 'vitebsk', 'pskov', 'novgorod'],
+  holdLocations: ['minsk', 'smolensk', 'kiev', 'leningrad', 'moscow'],
   locationWeights: { minsk: 2, smolensk: 2, kiev: 2, leningrad: 3, moscow: 3 },
   // delay lines: the Dvina-Dnieper line and the Luga line
   fallbackLocations: ['vitebsk', 'polotsk', 'orsha', 'mogilev', 'borisov', 'luga', 'novgorod', 'narva', 'kingisepp', 'pskov'],

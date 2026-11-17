@@ -44,6 +44,9 @@ export interface AiMemory {
   staged?: Record<string, number>;
   opTargets?: Record<string, number>;
   axisGroup?: string[];
+  /** armour groups (doctrine.armourGroups): group name -> unit ids; per-group thrust clock */
+  armourGroups?: Record<string, string[]>;
+  groupThrust?: Record<string, number>;
   /** unit id -> hold location id it was assigned to (sticky garrison) */
   garrison?: Record<string, string>;
   /** national fuel pool at the first think (reference for fuel stress) */

@@ -86,3 +86,47 @@ describe('port-capacity-aware reinforcement requests', () => {
     expect(wrecked).not.toContain(port.id);
   });
 });
+
+describe('barbarossa doctrine scaffold', () => {
+  it('registers Axis and Soviet draft doctrines under the barbarossa prefix', () => {
+    const s = structuredClone(mkEngine(loadWorld(), 'FRA', 1).getState() as GameState);
+    s.scenarioId = 'barbarossa.short';
+    const ger = resolveDoctrine(s, 'GER');
+    const sov = resolveDoctrine(s, 'SOV');
+    expect(ger.posture).toBe('attack');
+    expect(ger.fuelAware).toBe(true);
+    expect(ger.encirclement).toBe(true);
+    expect(sov.posture).toBe('defend');
+    expect(sov.reactionMinutes).toBeGreaterThan(120);
+  });
+});
+
+describe('armourGroups (opt-in per-army-group armour groups)', () => {
+  const mk = (groups: unknown): GameState => {
+    const s = structuredClone(mkEngine(loadWorld(), 'FRA', 1).getState() as GameState);
+    s.special = { ...s.special, aiDoctrine: { GER: { posture: 'attack', armour: 'breakthrough', armourGroups: groups } } };
+    return s;
+  };
+  const ctx = (s: GameState) => ({ rand: () => 0.5, gauss: () => 0, visibleTo: () => Object.values(s.units) }) as unknown as AiContext;
+
+  it('sanitises groups (drops nameless, empty and duplicate ones)', () => {
+    const d = resolveDoctrine(mk([{ name: 'north', objectives: ['rotterdam'], size: 99 }, { name: 'north', objectives: ['x'] }, { objectives: ['y'] }, { name: 'empty', objectives: [] }, { name: 'south', objectives: ['sedan', 7] }]), 'GER');
+    expect(d.armourGroups).toEqual([{ name: 'north', objectives: ['rotterdam'], size: 16 }, { name: 'south', objectives: ['sedan'], size: undefined }]);
+  });
+
+  it('fills disjoint groups and leaves existing doctrines on the single-group path', () => {
+    const s = mk([{ name: 'a', objectives: ['sedan'], size: 3 }, { name: 'b', objectives: ['rotterdam', 'brussels'], size: 3 }]);
+    aiThink(s, 'GER', ctx(s));
+    const book = ((s.aiState as Record<string, { armourGroups?: Record<string, string[]> }>).GER).armourGroups!;
+    expect(Object.keys(book).sort()).toEqual(['a', 'b']);
+    expect(book.a.length).toBeGreaterThan(0);
+    expect(book.b.length).toBeGreaterThan(0);
+    expect(book.a.some((id) => book.b.includes(id))).toBe(false);
+    // no groups: the legacy single group path is used and no group book is created
+    const t = structuredClone(mkEngine(loadWorld(), 'FRA', 1).getState() as GameState);
+    t.special = { ...t.special, aiDoctrine: { GER: { posture: 'attack', armourObjectives: ['sedan'] } } };
+    aiThink(t, 'GER', ctx(t));
+    expect(((t.aiState as Record<string, { armourGroups?: unknown; axisGroup?: unknown }>).GER).armourGroups).toBeUndefined();
+    expect(((t.aiState as Record<string, { axisGroup?: unknown }>).GER).axisGroup).toBeDefined();
+  });
+});

@@ -14,7 +14,7 @@ import { portCapacity } from '../military';
 import { bearingDeg, destination } from '../core/geo';
 import type { Command, GameState, Location, LocationId, LonLat, NationId, Operation, Order, SideId, Unit, UnitId } from '../core/types';
 import { analyseFront, buildClassGrid, classAt, inOwnSalient, type FrontAnalysis, type Sector } from './analysis';
-import { resolveDoctrine, scheduledPosture, type AiPosture, type ResolvedDoctrine } from './doctrine';
+import { resolveDoctrine, scheduledPosture, type AiPosture, type ResolvedDoctrine, type ArmourGroup } from './doctrine';
 import {
   clamp, difficultyProfile, fastKm, isAlive, isMobileType, opposite, roleOf, sideOfNation, sigOf, unitPower,
   type AiContext, type DifficultyProfile, type Role,
@@ -22,7 +22,7 @@ import {
 import { getMemory, perceive, type AiMemory, type Contact } from './perception';
 
 export type { AiContext } from './model';
-export type { AiDoctrine, AiPosture } from './doctrine';
+export type { AiDoctrine, AiPosture, ArmourGroup } from './doctrine';
 export { resolveDoctrine, registerAiDoctrine } from './doctrine';
 import './doctrines';
 
@@ -1121,8 +1121,27 @@ export function aiThink(state: Readonly<GameState>, nation: NationId, ctx: AiCon
 
   planReserveHolds(p);
 
+  // opt-in: several persistent armoured groups (one per army-group axis), each refilled from the armour nearest its first open objective
+  const groupSets: { g: ArmourGroup; set: Set<UnitId> }[] = [];
+  if (doc.armourGroups.length && p.posture === 'attack') {
+    const book = (mem.armourGroups ??= {});
+    for (const g of doc.armourGroups) {
+      const ids = (book[g.name] ?? []).filter((id) => state.units[id] && isAlive(state.units[id]) && !p.used.has(id));
+      const first = g.objectives.map((id) => state.locations[id]).find((l) => l && sideOfNation(state, l.owner) !== side);
+      const size = g.size ?? doc.axisSize;
+      if (ids.length < size && first) {
+        const taken = new Set<string>(); for (const k in book) for (const id of book[k]) taken.add(id);
+        const armour = mine.filter((u) => roleOf(u) === 'armour' && !ids.includes(u.id) && !taken.has(u.id) && !p.used.has(u.id)).sort((a, b) => fastKm(a.pos, first.pos) - fastKm(b.pos, first.pos) || (a.id < b.id ? -1 : 1));
+        for (const u of armour) { if (ids.length >= size) break; ids.push(u.id); }
+      }
+      book[g.name] = ids;
+      for (const id of ids) p.axis.add(id);
+      groupSets.push({ g, set: new Set(ids) });
+    }
+  }
+
   // Schwerpunkt group: persistent, chosen from the armour nearest the first open armour objective
-  if (doc.armourObjectives.length && p.posture === 'attack') {
+  if (!doc.armourGroups.length && doc.armourObjectives.length && p.posture === 'attack') {
     const ids = (mem.axisGroup ?? []).filter((id) => state.units[id] && isAlive(state.units[id]));
     const first = doc.armourObjectives.map((id) => state.locations[id]).find((l) => l && sideOfNation(state, l.owner) !== side);
     if (ids.length < doc.axisSize && first) {
@@ -1142,7 +1161,17 @@ export function aiThink(state: Readonly<GameState>, nation: NationId, ctx: AiCon
     case 'attack':
       planCounterattacks(p);
       planOffensive(p);
-      planArmourThrust(p);
+      if (groupSets.length) {
+        // each group thrusts independently on its own objective list and its own thrust clock
+        const baseAxis = p.axis, baseDoc = p.doc, baseThrust = p.mem.lastThrust;
+        const clock = (mem.groupThrust ??= {});
+        for (const { g, set } of groupSets) {
+          p.axis = set; p.doc = { ...baseDoc, armourObjectives: g.objectives }; p.mem.lastThrust = clock[g.name];
+          planArmourThrust(p);
+          clock[g.name] = p.mem.lastThrust as number;
+        }
+        p.axis = baseAxis; p.doc = baseDoc; p.mem.lastThrust = baseThrust;
+      } else planArmourThrust(p);
       planOccupy(p);
       planStrikes(p);
       planRaids(p);

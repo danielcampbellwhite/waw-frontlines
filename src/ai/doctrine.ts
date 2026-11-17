@@ -69,7 +69,14 @@ export interface AiDoctrine {
    * reserve released by Hitler/OKW on 7-8 June). At least one of the two triggers is required.
    */
   reserveReleases?: ReserveRelease[];
+  /**
+   * Opt-in: several persistent armoured groups, each with its own objective list (Barbarossa: one per army group axis). When present it
+   * replaces `armourObjectives`/`axisSize`; each group is refilled from the armour nearest its first open objective and thrusts independently.
+   */
+  armourGroups?: ArmourGroup[];
 }
+
+export interface ArmourGroup { name: string; objectives: LocationId[]; size?: number }
 
 export interface ReserveRelease { match: string; fromMinutes?: number; eventId?: string }
 
@@ -98,6 +105,7 @@ export interface ResolvedDoctrine {
   fuelAware: boolean;
   pocketLocations: LocationId[];
   reserveReleases: ReserveRelease[];
+  armourGroups: ArmourGroup[];
 }
 
 export const DEFAULT_DOCTRINE: ResolvedDoctrine = {
@@ -125,6 +133,7 @@ export const DEFAULT_DOCTRINE: ResolvedDoctrine = {
   fuelAware: false,
   pocketLocations: [],
   reserveReleases: [],
+  armourGroups: [],
 };
 
 const POSTURES = ['attack', 'defend', 'withdraw', 'consolidate'];
@@ -134,7 +143,7 @@ const strArr = (x: unknown): string[] => (Array.isArray(x) ? x.filter((s): s is 
 
 /** Read & sanitise the doctrine for a nation from scenario-supplied special data. */
 export function resolveDoctrine(state: Readonly<GameState>, nation: NationId): ResolvedDoctrine {
-  const d: ResolvedDoctrine = { ...DEFAULT_DOCTRINE, phases: [], holdLocations: [], captureLocations: [], locationWeights: {}, fallbackLocations: [], objectiveSchedule: {}, armourObjectives: [], pocketLocations: [], reserveReleases: [] };
+  const d: ResolvedDoctrine = { ...DEFAULT_DOCTRINE, phases: [], holdLocations: [], captureLocations: [], locationWeights: {}, fallbackLocations: [], objectiveSchedule: {}, armourObjectives: [], pocketLocations: [], reserveReleases: [], armourGroups: [] };
   const all = state.special?.aiDoctrine as Record<string, unknown> | undefined;
   let raw = (all && typeof all === 'object' ? all[nation] ?? all['*'] : undefined) as Record<string, unknown> | undefined;
   if (!raw) {
@@ -177,6 +186,16 @@ export function resolveDoctrine(state: Readonly<GameState>, nation: NationId): R
     d.reserveReleases = (raw.reserveReleases as Record<string, unknown>[])
       .filter((r) => r && typeof r.match === 'string' && r.match.length > 0 && (isNum(r.fromMinutes) || typeof r.eventId === 'string'))
       .map((r) => ({ match: (r.match as string).toLowerCase(), fromMinutes: isNum(r.fromMinutes) ? r.fromMinutes : undefined, eventId: typeof r.eventId === 'string' ? r.eventId : undefined }));
+  }
+  if (Array.isArray(raw.armourGroups)) {
+    const seen = new Set<string>();
+    for (const g of raw.armourGroups as Record<string, unknown>[]) {
+      if (!g || typeof g.name !== 'string' || !g.name || seen.has(g.name)) continue;
+      const objectives = strArr(g.objectives);
+      if (!objectives.length) continue;
+      seen.add(g.name);
+      d.armourGroups.push({ name: g.name, objectives, size: isNum(g.size) ? clamp(Math.floor(g.size), 2, 16) : undefined });
+    }
   }
   if (isNum(raw.axisSize)) d.axisSize = clamp(Math.floor(raw.axisSize), 2, 16);
   return d;

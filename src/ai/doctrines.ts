@@ -247,3 +247,38 @@ export const NORMANDY_GER: AiDoctrine = {
 
 for (const n of ['USA', 'GBR', 'CAN', 'POL', 'FRA'] as const) registerAiDoctrine('normandy', n, NORMANDY_ALLIES);
 registerAiDoctrine('normandy', 'GER', NORMANDY_GER);
+
+/**
+ * Barbarossa (hours from 22 June 1941 00:00 unless the scenario start says otherwise). DRAFT / SCAFFOLD: no location ids yet
+ * (waiting for campaign-engineer's scenario plan); only structural behaviour is set. Everything is data-overridable through
+ * state.special.aiDoctrine. The AI uses only fogged perception (no cheating): objectives come from the doctrine, not from enemy positions.
+ */
+export const BARBAROSSA_AXIS: AiDoctrine = {
+  posture: 'attack',
+  armour: 'breakthrough', // deep armoured thrusts; infantry armies follow and reduce the pockets
+  encirclement: true,
+  fuelAware: true, // the panzer groups outrun their supply: fuel-bound tempo
+  axisSize: 10, // one Schwerpunkt group per army group axis is wired once the ids exist
+  reserveFraction: 0.15,
+  aggressionBias: 0.15,
+  maxOperations: 6,
+  // TODO(barbarossa ids): armourObjectives per army group (North: Baltic/Leningrad; Centre: Minsk, Smolensk, Moscow; South: Kiev), captureLocations,
+  // objectiveSchedule from cited dates, pocketLocations for Axis-held rings, phases (summer drive, autumn mud halt, Typhoon, winter halt at hour ~ 5 Dec)
+};
+
+export const BARBAROSSA_SOVIET: AiDoctrine = {
+  posture: 'defend',
+  // frontier defence under surprise: slow reaction in the first days, then delay and withdrawal, counter-attacks when the ratio allows
+  reactionMinutes: 360,
+  armour: 'balanced',
+  reserveFraction: 0.3,
+  maxOperations: 4,
+  encirclement: false,
+  // TODO(barbarossa ids): holdLocations (Leningrad, Moscow, Kiev, Odessa, Sevastopol), fallbackLocations for the withdrawal, phases:
+  // defend -> withdraw/delay (summer 1941) -> defend -> counter-attack (Moscow, December 1941), noWithdraw rules at Leningrad/Moscow
+};
+
+registerAiDoctrine('barbarossa', 'GER', BARBAROSSA_AXIS);
+registerAiDoctrine('barbarossa', 'ROU', BARBAROSSA_AXIS);
+registerAiDoctrine('barbarossa', 'HUN', BARBAROSSA_AXIS);
+registerAiDoctrine('barbarossa', 'SOV', BARBAROSSA_SOVIET);

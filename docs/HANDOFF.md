@@ -31,3 +31,6 @@ map-engineer, sim-engineer, military-engineer, ai-events-engineer, campaign-engi
 
 ## Sim: opening surprise
 Optional `openingSurprise` scenario field (see TECHNICAL_ARCHITECTURE.md "Opening surprise"); campaign-engineer sets it per scenario (e.g. Barbarossa victimNations ['SOV']). Tests: tests/sim.combat.test.ts.
+
+## Measurement hygiene
+Never run `git worktree remove` or `rm -r` on a worktree or frozen copy that contains a `node_modules` junction: unlink the junction first (`cmd /c rmdir <path>\node_modules`, link only), then remove the copy; otherwise the real `node_modules` is deleted (happened once; repaired with `npm install`).

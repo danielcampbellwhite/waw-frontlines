@@ -701,6 +701,34 @@ function planFix(p: P, dest: LonLat, objId: string): boolean {
   return started !== undefined && p.now - started < 6 * 60;
 }
 
+/**
+ * Opt-in (armourGroups doctrines): infantry armies close up behind the nearest panzer group instead of sitting on the start line,
+ * and panzer groups that have outrun their fuel halt and dig in rather than sitting untasked.
+ */
+function planFollowUp(p: P, groups: { g: ArmourGroup; set: Set<UnitId> }[]): void {
+  const fronts: { c: LonLat; set: Set<UnitId> }[] = [];
+  for (const { set } of groups) {
+    const arm = p.mine.filter((u) => set.has(u.id) && isAlive(u));
+    const c = arm.length ? centroid(arm) : null;
+    if (c) fronts.push({ c, set });
+    // consolidate: idle panzers that are dry or cut from supply hold where they stand
+    const halted = arm.filter((u) => !p.used.has(u.id) && !u.inBattle && isIdle(u) && (u.fuel < 50 || (p.state.supply?.unitSupplyDistKm?.[u.id] ?? 0) === -1));
+    if (halted.length) setPosture(p, halted.filter((u) => u.entrenchment < 80), 'entrench');
+  }
+  if (!fronts.length) return;
+  const pool = availOf(p, 'infantry').filter((u) => !p.reserve.has(u.id) && u.readiness >= 30 && u.ammo > 20 && (!isMobileType(u.type) || u.fuel > 10) && !p.mem.garrison?.[u.id] && !u.inBattle);
+  for (const u of pool) {
+    let best = fronts[0];
+    for (const f of fronts) if (fastKm(u.pos, f.c) < fastKm(u.pos, best.c)) best = f;
+    const d = fastKm(u.pos, best.c);
+    if (d <= 30) continue; // close enough behind the spearhead
+    const leg = Math.min(d - 15, 90);
+    const dest = destination(u.pos, bearingDeg(u.pos, best.c), leg);
+    if (classAt(p.fa.cg, dest) === 2) continue;
+    issue(p, [u], { kind: 'attack', priority: 1, target: dest, note: 'close up behind the panzer group' });
+  }
+}
+
 /** Infantry take and hold: occupy enemy-held locations we have seen empty (armour or air cleared them, or nobody defended). */
 function planOccupy(p: P): void {
   let n = 0;
@@ -1175,6 +1203,7 @@ export function aiThink(state: Readonly<GameState>, nation: NationId, ctx: AiCon
           clock[g.name] = p.mem.lastThrust as number;
         }
         p.axis = baseAxis; p.doc = baseDoc; p.mem.lastThrust = baseThrust;
+        planFollowUp(p, groupSets);
       } else planArmourThrust(p);
       planOccupy(p);
       planStrikes(p);

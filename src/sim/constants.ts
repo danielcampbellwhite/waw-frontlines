@@ -1,5 +1,5 @@
-/** Real milliseconds per simulation tick at speed 1x (1 tick = 60 game minutes = 2 real seconds). */
-export const REAL_MS_PER_TICK_1X = 2000;
+/** Real milliseconds per simulation tick at speed 1x (1 tick = 60 game minutes = 4 real seconds). */
+export const REAL_MS_PER_TICK_1X = 4000;
 /** Safety: never run more than this many ticks from one advance() call (remainder stays in the accumulator). */
 export const MAX_TICKS_PER_ADVANCE = 96;
 /** Safety: clamp a single real-time delta (e.g. after tab was backgrounded). */

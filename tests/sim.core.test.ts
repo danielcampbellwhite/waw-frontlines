@@ -64,11 +64,11 @@ describe('determinism', () => {
 });
 
 describe('clock / speed independence', () => {
-  it('1 tick = 60 game minutes = 2 real seconds at 1x', () => {
-    expect(REAL_MS_PER_TICK_1X).toBe(2000);
+  it('1 tick = 60 game minutes = 4 real seconds at 1x', () => {
+    expect(REAL_MS_PER_TICK_1X).toBe(4000);
     const { e } = build(3);
     e.setSpeed(1);
-    expect(e.advance(1999)).toBe(0);
+    expect(e.advance(REAL_MS_PER_TICK_1X - 1)).toBe(0);
     expect(e.advance(1)).toBe(1);
     expect(e.getState().clock.minutes).toBe(60);
   });

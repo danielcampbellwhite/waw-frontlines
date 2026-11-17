@@ -82,5 +82,11 @@ describe('terrain_normandy.json', () => {
     for (const p of [[-1.3968, 50.8965], [-1.0872, 50.8058], [-1.9833, 50.7167], [-2.4547, 50.6097], [0.0544, 50.7896]] as [number, number][]) expect(terrainAt(g, p)).toBe(Terrain.Urban); // English embarkation ports
     expect(terrainAt(g, [-1.25, 51.0 - 0.02])).not.toBe(Terrain.Bocage);  // no bocage on English cells
     expect((g.flags ?? []).filter((f) => f & 8).length).toBeGreaterThan(50); // beach candidates exist
+    for (const [lon, lat] of [[-1.2, 49.38], [-0.8686, 49.3689], [-0.538, 49.339], [-0.4153, 49.3354], [-0.3211, 49.3064]]) { // Utah, Omaha, Gold, Juno, Sword: forced beach cell within 3 cells
+      const c0 = Math.floor((lon - g.bbox.west) / g.cellDeg), r0 = Math.floor((g.bbox.north - lat) / g.cellDeg);
+      let found = false;
+      for (let dr = -3; dr <= 3; dr++) for (let dc = -3; dc <= 3; dc++) if ((g.flags ?? [])[(r0 + dr) * g.cols + c0 + dc] & 8) found = true;
+      expect(found).toBe(true);
+    }
   });
 });

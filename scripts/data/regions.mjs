@@ -87,7 +87,7 @@ export const REGIONS = {
     hillMean: 250,           // bocage country is rolling 50-250 m; Suisse Normande, Mont Pincon (362 m) and the Cotentin ridges are the real hills
     hillReliefPerKm: 40,
     // Port/city anchors (lon, lat) forced to Urban land. Coordinates from the English Wikipedia coordinates API (page coordinates, retrieved for this project), not hand-entered
-    anchors: [['Cherbourg', -1.625, 49.639, 'port'], ['Le Havre', 0.1, 49.49, 'port'], ['Caen', -0.3636, 49.1814, 'city'], ['Granville', -1.5939, 48.8374, 'port'], ['Arromanches-les-Bains', -0.6211, 49.34, 'port'], ['Port-en-Bessin-Huppain', -0.7539, 49.345, 'port'],
+    anchors: [['Cherbourg', -1.625, 49.639, 'port'], ['Cherbourg (scenario position)', -1.625, 49.6425, 'port'], ['Le Havre', 0.1, 49.49, 'port'], ['Caen', -0.3636, 49.1814, 'city'], ['Granville', -1.5939, 48.8374, 'port'], ['Arromanches-les-Bains', -0.6211, 49.34, 'port'], ['Port-en-Bessin-Huppain', -0.7539, 49.345, 'port'],
       // English embarkation ports (English Wikipedia coordinates API, same retrieval): same-side supply sources
       ['Southampton (Port of Southampton)', -1.3968, 50.8965, 'port'], ['Portsmouth', -1.0872, 50.8058, 'port'], ['Poole', -1.9833, 50.7167, 'port'], ['Weymouth', -2.4547, 50.6097, 'port'], ['Portland Harbour', -2.445, 50.585, 'port'], ['Newhaven (Port of Newhaven)', 0.0544, 50.7896, 'port'], ['Newhaven (town point)', 0.06, 50.8, 'port'], ['Southampton (town point)', -1.4042, 50.9025, 'port']],
     bocageCountries: ['FRA'], // Bocage only on French cells (the hedgerow proxy is calibrated for Normandy); English hedged farmland stays Plains
@@ -98,6 +98,8 @@ export const REGIONS = {
     marshNearRiver: { maxElevM: 5, maxReliefM: 12 }, // Carentan/Douve/Taute, Dives, Orne flats
     bocageFrac: 0.6,
     bocageCodes: [231, 242, 243, 244], // Terrain.Bocage where >= 40% of a cell is pasture (231) / complex cultivation (242) / farmland with natural vegetation (243) / agroforestry (244). CORINE has no hedge class: pastures are overwhelmingly hedged bocage in Cotentin, Bessin, Suisse Normande, but this is a PROXY
+    // forced beach cells: positions of the five landing-beach depots in src/data/campaigns/normandy.short.json (campaign-engineer's sourced coordinates)
+    beachForce: [[-1.2, 49.38], [-0.8686, 49.3689], [-0.538, 49.339], [-0.4153, 49.3354], [-0.3211, 49.3064]],
     beachFlag: { maxElevM: 20, maxReliefM: 35 }, // flag bit 8: low flat land-cell on the open coast (landing-beach candidate, NOT historical beach boundaries)
     files: { terrain: 'terrain_normandy.json', infra: 'infra_normandy.json', cities: 'cities_normandy.json', boundaries: 'boundaries_normandy.json', land: 'basemap_land_normandy.json', lakes: 'basemap_lakes_normandy.json' },
   },

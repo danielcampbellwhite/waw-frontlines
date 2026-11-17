@@ -141,7 +141,9 @@ export function terrainImageData(g: TerrainGrid, width = g.cols * 2): { width: n
     const row = Math.min(g.rows - 1, Math.max(0, Math.floor((g.bbox.north - lat) / g.cellDeg)));
     for (let x = 0; x < width; x++) {
       const col = Math.min(g.cols - 1, Math.floor((x / width) * g.cols));
-      const c = rgb.get(g.cells[row * g.cols + col] as TerrainCode) ?? [0, 0, 0, 0];
+      const ci = row * g.cols + col;
+      let c = rgb.get(g.cells[ci] as TerrainCode) ?? [0, 0, 0, 0];
+      if (g.flags && (g.flags[ci] & 8) && c[3]) c = [232, 205, 120, 255]; // flag bit 8 = landing-beach candidate: sand colour (cells are only 2 px wide in this image, so no hatching)
       const o = (y * width + x) * 4;
       data[o] = c[0]; data[o + 1] = c[1]; data[o + 2] = c[2]; data[o + 3] = c[3];
     }

@@ -204,7 +204,20 @@ function buildRegion(R) {
       if (R.beachFlag && land && (flags[i] & 2) && cells[i] !== T.Urban && elev[i] <= R.beachFlag.maxElevM && relief[i] <= R.beachFlag.maxReliefM) flags[i] |= 8;
     }
   };
-  hintFlags();
+  const forceBeaches = () => {
+  // forced landing-beach cells: nearest land cell (within 3 cells) to each sourced beach position
+  if (R.beachForce) for (const [lx, ly] of R.beachForce) {
+    const c0 = Math.floor((lx - BBOX.west) / CELL_DEG), r0 = Math.floor((BBOX.north - ly) / CELL_DEG);
+    let best = -1, bd = 1e9;
+    for (let dr = -3; dr <= 3; dr++) for (let dc = -3; dc <= 3; dc++) {
+      const rr = r0 + dr, cc = c0 + dc; if (rr < 0 || cc < 0 || rr >= rows || cc >= cols) continue;
+      const k = rr * cols + cc; if (cells[k] === T.Sea || cells[k] === T.Lake) continue;
+      const d = dr * dr + dc * dc; if (d < bd) { bd = d; best = k; }
+    }
+    if (best >= 0) flags[best] |= 8 | 2; else console.warn('  beachForce: no land cell near', lx, ly);
+  }
+  };
+  hintFlags(); forceBeaches();
   // coastal flats are not bocage (open dunes / polder / beach hinterland): coast cells below 25 m revert to Plains
   if (R.bocageCodes) for (let i = 0; i < N; i++) if (cells[i] === T.Bocage && (flags[i] & 2) && elev[i] <= 25) cells[i] = T.Plains;
 
@@ -272,7 +285,7 @@ function buildRegion(R) {
     if (elev[i] < 0) elev[i] = 0;
     forced.set(i, an.what);
   }
-  if (forced.size) { console.log('  forced to land:', [...forced.values()].join(', ')); coastFlags(); hintFlags(); }
+  if (forced.size) { console.log('  forced to land:', [...forced.values()].join(', ')); coastFlags(); hintFlags(); forceBeaches(); }
   if (R.beachFlag) { let nbeach = 0; for (const f of flags) if (f & 8) nbeach++; console.log('  beach-candidate cells (flag 8):', nbeach); }
   const hist = {}; for (const c of cells) hist[c] = (hist[c] || 0) + 1;
   console.log('  terrain counts (0 sea,1 plains,2 forest,3 hills,4 mtn,5 marsh,6 urban,9 lake):', JSON.stringify(hist), 'river cells', riverCells);

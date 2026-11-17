@@ -1542,23 +1542,6 @@
   ]
  },
  {
-  "id": "usa_para_stvith",
-  "file": "Parachute Infantry Move on Snow-Covered Ground Toward the Front to Keep Up the Pressure Being Applied to the Germans Beyond St. Vith, Belgium - DPLA - 978cb65a6389b5e1d4cc1a8a8dd2b5f9.jpg",
-  "nation": "USA",
-  "category": "infantry",
-  "subject": "US parachute infantry advancing in snow, St. Vith, January 1945",
-  "equipmentKeys": [
-   "rifle"
-  ],
-  "tags": [
-   "airborne",
-   "infantry"
-  ],
-  "alsoTypes": [
-   "paratroop"
-  ]
- },
- {
   "id": "usa_eng_stug",
   "file": "291st Combat Engineers disarm Sturmgeschütz III.jpg",
   "nation": "USA",
@@ -2517,8 +2500,7 @@
   "category": "armoured",
   "subject": "Crusader tank passing a burning Panzer IV, Western Desert, November 1941",
   "equipmentKeys": [
-   "tank_medium",
-   "tank_light"
+   "tank_medium"
   ],
   "tags": [
    "crusader"
@@ -2537,8 +2519,7 @@
   "category": "armoured",
   "subject": "Crusader tank on a transporter, Western Desert, 1941",
   "equipmentKeys": [
-   "tank_medium",
-   "tank_light"
+   "tank_medium"
   ],
   "tags": [
    "crusader"
@@ -2551,8 +2532,7 @@
   "category": "armoured",
   "subject": "Crusader tanks, Western Desert, November 1941",
   "equipmentKeys": [
-   "tank_medium",
-   "tank_light"
+   "tank_medium"
   ],
   "tags": [
    "crusader"
@@ -2565,8 +2545,7 @@
   "category": "armoured",
   "subject": "Crusader Mk III cruiser tank (preserved vehicle)",
   "equipmentKeys": [
-   "tank_medium",
-   "tank_light"
+   "tank_medium"
   ],
   "tags": [
    "crusader"

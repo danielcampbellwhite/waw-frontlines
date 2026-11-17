@@ -64,6 +64,8 @@ describe('route + speed', () => {
     expect(on).toBeLessThan(off);
     const u = mkUnit('x', 'FRA', 'infantry', [0, 0]);
     expect(unitSpeedKmh(u, Terrain.Plains, 'clear', false)).toBeCloseTo(1.1, 5);
+    expect(unitSpeedKmh(u, Terrain.Bocage, 'clear', false)).toBeCloseTo(0.6 * 1.1, 5);
+    expect(unitSpeedKmh(mkUnit('T', 'GER', 'armoured', [2, 51.5]), Terrain.Bocage, 'clear', false)).toBeCloseTo(0.4 * 1.8, 5);
     expect(unitSpeedKmh(u, Terrain.Mountains, 'clear', false)).toBeLessThan(unitSpeedKmh(u, Terrain.Hills, 'clear', false));
     expect(unitSpeedKmh(u, Terrain.Sea, 'clear', false)).toBe(0);
   });
@@ -159,5 +161,54 @@ describe('units held up by an enemy in their path', () => {
       }
     }
     expect(fought || st.reports.length > 0).toBe(true);
+  });
+});
+
+describe('entrenchment is kept by a garrison that does not really move', () => {
+  const lillePos = (st: GameState) => st.locations['lille'].pos;
+  it('a stationary unit on its own location keeps its dig-in when the posture changes, one in open ground loses it', () => {
+    const { e, st } = setup([mkUnit('G1', 'FRA', 'infantry', [2, 51.5], { posture: 'defend', entrenchment: 80 }), mkUnit('G2', 'FRA', 'infantry', [2, 51.3], { posture: 'defend', entrenchment: 80 })]);
+    const lp = lillePos(st);
+    st.units['G1'].pos = [lp[0] + 0.005, lp[1]]; st.units['G2'].pos = [lp[0] + 0.4, lp[1] + 0.1];
+    st.units['G1'].posture = 'attack'; st.units['G2'].posture = 'attack';
+    for (let i = 0; i < 20; i++) e.step(1);
+    expect(st.units['G1'].entrenchment).toBe(80);
+    expect(st.units['G2'].entrenchment).toBeLessThan(75);
+  });
+  it('a short shuffle on own ground costs little, a real march resets it', () => {
+    const { e, st } = setup([mkUnit('F1', 'FRA', 'infantry', [2, 51.5], { posture: 'defend', entrenchment: 80 }), mkUnit('F2', 'FRA', 'infantry', [2, 51.3], { posture: 'defend', entrenchment: 80 })]);
+    const lp = lillePos(st);
+    st.units['F1'].pos = [lp[0], lp[1]]; st.units['F2'].pos = [lp[0] + 0.4, lp[1] + 0.1];
+    move(e, 'F1', [lp[0] + 0.012, lp[1]]);
+    move(e, 'F2', [lp[0] + 0.5, lp[1] + 0.1]);
+    for (let i = 0; i < 2; i++) e.step(1);
+    expect(st.units['F1'].entrenchment).toBeGreaterThan(70);
+    expect(st.units['F2'].entrenchment).toBeLessThan(65);
+  });
+});
+
+describe('amphibious and airborne arrivals', () => {
+  const landed = (seed: number, kind: 'amphibious' | 'airborne') => {
+    const w = makeWorld({ flat: Terrain.Plains, units: [mkUnit('F0', 'FRA', 'infantry', [1.5, 51.4])] });
+    const e = createEngine(w.scenario, w.terrain, w.infra, { playerNation: 'FRA', settings: w.settings, seed, disableAI: true });
+    const st = e.getState() as GameState;
+    const u = mkUnit('LND', 'FRA', 'infantry', [2, 51.5], { manpower: 10000, manpowerMax: 10000, organisation: 100 });
+    st.nations['FRA'].reinforcements.push({ id: 'r.land', atMinutes: 0, pos: [2, 51.5], unit: u, landing: { kind, casualties: 0.2, dispersionKm: 8, penaltyHours: 6 } });
+    e.step(1);
+    return { st, u: Object.values(st.units).find((x) => x.name === u.name && x.id.startsWith('LND'))! };
+  };
+  it('applies losses, scatter and disorder, deterministically', () => {
+    const a = landed(5, 'amphibious'), b = landed(5, 'amphibious');
+    expect(a.u).toBeTruthy();
+    expect(a.u.manpower).toBeLessThan(9000);
+    expect(a.u.organisation).toBeLessThanOrEqual(66);
+    expect(haversineKm(a.u.pos, [2, 51.5])).toBeLessThan(8.5);
+    expect(a.st.special['sim']).toBeTruthy();
+    expect((a.st.special['sim'] as { landing: Record<string, number> }).landing[a.u.id]).toBeGreaterThan(a.st.clock.minutes);
+    expect(b.u.pos).toEqual(a.u.pos);
+    expect(b.u.manpower).toBe(a.u.manpower);
+  });
+  it('airborne drops start at higher organisation than a beach landing', () => {
+    expect(landed(5, 'airborne').u.organisation).toBeGreaterThan(landed(5, 'amphibious').u.organisation);
   });
 });

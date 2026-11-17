@@ -10,6 +10,7 @@
  * Pure with respect to game state: it returns the same `Command` union the player uses. The only thing it
  * writes is its own memory slot `state.aiState[nation]`. All randomness comes from `ctx.rand()`.
  */
+import { portCapacity } from '../military';
 import { bearingDeg, destination } from '../core/geo';
 import type { Command, GameState, Location, LocationId, LonLat, NationId, Operation, Order, SideId, Unit, UnitId } from '../core/types';
 import { analyseFront, buildClassGrid, classAt, inOwnSalient, type FrontAnalysis, type Sector } from './analysis';
@@ -222,7 +223,9 @@ function retreatPoint(p: P, from: LonLat, maxKm: number): LonLat {
 
 function attackNeed(p: P): number {
   // the combat model needs roughly 2:1 for a reliable attack (parity attacks mostly fail)
-  return (p.doc.ratioToAttack ?? 2.1 - 0.7 * p.aggr) + 0.5 * p.fuelStress;
+  // a doctrine-fixed ratio still scales with difficulty and the aggression slider (easy / low aggression: slower pace; neutral at normal/0.5)
+  const scale = clamp(1 / (p.diff.aggression * (0.5 + p.state.settings.aiAggression)), 0.6, 1.6);
+  return (p.doc.ratioToAttack !== null ? p.doc.ratioToAttack * scale : 2.1 - 0.7 * p.aggr) + 0.5 * p.fuelStress;
 }
 function withdrawThreshold(p: P): number {
   return p.doc.ratioToWithdraw ?? 0.4 - 0.15 * p.aggr;
@@ -330,6 +333,27 @@ function pickReserve(p: P): void {
   for (const u of inf) { if (picks.length >= want) break; picks.push(u); }
   if (p.posture !== 'attack' && p.doc.armour !== 'breakthrough') for (const u of armour) if (picks.length < want && !picks.includes(u)) picks.push(u);
   for (const u of picks) p.reserve.add(u.id);
+}
+
+/** True once any rule's trigger (clock or fired event) has released the unit; units matching no rule are never held. */
+function reserveHeld(p: P, u: Unit): boolean {
+  const rules = p.doc.reserveReleases;
+  if (!rules.length) return false;
+  const key = (u.id + ' ' + u.name).toLowerCase();
+  for (const r of rules) {
+    if (!key.includes(r.match)) continue;
+    if (r.fromMinutes !== undefined && p.now >= r.fromMinutes) return false;
+    if (r.eventId) { const pre = `stat:${r.eventId}|`; for (const k in p.state.eventState) if (k.startsWith(pre) && ((p.state.eventState[k] as { count?: number }).count ?? 0) > 0) return false; }
+    return true;
+  }
+  return false;
+}
+
+/** Held strategic reserves stand fast (dug in, untasked) until their release hour or event. */
+function planReserveHolds(p: P): void {
+  if (!p.doc.reserveReleases.length) return;
+  const held = p.mine.filter((u) => !p.cutOff.has(u.id) && reserveHeld(p, u));
+  for (const u of held) { p.used.add(u.id); if (isIdle(u) && u.entrenchment < 60) setPosture(p, [u], 'entrench'); }
 }
 
 function planCutOff(p: P): void {
@@ -752,7 +776,9 @@ function planRaids(p: P): void {
 
 function planCounterattacks(p: P): void {
   if (p.activeOps >= p.doc.maxOperations + 1) return;
-  const forcePool = () => [...(p.posture === 'attack' ? availOf(p, 'infantry') : availOf(p, 'armour', 'infantry'))].filter((u) => u.readiness >= 25 && u.fuel > 10 && u.ammo > 10);
+  // a unit standing on its garrison position (hold location) never leaves it for a counter-attack
+  const onPost = (u: Unit) => { const g = p.mem.garrison?.[u.id]; const l = g ? p.ownLocs.find((x) => x.id === g) : undefined; return !!l && fastKm(u.pos, l.pos) < 12; };
+  const forcePool = () => [...(p.posture === 'attack' ? availOf(p, 'infantry') : availOf(p, 'armour', 'infantry'))].filter((u) => u.readiness >= 25 && u.fuel > 10 && u.ammo > 10 && !onPost(u));
 
   // 1) enemy penetrations: contacts standing on ground we control
   const pens = (p.now - (p.mem.lastCounter ?? -99999) < (p.posture === 'attack' ? 1440 : 720) ? [] : p.contacts.filter((c) => c.conf >= 0.8 && classAt(p.fa.cg, c.pos) === 1 && (p.posture !== 'attack' || p.ownLocs.some((l) => l.value >= 5 && fastKm(l.pos, c.pos) < 35)))).sort((a, b) => b.power - a.power || (a.id < b.id ? -1 : 1));
@@ -825,17 +851,25 @@ function planGarrison(p: P): void {
     const l = p.ownLocs.find((x) => x.id === id);
     if (!l) continue;
     const threat = contactPowerNear(p, l.pos, 45);
-    const need = Math.max(1.0, 1.4 * threat);
+    const need = Math.max(1.5, 1.8 * threat);
     // a unit already standing at another hold location (within 15 km) belongs to that position: it is never drafted away from it
     const mine = pool.filter((u) => !p.used.has(u.id) && fastKm(u.pos, l.pos) < 130
       && (fastKm(u.pos, l.pos) < 15 || !p.doc.holdLocations.some((id2) => { const o = p.ownLocs.find((x) => x.id === id2); return !!o && o.id !== l.id && fastKm(u.pos, o.pos) < 15; }))).sort(byDist(l.pos));
     const team: Unit[] = []; let pw = 0;
+    // sticky garrison: units already assigned to this position stay on it (never released to sector re-assignment) unless routed
+    const gar = (p.mem.garrison ??= {});
+    for (const u of pool) {
+      if (gar[u.id] !== l.id || p.used.has(u.id)) continue;
+      team.push(u); pw += unitPower(u);
+    }
     for (const u of mine) {
+      if (team.includes(u)) continue;
       if (roleOf(u) === 'armour' && threat < 0.8) continue; // armour only garrisons against a real threat
       team.push(u); pw += unitPower(u);
-      if (pw >= need || team.length >= (threat >= 2.5 ? 8 : 4)) break; // a besieged key position draws in the whole nearby reserve
+      if (pw >= need || team.length >= (threat >= 2.5 ? 10 : 6)) break; // a besieged key position draws in the whole nearby reserve
     }
     for (const u of team) {
+      gar[u.id] = l.id;
       if (fastKm(u.pos, l.pos) > 6) issue(p, [u], { kind: 'defend', priority: 3, target: l.pos, targetLocation: l.id, note: 'garrison' });
       else { p.used.add(u.id); if (u.entrenchment < 80) setPosture(p, [u], 'entrench'); }
     }
@@ -894,7 +928,9 @@ function planDefence(p: P, advance = false): void {
     let top: Sector | null = null;
     for (const s of sectors) if (!top || s.threat > top.threat) top = s;
     let k = 0;
+    const posts = p.doc.holdLocations.map((id) => p.ownLocs.find((x) => x.id === id)).filter((l): l is Location => !!l);
     for (const u of reserveUnits) {
+      if (posts.some((l) => fastKm(u.pos, l.pos) < 8)) { p.used.add(u.id); if (u.entrenchment < 80) setPosture(p, [u], 'entrench'); continue; } // a reserve standing on a hold position stays and digs in
       if (top) {
         const rp = destination(destination(top.anchor, (top.enemyDir + 180) % 360, 22), (top.enemyDir + 90) % 360, ((k++ % 5) - 2) * 6);
         if (fastKm(u.pos, rp) > 9) issue(p, [u], { kind: 'defend', priority: 1, target: rp, note: 'operational reserve' });
@@ -965,8 +1001,17 @@ function planReinforcements(p: P): void {
     if (n >= 3 || p.cmds.length >= p.doc.maxCommands) return;
     if (roleOf(u) === 'other' || u.manpowerMax <= 0 || u.manpower / u.manpowerMax >= 0.55 || u.inBattle) continue;
     if (p.now - (p.mem.reinforceReq[u.id] ?? -99999) < 720) continue;
-    const l = p.ownLocs.filter((x) => (x.kind === 'city' || x.kind === 'town' || x.kind === 'depot' || x.kind === 'port') && fastKm(x.pos, u.pos) < 60 && x.owner === p.nation)
-      .sort((a, b) => fastKm(a.pos, u.pos) - fastKm(b.pos, u.pos))[0];
+    // port-capacity-aware: a port that is wrecked, not yet open or besieged is no reinforcement point, and a port with no unloading
+    // capacity left today ranks 40 km further away than it is (a Mulberry or Cherbourg that is saturated yields to the next one)
+    const portCost = (x: Location): number => {
+      if (x.kind !== 'port') return 0;
+      const st = portCapacity(p.state, x.id);
+      if (!st) return 0;
+      if (!st.operational) return Infinity;
+      return st.remainingTonsToday <= 0 ? 40 : 0;
+    };
+    const l = p.ownLocs.filter((x) => (x.kind === 'city' || x.kind === 'town' || x.kind === 'depot' || x.kind === 'port') && fastKm(x.pos, u.pos) < 60 && x.owner === p.nation && portCost(x) < Infinity)
+      .sort((a, b) => fastKm(a.pos, u.pos) + portCost(a) - (fastKm(b.pos, u.pos) + portCost(b)) || (a.id < b.id ? -1 : 1))[0];
     if (!l) continue;
     p.cmds.push({ type: 'request_reinforcement', locationId: l.id, unitId: u.id });
     p.mem.reinforceReq[u.id] = p.now;
@@ -1074,12 +1119,14 @@ export function aiThink(state: Readonly<GameState>, nation: NationId, ctx: AiCon
 
   if (p.posture !== 'withdraw') refreshOperations(p); else p.activeOps = 0;
 
+  planReserveHolds(p);
+
   // Schwerpunkt group: persistent, chosen from the armour nearest the first open armour objective
   if (doc.armourObjectives.length && p.posture === 'attack') {
     const ids = (mem.axisGroup ?? []).filter((id) => state.units[id] && isAlive(state.units[id]));
     const first = doc.armourObjectives.map((id) => state.locations[id]).find((l) => l && sideOfNation(state, l.owner) !== side);
     if (ids.length < doc.axisSize && first) {
-      const armour = mine.filter((u) => roleOf(u) === 'armour' && !ids.includes(u.id)).sort((a, b) => fastKm(a.pos, first.pos) - fastKm(b.pos, first.pos) || (a.id < b.id ? -1 : 1));
+      const armour = mine.filter((u) => roleOf(u) === 'armour' && !ids.includes(u.id) && !p.used.has(u.id)).sort((a, b) => fastKm(a.pos, first.pos) - fastKm(b.pos, first.pos) || (a.id < b.id ? -1 : 1));
       for (const u of armour) { if (ids.length >= doc.axisSize) break; ids.push(u.id); }
     }
     mem.axisGroup = ids;

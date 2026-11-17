@@ -25,11 +25,11 @@ export const BASE_SPEED_KMH: Record<UnitType, number> = {
   naval: 26, carrier: 26, air_fighter: 330, air_bomber: 260,
 };
 const ROAD_MULT: Record<MoveClass, number> = { foot: 1.3, wheeled: 2.2, tracked: 2.1, naval: 1, air: 1 };
-// index by Terrain code: Sea, Plains, Forest, Hills, Mountains, Marsh, Urban, Desert, Jungle, Lake
+// index by Terrain code: Sea, Plains, Forest, Hills, Mountains, Marsh, Urban, Desert, Jungle, Lake, Bocage
 const TERR_MULT: Record<'foot' | 'wheeled' | 'tracked', number[]> = {
-  foot:    [0, 1, 0.75, 0.65, 0.4, 0.45, 0.8, 0.75, 0.4, 0],
-  wheeled: [0, 1, 0.35, 0.5, 0.2, 0.25, 0.7, 0.6, 0.2, 0],
-  tracked: [0, 1, 0.5, 0.6, 0.25, 0.35, 0.6, 0.7, 0.3, 0],
+  foot:    [0, 1, 0.75, 0.65, 0.4, 0.45, 0.8, 0.75, 0.4, 0, 0.6],
+  wheeled: [0, 1, 0.35, 0.5, 0.2, 0.25, 0.7, 0.6, 0.2, 0, 0.4],
+  tracked: [0, 1, 0.5, 0.6, 0.25, 0.35, 0.6, 0.7, 0.3, 0, 0.4],
 };
 const RIVER_PENALTY_EQ_KM: Record<MoveClass, number> = { foot: 6, wheeled: 14, tracked: 18, naval: 0, air: 0 };
 const WEATHER_MULT: Record<WeatherKind, Record<'foot' | 'wheeled' | 'tracked' | 'naval' | 'air', number>> = {

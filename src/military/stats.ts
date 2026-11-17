@@ -88,6 +88,22 @@ function strHash(id: string): number {
   return Math.abs(h);
 }
 
+/** Entrenchment is only lost when a unit displaces more than this per tick; full loss from ENTRENCH_LOSS_FULL_KM. */
+const ENTRENCH_LOSS_MIN_KM = 1;
+const ENTRENCH_LOSS_FULL_KM = 2;
+/** A unit that moves less than this and stays within this distance of a location its own side holds is a garrison shuffling in its sector: it keeps its entrenchment. */
+const GARRISON_SHUFFLE_KM = 2;
+
+function nearOwnLocation(state: GameState, u: Unit, km: number): boolean {
+  const dLat = km / 111, dLon = km / (111 * Math.max(0.2, Math.cos((u.pos[1] * Math.PI) / 180)));
+  for (const id in state.locations) {
+    const l = state.locations[id];
+    if (Math.abs(l.pos[1] - u.pos[1]) > dLat || Math.abs(l.pos[0] - u.pos[0]) > dLon) continue;
+    if (state.nations[l.owner]?.side === u.side && haversineKm(l.pos, u.pos) < km) return true;
+  }
+  return false;
+}
+
 export function updateUnitStats(state: GameState, ctx: MilitaryContext): void {
   const fieldsBySide: Record<string, Location[]> = { allies: [], axis: [] };
   for (const l of Object.values(state.locations)) {
@@ -97,6 +113,8 @@ export function updateUnitStats(state: GameState, ctx: MilitaryContext): void {
   }
   const tickIndex = Math.floor(state.clock.minutes / 60);
   const airlift = milSpecial(state).airlift;
+  const statPos = milSpecial(state).statPos;
+  for (const id of Object.keys(statPos)) if (!isAlive(state.units[id])) delete statPos[id];
   const wk = state.weather.kind;
   const harsh = wk === 'mud' || wk === 'snow' || wk === 'storm' ? 1.25 : 1;
   for (const u of Object.values(state.units)) {
@@ -196,7 +214,7 @@ export function updateUnitStats(state: GameState, ctx: MilitaryContext): void {
     if (u.fatigue > 70) orgCap *= 0.9;
     if (u.organisation > orgCap) u.organisation = Math.max(orgCap, u.organisation - 2);
     else if (!fighting) {
-      const rate = u.posture === 'regroup' ? 5 : u.posture === 'rest' ? 3 : moving ? 0.5 : 2;
+      const rate = u.posture === 'regroup' ? 5 : u.posture === 'rest' ? 3 : (globalThis as any).__OLDORG ? (moving ? 0.3 : 1) : moving ? 0.5 : 2;
       u.organisation = Math.min(orgCap, u.organisation + rate * (cut ? 0.5 : 1));
     }
     u.organisation = clamp(u.organisation);
@@ -216,12 +234,21 @@ export function updateUnitStats(state: GameState, ctx: MilitaryContext): void {
 
     // ── entrenchment (land only)
     if (u.domain === 'land') {
-      if (moving || u.posture === 'attack') u.entrenchment = clamp(u.entrenchment - 8);
+      // Digging in is lost by actually changing position (or retreating), not by a standing 'moving'/'attack' flag.
+      const prev = statPos[u.id];
+      const km = prev ? haversineKm(prev, u.pos) : 0;
+      if ((globalThis as any).__OLDENT) { if (moving || u.posture === 'attack') u.entrenchment = clamp(u.entrenchment - 8); else if (u.posture === 'entrench') u.entrenchment = clamp(u.entrenchment + 4 * tpl.entrenchRate); else if (u.posture === 'defend') u.entrenchment = Math.max(u.entrenchment, Math.min(60, u.entrenchment + 1.5 * tpl.entrenchRate)); else if (u.posture === 'hold') u.entrenchment = Math.max(u.entrenchment, clamp(u.entrenchment + 0.5 * tpl.entrenchRate, 0, 30)); else if (u.posture === 'recon') u.entrenchment = clamp(u.entrenchment - 2); }
+      else if (u.moveStatus === 'retreating') u.entrenchment = clamp(u.entrenchment - 8);
+      else if ((moving || u.posture === 'attack' || u.posture === 'recon') && km < GARRISON_SHUFFLE_KM && nearOwnLocation(state, u, GARRISON_SHUFFLE_KM)) { /* garrison shuffling on its own ground keeps its digging */ }
+      else if ((moving || u.posture === 'attack') && km > ENTRENCH_LOSS_MIN_KM) u.entrenchment = clamp(u.entrenchment - 8 * Math.min(1, km / ENTRENCH_LOSS_FULL_KM));
+      else if (moving || u.posture === 'attack') { /* held in place: neither dig nor lose */ }
       else if (u.posture === 'entrench') u.entrenchment = clamp(u.entrenchment + 4 * tpl.entrenchRate);
       else if (u.posture === 'defend') u.entrenchment = Math.max(u.entrenchment, Math.min(60, u.entrenchment + 1.5 * tpl.entrenchRate));
       else if (u.posture === 'hold') u.entrenchment = Math.max(u.entrenchment, clamp(u.entrenchment + 0.5 * tpl.entrenchRate, 0, 30));
       else if (u.posture === 'recon') u.entrenchment = clamp(u.entrenchment - 2);
     } else u.entrenchment = 0;
+
+    statPos[u.id] = [u.pos[0], u.pos[1]];
 
     // ── readiness
     u.readiness = computeReadiness(u);

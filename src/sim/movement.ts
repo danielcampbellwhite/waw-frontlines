@@ -7,6 +7,7 @@ import { fastKm, getGridInfo, roadAt, terrainAt, type GridInfo } from './griduti
 import { etaMinutesAlong, findRoute, moveClassOf, passableIce, SUBSTEP_KM, unitSpeedKmh } from './pathfinding';
 import { iceOf } from './ice';
 import { getSimMeta } from './meta';
+import { interdictionFor } from './airwar';
 import { SpatialHash } from './spatial';
 
 const MOVE_KINDS = new Set(['move', 'attack', 'withdraw', 'recon', 'capture', 'reinforce', 'support', 'follow', 'defensive_line', 'defend']);
@@ -41,6 +42,7 @@ interface MoveEnv {
   ctx: SimContext;
   info: GridInfo;
   enemies: SpatialHash<Unit>;
+  interd?: (u: Unit) => number;
   stack: Map<number, number>;
   /** route computations still allowed this tick (keeps order bursts from spiking one frame) */
   routeBudget: number;
@@ -89,6 +91,7 @@ function advanceAlong(env: MoveEnv, u: Unit, route: LonLat[], hours: number, for
     const mid: LonLat = [(u.pos[0] + dest[0]) / 2, (u.pos[1] + dest[1]) / 2];
     let v = unitSpeedKmh(u, terrainAt(info, mid), weather, roadAt(info, mid) > 0, env.ice);
     if (forced) v *= 1.25;
+    if (env.interd && roadAt(info, mid) > 0) v *= env.interd(u); // air interdiction of road traffic
     if (v <= 0) { env.fuelHalt = true; break; }
     const need = stepKm / v;
     let np = dest, used = need;
@@ -150,6 +153,14 @@ function airBaseOf(env: MoveEnv, u: Unit): MoveEnv['airfields'][number] | undefi
   return best;
 }
 
+/** within 2 km of a location owned by the unit's own side (a garrison position) */
+function onOwnGround(state: GameState, u: Unit): boolean {
+  for (const id in state.locations) {
+    const l = state.locations[id];
+    if (state.nations[l.owner]?.side === u.side && fastKm(l.pos, u.pos) < 2) return true;
+  }
+  return false;
+}
 function entrenchGain(u: Unit, o: Order | undefined): number {
   const eng = u.type === 'engineer' ? 1.5 : 1;
   if (o && o.status === 'active' && o.kind === 'entrench') return 2 * eng;
@@ -177,7 +188,7 @@ export function updateMovement(state: GameState, ctx: SimContext): void {
     const k = stackKey(info, u.pos, u.side);
     if (k >= 0) stack.set(k, (stack.get(k) ?? 0) + 1);
   }
-  const env: MoveEnv = { state, ctx, info, enemies, stack, routeBudget: ROUTES_PER_TICK, fuelHalt: false, ice: iceOf(state), airfields: [] };
+  const env: MoveEnv = { state, ctx, info, enemies, stack, routeBudget: ROUTES_PER_TICK, fuelHalt: false, ice: iceOf(state), airfields: [], interd: interdictionFor(state, ctx) };
   for (const lid in state.locations) {
     const l = state.locations[lid];
     if (l.kind === 'airfield' && (l.damaged ?? 0) < 95) env.airfields.push({ loc: l, side: state.nations[l.owner]?.side ?? 'neutral' });
@@ -272,8 +283,12 @@ export function updateMovement(state: GameState, ctx: SimContext): void {
     if (u.domain === 'land' && u.moveStatus !== 'moving' && u.moveStatus !== 'retreating' && moved === 0) {
       const cap = entrenchCap(u, o), gain = entrenchGain(u, o);
       if (gain > 0 && u.entrenchment < cap) u.entrenchment = Math.min(cap, u.entrenchment + gain);
-      else if (cap < u.entrenchment && !u.inBattle) u.entrenchment = Math.max(cap, u.entrenchment - 0.5);
-    } else if (moved > 0.5) u.entrenchment = Math.max(0, u.entrenchment - (u.moveStatus === 'retreating' ? 10 : 6));
+      else if (cap < u.entrenchment && !u.inBattle && !onOwnGround(state, u)) u.entrenchment = Math.max(cap, u.entrenchment - 0.5);
+    } else if (moved > 0.5) {
+      // only genuine movement undoes the digging: a shuffle of under 2 km on ground the side holds costs little
+      const shuffle = moved < 2 && u.moveStatus !== 'retreating' && onOwnGround(state, u);
+      u.entrenchment = Math.max(0, u.entrenchment - (u.moveStatus === 'retreating' ? 10 : shuffle ? 0.5 : 6));
+    }
     // movement through impassable terrain is a data error for land units; never let a land unit sit in open sea
     if (u.domain === 'land' && terrainAt(info, u.pos) === Terrain.Sea) u.route = undefined;
   }

@@ -12,7 +12,8 @@
  *  - Air/sea units use straight-line range to owned airfields/ports/sources (no network).
  */
 import { bearingDeg, cellOf, gridSpec, haversineKm, type GridSpec } from '../core/geo';
-import type { GameState, InfraLine, Location, LonLat, SideId, Unit, WeatherKind } from '../core/types';
+import { Terrain, type GameState, type InfraLine, type Location, type LonLat, type SideId, type TerrainGrid, type Unit, type WeatherKind } from '../core/types';
+import { terrainAt } from '../map/terrain';
 import { templateForType } from './catalog';
 import { addLog, clamp, isAlive, milSpecial, type MilitaryContext } from './context';
 
@@ -239,7 +240,8 @@ const sharedHeap = new MinHeap();
 
 // ───────────────────────────── sources ─────────────────────────────
 
-export interface SupplySource { loc: Location; capacity: number; listed: boolean }
+/** `sea`: supplied across water (an overseas port or beach depot of a theatre with embarkation ports), so units on the shore are not cut off by a land ring. */
+export interface SupplySource { loc: Location; capacity: number; listed: boolean; sea?: boolean }
 
 const DEFAULT_SRC_CAP: Partial<Record<Location['kind'], number>> = { depot: 40, port: 60, city: 30, town: 15, airfield: 20, fortress: 15 };
 
@@ -262,13 +264,13 @@ export function isPortBesieged(state: GameState, loc: Location): boolean {
 }
 
 /** Port tonnage cap in supply points per tick (or `base` when the port has no cap data). */
-function portCapacity(state: GameState, loc: Location, base: number): number {
+function portPoints(state: GameState, loc: Location, base: number, seaRelieved = false): number {
   if (loc.kind !== 'port') return base;
   const e = ext(loc);
   const tpd = e.throughputTonsPerDay ?? (e.throughputTonsPerMonth !== undefined ? e.throughputTonsPerMonth / 30 : undefined);
   if (tpd === undefined) return base;
   let pts = tpd / (TONS_PER_POINT * 24);
-  if (isPortBesieged(state, loc)) pts *= milSpecial(state).portRelief[loc.id] ? (e.besiegedShare ?? BESIEGED_RELIEF_SHARE) : 0;
+  if (isPortBesieged(state, loc)) pts *= milSpecial(state).portRelief[loc.id] || seaRelieved ? (e.besiegedShare ?? BESIEGED_RELIEF_SHARE) : 0;
   return pts;
 }
 
@@ -285,11 +287,110 @@ export function airliftFraction(state: GameState, unitId: string): number {
   return milSpecial(state).airlift[unitId] ?? 0;
 }
 
+const RAMP_FLOOR = 0.1;
+
+/**
+ * 0..1 usability of a location right now: 0 before its availableFromHour (temporary ports, beach depots), a linear
+ * ramp-up over rampHours (from availability, or from capture for a port taken from the enemy), times any temporary
+ * throughput factor set by events (storm damage, repair). Expired modifiers are dropped.
+ */
+export function locationAvailability(state: GameState, loc: Location): number {
+  const sp = milSpecial(state), now = state.clock.minutes, e = ext(loc);
+  const ov = sp.availability[loc.id];
+  const fromH = ov ? ov.fromMinutes / 60 : e.availableFromHour;
+  const ramp = ov ? ov.rampHours : e.rampHours ?? 0;
+  let start = fromH === undefined ? -Infinity : fromH * 60;
+  if (ramp > 0 && sideOfNation(state, loc.owner) !== sideOfNation(state, loc.originalOwner)) {
+    const cap = sp.capturedAt[loc.id];
+    if (cap !== undefined) start = Math.max(start, cap);
+  }
+  let f = 1;
+  if (now < start) f = 0;
+  else if (ramp > 0 && start > -Infinity) f = Math.min(1, RAMP_FLOOR + (1 - RAMP_FLOOR) * ((now - start) / (ramp * 60)));
+  const m = sp.portMods[loc.id];
+  if (m) {
+    if (m.untilMinutes === undefined || now < m.untilMinutes) f *= clamp(m.factor, 0, 1);
+  }
+  return f;
+}
+
+/** Events: scale a location's throughput by `factor` (0 wrecks it) for `hours` game hours, or until reset when hours is omitted. factor >= 1 clears it. */
+export function setLocationThroughputFactor(state: GameState, locationId: string, factor: number, hours?: number): void {
+  const mods = milSpecial(state).portMods;
+  if (factor >= 1) { delete mods[locationId]; return; }
+  mods[locationId] = { factor: Math.max(0, factor), untilMinutes: hours === undefined ? undefined : state.clock.minutes + hours * 60 };
+}
+
+/** Events/scenario: the location is unusable until `fromHour`, then ramps to full over `rampHours` (default none). */
+export function setLocationAvailableFrom(state: GameState, locationId: string, fromHour: number, rampHours = 0): void {
+  milSpecial(state).availability[locationId] = { fromMinutes: fromHour * 60, rampHours };
+}
+
+export interface PortStatus {
+  locationId: string;
+  /** Current daily unloading capacity in tonnes (0 when not operational). */
+  tonsPerDay: number;
+  /** Tonnes served from this port so far on the current game day. */
+  usedTodayTons: number;
+  remainingTonsToday: number;
+  /** Owned by a side, not wrecked (damage < 95), available (temporary port online, throughput factor > 0) and not besieged without sea relief. */
+  operational: boolean;
+  /** 0..1 availability factor (temporary port ramp-up, storm damage / repair). */
+  availability: number;
+  besieged: boolean;
+}
+
+/**
+ * Read-only port state for the AI. Pure and deterministic: never mutates state. tonsPerDay comes from the last supply
+ * update's source throughput when the port is a source; before the first update (or if it is not a source) it is
+ * estimated from the location's own data (throughput cap, damage, availability).
+ */
+export function portCapacity(state: GameState, locationId: string): PortStatus | null {
+  const loc = state.locations[locationId];
+  if (!loc || loc.kind !== 'port') return null;
+  const side = sideOfNation(state, loc.owner);
+  const availability = locationAvailability(state, loc);
+  const besieged = isPortBesieged(state, loc);
+  const e = ext(loc);
+  const hasCap = e.throughputTonsPerDay !== undefined || e.throughputTonsPerMonth !== undefined;
+  const ownable = side === 'allies' || side === 'axis';
+  const wrecked = (loc.damaged ?? 0) >= 95;
+  const cutOffBySiege = besieged && hasCap && !milSpecial(state).portRelief[loc.id];
+  const operational = ownable && !wrecked && availability > 0 && !cutOffBySiege;
+  let tonsPerDay = 0;
+  if (operational) {
+    const node = state.supply.nodes.find(n => n.locationId === locationId);
+    if (node) tonsPerDay = node.throughput * TONS_PER_POINT * 24;
+    else {
+      const base = (loc.supplyCapacity ?? DEFAULT_SRC_CAP.port ?? 60) * TONS_PER_POINT * 24;
+      const tpd = e.throughputTonsPerDay ?? (e.throughputTonsPerMonth !== undefined ? e.throughputTonsPerMonth / 30 : base);
+      tonsPerDay = tpd * availability * (1 - (loc.damaged ?? 0) / 100) * (besieged ? e.besiegedShare ?? BESIEGED_RELIEF_SHARE : 1);
+    }
+  }
+  const pu = milSpecial(state).portUse[locationId];
+  const used = pu && pu.day === Math.floor(state.clock.minutes / 1440) ? pu.tons : 0;
+  return { locationId, tonsPerDay, usedTodayTons: used, remainingTonsToday: Math.max(0, tonsPerDay - used), operational, availability, besieged };
+}
+
+/** Operational ports owned by `side`, sorted by location id (deterministic). */
+export function operationalPorts(state: GameState, side: SideId): PortStatus[] {
+  const out: PortStatus[] = [];
+  for (const id of Object.keys(state.locations).sort()) {
+    const loc = state.locations[id];
+    if (loc.kind !== 'port' || sideOfNation(state, loc.owner) !== side) continue;
+    const st = portCapacity(state, id);
+    if (st?.operational) out.push(st);
+  }
+  return out;
+}
+
+
 /** A location captured from another side runs at half capacity for this long (minutes). */
 export const CAPTURE_PENALTY_MINUTES = 14 * 24 * 60;
 
 function capturePenalty(state: GameState, loc: Location, side: SideId): number {
   if (sideOfNation(state, loc.originalOwner) === side) return 1;
+  if ((milSpecial(state).availability[loc.id]?.rampHours ?? ext(loc).rampHours ?? 0) > 0) return 1; // ramp-up replaces the flat penalty
   const at = milSpecial(state).capturedAt[loc.id];
   return at === undefined || state.clock.minutes - at < CAPTURE_PENALTY_MINUTES ? 0.5 : 1;
 }
@@ -304,12 +405,22 @@ function capturePenalty(state: GameState, loc: Location, side: SideId): number {
 export function sourcesForSide(state: GameState, ctx: Pick<MilitaryContext, 'scenario'>, side: SideId): SupplySource[] {
   const diff = Math.max(0.25, state.settings.logisticsDifficulty);
   const out = new Map<string, SupplySource>();
+  // Overseas ports of a theatre with embarkation ports (listed ports 100+ km away, tonnage data present) always have the sea behind them.
+  const embark: Location[] = [];
+  for (const [nation, ids] of Object.entries(ctx.scenario.supplySources ?? {})) {
+    if (sideOfNation(state, nation) !== side) continue;
+    for (const id of ids) { const l = state.locations[id]; if (l && l.kind === 'port' && sideOfNation(state, l.owner) === side) embark.push(l); }
+  }
+  const seaRelieved = (loc: Location): boolean => {
+    const e = ext(loc);
+    return embark.length > 0 && loc.kind === 'port' && (e.throughputTonsPerDay !== undefined || e.throughputTonsPerMonth !== undefined) && embark.every(l => l.id !== loc.id && haversineKm(l.pos, loc.pos) >= SEA_LINK_MIN_KM);
+  };
   const make = (loc: Location, listed: boolean, base0: number) => {
-    const base = portCapacity(state, loc, base0);
-    out.set(loc.id, { loc, capacity: (base * capturePenalty(state, loc, side) * (1 - (loc.damaged ?? 0) / 100)) / diff, listed });
+    const base = portPoints(state, loc, base0, seaRelieved(loc));
+    out.set(loc.id, { loc, capacity: (base * capturePenalty(state, loc, side) * (1 - (loc.damaged ?? 0) / 100) * locationAvailability(state, loc)) / diff, listed });
   };
   const usable = (loc: Location | undefined): loc is Location =>
-    !!loc && sideOfNation(state, loc.owner) === side && (loc.damaged ?? 0) < 95;
+    !!loc && sideOfNation(state, loc.owner) === side && (loc.damaged ?? 0) < 95 && locationAvailability(state, loc) > 0;
   const ss = ctx.scenario.supplySources ?? {};
   for (const [nation, ids] of Object.entries(ss)) {
     if (sideOfNation(state, nation) !== side) continue;
@@ -327,7 +438,65 @@ export function sourcesForSide(state: GameState, ctx: Pick<MilitaryContext, 'sce
       if (loc.kind === 'port' && !out.has(loc.id) && usable(loc)) make(loc, false, loc.supplyCapacity ?? DEFAULT_SRC_CAP.port ?? 60);
     }
   }
+  seaLinkCap(state, [...out.values()]);
   return [...out.values()];
+}
+
+const coastCache = new WeakMap<object, Map<string, boolean>>();
+/** A location within ~3 km of open water (terrain sea/lake cell at the point or a ring around it). */
+function isCoastal(terrain: TerrainGrid, loc: Location): boolean {
+  let m = coastCache.get(terrain);
+  if (!m) { m = new Map(); coastCache.set(terrain, m); }
+  const hit = m.get(loc.id);
+  if (hit !== undefined) return hit;
+  const water = (p: LonLat) => { const t = terrainAt(terrain, p); return t === Terrain.Sea || t === Terrain.Lake; };
+  const dLat = 3 / 111, dLon = 3 / (111 * Math.max(0.2, Math.cos((loc.pos[1] * Math.PI) / 180)));
+  let r = water(loc.pos);
+  for (let i = 0; i < 8 && !r; i++) { const a = (i * Math.PI) / 4; r = water([loc.pos[0] + Math.cos(a) * dLon, loc.pos[1] + Math.sin(a) * dLat]); }
+  m.set(loc.id, r);
+  return r;
+}
+const SEA_SHORE_KM = 20;
+
+/** Shore position: the unit stands within SEA_SHORE_KM of an own coastal sea-fed source. */
+function onSeaSuppliedShore(u: Unit, sources: SupplySource[], terrain: TerrainGrid): boolean {
+  for (const s of sources) {
+    if (!s.sea || s.capacity <= 0) continue;
+    if (haversineKm(u.pos, s.loc.pos) <= SEA_SHORE_KM && isCoastal(terrain, s.loc)) return true;
+  }
+  return false;
+}
+
+/** Pure read for the sim's isolation test: the unit stands on a shore supplied by sea (within 20 km of an own coastal sea-fed source). */
+export function isSeaSupplied(state: GameState, ctx: Pick<MilitaryContext, 'scenario' | 'terrain'>, u: Unit): boolean {
+  if (u.side !== 'allies' && u.side !== 'axis') return false;
+  const sources = sourcesForSide(state, ctx, u.side);
+  return sources.some(x => x.sea) && onSeaSuppliedShore(u, sources, ctx.terrain);
+}
+
+const SEA_LINK_MIN_KM = 100;
+const SEA_WEATHER: Record<WeatherKind, number> = { clear: 1, cloud: 1, rain: 0.85, storm: 0.15, snow: 0.8, fog: 0.9, mud: 1, sandstorm: 0.8 };
+
+/** Sea-fed ports (unlisted ports 100+ km from every listed port) share the embarkation ports' throughput, and storms slow unloading. Only when those ports carry tonnage data. */
+function seaLinkCap(state: GameState, srcs: SupplySource[]): void {
+  const listed = srcs.filter(s => s.listed && s.loc.kind === 'port');
+  if (!listed.length) return;
+  const far = srcs.filter(s => !s.listed && listed.every(l => haversineKm(l.loc.pos, s.loc.pos) >= SEA_LINK_MIN_KM));
+  const sea = far.filter(s => s.loc.kind === 'port');
+  // Active only for a theatre that models an overseas landing: a not-listed, overseas port/depot of this side carries tonnage or availability data (even if it is not open yet).
+  const listedIds = new Set(listed.map(s => s.loc.id));
+  const side = sideOfNation(state, listed[0].loc.owner);
+  const overseas = Object.values(state.locations).some(l => (l.kind === 'port' || l.kind === 'depot') && !listedIds.has(l.id) && sideOfNation(state, l.owner) === side
+    && (ext(l).throughputTonsPerDay !== undefined || ext(l).throughputTonsPerMonth !== undefined || ext(l).availableFromHour !== undefined)
+    && listed.every(x => haversineKm(x.loc.pos, l.pos) >= SEA_LINK_MIN_KM));
+  if (!overseas) return;
+  for (const s of far) s.sea = true;
+  const w = state.weather, i = clamp(w.intensity > 1 ? w.intensity / 100 : w.intensity, 0, 1);
+  const wf = 1 - (1 - (SEA_WEATHER[w.kind] ?? 1)) * i;
+  const pool = listed.reduce((a, s) => a + s.capacity, 0);
+  const total = sea.reduce((a, s) => a + s.capacity * wf, 0);
+  const scale = total > pool ? pool / total : 1;
+  for (const s of sea) s.capacity *= wf * scale;
 }
 
 // ───────────────────────────── supply update ─────────────────────────────
@@ -552,6 +721,7 @@ export function updateSupply(state: GameState, ctx: MilitaryContext): void {
   const units = Object.values(state.units).filter(isAlive);
 
   // Location damage: capture, raids, repair.
+  for (const id of Object.keys(sp.portMods)) { const m = sp.portMods[id]; if (m.untilMinutes !== undefined && state.clock.minutes >= m.untilMinutes) delete sp.portMods[id]; }
   updateLocationDamage(state, units, sp.lastOwner, sp.capturedAt);
   updateLineRepair(state);
 
@@ -572,7 +742,7 @@ export function updateSupply(state: GameState, ctx: MilitaryContext): void {
   for (const loc of Object.values(state.locations)) {
     const sd = sideOfNation(state, loc.owner);
     if (sd !== 'allies' && sd !== 'axis') continue;
-    if ((loc.kind !== 'airfield' && loc.kind !== 'port') || (loc.damaged ?? 0) >= 95) continue;
+    if ((loc.kind !== 'airfield' && loc.kind !== 'port') || (loc.damaged ?? 0) >= 95 || locationAvailability(state, loc) <= 0) continue;
     let nearest = 0, nd = Infinity;
     perSide[sd].sources.forEach((src, si) => { const d = haversineKm(loc.pos, src.loc.pos); if (d < nd) { nd = d; nearest = si; } });
     (loc.kind === 'airfield' ? bases.air : bases.sea)[sd].push({ loc, nearest, nd });
@@ -658,7 +828,8 @@ export function updateSupply(state: GameState, ctx: MilitaryContext): void {
     }
     if (u.domain === 'land' && best.src >= 0) {
       // Enclosed by a ring of enemy zones of control: cut only once the ring has held for ENCLOSE_UPDATES updates (spearheads flicker).
-      if (u.encircled) best = { u, eff: Infinity, src: -1, node: -1, demand, lines: [], air: false }; // sim already flagged it encircled (enemy on 3+ sides)
+      if (ps.sources.some(x => x.sea) && onSeaSuppliedShore(u, ps.sources, ctx.terrain)) delete streak[u.id]; // beachhead: the sea is its supply line
+      else if (u.encircled) best = { u, eff: Infinity, src: -1, node: -1, demand, lines: [], air: false }; // sim already flagged it encircled (enemy on 3+ sides)
       else if (inRegion(ps.region, u.pos, cg)) delete streak[u.id];
       else {
         streak[u.id] = (streak[u.id] ?? 0) + 1;
@@ -708,6 +879,7 @@ export function updateSupply(state: GameState, ctx: MilitaryContext): void {
       const need = dem[si] * interval;
       const served = Math.min(need, available);
       srcFactor.set(`${side}:${s.loc.id}`, need > 0 ? Math.max(0.05, served / need) : 1);
+      { const day = Math.floor(state.clock.minutes / 1440); const pu = sp.portUse[s.loc.id]; if (!pu || pu.day !== day) sp.portUse[s.loc.id] = { day, tons: served * TONS_PER_POINT }; else pu.tons += served * TONS_PER_POINT; }
       nodesOut.push({ locationId: s.loc.id, stock: Math.min(s.capacity * interval * 6, Math.max(0, available - served)), throughput: s.capacity });
     });
   }

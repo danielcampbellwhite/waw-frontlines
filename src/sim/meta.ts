@@ -41,6 +41,10 @@ export interface SimMeta {
   retreating: Record<UnitId, true>;
   /** unit -> game minute since which it has been continuously encircled (for surrender timing) */
   cutSince: Record<UnitId, number>;
+  /** landed unit -> game minute until which the beach/drop disorder penalty applies */
+  landing: Record<UnitId, number>;
+  /** scheduled carpet bombings already resolved (or cancelled) */
+  bombed: Record<string, true>;
   /** report id -> cells gained per nation (to fill BattleReport.territoryChangeOwner); pruned with reports */
   gains: Record<string, Record<string, number>>;
   /** test/tooling switch: engine skips ai.aiThink */
@@ -52,7 +56,7 @@ export interface SimMeta {
 export function getSimMeta(state: GameState): SimMeta {
   let m = state.special['sim'] as SimMeta | undefined;
   if (!m) {
-    m = { battles: {}, occupy: {}, isolated: [], gains: {}, firstSeen: {}, sorties: {}, retreating: {}, cutSince: {}, tick: 0 };
+    m = { battles: {}, occupy: {}, isolated: [], gains: {}, firstSeen: {}, sorties: {}, retreating: {}, cutSince: {}, landing: {}, bombed: {}, tick: 0 };
     state.special['sim'] = m;
   }
   if (!m.gains) m.gains = {};
@@ -60,5 +64,7 @@ export function getSimMeta(state: GameState): SimMeta {
   if (!m.sorties) m.sorties = {};
   if (!m.retreating) m.retreating = {};
   if (!m.cutSince) m.cutSince = {};
+  if (!m.landing) m.landing = {};
+  if (!m.bombed) m.bombed = {};
   return m;
 }

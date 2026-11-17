@@ -1,4 +1,5 @@
 import { describe, expect, it, beforeEach } from 'vitest';
+import { validateEventEffects } from '../src/data/validate';
 import { milSpecial } from '../src/military/context';
 import { nextFloat } from '../src/core/rng';
 import type { GameState, Location, NationId, Unit, UnitType } from '../src/core/types';
@@ -281,6 +282,38 @@ describe('historical events', () => {
     expect(milSpecial(s).portRelief.no_such_port).toBeUndefined();
     applyEffects({ state: s } as never, [{ op: 'port_relief', locationId: 'fra_port', on: false }]);
     expect(milSpecial(s).portRelief.fra_port).toBeUndefined();
+  });
+
+  it('port_throughput, port_available and weather ops model the Great Storm (wreck, hold weather, repair)', () => {
+    const s = world({ randomEvents: false });
+    s.clock.minutes = 312 * 60; // 19 Jun 1944 from 6 Jun 00:00
+    applyEffects({ state: s, now: s.clock.minutes, log: () => undefined } as never, [
+      { op: 'port_throughput', locationId: 'fra_port', factor: 0.1, hours: 72 },
+      { op: 'port_throughput', locationId: 'no_such_port', factor: 0 },
+      { op: 'port_available', locationId: 'fra_port', fromHour: 400, rampHours: 24 },
+      { op: 'weather', kind: 'storm', intensity: 0.9, hours: 72 },
+    ]);
+    const m = milSpecial(s);
+    expect(m.portMods.fra_port).toEqual({ factor: 0.1, untilMinutes: 312 * 60 + 72 * 60 });
+    expect(m.portMods.no_such_port).toBeUndefined();
+    expect(m.availability.fra_port).toEqual({ fromMinutes: 400 * 60, rampHours: 24 });
+    expect(s.weather.kind).toBe('storm');
+    expect(s.weather.intensity).toBe(0.9);
+    expect(s.weather.nextChangeMinutes).toBe(312 * 60 + 72 * 60);
+    // repair: factor 1 clears the modifier
+    applyEffects({ state: s, now: s.clock.minutes, log: () => undefined } as never, [{ op: 'port_throughput', locationId: 'fra_port', factor: 1 }]);
+    expect(m.portMods.fra_port).toBeUndefined();
+  });
+
+  it('validateEventEffects accepts and rejects the port and weather ops', () => {
+    const def = { locations: [{ id: 'mulberry_a' }], nations: [], units: [] } as never;
+    const v = (effects: Record<string, unknown>[]) => validateEventEffects({ id: 'x', effects, effectsNote: 'n' }, def).join();
+    expect(v([{ op: 'port_throughput', locationId: 'mulberry_a', factor: 0.1, hours: 72 }, { op: 'port_available', locationId: 'mulberry_a', fromHour: 300, rampHours: 24 }, { op: 'weather', kind: 'storm', intensity: 0.9, hours: 72 }])).toBe('');
+    expect(v([{ op: 'port_throughput', locationId: 'nope', factor: 0 }])).toMatch(/port_throughput/);
+    expect(v([{ op: 'port_throughput', locationId: 'mulberry_a', factor: -1 }])).toMatch(/port_throughput/);
+    expect(v([{ op: 'port_throughput', locationId: 'mulberry_a', factor: 0, hours: 0 }])).toMatch(/port_throughput/);
+    expect(v([{ op: 'port_available', locationId: 'mulberry_a' }])).toMatch(/port_available/);
+    expect(v([{ op: 'weather', kind: 'storm', hours: -3 }])).toMatch(/hours/);
   });
 
   it('registerHistoricalEventsFromData forwards effects (port_relief applies)', () => {

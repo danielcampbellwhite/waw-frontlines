@@ -1,4 +1,4 @@
-import type { Battle, BattleReport, GameState, Location, LonLat, SideId, Unit, UnitType } from '../core/types';
+import type { Battle, BattleReport, GameState, LonLat, SideId, Unit, UnitType } from '../core/types';
 import { Terrain, TICK_MINUTES } from '../core/types';
 import { bearingDeg, destination, haversineKm } from '../core/geo';
 import type { SimContext } from './context';
@@ -7,6 +7,7 @@ import { cellIdxOf, fastKm, getGridInfo, type GridInfo } from './gridutil';
 import { getSimMeta, type BattleMeta } from './meta';
 import { findRoute, moveClassOf, passableIce } from './pathfinding';
 import { iceOf } from './ice';
+import { LANDING_PENALTY, landingPenaltyActive } from './landing';
 import { SpatialHash } from './spatial';
 import { ownerSideAt } from './territory';
 
@@ -25,11 +26,11 @@ const EQ_WEIGHT: Record<UnitType, number> = {
 };
 const CASUALTY_EXPOSURE: Partial<Record<UnitType, number>> = { artillery: 0.5, hq: 0.4, logistics: 0.8, armoured: 0.7, mechanised: 0.8, antitank: 0.9 };
 const EQUIP_EXPOSURE: Partial<Record<UnitType, number>> = { armoured: 1.5, mechanised: 1.3, artillery: 1.0, antitank: 1.1, infantry: 0.9 };
-const TERRAIN_NAME = ['sea', 'open plains', 'forest', 'hills', 'mountains', 'marsh', 'urban terrain', 'desert', 'jungle', 'lake'];
-// Sea, Plains, Forest, Hills, Mountains, Marsh, Urban, Desert, Jungle, Lake
-const DEF_TERRAIN = [1, 1, 1.25, 1.35, 1.7, 1.2, 1.5, 0.95, 1.4, 1];
-const ATT_TERRAIN = [1, 1, 0.92, 0.9, 0.7, 0.85, 0.85, 0.95, 0.8, 1];
-const MOBILE_ATT_TERRAIN = [1, 1, 0.8, 0.85, 0.55, 0.65, 0.7, 1.0, 0.6, 1];
+const TERRAIN_NAME = ['sea', 'open plains', 'forest', 'hills', 'mountains', 'marsh', 'urban terrain', 'desert', 'jungle', 'lake', 'bocage hedgerows'];
+// Sea, Plains, Forest, Hills, Mountains, Marsh, Urban, Desert, Jungle, Lake, Bocage (hedgerow banks: strong cover, armour channelled and blind)
+const DEF_TERRAIN = [1, 1, 1.25, 1.35, 1.7, 1.2, 1.5, 0.95, 1.4, 1, 1.5];
+const ATT_TERRAIN = [1, 1, 0.92, 0.9, 0.7, 0.85, 0.85, 0.95, 0.8, 1, 0.88];
+const MOBILE_ATT_TERRAIN = [1, 1, 0.8, 0.85, 0.55, 0.65, 0.7, 1.0, 0.6, 1, 0.6];
 const MOBILE = new Set<UnitType>(['armoured', 'mechanised', 'motorised', 'recon']);
 const ATT_WEATHER: Record<string, number> = { clear: 1, cloud: 1, rain: 0.95, storm: 0.8, snow: 0.85, fog: 0.9, mud: 0.85, sandstorm: 0.8 };
 const MOBILE_ATT_WEATHER_EXTRA: Record<string, number> = { mud: 0.82, snow: 0.92, storm: 0.9, rain: 0.95 };
@@ -77,7 +78,7 @@ const emptyAgg = (): Aggregates => ({ power: 0, raw: 0, men: 0, mass: 0, org: 0,
 
 interface Env {
   state: GameState; ctx: SimContext; info: GridInfo;
-  arty: Record<string, Unit[]>; air: Record<string, Unit[]>;
+  arty: Record<string, Unit[]>; air: Record<string, Unit[]>; navy: Record<string, Unit[]>;
   usedSupport: Set<string>;
 }
 
@@ -90,6 +91,7 @@ export function updateCombat(state: GameState, ctx: SimContext): void {
   const land: Unit[] = [];
   const arty: Record<string, Unit[]> = { allies: [], axis: [] };
   const air: Record<string, Unit[]> = { allies: [], axis: [] };
+  const navy: Record<string, Unit[]> = { allies: [], axis: [] };
   for (const id in state.units) {
     const u = state.units[id];
     if (!alive(u) || u.side === 'neutral') continue;
@@ -97,8 +99,9 @@ export function updateCombat(state: GameState, ctx: SimContext): void {
       land.push(u);
       if (u.type === 'artillery') arty[u.side].push(u);
     } else if (u.domain === 'air') air[u.side].push(u);
+    else if (u.type === 'naval') navy[u.side].push(u);
   }
-  const env: Env = { state, ctx, info, arty, air, usedSupport: new Set() };
+  const env: Env = { state, ctx, info, arty, air, navy, usedSupport: new Set() };
   // a routed unit that has stopped running, is out of contact and has recovered rejoins the pool
   for (const u of land) {
     if (u.combatStatus === 'routed' && !u.inBattle && u.moveStatus !== 'retreating' && u.organisation > 35 && u.morale > 20) u.combatStatus = u.encircled ? 'encircled' : 'idle';
@@ -364,7 +367,6 @@ function evalUnit(env: Env, u: Unit, role: 'att' | 'def', opp: { armourShare: nu
   let mod = 1;
   if (role === 'def') {
     mod *= DEF_TERRAIN[t];
-    if (nearOwnFortress(state, u)) mod *= 1.2; // prepared positions (fortress locations) strengthen the garrison
     const ent = (u.entrenchment / 100) * 0.5;
     mod *= 1 + (opp.engineers ? ent * 0.75 : ent);
     if (u.moveStatus === 'moving') mod *= 0.85; // caught on the march
@@ -376,15 +378,8 @@ function evalUnit(env: Env, u: Unit, role: 'att' | 'def', opp: { armourShare: nu
     }
     mod *= ATT_WEATHER[state.weather.kind] ?? 1;
   }
+  if (landingPenaltyActive(state, u)) mod *= LANDING_PENALTY; // beach obstacles / scattered drop
   return { u, role, base, mod };
-}
-
-const fortressCache = new WeakMap<object, Location[]>();
-function nearOwnFortress(state: GameState, u: Unit): boolean {
-  let list = fortressCache.get(state.locations);
-  if (!list) { list = Object.values(state.locations).filter((l) => l.kind === 'fortress'); fortressCache.set(state.locations, list); }
-  for (const l of list) if (state.nations[l.owner]?.side === u.side && fastKm(l.pos, u.pos) < 4) return true;
-  return false;
 }
 
 function aggregate(parts: Part[]): Aggregates {
@@ -420,8 +415,11 @@ const SUPPORT_EXCLUDED = new Set(['hq', 'logistics']);
 /** Combat-troop power of a side's participants (HQs and supply columns do not call in air support). */
 const combatPower = (parts: Part[]): number => parts.reduce((a, p) => (SUPPORT_EXCLUDED.has(p.u.type) ? a : a + p.base * p.mod), 0);
 
+const NAVAL_SUPPORT_KM = 20;
+const NAVAL_RATING = [9, 6]; // bombardment strength per 1000 crew (attack, defence)
+
 function supportPower(env: Env, side: SideId, at: LonLat, members: Set<string>, role: 'att' | 'def', weatherOk: number, airCap: number): { arty: number; air: number } {
-  let artyP = 0, airP = 0;
+  let artyP = 0, airP = 0, navP = 0;
   for (const u of env.arty[side] ?? []) {
     if (members.has(u.id) || u.inBattle || u.ammo < 5 || u.moveStatus === 'retreating') continue;
     const d = fastKm(u.pos, at);
@@ -430,6 +428,22 @@ function supportPower(env: Env, side: SideId, at: LonLat, members: Set<string>, 
     env.usedSupport.add(u.id);
     artyP += massOf(u) * RATING.artillery[role === 'att' ? 0 : 1] * quality(u) * (1 - 0.5 * (d / ARTILLERY_SUPPORT_KM));
     u.ammo = Math.max(0, u.ammo - 2.5);
+  }
+  // naval gunfire: ships within range of a coastal fight add bombardment, capped at half the air-support share
+  if (airCap > 0) {
+    const stormMul = env.state.weather.kind === 'storm' ? 0.5 : 1;
+    const navalCap = 0.5 * airCap;
+    for (const u of env.navy[side] ?? []) {
+      if (u.ammo < 5 || u.organisation < 20) continue;
+      const d = fastKm(u.pos, at);
+      if (d > NAVAL_SUPPORT_KM || env.usedSupport.has(u.id)) continue;
+      if (navP >= navalCap) break;
+      env.usedSupport.add(u.id);
+      navP += massOf(u) * NAVAL_RATING[role === 'att' ? 0 : 1] * quality(u) * stormMul * (1 - 0.5 * (d / NAVAL_SUPPORT_KM));
+      u.ammo = Math.max(0, u.ammo - 3);
+    }
+    navP = Math.min(navP, navalCap);
+    artyP += navP;
   }
   if (weatherOk > 0 && airCap > 0) {
     const sorties = getSimMeta(env.state).sorties;

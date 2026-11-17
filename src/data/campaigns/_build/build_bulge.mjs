@@ -146,7 +146,7 @@ const REINF = [
   ['usa.10ad.ccb', '1944-12-18T00:00:00Z', R.BASTOGNE, 'Combat Command B, 10th Armored Division (Roberts)', 'armoured', 'USA', 'CCB/10AD', ['B05', 'B07'], true, 4500],
   ['usa.30id', '1944-12-18T12:00:00Z', R.MALMEDY, '30th Infantry Division (Hobbs)', 'infantry', 'USA', '30th ID', ['B01', 'B04'], true],
   ['usa.82abn', '1944-12-19T12:00:00Z', R.WERBOMONT, '82nd Airborne Division (Gavin)', 'paratroop', 'USA', '82nd Abn', ['B01', 'B04'], true],
-  ['usa.101abn', '1944-12-19T12:00:00Z', R.BASTOGNE, '101st Airborne Division (McAuliffe)', 'paratroop', 'USA', '101st Abn', ['B01', 'B05', 'B07'], false],
+  ['usa.101abn', '1944-12-19T06:00:00Z', R.BASTOGNE, '101st Airborne Division (McAuliffe)', 'paratroop', 'USA', '101st Abn', ['B01', 'B05', 'B07'], false],
   // US reinforcing divisions listed in the B01 order of battle; B02 gives only AGGREGATE counts (Allied infantry divisions 6 on 16 Dec, 15 on 24 Dec, 22 on 2 Jan; armoured 2, 6, 8).
   // Individual arrival dates and arrival areas below are taken from the B13 unit articles where they state a date (26th ID, 6th AD, 87th ID); the 3rd AD, 75th, 78th, 80th, 84th, 35th and 90th were DROPPED because no arrival date was found. Arrival AREAS and the remaining dates (7th AD, 10th AD CCB, 30th, 82nd, 101st, 4th AD, 2nd AD, 15. PzGrD, 29 Armd Bde) are approximate.
   ['usa.26id', '1944-12-21T12:00:00Z', [5.7, 49.57], '26th Infantry Division (moved to Luxembourg 19-21 Dec)', 'infantry', 'USA', '26th ID', ['B01', 'B13'], true],

@@ -799,5 +799,554 @@
     "license": "Public domain",
     "sourceUrl": "https://commons.wikimedia.org/wiki/File:Nederlandse_waterlinie,_winter_1940_bewapende_soldaten_op_de_schaats,_SFA001000445_01.jpg",
     "retrieved": "2026-11-16"
+  },
+  {
+    "id": "usa_m4_stvith",
+    "nation": "USA",
+    "subject": "M4 Sherman tanks, 7th Armored Division, St. Vith, January 1945",
+    "author": "Salis, U.S. Army Signal Corps photo 111-SC-199467",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:M4_Sherman_tanks_of_the_U.S._7th_Armored_Division_near_St._Vith,_Belgium,_24_January_1945_(148727210).jpg",
+    "retrieved": "2026-11-16"
+  },
+  {
+    "id": "usa_m5_normandy",
+    "nation": "USA",
+    "subject": "M5 Stuart light tank with infantry, Normandy 1944",
+    "author": "Conseil Régional de Basse-Normandie / National Archives USA",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:M5_Stuart_Normandy.jpg",
+    "retrieved": "2026-11-16"
+  },
+  {
+    "id": "usa_m10_bailey",
+    "nation": "USA",
+    "subject": "M10 tank destroyer crossing a Bailey bridge",
+    "author": "Unknown author",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:M10_tank_destroyers_crossing_a_Bailey_bridge.jpg",
+    "retrieved": "2026-11-16"
+  },
+  {
+    "id": "usa_m10_saar",
+    "nation": "USA",
+    "subject": "M10 tank destroyer crossing the Saar, December 1944",
+    "author": "\"US Army Photograph\". Original photographer not recorded.",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:M10_tank_destroyer_crossing_the_Saar,_December_1944.jpg",
+    "retrieved": "2026-11-16"
+  },
+  {
+    "id": "usa_m10_dreux",
+    "nation": "USA",
+    "subject": "M10 Wolverine tank destroyer, 628th TD Battalion, Dreux 1944",
+    "author": "Uncredited photographer",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:M10_Wolverine_of_628th_TDs_in_Dreux.jpg",
+    "retrieved": "2026-11-16"
+  },
+  {
+    "id": "usa_m18_museum",
+    "nation": "USA",
+    "subject": "M18 Hellcat tank destroyer (preserved vehicle)",
+    "author": "Alan Wilson from Stilton, Peterborough, Cambs, UK",
+    "license": "CC BY-SA 2.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:M18_Hellcat_%E2%80%93_Kubinka_Tank_Museum_(26177911609).jpg",
+    "retrieved": "2026-11-16"
+  },
+  {
+    "id": "usa_m8_kinz",
+    "nation": "USA",
+    "subject": "M8 Greyhound armoured car, 30th Infantry Division, Kinzweiler, November 1944",
+    "author": "Signal Corps Archive",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:SC_196666_-_An_M8_reconnaissance_armored_car_of_the_30th_Infantry_Div.,_rolls_through_the_streets_of_Kinzweiler,_November_21,_1944.jpg",
+    "retrieved": "2026-11-16"
+  },
+  {
+    "id": "usa_m8_museum",
+    "nation": "USA",
+    "subject": "M8 Greyhound armoured car (preserved vehicle)",
+    "author": "AlfvanBeem",
+    "license": "CC0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Light_Armored_Car_M8_Greyhound,_Army_registration_number_USA_603332_pic2.JPG",
+    "retrieved": "2026-11-16"
+  },
+  {
+    "id": "usa_m3_ht",
+    "nation": "USA",
+    "subject": "M3 half-track",
+    "author": "Dogeswat.vn",
+    "license": "CC BY-SA 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:M3_half_track.jpg",
+    "retrieved": "2026-11-16"
+  },
+  {
+    "id": "usa_at_bastogne",
+    "nation": "USA",
+    "subject": "Anti-tank gun guarding the approaches to Bastogne, 26 December 1944",
+    "author": "Signal Corps Archive from United States",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:SC_329955_-_Anti-tank_gun_on_guard_against_attempted_German_breakthrough_on_Bastogne._26_December,_1944._(52594081643).jpg",
+    "retrieved": "2026-11-16"
+  },
+  {
+    "id": "usa_101_bastogne",
+    "nation": "USA",
+    "subject": "101st Airborne troops, Bastogne, December 1944",
+    "author": "Post-Work: User:W.wolny",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:101st_Airborne_troops_move_out_of_Bastogne.jpg",
+    "retrieved": "2026-11-16"
+  },
+  {
+    "id": "usa_101_xmas",
+    "nation": "USA",
+    "subject": "101st Airborne infantry in ruined Bastogne, Christmas 1944",
+    "author": "US Army Signal Corps",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:101st_Airborne_in_Bastogne,_Christmas_1944.JPG",
+    "retrieved": "2026-11-16"
+  },
+  {
+    "id": "usa_para_bastogne",
+    "nation": "USA",
+    "subject": "101st Airborne paratroopers moving up to Bastogne",
+    "author": "US Army Center for Military History",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Paratroopers_Of_The_101st_Airborne_Moving_Up_To_Bastogne.jpg",
+    "retrieved": "2026-11-16"
+  },
+  {
+    "id": "usa_eng_stug",
+    "nation": "USA",
+    "subject": "291st Combat Engineers with a captured Sturmgeschütz III, Ardennes 1945",
+    "author": "Unknown author",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:291st_Combat_Engineers_disarm_Sturmgesch%C3%BCtz_III.jpg",
+    "retrieved": "2026-11-16"
+  },
+  {
+    "id": "usa_jeep",
+    "nation": "USA",
+    "subject": "Willys Jeep, 101st Airborne markings (re-enactment vehicle)",
+    "author": "Contando Estrelas from Vigo, España / Spain",
+    "license": "CC BY-SA 2.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Jeep_Willys_de_la_101st_Airborne_Division_del_US_Army_(28901418600).jpg",
+    "retrieved": "2026-11-16"
+  },
+  {
+    "id": "usa_gmc",
+    "nation": "USA",
+    "subject": "GMC CCKW 2.5-ton truck (preserved vehicle)",
+    "author": "AlfvanBeem",
+    "license": "CC0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:GMC_CCKW_353_(1944)_owned_by_Allan_Cornwall_pic2.JPG",
+    "retrieved": "2026-11-16"
+  },
+  {
+    "id": "usa_p47_luxeuil",
+    "nation": "USA",
+    "subject": "P-47 Thunderbolt fighter, 1945",
+    "author": "Mirage2000D",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:P-47_Thunderbolt_at_BA116_Luxeuil,_1945.jpg",
+    "retrieved": "2026-11-16"
+  },
+  {
+    "id": "usa_p47_62d",
+    "nation": "USA",
+    "subject": "62nd Fighter Squadron P-47 Thunderbolts in flight, 1944",
+    "author": "United States Army Air Forces",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:62d_Fighter_Squadron_P-47_Thunderbolts_-_1944.jpg",
+    "retrieved": "2026-11-16"
+  },
+  {
+    "id": "usa_p47_bodney",
+    "nation": "USA",
+    "subject": "P-47 Thunderbolt \"Dallas Blonde\", 352nd Fighter Group",
+    "author": "United States Army Air Forces",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:RAF_Bodney_-_352d_Fighter_Group_-_P-47_Thunderbolt_Dallas_Blonde.jpg",
+    "retrieved": "2026-11-16"
+  },
+  {
+    "id": "usa_p51",
+    "nation": "USA",
+    "subject": "P-51D Mustang, 362nd Fighter Squadron, France 1944",
+    "author": "Royal Air Force",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:North_American_P-51D_Mustang_of_the_362nd_Fighter_Squadron_(USAAF)_at_Coulommiers,_France,_circa_in_1944_(FRE_13476).jpg",
+    "retrieved": "2026-11-16"
+  },
+  {
+    "id": "usa_c47_museum",
+    "nation": "USA",
+    "subject": "C-47 Skytrain transport aircraft (preserved aircraft)",
+    "author": "Eric Friedebach",
+    "license": "CC BY 2.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:C-47B_%E2%80%9CSkytrain%E2%80%9D_(49871320496).jpg",
+    "retrieved": "2026-11-16"
+  },
+  {
+    "id": "usa_hq_mcauliffe",
+    "nation": "USA",
+    "subject": "Brig. Gen. McAuliffe and the 101st Airborne headquarters staff, Bastogne, Christmas 1944",
+    "author": "Unknown, U.S. Army",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Brig._Gen._Anthony_McAuliffe_and_his_staff_gathered_inside_Bastogne%27s_Heintz_Barracks_for_Christmas_dinner_Dec._25th,_1944.jpg",
+    "retrieved": "2026-11-16"
+  },
+  {
+    "id": "ger_tiger2_budapest",
+    "nation": "GER",
+    "subject": "Tiger II, Budapest 1944",
+    "author": "Bundesarchiv / Faupel",
+    "license": "CC BY-SA 3.0 de",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Bundesarchiv_Bild_101I-680-8282A-03A,_Budapest,_Panzer_VI_(Tiger_II,_K%C3%B6nigstiger).jpg",
+    "retrieved": "2026-11-16"
+  },
+  {
+    "id": "ger_tiger2_canteloup",
+    "nation": "GER",
+    "subject": "Tiger II, Normandy 1944",
+    "author": "Bundesarchiv / Vennemann, Wolfgang",
+    "license": "CC BY-SA 3.0 de",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Bundesarchiv_Bild_101I-721-0359-37,_Canteloup,_Panzer_VI_(Tiger_II,_K%C3%B6nigstiger).jpg",
+    "retrieved": "2026-11-16"
+  },
+  {
+    "id": "ger_stug_skirts",
+    "nation": "GER",
+    "subject": "Sturmgeschütz III with side skirts, Russia",
+    "author": "Bundesarchiv / Ludwig Knobloch",
+    "license": "CC BY-SA 3.0 de",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Bundesarchiv_Bild_101I-154-1986-05,_Russland,_Sturmgesch%C3%BCtz_III_mit_Seitensch%C3%BCrzen.jpg",
+    "retrieved": "2026-11-16"
+  },
+  {
+    "id": "ger_stug_stalingrad2",
+    "nation": "GER",
+    "subject": "Sturmgeschütz III advancing, Stalingrad sector 1942",
+    "author": "Bundesarchiv / Schröter",
+    "license": "CC BY-SA 3.0 de",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Bundesarchiv_Bild_183-J21826,_Russland,_Kampf_um_Stalingrad,_Sturmgesch%C3%BCtz.jpg",
+    "retrieved": "2026-11-16"
+  },
+  {
+    "id": "ger_spah_africa",
+    "nation": "GER",
+    "subject": "Armoured reconnaissance car with radio mast, North Africa",
+    "author": "Bundesarchiv / Böcker",
+    "license": "CC BY-SA 3.0 de",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Bundesarchiv_Bild_101I-424-0269-17,_Nordafrika,_Sp%C3%A4hpanzer.jpg",
+    "retrieved": "2026-11-16"
+  },
+  {
+    "id": "ger_ju87_africa",
+    "nation": "GER",
+    "subject": "Junkers Ju 87 Stuka being serviced, North Africa",
+    "author": "Bundesarchiv / Unknown author",
+    "license": "CC BY-SA 3.0 de",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Bundesarchiv_Bild_146-1981-064-16A,_Nordafrika,_Demontage_einer_Junkers_Ju_87.jpg",
+    "retrieved": "2026-11-16"
+  },
+  {
+    "id": "ger_inf_ardennes",
+    "nation": "GER",
+    "subject": "Volksgrenadiere, Ardennes offensive, December 1944",
+    "author": "Bundesarchiv / Lange",
+    "license": "CC BY-SA 3.0 de",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Bundesarchiv_Bild_183-1985-0104-501,_Ardennenoffensive,_Grenadiere_in_Luxemburg.jpg",
+    "retrieved": "2026-11-16"
+  },
+  {
+    "id": "ger_inf_ardennes2",
+    "nation": "GER",
+    "subject": "German infantry advancing through woods, Ardennes 1944",
+    "author": "Bundesarchiv / Rutkowski, Heinz",
+    "license": "CC BY-SA 3.0 de",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Bundesarchiv_Bild_183-J28510,_Ardennenoffensive,_deutsche_Infanterie_geht_im_Wald_vor..jpg",
+    "retrieved": "2026-11-16"
+  },
+  {
+    "id": "ger_251_ardennes",
+    "nation": "GER",
+    "subject": "Grenadiers in a half-track, Ardennes offensive 1944",
+    "author": "Bundesarchiv / Göttert",
+    "license": "CC BY-SA 3.0 de",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Bundesarchiv_Bild_183-J28519,_Ardennenoffensive,_Soldaten_in_Sch%C3%BCtzenpanzer.jpg",
+    "retrieved": "2026-11-16"
+  },
+  {
+    "id": "ger_hq_ardennes",
+    "nation": "GER",
+    "subject": "Officers' map conference (command post), Ardennes offensive 1944",
+    "author": "Bundesarchiv / Göttert",
+    "license": "CC BY-SA 3.0 de",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Bundesarchiv_Bild_183-J28477,_Ardennenoffensive,_Lagebesprechnung.jpg",
+    "retrieved": "2026-11-16"
+  },
+  {
+    "id": "sov_katyusha_battery",
+    "nation": "SOV",
+    "subject": "Battery of Katyusha rocket launchers in action",
+    "author": "Zelma / Георгий Зельма",
+    "license": "CC BY-SA 3.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:RIAN_archive_303890_A_battery_of_Katyusha_during_the_1941-1945_Great_Patriotic_War.jpg",
+    "retrieved": "2026-11-16"
+  },
+  {
+    "id": "sov_katyusha_museum",
+    "nation": "SOV",
+    "subject": "BM-13 Katyusha rocket launcher (preserved vehicle)",
+    "author": "Adam Jones, Ph.D.",
+    "license": "CC BY-SA 2.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Katyusha_Rocket_Launcher_-_Artillery_Museum_-_St._Petersburg_-_Russia.jpg",
+    "retrieved": "2026-11-16"
+  },
+  {
+    "id": "sov_hq_stalingrad",
+    "nation": "SOV",
+    "subject": "Stalingrad Front military council at a map table (headquarters staff)",
+    "author": "Oleg Knorring / Олег Кнорринг",
+    "license": "CC BY-SA 3.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:RIAN_archive_882837_The_defenders_of_Stalingrad.jpg",
+    "retrieved": "2026-11-16"
+  },
+  {
+    "id": "sov_naval_inf",
+    "nation": "SOV",
+    "subject": "Soviet naval infantry submachine-gunners in action",
+    "author": "Vladimir Nikolayevich Ivanov",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:%D0%90%D0%B2%D1%82%D0%BE%D0%BC%D0%B0%D1%82%D1%87%D0%B8%D0%BA%D0%B8_%D0%BC%D0%BE%D1%80%D1%81%D0%BA%D0%BE%D0%B9_%D0%BF%D0%B5%D1%85%D0%BE%D1%82%D1%8B_%D0%B2%D0%B5%D0%B4%D1%83%D1%82_%D0%B1%D0%BE%D0%B9.jpg",
+    "retrieved": "2026-11-16"
+  },
+  {
+    "id": "sov_cavalry",
+    "nation": "SOV",
+    "subject": "Soviet cavalry attack",
+    "author": "Vladimir Nikolayevich Ivanov",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:%D0%9A%D0%BE%D0%BD%D0%BD%D0%B0%D1%8F_%D0%B0%D1%82%D0%B0%D0%BA%D0%B0.jpg",
+    "retrieved": "2026-11-16"
+  },
+  {
+    "id": "sov_kv1_crew",
+    "nation": "SOV",
+    "subject": "KV-1 heavy tank and crew, 17th Tank Brigade",
+    "author": "Unknown author",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:KV-1_tank_crew_(17th_Tank_Bridage).jpg",
+    "retrieved": "2026-11-16"
+  },
+  {
+    "id": "sov_t34_museum",
+    "nation": "SOV",
+    "subject": "T-34-76 medium tank (monument vehicle)",
+    "author": "George Chernilevsky",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:T-34-76_Sevastopol_2009_G1.jpg",
+    "retrieved": "2026-11-16"
+  },
+  {
+    "id": "sov_t70_museum",
+    "nation": "SOV",
+    "subject": "T-70 light tank (preserved vehicle)",
+    "author": "ShinePhantom",
+    "license": "CC BY-SA 3.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:T-70,_technical_museum,_Togliatti-1.jpg",
+    "retrieved": "2026-11-16"
+  },
+  {
+    "id": "sov_kv1_museum",
+    "nation": "SOV",
+    "subject": "KV-1 heavy tank (preserved vehicle, Finnish-captured, Parola)",
+    "author": "Pitkäkaula",
+    "license": "CC BY-SA 3.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:KV-1_m_1942_Parola_tank_museum.jpg",
+    "retrieved": "2026-11-16"
+  },
+  {
+    "id": "sov_bt7_museum",
+    "nation": "SOV",
+    "subject": "BT-7 light tank (preserved vehicle)",
+    "author": "ShinePhantom",
+    "license": "CC BY-SA 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:BT-7_in_the_Togliatti_Technical_Museum_03.jpg",
+    "retrieved": "2026-11-16"
+  },
+  {
+    "id": "sov_su76",
+    "nation": "SOV",
+    "subject": "SU-76 self-propelled gun (preserved vehicle)",
+    "author": "One half 3544",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:SU-76_spb.JPG",
+    "retrieved": "2026-11-16"
+  },
+  {
+    "id": "sov_zis3",
+    "nation": "SOV",
+    "subject": "76 mm divisional gun ZiS-3 (preserved gun)",
+    "author": "Torin",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:76_mm_divisional_gun_M1942_(ZiS-3)_001.jpg",
+    "retrieved": "2026-11-16"
+  },
+  {
+    "id": "sov_il2_wreck",
+    "nation": "SOV",
+    "subject": "Wrecked Il-2 Sturmovik, displayed in a captured-aircraft exhibition",
+    "author": "FOTO:Fortepan — ID 30244: Adományozó/Donor: Unknown.",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Szovjet_IL2_Sturmovik_csatarep%C3%BCl%C5%91g%C3%A9p_roncsa._Fortepan_30244.jpg",
+    "retrieved": "2026-11-16"
+  },
+  {
+    "id": "ita_m13_museum",
+    "nation": "ITA",
+    "subject": "M13/40 medium tank (preserved vehicle)",
+    "author": "The original uploader was Краљевић Марко at Serbian Wikipedia.",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:M13-40.jpg",
+    "retrieved": "2026-11-16"
+  },
+  {
+    "id": "ita_l3_museum",
+    "nation": "ITA",
+    "subject": "L3/35 Carro Veloce tankette (preserved vehicle)",
+    "author": "Alan Wilson from Stilton, Peterborough, Cambs, UK",
+    "license": "CC BY-SA 2.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Carro_Veloce_CV-35_(L3-35)_-_Patriot_Museum,_Kubinka_(37687204344).jpg",
+    "retrieved": "2026-11-16"
+  },
+  {
+    "id": "ita_gun7527",
+    "nation": "ITA",
+    "subject": "Cannone da 75/27 Mod. 1911 field gun",
+    "author": "Regio Esercito (Royal Italian Army)",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Cannone_75-27_Mod._1912.JPG",
+    "retrieved": "2026-11-16"
+  },
+  {
+    "id": "ita_gun7527_b",
+    "nation": "ITA",
+    "subject": "Cannone da 75/27 field gun (preserved gun)",
+    "author": "Saggittarius A",
+    "license": "CC BY-SA 4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Cannone_75_27_Bergamo.jpg",
+    "retrieved": "2026-11-16"
+  },
+  {
+    "id": "ita_breda20",
+    "nation": "ITA",
+    "subject": "Breda 20 mm Mod. 35 gun (preserved gun)",
+    "author": "Llorenzi",
+    "license": "CC BY-SA 3.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Cannone_Mitragliera_da_20mm_mod.35.jpg",
+    "retrieved": "2026-11-16"
+  },
+  {
+    "id": "ita_cr42",
+    "nation": "ITA",
+    "subject": "Fiat CR.42 Falco fighter",
+    "author": "USAF",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Fiat_CR_42_Falco_fighter_parked.jpg",
+    "retrieved": "2026-11-16"
+  },
+  {
+    "id": "rou_inf_a",
+    "nation": "ROU",
+    "subject": "Romanian soldiers, southern Russia 1942",
+    "author": "Bundesarchiv / Lechner",
+    "license": "CC BY-SA 3.0 de",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Bundesarchiv_Bild_101I-218-0501-27,_Russland-S%C3%BCd,_rum%C3%A4nische_Soldaten.jpg",
+    "retrieved": "2026-11-16"
+  },
+  {
+    "id": "rou_r2",
+    "nation": "ROU",
+    "subject": "LT vz.35 light tank, the type Romania used as the R-2 (preserved vehicle)",
+    "author": "Ondřej Žváček",
+    "license": "CC BY 2.5",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Lehk%C3%BD_tank_LT_vz._35.jpg",
+    "retrieved": "2026-11-16"
+  },
+  {
+    "id": "gbr_crusader_battle",
+    "nation": "GBR",
+    "subject": "Crusader tank passing a burning Panzer IV, Western Desert, November 1941",
+    "author": "Davies L B (Lieut), No 1 Army Film & Photographic Unit",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:The_British_Army_in_North_Africa_1941_E6752.jpg",
+    "retrieved": "2026-11-16"
+  },
+  {
+    "id": "gbr_crusader_trans",
+    "nation": "GBR",
+    "subject": "Crusader tank on a transporter, Western Desert, 1941",
+    "author": "No 1 Army Film & Photographic Unit, Cash (Lieut)",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:The_British_Army_in_North_Africa_1941_E7014.jpg",
+    "retrieved": "2026-11-16"
+  },
+  {
+    "id": "gbr_crusader_pair",
+    "nation": "GBR",
+    "subject": "Crusader tanks, Western Desert, November 1941",
+    "author": "Clements (Lieut), No 1 Army Film & Photographic Unit",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:IWM-E-6724-Crusader-19411126.jpg",
+    "retrieved": "2026-11-16"
+  },
+  {
+    "id": "gbr_crusader_museum",
+    "nation": "GBR",
+    "subject": "Crusader Mk III cruiser tank (preserved vehicle)",
+    "author": "Alan Wilson from Stilton, Peterborough, Cambs, UK",
+    "license": "CC BY-SA 2.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Crusader_MkIII_%E2%80%98T126272%E2%80%99_(36590905746).jpg",
+    "retrieved": "2026-11-16"
+  },
+  {
+    "id": "gbr_valentine_desert",
+    "nation": "GBR",
+    "subject": "Valentine tank under repair, Western Desert, December 1941",
+    "author": "Cash (Lieut), No 1 Army Film & Photographic Unit",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:The_British_Army_in_North_Africa_1941_E7002.jpg",
+    "retrieved": "2026-11-16"
+  },
+  {
+    "id": "gbr_valentine_museum",
+    "nation": "GBR",
+    "subject": "Valentine IX infantry tank (preserved vehicle)",
+    "author": "Simon Q from United Kingdom",
+    "license": "CC BY 2.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Tank_Infantry_Mark_III,_Valentine_IX_(4536617118).jpg",
+    "retrieved": "2026-11-16"
+  },
+  {
+    "id": "gbr_stuart_museum",
+    "nation": "GBR",
+    "subject": "M3A1 Stuart III in British desert colours (preserved vehicle, re-enactment)",
+    "author": "Alan Wilson from Stilton, Peterborough, Cambs, UK",
+    "license": "CC BY-SA 2.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:M3A1_Stuart_III_%E2%80%98T37765%E2%80%99_%E2%80%9CClementine%E2%80%9D_(44431850175).jpg",
+    "retrieved": "2026-11-16"
+  },
+  {
+    "id": "aus_inf_bardia",
+    "nation": "AUS",
+    "subject": "Australian infantry advancing at Bardia, January 1941",
+    "author": "Geoffrey Keating",
+    "license": "Public domain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Commonwealth_Forces_in_North_Africa_1941_E1573.jpg",
+    "retrieved": "2026-11-16"
   }
 ]

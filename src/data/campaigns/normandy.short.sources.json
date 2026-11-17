@@ -1,0 +1,877 @@
+{
+ "scenarioId": "normandy.short",
+ "note": "Per-fact source references.",
+ "units": {
+  "ger.c.LXXXIV": {
+   "sources": [
+    "M01",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "ger.d.709": {
+   "sources": [
+    "M03",
+    "M10",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "ger.cherbourg": {
+   "sources": [
+    "M10",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "ger.d.91": {
+   "sources": [
+    "M03",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "ger.fjr6": {
+   "sources": [
+    "M03",
+    "M10",
+    "M18",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "ger.d.243": {
+   "sources": [
+    "M18",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "ger.d.352": {
+   "sources": [
+    "M04",
+    "M05",
+    "M12",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "ger.d.716": {
+   "sources": [
+    "M05",
+    "M06",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "ger.d.21pz": {
+   "sources": [
+    "M06",
+    "M12",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  }
+ },
+ "locations": {
+  "cherbourg": {
+   "sources": [
+    "M15",
+    "M10",
+    "G02"
+   ]
+  },
+  "carentan": {
+   "sources": [
+    "M15",
+    "M10",
+    "G02"
+   ]
+  },
+  "saint_lo": {
+   "sources": [
+    "M15",
+    "M11",
+    "G02"
+   ]
+  },
+  "caen": {
+   "sources": [
+    "M14",
+    "M02",
+    "G02"
+   ]
+  },
+  "bayeux": {
+   "sources": [
+    "M14",
+    "M05",
+    "G02"
+   ]
+  },
+  "isigny": {
+   "sources": [
+    "M14",
+    "M04",
+    "G02"
+   ]
+  },
+  "sainte_mere_eglise": {
+   "sources": [
+    "M15",
+    "M09",
+    "G02"
+   ]
+  },
+  "utah_beach": {
+   "sources": [
+    "M15",
+    "M03",
+    "G02"
+   ]
+  },
+  "omaha_beach": {
+   "sources": [
+    "M14",
+    "M04",
+    "G02"
+   ]
+  },
+  "gold_beach": {
+   "sources": [
+    "M15",
+    "M05",
+    "G02"
+   ]
+  },
+  "juno_beach": {
+   "sources": [
+    "M14",
+    "M06",
+    "G02"
+   ]
+  },
+  "sword_beach": {
+   "sources": [
+    "M14",
+    "M07",
+    "G02"
+   ]
+  },
+  "arromanches": {
+   "sources": [
+    "M15",
+    "M08",
+    "M02",
+    "G02"
+   ]
+  },
+  "mulberry_a": {
+   "sources": [
+    "M15",
+    "M08",
+    "G02"
+   ]
+  },
+  "port_en_bessin": {
+   "sources": [
+    "M15",
+    "M05",
+    "G02"
+   ]
+  },
+  "pointe_du_hoc": {
+   "sources": [
+    "M15",
+    "M04",
+    "G02"
+   ]
+  },
+  "pegasus_bridge": {
+   "sources": [
+    "M15",
+    "M09",
+    "G02"
+   ]
+  },
+  "carpiquet": {
+   "sources": [
+    "M14",
+    "M06",
+    "G02"
+   ]
+  },
+  "villers_bocage": {
+   "sources": [
+    "M14",
+    "M02",
+    "G02"
+   ]
+  },
+  "tilly": {
+   "sources": [
+    "M15",
+    "M12",
+    "G02"
+   ]
+  },
+  "caumont": {
+   "sources": [
+    "M14",
+    "M11",
+    "G02"
+   ]
+  },
+  "bourguebus": {
+   "sources": [
+    "M14",
+    "M11",
+    "G02"
+   ]
+  },
+  "avranches": {
+   "sources": [
+    "M14",
+    "M11",
+    "G02"
+   ]
+  },
+  "coutances": {
+   "sources": [
+    "M15",
+    "M11",
+    "G02"
+   ]
+  },
+  "periers": {
+   "sources": [
+    "M15",
+    "M11",
+    "G02"
+   ]
+  },
+  "valognes": {
+   "sources": [
+    "M15",
+    "M10",
+    "G02"
+   ]
+  },
+  "falaise": {
+   "sources": [
+    "M14",
+    "M02",
+    "G02"
+   ]
+  },
+  "vire": {
+   "sources": [
+    "M15",
+    "M11",
+    "G02"
+   ]
+  },
+  "southampton": {
+   "sources": [
+    "M14",
+    "G01",
+    "G02"
+   ]
+  },
+  "portsmouth": {
+   "sources": [
+    "M14",
+    "G01",
+    "G02"
+   ]
+  },
+  "poole": {
+   "sources": [
+    "M14",
+    "G01",
+    "G02"
+   ]
+  },
+  "weymouth": {
+   "sources": [
+    "M14",
+    "G01",
+    "G02"
+   ]
+  },
+  "newhaven": {
+   "sources": [
+    "M14",
+    "G01",
+    "G02"
+   ]
+  },
+  "lisieux": {
+   "sources": [
+    "M14",
+    "G02"
+   ]
+  }
+ },
+ "reinforcements": {
+  "reinf.usa.82abn": {
+   "sources": [
+    "M09",
+    "G03"
+   ],
+   "approximate": true
+  },
+  "reinf.usa.101abn": {
+   "sources": [
+    "M09",
+    "M10",
+    "G03"
+   ],
+   "approximate": true
+  },
+  "reinf.gbr.6abn": {
+   "sources": [
+    "M09",
+    "G03"
+   ],
+   "approximate": true
+  },
+  "reinf.usa.c.VII": {
+   "sources": [
+    "M03",
+    "M09",
+    "G03"
+   ],
+   "approximate": true
+  },
+  "reinf.usa.4id": {
+   "sources": [
+    "M03",
+    "G03"
+   ],
+   "approximate": true
+  },
+  "reinf.usa.c.V": {
+   "sources": [
+    "M04",
+    "G03"
+   ],
+   "approximate": true
+  },
+  "reinf.usa.1id": {
+   "sources": [
+    "M04",
+    "G03"
+   ],
+   "approximate": true
+  },
+  "reinf.usa.29id": {
+   "sources": [
+    "M04",
+    "M16",
+    "G03"
+   ],
+   "approximate": true
+  },
+  "reinf.usa.rangers": {
+   "sources": [
+    "M04",
+    "G03"
+   ],
+   "approximate": true
+  },
+  "reinf.gbr.c.XXX": {
+   "sources": [
+    "M05",
+    "G03"
+   ],
+   "approximate": true
+  },
+  "reinf.gbr.50div": {
+   "sources": [
+    "M05",
+    "G03"
+   ],
+   "approximate": true
+  },
+  "reinf.gbr.8arm": {
+   "sources": [
+    "M05",
+    "G03"
+   ],
+   "approximate": true
+  },
+  "reinf.gbr.c.I": {
+   "sources": [
+    "M17",
+    "G03"
+   ],
+   "approximate": true
+  },
+  "reinf.gbr.3div": {
+   "sources": [
+    "M07",
+    "G03"
+   ],
+   "approximate": true
+  },
+  "reinf.gbr.27arm": {
+   "sources": [
+    "M07",
+    "G03"
+   ],
+   "approximate": true
+  },
+  "reinf.gbr.1ssb": {
+   "sources": [
+    "M07",
+    "G03"
+   ],
+   "approximate": true
+  },
+  "reinf.can.3div": {
+   "sources": [
+    "M06",
+    "G03"
+   ],
+   "approximate": true
+  },
+  "reinf.can.2arm": {
+   "sources": [
+    "M06",
+    "G03"
+   ],
+   "approximate": true
+  },
+  "reinf.gbr.7arm": {
+   "sources": [
+    "M17",
+    "G03"
+   ],
+   "approximate": true
+  },
+  "reinf.gbr.51hd": {
+   "sources": [
+    "M17",
+    "G03"
+   ],
+   "approximate": true
+  },
+  "reinf.usa.2ad": {
+   "sources": [
+    "M16",
+    "G03"
+   ],
+   "approximate": true
+  },
+  "reinf.usa.9id": {
+   "sources": [
+    "M16",
+    "G03"
+   ],
+   "approximate": true
+  },
+  "reinf.usa.90id": {
+   "sources": [
+    "M16",
+    "G03"
+   ],
+   "approximate": true
+  },
+  "reinf.usa.30id": {
+   "sources": [
+    "M16",
+    "G03"
+   ],
+   "approximate": true
+  },
+  "reinf.usa.79id": {
+   "sources": [
+    "M16",
+    "G03"
+   ],
+   "approximate": true
+  },
+  "reinf.gbr.11arm": {
+   "sources": [
+    "M17",
+    "G03"
+   ],
+   "approximate": true
+  },
+  "reinf.gbr.49div": {
+   "sources": [
+    "M17",
+    "G03"
+   ],
+   "approximate": true
+  },
+  "reinf.usa.83id": {
+   "sources": [
+    "M16",
+    "G03"
+   ],
+   "approximate": true
+  },
+  "reinf.gbr.43div": {
+   "sources": [
+    "M17",
+    "G03"
+   ],
+   "approximate": true
+  },
+  "reinf.gbr.15div": {
+   "sources": [
+    "M11",
+    "M17",
+    "G03"
+   ],
+   "approximate": true
+  },
+  "reinf.gbr.53div": {
+   "sources": [
+    "M17",
+    "G03"
+   ],
+   "approximate": true
+  },
+  "reinf.gbr.guards": {
+   "sources": [
+    "M17",
+    "G03"
+   ],
+   "approximate": true
+  },
+  "reinf.gbr.59div": {
+   "sources": [
+    "M17",
+    "G03"
+   ],
+   "approximate": true
+  },
+  "reinf.usa.35id": {
+   "sources": [
+    "M16",
+    "G03"
+   ],
+   "approximate": true
+  },
+  "reinf.can.2div": {
+   "sources": [
+    "M17",
+    "G03"
+   ],
+   "approximate": true
+  },
+  "reinf.usa.5id": {
+   "sources": [
+    "M16",
+    "G03"
+   ],
+   "approximate": true
+  },
+  "reinf.usa.4ad": {
+   "sources": [
+    "M16",
+    "G03"
+   ],
+   "approximate": true
+  },
+  "reinf.usa.28id": {
+   "sources": [
+    "M16",
+    "G03"
+   ],
+   "approximate": true
+  },
+  "reinf.ger.d.12ss": {
+   "sources": [
+    "M12",
+    "G03"
+   ],
+   "approximate": true
+  },
+  "reinf.ger.d.plehr": {
+   "sources": [
+    "M12",
+    "G03"
+   ],
+   "approximate": true
+  },
+  "reinf.ger.d.3fj": {
+   "sources": [
+    "M18",
+    "G03"
+   ],
+   "approximate": true
+  },
+  "reinf.ger.d.17ss": {
+   "sources": [
+    "M10",
+    "M18",
+    "G03"
+   ],
+   "approximate": true
+  },
+  "reinf.ger.sspz101": {
+   "sources": [
+    "M18",
+    "G03"
+   ],
+   "approximate": true
+  },
+  "reinf.ger.d.2ss": {
+   "sources": [
+    "M18",
+    "G03"
+   ],
+   "approximate": true
+  },
+  "reinf.ger.d.9ss": {
+   "sources": [
+    "M11",
+    "M18",
+    "G03"
+   ],
+   "approximate": true
+  },
+  "reinf.ger.d.10ss": {
+   "sources": [
+    "M11",
+    "M18",
+    "G03"
+   ],
+   "approximate": true
+  },
+  "reinf.ger.d.1ss": {
+   "sources": [
+    "M18",
+    "G03"
+   ],
+   "approximate": true
+  },
+  "reinf.ger.d.275": {
+   "sources": [
+    "M18",
+    "G03"
+   ],
+   "approximate": true
+  }
+ },
+ "nations": {
+  "USA": {
+   "sources": [
+    "G01"
+   ],
+   "gameScale": true
+  },
+  "GBR": {
+   "sources": [
+    "G01"
+   ],
+   "gameScale": true
+  },
+  "CAN": {
+   "sources": [
+    "G01"
+   ],
+   "gameScale": true
+  },
+  "GER": {
+   "sources": [
+    "G01"
+   ],
+   "gameScale": true
+  }
+ },
+ "objectives": {
+  "o.all.cherbourg": {
+   "sources": [
+    "M01",
+    "M02",
+    "G01"
+   ]
+  },
+  "o.all.caen": {
+   "sources": [
+    "M01",
+    "M02",
+    "G01"
+   ]
+  },
+  "o.all.carentan": {
+   "sources": [
+    "M01",
+    "M02",
+    "G01"
+   ]
+  },
+  "o.all.bayeux": {
+   "sources": [
+    "M01",
+    "M02",
+    "G01"
+   ]
+  },
+  "o.all.isigny": {
+   "sources": [
+    "M01",
+    "M02",
+    "G01"
+   ]
+  },
+  "o.all.saint_lo": {
+   "sources": [
+    "M01",
+    "M02",
+    "G01"
+   ]
+  },
+  "o.all.carpiquet": {
+   "sources": [
+    "M01",
+    "M02",
+    "G01"
+   ]
+  },
+  "o.all.avranches": {
+   "sources": [
+    "M01",
+    "M02",
+    "G01"
+   ]
+  },
+  "o.all.mulberry": {
+   "sources": [
+    "M01",
+    "M02",
+    "G01"
+   ]
+  },
+  "o.ger.hold_caen": {
+   "sources": [
+    "M01",
+    "M02",
+    "G01"
+   ]
+  },
+  "o.ger.hold_cherbourg": {
+   "sources": [
+    "M01",
+    "M02",
+    "G01"
+   ]
+  },
+  "o.ger.hold_saint_lo": {
+   "sources": [
+    "M01",
+    "M02",
+    "G01"
+   ]
+  },
+  "o.ger.hold_carentan": {
+   "sources": [
+    "M01",
+    "M02",
+    "G01"
+   ]
+  },
+  "o.ger.hold_bayeux": {
+   "sources": [
+    "M01",
+    "M02",
+    "G01"
+   ]
+  },
+  "o.ger.hold_avranches": {
+   "sources": [
+    "M01",
+    "M02",
+    "G01"
+   ]
+  }
+ },
+ "uncertain": [
+  {
+   "item": "Order-of-battle depth",
+   "note": "Division level plus a few brigades; regiments, battalions and the Luftwaffe/naval/Allied air orders of battle omitted (not retrieved). German 7th Army, Panzer Group West and Army Group B headquarters omitted (no positions). 70th Tank Battalion and the airborne regiments are inside their divisions."
+  },
+  {
+   "item": "Omitted formations",
+   "note": "US 2nd, 3rd Armored (landing date not retrieved), 8th Infantry Divisions and 2nd Infantry; British 79th Armoured, 4th Canadian Armoured (July, date not retrieved), Polish, French and Belgian units; German 2nd Panzer, 116th Panzer, 346th, 353rd, 77th and 85th Infantry Divisions, 102nd and 503rd Heavy Panzer Battalions (no arrival dates in M18). These were omitted rather than invented."
+  },
+  {
+   "item": "All start and arrival positions",
+   "note": "Approximate sector anchors (G03); no source gives division coordinates. Beach arrivals use the beach coordinates (M14/M15); airborne drop zones, German start areas and German arrival areas are inferred from the named sectors in M01-M12."
+  },
+  {
+   "item": "Arrival times of day",
+   "note": "Airborne 01:00 and seaborne 06:30-08:00 on 6 June are approximate, and local time versus UTC is not resolved (G01). Follow-on arrivals use the sourced day (M16, M17, M18) at 12:00. 15th Scottish is set to 26 June 00:00 (Epsom start) as a latest-possible date; 43rd Wessex at 20 June (recce regiment off Sword); 59th Division and the Guards Armoured at the end of June; 1st SS, 2nd SS (midpoint of 15-30 June) and 10th SS dates are approximations of the sourced windows."
+  },
+  {
+   "item": "Strengths",
+   "note": "Game-scale (G01), except the sourced figures: 352nd about 12,000, 716th about 6,000, Panzer Lehr 208 tanks and assault guns. Rangers (9 companies), commandos and tank brigades have game-scale manpower."
+  },
+  {
+   "item": "Landing casualties and dispersion",
+   "note": "Utah 1% (197 of 21,000, M03) and Omaha 7% (2,400 of 34,000, M04) are derived from sourced counts; Gold/Juno/Sword 3% casualties, and for airborne drops 12% casualties, 20 km dispersion, 18 penalty hours and organisation 40 (drops were scattered, M09), are game-scale (G01)."
+  },
+  {
+   "item": "Mulberry harbours",
+   "note": "Arromanches throughput 6,000 t/day is the sourced achieved rate (M02); Mulberry A at 6,000 t/day is half the 12,000 t/day planning requirement (M08) and is game-scale. Availability from hour 192 (D+8, per team-lead from sources) with a 48 h ramp is game-scale; the storm cuts Mulberry A to 0.1 (abandoned, M08) and no repair step is modelled (no sourced repair date). Beach depots have small game-scale supplyCapacity 8. Mulberry B is not damaged by the storm event (M08 says it survived)."
+  },
+  {
+   "item": "Mulberry besiegedShare",
+   "note": "besiegedShare 0.8 on both Mulberries is a game-scale modelling choice (G01): sea-fed artificial harbours keep most of their throughput when German units are near; no source gives a figure."
+  },
+  {
+   "item": "Cherbourg port",
+   "note": "Cherbourg is unusable as a supply port until 16 July (M02), then ramps over 240 h (game-scale). Its capture date is 26 June (M02) or 27 June (M11); both are recorded and the event uses 26 June."
+  },
+  {
+   "item": "Allied air supremacy",
+   "note": "Sourced as a fact (M01: 9,543 Allied against 815 Luftwaffe aircraft; M02: 4,029+5,514 against 570), but radius 80 km and speed multiplier 0.7 are game-scale (G01). No interdiction numbers were retrieved."
+  },
+  {
+   "item": "Carpet bombings",
+   "note": "Charnwood (raid before dawn 8 July, time and aim point approximate), Goodwood (18 July, aim near Cagny) and Cobra (25 July, aim midway between Saint-Lo and Periers) positions, radii and casualty rates are approximate/game-scale; only the days are sourced (M11)."
+  },
+  {
+   "item": "Beach locations",
+   "note": "Utah is a Nominatim hamlet near Sainte-Marie-du-Mont, Gold a Nominatim guidepost, Omaha/Juno/Sword Wikipedia coordinates; positions are approximate and nudged to land."
+  },
+  {
+   "item": "Supply model",
+   "note": "Allied supply sources are the English embarkation ports Southampton, Portsmouth, Poole, Weymouth and Newhaven (positions from Wikipedia, M14); their throughputs (6,000/4,000/2,000/2,000/2,000 t/day) are game-scale (G01), not sourced. The beaches, Mulberries and Port-en-Bessin are Allied-owned from the start but are not sources (sea-fed). German sources are Lisieux, Falaise and Vire (rear towns, game-scale roles). Only Arromanches 6,000 t/day is a sourced tonnage. England is one coarse GBR initialControl box (G04)."
+  },
+  {
+   "item": "Capture block radius",
+   "note": "captureBlockKm 6.5 (default 4) is a modelling flag (G01): a garrison on the outskirts of a town still holds it against an unopposed capture. Not a historical datum."
+  },
+  {
+   "item": "Sea supply and random storms",
+   "note": "seaSupply: true and weatherControl.stormScale 0 are modelling flags (G01): every coastal port/depot a side holds is a supply source so the beachhead is supplied across the sea, and random storms are off because the Great Storm of 19-22 June is scripted (M01, M08). Neither is a historical datum."
+  },
+  {
+   "item": "Weather",
+   "note": "Qualitative profile (game-scale). Sourced weather: the 19-22 June storm (M01), poor weather cancelling Epsom bombers and delaying Cobra (M11)."
+  },
+  {
+   "item": "Objective values and tiers",
+   "note": "Game-scale (G01). All hold objectives credit only at the end date."
+  },
+  {
+   "item": "initialControl",
+   "note": "One German polygon over the whole map, small Allied boxes at the beaches, one over southern England."
+  }
+ ]
+}

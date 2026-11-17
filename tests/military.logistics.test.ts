@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import type { GameState, InfraLine } from '../src/core/types';
-import { TONS_PER_POINT, damageInfra, isPortBesieged, setPortRelief, updateSupply, updateUnitStats } from '../src/military';
+import { TONS_PER_POINT, damageInfra, isPortBesieged, isSeaSupplied, setLocationAvailableFrom, setLocationThroughputFactor, setPortRelief, portCapacity, operationalPorts, updateSupply, updateUnitStats } from '../src/military';
 import { makeCtx, makeControl, makeLocation, makeScenario, makeState, makeUnit } from '../src/military/testing';
 
 const rail = (capacity?: number, id = 'R1'): InfraLine => ({ id, kind: 'rail', historical: true, coords: [[2, 50], [4.5, 50]], capacity });
@@ -375,5 +375,198 @@ describe('encirclement and forward trickle', () => {
     expect(far.s.units.a1.supply).toBeLessThan(near.s.units.a1.supply);
     expect(gone.s.supply.unitSupplyDistKm.a1).toBe(-1);
     expect(far.s.units.a1.supply).toBeGreaterThanOrEqual(0);
+  });
+});
+
+describe('temporary ports, storm damage, captured-port ramp-up and the Channel sea link', () => {
+  const HOUR = 60;
+  /** British embarkation port SOU (listed) plus beach ports in Normandy (unlisted, sea-fed). */
+  const channel = (beach: Record<string, unknown> = {}, listedTons = 20000) => {
+    const s = makeState({
+      units: [makeUnit('infantry', 'b1', 'GBR', [-0.6, 49.35])],
+      locations: [
+        makeLocation('SOU', 'port', [-1.4, 50.9], 'GBR', { throughputTonsPerDay: listedTons } as never),
+        makeLocation('MUL', 'port', [-0.62, 49.34], 'GBR', { throughputTonsPerDay: 7000, ...beach } as never),
+        makeLocation('G1', 'depot', [9, 50], 'GER'),
+      ],
+    });
+    s.nations.GBR = { ...s.nations.FRA, id: 'GBR', name: 'GBR' };
+    return { s, ctx: makeCtx(makeScenario({ GBR: ['SOU'], GER: ['G1'] }), []) };
+  };
+  const thr = (w: ReturnType<typeof channel>, id = 'MUL') => { updateSupply(w.s, w.ctx); return w.s.supply.nodes.find(n => n.locationId === id)?.throughput; };
+
+  it('a temporary port is not a source before its availableFromHour, then ramps up to full', () => {
+    const w = channel({ availableFromHour: 8 * 24, rampHours: 48 });
+    expect(thr(w)).toBeUndefined();
+    expect(w.s.supply.cutOffUnits).toContain('b1');
+    w.s.clock.minutes = 8 * 24 * HOUR + 12 * HOUR;
+    const early = thr(w)!;
+    w.s.clock.minutes = 8 * 24 * HOUR + 24 * HOUR;
+    const mid = thr(w)!;
+    w.s.clock.minutes = 8 * 24 * HOUR + 60 * HOUR;
+    const full = thr(w)!;
+    expect(early).toBeGreaterThan(0);
+    expect(mid).toBeGreaterThan(early);
+    expect(full).toBeCloseTo(7000 / (TONS_PER_POINT * 24));
+    expect(w.s.supply.cutOffUnits).toEqual([]);
+  });
+
+  it('events can set availability and storm damage at run time; damage expires and a factor of 1 clears it', () => {
+    const w = channel();
+    const base = thr(w)!;
+    setLocationThroughputFactor(w.s, 'MUL', 0.1, 48);
+    expect(thr(w)).toBeCloseTo(base * 0.1);
+    w.s.clock.minutes += 49 * HOUR;
+    expect(thr(w)).toBeCloseTo(base);
+    setLocationThroughputFactor(w.s, 'MUL', 0.5);
+    expect(thr(w)).toBeCloseTo(base * 0.5);
+    w.s.clock.minutes += 5000 * HOUR;
+    expect(thr(w)).toBeCloseTo(base * 0.5); // permanent until reset
+    setLocationThroughputFactor(w.s, 'MUL', 1);
+    expect(thr(w)).toBeCloseTo(base);
+    setLocationThroughputFactor(w.s, 'MUL', 0);
+    expect(thr(w)).toBeUndefined();
+    setLocationThroughputFactor(w.s, 'MUL', 1);
+    w.s.clock.minutes = 0;
+    setLocationAvailableFrom(w.s, 'MUL', 100, 10);
+    expect(thr(w)).toBeUndefined();
+    w.s.clock.minutes = 100 * HOUR + 20 * HOUR;
+    expect(thr(w)).toBeCloseTo(base);
+  });
+
+  it('a port captured from the enemy ramps up over rampHours instead of working at once', () => {
+    const w = channel();
+    w.s.locations.CHE = makeLocation('CHE', 'port', [-1.62, 49.65], 'GER', { throughputTonsPerDay: 6000, rampHours: 240 } as never);
+    w.s.locations.CHE.originalOwner = 'GER';
+    updateSupply(w.s, w.ctx);
+    expect(w.s.supply.nodes.some(n => n.locationId === 'CHE')).toBe(false); // unusable to the Allies until captured
+    w.s.clock.minutes = 100 * HOUR;
+    w.s.locations.CHE.owner = 'GBR';
+    updateSupply(w.s, w.ctx);
+    w.s.locations.CHE.damaged = 0;
+    const t0 = thr(w, 'CHE')!;
+    w.s.clock.minutes = 100 * HOUR + 120 * HOUR; w.s.locations.CHE.damaged = 0;
+    const t1 = thr(w, 'CHE')!;
+    w.s.clock.minutes = 100 * HOUR + 300 * HOUR; w.s.locations.CHE.damaged = 0;
+    const t2 = thr(w, 'CHE')!;
+    expect(t0).toBeLessThan(t1);
+    expect(t1).toBeLessThan(t2);
+    expect(t2).toBeCloseTo(6000 / (TONS_PER_POINT * 24));
+  });
+
+  it('sea-fed beach ports share the embarkation throughput instead of supplying without limit', () => {
+    const rich = channel({}, 100000), poor = channel({}, 3000);
+    expect(thr(rich)).toBeCloseTo(7000 / (TONS_PER_POINT * 24));
+    expect(thr(poor)).toBeCloseTo(3000 / (TONS_PER_POINT * 24));
+    // two beaches split a small pool proportionally
+    const two = channel({}, 3000);
+    two.s.locations.OM = makeLocation('OM', 'port', [-0.9, 49.37], 'GBR', { throughputTonsPerDay: 7000 } as never);
+    updateSupply(two.s, two.ctx);
+    const a = two.s.supply.nodes.find(n => n.locationId === 'MUL')!.throughput, b = two.s.supply.nodes.find(n => n.locationId === 'OM')!.throughput;
+    expect(a + b).toBeCloseTo(3000 / (TONS_PER_POINT * 24));
+  });
+
+  it('a storm halts most unloading at sea-fed ports', () => {
+    const w = channel();
+    const clear = thr(w)!;
+    w.s.weather = { ...w.s.weather, kind: 'storm', intensity: 1 };
+    expect(thr(w)).toBeCloseTo(clear * 0.15);
+  });
+});
+
+describe('port read API for the AI', () => {
+  const mk = (beach: Record<string, unknown> = {}) => {
+    const s = makeState({
+      units: [makeUnit('infantry', 'b1', 'GBR', [-0.6, 49.35]), makeUnit('armoured', 'b2', 'GBR', [-0.62, 49.36])],
+      locations: [
+        makeLocation('SOU', 'port', [-1.4, 50.9], 'GBR', { throughputTonsPerDay: 20000 } as never),
+        makeLocation('MUL', 'port', [-0.62, 49.34], 'GBR', { throughputTonsPerDay: 7000, ...beach } as never),
+        makeLocation('CHE', 'port', [-1.62, 49.65], 'GER', { throughputTonsPerDay: 6000 } as never),
+        makeLocation('G1', 'depot', [9, 50], 'GER'),
+      ],
+    });
+    s.nations.GBR = { ...s.nations.FRA, id: 'GBR', name: 'GBR' };
+    return { s, ctx: makeCtx(makeScenario({ GBR: ['SOU'], GER: ['G1'] }), []) };
+  };
+
+  it('reports tonnage, usage so far today and what remains; non-ports give null', () => {
+    const { s, ctx } = mk();
+    const before = portCapacity(s, 'MUL')!;
+    expect(before.operational).toBe(true);
+    expect(before.tonsPerDay).toBeCloseTo(7000);       // estimated from data before any update
+    expect(before.usedTodayTons).toBe(0);
+    for (let i = 0; i < 6; i++) { s.clock.minutes += 180; updateSupply(s, ctx); }
+    const after = portCapacity(s, 'MUL')!;
+    expect(after.tonsPerDay).toBeCloseTo(7000);
+    expect(after.usedTodayTons).toBeGreaterThan(0);
+    expect(after.remainingTonsToday).toBeCloseTo(after.tonsPerDay - after.usedTodayTons);
+    s.clock.minutes += 24 * 60; updateSupply(s, ctx);
+    expect(portCapacity(s, 'MUL')!.usedTodayTons).toBeLessThan(after.usedTodayTons + 1e-9 + after.tonsPerDay);
+    expect(portCapacity(s, 'G1')).toBeNull();
+    expect(portCapacity(s, 'nope')).toBeNull();
+  });
+
+  it('operational reflects temporary ports, wrecks, enemy ownership; operationalPorts lists a side sorted; reads never mutate', () => {
+    const { s, ctx } = mk({ availableFromHour: 100 });
+    updateSupply(s, ctx);
+    expect(portCapacity(s, 'MUL')!.operational).toBe(false);
+    expect(portCapacity(s, 'MUL')!.tonsPerDay).toBe(0);
+    expect(operationalPorts(s, 'allies').map(p => p.locationId)).toEqual(['SOU']);
+    expect(operationalPorts(s, 'axis').map(p => p.locationId)).toEqual(['CHE']);
+    s.clock.minutes = 100 * 60 + 600 * 60;
+    setLocationThroughputFactor(s, 'MUL', 0.3, 10);
+    const snap = JSON.stringify(s);
+    expect(operationalPorts(s, 'allies').map(p => p.locationId)).toEqual(['MUL', 'SOU']);
+    expect(portCapacity(s, 'MUL')!.availability).toBeCloseTo(0.3);
+    s.clock.minutes += 11 * 60;
+    const snap2 = JSON.stringify(s);
+    expect(portCapacity(s, 'MUL')!.availability).toBeCloseTo(1); // expired modifier ignored without being deleted by the read
+    expect(JSON.stringify(s)).toBe(snap2);
+    expect(snap).not.toBe('');
+    setLocationThroughputFactor(s, 'MUL', 0);
+    expect(portCapacity(s, 'MUL')!.operational).toBe(false);
+    s.locations.SOU.damaged = 96;
+    expect(operationalPorts(s, 'allies')).toEqual([]);
+  });
+});
+
+describe('beachhead supply', () => {
+  const beach = (extra: { listed?: boolean } = {}) => {
+    const s = makeState({
+      units: [makeUnit('infantry', 'b1', 'GBR', [-0.6, 49.38]), makeUnit('infantry', 'e1', 'GER', [-0.6, 49.2]), makeUnit('infantry', 'e2', 'GER', [-0.45, 49.33]), makeUnit('infantry', 'e3', 'GER', [-0.75, 49.33])],
+      locations: [
+        makeLocation('SOU', 'port', [-1.4, 50.9], 'GBR', { throughputTonsPerDay: 20000 } as never),
+        makeLocation('MUL', 'port', [-0.62, 49.34], 'GBR', { throughputTonsPerDay: 6000 } as never),
+        makeLocation('G1', 'depot', [9, 50], 'GER'),
+      ],
+    });
+    s.nations.GBR = { ...s.nations.FRA, id: 'GBR', name: 'GBR' };
+    return { s, ctx: makeCtx(makeScenario({ GBR: extra.listed === false ? [] : ['SOU'], GER: ['G1'] }), []) };
+  };
+
+  it('a sea-fed port with enemy on three sides is not wrecked by the siege rule: the open sea relieves it', () => {
+    const { s, ctx } = beach();
+    updateSupply(s, ctx);
+    expect(isPortBesieged(s, s.locations.MUL)).toBe(true);
+    const n = s.supply.nodes.find(x => x.locationId === 'MUL')!;
+    expect(n.throughput).toBeGreaterThan(0);
+    expect(n.throughput).toBeLessThan(6000 / (TONS_PER_POINT * 24)); // reduced to the besieged share, not zero and not full
+  });
+});
+
+describe('sea-supplied shore on the real Normandy data', () => {
+  it('beach units count as sea supplied, the inland airborne drop and the Germans do not', async () => {
+    const { loadWorld, mkEngine } = await import('./qa/harness');
+    const w = loadWorld('normandy.short');
+    const eng = mkEngine(w, 'USA', 1);
+    eng.step(48);
+    const st = eng.getState();
+    const ctx = { scenario: w.def, terrain: w.terrain };
+    const by = (n: string) => Object.values(st.units).find(u => u.shortName === n)!;
+    expect(isSeaSupplied(st, ctx, by('1st ID'))).toBe(true);
+    expect(isSeaSupplied(st, ctx, by('50th Div'))).toBe(true);
+    expect(isSeaSupplied(st, ctx, by('82nd Abn'))).toBe(false);
+    const ger = Object.values(st.units).find(u => u.side === 'axis' && u.domain === 'land')!;
+    expect(isSeaSupplied(st, ctx, ger)).toBe(false);
   });
 });

@@ -73,7 +73,7 @@ describe('validator rejects broken scenarios', () => {
 describe('listScenarios / loadScenario', () => {
   it('lists available and planned entries; planned are not playable', () => {
     const l = listScenarios();
-    expect(l.filter((s) => s.playable).map((s) => s.id).sort()).toEqual([...IDS, 'bulge.short', 'crusader.short', 'stalingrad.short'].sort());
+    expect(l.filter((s) => s.playable).map((s) => s.id).sort()).toEqual([...IDS, 'bulge.short', 'crusader.short', 'stalingrad.short', 'normandy.short'].sort());
     const planned = l.filter((s) => s.status === 'planned');
     expect(planned.length).toBeGreaterThanOrEqual(6);
     for (const p of planned) { expect(p.playable).toBe(false); expect(p.statusLabel).toBe('Coming in Phase 4'); }

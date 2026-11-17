@@ -40,7 +40,7 @@ describe('port and airlift fields', () => {
 import { validateEventEffects } from '../src/data/validate.ts';
 import { getHistoricalEvents } from '../src/data/index.ts';
 describe('event effects', () => {
-  const camp: Record<string, string[]> = { fall_of_france: ['fall_of_france.standard', 'fall_of_france.short'], bulge: ['bulge.short'], crusader: ['crusader.short'], stalingrad: ['stalingrad.short'] };
+  const camp: Record<string, string[]> = { fall_of_france: ['fall_of_france.standard', 'fall_of_france.short'], bulge: ['bulge.short'], crusader: ['crusader.short'], stalingrad: ['stalingrad.short'], normandy: ['normandy.short'] };
   for (const [c, scs] of Object.entries(camp)) {
     it(`${c} events have valid effects and notes`, () => {
       for (const sc of scs) for (const ev of getHistoricalEvents(c, sc)) expect(validateEventEffects(ev, getScenarioDefinition(sc)!)).toEqual([]);
@@ -58,5 +58,76 @@ describe('event effects', () => {
     expect(bad([{ op: 'port_relief', locationId: 'nowhere' }])).toMatch(/exists/);
     expect(validateEventEffects({ id: 'x', effectsNote: 'n' }, def).join()).toMatch(/effectsNote/);
     expect(bad([{ op: 'port_relief', locationId: 'tobruk' }])).toBe('');
+  });
+});
+
+describe('normandy scenario fields', () => {
+  const sid = 'normandy.short';
+  const base = () => structuredClone(getScenarioDefinition(sid)!);
+  const side = getScenarioSidecar(sid);
+  const errs = (d: ReturnType<typeof base>) => validateScenario(d, side).join('|');
+  it('validates cleanly', () => { expect(errs(base())).toBe(''); });
+  it('rejects bad landing values', () => {
+    const d = base(); d.reinforcements.find((r) => r.landing)!.landing = { kind: 'amphibious', casualties: 0.9 };
+    expect(errs(d)).toMatch(/landing\.casualties/);
+    const d2 = base(); (d2.reinforcements.find((r) => r.landing)!.landing as { kind: string }).kind = 'glider';
+    expect(errs(d2)).toMatch(/landing\.kind/);
+  });
+  it('rejects bad airSupremacy and carpetBombings', () => {
+    const d = base(); d.airSupremacy = [{ side: 'allies', speedMul: 2 }];
+    expect(errs(d)).toMatch(/speedMul/);
+    const d2 = base(); d2.carpetBombings![0].radiusKm = 0;
+    expect(errs(d2)).toMatch(/radiusKm/);
+    const d3 = base(); d3.carpetBombings![0].pos = [10, 10];
+    expect(errs(d3)).toMatch(/outside bbox/);
+    const d4 = base(); d4.carpetBombings![1].id = d4.carpetBombings![0].id;
+    expect(errs(d4)).toMatch(/duplicate carpetBombing/);
+  });
+  it('rejects bad location availableFromHour and rampHours', () => {
+    const d = base(); d.locations.find((l) => l.id === 'arromanches')!.availableFromHour = -1;
+    expect(errs(d)).toMatch(/availableFromHour/);
+    const d2 = base(); d2.locations.find((l) => l.id === 'arromanches')!.rampHours = -5;
+    expect(errs(d2)).toMatch(/rampHours/);
+  });
+  it('normandy events have valid effects', () => {
+    for (const ev of getHistoricalEvents('normandy', sid)) expect(validateEventEffects(ev, getScenarioDefinition(sid)!)).toEqual([]);
+  });
+  it('rejects port ops on unknown locations', () => {
+    const def = getScenarioDefinition(sid)!;
+    const bad = (effects: Record<string, unknown>[]) => validateEventEffects({ id: 'x', effects, effectsNote: 'n' }, def).join();
+    expect(bad([{ op: 'port_throughput', locationId: 'nowhere', factor: 0.1 }])).toMatch(/port_throughput/);
+    expect(bad([{ op: 'port_available', locationId: 'cherbourg', fromHour: 'x' }])).toMatch(/port_available/);
+    expect(bad([{ op: 'weather', kind: 'storm', hours: -1 }])).toMatch(/hours/);
+  });
+});
+
+describe('seaSupply and weatherControl', () => {
+  const sid = 'normandy.short';
+  it('normandy sets both and validates', () => {
+    const d = getScenarioDefinition(sid)!;
+    expect(d.seaSupply).toBe(true); expect(d.weatherControl?.stormScale).toBe(0);
+    expect(validateScenario(d, getScenarioSidecar(sid))).toEqual([]);
+  });
+  it('rejects bad values', () => {
+    const d = structuredClone(getScenarioDefinition(sid)!);
+    (d as { seaSupply: unknown }).seaSupply = 'yes'; d.weatherControl = { stormScale: -1, suppress: ['hail' as never] };
+    const e = validateScenario(d, getScenarioSidecar(sid)).join('|');
+    expect(e).toMatch(/seaSupply/); expect(e).toMatch(/stormScale/); expect(e).toMatch(/suppress/);
+  });
+  it('other scenarios do not set them', () => {
+    for (const id of ['bulge.short', 'crusader.short', 'stalingrad.short']) expect(getScenarioDefinition(id)!.seaSupply).toBeUndefined();
+  });
+});
+
+describe('captureBlockKm', () => {
+  it('only normandy sets it, to 6.5', () => {
+    expect(getScenarioDefinition('normandy.short')!.captureBlockKm).toBe(6.5);
+    for (const id of ['fall_of_france.standard', 'fall_of_france.short', 'bulge.short', 'crusader.short', 'stalingrad.short']) expect(getScenarioDefinition(id)!.captureBlockKm).toBeUndefined();
+  });
+  it('rejects values outside 4..15', () => {
+    for (const v of [3, 16, NaN]) {
+      const d = structuredClone(getScenarioDefinition('normandy.short')!); d.captureBlockKm = v;
+      expect(validateScenario(d, getScenarioSidecar('normandy.short')).join('|')).toMatch(/captureBlockKm/);
+    }
   });
 });

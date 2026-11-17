@@ -6,6 +6,7 @@ import { SUPPLY_EVERY_TICKS } from './constants';
 import { fastKm } from './gridutil';
 import { getSimMeta } from './meta';
 import { SpatialHash } from './spatial';
+import { military } from './deps';
 
 const alive = (u: Unit) => !u.destroyed && !u.surrendered;
 const isWater = (t: number) => t === Terrain.Sea || t === Terrain.Lake;
@@ -165,17 +166,21 @@ export function updateTerritory(state: GameState, ctx: SimContext): void {
     const midLat = (terr.bbox.north + terr.bbox.south) / 2;
     const hash = new SpatialHash<Unit>(CAPTURE_RADIUS_KM, midLat);
     for (const u of landUnits) if (u.side !== 'neutral' && u.type !== 'logistics') hash.insert(u, u.pos);
+    // opt-in (scenario.captureBlockKm): a garrison this far from its town still stops a capture; default is the capture radius
+    const blockKm = Math.max(CAPTURE_RADIUS_KM, ctx.scenario.captureBlockKm ?? CAPTURE_RADIUS_KM);
     for (const lid in state.locations) {
       const loc = state.locations[lid];
       const ownerSide = sideOfNation(state, loc.owner);
       let own = false, occ: Unit | undefined;
       let occMass = 0;
       const force: Record<string, number> = {};
-      hash.query(loc.pos, CAPTURE_RADIUS_KM, (u) => {
-        if (fastKm(u.pos, loc.pos) > CAPTURE_RADIUS_KM) return;
+      hash.query(loc.pos, blockKm, (u) => {
+        const dk = fastKm(u.pos, loc.pos);
+        if (dk > blockKm) return;
         if (!CAN_CAPTURE[u.type] || u.combatStatus === 'routed' || u.moveStatus === 'retreating') return;
+        // a garrison standing within a short march of its town still holds it (it is not out of the fight just because the town is 5 km off)
         if (ownerSide !== 'neutral' && u.side === ownerSide) own = true;
-        else if (ownerSide === 'neutral' || u.side !== ownerSide) {
+        else if (dk <= CAPTURE_RADIUS_KM && (ownerSide === 'neutral' || u.side !== ownerSide)) {
           const m = u.manpower;
           force[u.side] = (force[u.side] ?? 0) + effForce(u);
           if (!occ || m > occMass) { occ = u; occMass = m; }
@@ -255,6 +260,21 @@ function updateIsolation(state: GameState, ctx: SimContext, landUnits: Unit[], s
         if (c) sources.push(c[1] * cols + c[0]);
       }
     }
+    // sea-supplied beachheads: when the scenario enables it, every coastal port or depot the side holds is itself a supply source
+    if (ctx.scenario.seaSupply) {
+      for (const lid in state.locations) {
+        const loc = state.locations[lid];
+        if (sideOfNation(state, loc.owner) !== side || (loc.kind !== 'port' && loc.kind !== 'depot')) continue;
+        const c = cellOf(spec, loc.pos);
+        if (!c) continue;
+        let coastal = false;
+        for (let dr = -1; dr <= 1 && !coastal; dr++) for (let dc = -1; dc <= 1; dc++) {
+          const nc = c[0] + dc, nr = c[1] + dr;
+          if (nc >= 0 && nr >= 0 && nc < cols && nr < rows && ctx.terrain.cells[nr * cols + nc] === Terrain.Sea) { coastal = true; break; }
+        }
+        if (coastal) sources.push(c[1] * cols + c[0]);
+      }
+    }
     const mine = landUnits.filter((u) => u.side === side);
     if (!mine.length) continue;
     const enemySide: SideId = side === 'allies' ? 'axis' : 'allies';
@@ -293,7 +313,8 @@ function updateIsolation(state: GameState, ctx: SimContext, landUnits: Unit[], s
     }
     for (const u of mine) {
       const c = cellOf(spec, u.pos);
-      const connected = !!c && dist[c[1] * cols + c[0]] >= 0;
+      // a unit that fails the land scan may still be fed over the sea (landing campaigns only; false everywhere else)
+      const connected = (!!c && dist[c[1] * cols + c[0]] >= 0) || (!!ctx.scenario.seaSupply && military.isSeaSupplied(state, ctx, u));
       if (connected) { clearEncircled(u); continue; }
       cutNow.push(u.id);
       // encircled when enemy troops are on at least 3 of 4 sides within 25 km

@@ -1,0 +1,383 @@
+{
+ "campaignId": "normandy",
+ "note": "Historical event template data. Sources resolve against scenario sources[].",
+ "events": [
+  {
+   "id": "nm.ev.airborne",
+   "date": "1944-06-06T01:00:00Z",
+   "title": "Airborne landings",
+   "body": "The US 82nd and 101st Airborne on the Cotentin and the British 6th Airborne east of the Orne drop after midnight; weather and navigation scatter the drops (M09). Time of day approximate.",
+   "pos": [
+    -1.33,
+    49.38
+   ],
+   "src": [
+    "M01",
+    "M09"
+   ],
+   "effectHints": [],
+   "kind": "historical",
+   "minutesFromStd": 60
+  },
+  {
+   "id": "nm.ev.d_day",
+   "date": "1944-06-06T06:30:00Z",
+   "title": "D-Day: the beaches",
+   "body": "Landings begin about 06:30 at Utah, Omaha, Gold, Juno and Sword (M01). Omaha is the costliest: 2,400 casualties and 34,000 landed by the end of the day (M04); Utah costs 197 of 21,000 (M03).",
+   "pos": [
+    -0.87,
+    49.36
+   ],
+   "src": [
+    "M01",
+    "M03",
+    "M04"
+   ],
+   "effectHints": [],
+   "kind": "historical",
+   "minutesFromStd": 390
+  },
+  {
+   "id": "nm.ev.21pz",
+   "date": "1944-06-06T16:00:00Z",
+   "title": "21st Panzer counter-attacks",
+   "body": "The 21st Panzer Division counter-attacks between Sword and Juno at 16:00 and nearly reaches the coast, then is recalled to the Caen-Bayeux area (M02).",
+   "pos": [
+    -0.38,
+    49.27
+   ],
+   "src": [
+    "M02"
+   ],
+   "effectHints": [],
+   "side": "axis",
+   "kind": "historical",
+   "minutesFromStd": 960
+  },
+  {
+   "id": "nm.ev.12ss",
+   "date": "1944-06-07T06:00:00Z",
+   "title": "The Hitlerjugend arrives at Caen",
+   "body": "The 12th SS Panzer Division is committed to the defence of Caen on 7 June (M12).",
+   "pos": [
+    -0.4,
+    49.2
+   ],
+   "src": [
+    "M12"
+   ],
+   "effectHints": [],
+   "side": "axis",
+   "kind": "historical",
+   "minutesFromStd": 1800
+  },
+  {
+   "id": "nm.ev.plehr",
+   "date": "1944-06-08T06:00:00Z",
+   "title": "Panzer Lehr committed",
+   "body": "Panzer Lehr, the Panzer Group West reserve, is released and committed against the British and Canadians on 8 June (M12).",
+   "pos": [
+    -0.63,
+    49.1
+   ],
+   "src": [
+    "M12"
+   ],
+   "effectHints": [],
+   "side": "axis",
+   "kind": "historical",
+   "minutesFromStd": 3240
+  },
+  {
+   "id": "nm.ev.carentan",
+   "date": "1944-06-12T00:00:00Z",
+   "title": "Carentan taken, beachheads linked",
+   "body": "The 101st Airborne forces the causeway into Carentan on 10-11 June and the Germans withdraw on 12 June; all five beachheads are connected by 12 June (M01, M10). The 17th SS Panzergrenadier Division counter-attacks on 13 June.",
+   "pos": [
+    -1.25,
+    49.29
+   ],
+   "src": [
+    "M01",
+    "M10"
+   ],
+   "effectHints": [],
+   "side": "allies",
+   "kind": "historical",
+   "minutesFromStd": 8640
+  },
+  {
+   "id": "nm.ev.villers_bocage",
+   "date": "1944-06-13T00:00:00Z",
+   "title": "Villers-Bocage",
+   "body": "The 22nd Armoured Brigade of the 7th Armoured Division takes Villers-Bocage and threatens the rear of Panzer Lehr; the Tigers of the 101st SS Heavy Panzer Battalion arrive 12-13 June and force the British back; Panzer Lehr is pushed back to Tilly-sur-Seulles by 17 June (M02, M12, M18).",
+   "pos": [
+    -0.66,
+    49.08
+   ],
+   "src": [
+    "M02",
+    "M12",
+    "M18"
+   ],
+   "effectHints": [],
+   "kind": "historical",
+   "minutesFromStd": 10080
+  },
+  {
+   "id": "nm.ev.cotentin",
+   "date": "1944-06-17T00:00:00Z",
+   "title": "The Cotentin is cut",
+   "body": "US forces reach the west coast of the Cotentin on 17 June, cutting off Cherbourg (M02).",
+   "pos": [
+    -1.62,
+    49.38
+   ],
+   "src": [
+    "M02"
+   ],
+   "effectHints": [],
+   "side": "allies",
+   "kind": "historical",
+   "minutesFromStd": 15840
+  },
+  {
+   "id": "nm.ev.storm",
+   "date": "1944-06-19T00:00:00Z",
+   "title": "The Great Storm",
+   "body": "A four-day storm batters the Channel from 19 to 22 June. Mulberry A at Omaha is wrecked before it is securely anchored and abandoned; operations are postponed (M01, M08). Mulberry B survives.",
+   "pos": [
+    -0.88,
+    49.36
+   ],
+   "src": [
+    "M01",
+    "M08"
+   ],
+   "effectHints": [],
+   "effects": [
+    {
+     "op": "weather",
+     "kind": "storm",
+     "intensity": 0.9,
+     "hours": 72
+    },
+    {
+     "op": "port_throughput",
+     "locationId": "mulberry_a",
+     "factor": 0.1
+    }
+   ],
+   "effectsNote": "Restates M01 (storm 19-22 June, four days) and M08 (Mulberry A abandoned after the storm).",
+   "kind": "historical",
+   "minutesFromStd": 18720
+  },
+  {
+   "id": "nm.ev.cherbourg",
+   "date": "1944-06-26T00:00:00Z",
+   "title": "Cherbourg falls",
+   "body": "VII Corps captures Cherbourg on 26 June (M02); another account gives 27 June (M11). The port is not cleared of mines and obstructions until 16 July (M02). This event uses the earlier date.",
+   "pos": [
+    -1.62,
+    49.64
+   ],
+   "src": [
+    "M02",
+    "M11"
+   ],
+   "effectHints": [],
+   "side": "allies",
+   "kind": "historical",
+   "minutesFromStd": 28800
+  },
+  {
+   "id": "nm.ev.epsom",
+   "date": "1944-06-26T00:00:00Z",
+   "title": "Operation Epsom",
+   "body": "VIII Corps, with the 15th (Scottish) Division and the 31st Tank Brigade, attacks west of Caen on 26 June and crosses the Odon; Operation Martlet secures its flank. Bomber support is cancelled by weather (M11). The 9th and 10th SS Panzer Divisions counter-attack.",
+   "pos": [
+    -0.5,
+    49.15
+   ],
+   "src": [
+    "M11"
+   ],
+   "effectHints": [],
+   "kind": "historical",
+   "minutesFromStd": 28800
+  },
+  {
+   "id": "nm.ev.rundstedt",
+   "date": "1944-07-01T00:00:00Z",
+   "title": "Kluge replaces Rundstedt",
+   "body": "Rundstedt is dismissed on 1 July and Kluge becomes OB West (M02).",
+   "src": [
+    "M02"
+   ],
+   "effectHints": [],
+   "side": "axis",
+   "kind": "historical",
+   "minutesFromStd": 36000
+  },
+  {
+   "id": "nm.ev.charnwood",
+   "date": "1944-07-08T00:00:00Z",
+   "title": "Operation Charnwood",
+   "body": "Three British and Canadian infantry divisions attack Caen at dawn on 8 July after a controversial heavy-bomber raid on the city and take it up to the Orne and Odon by the next evening (M11).",
+   "pos": [
+    -0.36,
+    49.19
+   ],
+   "src": [
+    "M11"
+   ],
+   "effectHints": [],
+   "side": "allies",
+   "kind": "historical",
+   "minutesFromStd": 46080
+  },
+  {
+   "id": "nm.ev.saint_lo_battle",
+   "date": "1944-07-07T00:00:00Z",
+   "title": "Battle of Saint-Lo",
+   "body": "The US First Army fights the Battle of Saint-Lo from 7 to 19 July in the hedgerows (M11).",
+   "pos": [
+    -1.09,
+    49.12
+   ],
+   "src": [
+    "M11"
+   ],
+   "effectHints": [],
+   "side": "allies",
+   "kind": "historical",
+   "minutesFromStd": 44640
+  },
+  {
+   "id": "nm.ev.cherbourg_cleared",
+   "date": "1944-07-16T00:00:00Z",
+   "title": "Cherbourg cleared",
+   "body": "The port of Cherbourg is cleared of mines and obstructions on 16 July and can begin to receive shipping (M02).",
+   "pos": [
+    -1.62,
+    49.64
+   ],
+   "src": [
+    "M02"
+   ],
+   "effectHints": [],
+   "side": "allies",
+   "effects": [
+    {
+     "op": "port_available",
+     "locationId": "cherbourg",
+     "fromHour": 984,
+     "rampHours": 240
+    }
+   ],
+   "effectsNote": "Restates M02 (Cherbourg cleared of mines and obstructions on 16 July); ramp time 240 h is game-scale (G01).",
+   "kind": "historical",
+   "minutesFromStd": 57600
+  },
+  {
+   "id": "nm.ev.goodwood",
+   "date": "1944-07-18T00:00:00Z",
+   "title": "Operation Goodwood",
+   "body": "VIII Corps with three armoured divisions attacks east of Caen on 18 July after a heavy-bomber raid; Operation Atlantic (II Canadian Corps) takes the southern suburbs. The armour advances 7 miles but is stopped short of Bourguebus Ridge by 20 July (M11).",
+   "pos": [
+    -0.26,
+    49.15
+   ],
+   "src": [
+    "M11"
+   ],
+   "effectHints": [],
+   "kind": "historical",
+   "minutesFromStd": 60480
+  },
+  {
+   "id": "nm.ev.saint_lo_falls",
+   "date": "1944-07-19T00:00:00Z",
+   "title": "Saint-Lo falls",
+   "body": "The Battle of Saint-Lo ends on 19 July with the town in US hands (M11).",
+   "pos": [
+    -1.09,
+    49.12
+   ],
+   "src": [
+    "M11"
+   ],
+   "effectHints": [],
+   "side": "allies",
+   "kind": "historical",
+   "minutesFromStd": 61920
+  },
+  {
+   "id": "nm.ev.caen_falls",
+   "date": "1944-07-21T00:00:00Z",
+   "title": "Caen is completely captured",
+   "body": "Caen, a D-Day objective, is completely captured on 21 July (M02).",
+   "pos": [
+    -0.36,
+    49.18
+   ],
+   "src": [
+    "M02"
+   ],
+   "effectHints": [],
+   "side": "allies",
+   "kind": "historical",
+   "minutesFromStd": 64800
+  },
+  {
+   "id": "nm.ev.cobra",
+   "date": "1944-07-25T00:00:00Z",
+   "title": "Operation Cobra",
+   "body": "The First US Army (VII Corps, two-division assault) begins Operation Cobra on 25 July after a concentrated bombing raid, intending to break out of the bocage; friendly-fire casualties include Lt-Gen McNair (M11).",
+   "pos": [
+    -1.25,
+    49.15
+   ],
+   "src": [
+    "M11"
+   ],
+   "effectHints": [],
+   "kind": "historical",
+   "minutesFromStd": 70560
+  },
+  {
+   "id": "nm.ev.bluecoat",
+   "date": "1944-07-30T00:00:00Z",
+   "title": "Operation Bluecoat",
+   "body": "VIII and XXX Corps attack from Caumont towards Vire and Mont Pincon on 30 July to exploit Cobra (M11).",
+   "pos": [
+    -0.8,
+    49.09
+   ],
+   "src": [
+    "M11"
+   ],
+   "effectHints": [],
+   "side": "allies",
+   "kind": "historical",
+   "minutesFromStd": 77760
+  },
+  {
+   "id": "nm.ev.avranches",
+   "date": "1944-07-31T00:00:00Z",
+   "title": "Avranches reached",
+   "body": "By 31 July XIX Corps has destroyed the last forces opposing the First Army, which emerges from the bocage and liberates Avranches (M11).",
+   "pos": [
+    -1.36,
+    48.69
+   ],
+   "src": [
+    "M11"
+   ],
+   "effectHints": [],
+   "side": "allies",
+   "kind": "historical",
+   "minutesFromStd": 79200
+  }
+ ]
+}

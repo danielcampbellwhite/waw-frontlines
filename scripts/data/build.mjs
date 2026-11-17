@@ -5,7 +5,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { REGIONS, regionIds } from './regions.mjs';
 import { clipRing, clipLine, bboxOfRing, boxesOverlap, simplify, round, rasterise, decodePng } from './lib.mjs';
-import { classify, FOREST, URBAN, MARSH } from './clc.mjs';
+import { classify, FOREST, URBAN, MARSH, BOCAGE } from './clc.mjs';
 
 const here = path.dirname(fileURLToPath(import.meta.url));
 const cache = path.join(here, 'cache');
@@ -14,7 +14,7 @@ const campDir = path.resolve(here, '../../src/data/campaigns');
 fs.mkdirSync(out, { recursive: true });
 const neCache = new Map();
 const ne = (n) => { if (!neCache.has(n)) neCache.set(n, JSON.parse(fs.readFileSync(path.join(cache, `ne_10m_${n}.geojson`), 'utf8'))); return neCache.get(n); };
-const T = { Sea: 0, Plains: 1, Forest: 2, Hills: 3, Mountains: 4, Marsh: 5, Urban: 6, Desert: 7, Lake: 9 };
+const T = { Sea: 0, Plains: 1, Forest: 2, Hills: 3, Mountains: 4, Marsh: 5, Urban: 6, Desert: 7, Lake: 9, Bocage: 10 };
 const write = (f, o) => { const s = JSON.stringify(o); fs.writeFileSync(path.join(out, f), s); console.log('  ', f, (s.length / 1024).toFixed(0) + ' KB'); };
 const polys = (g) => (g.type === 'Polygon' ? [g.coordinates] : g.type === 'MultiPolygon' ? g.coordinates : []);
 const lines = (g) => (g.type === 'LineString' ? [g.coordinates] : g.type === 'MultiLineString' ? g.coordinates : []);
@@ -96,7 +96,8 @@ function buildRegion(R) {
   }
 
   // ── CORINE land cover fractions per cell (forest / urban fabric / marsh) ──
-  const cnt = { valid: new Uint32Array(N), forest: new Uint32Array(N), urban: new Uint32Array(N), marsh: new Uint32Array(N), bare: new Uint32Array(N) };
+  const cnt = { valid: new Uint32Array(N), forest: new Uint32Array(N), urban: new Uint32Array(N), marsh: new Uint32Array(N), bare: new Uint32Array(N), bocage: new Uint32Array(N) };
+  const bocageSet = new Set(R.bocageCodes ?? [...BOCAGE]);
   let clcFiles = 0;
   if (R.landcover === 'worldcover') {
     // ESA WorldCover 2021 (74 m overview rasters from fetch-wc.mjs): 10 tree, 20 shrub, 30 grass, 40 crop, 50 built, 60 bare, 80 water, 90 wetland
@@ -135,7 +136,7 @@ function buildRegion(R) {
         if (!code) continue;
         const i = r * cols + c;
         cnt.valid[i]++;
-        if (FOREST.has(code)) cnt.forest[i]++; else if (URBAN.has(code)) cnt.urban[i]++; else if (MARSH.has(code)) cnt.marsh[i]++;
+        if (FOREST.has(code)) cnt.forest[i]++; else if (URBAN.has(code)) cnt.urban[i]++; else if (MARSH.has(code)) cnt.marsh[i]++; else if (bocageSet.has(code)) cnt.bocage[i]++;
       }
     }
   }
@@ -159,6 +160,14 @@ function buildRegion(R) {
   const sandFrac = new Float32Array(N);
   if (sandMask) for (let r = 0; r < rows; r++) for (let c = 0; c < cols; c++) { let k = 0; for (let y = 0; y < per; y++) for (let x = 0; x < per; x++) k += sandMask.mask[(r * per + y) * sandMask.cols + c * per + x]; sandFrac[r * cols + c] = k / (per * per); }
 
+  // ── country mask for the bocage proxy ──
+  const ctryFrac = new Float32Array(N).fill(1);
+  if (R.bocageCountries) {
+    const rings = []; for (const f of ne('admin_0_countries').features) if (R.bocageCountries.includes(f.properties.ADM0_A3)) for (const poly of polys(f.geometry)) rings.push(clipRing(poly[0].slice(0, -1), WB));
+    const cm = rasterise(rings.filter((x) => x.length >= 3), BBOX, RES);
+    for (let r = 0; r < rows; r++) for (let c = 0; c < cols; c++) { let k = 0; for (let y = 0; y < per; y++) for (let x = 0; x < per; x++) k += cm.mask[(r * per + y) * cm.cols + c * per + x]; ctryFrac[r * cols + c] = k / (per * per); }
+  }
+
   // ── classify ──
   const cells = new Array(N), elev = new Array(N), flags = new Array(N).fill(0);
   const cellKm = CELL_DEG * 111.2 * (1 + Math.cos(((BBOX.north + BBOX.south) / 2 * Math.PI) / 180)) / 2;
@@ -175,6 +184,7 @@ function buildRegion(R) {
     else if (m >= R.hillMean || rl >= hillRelief) cells[i] = T.Hills;
     else if (R.landcover === 'worldcover' && sandFrac[i] >= 0.5 && cnt.bare[i] / Math.max(1, cnt.valid[i]) >= 0.5) cells[i] = T.Desert;
     else if (mf >= 0.4 || (m <= (R.sabkhaElev ?? 2) && rl <= (R.sabkhaRelief ?? 6))) cells[i] = T.Marsh;
+    else if (R.bocageCodes && ctryFrac[i] >= 0.5 && frac(cnt.bocage, i) >= (R.bocageFrac ?? 0.4)) cells[i] = T.Bocage;
     else cells[i] = T.Plains;
   }
   const isWater = (i) => cells[i] === T.Sea;
@@ -186,6 +196,17 @@ function buildRegion(R) {
     }
   };
   coastFlags();
+  // optional landing/bocage hints (flag bits 4 and 8; additional to river=1, coast=2)
+  const hintFlags = () => {
+    for (let i = 0; i < N; i++) {
+      flags[i] &= ~8;
+      const land = cells[i] !== T.Sea && cells[i] !== T.Lake;
+      if (R.beachFlag && land && (flags[i] & 2) && cells[i] !== T.Urban && elev[i] <= R.beachFlag.maxElevM && relief[i] <= R.beachFlag.maxReliefM) flags[i] |= 8;
+    }
+  };
+  hintFlags();
+  // coastal flats are not bocage (open dunes / polder / beach hinterland): coast cells below 25 m revert to Plains
+  if (R.bocageCodes) for (let i = 0; i < N; i++) if (cells[i] === T.Bocage && (flags[i] & 2) && elev[i] <= 25) cells[i] = T.Plains;
 
   // ── rivers (Natural Earth, plus optional OSM waterway=river from cache/osm_<id>_rivers.json) ──
   const infra = [];
@@ -227,18 +248,32 @@ function buildRegion(R) {
     console.log('  OSM river ways:', n);
   }
 
+  // ── wet river flats (e.g. Carentan / Douve / Taute marshes): low, flat, non-coastal cells on or next to a river become Marsh ──
+  if (R.marshNearRiver) {
+    const { maxElevM, maxReliefM } = R.marshNearRiver; let nm = 0;
+    for (let r = 0; r < rows; r++) for (let c = 0; c < cols; c++) {
+      const i = r * cols + c;
+      if ((cells[i] !== T.Bocage && cells[i] !== T.Plains) || (flags[i] & 2) || elev[i] > maxElevM || relief[i] > maxReliefM) continue;
+      let wet = false;
+      for (let dy = -1; dy <= 1 && !wet; dy++) for (let dx = -1; dx <= 1; dx++) { const cc = c + dx, rr = r + dy; if (cc >= 0 && rr >= 0 && cc < cols && rr < rows && (flags[rr * cols + cc] & 1)) { wet = true; break; } }
+      if (wet) { cells[i] = T.Marsh; nm++; }
+    }
+    console.log('  river-flat marsh cells added:', nm);
+  }
+
   // ── anchor scenario locations / land-unit starts to land ──
   const forced = new Map();
-  for (const an of scenarioAnchors(R)) {
+  for (const an of [...scenarioAnchors(R), ...(R.anchors ?? []).map(([name, lon, lat, kind]) => ({ pos: [lon, lat], kind, what: `region:${name}` }))]) {
     const [c, r] = cellAt(an.pos[0], an.pos[1]);
     if (c < 0 || r < 0 || c >= cols || r >= rows) continue;
     const i = r * cols + c;
-    if (cells[i] !== T.Sea && cells[i] !== T.Lake) continue;
+    if (cells[i] !== T.Sea && cells[i] !== T.Lake) { if (an.what.startsWith('region:')) cells[i] = T.Urban; continue; } // region anchors (named ports/cities) are always Urban cells
     cells[i] = ['city', 'port', 'town'].includes(an.kind) ? T.Urban : T.Plains;
     if (elev[i] < 0) elev[i] = 0;
     forced.set(i, an.what);
   }
-  if (forced.size) { console.log('  forced to land:', [...forced.values()].join(', ')); coastFlags(); }
+  if (forced.size) { console.log('  forced to land:', [...forced.values()].join(', ')); coastFlags(); hintFlags(); }
+  if (R.beachFlag) { let nbeach = 0; for (const f of flags) if (f & 8) nbeach++; console.log('  beach-candidate cells (flag 8):', nbeach); }
   const hist = {}; for (const c of cells) hist[c] = (hist[c] || 0) + 1;
   console.log('  terrain counts (0 sea,1 plains,2 forest,3 hills,4 mtn,5 marsh,6 urban,9 lake):', JSON.stringify(hist), 'river cells', riverCells);
   write(R.files.terrain, { bbox: BBOX, cellDeg: CELL_DEG, cols, rows, cells, elevationM: elev, flags });
@@ -246,8 +281,25 @@ function buildRegion(R) {
   // ── roads & railways (modern; historical=false). OSM extracts (ODbL) replace Natural Earth when cached ──
   let rid = 0;
   const osmInfra = (kind) => { const f = path.join(cache, `osm_${R.id}_${kind}.json`); return fs.existsSync(f) ? (JSON.parse(fs.readFileSync(f, 'utf8')).elements ?? []).filter((e) => e.type === 'way' && e.geometry) : null; };
-  const osmRoads = osmInfra('roads'), osmRail = osmInfra('rail'), osmTracks = osmInfra('tracks');
-  const addOsm = (els, kind, cap) => { let n = 0; for (const el of els) { const ln = el.geometry.map((g) => [g.lon, g.lat]); for (const piece of clipLine(ln, BBOX)) { const pts = simplify(piece, TOL).map((q) => round(q, 5)); if (pts.length < 2) continue; const name = el.tags?.['name:en'] ?? el.tags?.name; infra.push({ id: `${kind}_${rid++}`, kind, historical: false, coords: pts, ...(name ? { name } : {}), capacity: cap(el) }); n++; } } return n; };
+  const osmRoads = R.useOsmRoads === false ? null : osmInfra('roads'), osmRail = R.useOsmRail === false ? null : osmInfra('rail'), osmTracks = osmInfra('tracks');
+  // OSM lists every parallel track / carriageway as its own way: drop ways whose points already lie on a kept way (quantised to ~300 m) and non-main rail
+  const addOsm = (els, kind, cap) => {
+    let n = 0; const covered = new Set(), Q = R.railQuantDeg ?? 0.003, qk = (p) => Math.round(p[0] / Q) + ',' + Math.round(p[1] / Q);
+    const usable = els.filter((el) => kind !== 'rail' || (R.railUsage ?? ['main', 'branch', undefined]).includes(el.tags?.usage));
+    usable.sort((x, y) => y.geometry.length - x.geometry.length);
+    for (const el of usable) {
+      const ln = el.geometry.map((g) => [g.lon, g.lat]);
+      for (const piece of clipLine(ln, BBOX)) {
+        const pts = simplify(piece, TOL).map((q) => round(q, 5)); if (pts.length < 2) continue;
+        const keys = pts.map(qk), seen = keys.filter((k) => covered.has(k)).length;
+        if (seen / keys.length > 0.6) continue;
+        for (const k of keys) covered.add(k);
+        const name = el.tags?.['name:en'] ?? el.tags?.name;
+        infra.push({ id: `${kind}_${rid++}`, kind, historical: false, coords: pts, ...(name ? { name } : {}), capacity: cap(el) }); n++;
+      }
+    }
+    return n;
+  };
   if (osmRoads) console.log('  OSM road ways:', addOsm(osmRoads, 'road', (el) => (el.tags?.highway === 'trunk' ? 4 : 2)));
   if (!osmRoads && R.schematicVia) {
     const byName = new Map(places.map((f) => [f.properties.name, f.geometry.coordinates]));

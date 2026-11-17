@@ -6,17 +6,20 @@ import { loadWorld, mkEngine } from './harness';
 const CASES: [string, NationId[]][] = [
   ['fall_of_france.standard', ['GER', 'FRA', 'GBR']], ['fall_of_france.short', ['GER', 'FRA', 'GBR']],
   ['bulge.short', ['GER', 'USA', 'GBR']], ['crusader.short', ['GER', 'GBR', 'ITA']], ['stalingrad.short', ['SOV', 'GER']],
+  ['normandy.short', ['USA', 'GBR', 'CAN', 'GER']],
 ];
 
 describe('start supply: no scenario starts with a pile of unsupplied units', () => {
   for (const [id, nations] of CASES) for (const n of nations) {
     it(`${id} as ${n}: at most 2 land units per side cut off at ticks 1, 2 and 24 (idle player)`, () => {
-      const w = loadWorld(id); const e = mkEngine(w, n, 1); const rows: string[] = []; const worst: Record<string, number> = { axis: 0, allies: 0 };
+      const w = loadWorld(id); const e = mkEngine(w, n, 1); const airIds = w.def.reinforcements.filter((r) => r.landing?.kind === 'airborne').map((r) => r.unit.id); const rows: string[] = []; const worst: Record<string, number> = { axis: 0, allies: 0 };
       for (const t of [1, 1, 22]) {
         e.step(t); const s = e.getState();
         for (const side of ['axis', 'allies'] as const) {
           const g = Object.values(s.units).filter((u) => u.side === side && u.domain === 'land' && u.type !== 'hq' && u.manpower > 0);
-          const c = g.filter((u) => isCutOff(s, u.id)); worst[side] = Math.max(worst[side], c.length);
+          const air = (u: { id: string }) => s.clock.minutes <= 48 * 60 && airIds.some((id) => u.id === id || u.id.startsWith(id + '_r'));
+          for (const u of g) if (air(u)) expect(u.supply, `${u.id} airborne supply`).toBeGreaterThan(0);
+          const c = g.filter((u) => isCutOff(s, u.id) && !air(u)); // airborne drops are legitimately behind enemy lines for the first 48 h worst[side] = Math.max(worst[side], c.length);
           if (c.length > 2) rows.push(`tick ${s.clock.minutes / 60} ${side}: ${c.length}/${g.length} cut off: ${c.map((u) => u.id).join(',')}`);
         }
       }

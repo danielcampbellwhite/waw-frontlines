@@ -6,10 +6,10 @@ describe('unitPhoto', () => {
   it('maps tank_medium to the right vehicle per nation', () => {
     expect(unitPhoto('armoured', 'GER', 'tank_medium')?.subject).toMatch(/Panzer (III|IV)/);
     expect(unitPhoto('armoured', 'FRA', 'tank_medium')?.subject).toMatch(/SOMUA|B1/);
-    expect(unitPhoto('armoured', 'GBR', 'tank_medium')?.subject).toMatch(/Matilda|Cruiser/);
+    expect(unitPhoto('armoured', 'GBR', 'tank_medium')?.subject).toMatch(/Matilda|Cruiser|Crusader|Valentine/);
   });
   it('never returns another nation\'s photo and returns null when nothing honest matches', () => {
-    expect(unitPhoto('infantry', 'USA')).toBeNull();
+    expect(unitPhoto('infantry', 'JPN')).toBeNull();
     expect(unitPhoto('armoured', 'NEUTRAL', 'tank_medium')).toBeNull();
   });
   it('is deterministic and supports a variant seed', () => {
@@ -42,7 +42,7 @@ describe('unitPhoto', () => {
   });
   it('armoured units with tank hints get tank photos', () => {
     expect(unitPhoto('armoured', 'GER', 'tank_light')?.subject).toMatch(/Panzer (II|38)/);
-    expect(unitPhoto('armoured', 'GBR', 'tank_light')?.subject).toMatch(/Light Tank/);
+    expect(unitPhoto('armoured', 'GBR', 'tank_light')?.subject).toMatch(/Light Tank|Stuart/);
   });
   it('mainEquipmentKey ignores support weapons for infantry types', () => {
     expect(mainEquipmentKey({ rifle: 9000, gun_at: 50, gun_arty: 70 }, 'infantry')).toBe('rifle');

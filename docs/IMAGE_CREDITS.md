@@ -95,15 +95,106 @@ Machine-readable list: `src/art/credits.json`. Regenerate with `node scripts/art
 | gbr_inf_gas | GBR | BEF soldiers in gas masks on the Maginot Line, November 1939 | Keating G (Lt), War Office official photographer | Public domain | https://commons.wikimedia.org/wiki/File:Soldiers_of_the_51st_Highland_Division_wearing_gasmasks_while_on_duty_in_a_fort_on_the_Maginot_Line_in_France,_3_November_1939._O229.jpg | 2026-11-16 |
 | fra_ms406_fin | FRA | Morane-Saulnier M.S.406 fighter on an airfield (Finnish-service aircraft) | Sot.virk. L. Johnsson | CC BY 4.0 | https://commons.wikimedia.org/wiki/File:Morane-Saulnier_M.S.406_(SA-kuva_21068).jpg | 2026-11-16 |
 | ned_inf_skates | NED | Armed Dutch soldiers on the frozen water line, winter 1940 | Wiel van der Randen | Public domain | https://commons.wikimedia.org/wiki/File:Nederlandse_waterlinie,_winter_1940_bewapende_soldaten_op_de_schaats,_SFA001000445_01.jpg | 2026-11-16 |
+| usa_m4_stvith | USA | M4 Sherman tanks, 7th Armored Division, St. Vith, January 1945 | Salis, U.S. Army Signal Corps photo 111-SC-199467 | Public domain | https://commons.wikimedia.org/wiki/File:M4_Sherman_tanks_of_the_U.S._7th_Armored_Division_near_St._Vith,_Belgium,_24_January_1945_(148727210).jpg | 2026-11-16 |
+| usa_m5_normandy | USA | M5 Stuart light tank with infantry, Normandy 1944 | Conseil Régional de Basse-Normandie / National Archives USA | Public domain | https://commons.wikimedia.org/wiki/File:M5_Stuart_Normandy.jpg | 2026-11-16 |
+| usa_m10_bailey | USA | M10 tank destroyer crossing a Bailey bridge | Unknown author | Public domain | https://commons.wikimedia.org/wiki/File:M10_tank_destroyers_crossing_a_Bailey_bridge.jpg | 2026-11-16 |
+| usa_m10_saar | USA | M10 tank destroyer crossing the Saar, December 1944 | "US Army Photograph". Original photographer not recorded. | Public domain | https://commons.wikimedia.org/wiki/File:M10_tank_destroyer_crossing_the_Saar,_December_1944.jpg | 2026-11-16 |
+| usa_m10_dreux | USA | M10 Wolverine tank destroyer, 628th TD Battalion, Dreux 1944 | Uncredited photographer | Public domain | https://commons.wikimedia.org/wiki/File:M10_Wolverine_of_628th_TDs_in_Dreux.jpg | 2026-11-16 |
+| usa_m18_museum | USA | M18 Hellcat tank destroyer (preserved vehicle) | Alan Wilson from Stilton, Peterborough, Cambs, UK | CC BY-SA 2.0 | https://commons.wikimedia.org/wiki/File:M18_Hellcat_%E2%80%93_Kubinka_Tank_Museum_(26177911609).jpg | 2026-11-16 |
+| usa_m8_kinz | USA | M8 Greyhound armoured car, 30th Infantry Division, Kinzweiler, November 1944 | Signal Corps Archive | Public domain | https://commons.wikimedia.org/wiki/File:SC_196666_-_An_M8_reconnaissance_armored_car_of_the_30th_Infantry_Div.,_rolls_through_the_streets_of_Kinzweiler,_November_21,_1944.jpg | 2026-11-16 |
+| usa_m8_museum | USA | M8 Greyhound armoured car (preserved vehicle) | AlfvanBeem | CC0 | https://commons.wikimedia.org/wiki/File:Light_Armored_Car_M8_Greyhound,_Army_registration_number_USA_603332_pic2.JPG | 2026-11-16 |
+| usa_m3_ht | USA | M3 half-track | Dogeswat.vn | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:M3_half_track.jpg | 2026-11-16 |
+| usa_at_bastogne | USA | Anti-tank gun guarding the approaches to Bastogne, 26 December 1944 | Signal Corps Archive from United States | Public domain | https://commons.wikimedia.org/wiki/File:SC_329955_-_Anti-tank_gun_on_guard_against_attempted_German_breakthrough_on_Bastogne._26_December,_1944._(52594081643).jpg | 2026-11-16 |
+| usa_101_bastogne | USA | 101st Airborne troops, Bastogne, December 1944 | Post-Work: User:W.wolny | Public domain | https://commons.wikimedia.org/wiki/File:101st_Airborne_troops_move_out_of_Bastogne.jpg | 2026-11-16 |
+| usa_101_xmas | USA | 101st Airborne infantry in ruined Bastogne, Christmas 1944 | US Army Signal Corps | Public domain | https://commons.wikimedia.org/wiki/File:101st_Airborne_in_Bastogne,_Christmas_1944.JPG | 2026-11-16 |
+| usa_para_bastogne | USA | 101st Airborne paratroopers moving up to Bastogne | US Army Center for Military History | Public domain | https://commons.wikimedia.org/wiki/File:Paratroopers_Of_The_101st_Airborne_Moving_Up_To_Bastogne.jpg | 2026-11-16 |
+| usa_eng_stug | USA | 291st Combat Engineers with a captured Sturmgeschütz III, Ardennes 1945 | Unknown author | Public domain | https://commons.wikimedia.org/wiki/File:291st_Combat_Engineers_disarm_Sturmgesch%C3%BCtz_III.jpg | 2026-11-16 |
+| usa_jeep | USA | Willys Jeep, 101st Airborne markings (re-enactment vehicle) | Contando Estrelas from Vigo, España / Spain | CC BY-SA 2.0 | https://commons.wikimedia.org/wiki/File:Jeep_Willys_de_la_101st_Airborne_Division_del_US_Army_(28901418600).jpg | 2026-11-16 |
+| usa_gmc | USA | GMC CCKW 2.5-ton truck (preserved vehicle) | AlfvanBeem | CC0 | https://commons.wikimedia.org/wiki/File:GMC_CCKW_353_(1944)_owned_by_Allan_Cornwall_pic2.JPG | 2026-11-16 |
+| usa_p47_luxeuil | USA | P-47 Thunderbolt fighter, 1945 | Mirage2000D | Public domain | https://commons.wikimedia.org/wiki/File:P-47_Thunderbolt_at_BA116_Luxeuil,_1945.jpg | 2026-11-16 |
+| usa_p47_62d | USA | 62nd Fighter Squadron P-47 Thunderbolts in flight, 1944 | United States Army Air Forces | Public domain | https://commons.wikimedia.org/wiki/File:62d_Fighter_Squadron_P-47_Thunderbolts_-_1944.jpg | 2026-11-16 |
+| usa_p47_bodney | USA | P-47 Thunderbolt "Dallas Blonde", 352nd Fighter Group | United States Army Air Forces | Public domain | https://commons.wikimedia.org/wiki/File:RAF_Bodney_-_352d_Fighter_Group_-_P-47_Thunderbolt_Dallas_Blonde.jpg | 2026-11-16 |
+| usa_p51 | USA | P-51D Mustang, 362nd Fighter Squadron, France 1944 | Royal Air Force | Public domain | https://commons.wikimedia.org/wiki/File:North_American_P-51D_Mustang_of_the_362nd_Fighter_Squadron_(USAAF)_at_Coulommiers,_France,_circa_in_1944_(FRE_13476).jpg | 2026-11-16 |
+| usa_c47_museum | USA | C-47 Skytrain transport aircraft (preserved aircraft) | Eric Friedebach | CC BY 2.0 | https://commons.wikimedia.org/wiki/File:C-47B_%E2%80%9CSkytrain%E2%80%9D_(49871320496).jpg | 2026-11-16 |
+| usa_hq_mcauliffe | USA | Brig. Gen. McAuliffe and the 101st Airborne headquarters staff, Bastogne, Christmas 1944 | Unknown, U.S. Army | Public domain | https://commons.wikimedia.org/wiki/File:Brig._Gen._Anthony_McAuliffe_and_his_staff_gathered_inside_Bastogne%27s_Heintz_Barracks_for_Christmas_dinner_Dec._25th,_1944.jpg | 2026-11-16 |
+| ger_tiger2_budapest | GER | Tiger II, Budapest 1944 | Bundesarchiv / Faupel | CC BY-SA 3.0 de | https://commons.wikimedia.org/wiki/File:Bundesarchiv_Bild_101I-680-8282A-03A,_Budapest,_Panzer_VI_(Tiger_II,_K%C3%B6nigstiger).jpg | 2026-11-16 |
+| ger_tiger2_canteloup | GER | Tiger II, Normandy 1944 | Bundesarchiv / Vennemann, Wolfgang | CC BY-SA 3.0 de | https://commons.wikimedia.org/wiki/File:Bundesarchiv_Bild_101I-721-0359-37,_Canteloup,_Panzer_VI_(Tiger_II,_K%C3%B6nigstiger).jpg | 2026-11-16 |
+| ger_stug_skirts | GER | Sturmgeschütz III with side skirts, Russia | Bundesarchiv / Ludwig Knobloch | CC BY-SA 3.0 de | https://commons.wikimedia.org/wiki/File:Bundesarchiv_Bild_101I-154-1986-05,_Russland,_Sturmgesch%C3%BCtz_III_mit_Seitensch%C3%BCrzen.jpg | 2026-11-16 |
+| ger_stug_stalingrad2 | GER | Sturmgeschütz III advancing, Stalingrad sector 1942 | Bundesarchiv / Schröter | CC BY-SA 3.0 de | https://commons.wikimedia.org/wiki/File:Bundesarchiv_Bild_183-J21826,_Russland,_Kampf_um_Stalingrad,_Sturmgesch%C3%BCtz.jpg | 2026-11-16 |
+| ger_spah_africa | GER | Armoured reconnaissance car with radio mast, North Africa | Bundesarchiv / Böcker | CC BY-SA 3.0 de | https://commons.wikimedia.org/wiki/File:Bundesarchiv_Bild_101I-424-0269-17,_Nordafrika,_Sp%C3%A4hpanzer.jpg | 2026-11-16 |
+| ger_ju87_africa | GER | Junkers Ju 87 Stuka being serviced, North Africa | Bundesarchiv / Unknown author | CC BY-SA 3.0 de | https://commons.wikimedia.org/wiki/File:Bundesarchiv_Bild_146-1981-064-16A,_Nordafrika,_Demontage_einer_Junkers_Ju_87.jpg | 2026-11-16 |
+| ger_inf_ardennes | GER | Volksgrenadiere, Ardennes offensive, December 1944 | Bundesarchiv / Lange | CC BY-SA 3.0 de | https://commons.wikimedia.org/wiki/File:Bundesarchiv_Bild_183-1985-0104-501,_Ardennenoffensive,_Grenadiere_in_Luxemburg.jpg | 2026-11-16 |
+| ger_inf_ardennes2 | GER | German infantry advancing through woods, Ardennes 1944 | Bundesarchiv / Rutkowski, Heinz | CC BY-SA 3.0 de | https://commons.wikimedia.org/wiki/File:Bundesarchiv_Bild_183-J28510,_Ardennenoffensive,_deutsche_Infanterie_geht_im_Wald_vor..jpg | 2026-11-16 |
+| ger_251_ardennes | GER | Grenadiers in a half-track, Ardennes offensive 1944 | Bundesarchiv / Göttert | CC BY-SA 3.0 de | https://commons.wikimedia.org/wiki/File:Bundesarchiv_Bild_183-J28519,_Ardennenoffensive,_Soldaten_in_Sch%C3%BCtzenpanzer.jpg | 2026-11-16 |
+| ger_hq_ardennes | GER | Officers' map conference (command post), Ardennes offensive 1944 | Bundesarchiv / Göttert | CC BY-SA 3.0 de | https://commons.wikimedia.org/wiki/File:Bundesarchiv_Bild_183-J28477,_Ardennenoffensive,_Lagebesprechnung.jpg | 2026-11-16 |
+| sov_katyusha_battery | SOV | Battery of Katyusha rocket launchers in action | Zelma / Георгий Зельма | CC BY-SA 3.0 | https://commons.wikimedia.org/wiki/File:RIAN_archive_303890_A_battery_of_Katyusha_during_the_1941-1945_Great_Patriotic_War.jpg | 2026-11-16 |
+| sov_katyusha_museum | SOV | BM-13 Katyusha rocket launcher (preserved vehicle) | Adam Jones, Ph.D. | CC BY-SA 2.0 | https://commons.wikimedia.org/wiki/File:Katyusha_Rocket_Launcher_-_Artillery_Museum_-_St._Petersburg_-_Russia.jpg | 2026-11-16 |
+| sov_hq_stalingrad | SOV | Stalingrad Front military council at a map table (headquarters staff) | Oleg Knorring / Олег Кнорринг | CC BY-SA 3.0 | https://commons.wikimedia.org/wiki/File:RIAN_archive_882837_The_defenders_of_Stalingrad.jpg | 2026-11-16 |
+| sov_naval_inf | SOV | Soviet naval infantry submachine-gunners in action | Vladimir Nikolayevich Ivanov | Public domain | https://commons.wikimedia.org/wiki/File:%D0%90%D0%B2%D1%82%D0%BE%D0%BC%D0%B0%D1%82%D1%87%D0%B8%D0%BA%D0%B8_%D0%BC%D0%BE%D1%80%D1%81%D0%BA%D0%BE%D0%B9_%D0%BF%D0%B5%D1%85%D0%BE%D1%82%D1%8B_%D0%B2%D0%B5%D0%B4%D1%83%D1%82_%D0%B1%D0%BE%D0%B9.jpg | 2026-11-16 |
+| sov_cavalry | SOV | Soviet cavalry attack | Vladimir Nikolayevich Ivanov | Public domain | https://commons.wikimedia.org/wiki/File:%D0%9A%D0%BE%D0%BD%D0%BD%D0%B0%D1%8F_%D0%B0%D1%82%D0%B0%D0%BA%D0%B0.jpg | 2026-11-16 |
+| sov_kv1_crew | SOV | KV-1 heavy tank and crew, 17th Tank Brigade | Unknown author | Public domain | https://commons.wikimedia.org/wiki/File:KV-1_tank_crew_(17th_Tank_Bridage).jpg | 2026-11-16 |
+| sov_t34_museum | SOV | T-34-76 medium tank (monument vehicle) | George Chernilevsky | Public domain | https://commons.wikimedia.org/wiki/File:T-34-76_Sevastopol_2009_G1.jpg | 2026-11-16 |
+| sov_t70_museum | SOV | T-70 light tank (preserved vehicle) | ShinePhantom | CC BY-SA 3.0 | https://commons.wikimedia.org/wiki/File:T-70,_technical_museum,_Togliatti-1.jpg | 2026-11-16 |
+| sov_kv1_museum | SOV | KV-1 heavy tank (preserved vehicle, Finnish-captured, Parola) | Pitkäkaula | CC BY-SA 3.0 | https://commons.wikimedia.org/wiki/File:KV-1_m_1942_Parola_tank_museum.jpg | 2026-11-16 |
+| sov_bt7_museum | SOV | BT-7 light tank (preserved vehicle) | ShinePhantom | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:BT-7_in_the_Togliatti_Technical_Museum_03.jpg | 2026-11-16 |
+| sov_su76 | SOV | SU-76 self-propelled gun (preserved vehicle) | One half 3544 | Public domain | https://commons.wikimedia.org/wiki/File:SU-76_spb.JPG | 2026-11-16 |
+| sov_zis3 | SOV | 76 mm divisional gun ZiS-3 (preserved gun) | Torin | Public domain | https://commons.wikimedia.org/wiki/File:76_mm_divisional_gun_M1942_(ZiS-3)_001.jpg | 2026-11-16 |
+| sov_il2_wreck | SOV | Wrecked Il-2 Sturmovik, displayed in a captured-aircraft exhibition | FOTO:Fortepan — ID 30244: Adományozó/Donor: Unknown. | Public domain | https://commons.wikimedia.org/wiki/File:Szovjet_IL2_Sturmovik_csatarep%C3%BCl%C5%91g%C3%A9p_roncsa._Fortepan_30244.jpg | 2026-11-16 |
+| ita_m13_museum | ITA | M13/40 medium tank (preserved vehicle) | The original uploader was Краљевић Марко at Serbian Wikipedia. | Public domain | https://commons.wikimedia.org/wiki/File:M13-40.jpg | 2026-11-16 |
+| ita_l3_museum | ITA | L3/35 Carro Veloce tankette (preserved vehicle) | Alan Wilson from Stilton, Peterborough, Cambs, UK | CC BY-SA 2.0 | https://commons.wikimedia.org/wiki/File:Carro_Veloce_CV-35_(L3-35)_-_Patriot_Museum,_Kubinka_(37687204344).jpg | 2026-11-16 |
+| ita_gun7527 | ITA | Cannone da 75/27 Mod. 1911 field gun | Regio Esercito (Royal Italian Army) | Public domain | https://commons.wikimedia.org/wiki/File:Cannone_75-27_Mod._1912.JPG | 2026-11-16 |
+| ita_gun7527_b | ITA | Cannone da 75/27 field gun (preserved gun) | Saggittarius A | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Cannone_75_27_Bergamo.jpg | 2026-11-16 |
+| ita_breda20 | ITA | Breda 20 mm Mod. 35 gun (preserved gun) | Llorenzi | CC BY-SA 3.0 | https://commons.wikimedia.org/wiki/File:Cannone_Mitragliera_da_20mm_mod.35.jpg | 2026-11-16 |
+| ita_cr42 | ITA | Fiat CR.42 Falco fighter | USAF | Public domain | https://commons.wikimedia.org/wiki/File:Fiat_CR_42_Falco_fighter_parked.jpg | 2026-11-16 |
+| rou_inf_a | ROU | Romanian soldiers, southern Russia 1942 | Bundesarchiv / Lechner | CC BY-SA 3.0 de | https://commons.wikimedia.org/wiki/File:Bundesarchiv_Bild_101I-218-0501-27,_Russland-S%C3%BCd,_rum%C3%A4nische_Soldaten.jpg | 2026-11-16 |
+| rou_r2 | ROU | LT vz.35 light tank, the type Romania used as the R-2 (preserved vehicle) | Ondřej Žváček | CC BY 2.5 | https://commons.wikimedia.org/wiki/File:Lehk%C3%BD_tank_LT_vz._35.jpg | 2026-11-16 |
+| gbr_crusader_battle | GBR | Crusader tank passing a burning Panzer IV, Western Desert, November 1941 | Davies L B (Lieut), No 1 Army Film & Photographic Unit | Public domain | https://commons.wikimedia.org/wiki/File:The_British_Army_in_North_Africa_1941_E6752.jpg | 2026-11-16 |
+| gbr_crusader_trans | GBR | Crusader tank on a transporter, Western Desert, 1941 | No 1 Army Film & Photographic Unit, Cash (Lieut) | Public domain | https://commons.wikimedia.org/wiki/File:The_British_Army_in_North_Africa_1941_E7014.jpg | 2026-11-16 |
+| gbr_crusader_pair | GBR | Crusader tanks, Western Desert, November 1941 | Clements (Lieut), No 1 Army Film & Photographic Unit | Public domain | https://commons.wikimedia.org/wiki/File:IWM-E-6724-Crusader-19411126.jpg | 2026-11-16 |
+| gbr_crusader_museum | GBR | Crusader Mk III cruiser tank (preserved vehicle) | Alan Wilson from Stilton, Peterborough, Cambs, UK | CC BY-SA 2.0 | https://commons.wikimedia.org/wiki/File:Crusader_MkIII_%E2%80%98T126272%E2%80%99_(36590905746).jpg | 2026-11-16 |
+| gbr_valentine_desert | GBR | Valentine tank under repair, Western Desert, December 1941 | Cash (Lieut), No 1 Army Film & Photographic Unit | Public domain | https://commons.wikimedia.org/wiki/File:The_British_Army_in_North_Africa_1941_E7002.jpg | 2026-11-16 |
+| gbr_valentine_museum | GBR | Valentine IX infantry tank (preserved vehicle) | Simon Q from United Kingdom | CC BY 2.0 | https://commons.wikimedia.org/wiki/File:Tank_Infantry_Mark_III,_Valentine_IX_(4536617118).jpg | 2026-11-16 |
+| gbr_stuart_museum | GBR | M3A1 Stuart III in British desert colours (preserved vehicle, re-enactment) | Alan Wilson from Stilton, Peterborough, Cambs, UK | CC BY-SA 2.0 | https://commons.wikimedia.org/wiki/File:M3A1_Stuart_III_%E2%80%98T37765%E2%80%99_%E2%80%9CClementine%E2%80%9D_(44431850175).jpg | 2026-11-16 |
+| aus_inf_bardia | AUS | Australian infantry advancing at Bardia, January 1941 | Geoffrey Keating | Public domain | https://commons.wikimedia.org/wiki/File:Commonwealth_Forces_in_North_Africa_1941_E1573.jpg | 2026-11-16 |
 
 ## Gaps (no licensed, verifiably matching image found - UI falls back to the drawn icon)
 - GER: Sd.Kfz. 232 (8-wheel) - a 6-wheel heavy armoured car (Sd.Kfz. 231 type, 1930s manoeuvres) is used instead; dedicated PaK 36/38 anti-tank gun (the 8.8 cm Flak photos serve the anti-tank role); supply convoy; only one Panzer III image.
-- FRA: field HQ / command post; supply convoy / truck; navy; infantry is a single portrait of a colonial infantryman (no licensed photo of metropolitan poilus in action found); Hotchkiss H39 is shown for H35 (the H39 is the direct development).
-- GBR: cruiser; field HQ; supply convoy (single truck/LAD photo only); a clean Spitfire airframe-only shot (re-arming scene used).
-- BEL / NED: one infantry photograph each; nothing for other arms.
-- Generic: no nation-neutral field HQ, convoy or anti-aircraft gun entries (a Bofors photo was found but Commons throttled its download; re-run `node scripts/art/build.mjs` after adding it to picks.mjs); destroyer is British only, cruiser German only.
+- FRA: supply convoy / truck; navy; a single infantry portrait of a colonial infantryman (no licensed photo of metropolitan poilus in action found); Hotchkiss H39 is shown for H35. The only French HQ photo is General Georges with Lord Gort (shared source with the GBR entry).
+- GBR: cruiser; a single truck photo of 1940 vintage plus a preserved Bedford QL.
+- BEL: one infantry photograph. NED: HQ and all arms other than infantry. No BEL/NED HQ (unitPhoto returns null for HQ units so the HQ illustration shows).
+- Generic: no nation-neutral convoy or anti-aircraft gun entries (a Bofors photo was found but Commons throttled its download); destroyer is British only, cruiser German only.
 - Not attempted / not accepted: any image whose Commons licence was unclear, NC, ND or fair-use.
 
 
 ## Rejected during verification
-- bel_pow: error dl failed Bundesarchiv Bild 101I-124-0249-03, Im Westen, belgische Kriegsgefange
+- usa_para_stvith: not found
+- ger_panther_hay: error dl failed Bundesarchiv Bild 101I-477-2124-06A, Italien, Panzer V (Panther).jpg
+- ger_panther_italy: error dl failed Bundesarchiv Bild 101I-478-2164-28, Italien, Panzer V (Panther) im Gel
+- ger_stug_italy: error dl failed Bundesarchiv Bild 101I-310-0884-08, Italien, Sturmgeschütz III auf Lan
+- ger_stug_stalingrad: error dl failed Bundesarchiv Bild 183-B22188, Russland, Kampf um Stalingrad, Sturmgesc
+- ger_pz4_late: error dl failed Bundesarchiv Bild 101I-696-0427-03, Mittlere Ostfront (Polen), Panzer 
+- ger_pz4_woods: error dl failed Bundesarchiv Bild 101I-695-0406-03, Russland, Panzer IV am Waldrand.jp
+- ger_pz4_africa: error dl failed Bundesarchiv Bild 101I-788-0017-19, Nordafrika, Panzer IV und Krad.jpg
+- ger_pz3_africa: error dl failed Bundesarchiv Bild 101I-782-0015-03A, Nordafrika, Panzer III in Fahrt.j
+- ger_flak_africa: error dl failed Bundesarchiv Bild 101I-443-1599-20, Nordafrika, bei Bir Hacheim, feuer
+- ger_bf109_africa: error dl failed Bundesarchiv Bild 101I-428-0485-13A, Nordafrika, Me 109 vor Einsatz.jp
+- ger_bf109_paint: error dl failed Bundesarchiv Bild 101I-431-0710-29A, Nordafrika, Flugzeug Messerschmit
+- ger_inf_stalingrad: error dl failed Bundesarchiv Bild 183-B22173, Russland, Kampf um Stalingrad, Infanteri
+- ger_inf_flame: error dl failed Bundesarchiv Bild 101I-083-3371-11, Stalingrad, Infanterie mit Flammen
+- ger_inf_house: error dl failed Bundesarchiv Bild 101I-617-2571-04, Stalingrad, Soldaten beim Häuserka
+- ger_para_vw: error dl failed Bundesarchiv Bild 101I-585-2182-31A, Frankreich, Fallschirmjäger auf V
+- ger_para_italy: error dl failed Bundesarchiv Bild 101I-575-1822-22A, Italien, Fallschirmjäger bei Besp
+- ger_pak_denmark: error dl failed Bundesarchiv Bild 101I-755-0194-08, Dänemark, Pak an der Küste.jpg
+- ger_pak_75: error dl failed Bundesarchiv Bild 101I-024-3543-09, Ostfront, Soldaten an 7,5cm Pak.jp
+- ita_m13_desert: error dl failed Italian M13-40 tank in the desert 1942.jpg
+- ita_m13_surrender: error dl failed The British Army in North Africa 1941 E7304.jpg
+- ita_bersaglieri: error dl failed Bundesarchiv B 145 Bild-F016230-0009A, Bersaglieri in Jugoslawien.jpg
+- ita_gunners: error dl failed Bundesarchiv Bild 101I-316-1198-27, Italien, italienische Soldaten mit
+- rou_inf_cav: error dl failed Bundesarchiv Bild 101I-218-0502-32, Russland-Süd, rumänische Soldaten.
+- rou_inf_march: error dl failed Bundesarchiv N 1603 Bild-241, Rumänische Infanterie auf dem Marsch.jpg
+- gbr_carrier_desert: error dl failed The British Army in North Africa 1941 E6924.jpg
+- ind_carrier_desert: error dl failed The British Army in North Africa 1941 E6924.jpg
+- nzl_inf_matilda: error dl failed The British Army in North Africa 1941 E6920.jpg
+- aus_inf_wadi: error dl failed The British Army in North Africa 1941 E1636.jpg
+- gbr_hurr_80sqn: error dl failed Royal Air Force Operations in the Middle East and North Africa, 1939-1
+- gbr_hurr_33sqn: error dl failed 33 Squadron RAF Hurricanes Egypt IWM CM 140.jpg

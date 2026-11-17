@@ -5,7 +5,7 @@
  */
 import type { LocationId, LonLat, NationId, SideId, UnitId, UnitType, WeatherKind } from '../core/types';
 import { adj, adjManpower, adjRes, isAlive, scheduleReinforcement, type Resource, type Stat } from './helpers';
-import { setPortRelief } from '../military/logistics';
+import { setLocationAvailableFrom, setLocationThroughputFactor, setPortRelief } from '../military/logistics';
 import { registerEventTemplate } from './registry';
 import type { EventChoiceDef, EventEnv, EventTemplate } from './types';
 
@@ -15,10 +15,15 @@ export type EffectSpec =
   | { op: 'unit_manpower'; nation?: NationId; side?: SideId; unitTypes?: UnitType[]; unitIds?: UnitId[]; fraction: number }
   | { op: 'location_owner'; locationId: LocationId; owner: NationId }
   | { op: 'location_damage'; locationId: LocationId; delta: number }
-  | { op: 'weather'; kind: WeatherKind; intensity?: number; durationMinutes?: number }
+  /** Hold a weather kind: `hours` (or `durationMinutes`) is how long it persists before the normal weather roll resumes (default 24 h). */
+  | { op: 'weather'; kind: WeatherKind; intensity?: number; durationMinutes?: number; hours?: number }
   | { op: 'reinforce'; nation: NationId; locationId?: LocationId; delayMinutes?: number; unitTypes?: UnitType[]; strength?: number; label?: string }
   /** Sea relief of a besieged port (military setPortRelief): it keeps a share of its throughput while encircled. `on` defaults to true. */
   | { op: 'port_relief'; locationId: LocationId; on?: boolean }
+  /** Scale a port's throughput (0 wrecks it, e.g. the 19 Jun 1944 storm at Mulberry A; 1 repairs). `hours` makes the factor expire; omitted = permanent. */
+  | { op: 'port_throughput'; locationId: LocationId; factor: number; hours?: number }
+  /** A location (Mulberry harbour, captured port) is unusable until `fromHour` (campaign hours), then ramps to full over `rampHours`. */
+  | { op: 'port_available'; locationId: LocationId; fromHour: number; rampHours?: number }
   | { op: 'log'; text: string; severity?: 'info' | 'warn' | 'critical' };
 
 export interface HistoricalEventSpec {
@@ -63,9 +68,11 @@ export function applyEffects(env: EventEnv, effects: EffectSpec[]): void {
       case 'unit_manpower': for (const u of matchUnits(env, fx)) adjManpower(u, fx.fraction); break;
       case 'location_owner': { const l = state.locations[fx.locationId]; if (l) l.owner = fx.owner; break; }
       case 'location_damage': { const l = state.locations[fx.locationId]; if (l) l.damaged = Math.max(0, Math.min(100, (l.damaged ?? 0) + fx.delta)); break; }
-      case 'weather': state.weather = { kind: fx.kind, intensity: fx.intensity ?? 0.6, temperatureC: state.weather.temperatureC, nextChangeMinutes: env.now + (fx.durationMinutes ?? 24 * 60) }; break;
+      case 'weather': state.weather = { kind: fx.kind, intensity: fx.intensity ?? 0.6, temperatureC: state.weather.temperatureC, nextChangeMinutes: env.now + (fx.hours !== undefined ? fx.hours * 60 : fx.durationMinutes ?? 24 * 60) }; break;
       case 'reinforce': scheduleReinforcement(env, fx.nation, { types: fx.unitTypes, delayMinutes: fx.delayMinutes, strength: fx.strength, label: fx.label, locationId: fx.locationId }); break;
       case 'port_relief': if (state.locations[fx.locationId]) setPortRelief(state, fx.locationId, fx.on ?? true); break;
+      case 'port_throughput': if (state.locations[fx.locationId]) setLocationThroughputFactor(state, fx.locationId, fx.factor, fx.hours); break;
+      case 'port_available': if (state.locations[fx.locationId]) setLocationAvailableFrom(state, fx.locationId, fx.fromHour, fx.rampHours ?? 0); break;
       case 'log': env.log(fx.text, fx.severity ?? 'info'); break;
     }
   }

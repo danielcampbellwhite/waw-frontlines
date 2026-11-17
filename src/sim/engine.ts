@@ -14,6 +14,8 @@ import { getGridInfo, terrainAt } from './gridutil';
 import { ai, events, military } from './deps';
 import { updateFog, visibleTo } from './fog';
 import { updateMovement } from './movement';
+import { applyLandings } from './landing';
+import { processBombings } from './airwar';
 import { getSimMeta } from './meta';
 import { iceOf, updateIce } from './ice';
 import { moveClassOf, passableIce } from './pathfinding';
@@ -181,7 +183,9 @@ function makeEngine(state: GameState, terrain: TerrainGrid, infra: InfraLine[], 
     state.clock.minutes += TICK_MINUTES;
     updateIce(state, ctx.scenario);
     const t = Math.floor(state.clock.minutes / TICK_MINUTES);
+    const unitsBefore = new Set(Object.keys(state.units));
     military.processReinforcements(state);                                    // 1
+    applyLandings(state, ctx, unitsBefore);
     events.updateEvents(state, ctx);                                          // 2
     if (t % WEATHER_EVERY_TICKS === 0) updateWeather(state, ctx);             // 3
     const ais = getSimMeta(state).aiOff ? [] : aiNations();                   // 4
@@ -195,6 +199,7 @@ function makeEngine(state: GameState, terrain: TerrainGrid, infra: InfraLine[], 
     military.processOrders(state, ctx);                                       // 5
     updateMovement(state, ctx);                                               // 6
     updateCombat(state, ctx);                                                 // 7
+    processBombings(state, ctx);
     if (t % SUPPLY_EVERY_TICKS === 0) military.updateSupply(state, ctx);      // 8
     military.updateUnitStats(state, ctx);                                     // 9
     for (const m of activeModules(ctx)) m.update?.(state, ctx);               // 9b campaign modules

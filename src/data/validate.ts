@@ -77,6 +77,8 @@ export function validateScenario(def: ScenarioDefinition, sidecar?: ScenarioSide
       if (v !== undefined && !(Number.isFinite(v) && v > 0)) e(`location ${l.id} ${k} must be a positive number`);
     }
     if (l.besiegedShare !== undefined && !(l.besiegedShare >= 0 && l.besiegedShare <= 1)) e(`location ${l.id} besiegedShare must be within 0..1`);
+    if (l.availableFromHour !== undefined && !(Number.isFinite(l.availableFromHour) && l.availableFromHour >= 0)) e(`location ${l.id} availableFromHour must be a campaign hour >= 0`);
+    if (l.rampHours !== undefined && !(Number.isFinite(l.rampHours) && l.rampHours >= 0)) e(`location ${l.id} rampHours must be >= 0`);
     if (l.throughputTonsPerDay !== undefined && l.throughputTonsPerMonth !== undefined) e(`location ${l.id} sets both throughputTonsPerDay and throughputTonsPerMonth`);
   }
 
@@ -125,7 +127,46 @@ export function validateScenario(def: ScenarioDefinition, sidecar?: ScenarioSide
     if (r.pos && !inBBox(b, r.pos)) e(`reinforcement ${r.id}: pos outside bbox`);
     if (!r.locationId && !r.pos) e(`reinforcement ${r.id}: needs locationId or pos`);
     if (!(r.atMinutes >= 0) || (Number.isFinite(t0) && Number.isFinite(t1) && r.atMinutes > (t1 - t0) / 60000)) e(`reinforcement ${r.id}: atMinutes outside scenario span`);
+    if (r.landing !== undefined) {
+      const L = r.landing;
+      if (L.kind !== 'amphibious' && L.kind !== 'airborne') e(`reinforcement ${r.id}: landing.kind must be amphibious or airborne`);
+      if (L.casualties !== undefined && !(L.casualties >= 0 && L.casualties <= 0.6)) e(`reinforcement ${r.id}: landing.casualties must be within 0..0.6`);
+      if (L.dispersionKm !== undefined && !(L.dispersionKm >= 0 && L.dispersionKm <= 100)) e(`reinforcement ${r.id}: landing.dispersionKm must be within 0..100`);
+      if (L.penaltyHours !== undefined && !(L.penaltyHours >= 0 && L.penaltyHours <= 72)) e(`reinforcement ${r.id}: landing.penaltyHours must be within 0..72`);
+      if (L.organisation !== undefined && !(L.organisation >= 0 && L.organisation <= 100)) e(`reinforcement ${r.id}: landing.organisation must be within 0..100`);
+    }
   }
+
+  if (def.captureBlockKm !== undefined && !(Number.isFinite(def.captureBlockKm) && def.captureBlockKm >= 4 && def.captureBlockKm <= 15)) e('captureBlockKm must be a number within 4..15');
+  if (def.seaSupply !== undefined && typeof def.seaSupply !== 'boolean') e('seaSupply must be boolean');
+  if (def.weatherControl !== undefined) {
+    const wc = def.weatherControl;
+    if (wc.stormScale !== undefined && !(Number.isFinite(wc.stormScale) && wc.stormScale >= 0 && wc.stormScale <= 5)) e('weatherControl.stormScale must be within 0..5');
+    const WK = ['clear', 'cloud', 'rain', 'storm', 'snow', 'fog', 'mud', 'sandstorm'];
+    if (wc.suppress !== undefined && !(Array.isArray(wc.suppress) && wc.suppress.every((k) => WK.includes(k)))) e('weatherControl.suppress must list valid weather kinds');
+  }
+  // air supremacy windows and scheduled carpet bombings (optional)
+  const spanMin = Number.isFinite(t0) && Number.isFinite(t1) ? (t1 - t0) / 60000 : Infinity;
+  for (const [k, a] of (def.airSupremacy ?? []).entries()) {
+    if (a.side !== 'axis' && a.side !== 'allies') e(`airSupremacy[${k}] side invalid`);
+    if (a.radiusKm !== undefined && !(a.radiusKm > 0 && a.radiusKm <= 500)) e(`airSupremacy[${k}] radiusKm must be within (0,500]`);
+    if (a.speedMul !== undefined && !(a.speedMul > 0 && a.speedMul <= 1)) e(`airSupremacy[${k}] speedMul must be within (0,1]`);
+    if (a.fromMinutes !== undefined && !(a.fromMinutes >= 0 && a.fromMinutes <= spanMin)) e(`airSupremacy[${k}] fromMinutes outside scenario span`);
+    if (a.toMinutes !== undefined && !(a.toMinutes > (a.fromMinutes ?? 0))) e(`airSupremacy[${k}] toMinutes must be after fromMinutes`);
+  }
+  const bombIds = new Set<string>();
+  for (const cb of def.carpetBombings ?? []) {
+    if (bombIds.has(cb.id)) e(`duplicate carpetBombing id ${cb.id}`);
+    bombIds.add(cb.id);
+    if (cb.side !== 'axis' && cb.side !== 'allies') e(`carpetBombing ${cb.id} side invalid`);
+    if (!isPos(cb.pos)) e(`carpetBombing ${cb.id} has invalid pos`);
+    else if (!inBBox(b, cb.pos)) e(`carpetBombing ${cb.id} pos outside bbox`);
+    if (!(cb.radiusKm > 0 && cb.radiusKm <= 50)) e(`carpetBombing ${cb.id} radiusKm must be within (0,50]`);
+    if (!(cb.atMinutes >= 0 && cb.atMinutes <= spanMin)) e(`carpetBombing ${cb.id} atMinutes outside scenario span`);
+    if (cb.casualtyPct !== undefined && !(cb.casualtyPct >= 0 && cb.casualtyPct <= 0.5)) e(`carpetBombing ${cb.id} casualtyPct must be within 0..0.5`);
+    if (cb.orgLoss !== undefined && !(cb.orgLoss >= 0 && cb.orgLoss <= 100)) e(`carpetBombing ${cb.id} orgLoss must be within 0..100`);
+  }
+
 
   // objectives
   const objIds = new Set<string>();
@@ -212,9 +253,11 @@ export function validateEventEffects(ev: { id: string; effects?: Record<string, 
       case 'unit_manpower': filter(fx); if (!num(fx.fraction)) err('unit_manpower needs fraction'); break;
       case 'location_owner': if (!loc(fx.locationId) || !nat(fx.owner)) err('location_owner needs a known locationId and owner'); break;
       case 'location_damage': if (!loc(fx.locationId) || !num(fx.delta)) err('location_damage needs a known locationId and delta'); break;
-      case 'weather': if (!WEATHER.includes(fx.kind as string)) err('weather needs a valid kind'); break;
+      case 'weather': if (!WEATHER.includes(fx.kind as string)) err('weather needs a valid kind'); if (fx.hours !== undefined && !(num(fx.hours) && (fx.hours as number) > 0)) err('weather hours must be a positive number'); if (fx.intensity !== undefined && !num(fx.intensity)) err('weather intensity must be a number'); break;
       case 'reinforce': if (!nat(fx.nation)) err('reinforce needs nation'); if (fx.locationId !== undefined && !loc(fx.locationId)) err('reinforce locationId unknown'); break;
       case 'port_relief': if (!loc(fx.locationId)) err(`port_relief needs a locationId that exists in the scenario (got ${String(fx.locationId)})`); if (fx.on !== undefined && typeof fx.on !== 'boolean') err('port_relief on must be boolean'); break;
+      case 'port_throughput': if (!loc(fx.locationId) || !num(fx.factor) || (fx.factor as number) < 0 || (fx.hours !== undefined && !(num(fx.hours) && (fx.hours as number) > 0))) err('port_throughput needs a known locationId, factor >= 0 and optional positive hours'); break;
+      case 'port_available': if (!loc(fx.locationId) || !num(fx.fromHour) || (fx.rampHours !== undefined && !(num(fx.rampHours) && (fx.rampHours as number) >= 0))) err('port_available needs a known locationId, fromHour and optional rampHours >= 0'); break;
       case 'log': if (typeof fx.text !== 'string' || !fx.text) err('log needs text'); break;
       default: err(`unknown effect op ${String(fx.op)}`);
     }

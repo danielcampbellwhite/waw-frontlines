@@ -36,6 +36,8 @@ export type EventId = string;
 /** Compact terrain codes stored in TerrainGrid.cells. */
 export const Terrain = {
   Sea: 0, Plains: 1, Forest: 2, Hills: 3, Mountains: 4, Marsh: 5, Urban: 6, Desert: 7, Jungle: 8, Lake: 9,
+  /** Hedgerow farmland (Normandy bocage): strong defence, slow movement, short sight. */
+  Bocage: 10,
 } as const;
 export type Terrain = (typeof Terrain)[keyof typeof Terrain];
 
@@ -185,6 +187,8 @@ export interface Location {
   throughputTonsPerDay?: number;    // ports: daily tonnage cap (sourced where possible)
   throughputTonsPerMonth?: number;  // ports: monthly tonnage cap (divided by 30)
   besiegedShare?: number;           // ports: fraction of throughput kept when besieged but sea-relieved (default 0.3)
+  availableFromHour?: number;       // ports/depots: not a supply source before this campaign hour (e.g. Mulberry)
+  rampHours?: number;               // ports/depots: throughput ramps 10%..100% over this many hours after availability/capture
   damaged?: number;         // 0..100 infrastructure damage
 }
 
@@ -220,6 +224,8 @@ export interface ReinforcementArrival {
   pos?: LonLat;
   unit: Unit;               // fully formed unit that appears
   arrived?: boolean;
+  /** amphibious or airborne arrival: losses, scatter, reduced organisation and a first-hours combat penalty (applied by src/sim/landing.ts) */
+  landing?: { kind: 'amphibious' | 'airborne'; casualties?: number; dispersionKm?: number; penaltyHours?: number; organisation?: number };
 }
 
 // ───────────────────────────── Battles / Reports ─────────────────────────────
@@ -319,6 +325,12 @@ export interface GameSettings {
 export interface SourceRef { id: string; citation: string; url?: string }
 
 /** Static campaign definition (JSON file under src/data/campaigns). Validated at load. */
+/** One scheduled heavy-bomber strike (Goodwood, Cobra): hits the OTHER side's land units around pos; postponed while the weather forbids flying (applied by src/sim/airwar.ts). */
+export interface CarpetBombing { id: string; atMinutes: number; pos: LonLat; radiusKm: number; side: SideId; casualtyPct?: number; orgLoss?: number }
+
+/** Air supremacy window: the other side's road movement within radiusKm of `side`'s land units is slowed (game-scale interdiction). */
+export interface AirSupremacy { side: SideId; radiusKm?: number; speedMul?: number; fromMinutes?: number; toMinutes?: number }
+
 export interface ScenarioDefinition {
   schema: typeof SCENARIO_SCHEMA_VERSION;
   id: string;                       // e.g. 'fall_of_france.standard'
@@ -349,6 +361,14 @@ export interface ScenarioDefinition {
   specialSystems: string[];         // e.g. ['air_war','radar'] — modular campaign mechanics
   /** Score thresholds (fraction of that side's max objective points) for each ending, per side. */
   victoryTiers?: Partial<Record<SideId, { decisive: number; strategic: number; limited: number; stalemate: number }>>;
+  /** Random-weather control: scale the weight of storms in the monthly profile (0 = no random storms) and/or replace listed kinds by 'cloud'. Scripted weather events are unaffected. Absent = unchanged. */
+  weatherControl?: { stormScale?: number; suppress?: WeatherKind[] };
+  /** Sea-fed lodgements (Normandy): coastal ports/depots held by a side count as supply sources, so a ringed beachhead is not 'cut off'. */
+  seaSupply?: boolean;
+  /** Radius (km) within which an own, non-routed combat unit stops the enemy capturing a location; default 4 (the capture radius). Normandy uses 6.5 so an outlying garrison still counts. */
+  captureBlockKm?: number;
+  airSupremacy?: AirSupremacy[];
+  carpetBombings?: CarpetBombing[];
   /** Opt-in river/lake ice (hours since scenario start). Ice exists only if iceFromHour and iceFullHour are both set. */
   iceFromHour?: number;             // ice begins to form (thin)
   iceFullHour?: number;             // ice fully load-bearing

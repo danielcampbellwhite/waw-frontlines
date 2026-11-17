@@ -14,10 +14,8 @@ export const FALL_OF_FRANCE_GER: AiDoctrine = {
   // Fall Gelb: the whole army group is on the offensive from the first hour (the first think must not wait for a reaction delay)
   phases: [{ fromMinutes: 0, posture: 'attack' }, { fromMinutes: 900 * H, posture: 'auto' }],
   armour: 'breakthrough',
-  fuelAware: true,
-  reserveFraction: 0.1,
-  aggressionBias: 0.15,
-  axisSize: 10,
+  reserveFraction: 0.15,
+  aggressionBias: 0.3,
   maxOperations: 5,
   // Schwerpunkt sequence: Meuse crossing at Sedan, the Somme/Channel, the Dunkirk pocket, then Paris and the coast
   armourObjectives: ['sedan', 'abbeville', 'dunkirk', 'paris', 'cherbourg'],
@@ -203,3 +201,49 @@ registerAiDoctrine('stalingrad', 'SOV', STALINGRAD_SOV);
 registerAiDoctrine('stalingrad', 'GER', STALINGRAD_GER);
 registerAiDoctrine('stalingrad', 'ROU', STALINGRAD_AXIS_ALLIES);
 registerAiDoctrine('stalingrad', 'ITA', STALINGRAD_AXIS_ALLIES);
+
+/**
+ * Normandy (hours from 6 June 1944 00:00 unless the scenario start says otherwise). SCAFFOLD: location ids are not filled yet
+ * (waiting for campaign-engineer's ids); the phase table and release rules are structural and data-overridable through
+ * state.special.aiDoctrine. Landings are scheduled arrivals in the data, so the AI only moves units inland from the beaches.
+ */
+const NORMANDY_COBRA_H = 49 * 24; // Operation Cobra, 25 July 1944 (D+49): to be confirmed against the campaign sources file
+
+export const NORMANDY_ALLIES: AiDoctrine = {
+  posture: 'attack',
+  // lodgement (join the beaches up, take Bayeux/Isigny/Carentan), consolidation behind the bocage, Charnwood/Goodwood at Caen, then Cobra
+  phases: [{ fromMinutes: 0, posture: 'attack' }],
+  armour: 'balanced',
+  reserveFraction: 0.2,
+  aggressionBias: 0.1,
+  maxOperations: 5,
+  ratioToAttack: 1.8, // Allied firepower, air supremacy and naval gunfire carry attacks the bare force ratio would not
+  holdLocations: [], // no garrison draft on the beaches: the army must go inland (the Mulberry is held by the beachhead itself)
+  captureLocations: ['bayeux', 'isigny', 'carentan', 'carpiquet', 'cherbourg', 'saint_lo', 'caen', 'avranches'],
+  locationWeights: { cherbourg: 3, carentan: 1.5 }, // VII Corps' Cotentin drive is the first operational priority after the lodgement
+  // historical pacing (campaign start 6 Jun 00:00): Bayeux 7 Jun, Isigny 9 Jun, Carentan 12 Jun, Cherbourg 26 Jun (h480),
+  // Carpiquet/Caen 4-21 Jul (h700-1100), St-Lo 18 Jul (h1000), Avranches 31 Jul (Cobra, D+49 h1176)
+  objectiveSchedule: { ...sched(0, 'bayeux'), ...sched(48, 'isigny'), ...sched(96, 'carentan'), ...sched(240, 'cherbourg'), ...sched(1000, 'carpiquet'), ...sched(1060, 'caen'), ...sched(1150, 'saint_lo'), ...sched(NORMANDY_COBRA_H + 24, 'avranches') },
+  armourObjectives: ['cherbourg', 'caen', 'avranches'],
+};
+
+export const NORMANDY_GER: AiDoctrine = {
+  posture: 'defend',
+  armour: 'reserve', // panzers are the counter-attack reserve, not a breakthrough force
+  reserveFraction: 0.3,
+  maxOperations: 4,
+  // bocage defence in depth around the key towns; sticky garrisons keep units on them
+  holdLocations: ['caen', 'cherbourg', 'saint_lo', 'carentan', 'bayeux', 'avranches'],
+  locationWeights: { caen: 2.5, cherbourg: 2, carentan: 1.5, saint_lo: 1.5 },
+  // the panzer reserve is held back until OKW releases it (12th SS Hitlerjugend 7 Jun, Panzer Lehr 8 Jun): data-overridable
+  reserveReleases: [
+    { match: '12ss', fromMinutes: 24 * H },
+    { match: '12. ss', fromMinutes: 24 * H },
+    { match: 'hitlerjugend', fromMinutes: 24 * H },
+    { match: 'panzer lehr', fromMinutes: 48 * H },
+    { match: 'panzer-lehr', fromMinutes: 48 * H },
+  ],
+};
+
+for (const n of ['USA', 'GBR', 'CAN', 'POL', 'FRA'] as const) registerAiDoctrine('normandy', n, NORMANDY_ALLIES);
+registerAiDoctrine('normandy', 'GER', NORMANDY_GER);

@@ -12,6 +12,7 @@ const id = process.argv[2] ?? 'ardennes';
 const kinds = process.argv.slice(3).length ? process.argv.slice(3) : ['rivers'];
 const R = REGIONS[id];
 const NAMES = {
+  normandy: ['Orne', 'Vire', 'Douve', 'Douves', 'Gorget', 'Taute', 'Dives', 'Seine', 'Touques', 'Aure', 'Seulles', 'Odon', 'Merderet', 'Taute', 'Sée', 'Sélune', 'Risle', 'Divette', 'Dromme', 'Lézarde', 'Sienne', 'Soulles', 'Ouve', 'Laize', 'Noireau', 'Muance', 'Mue', 'Thar', 'Couesnon', 'Ay', 'Rouvre', 'Orne Saosnoise'],
   stalingrad: ['Чир', 'Мышкова', 'Аксай Есауловский', 'Аксай', 'Карповка', 'Ахтуба', 'Медведица', 'Иловля', 'Сал', 'Дон', 'Волга', 'Донская Царица', 'Царица', 'Бузулук', 'Хопёр', 'Цимла', 'Червлёная'],
   ardennes: ['Ourthe', 'Ourthe Orientale', 'Ourthe Occidentale', 'Salm', 'Amblève', 'Amel', 'Our', 'Sûre', 'Sauer', 'Semois', 'Lesse', 'Vesdre', 'Rur', 'Roer', 'Wiltz', 'Clerve', 'Clerf', 'Alzette', 'Kyll', 'Prüm', 'Urft', 'Inde', 'Wurm', 'Warche', 'Lienne', 'Moselle', 'Mosel', 'Meuse', 'Maas', 'Sambre', 'Rhein', 'Ahr', 'Erft'],
 };
@@ -19,18 +20,19 @@ if (!R || (kinds.includes('rivers') && !NAMES[id])) { console.error('no OSM rive
 const B = R.bbox;
 const bb = `(${B.south},${B.west},${B.north},${B.east})`;
 const QUERIES = {
-  rivers: `[out:json][timeout:90];(way["waterway"="river"]["name"~"^(${(NAMES[id] ?? []).join('|')})$"]${bb};);out geom;`,
+  rivers: `[out:json][timeout:90];(way["waterway"="river"]["name"~"^((L'|La |Le |Les )?(${(NAMES[id] ?? []).join('|')}))$"]${bb};);out geom;`,
   // desert tracks / named historic routes (Trigh Capuzzo, Trigh el Abd, Via Balbia ...) as mapped today
   tracks: `[out:json][timeout:120];(way["highway"]["name"~"Trigh|Tariq|Balbia|Capuzzo|el Abd",i]${bb};way["highway"]["name:en"~"Trigh|Balbia|Capuzzo",i]${bb};);out geom;`,
   // present-day road / rail network (NOT 1944): trunk/primary/secondary roads (no motorways), main-line and branch railways
   roads: `[out:json][timeout:180][maxsize:1000000000];(way["highway"~"^(trunk|primary|secondary)$"]${bb};);out geom qt;`,
   rail: `[out:json][timeout:180][maxsize:1000000000];(way["railway"="rail"]["service"!~"."]${bb};);out geom qt;`,
 };
-const endpoints = ['https://overpass-api.de/api/interpreter', 'https://overpass.kumi.systems/api/interpreter', 'https://overpass.private.coffee/api/interpreter', 'https://maps.mail.ru/osm/tools/overpass/api/interpreter'];
+const endpoints = (process.env.OSM_MIRRORS_FIRST ? ['https://overpass.kumi.systems/api/interpreter', 'https://overpass.private.coffee/api/interpreter', 'https://overpass-api.de/api/interpreter', 'https://maps.mail.ru/osm/tools/overpass/api/interpreter'] : ['https://overpass-api.de/api/interpreter', 'https://overpass.kumi.systems/api/interpreter', 'https://overpass.private.coffee/api/interpreter', 'https://maps.mail.ru/osm/tools/overpass/api/interpreter']);
 // Heavy kinds are fetched in 1-degree tiles with polite delays and merged (dedup by way id); partial progress is cached per tile.
 const TILE = 1;
 const tileQuery = (kind, t) => {
   const tb = `(${t.s},${t.w},${t.n},${t.e})`;
+  if (kind === 'rivers') return `[out:json][timeout:60];way["waterway"="river"]["name"~"^((L'|La |Le |Les )?(${(NAMES[id] ?? []).join('|')}))$"]${tb};out geom;`;
   if (kind === 'roads') return `[out:json][timeout:60];way["highway"~"^(trunk|primary|secondary)$"]${tb};out geom qt;`;
   if (kind === 'rail') return `[out:json][timeout:60];way["railway"="rail"][!"service"]${tb};out geom qt;`;
   return null;
@@ -55,7 +57,7 @@ let failed = 0;
 for (const kind of kinds) {
   const file = path.join(here, 'cache', `osm_${id}_${kind}.json`);
   if (fs.existsSync(file)) { console.log('cached', kind); continue; }
-  if (kind === 'rivers' || kind === 'tracks') { // small bounded queries
+  if (kind === 'tracks' || (kind === 'rivers' && !R.tiledRivers)) { // small bounded queries
     const text = await post(QUERIES[kind]);
     if (text) { fs.writeFileSync(file, text); console.log('saved', kind); } else { failed++; console.log('unavailable', kind); }
     continue;

@@ -11,6 +11,8 @@ export const CLC = {
 };
 export const FOREST = new Set([311, 312, 313]);
 export const URBAN = new Set([111, 112]);
+/** hedged mixed farmland: complex cultivation patterns, agriculture with significant natural vegetation, agro-forestry (bocage hint) */
+export const BOCAGE = new Set([242, 243, 244]);
 export const MARSH = new Set([411, 412, 421]);
 const exact = new Map(Object.entries(CLC).map(([k, v]) => [(v[0] << 16) | (v[1] << 8) | v[2], +k]));
 /** class code for an RGB pixel, or 0 when it does not match any legend colour within tolerance */

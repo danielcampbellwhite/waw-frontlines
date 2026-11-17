@@ -74,5 +74,24 @@
    "land": "basemap_land_stalingrad.json",
    "lakes": "basemap_lakes_stalingrad.json"
   }
+ },
+ {
+  "id": "normandy",
+  "title": "Normandy (Operation Overlord)",
+  "bbox": {
+   "west": -2.6,
+   "south": 48.4,
+   "east": 0.8,
+   "north": 51
+  },
+  "cellDeg": 0.02,
+  "files": {
+   "terrain": "terrain_normandy.json",
+   "infra": "infra_normandy.json",
+   "cities": "cities_normandy.json",
+   "boundaries": "boundaries_normandy.json",
+   "land": "basemap_land_normandy.json",
+   "lakes": "basemap_lakes_normandy.json"
+  }
  }
 ]

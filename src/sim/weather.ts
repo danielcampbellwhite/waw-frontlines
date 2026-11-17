@@ -24,13 +24,15 @@ function pick(items: [WeatherKind, number][], r: number): WeatherKind {
 export function rollWeather(scenario: ScenarioDefinition, minutes: number, prev: WeatherKind | undefined, ctx: Pick<SimContext, 'rand' | 'gauss'>): WeatherState {
   const prof = scenario.weatherProfile.find((p) => p.month === monthAt(scenario, minutes));
   const probs = prof?.probs && Object.keys(prof.probs).length ? prof.probs : FALLBACK;
-  const items = (Object.entries(probs) as [WeatherKind, number][]).filter(([, w]) => w > 0);
+  const wc = scenario.weatherControl;
+  const items = (Object.entries(probs) as [WeatherKind, number][]).map(([k, w]): [WeatherKind, number] => [k, k === 'storm' && wc?.stormScale !== undefined ? w * wc.stormScale : w]).filter(([, w]) => w > 0);
   let kind = pick(items.length ? items : [['clear', 1]], ctx.rand());
   const temperatureC = (prof?.tempC ?? 12) + ctx.gauss() * 3;
   if (kind === 'rain' && temperatureC <= 0) kind = 'snow';
   else if (kind === 'snow' && temperatureC >= 3) kind = 'rain';
   // ground saturates after rain: if the profile admits mud, rain/storm is often followed by mud
   if ((prev === 'rain' || prev === 'storm') && (kind === 'clear' || kind === 'cloud') && (probs.mud ?? 0) > 0 && temperatureC > 1 && ctx.rand() < 0.45) kind = 'mud';
+  if (wc?.suppress?.includes(kind)) kind = 'cloud';
   const intensity = Math.round((0.3 + 0.7 * ctx.rand()) * 100) / 100;
   const hours = 12 + Math.floor(ctx.rand() * 36);
   return { kind, intensity, temperatureC: Math.round(temperatureC * 10) / 10, nextChangeMinutes: minutes + hours * 60 };

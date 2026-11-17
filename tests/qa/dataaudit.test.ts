@@ -5,7 +5,7 @@ import { haversineKm } from '../../src/core/geo';
 import { getScenarioSidecar, loadWorld } from './harness';
 import { mulberry } from './util';
 
-const IDS = ['fall_of_france.standard', 'fall_of_france.short', 'bulge.short', 'crusader.short', 'stalingrad.short'];
+const IDS = ['fall_of_france.standard', 'fall_of_france.short', 'bulge.short', 'crusader.short', 'stalingrad.short', 'normandy.short'];
 
 function terrainAtPos(w: ReturnType<typeof loadWorld>, p: [number, number]): number {
   const t = w.terrain; const c = Math.floor((p[0] - t.bbox.west) / t.cellDeg), r = Math.floor((t.bbox.north - p[1]) / t.cellDeg);

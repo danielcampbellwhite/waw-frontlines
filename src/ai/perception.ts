@@ -44,6 +44,8 @@ export interface AiMemory {
   staged?: Record<string, number>;
   opTargets?: Record<string, number>;
   axisGroup?: string[];
+  /** unit id -> hold location id it was assigned to (sticky garrison) */
+  garrison?: Record<string, string>;
   /** national fuel pool at the first think (reference for fuel stress) */
   fuel0?: number;
   /** minute at which a fixing attack was first ordered for a thrust destination (key: rounded lon,lat) */

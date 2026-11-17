@@ -33,14 +33,22 @@ export interface MilitarySpecial {
   enclosed: Record<string, number>;
   /** Besieged ports currently relieved by sea (set by events via setPortRelief). */
   portRelief: Record<string, boolean>;
+  /** Temporary throughput multipliers per location (storm damage, repair), optionally until a game minute. */
+  portMods: Record<string, { factor: number; untilMinutes?: number }>;
+  /** Runtime availability overrides per location: usable from `fromMinutes`, ramping up over `rampHours`. */
+  availability: Record<string, { fromMinutes: number; rampHours: number }>;
+  /** Tonnage each source served on the current game day (resets at midnight); read by portStatus. */
+  portUse: Record<string, { day: number; tons: number }>;
   /** Arrivals postponed because their location was lost (log once). */
   warned: Record<string, boolean>;
+  /** Position each unit had at the previous stats update (displacement drives entrenchment loss). */
+  statPos: Record<string, [number, number]>;
 }
 
 export function milSpecial(state: GameState): MilitarySpecial {
   let m = state.special['military'] as MilitarySpecial | undefined;
   if (!m) {
-    m = { lineDamage: {}, lastOwner: {}, capturedAt: {}, opIssued: {}, prevCutOff: [], airlift: {}, enclosed: {}, portRelief: {}, warned: {} };
+    m = { lineDamage: {}, lastOwner: {}, capturedAt: {}, opIssued: {}, prevCutOff: [], airlift: {}, enclosed: {}, portRelief: {}, warned: {}, statPos: {}, portMods: {}, availability: {}, portUse: {} };
     state.special['military'] = m;
   }
   m.lineDamage ??= {};
@@ -52,6 +60,10 @@ export function milSpecial(state: GameState): MilitarySpecial {
   m.enclosed ??= {};
   m.portRelief ??= {};
   m.warned ??= {};
+  m.statPos ??= {};
+  m.portMods ??= {};
+  m.availability ??= {};
+  m.portUse ??= {};
   return m;
 }
 

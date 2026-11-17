@@ -63,7 +63,15 @@ export interface AiDoctrine {
   maxOperations?: number;
   /** Size of the persistent armoured Schwerpunkt group (default 6). */
   axisSize?: number;
+  /**
+   * Reserve release rules: units whose id or name contains `match` (case-insensitive) are held back in place (dug in, no tasks)
+   * until `fromMinutes` is reached OR the event template `eventId` has fired for the own side/any side (e.g. the German panzer
+   * reserve released by Hitler/OKW on 7-8 June). At least one of the two triggers is required.
+   */
+  reserveReleases?: ReserveRelease[];
 }
+
+export interface ReserveRelease { match: string; fromMinutes?: number; eventId?: string }
 
 export interface ResolvedDoctrine {
   posture: AiPosture | 'auto';
@@ -89,6 +97,7 @@ export interface ResolvedDoctrine {
   redeployAir: boolean;
   fuelAware: boolean;
   pocketLocations: LocationId[];
+  reserveReleases: ReserveRelease[];
 }
 
 export const DEFAULT_DOCTRINE: ResolvedDoctrine = {
@@ -115,6 +124,7 @@ export const DEFAULT_DOCTRINE: ResolvedDoctrine = {
   redeployAir: true,
   fuelAware: false,
   pocketLocations: [],
+  reserveReleases: [],
 };
 
 const POSTURES = ['attack', 'defend', 'withdraw', 'consolidate'];
@@ -124,7 +134,7 @@ const strArr = (x: unknown): string[] => (Array.isArray(x) ? x.filter((s): s is 
 
 /** Read & sanitise the doctrine for a nation from scenario-supplied special data. */
 export function resolveDoctrine(state: Readonly<GameState>, nation: NationId): ResolvedDoctrine {
-  const d: ResolvedDoctrine = { ...DEFAULT_DOCTRINE, phases: [], holdLocations: [], captureLocations: [], locationWeights: {}, fallbackLocations: [], objectiveSchedule: {}, armourObjectives: [], pocketLocations: [] };
+  const d: ResolvedDoctrine = { ...DEFAULT_DOCTRINE, phases: [], holdLocations: [], captureLocations: [], locationWeights: {}, fallbackLocations: [], objectiveSchedule: {}, armourObjectives: [], pocketLocations: [], reserveReleases: [] };
   const all = state.special?.aiDoctrine as Record<string, unknown> | undefined;
   let raw = (all && typeof all === 'object' ? all[nation] ?? all['*'] : undefined) as Record<string, unknown> | undefined;
   if (!raw) {
@@ -163,6 +173,11 @@ export function resolveDoctrine(state: Readonly<GameState>, nation: NationId): R
   if (typeof raw.fuelAware === 'boolean') d.fuelAware = raw.fuelAware;
   d.pocketLocations = strArr(raw.pocketLocations);
   if (isNum(raw.maxOperations)) d.maxOperations = clamp(Math.floor(raw.maxOperations), 0, 8);
+  if (Array.isArray(raw.reserveReleases)) {
+    d.reserveReleases = (raw.reserveReleases as Record<string, unknown>[])
+      .filter((r) => r && typeof r.match === 'string' && r.match.length > 0 && (isNum(r.fromMinutes) || typeof r.eventId === 'string'))
+      .map((r) => ({ match: (r.match as string).toLowerCase(), fromMinutes: isNum(r.fromMinutes) ? r.fromMinutes : undefined, eventId: typeof r.eventId === 'string' ? r.eventId : undefined }));
+  }
   if (isNum(raw.axisSize)) d.axisSize = clamp(Math.floor(raw.axisSize), 2, 16);
   return d;
 }

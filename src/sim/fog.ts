@@ -13,8 +13,8 @@ export const DETECTION_KM: Record<UnitType, number> = {
   infantry: 10, paratroop: 10, engineer: 8, artillery: 8, antitank: 9, armoured: 14, mechanised: 13, motorised: 12,
   recon: 35, hq: 15, logistics: 5, naval: 30, carrier: 40, air_fighter: 50, air_bomber: 40,
 };
-// Terrain concealment of the TARGET cell: Sea, Plains, Forest, Hills, Mountains, Marsh, Urban, Desert, Jungle, Lake
-const CONCEAL = [1.1, 1, 0.6, 0.85, 0.8, 0.8, 0.55, 1.1, 0.45, 1];
+// Terrain concealment of the TARGET cell: Sea, Plains, Forest, Hills, Mountains, Marsh, Urban, Desert, Jungle, Lake, Bocage
+const CONCEAL = [1.1, 1, 0.6, 0.85, 0.8, 0.8, 0.55, 1.1, 0.45, 1, 0.5];
 const WEATHER_VIS: Record<WeatherKind, number> = { clear: 1, cloud: 0.95, rain: 0.75, storm: 0.5, snow: 0.6, fog: 0.35, mud: 0.9, sandstorm: 0.4 };
 const SIDES: SideId[] = ['allies', 'axis'];
 const alive = (u: Unit) => !u.destroyed && !u.surrendered;

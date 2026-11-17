@@ -4,7 +4,7 @@ import { loadWorld, mkEngine } from './harness';
 
 const CASES: [string, NationId[]][] = [
   ['fall_of_france.standard', ['GER', 'FRA', 'GBR']], ['bulge.short', ['GER', 'USA', 'GBR']],
-  ['crusader.short', ['GER', 'GBR', 'ITA']], ['stalingrad.short', ['SOV', 'GER']],
+  ['crusader.short', ['GER', 'GBR', 'ITA']], ['stalingrad.short', ['SOV', 'GER']], ['normandy.short', ['USA', 'GBR', 'CAN', 'GER']],
 ];
 
 describe('event side-gating', () => {

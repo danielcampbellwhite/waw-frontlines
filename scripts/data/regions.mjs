@@ -30,6 +30,9 @@ export const REGIONS = {
     urbanPlacePop: 20000,
     cityMinPop: 1000,
     roadTypes: ['Major Highway', 'Secondary Highway'],
+    useOsmRail: false,       // OSM rail available (cache/osm_ardennes_rail.json) but OFF: it changed Bulge tick cost (+17-50%) and balance (see HISTORICAL_SOURCES Map data); Natural Earth rail (221) is what the balance was tuned on
+    railUsage: ['main'],     // OSM mainline only (branch/industrial/tourism dropped)
+    railQuantDeg: 0.01,      // parallel tracks within ~1 km collapse to one line
     files: { terrain: 'terrain_ardennes.json', infra: 'infra_ardennes.json', cities: 'cities_ardennes.json', boundaries: 'boundaries_ardennes.json', land: 'basemap_land_ardennes.json', lakes: 'basemap_lakes_ardennes.json' },
   },
   northafrica: {
@@ -72,6 +75,31 @@ export const REGIONS = {
     sabkhaElev: -1000,       // lowland east of the Volga is dry (below sea level): no low-and-flat marsh rule, wetland cover only
     forestFrac: 0.2,         // shelterbelts and river-valley woods are small
     files: { terrain: 'terrain_stalingrad.json', infra: 'infra_stalingrad.json', cities: 'cities_stalingrad.json', boundaries: 'boundaries_stalingrad.json', land: 'basemap_land_stalingrad.json', lakes: 'basemap_lakes_stalingrad.json' },
+  },
+  normandy: {
+    id: 'normandy',
+    title: 'Normandy (Operation Overlord)',
+    bbox: { west: -2.6, south: 48.4, east: 0.8, north: 51 }, // north to the English embarkation ports (Southampton, Portsmouth, Poole, Weymouth/Portland, Newhaven); west to Weymouth
+    cellDeg: 0.02,
+    demZoom: 9,
+    rasterRes: 0.004,
+    simplify: 0.0012,
+    hillMean: 250,           // bocage country is rolling 50-250 m; Suisse Normande, Mont Pincon (362 m) and the Cotentin ridges are the real hills
+    hillReliefPerKm: 40,
+    // Port/city anchors (lon, lat) forced to Urban land. Coordinates from the English Wikipedia coordinates API (page coordinates, retrieved for this project), not hand-entered
+    anchors: [['Cherbourg', -1.625, 49.639, 'port'], ['Le Havre', 0.1, 49.49, 'port'], ['Caen', -0.3636, 49.1814, 'city'], ['Granville', -1.5939, 48.8374, 'port'], ['Arromanches-les-Bains', -0.6211, 49.34, 'port'], ['Port-en-Bessin-Huppain', -0.7539, 49.345, 'port'],
+      // English embarkation ports (English Wikipedia coordinates API, same retrieval): same-side supply sources
+      ['Southampton (Port of Southampton)', -1.3968, 50.8965, 'port'], ['Portsmouth', -1.0872, 50.8058, 'port'], ['Poole', -1.9833, 50.7167, 'port'], ['Weymouth', -2.4547, 50.6097, 'port'], ['Portland Harbour', -2.445, 50.585, 'port'], ['Newhaven (Port of Newhaven)', 0.0544, 50.7896, 'port'], ['Newhaven (town point)', 0.06, 50.8, 'port'], ['Southampton (town point)', -1.4042, 50.9025, 'port']],
+    bocageCountries: ['FRA'], // Bocage only on French cells (the hedgerow proxy is calibrated for Normandy); English hedged farmland stays Plains
+    urbanPlacePop: 20000,
+    cityMinPop: 1500,
+    roadTypes: ['Major Highway', 'Secondary Highway'],
+    tiledRivers: true,       // Overpass river query is run per 1-degree tile (the whole-bbox query times out)
+    marshNearRiver: { maxElevM: 5, maxReliefM: 12 }, // Carentan/Douve/Taute, Dives, Orne flats
+    bocageFrac: 0.6,
+    bocageCodes: [231, 242, 243, 244], // Terrain.Bocage where >= 40% of a cell is pasture (231) / complex cultivation (242) / farmland with natural vegetation (243) / agroforestry (244). CORINE has no hedge class: pastures are overwhelmingly hedged bocage in Cotentin, Bessin, Suisse Normande, but this is a PROXY
+    beachFlag: { maxElevM: 20, maxReliefM: 35 }, // flag bit 8: low flat land-cell on the open coast (landing-beach candidate, NOT historical beach boundaries)
+    files: { terrain: 'terrain_normandy.json', infra: 'infra_normandy.json', cities: 'cities_normandy.json', boundaries: 'boundaries_normandy.json', land: 'basemap_land_normandy.json', lakes: 'basemap_lakes_normandy.json' },
   },
 };
 export const regionIds = Object.keys(REGIONS);

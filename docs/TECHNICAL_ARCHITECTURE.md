@@ -52,6 +52,13 @@ export function processReinforcements(state: GameState): void;
 export function updateSupply(state: GameState, ctx: SimContext): void;
 export function updateUnitStats(state: GameState, ctx: SimContext): void;
 export function createUnitFromTemplate(templateId: string, overrides: Partial<Unit>): Unit;
+// Military logistics read/event hooks (src/military/index.ts). Reads are pure (never mutate state); writes are for events.
+export function portCapacity(state: GameState, locationId: string): PortStatus | null;   // { tonsPerDay, usedTodayTons, remainingTonsToday, operational, availability, besieged }; null if not a port
+export function operationalPorts(state: GameState, side: SideId): PortStatus[];          // operational ports of a side, sorted by location id
+export function setPortRelief(state: GameState, locationId: string, relieved: boolean): void;                     // besieged port relieved by sea
+export function setLocationThroughputFactor(state: GameState, locationId: string, factor: number, hours?: number): void; // storm damage / repair (factor 1 clears)
+export function setLocationAvailableFrom(state: GameState, locationId: string, fromHour: number, rampHours?: number): void; // temporary ports (Mulberry), ramp-up
+// Location data fields read by logistics: airliftTonsPerDay, throughputTonsPerDay/Month, besiegedShare, availableFromHour, rampHours
 
 // src/ai/index.ts (AI owns)
 export function aiThink(state: Readonly<GameState>, nation: NationId, ctx: SimContext): Command[];   // pure: returns commands

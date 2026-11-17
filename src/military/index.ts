@@ -9,11 +9,12 @@ export { applyCommand, isImmobilised, estimateEtaMinutes, issueOrders, validateO
 export { processReinforcements } from './reinforcements';
 export { createUnitFromTemplate } from './units';
 export {
-  SUPPLY_INTERVAL_TICKS, TONS_PER_POINT, sourcesForSide, isPortBesieged, setPortRelief, airliftFraction, damageInfra, damageLocation, isCutOff, supplyLevelFromDistance, weatherSupplyFactor,
+  SUPPLY_INTERVAL_TICKS, TONS_PER_POINT, sourcesForSide, isPortBesieged, setPortRelief, setLocationThroughputFactor, portCapacity, operationalPorts, isSeaSupplied, setLocationAvailableFrom, locationAvailability, airliftFraction, damageInfra, damageLocation, isCutOff, supplyLevelFromDistance, weatherSupplyFactor,
 } from './logistics';
 export { combatEffectiveness, computeReadiness, strengthFraction, equipmentFraction } from './stats';
 export { UNIT_TEMPLATES, EQUIPMENT, getTemplate, templateForType, equipmentDef } from './catalog';
 export type { UnitTemplate, EquipmentDef, CombatRatings } from './catalog';
+export type { PortStatus } from './logistics';
 export type { MilitaryContext } from './context';
 
 export function processOrders(state: GameState, ctx: MilitaryContext): void { processOrdersImpl(state, ctx); }

@@ -146,3 +146,44 @@ All fields used by doctrines.ts exist in AiDoctrine; every location id in armour
 # Start-supply check (2026-11-16)
 - **R3 resolved**: Stalingrad as SOV idle (seeds 1 and 3): 0 Soviet land units cut off at h2, h24 and h100 (the 28th Army included).
 - **SS1 (Medium, campaign)**: fall_of_france.short as GER idle: 7 of 24 axis land units cut off at tick 24 (ger.id.008, ger.id.028, ger.id.033, ger.pz.003, ger.pz.004, ger.pz.005, ger.pz.007), 0 at ticks 1 and 2 (the ring/debounce needs a few supply updates to show). fall_of_france.standard, Bulge, Crusader and Stalingrad start with at most 2 cut off per side for every nation. New test tests/qa/startsupply.test.ts fails for this one case until the short scenario's panzer start positions or supply sources are fixed.
+
+# Sweep after entrenchment/garrison changes (2026-11-16, 23:00 tree)
+- **SS1 resolved**: fall_of_france.short start supply (startsupply test passes for all scenarios).
+- **B7 (balance, ai-events, noted)**: Bulge AI vs AI: Elsenborn Ridge held about 3 of 5 seeds and Bastogne 3 of 5 (ai-events measurement); seeds 2 and 3 collapse to Axis points 890-1040. Germany loses outright in 2 of 5 QA AI-vs-AI seeds.
+- **F1 (Low, balance, ai-events)**: Fall of France German AI vs passive France: seed 4 scores 500 (Paris not taken by tick 1104). Paris timing is tick 960-1080 on the other seeds, so the German pace is within about 25 ticks of the deadline; seed 4 is the tail. Not caused by garrison code (removed from tree; same result before).
+- **F2 (Low, balance)**: Crusader passive is stalemate in 15 of 15; Stalingrad Soviet AI never reaches decisive and passive GER rarely loses.
+- **N1 (in flight, owners)**: 18 failing tests in Normandy work (data.fields, data.validator, events Great Storm, map_terrain bocage, military.logistics temporary ports, sim.combat naval gunfire, sim.movement landings). Re-sweep after those land.
+
+# Close-outs recorded (2026-11-16)
+- **B7 (balance, noted)**: Elsenborn held 1-3 of 5 in AI vs AI (chaotic across code revisions; frozen-copy runs are identical); a human defender can hold. Bastogne 5/5, Axis 740/260/360/590/460 on a frozen copy.
+- **F1 (balance, variance)**: Fall of France passive France seed 4 scores 500, below the 600 floor of tests/ai.campaign (variance in Paris timing).
+- **Process**: `src/sim/garrison.ts` is not in the tree and `engine.ts` does not reference it (military's stats.ts change covers it; measured a no-op). QA sweeps run without it. Balance measurements should be done on a frozen copy of the tree; recipe in TESTING_REPORT.
+
+# Normandy (2026-11-16)
+- **N2 (High, ai-events, balance)**: Allied AI never achieves a lodgement in normandy.short: USA/GBR/CAN defeat 5/5 passive and AI vs AI, GER decisive 5/5. Caen, Cherbourg, St-Lo stay German all campaign; Cherbourg (26 Jun) and Cobra (25 Jul) never happen. Probably no Allied Normandy doctrine.
+- **N3 (Medium, military)**: sea-supplied beachhead units are reported `isCutOff` for the whole campaign (14/14 at tick 24, 34/34 at the end) while their supply is 61-95. tests/qa/startsupply fails for normandy until beach/sea-supplied units stop counting as cut off.
+- **N4 (Low, military)**: port-capacity-aware reinforcement is not implemented (arrivals ignore port throughput).
+- **N5 (Low, campaign)**: Mulberry A storm factor 0.1 has no duration or repair event (consistent with M08 'abandoned').
+- Verified OK: D-Day arrivals on time (20 by h36), none on water, storm weather and throughput drop at h312, save/load mid-storm, event gating, tick cost 4.6 ms.
+
+## Normandy AI balance (ai-events-engineer)
+- AI-vs-AI (US AI vs engine German AI, 1,320+ ticks) the Axis score is bimodal (0 / 250 / 400 / 650) because hold objectives are all-or-nothing at the end: when the Allies finish the job the Axis scores 0, when they stall it keeps 400-800. Accepted; no pro-rata scoring.
+- Allied pace is set by `ratioToAttack` 1.8 in src/ai/doctrines.ts (NORMANDY_ALLIES); it now also scales with difficulty and the AI aggression slider (easy slower, hard faster; neutral at normal / 0.5). Results swing on seed noise between 1.5 and 2.0.
+- Cherbourg falls late or rarely (h460-888 on 4 of 5 seeds), Caen between h744 and h1200, Carentan after h100, Cobra reaches Avranches on about 2 of 5 seeds.
+- There is no dedicated German 21st Panzer counter-attack behaviour: the Germans defend with sticky garrisons; 12th SS (h24) and Panzer Lehr (h48) are released via `reserveReleases`.
+- Date-gates (`objectiveSchedule`) only pace the AI's chosen objectives; units can still capture a gated location in passing.
+- Normandy needs `seaSupply: true` in the scenario (otherwise the beachhead is flagged encircled/cut off and the Allied AI stalls at morale 0).
+
+## Elsenborn / Bulge AI-vs-AI (ai-events-engineer)
+- Elsenborn is held on about 1-3 of 5 AI-vs-AI seeds (chaotic); Bastogne held on most. A human defender can hold the ridge.
+- Update: N2 (no Allied lodgement) is fixed by the Normandy doctrine plus `seaSupply`; N4 (port-capacity-aware reinforcement) is implemented in planReinforcements (src/ai/index.ts) and tested in tests/ai.normandy.test.ts.
+
+# Normandy re-run (2026-11-17)
+- **N2 resolved** (Allied AI now lodges: USA/GBR AI vs AI strategic x4 and decisive x1 each); **N3 resolved** (startsupply passes for normandy); **N4 resolved** (AI reinforcement requests are port-capacity aware: tests/qa/portreinf.test.ts).
+- **P1 (in flight)**: 4 failing tests from new owner changes: ai.normandy doctrine scaffold (69120 vs 72000), data.fields captureBlockKm x2, sim.capture captureBlockKm (expected GER, got FRA).
+- **P2 (balance, Low)**: Normandy CAN AI vs AI is spread across all endings (defeat 1 to decisive 1); GER AI defeat x4.
+
+## AI regression check after the capture-block fix (ai-events-engineer)
+- With sim-engineer's captureBlockKm change (default 4 km, 6.5 km opt-in; Normandy sets 6.5) the AI numbers are back to the known-good values: Bulge AI-vs-AI Axis 740/260/360/590/460 (Elsenborn held 3/5, Bastogne 5/5), FoF passive France 750/675/750/500/750, FoF AI-as-France 675/425/425/325/675, Crusader Axis 230-330, Stalingrad Axis 220-470.
+- Normandy (captureBlockKm 6.5, seaSupply true), engine AI vs a passive human, 5 seeds: passive German player Axis 0 on all 5 (Allies 820-970; Cherbourg falls h380-456, Caen h516-1136); passive US player Axis 550/0/550/650/900 (the engine GBR/CAN AI plus idle US units: Cherbourg falls h488-1064 on 4 of 5). The shipped Allied AI therefore beats a passive German player every time; a human German defender is expected to do better than the AI German garrisons.
+- Normandy passive German player (engine Allied AI, 5 seeds, captureBlockKm 6.5): Axis 0 on every seed. Cherbourg falls h380-456, Caen h516 on one seed and h1130-1136 on the others, St-Lô at h388 on one seed (a passing capture that bypasses its objective gate). The captureBlockKm regression (6.5 km block hiding capture changes in Bulge/FoF) is fixed: the block is now opt-in (default 4 km) and only Normandy sets 6.5.

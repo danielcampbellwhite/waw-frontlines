@@ -313,7 +313,9 @@ describe('unit stats', () => {
     for (let i = 0; i < 10; i++) updateUnitStats(s, c);
     expect(s.units.i.entrenchment).toBeGreaterThanOrEqual(35);
     const e = s.units.i.entrenchment;
+    s.units.i.posture = 'hold';
     s.units.i.moveStatus = 'moving';
+    s.units.i.pos = [3.1, 50]; // marched ~7 km this tick
     updateUnitStats(s, c);
     expect(s.units.i.entrenchment).toBeLessThan(e);
   });
@@ -341,6 +343,21 @@ describe('unit stats', () => {
     expect(u.organisation).toBeGreaterThan(40);
     expect(u.morale).toBeGreaterThan(15);
     expect(u.fatigue).toBeLessThan(77);
+  });
+  it('entrenchment is lost only by real displacement or retreat, not by a standing moving/attack flag', () => {
+    const mk = (id: string, o: Record<string, unknown>) => makeUnit('infantry', id, 'USA', [3, 50], { entrenchment: 60, ...o } as never);
+    const s = makeState({ units: [mk('held', { moveStatus: 'moving' }), mk('atk', { posture: 'attack' }), mk('march', { moveStatus: 'moving' }), mk('retreat', { moveStatus: 'retreating' }), mk('slow', { moveStatus: 'moving' })] });
+    updateUnitStats(s, ctx()); // records start positions
+    for (const id of ['held', 'atk', 'march', 'retreat', 'slow']) s.units[id].entrenchment = 60;
+    s.units.march.pos = [3.1, 50]; // ~7 km
+    s.units.slow.pos = [3.0, 50.0135]; // ~1.5 km
+    updateUnitStats(s, ctx());
+    expect(s.units.held.entrenchment).toBe(60);
+    expect(s.units.atk.entrenchment).toBe(60);
+    expect(s.units.march.entrenchment).toBe(52);
+    expect(s.units.retreat.entrenchment).toBe(52);
+    expect(s.units.slow.entrenchment).toBeGreaterThan(52);
+    expect(s.units.slow.entrenchment).toBeLessThan(60);
   });
   it('combat burns ammo (artillery more) and the line is resupplied only slowly; marching tires units', () => {
     const s = makeState({ units: [makeUnit('artillery', 'a', 'FRA', [3, 50], { inBattle: 'b1' }), makeUnit('infantry', 'i', 'FRA', [3, 50.1], { inBattle: 'b1' }), makeUnit('infantry', 'm', 'FRA', [3, 50.2], { moveStatus: 'moving' })] });

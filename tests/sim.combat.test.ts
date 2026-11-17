@@ -120,6 +120,23 @@ describe('combat outcomes are plausible', () => {
     expect(open.winRate).toBeGreaterThanOrEqual(0.9);
     expect(forest.meanRatio).toBeGreaterThan(open.meanRatio);
   }, 120_000);
+  it('bocage favours the defender and hampers armour more than infantry', () => {
+    const plains = sweep(30, { attType: 'armoured', terrain: Terrain.Plains });
+    const bocage = sweep(30, { attType: 'armoured', terrain: Terrain.Bocage });
+    const forest = sweep(30, { attType: 'armoured', terrain: Terrain.Forest });
+    expect(bocage.winRate).toBeLessThan(plains.winRate);
+    expect(bocage.meanRatio).toBeGreaterThan(forest.meanRatio);
+    const infP = sweep(30, { terrain: Terrain.Plains }), infB = sweep(30, { terrain: Terrain.Bocage });
+    expect(infB.meanRatio).toBeGreaterThan(infP.meanRatio);
+  }, 120_000);
+  it('naval gunfire from nearby ships adds bombardment, ships out of range add nothing', () => {
+    const ship = (id: string, pos: [number, number]) => mkUnit(id, 'FRA', 'naval', pos, { domain: 'sea', manpower: 20000, manpowerMax: 20000 });
+    const none = sweep(30, {});
+    const near = sweep(30, { extra: [ship('S1', [1.9, 51.5]), ship('S2', [1.9, 51.52])] });
+    const far = sweep(30, { extra: [ship('S1', [1.2, 51.5])] });
+    expect(near.meanFD).toBeGreaterThan(none.meanFD);
+    expect(far.meanFD).toBeCloseTo(none.meanFD, 6);
+  }, 120_000);
   it('morale/organisation/ammunition/weather change the result', () => {
     const base = sweep(40, { att: { manpower: 16000, manpowerMax: 16000 } });
     const tired = sweep(40, { att: { manpower: 16000, manpowerMax: 16000, organisation: 50, morale: 40 } });

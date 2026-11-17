@@ -114,7 +114,6 @@ add('usa_at_bastogne','SC 329955 - Anti-tank gun on guard against attempted Germ
 add('usa_101_bastogne','101st Airborne troops move out of Bastogne.jpg','USA','paratroop','101st Airborne troops, Bastogne, December 1944',['rifle'],['101st','airborne','bastogne'],{alsoTypes:['infantry']});
 add('usa_101_xmas','101st Airborne in Bastogne, Christmas 1944.JPG','USA','infantry','101st Airborne infantry in ruined Bastogne, Christmas 1944',['rifle'],['101st','bastogne'],{alsoTypes:['paratroop']});
 add('usa_para_bastogne','Paratroopers Of The 101st Airborne Moving Up To Bastogne.jpg','USA','paratroop','101st Airborne paratroopers moving up to Bastogne',['rifle'],['101st','airborne','paratroopers'],{alsoTypes:['infantry']});
-add('usa_para_stvith','Parachute Infantry Move on Snow-Covered Ground Toward the Front to Keep Up the Pressure Being Applied to the Germans Beyond St. Vith, Belgium - DPLA - 978cb65a6389b5e1d4cc1a8a8dd2b5f9.jpg','USA','infantry','US parachute infantry advancing in snow, St. Vith, January 1945',['rifle'],['airborne','infantry'],{alsoTypes:['paratroop']});
 add('usa_eng_stug','291st Combat Engineers disarm Sturmgeschütz III.jpg','USA','engineer','291st Combat Engineers with a captured Sturmgeschütz III, Ardennes 1945',['rifle'],['engineers','combat engineers']);
 add('usa_jeep','Jeep Willys de la 101st Airborne Division del US Army (28901418600).jpg','USA','logistics','Willys Jeep, 101st Airborne markings (re-enactment vehicle)',['truck'],['jeep','willys'],{alsoTypes:['motorised','recon']});
 add('usa_gmc','GMC CCKW 353 (1944) owned by Allan Cornwall pic2.JPG','USA','logistics','GMC CCKW 2.5-ton truck (preserved vehicle)',['truck'],['gmc','cckw','truck'],{alsoTypes:['motorised']});
@@ -183,10 +182,10 @@ add('rou_inf_cav','Bundesarchiv Bild 101I-218-0502-32, Russland-Süd, rumänisch
 add('rou_inf_march','Bundesarchiv N 1603 Bild-241, Rumänische Infanterie auf dem Marsch.jpg','ROU','infantry','Romanian infantry on the march',['rifle'],['romanian']);
 add('rou_r2','Lehký tank LT vz. 35.jpg','ROU','armoured','LT vz.35 light tank, the type Romania used as the R-2 (preserved vehicle)',['tank_light'],['r-2','lt vz.35','vz.35']);
 // Commonwealth
-add('gbr_crusader_battle',N41+'E6752.jpg','GBR','armoured','Crusader tank passing a burning Panzer IV, Western Desert, November 1941',['tank_medium','tank_light'],['crusader']);
-add('gbr_crusader_trans',N41+'E7014.jpg','GBR','armoured','Crusader tank on a transporter, Western Desert, 1941',['tank_medium','tank_light'],['crusader']);
-add('gbr_crusader_pair','IWM-E-6724-Crusader-19411126.jpg','GBR','armoured','Crusader tanks, Western Desert, November 1941',['tank_medium','tank_light'],['crusader']);
-add('gbr_crusader_museum','Crusader MkIII ‘T126272’ (36590905746).jpg','GBR','armoured','Crusader Mk III cruiser tank (preserved vehicle)',['tank_medium','tank_light'],['crusader']);
+add('gbr_crusader_battle',N41+'E6752.jpg','GBR','armoured','Crusader tank passing a burning Panzer IV, Western Desert, November 1941',['tank_medium'],['crusader']);
+add('gbr_crusader_trans',N41+'E7014.jpg','GBR','armoured','Crusader tank on a transporter, Western Desert, 1941',['tank_medium'],['crusader']);
+add('gbr_crusader_pair','IWM-E-6724-Crusader-19411126.jpg','GBR','armoured','Crusader tanks, Western Desert, November 1941',['tank_medium'],['crusader']);
+add('gbr_crusader_museum','Crusader MkIII ‘T126272’ (36590905746).jpg','GBR','armoured','Crusader Mk III cruiser tank (preserved vehicle)',['tank_medium'],['crusader']);
 add('gbr_valentine_desert',N41+'E7002.jpg','GBR','armoured','Valentine tank under repair, Western Desert, December 1941',['tank_medium'],['valentine']);
 add('gbr_valentine_museum','Tank Infantry Mark III, Valentine IX (4536617118).jpg','GBR','armoured','Valentine IX infantry tank (preserved vehicle)',['tank_medium'],['valentine']);
 add('gbr_stuart_museum','M3A1 Stuart III ‘T37765’ “Clementine” (44431850175).jpg','GBR','armoured','M3A1 Stuart III in British desert colours (preserved vehicle, re-enactment)',['tank_light'],['stuart']);

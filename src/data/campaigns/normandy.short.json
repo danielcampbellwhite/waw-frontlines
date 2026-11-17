@@ -1,0 +1,4152 @@
+{
+ "schema": 1,
+ "id": "normandy.short",
+ "campaignId": "normandy",
+ "title": "Normandy: D-Day to Cobra (6 Jun - 31 Jul 1944)",
+ "scale": "short",
+ "startDate": "1944-06-06T00:00:00Z",
+ "endDate": "1944-07-31T00:00:00Z",
+ "bbox": {
+  "west": -2.6,
+  "south": 48.4,
+  "east": 0.8,
+  "north": 51
+ },
+ "estimatedPlayMinutes": [
+  120,
+  240
+ ],
+ "mapSize": "large",
+ "complexity": 4,
+ "briefing": {
+  "historical": "On 6 June 1944 the Allies landed on five Normandy beaches, Utah, Omaha, Gold, Juno and Sword, after airborne drops on both flanks. Carentan, Saint-Lo, Bayeux and Caen remained in German hands after the first day; Cherbourg fell on 26 June, Caen on 21 July, and Operation Cobra reached Avranches on 31 July (M01, M02, M11).",
+  "situation": "The Allies must hold the beaches, link the beachheads, take Cherbourg and Caen and break out; the Germans must contain the lodgement with static divisions and arriving panzer reserves under Allied air supremacy. Start positions and several arrival points and times are approximate; Canadian, Polish and French follow-on divisions beyond those listed, naval and air forces are not included (not retrieved)."
+ },
+ "playableNations": [
+  {
+   "nation": "USA",
+   "difficultyRating": 3,
+   "summary": "Land at Utah and Omaha, take Cherbourg, break out at Cobra.",
+   "objectiveIds": [
+    "o.all.cherbourg",
+    "o.all.caen",
+    "o.all.carentan",
+    "o.all.bayeux",
+    "o.all.isigny",
+    "o.all.saint_lo",
+    "o.all.carpiquet",
+    "o.all.avranches",
+    "o.all.mulberry"
+   ]
+  },
+  {
+   "nation": "GBR",
+   "difficultyRating": 4,
+   "summary": "Land at Gold and Sword, take Caen against the panzer divisions.",
+   "objectiveIds": [
+    "o.all.cherbourg",
+    "o.all.caen",
+    "o.all.carentan",
+    "o.all.bayeux",
+    "o.all.isigny",
+    "o.all.saint_lo",
+    "o.all.carpiquet",
+    "o.all.avranches",
+    "o.all.mulberry"
+   ]
+  },
+  {
+   "nation": "CAN",
+   "difficultyRating": 4,
+   "summary": "Land at Juno and fight for Carpiquet and Caen.",
+   "objectiveIds": [
+    "o.all.cherbourg",
+    "o.all.caen",
+    "o.all.carentan",
+    "o.all.bayeux",
+    "o.all.isigny",
+    "o.all.saint_lo",
+    "o.all.carpiquet",
+    "o.all.avranches",
+    "o.all.mulberry"
+   ]
+  },
+  {
+   "nation": "GER",
+   "difficultyRating": 5,
+   "summary": "Contain the beachheads with static divisions and arriving panzers under Allied air supremacy.",
+   "objectiveIds": [
+    "o.ger.hold_caen",
+    "o.ger.hold_cherbourg",
+    "o.ger.hold_saint_lo",
+    "o.ger.hold_carentan",
+    "o.ger.hold_bayeux",
+    "o.ger.hold_avranches"
+   ]
+  }
+ ],
+ "nations": [
+  {
+   "id": "USA",
+   "side": "allies",
+   "name": "United States",
+   "playable": true,
+   "resources": {
+    "manpower": 26505,
+    "fuel": 1500,
+    "ammo": 1500,
+    "equipment": 1800,
+    "supplyPoints": 600
+   },
+   "income": {
+    "manpower": 41,
+    "fuel": 3,
+    "ammo": 4,
+    "equipment": 8,
+    "supplyPoints": 5
+   },
+   "reinforcements": []
+  },
+  {
+   "id": "GBR",
+   "side": "allies",
+   "name": "United Kingdom",
+   "playable": true,
+   "resources": {
+    "manpower": 22755,
+    "fuel": 1500,
+    "ammo": 1500,
+    "equipment": 1700,
+    "supplyPoints": 600
+   },
+   "income": {
+    "manpower": 35,
+    "fuel": 3,
+    "ammo": 4,
+    "equipment": 7,
+    "supplyPoints": 5
+   },
+   "reinforcements": []
+  },
+  {
+   "id": "CAN",
+   "side": "allies",
+   "name": "Canada",
+   "playable": true,
+   "resources": {
+    "manpower": 4125,
+    "fuel": 1500,
+    "ammo": 1500,
+    "equipment": 1500,
+    "supplyPoints": 600
+   },
+   "income": {
+    "manpower": 7,
+    "fuel": 1,
+    "ammo": 2,
+    "equipment": 2,
+    "supplyPoints": 5
+   },
+   "reinforcements": []
+  },
+  {
+   "id": "GER",
+   "side": "axis",
+   "name": "Germany",
+   "playable": true,
+   "resources": {
+    "manpower": 27585,
+    "fuel": 1500,
+    "ammo": 1500,
+    "equipment": 1900,
+    "supplyPoints": 600
+   },
+   "income": {
+    "manpower": 42,
+    "fuel": 2,
+    "ammo": 4,
+    "equipment": 8,
+    "supplyPoints": 5
+   },
+   "reinforcements": []
+  }
+ ],
+ "locations": [
+  {
+   "id": "cherbourg",
+   "name": "Cherbourg",
+   "kind": "port",
+   "pos": [
+    -1.625,
+    49.6425
+   ],
+   "owner": "GER",
+   "originalOwner": "GER",
+   "value": 10,
+   "supplyCapacity": 40,
+   "availableFromHour": 960,
+   "rampHours": 240
+  },
+  {
+   "id": "carentan",
+   "name": "Carentan",
+   "kind": "town",
+   "pos": [
+    -1.2523,
+    49.2948
+   ],
+   "owner": "GER",
+   "originalOwner": "GER",
+   "value": 6
+  },
+  {
+   "id": "saint_lo",
+   "name": "Saint-Lo",
+   "kind": "city",
+   "pos": [
+    -1.0909,
+    49.1158
+   ],
+   "owner": "GER",
+   "originalOwner": "GER",
+   "value": 8,
+   "supplyCapacity": 40
+  },
+  {
+   "id": "caen",
+   "name": "Caen",
+   "kind": "city",
+   "pos": [
+    -0.3636,
+    49.1814
+   ],
+   "owner": "GER",
+   "originalOwner": "GER",
+   "value": 10,
+   "supplyCapacity": 40
+  },
+  {
+   "id": "bayeux",
+   "name": "Bayeux",
+   "kind": "town",
+   "pos": [
+    -0.7028,
+    49.2794
+   ],
+   "owner": "GER",
+   "originalOwner": "GER",
+   "value": 5
+  },
+  {
+   "id": "isigny",
+   "name": "Isigny-sur-Mer",
+   "kind": "town",
+   "pos": [
+    -1.1008,
+    49.3186
+   ],
+   "owner": "GER",
+   "originalOwner": "GER",
+   "value": 3
+  },
+  {
+   "id": "sainte_mere_eglise",
+   "name": "Sainte-Mere-Eglise",
+   "kind": "town",
+   "pos": [
+    -1.3268,
+    49.4118
+   ],
+   "owner": "GER",
+   "originalOwner": "GER",
+   "value": 3
+  },
+  {
+   "id": "utah_beach",
+   "name": "Utah Beach",
+   "kind": "depot",
+   "pos": [
+    -1.2,
+    49.38
+   ],
+   "owner": "USA",
+   "originalOwner": "GER",
+   "value": 4,
+   "supplyCapacity": 8
+  },
+  {
+   "id": "omaha_beach",
+   "name": "Omaha Beach",
+   "kind": "depot",
+   "pos": [
+    -0.8686,
+    49.3689
+   ],
+   "owner": "USA",
+   "originalOwner": "GER",
+   "value": 4,
+   "supplyCapacity": 8
+  },
+  {
+   "id": "gold_beach",
+   "name": "Gold Beach",
+   "kind": "depot",
+   "pos": [
+    -0.538,
+    49.339
+   ],
+   "owner": "GBR",
+   "originalOwner": "GER",
+   "value": 4,
+   "supplyCapacity": 8
+  },
+  {
+   "id": "juno_beach",
+   "name": "Juno Beach",
+   "kind": "depot",
+   "pos": [
+    -0.4153,
+    49.3354
+   ],
+   "owner": "CAN",
+   "originalOwner": "GER",
+   "value": 4,
+   "supplyCapacity": 8
+  },
+  {
+   "id": "sword_beach",
+   "name": "Sword Beach",
+   "kind": "depot",
+   "pos": [
+    -0.3211,
+    49.3064
+   ],
+   "owner": "GBR",
+   "originalOwner": "GER",
+   "value": 4,
+   "supplyCapacity": 8
+  },
+  {
+   "id": "arromanches",
+   "name": "Arromanches (Mulberry B)",
+   "kind": "port",
+   "pos": [
+    -0.6228,
+    49.3373
+   ],
+   "owner": "GBR",
+   "originalOwner": "GER",
+   "value": 5,
+   "supplyCapacity": 40,
+   "throughputTonsPerDay": 6000,
+   "availableFromHour": 192,
+   "rampHours": 48,
+   "besiegedShare": 0.8
+  },
+  {
+   "id": "mulberry_a",
+   "name": "Saint-Laurent-sur-Mer (Mulberry A)",
+   "kind": "port",
+   "pos": [
+    -0.8789,
+    49.3604
+   ],
+   "owner": "USA",
+   "originalOwner": "GER",
+   "value": 5,
+   "supplyCapacity": 40,
+   "throughputTonsPerDay": 6000,
+   "availableFromHour": 192,
+   "rampHours": 48,
+   "besiegedShare": 0.8
+  },
+  {
+   "id": "port_en_bessin",
+   "name": "Port-en-Bessin",
+   "kind": "port",
+   "pos": [
+    -0.7527,
+    49.3458
+   ],
+   "owner": "GBR",
+   "originalOwner": "GER",
+   "value": 2,
+   "supplyCapacity": 40
+  },
+  {
+   "id": "pointe_du_hoc",
+   "name": "Pointe du Hoc",
+   "kind": "fortress",
+   "pos": [
+    -0.9894,
+    49.3978
+   ],
+   "owner": "GER",
+   "originalOwner": "GER",
+   "value": 3
+  },
+  {
+   "id": "pegasus_bridge",
+   "name": "Benouville (Caen Canal bridge)",
+   "kind": "bridge",
+   "pos": [
+    -0.2741,
+    49.2424
+   ],
+   "owner": "GER",
+   "originalOwner": "GER",
+   "value": 3
+  },
+  {
+   "id": "carpiquet",
+   "name": "Carpiquet (airfield)",
+   "kind": "airfield",
+   "pos": [
+    -0.4433,
+    49.1864
+   ],
+   "owner": "GER",
+   "originalOwner": "GER",
+   "value": 4,
+   "supplyCapacity": 20
+  },
+  {
+   "id": "villers_bocage",
+   "name": "Villers-Bocage",
+   "kind": "town",
+   "pos": [
+    -0.66,
+    49.08
+   ],
+   "owner": "GER",
+   "originalOwner": "GER",
+   "value": 3
+  },
+  {
+   "id": "tilly",
+   "name": "Tilly-sur-Seulles",
+   "kind": "town",
+   "pos": [
+    -0.6251,
+    49.1759
+   ],
+   "owner": "GER",
+   "originalOwner": "GER",
+   "value": 2
+  },
+  {
+   "id": "caumont",
+   "name": "Caumont-l'Eventé",
+   "kind": "town",
+   "pos": [
+    -0.8039,
+    49.0911
+   ],
+   "owner": "GER",
+   "originalOwner": "GER",
+   "value": 3
+  },
+  {
+   "id": "bourguebus",
+   "name": "Bourguebus (ridge)",
+   "kind": "town",
+   "pos": [
+    -0.2964,
+    49.1222
+   ],
+   "owner": "GER",
+   "originalOwner": "GER",
+   "value": 3
+  },
+  {
+   "id": "avranches",
+   "name": "Avranches",
+   "kind": "town",
+   "pos": [
+    -1.3556,
+    48.685
+   ],
+   "owner": "GER",
+   "originalOwner": "GER",
+   "value": 6
+  },
+  {
+   "id": "coutances",
+   "name": "Coutances",
+   "kind": "town",
+   "pos": [
+    -1.4455,
+    49.0478
+   ],
+   "owner": "GER",
+   "originalOwner": "GER",
+   "value": 4
+  },
+  {
+   "id": "periers",
+   "name": "Periers",
+   "kind": "town",
+   "pos": [
+    -1.41,
+    49.1871
+   ],
+   "owner": "GER",
+   "originalOwner": "GER",
+   "value": 3
+  },
+  {
+   "id": "valognes",
+   "name": "Valognes",
+   "kind": "town",
+   "pos": [
+    -1.4706,
+    49.5091
+   ],
+   "owner": "GER",
+   "originalOwner": "GER",
+   "value": 3
+  },
+  {
+   "id": "falaise",
+   "name": "Falaise",
+   "kind": "town",
+   "pos": [
+    -0.1975,
+    48.8972
+   ],
+   "owner": "GER",
+   "originalOwner": "GER",
+   "value": 4
+  },
+  {
+   "id": "vire",
+   "name": "Vire",
+   "kind": "town",
+   "pos": [
+    -0.8686,
+    48.82
+   ],
+   "owner": "GER",
+   "originalOwner": "GER",
+   "value": 4
+  },
+  {
+   "id": "southampton",
+   "name": "Southampton (embarkation port)",
+   "kind": "port",
+   "pos": [
+    -1.3968,
+    50.8965
+   ],
+   "owner": "GBR",
+   "originalOwner": "GBR",
+   "value": 6,
+   "supplyCapacity": 40,
+   "throughputTonsPerDay": 6000
+  },
+  {
+   "id": "portsmouth",
+   "name": "Portsmouth (embarkation port)",
+   "kind": "port",
+   "pos": [
+    -1.0872,
+    50.8058
+   ],
+   "owner": "GBR",
+   "originalOwner": "GBR",
+   "value": 6,
+   "supplyCapacity": 40,
+   "throughputTonsPerDay": 4000
+  },
+  {
+   "id": "poole",
+   "name": "Poole (embarkation port)",
+   "kind": "port",
+   "pos": [
+    -1.9833,
+    50.7167
+   ],
+   "owner": "GBR",
+   "originalOwner": "GBR",
+   "value": 4,
+   "supplyCapacity": 40,
+   "throughputTonsPerDay": 2000
+  },
+  {
+   "id": "weymouth",
+   "name": "Weymouth (embarkation port)",
+   "kind": "port",
+   "pos": [
+    -2.4547,
+    50.6097
+   ],
+   "owner": "GBR",
+   "originalOwner": "GBR",
+   "value": 4,
+   "supplyCapacity": 40,
+   "throughputTonsPerDay": 2000
+  },
+  {
+   "id": "newhaven",
+   "name": "Newhaven (embarkation port)",
+   "kind": "port",
+   "pos": [
+    0.0544,
+    50.7896
+   ],
+   "owner": "GBR",
+   "originalOwner": "GBR",
+   "value": 3,
+   "supplyCapacity": 40,
+   "throughputTonsPerDay": 2000
+  },
+  {
+   "id": "lisieux",
+   "name": "Lisieux",
+   "kind": "town",
+   "pos": [
+    0.23,
+    49.15
+   ],
+   "owner": "GER",
+   "originalOwner": "GER",
+   "value": 4
+  }
+ ],
+ "units": [
+  {
+   "id": "ger.c.LXXXIV",
+   "name": "LXXXIV Army Corps (Marcks)",
+   "shortName": "LXXXIV.AK",
+   "nation": "GER",
+   "side": "axis",
+   "type": "hq",
+   "domain": "land",
+   "pos": [
+    -1.15,
+    49.08
+   ],
+   "manpower": 600,
+   "manpowerMax": 600,
+   "equipment": {
+    "held": {
+     "rifle": 600
+    },
+    "authorised": {
+     "rifle": 600
+    }
+   },
+   "organisation": 90,
+   "morale": 76,
+   "experience": 50,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 20,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "hold",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "ger.d.709",
+   "name": "709th Static Infantry Division (von Schlieben)",
+   "shortName": "709.ID",
+   "nation": "GER",
+   "side": "axis",
+   "type": "infantry",
+   "domain": "land",
+   "pos": [
+    -1.36,
+    49.42
+   ],
+   "manpower": 12000,
+   "manpowerMax": 12000,
+   "equipment": {
+    "held": {
+     "rifle": 100,
+     "gun_arty": 50,
+     "gun_at": 30
+    },
+    "authorised": {
+     "rifle": 100,
+     "gun_arty": 50,
+     "gun_at": 30
+    }
+   },
+   "organisation": 90,
+   "morale": 62,
+   "experience": 35,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 50,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "hold",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "ger.cherbourg",
+   "name": "Cherbourg fortress garrison (game-scale share of the 21,000 men in M10)",
+   "shortName": "Cherb Gar",
+   "nation": "GER",
+   "side": "axis",
+   "type": "infantry",
+   "domain": "land",
+   "pos": [
+    -1.625,
+    49.635
+   ],
+   "manpower": 8000,
+   "manpowerMax": 8000,
+   "equipment": {
+    "held": {
+     "rifle": 100,
+     "gun_arty": 50,
+     "gun_at": 30
+    },
+    "authorised": {
+     "rifle": 100,
+     "gun_arty": 50,
+     "gun_at": 30
+    }
+   },
+   "organisation": 90,
+   "morale": 62,
+   "experience": 35,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 50,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "hold",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "ger.d.91",
+   "name": "91st Infantry Division",
+   "shortName": "91.ID",
+   "nation": "GER",
+   "side": "axis",
+   "type": "infantry",
+   "domain": "land",
+   "pos": [
+    -1.46,
+    49.35
+   ],
+   "manpower": 12000,
+   "manpowerMax": 12000,
+   "equipment": {
+    "held": {
+     "rifle": 100,
+     "gun_arty": 50,
+     "gun_at": 30
+    },
+    "authorised": {
+     "rifle": 100,
+     "gun_arty": 50,
+     "gun_at": 30
+    }
+   },
+   "organisation": 90,
+   "morale": 76,
+   "experience": 45,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 25,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "hold",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "ger.fjr6",
+   "name": "6th Fallschirmjager Regiment (2nd Fallschirmjager Division)",
+   "shortName": "6.FJR",
+   "nation": "GER",
+   "side": "axis",
+   "type": "paratroop",
+   "domain": "land",
+   "pos": [
+    -1.255,
+    49.293
+   ],
+   "manpower": 3500,
+   "manpowerMax": 3500,
+   "equipment": {
+    "held": {
+     "rifle": 90,
+     "gun_arty": 30,
+     "gun_at": 12
+    },
+    "authorised": {
+     "rifle": 90,
+     "gun_arty": 30,
+     "gun_at": 12
+    }
+   },
+   "organisation": 90,
+   "morale": 76,
+   "experience": 50,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 30,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "hold",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "ger.d.243",
+   "name": "243rd Static Infantry Division",
+   "shortName": "243.ID",
+   "nation": "GER",
+   "side": "axis",
+   "type": "infantry",
+   "domain": "land",
+   "pos": [
+    -1.61,
+    49.27
+   ],
+   "manpower": 12000,
+   "manpowerMax": 12000,
+   "equipment": {
+    "held": {
+     "rifle": 100,
+     "gun_arty": 50,
+     "gun_at": 30
+    },
+    "authorised": {
+     "rifle": 100,
+     "gun_arty": 50,
+     "gun_at": 30
+    }
+   },
+   "organisation": 90,
+   "morale": 62,
+   "experience": 35,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 40,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "hold",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "ger.d.352",
+   "name": "352nd Infantry Division (Kraiss)",
+   "shortName": "352.ID",
+   "nation": "GER",
+   "side": "axis",
+   "type": "infantry",
+   "domain": "land",
+   "pos": [
+    -0.96,
+    49.28
+   ],
+   "manpower": 12000,
+   "manpowerMax": 12000,
+   "equipment": {
+    "held": {
+     "rifle": 100,
+     "gun_arty": 50,
+     "gun_at": 30
+    },
+    "authorised": {
+     "rifle": 100,
+     "gun_arty": 50,
+     "gun_at": 30
+    }
+   },
+   "organisation": 90,
+   "morale": 76,
+   "experience": 50,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 55,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "hold",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "ger.d.716",
+   "name": "716th Static Infantry Division",
+   "shortName": "716.ID",
+   "nation": "GER",
+   "side": "axis",
+   "type": "infantry",
+   "domain": "land",
+   "pos": [
+    -0.36,
+    49.21
+   ],
+   "manpower": 6000,
+   "manpowerMax": 6000,
+   "equipment": {
+    "held": {
+     "rifle": 100,
+     "gun_arty": 50,
+     "gun_at": 30
+    },
+    "authorised": {
+     "rifle": 100,
+     "gun_arty": 50,
+     "gun_at": 30
+    }
+   },
+   "organisation": 90,
+   "morale": 62,
+   "experience": 35,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 55,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "hold",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "ger.d.21pz",
+   "name": "21st Panzer Division",
+   "shortName": "21.PzD",
+   "nation": "GER",
+   "side": "axis",
+   "type": "armoured",
+   "domain": "land",
+   "pos": [
+    -0.35,
+    49.17
+   ],
+   "manpower": 12000,
+   "manpowerMax": 12000,
+   "equipment": {
+    "held": {
+     "tank_medium": 100,
+     "tank_light": 20,
+     "gun_arty": 24,
+     "truck": 60
+    },
+    "authorised": {
+     "tank_medium": 100,
+     "tank_light": 20,
+     "gun_arty": 24,
+     "truck": 60
+    }
+   },
+   "organisation": 90,
+   "morale": 76,
+   "experience": 60,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 20,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "hold",
+   "orders": [],
+   "kills": 0
+  }
+ ],
+ "reinforcements": [
+  {
+   "id": "reinf.usa.82abn",
+   "atMinutes": 60,
+   "pos": [
+    -1.39,
+    49.35
+   ],
+   "unit": {
+    "id": "usa.82abn",
+    "name": "82nd Airborne Division (Ridgway)",
+    "shortName": "82nd Abn",
+    "nation": "USA",
+    "side": "allies",
+    "type": "paratroop",
+    "domain": "land",
+    "pos": [
+     -1.39,
+     49.35
+    ],
+    "manpower": 9000,
+    "manpowerMax": 9000,
+    "equipment": {
+     "held": {
+      "rifle": 90,
+      "gun_arty": 30,
+      "gun_at": 12
+     },
+     "authorised": {
+      "rifle": 90,
+      "gun_arty": 30,
+      "gun_at": 12
+     }
+    },
+    "organisation": 80,
+    "morale": 75,
+    "experience": 50,
+    "fuel": 100,
+    "ammo": 100,
+    "supply": 100,
+    "fatigue": 10,
+    "readiness": 90,
+    "entrenchment": 0,
+    "moveStatus": "stationary",
+    "combatStatus": "idle",
+    "posture": "defend",
+    "orders": [],
+    "kills": 0
+   },
+   "landing": {
+    "kind": "airborne",
+    "casualties": 0.12,
+    "dispersionKm": 20,
+    "penaltyHours": 18,
+    "organisation": 40
+   }
+  },
+  {
+   "id": "reinf.usa.101abn",
+   "atMinutes": 60,
+   "pos": [
+    -1.35,
+    49.35
+   ],
+   "unit": {
+    "id": "usa.101abn",
+    "name": "101st Airborne Division (Taylor)",
+    "shortName": "101st Abn",
+    "nation": "USA",
+    "side": "allies",
+    "type": "paratroop",
+    "domain": "land",
+    "pos": [
+     -1.35,
+     49.35
+    ],
+    "manpower": 9000,
+    "manpowerMax": 9000,
+    "equipment": {
+     "held": {
+      "rifle": 90,
+      "gun_arty": 30,
+      "gun_at": 12
+     },
+     "authorised": {
+      "rifle": 90,
+      "gun_arty": 30,
+      "gun_at": 12
+     }
+    },
+    "organisation": 80,
+    "morale": 75,
+    "experience": 50,
+    "fuel": 100,
+    "ammo": 100,
+    "supply": 100,
+    "fatigue": 10,
+    "readiness": 90,
+    "entrenchment": 0,
+    "moveStatus": "stationary",
+    "combatStatus": "idle",
+    "posture": "defend",
+    "orders": [],
+    "kills": 0
+   },
+   "landing": {
+    "kind": "airborne",
+    "casualties": 0.12,
+    "dispersionKm": 20,
+    "penaltyHours": 18,
+    "organisation": 40
+   }
+  },
+  {
+   "id": "reinf.gbr.6abn",
+   "atMinutes": 60,
+   "pos": [
+    -0.31,
+    49.2
+   ],
+   "unit": {
+    "id": "gbr.6abn",
+    "name": "6th Airborne Division (Gale)",
+    "shortName": "6th Abn",
+    "nation": "GBR",
+    "side": "allies",
+    "type": "paratroop",
+    "domain": "land",
+    "pos": [
+     -0.31,
+     49.2
+    ],
+    "manpower": 9000,
+    "manpowerMax": 9000,
+    "equipment": {
+     "held": {
+      "rifle": 90,
+      "gun_arty": 30,
+      "gun_at": 12
+     },
+     "authorised": {
+      "rifle": 90,
+      "gun_arty": 30,
+      "gun_at": 12
+     }
+    },
+    "organisation": 80,
+    "morale": 80,
+    "experience": 60,
+    "fuel": 100,
+    "ammo": 100,
+    "supply": 100,
+    "fatigue": 10,
+    "readiness": 90,
+    "entrenchment": 0,
+    "moveStatus": "stationary",
+    "combatStatus": "idle",
+    "posture": "defend",
+    "orders": [],
+    "kills": 0
+   },
+   "landing": {
+    "kind": "airborne",
+    "casualties": 0.12,
+    "dispersionKm": 20,
+    "penaltyHours": 18,
+    "organisation": 40
+   }
+  },
+  {
+   "id": "reinf.usa.c.VII",
+   "atMinutes": 390,
+   "pos": [
+    -1.212,
+    49.376
+   ],
+   "unit": {
+    "id": "usa.c.VII",
+    "name": "VII Corps (Collins)",
+    "shortName": "VII Corps",
+    "nation": "USA",
+    "side": "allies",
+    "type": "hq",
+    "domain": "land",
+    "pos": [
+     -1.212,
+     49.376
+    ],
+    "manpower": 600,
+    "manpowerMax": 600,
+    "equipment": {
+     "held": {
+      "rifle": 600
+     },
+     "authorised": {
+      "rifle": 600
+     }
+    },
+    "organisation": 80,
+    "morale": 75,
+    "experience": 50,
+    "fuel": 100,
+    "ammo": 100,
+    "supply": 100,
+    "fatigue": 10,
+    "readiness": 90,
+    "entrenchment": 0,
+    "moveStatus": "stationary",
+    "combatStatus": "idle",
+    "posture": "defend",
+    "orders": [],
+    "kills": 0
+   },
+   "landing": {
+    "kind": "amphibious",
+    "casualties": 0,
+    "penaltyHours": 3
+   }
+  },
+  {
+   "id": "reinf.usa.4id",
+   "atMinutes": 390,
+   "pos": [
+    -1.204,
+    49.376
+   ],
+   "unit": {
+    "id": "usa.4id",
+    "name": "4th Infantry Division",
+    "shortName": "4th ID",
+    "nation": "USA",
+    "side": "allies",
+    "type": "infantry",
+    "domain": "land",
+    "pos": [
+     -1.204,
+     49.376
+    ],
+    "manpower": 12000,
+    "manpowerMax": 12000,
+    "equipment": {
+     "held": {
+      "rifle": 100,
+      "gun_arty": 50,
+      "gun_at": 30
+     },
+     "authorised": {
+      "rifle": 100,
+      "gun_arty": 50,
+      "gun_at": 30
+     }
+    },
+    "organisation": 80,
+    "morale": 75,
+    "experience": 50,
+    "fuel": 100,
+    "ammo": 100,
+    "supply": 100,
+    "fatigue": 10,
+    "readiness": 90,
+    "entrenchment": 0,
+    "moveStatus": "stationary",
+    "combatStatus": "idle",
+    "posture": "defend",
+    "orders": [],
+    "kills": 0
+   },
+   "landing": {
+    "kind": "amphibious",
+    "casualties": 0.01,
+    "penaltyHours": 3
+   }
+  },
+  {
+   "id": "reinf.usa.c.V",
+   "atMinutes": 390,
+   "pos": [
+    -0.892,
+    49.354
+   ],
+   "unit": {
+    "id": "usa.c.V",
+    "name": "V Corps (Gerow)",
+    "shortName": "V Corps",
+    "nation": "USA",
+    "side": "allies",
+    "type": "hq",
+    "domain": "land",
+    "pos": [
+     -0.892,
+     49.354
+    ],
+    "manpower": 600,
+    "manpowerMax": 600,
+    "equipment": {
+     "held": {
+      "rifle": 600
+     },
+     "authorised": {
+      "rifle": 600
+     }
+    },
+    "organisation": 80,
+    "morale": 75,
+    "experience": 50,
+    "fuel": 100,
+    "ammo": 100,
+    "supply": 100,
+    "fatigue": 10,
+    "readiness": 90,
+    "entrenchment": 0,
+    "moveStatus": "stationary",
+    "combatStatus": "idle",
+    "posture": "defend",
+    "orders": [],
+    "kills": 0
+   },
+   "landing": {
+    "kind": "amphibious",
+    "casualties": 0,
+    "penaltyHours": 3
+   }
+  },
+  {
+   "id": "reinf.usa.1id",
+   "atMinutes": 390,
+   "pos": [
+    -0.884,
+    49.354
+   ],
+   "unit": {
+    "id": "usa.1id",
+    "name": "1st Infantry Division",
+    "shortName": "1st ID",
+    "nation": "USA",
+    "side": "allies",
+    "type": "infantry",
+    "domain": "land",
+    "pos": [
+     -0.884,
+     49.354
+    ],
+    "manpower": 12000,
+    "manpowerMax": 12000,
+    "equipment": {
+     "held": {
+      "rifle": 100,
+      "gun_arty": 50,
+      "gun_at": 30
+     },
+     "authorised": {
+      "rifle": 100,
+      "gun_arty": 50,
+      "gun_at": 30
+     }
+    },
+    "organisation": 80,
+    "morale": 75,
+    "experience": 50,
+    "fuel": 100,
+    "ammo": 100,
+    "supply": 100,
+    "fatigue": 10,
+    "readiness": 90,
+    "entrenchment": 0,
+    "moveStatus": "stationary",
+    "combatStatus": "idle",
+    "posture": "defend",
+    "orders": [],
+    "kills": 0
+   },
+   "landing": {
+    "kind": "amphibious",
+    "casualties": 0.07,
+    "penaltyHours": 6
+   }
+  },
+  {
+   "id": "reinf.usa.29id",
+   "atMinutes": 390,
+   "pos": [
+    -0.876,
+    49.354
+   ],
+   "unit": {
+    "id": "usa.29id",
+    "name": "29th Infantry Division",
+    "shortName": "29th ID",
+    "nation": "USA",
+    "side": "allies",
+    "type": "infantry",
+    "domain": "land",
+    "pos": [
+     -0.876,
+     49.354
+    ],
+    "manpower": 12000,
+    "manpowerMax": 12000,
+    "equipment": {
+     "held": {
+      "rifle": 100,
+      "gun_arty": 50,
+      "gun_at": 30
+     },
+     "authorised": {
+      "rifle": 100,
+      "gun_arty": 50,
+      "gun_at": 30
+     }
+    },
+    "organisation": 80,
+    "morale": 75,
+    "experience": 50,
+    "fuel": 100,
+    "ammo": 100,
+    "supply": 100,
+    "fatigue": 10,
+    "readiness": 90,
+    "entrenchment": 0,
+    "moveStatus": "stationary",
+    "combatStatus": "idle",
+    "posture": "defend",
+    "orders": [],
+    "kills": 0
+   },
+   "landing": {
+    "kind": "amphibious",
+    "casualties": 0.07,
+    "penaltyHours": 6
+   }
+  },
+  {
+   "id": "reinf.usa.rangers",
+   "atMinutes": 390,
+   "pos": [
+    -0.868,
+    49.354
+   ],
+   "unit": {
+    "id": "usa.rangers",
+    "name": "US Army Rangers (nine companies)",
+    "shortName": "Rangers",
+    "nation": "USA",
+    "side": "allies",
+    "type": "infantry",
+    "domain": "land",
+    "pos": [
+     -0.868,
+     49.354
+    ],
+    "manpower": 1500,
+    "manpowerMax": 1500,
+    "equipment": {
+     "held": {
+      "rifle": 100,
+      "gun_arty": 50,
+      "gun_at": 30
+     },
+     "authorised": {
+      "rifle": 100,
+      "gun_arty": 50,
+      "gun_at": 30
+     }
+    },
+    "organisation": 80,
+    "morale": 75,
+    "experience": 50,
+    "fuel": 100,
+    "ammo": 100,
+    "supply": 100,
+    "fatigue": 10,
+    "readiness": 90,
+    "entrenchment": 0,
+    "moveStatus": "stationary",
+    "combatStatus": "idle",
+    "posture": "defend",
+    "orders": [],
+    "kills": 0
+   },
+   "landing": {
+    "kind": "amphibious",
+    "casualties": 0.07,
+    "penaltyHours": 6
+   }
+  },
+  {
+   "id": "reinf.gbr.c.XXX",
+   "atMinutes": 390,
+   "pos": [
+    -0.55,
+    49.335
+   ],
+   "unit": {
+    "id": "gbr.c.XXX",
+    "name": "XXX Corps (Bucknall)",
+    "shortName": "XXX Corps",
+    "nation": "GBR",
+    "side": "allies",
+    "type": "hq",
+    "domain": "land",
+    "pos": [
+     -0.55,
+     49.335
+    ],
+    "manpower": 600,
+    "manpowerMax": 600,
+    "equipment": {
+     "held": {
+      "rifle": 600
+     },
+     "authorised": {
+      "rifle": 600
+     }
+    },
+    "organisation": 80,
+    "morale": 80,
+    "experience": 60,
+    "fuel": 100,
+    "ammo": 100,
+    "supply": 100,
+    "fatigue": 10,
+    "readiness": 90,
+    "entrenchment": 0,
+    "moveStatus": "stationary",
+    "combatStatus": "idle",
+    "posture": "defend",
+    "orders": [],
+    "kills": 0
+   },
+   "landing": {
+    "kind": "amphibious",
+    "casualties": 0,
+    "penaltyHours": 3
+   }
+  },
+  {
+   "id": "reinf.gbr.50div",
+   "atMinutes": 445,
+   "pos": [
+    -0.542,
+    49.335
+   ],
+   "unit": {
+    "id": "gbr.50div",
+    "name": "50th (Northumbrian) Infantry Division (Graham)",
+    "shortName": "50th Div",
+    "nation": "GBR",
+    "side": "allies",
+    "type": "infantry",
+    "domain": "land",
+    "pos": [
+     -0.542,
+     49.335
+    ],
+    "manpower": 12000,
+    "manpowerMax": 12000,
+    "equipment": {
+     "held": {
+      "rifle": 100,
+      "gun_arty": 50,
+      "gun_at": 30
+     },
+     "authorised": {
+      "rifle": 100,
+      "gun_arty": 50,
+      "gun_at": 30
+     }
+    },
+    "organisation": 80,
+    "morale": 80,
+    "experience": 60,
+    "fuel": 100,
+    "ammo": 100,
+    "supply": 100,
+    "fatigue": 10,
+    "readiness": 90,
+    "entrenchment": 0,
+    "moveStatus": "stationary",
+    "combatStatus": "idle",
+    "posture": "defend",
+    "orders": [],
+    "kills": 0
+   },
+   "landing": {
+    "kind": "amphibious",
+    "casualties": 0.03,
+    "penaltyHours": 4
+   }
+  },
+  {
+   "id": "reinf.gbr.8arm",
+   "atMinutes": 440,
+   "pos": [
+    -0.534,
+    49.335
+   ],
+   "unit": {
+    "id": "gbr.8arm",
+    "name": "8th Armoured Brigade (DD tanks)",
+    "shortName": "8 Armd Bde",
+    "nation": "GBR",
+    "side": "allies",
+    "type": "armoured",
+    "domain": "land",
+    "pos": [
+     -0.534,
+     49.335
+    ],
+    "manpower": 3500,
+    "manpowerMax": 3500,
+    "equipment": {
+     "held": {
+      "tank_medium": 100,
+      "tank_light": 20,
+      "gun_arty": 24,
+      "truck": 60
+     },
+     "authorised": {
+      "tank_medium": 100,
+      "tank_light": 20,
+      "gun_arty": 24,
+      "truck": 60
+     }
+    },
+    "organisation": 80,
+    "morale": 80,
+    "experience": 60,
+    "fuel": 100,
+    "ammo": 100,
+    "supply": 100,
+    "fatigue": 10,
+    "readiness": 90,
+    "entrenchment": 0,
+    "moveStatus": "stationary",
+    "combatStatus": "idle",
+    "posture": "defend",
+    "orders": [],
+    "kills": 0
+   },
+   "landing": {
+    "kind": "amphibious",
+    "casualties": 0.03,
+    "penaltyHours": 4
+   }
+  },
+  {
+   "id": "reinf.gbr.c.I",
+   "atMinutes": 445,
+   "pos": [
+    -0.333,
+    49.302
+   ],
+   "unit": {
+    "id": "gbr.c.I",
+    "name": "I Corps (Crocker)",
+    "shortName": "I Corps",
+    "nation": "GBR",
+    "side": "allies",
+    "type": "hq",
+    "domain": "land",
+    "pos": [
+     -0.333,
+     49.302
+    ],
+    "manpower": 600,
+    "manpowerMax": 600,
+    "equipment": {
+     "held": {
+      "rifle": 600
+     },
+     "authorised": {
+      "rifle": 600
+     }
+    },
+    "organisation": 80,
+    "morale": 80,
+    "experience": 60,
+    "fuel": 100,
+    "ammo": 100,
+    "supply": 100,
+    "fatigue": 10,
+    "readiness": 90,
+    "entrenchment": 0,
+    "moveStatus": "stationary",
+    "combatStatus": "idle",
+    "posture": "defend",
+    "orders": [],
+    "kills": 0
+   },
+   "landing": {
+    "kind": "amphibious",
+    "casualties": 0,
+    "penaltyHours": 3
+   }
+  },
+  {
+   "id": "reinf.gbr.3div",
+   "atMinutes": 445,
+   "pos": [
+    -0.325,
+    49.302
+   ],
+   "unit": {
+    "id": "gbr.3div",
+    "name": "3rd Infantry Division (Rennie)",
+    "shortName": "3rd Div",
+    "nation": "GBR",
+    "side": "allies",
+    "type": "infantry",
+    "domain": "land",
+    "pos": [
+     -0.325,
+     49.302
+    ],
+    "manpower": 12000,
+    "manpowerMax": 12000,
+    "equipment": {
+     "held": {
+      "rifle": 100,
+      "gun_arty": 50,
+      "gun_at": 30
+     },
+     "authorised": {
+      "rifle": 100,
+      "gun_arty": 50,
+      "gun_at": 30
+     }
+    },
+    "organisation": 80,
+    "morale": 80,
+    "experience": 60,
+    "fuel": 100,
+    "ammo": 100,
+    "supply": 100,
+    "fatigue": 10,
+    "readiness": 90,
+    "entrenchment": 0,
+    "moveStatus": "stationary",
+    "combatStatus": "idle",
+    "posture": "defend",
+    "orders": [],
+    "kills": 0
+   },
+   "landing": {
+    "kind": "amphibious",
+    "casualties": 0.03,
+    "penaltyHours": 4
+   }
+  },
+  {
+   "id": "reinf.gbr.27arm",
+   "atMinutes": 445,
+   "pos": [
+    -0.317,
+    49.302
+   ],
+   "unit": {
+    "id": "gbr.27arm",
+    "name": "27th Armoured Brigade (DD tanks)",
+    "shortName": "27 Armd Bde",
+    "nation": "GBR",
+    "side": "allies",
+    "type": "armoured",
+    "domain": "land",
+    "pos": [
+     -0.317,
+     49.302
+    ],
+    "manpower": 3500,
+    "manpowerMax": 3500,
+    "equipment": {
+     "held": {
+      "tank_medium": 100,
+      "tank_light": 20,
+      "gun_arty": 24,
+      "truck": 60
+     },
+     "authorised": {
+      "tank_medium": 100,
+      "tank_light": 20,
+      "gun_arty": 24,
+      "truck": 60
+     }
+    },
+    "organisation": 80,
+    "morale": 80,
+    "experience": 60,
+    "fuel": 100,
+    "ammo": 100,
+    "supply": 100,
+    "fatigue": 10,
+    "readiness": 90,
+    "entrenchment": 0,
+    "moveStatus": "stationary",
+    "combatStatus": "idle",
+    "posture": "defend",
+    "orders": [],
+    "kills": 0
+   },
+   "landing": {
+    "kind": "amphibious",
+    "casualties": 0.03,
+    "penaltyHours": 4
+   }
+  },
+  {
+   "id": "reinf.gbr.1ssb",
+   "atMinutes": 445,
+   "pos": [
+    -0.309,
+    49.302
+   ],
+   "unit": {
+    "id": "gbr.1ssb",
+    "name": "1st Special Service Brigade (Lovat)",
+    "shortName": "1 SS Bde",
+    "nation": "GBR",
+    "side": "allies",
+    "type": "infantry",
+    "domain": "land",
+    "pos": [
+     -0.309,
+     49.302
+    ],
+    "manpower": 2500,
+    "manpowerMax": 2500,
+    "equipment": {
+     "held": {
+      "rifle": 100,
+      "gun_arty": 50,
+      "gun_at": 30
+     },
+     "authorised": {
+      "rifle": 100,
+      "gun_arty": 50,
+      "gun_at": 30
+     }
+    },
+    "organisation": 80,
+    "morale": 80,
+    "experience": 60,
+    "fuel": 100,
+    "ammo": 100,
+    "supply": 100,
+    "fatigue": 10,
+    "readiness": 90,
+    "entrenchment": 0,
+    "moveStatus": "stationary",
+    "combatStatus": "idle",
+    "posture": "defend",
+    "orders": [],
+    "kills": 0
+   },
+   "landing": {
+    "kind": "amphibious",
+    "casualties": 0.03,
+    "penaltyHours": 4
+   }
+  },
+  {
+   "id": "reinf.can.3div",
+   "atMinutes": 465,
+   "pos": [
+    -0.427,
+    49.331
+   ],
+   "unit": {
+    "id": "can.3div",
+    "name": "3rd Canadian Infantry Division (Keller)",
+    "shortName": "3rd Cdn Div",
+    "nation": "CAN",
+    "side": "allies",
+    "type": "infantry",
+    "domain": "land",
+    "pos": [
+     -0.427,
+     49.331
+    ],
+    "manpower": 12000,
+    "manpowerMax": 12000,
+    "equipment": {
+     "held": {
+      "rifle": 100,
+      "gun_arty": 50,
+      "gun_at": 30
+     },
+     "authorised": {
+      "rifle": 100,
+      "gun_arty": 50,
+      "gun_at": 30
+     }
+    },
+    "organisation": 80,
+    "morale": 78,
+    "experience": 45,
+    "fuel": 100,
+    "ammo": 100,
+    "supply": 100,
+    "fatigue": 10,
+    "readiness": 90,
+    "entrenchment": 0,
+    "moveStatus": "stationary",
+    "combatStatus": "idle",
+    "posture": "defend",
+    "orders": [],
+    "kills": 0
+   },
+   "landing": {
+    "kind": "amphibious",
+    "casualties": 0.03,
+    "penaltyHours": 4
+   }
+  },
+  {
+   "id": "reinf.can.2arm",
+   "atMinutes": 480,
+   "pos": [
+    -0.419,
+    49.331
+   ],
+   "unit": {
+    "id": "can.2arm",
+    "name": "2nd Canadian Armoured Brigade",
+    "shortName": "2 Cdn Armd Bde",
+    "nation": "CAN",
+    "side": "allies",
+    "type": "armoured",
+    "domain": "land",
+    "pos": [
+     -0.419,
+     49.331
+    ],
+    "manpower": 3500,
+    "manpowerMax": 3500,
+    "equipment": {
+     "held": {
+      "tank_medium": 100,
+      "tank_light": 20,
+      "gun_arty": 24,
+      "truck": 60
+     },
+     "authorised": {
+      "tank_medium": 100,
+      "tank_light": 20,
+      "gun_arty": 24,
+      "truck": 60
+     }
+    },
+    "organisation": 80,
+    "morale": 78,
+    "experience": 45,
+    "fuel": 100,
+    "ammo": 100,
+    "supply": 100,
+    "fatigue": 10,
+    "readiness": 90,
+    "entrenchment": 0,
+    "moveStatus": "stationary",
+    "combatStatus": "idle",
+    "posture": "defend",
+    "orders": [],
+    "kills": 0
+   },
+   "landing": {
+    "kind": "amphibious",
+    "casualties": 0.03,
+    "penaltyHours": 4
+   }
+  },
+  {
+   "id": "reinf.gbr.7arm",
+   "atMinutes": 2820,
+   "pos": [
+    -0.526,
+    49.335
+   ],
+   "unit": {
+    "id": "gbr.7arm",
+    "name": "7th Armoured Division",
+    "shortName": "7th Armd",
+    "nation": "GBR",
+    "side": "allies",
+    "type": "armoured",
+    "domain": "land",
+    "pos": [
+     -0.526,
+     49.335
+    ],
+    "manpower": 12000,
+    "manpowerMax": 12000,
+    "equipment": {
+     "held": {
+      "tank_medium": 100,
+      "tank_light": 20,
+      "gun_arty": 24,
+      "truck": 60
+     },
+     "authorised": {
+      "tank_medium": 100,
+      "tank_light": 20,
+      "gun_arty": 24,
+      "truck": 60
+     }
+    },
+    "organisation": 80,
+    "morale": 80,
+    "experience": 60,
+    "fuel": 100,
+    "ammo": 100,
+    "supply": 100,
+    "fatigue": 10,
+    "readiness": 90,
+    "entrenchment": 0,
+    "moveStatus": "stationary",
+    "combatStatus": "idle",
+    "posture": "defend",
+    "orders": [],
+    "kills": 0
+   },
+   "landing": {
+    "kind": "amphibious",
+    "casualties": 0,
+    "penaltyHours": 2
+   }
+  },
+  {
+   "id": "reinf.gbr.51hd",
+   "atMinutes": 2160,
+   "pos": [
+    -0.333,
+    49.306
+   ],
+   "unit": {
+    "id": "gbr.51hd",
+    "name": "51st (Highland) Infantry Division",
+    "shortName": "51st HD",
+    "nation": "GBR",
+    "side": "allies",
+    "type": "infantry",
+    "domain": "land",
+    "pos": [
+     -0.333,
+     49.306
+    ],
+    "manpower": 12000,
+    "manpowerMax": 12000,
+    "equipment": {
+     "held": {
+      "rifle": 100,
+      "gun_arty": 50,
+      "gun_at": 30
+     },
+     "authorised": {
+      "rifle": 100,
+      "gun_arty": 50,
+      "gun_at": 30
+     }
+    },
+    "organisation": 80,
+    "morale": 80,
+    "experience": 60,
+    "fuel": 100,
+    "ammo": 100,
+    "supply": 100,
+    "fatigue": 10,
+    "readiness": 90,
+    "entrenchment": 0,
+    "moveStatus": "stationary",
+    "combatStatus": "idle",
+    "posture": "defend",
+    "orders": [],
+    "kills": 0
+   },
+   "landing": {
+    "kind": "amphibious",
+    "casualties": 0,
+    "penaltyHours": 2
+   }
+  },
+  {
+   "id": "reinf.usa.2ad",
+   "atMinutes": 5040,
+   "pos": [
+    -0.892,
+    49.358
+   ],
+   "unit": {
+    "id": "usa.2ad",
+    "name": "2nd Armored Division",
+    "shortName": "2nd AD",
+    "nation": "USA",
+    "side": "allies",
+    "type": "armoured",
+    "domain": "land",
+    "pos": [
+     -0.892,
+     49.358
+    ],
+    "manpower": 12000,
+    "manpowerMax": 12000,
+    "equipment": {
+     "held": {
+      "tank_medium": 100,
+      "tank_light": 20,
+      "gun_arty": 24,
+      "truck": 60
+     },
+     "authorised": {
+      "tank_medium": 100,
+      "tank_light": 20,
+      "gun_arty": 24,
+      "truck": 60
+     }
+    },
+    "organisation": 80,
+    "morale": 75,
+    "experience": 50,
+    "fuel": 100,
+    "ammo": 100,
+    "supply": 100,
+    "fatigue": 10,
+    "readiness": 90,
+    "entrenchment": 0,
+    "moveStatus": "stationary",
+    "combatStatus": "idle",
+    "posture": "defend",
+    "orders": [],
+    "kills": 0
+   },
+   "landing": {
+    "kind": "amphibious",
+    "casualties": 0,
+    "penaltyHours": 2
+   }
+  },
+  {
+   "id": "reinf.usa.9id",
+   "atMinutes": 6480,
+   "pos": [
+    -1.196,
+    49.376
+   ],
+   "unit": {
+    "id": "usa.9id",
+    "name": "9th Infantry Division",
+    "shortName": "9th ID",
+    "nation": "USA",
+    "side": "allies",
+    "type": "infantry",
+    "domain": "land",
+    "pos": [
+     -1.196,
+     49.376
+    ],
+    "manpower": 12000,
+    "manpowerMax": 12000,
+    "equipment": {
+     "held": {
+      "rifle": 100,
+      "gun_arty": 50,
+      "gun_at": 30
+     },
+     "authorised": {
+      "rifle": 100,
+      "gun_arty": 50,
+      "gun_at": 30
+     }
+    },
+    "organisation": 80,
+    "morale": 75,
+    "experience": 50,
+    "fuel": 100,
+    "ammo": 100,
+    "supply": 100,
+    "fatigue": 10,
+    "readiness": 90,
+    "entrenchment": 0,
+    "moveStatus": "stationary",
+    "combatStatus": "idle",
+    "posture": "defend",
+    "orders": [],
+    "kills": 0
+   },
+   "landing": {
+    "kind": "amphibious",
+    "casualties": 0,
+    "penaltyHours": 2
+   }
+  },
+  {
+   "id": "reinf.usa.90id",
+   "atMinutes": 6480,
+   "pos": [
+    -1.188,
+    49.376
+   ],
+   "unit": {
+    "id": "usa.90id",
+    "name": "90th Infantry Division",
+    "shortName": "90th ID",
+    "nation": "USA",
+    "side": "allies",
+    "type": "infantry",
+    "domain": "land",
+    "pos": [
+     -1.188,
+     49.376
+    ],
+    "manpower": 12000,
+    "manpowerMax": 12000,
+    "equipment": {
+     "held": {
+      "rifle": 100,
+      "gun_arty": 50,
+      "gun_at": 30
+     },
+     "authorised": {
+      "rifle": 100,
+      "gun_arty": 50,
+      "gun_at": 30
+     }
+    },
+    "organisation": 80,
+    "morale": 75,
+    "experience": 50,
+    "fuel": 100,
+    "ammo": 100,
+    "supply": 100,
+    "fatigue": 10,
+    "readiness": 90,
+    "entrenchment": 0,
+    "moveStatus": "stationary",
+    "combatStatus": "idle",
+    "posture": "defend",
+    "orders": [],
+    "kills": 0
+   },
+   "landing": {
+    "kind": "amphibious",
+    "casualties": 0,
+    "penaltyHours": 2
+   }
+  },
+  {
+   "id": "reinf.usa.30id",
+   "atMinutes": 7920,
+   "pos": [
+    -0.884,
+    49.358
+   ],
+   "unit": {
+    "id": "usa.30id",
+    "name": "30th Infantry Division (Hobbs)",
+    "shortName": "30th ID",
+    "nation": "USA",
+    "side": "allies",
+    "type": "infantry",
+    "domain": "land",
+    "pos": [
+     -0.884,
+     49.358
+    ],
+    "manpower": 12000,
+    "manpowerMax": 12000,
+    "equipment": {
+     "held": {
+      "rifle": 100,
+      "gun_arty": 50,
+      "gun_at": 30
+     },
+     "authorised": {
+      "rifle": 100,
+      "gun_arty": 50,
+      "gun_at": 30
+     }
+    },
+    "organisation": 80,
+    "morale": 75,
+    "experience": 50,
+    "fuel": 100,
+    "ammo": 100,
+    "supply": 100,
+    "fatigue": 10,
+    "readiness": 90,
+    "entrenchment": 0,
+    "moveStatus": "stationary",
+    "combatStatus": "idle",
+    "posture": "defend",
+    "orders": [],
+    "kills": 0
+   },
+   "landing": {
+    "kind": "amphibious",
+    "casualties": 0,
+    "penaltyHours": 2
+   }
+  },
+  {
+   "id": "reinf.usa.79id",
+   "atMinutes": 10800,
+   "pos": [
+    -1.212,
+    49.38
+   ],
+   "unit": {
+    "id": "usa.79id",
+    "name": "79th Infantry Division",
+    "shortName": "79th ID",
+    "nation": "USA",
+    "side": "allies",
+    "type": "infantry",
+    "domain": "land",
+    "pos": [
+     -1.212,
+     49.38
+    ],
+    "manpower": 12000,
+    "manpowerMax": 12000,
+    "equipment": {
+     "held": {
+      "rifle": 100,
+      "gun_arty": 50,
+      "gun_at": 30
+     },
+     "authorised": {
+      "rifle": 100,
+      "gun_arty": 50,
+      "gun_at": 30
+     }
+    },
+    "organisation": 80,
+    "morale": 75,
+    "experience": 50,
+    "fuel": 100,
+    "ammo": 100,
+    "supply": 100,
+    "fatigue": 10,
+    "readiness": 90,
+    "entrenchment": 0,
+    "moveStatus": "stationary",
+    "combatStatus": "idle",
+    "posture": "defend",
+    "orders": [],
+    "kills": 0
+   },
+   "landing": {
+    "kind": "amphibious",
+    "casualties": 0,
+    "penaltyHours": 2
+   }
+  },
+  {
+   "id": "reinf.gbr.11arm",
+   "atMinutes": 10800,
+   "pos": [
+    -0.411,
+    49.331
+   ],
+   "unit": {
+    "id": "gbr.11arm",
+    "name": "11th Armoured Division",
+    "shortName": "11th Armd",
+    "nation": "GBR",
+    "side": "allies",
+    "type": "armoured",
+    "domain": "land",
+    "pos": [
+     -0.411,
+     49.331
+    ],
+    "manpower": 12000,
+    "manpowerMax": 12000,
+    "equipment": {
+     "held": {
+      "tank_medium": 100,
+      "tank_light": 20,
+      "gun_arty": 24,
+      "truck": 60
+     },
+     "authorised": {
+      "tank_medium": 100,
+      "tank_light": 20,
+      "gun_arty": 24,
+      "truck": 60
+     }
+    },
+    "organisation": 80,
+    "morale": 80,
+    "experience": 60,
+    "fuel": 100,
+    "ammo": 100,
+    "supply": 100,
+    "fatigue": 10,
+    "readiness": 90,
+    "entrenchment": 0,
+    "moveStatus": "stationary",
+    "combatStatus": "idle",
+    "posture": "defend",
+    "orders": [],
+    "kills": 0
+   },
+   "landing": {
+    "kind": "amphibious",
+    "casualties": 0,
+    "penaltyHours": 2
+   }
+  },
+  {
+   "id": "reinf.gbr.49div",
+   "atMinutes": 10800,
+   "pos": [
+    -0.55,
+    49.339
+   ],
+   "unit": {
+    "id": "gbr.49div",
+    "name": "49th (West Riding) Infantry Division",
+    "shortName": "49th Div",
+    "nation": "GBR",
+    "side": "allies",
+    "type": "infantry",
+    "domain": "land",
+    "pos": [
+     -0.55,
+     49.339
+    ],
+    "manpower": 12000,
+    "manpowerMax": 12000,
+    "equipment": {
+     "held": {
+      "rifle": 100,
+      "gun_arty": 50,
+      "gun_at": 30
+     },
+     "authorised": {
+      "rifle": 100,
+      "gun_arty": 50,
+      "gun_at": 30
+     }
+    },
+    "organisation": 80,
+    "morale": 80,
+    "experience": 60,
+    "fuel": 100,
+    "ammo": 100,
+    "supply": 100,
+    "fatigue": 10,
+    "readiness": 90,
+    "entrenchment": 0,
+    "moveStatus": "stationary",
+    "combatStatus": "idle",
+    "posture": "defend",
+    "orders": [],
+    "kills": 0
+   },
+   "landing": {
+    "kind": "amphibious",
+    "casualties": 0,
+    "penaltyHours": 2
+   }
+  },
+  {
+   "id": "reinf.usa.83id",
+   "atMinutes": 18000,
+   "pos": [
+    -0.876,
+    49.358
+   ],
+   "unit": {
+    "id": "usa.83id",
+    "name": "83rd Infantry Division",
+    "shortName": "83rd ID",
+    "nation": "USA",
+    "side": "allies",
+    "type": "infantry",
+    "domain": "land",
+    "pos": [
+     -0.876,
+     49.358
+    ],
+    "manpower": 12000,
+    "manpowerMax": 12000,
+    "equipment": {
+     "held": {
+      "rifle": 100,
+      "gun_arty": 50,
+      "gun_at": 30
+     },
+     "authorised": {
+      "rifle": 100,
+      "gun_arty": 50,
+      "gun_at": 30
+     }
+    },
+    "organisation": 80,
+    "morale": 75,
+    "experience": 50,
+    "fuel": 100,
+    "ammo": 100,
+    "supply": 100,
+    "fatigue": 10,
+    "readiness": 90,
+    "entrenchment": 0,
+    "moveStatus": "stationary",
+    "combatStatus": "idle",
+    "posture": "defend",
+    "orders": [],
+    "kills": 0
+   },
+   "landing": {
+    "kind": "amphibious",
+    "casualties": 0,
+    "penaltyHours": 2
+   }
+  },
+  {
+   "id": "reinf.gbr.43div",
+   "atMinutes": 20880,
+   "pos": [
+    -0.325,
+    49.306
+   ],
+   "unit": {
+    "id": "gbr.43div",
+    "name": "43rd (Wessex) Infantry Division",
+    "shortName": "43rd Div",
+    "nation": "GBR",
+    "side": "allies",
+    "type": "infantry",
+    "domain": "land",
+    "pos": [
+     -0.325,
+     49.306
+    ],
+    "manpower": 12000,
+    "manpowerMax": 12000,
+    "equipment": {
+     "held": {
+      "rifle": 100,
+      "gun_arty": 50,
+      "gun_at": 30
+     },
+     "authorised": {
+      "rifle": 100,
+      "gun_arty": 50,
+      "gun_at": 30
+     }
+    },
+    "organisation": 80,
+    "morale": 80,
+    "experience": 60,
+    "fuel": 100,
+    "ammo": 100,
+    "supply": 100,
+    "fatigue": 10,
+    "readiness": 90,
+    "entrenchment": 0,
+    "moveStatus": "stationary",
+    "combatStatus": "idle",
+    "posture": "defend",
+    "orders": [],
+    "kills": 0
+   },
+   "landing": {
+    "kind": "amphibious",
+    "casualties": 0,
+    "penaltyHours": 2
+   }
+  },
+  {
+   "id": "reinf.gbr.15div",
+   "atMinutes": 28800,
+   "pos": [
+    -0.403,
+    49.331
+   ],
+   "unit": {
+    "id": "gbr.15div",
+    "name": "15th (Scottish) Infantry Division",
+    "shortName": "15th Div",
+    "nation": "GBR",
+    "side": "allies",
+    "type": "infantry",
+    "domain": "land",
+    "pos": [
+     -0.403,
+     49.331
+    ],
+    "manpower": 12000,
+    "manpowerMax": 12000,
+    "equipment": {
+     "held": {
+      "rifle": 100,
+      "gun_arty": 50,
+      "gun_at": 30
+     },
+     "authorised": {
+      "rifle": 100,
+      "gun_arty": 50,
+      "gun_at": 30
+     }
+    },
+    "organisation": 80,
+    "morale": 80,
+    "experience": 60,
+    "fuel": 100,
+    "ammo": 100,
+    "supply": 100,
+    "fatigue": 10,
+    "readiness": 90,
+    "entrenchment": 0,
+    "moveStatus": "stationary",
+    "combatStatus": "idle",
+    "posture": "defend",
+    "orders": [],
+    "kills": 0
+   },
+   "landing": {
+    "kind": "amphibious",
+    "casualties": 0,
+    "penaltyHours": 2
+   }
+  },
+  {
+   "id": "reinf.gbr.53div",
+   "atMinutes": 32400,
+   "pos": [
+    -0.542,
+    49.339
+   ],
+   "unit": {
+    "id": "gbr.53div",
+    "name": "53rd (Welsh) Infantry Division",
+    "shortName": "53rd Div",
+    "nation": "GBR",
+    "side": "allies",
+    "type": "infantry",
+    "domain": "land",
+    "pos": [
+     -0.542,
+     49.339
+    ],
+    "manpower": 12000,
+    "manpowerMax": 12000,
+    "equipment": {
+     "held": {
+      "rifle": 100,
+      "gun_arty": 50,
+      "gun_at": 30
+     },
+     "authorised": {
+      "rifle": 100,
+      "gun_arty": 50,
+      "gun_at": 30
+     }
+    },
+    "organisation": 80,
+    "morale": 80,
+    "experience": 60,
+    "fuel": 100,
+    "ammo": 100,
+    "supply": 100,
+    "fatigue": 10,
+    "readiness": 90,
+    "entrenchment": 0,
+    "moveStatus": "stationary",
+    "combatStatus": "idle",
+    "posture": "defend",
+    "orders": [],
+    "kills": 0
+   },
+   "landing": {
+    "kind": "amphibious",
+    "casualties": 0,
+    "penaltyHours": 2
+   }
+  },
+  {
+   "id": "reinf.gbr.guards",
+   "atMinutes": 34560,
+   "pos": [
+    -0.534,
+    49.339
+   ],
+   "unit": {
+    "id": "gbr.guards",
+    "name": "Guards Armoured Division",
+    "shortName": "Gds Armd",
+    "nation": "GBR",
+    "side": "allies",
+    "type": "armoured",
+    "domain": "land",
+    "pos": [
+     -0.534,
+     49.339
+    ],
+    "manpower": 12000,
+    "manpowerMax": 12000,
+    "equipment": {
+     "held": {
+      "tank_medium": 100,
+      "tank_light": 20,
+      "gun_arty": 24,
+      "truck": 60
+     },
+     "authorised": {
+      "tank_medium": 100,
+      "tank_light": 20,
+      "gun_arty": 24,
+      "truck": 60
+     }
+    },
+    "organisation": 80,
+    "morale": 80,
+    "experience": 60,
+    "fuel": 100,
+    "ammo": 100,
+    "supply": 100,
+    "fatigue": 10,
+    "readiness": 90,
+    "entrenchment": 0,
+    "moveStatus": "stationary",
+    "combatStatus": "idle",
+    "posture": "defend",
+    "orders": [],
+    "kills": 0
+   },
+   "landing": {
+    "kind": "amphibious",
+    "casualties": 0,
+    "penaltyHours": 2
+   }
+  },
+  {
+   "id": "reinf.gbr.59div",
+   "atMinutes": 35280,
+   "pos": [
+    -0.526,
+    49.339
+   ],
+   "unit": {
+    "id": "gbr.59div",
+    "name": "59th (Staffordshire) Infantry Division",
+    "shortName": "59th Div",
+    "nation": "GBR",
+    "side": "allies",
+    "type": "infantry",
+    "domain": "land",
+    "pos": [
+     -0.526,
+     49.339
+    ],
+    "manpower": 12000,
+    "manpowerMax": 12000,
+    "equipment": {
+     "held": {
+      "rifle": 100,
+      "gun_arty": 50,
+      "gun_at": 30
+     },
+     "authorised": {
+      "rifle": 100,
+      "gun_arty": 50,
+      "gun_at": 30
+     }
+    },
+    "organisation": 80,
+    "morale": 80,
+    "experience": 60,
+    "fuel": 100,
+    "ammo": 100,
+    "supply": 100,
+    "fatigue": 10,
+    "readiness": 90,
+    "entrenchment": 0,
+    "moveStatus": "stationary",
+    "combatStatus": "idle",
+    "posture": "defend",
+    "orders": [],
+    "kills": 0
+   },
+   "landing": {
+    "kind": "amphibious",
+    "casualties": 0,
+    "penaltyHours": 2
+   }
+  },
+  {
+   "id": "reinf.usa.35id",
+   "atMinutes": 43920,
+   "pos": [
+    -0.868,
+    49.358
+   ],
+   "unit": {
+    "id": "usa.35id",
+    "name": "35th Infantry Division",
+    "shortName": "35th ID",
+    "nation": "USA",
+    "side": "allies",
+    "type": "infantry",
+    "domain": "land",
+    "pos": [
+     -0.868,
+     49.358
+    ],
+    "manpower": 12000,
+    "manpowerMax": 12000,
+    "equipment": {
+     "held": {
+      "rifle": 100,
+      "gun_arty": 50,
+      "gun_at": 30
+     },
+     "authorised": {
+      "rifle": 100,
+      "gun_arty": 50,
+      "gun_at": 30
+     }
+    },
+    "organisation": 80,
+    "morale": 75,
+    "experience": 50,
+    "fuel": 100,
+    "ammo": 100,
+    "supply": 100,
+    "fatigue": 10,
+    "readiness": 90,
+    "entrenchment": 0,
+    "moveStatus": "stationary",
+    "combatStatus": "idle",
+    "posture": "defend",
+    "orders": [],
+    "kills": 0
+   },
+   "landing": {
+    "kind": "amphibious",
+    "casualties": 0,
+    "penaltyHours": 2
+   }
+  },
+  {
+   "id": "reinf.can.2div",
+   "atMinutes": 45360,
+   "pos": [
+    -0.427,
+    49.335
+   ],
+   "unit": {
+    "id": "can.2div",
+    "name": "2nd Canadian Infantry Division",
+    "shortName": "2nd Cdn Div",
+    "nation": "CAN",
+    "side": "allies",
+    "type": "infantry",
+    "domain": "land",
+    "pos": [
+     -0.427,
+     49.335
+    ],
+    "manpower": 12000,
+    "manpowerMax": 12000,
+    "equipment": {
+     "held": {
+      "rifle": 100,
+      "gun_arty": 50,
+      "gun_at": 30
+     },
+     "authorised": {
+      "rifle": 100,
+      "gun_arty": 50,
+      "gun_at": 30
+     }
+    },
+    "organisation": 80,
+    "morale": 78,
+    "experience": 45,
+    "fuel": 100,
+    "ammo": 100,
+    "supply": 100,
+    "fatigue": 10,
+    "readiness": 90,
+    "entrenchment": 0,
+    "moveStatus": "stationary",
+    "combatStatus": "idle",
+    "posture": "defend",
+    "orders": [],
+    "kills": 0
+   },
+   "landing": {
+    "kind": "amphibious",
+    "casualties": 0,
+    "penaltyHours": 2
+   }
+  },
+  {
+   "id": "reinf.usa.5id",
+   "atMinutes": 48240,
+   "pos": [
+    -1.204,
+    49.38
+   ],
+   "unit": {
+    "id": "usa.5id",
+    "name": "5th Infantry Division",
+    "shortName": "5th ID",
+    "nation": "USA",
+    "side": "allies",
+    "type": "infantry",
+    "domain": "land",
+    "pos": [
+     -1.204,
+     49.38
+    ],
+    "manpower": 12000,
+    "manpowerMax": 12000,
+    "equipment": {
+     "held": {
+      "rifle": 100,
+      "gun_arty": 50,
+      "gun_at": 30
+     },
+     "authorised": {
+      "rifle": 100,
+      "gun_arty": 50,
+      "gun_at": 30
+     }
+    },
+    "organisation": 80,
+    "morale": 75,
+    "experience": 50,
+    "fuel": 100,
+    "ammo": 100,
+    "supply": 100,
+    "fatigue": 10,
+    "readiness": 90,
+    "entrenchment": 0,
+    "moveStatus": "stationary",
+    "combatStatus": "idle",
+    "posture": "defend",
+    "orders": [],
+    "kills": 0
+   },
+   "landing": {
+    "kind": "amphibious",
+    "casualties": 0,
+    "penaltyHours": 2
+   }
+  },
+  {
+   "id": "reinf.usa.4ad",
+   "atMinutes": 51120,
+   "pos": [
+    -1.196,
+    49.38
+   ],
+   "unit": {
+    "id": "usa.4ad",
+    "name": "4th Armored Division",
+    "shortName": "4th AD",
+    "nation": "USA",
+    "side": "allies",
+    "type": "armoured",
+    "domain": "land",
+    "pos": [
+     -1.196,
+     49.38
+    ],
+    "manpower": 12000,
+    "manpowerMax": 12000,
+    "equipment": {
+     "held": {
+      "tank_medium": 100,
+      "tank_light": 20,
+      "gun_arty": 24,
+      "truck": 60
+     },
+     "authorised": {
+      "tank_medium": 100,
+      "tank_light": 20,
+      "gun_arty": 24,
+      "truck": 60
+     }
+    },
+    "organisation": 80,
+    "morale": 75,
+    "experience": 50,
+    "fuel": 100,
+    "ammo": 100,
+    "supply": 100,
+    "fatigue": 10,
+    "readiness": 90,
+    "entrenchment": 0,
+    "moveStatus": "stationary",
+    "combatStatus": "idle",
+    "posture": "defend",
+    "orders": [],
+    "kills": 0
+   },
+   "landing": {
+    "kind": "amphibious",
+    "casualties": 0,
+    "penaltyHours": 2
+   }
+  },
+  {
+   "id": "reinf.usa.28id",
+   "atMinutes": 66960,
+   "pos": [
+    -0.892,
+    49.362
+   ],
+   "unit": {
+    "id": "usa.28id",
+    "name": "28th Infantry Division",
+    "shortName": "28th ID",
+    "nation": "USA",
+    "side": "allies",
+    "type": "infantry",
+    "domain": "land",
+    "pos": [
+     -0.892,
+     49.362
+    ],
+    "manpower": 12000,
+    "manpowerMax": 12000,
+    "equipment": {
+     "held": {
+      "rifle": 100,
+      "gun_arty": 50,
+      "gun_at": 30
+     },
+     "authorised": {
+      "rifle": 100,
+      "gun_arty": 50,
+      "gun_at": 30
+     }
+    },
+    "organisation": 80,
+    "morale": 75,
+    "experience": 50,
+    "fuel": 100,
+    "ammo": 100,
+    "supply": 100,
+    "fatigue": 10,
+    "readiness": 90,
+    "entrenchment": 0,
+    "moveStatus": "stationary",
+    "combatStatus": "idle",
+    "posture": "defend",
+    "orders": [],
+    "kills": 0
+   },
+   "landing": {
+    "kind": "amphibious",
+    "casualties": 0,
+    "penaltyHours": 2
+   }
+  },
+  {
+   "id": "reinf.ger.d.12ss",
+   "atMinutes": 1800,
+   "pos": [
+    -0.26,
+    49.04
+   ],
+   "unit": {
+    "id": "ger.d.12ss",
+    "name": "12th SS Panzer Division Hitlerjugend",
+    "shortName": "12.SS-PzD",
+    "nation": "GER",
+    "side": "axis",
+    "type": "armoured",
+    "domain": "land",
+    "pos": [
+     -0.26,
+     49.04
+    ],
+    "manpower": 12000,
+    "manpowerMax": 12000,
+    "equipment": {
+     "held": {
+      "tank_medium": 100,
+      "tank_light": 20,
+      "gun_arty": 24,
+      "truck": 60
+     },
+     "authorised": {
+      "tank_medium": 100,
+      "tank_light": 20,
+      "gun_arty": 24,
+      "truck": 60
+     }
+    },
+    "organisation": 80,
+    "morale": 85,
+    "experience": 60,
+    "fuel": 100,
+    "ammo": 100,
+    "supply": 100,
+    "fatigue": 10,
+    "readiness": 90,
+    "entrenchment": 0,
+    "moveStatus": "stationary",
+    "combatStatus": "idle",
+    "posture": "hold",
+    "orders": [],
+    "kills": 0
+   }
+  },
+  {
+   "id": "reinf.ger.d.plehr",
+   "atMinutes": 3240,
+   "pos": [
+    -0.69,
+    48.99
+   ],
+   "unit": {
+    "id": "ger.d.plehr",
+    "name": "Panzer Lehr Division",
+    "shortName": "Pz Lehr",
+    "nation": "GER",
+    "side": "axis",
+    "type": "armoured",
+    "domain": "land",
+    "pos": [
+     -0.69,
+     48.99
+    ],
+    "manpower": 12000,
+    "manpowerMax": 12000,
+    "equipment": {
+     "held": {
+      "tank_medium": 208,
+      "tank_light": 20,
+      "gun_arty": 24,
+      "truck": 60
+     },
+     "authorised": {
+      "tank_medium": 208,
+      "tank_light": 20,
+      "gun_arty": 24,
+      "truck": 60
+     }
+    },
+    "organisation": 80,
+    "morale": 82,
+    "experience": 65,
+    "fuel": 100,
+    "ammo": 100,
+    "supply": 100,
+    "fatigue": 10,
+    "readiness": 90,
+    "entrenchment": 0,
+    "moveStatus": "stationary",
+    "combatStatus": "idle",
+    "posture": "hold",
+    "orders": [],
+    "kills": 0
+   }
+  },
+  {
+   "id": "reinf.ger.d.3fj",
+   "atMinutes": 6480,
+   "pos": [
+    -1.06,
+    49.07
+   ],
+   "unit": {
+    "id": "ger.d.3fj",
+    "name": "3rd Fallschirmjager Division",
+    "shortName": "3.FJD",
+    "nation": "GER",
+    "side": "axis",
+    "type": "paratroop",
+    "domain": "land",
+    "pos": [
+     -1.06,
+     49.07
+    ],
+    "manpower": 9000,
+    "manpowerMax": 9000,
+    "equipment": {
+     "held": {
+      "rifle": 90,
+      "gun_arty": 30,
+      "gun_at": 12
+     },
+     "authorised": {
+      "rifle": 90,
+      "gun_arty": 30,
+      "gun_at": 12
+     }
+    },
+    "organisation": 80,
+    "morale": 76,
+    "experience": 50,
+    "fuel": 100,
+    "ammo": 100,
+    "supply": 100,
+    "fatigue": 10,
+    "readiness": 90,
+    "entrenchment": 0,
+    "moveStatus": "stationary",
+    "combatStatus": "idle",
+    "posture": "hold",
+    "orders": [],
+    "kills": 0
+   }
+  },
+  {
+   "id": "reinf.ger.d.17ss",
+   "atMinutes": 7920,
+   "pos": [
+    -1.46,
+    49.17
+   ],
+   "unit": {
+    "id": "ger.d.17ss",
+    "name": "17th SS Panzergrenadier Division Gotz von Berlichingen",
+    "shortName": "17.SS-PzGrD",
+    "nation": "GER",
+    "side": "axis",
+    "type": "motorised",
+    "domain": "land",
+    "pos": [
+     -1.46,
+     49.17
+    ],
+    "manpower": 12000,
+    "manpowerMax": 12000,
+    "equipment": {
+     "held": {
+      "rifle": 80,
+      "gun_arty": 40,
+      "truck": 60
+     },
+     "authorised": {
+      "rifle": 80,
+      "gun_arty": 40,
+      "truck": 60
+     }
+    },
+    "organisation": 80,
+    "morale": 76,
+    "experience": 50,
+    "fuel": 100,
+    "ammo": 100,
+    "supply": 100,
+    "fatigue": 10,
+    "readiness": 90,
+    "entrenchment": 0,
+    "moveStatus": "stationary",
+    "combatStatus": "idle",
+    "posture": "hold",
+    "orders": [],
+    "kills": 0
+   }
+  },
+  {
+   "id": "reinf.ger.sspz101",
+   "atMinutes": 9360,
+   "pos": [
+    -0.61,
+    48.97
+   ],
+   "unit": {
+    "id": "ger.sspz101",
+    "name": "101st SS Heavy Panzer Battalion (Tigers)",
+    "shortName": "s.SS-Pz.Abt 101",
+    "nation": "GER",
+    "side": "axis",
+    "type": "armoured",
+    "domain": "land",
+    "pos": [
+     -0.61,
+     48.97
+    ],
+    "manpower": 800,
+    "manpowerMax": 800,
+    "equipment": {
+     "held": {
+      "tank_medium": 100,
+      "tank_light": 20,
+      "gun_arty": 24,
+      "truck": 60
+     },
+     "authorised": {
+      "tank_medium": 100,
+      "tank_light": 20,
+      "gun_arty": 24,
+      "truck": 60
+     }
+    },
+    "organisation": 80,
+    "morale": 85,
+    "experience": 65,
+    "fuel": 100,
+    "ammo": 100,
+    "supply": 100,
+    "fatigue": 10,
+    "readiness": 90,
+    "entrenchment": 0,
+    "moveStatus": "stationary",
+    "combatStatus": "idle",
+    "posture": "hold",
+    "orders": [],
+    "kills": 0
+   }
+  },
+  {
+   "id": "reinf.ger.d.2ss",
+   "atMinutes": 23760,
+   "pos": [
+    -1.16,
+    48.97
+   ],
+   "unit": {
+    "id": "ger.d.2ss",
+    "name": "2nd SS Panzer Division Das Reich",
+    "shortName": "2.SS-PzD",
+    "nation": "GER",
+    "side": "axis",
+    "type": "armoured",
+    "domain": "land",
+    "pos": [
+     -1.16,
+     48.97
+    ],
+    "manpower": 12000,
+    "manpowerMax": 12000,
+    "equipment": {
+     "held": {
+      "tank_medium": 100,
+      "tank_light": 20,
+      "gun_arty": 24,
+      "truck": 60
+     },
+     "authorised": {
+      "tank_medium": 100,
+      "tank_light": 20,
+      "gun_arty": 24,
+      "truck": 60
+     }
+    },
+    "organisation": 80,
+    "morale": 82,
+    "experience": 60,
+    "fuel": 100,
+    "ammo": 100,
+    "supply": 100,
+    "fatigue": 10,
+    "readiness": 90,
+    "entrenchment": 0,
+    "moveStatus": "stationary",
+    "combatStatus": "idle",
+    "posture": "hold",
+    "orders": [],
+    "kills": 0
+   }
+  },
+  {
+   "id": "reinf.ger.d.9ss",
+   "atMinutes": 29520,
+   "pos": [
+    -0.61,
+    48.97
+   ],
+   "unit": {
+    "id": "ger.d.9ss",
+    "name": "9th SS Panzer Division Hohenstaufen",
+    "shortName": "9.SS-PzD",
+    "nation": "GER",
+    "side": "axis",
+    "type": "armoured",
+    "domain": "land",
+    "pos": [
+     -0.61,
+     48.97
+    ],
+    "manpower": 12000,
+    "manpowerMax": 12000,
+    "equipment": {
+     "held": {
+      "tank_medium": 100,
+      "tank_light": 20,
+      "gun_arty": 24,
+      "truck": 60
+     },
+     "authorised": {
+      "tank_medium": 100,
+      "tank_light": 20,
+      "gun_arty": 24,
+      "truck": 60
+     }
+    },
+    "organisation": 80,
+    "morale": 82,
+    "experience": 55,
+    "fuel": 100,
+    "ammo": 100,
+    "supply": 100,
+    "fatigue": 10,
+    "readiness": 90,
+    "entrenchment": 0,
+    "moveStatus": "stationary",
+    "combatStatus": "idle",
+    "posture": "hold",
+    "orders": [],
+    "kills": 0
+   }
+  },
+  {
+   "id": "reinf.ger.d.10ss",
+   "atMinutes": 31680,
+   "pos": [
+    -0.56,
+    48.97
+   ],
+   "unit": {
+    "id": "ger.d.10ss",
+    "name": "10th SS Panzer Division Frundsberg",
+    "shortName": "10.SS-PzD",
+    "nation": "GER",
+    "side": "axis",
+    "type": "armoured",
+    "domain": "land",
+    "pos": [
+     -0.56,
+     48.97
+    ],
+    "manpower": 12000,
+    "manpowerMax": 12000,
+    "equipment": {
+     "held": {
+      "tank_medium": 100,
+      "tank_light": 20,
+      "gun_arty": 24,
+      "truck": 60
+     },
+     "authorised": {
+      "tank_medium": 100,
+      "tank_light": 20,
+      "gun_arty": 24,
+      "truck": 60
+     }
+    },
+    "organisation": 80,
+    "morale": 82,
+    "experience": 55,
+    "fuel": 100,
+    "ammo": 100,
+    "supply": 100,
+    "fatigue": 10,
+    "readiness": 90,
+    "entrenchment": 0,
+    "moveStatus": "stationary",
+    "combatStatus": "idle",
+    "posture": "hold",
+    "orders": [],
+    "kills": 0
+   }
+  },
+  {
+   "id": "reinf.ger.d.1ss",
+   "atMinutes": 31680,
+   "pos": [
+    -0.16,
+    48.97
+   ],
+   "unit": {
+    "id": "ger.d.1ss",
+    "name": "1st SS Panzer Division Leibstandarte",
+    "shortName": "1.SS-PzD",
+    "nation": "GER",
+    "side": "axis",
+    "type": "armoured",
+    "domain": "land",
+    "pos": [
+     -0.16,
+     48.97
+    ],
+    "manpower": 12000,
+    "manpowerMax": 12000,
+    "equipment": {
+     "held": {
+      "tank_medium": 100,
+      "tank_light": 20,
+      "gun_arty": 24,
+      "truck": 60
+     },
+     "authorised": {
+      "tank_medium": 100,
+      "tank_light": 20,
+      "gun_arty": 24,
+      "truck": 60
+     }
+    },
+    "organisation": 80,
+    "morale": 85,
+    "experience": 60,
+    "fuel": 100,
+    "ammo": 100,
+    "supply": 100,
+    "fatigue": 10,
+    "readiness": 90,
+    "entrenchment": 0,
+    "moveStatus": "stationary",
+    "combatStatus": "idle",
+    "posture": "hold",
+    "orders": [],
+    "kills": 0
+   }
+  },
+  {
+   "id": "reinf.ger.d.275",
+   "atMinutes": 56160,
+   "pos": [
+    -1.16,
+    48.97
+   ],
+   "unit": {
+    "id": "ger.d.275",
+    "name": "275th Infantry Division (remainder)",
+    "shortName": "275.ID",
+    "nation": "GER",
+    "side": "axis",
+    "type": "infantry",
+    "domain": "land",
+    "pos": [
+     -1.16,
+     48.97
+    ],
+    "manpower": 12000,
+    "manpowerMax": 12000,
+    "equipment": {
+     "held": {
+      "rifle": 100,
+      "gun_arty": 50,
+      "gun_at": 30
+     },
+     "authorised": {
+      "rifle": 100,
+      "gun_arty": 50,
+      "gun_at": 30
+     }
+    },
+    "organisation": 80,
+    "morale": 76,
+    "experience": 45,
+    "fuel": 100,
+    "ammo": 100,
+    "supply": 100,
+    "fatigue": 10,
+    "readiness": 90,
+    "entrenchment": 0,
+    "moveStatus": "stationary",
+    "combatStatus": "idle",
+    "posture": "hold",
+    "orders": [],
+    "kills": 0
+   }
+  }
+ ],
+ "objectives": [
+  {
+   "id": "o.all.cherbourg",
+   "tier": "primary",
+   "side": "allies",
+   "title": "Capture Cherbourg",
+   "description": "Take the fortified port of Cherbourg (26 June, M02; 27 June in M11).",
+   "condition": {
+    "kind": "capture_location",
+    "locationId": "cherbourg"
+   },
+   "points": 250,
+   "status": "pending"
+  },
+  {
+   "id": "o.all.caen",
+   "tier": "primary",
+   "side": "allies",
+   "title": "Capture Caen",
+   "description": "Take Caen, a D-Day objective not completed until 21 July (M02).",
+   "condition": {
+    "kind": "capture_location",
+    "locationId": "caen"
+   },
+   "points": 250,
+   "status": "pending"
+  },
+  {
+   "id": "o.all.carentan",
+   "tier": "secondary",
+   "side": "allies",
+   "title": "Capture Carentan",
+   "description": "Link the Utah and Omaha beachheads at Carentan (10-12 June, M10).",
+   "condition": {
+    "kind": "capture_location",
+    "locationId": "carentan"
+   },
+   "points": 100,
+   "status": "pending"
+  },
+  {
+   "id": "o.all.bayeux",
+   "tier": "secondary",
+   "side": "allies",
+   "title": "Capture Bayeux",
+   "description": "Take Bayeux, a D-Day objective (M02, M05).",
+   "condition": {
+    "kind": "capture_location",
+    "locationId": "bayeux"
+   },
+   "points": 80,
+   "status": "pending"
+  },
+  {
+   "id": "o.all.isigny",
+   "tier": "secondary",
+   "side": "allies",
+   "title": "Capture Isigny",
+   "description": "Take Isigny to link Omaha with Utah (M04).",
+   "condition": {
+    "kind": "capture_location",
+    "locationId": "isigny"
+   },
+   "points": 60,
+   "status": "pending"
+  },
+  {
+   "id": "o.all.saint_lo",
+   "tier": "secondary",
+   "side": "allies",
+   "title": "Capture Saint-Lo",
+   "description": "Take Saint-Lo (fell by 19 July, M11).",
+   "condition": {
+    "kind": "capture_location",
+    "locationId": "saint_lo"
+   },
+   "points": 150,
+   "status": "pending"
+  },
+  {
+   "id": "o.all.carpiquet",
+   "tier": "secondary",
+   "side": "allies",
+   "title": "Capture Carpiquet airfield",
+   "description": "D-Day objective of the 3rd Canadian Division (M06).",
+   "condition": {
+    "kind": "capture_location",
+    "locationId": "carpiquet"
+   },
+   "points": 80,
+   "status": "pending"
+  },
+  {
+   "id": "o.all.avranches",
+   "tier": "strategic",
+   "side": "allies",
+   "title": "Break out to Avranches",
+   "description": "Operation Cobra reached Avranches by 31 July (M11).",
+   "condition": {
+    "kind": "capture_location",
+    "locationId": "avranches"
+   },
+   "points": 200,
+   "status": "pending"
+  },
+  {
+   "id": "o.all.mulberry",
+   "tier": "secondary",
+   "side": "allies",
+   "title": "Keep the Arromanches harbour",
+   "description": "Hold Arromanches (Mulberry B), used for ten months (M08).",
+   "condition": {
+    "kind": "hold_location",
+    "locationId": "arromanches",
+    "untilMinutes": 79200
+   },
+   "points": 100,
+   "status": "pending"
+  },
+  {
+   "id": "o.ger.hold_caen",
+   "tier": "primary",
+   "side": "axis",
+   "title": "Hold Caen",
+   "description": "Keep Caen out of Anglo-Canadian hands (not fully captured until 21 July, M02).",
+   "condition": {
+    "kind": "hold_location",
+    "locationId": "caen",
+    "untilMinutes": 79200
+   },
+   "points": 250,
+   "status": "pending"
+  },
+  {
+   "id": "o.ger.hold_cherbourg",
+   "tier": "primary",
+   "side": "axis",
+   "title": "Hold Cherbourg",
+   "description": "Deny the Allies a deep-water port (Cherbourg fell 26 June, M02).",
+   "condition": {
+    "kind": "hold_location",
+    "locationId": "cherbourg",
+    "untilMinutes": 79200
+   },
+   "points": 250,
+   "status": "pending"
+  },
+  {
+   "id": "o.ger.hold_saint_lo",
+   "tier": "secondary",
+   "side": "axis",
+   "title": "Hold Saint-Lo",
+   "description": "Keep the Saint-Lo crossroads (fell by 19 July, M11).",
+   "condition": {
+    "kind": "hold_location",
+    "locationId": "saint_lo",
+    "untilMinutes": 79200
+   },
+   "points": 150,
+   "status": "pending"
+  },
+  {
+   "id": "o.ger.hold_carentan",
+   "tier": "secondary",
+   "side": "axis",
+   "title": "Hold Carentan",
+   "description": "Keep the Utah and Omaha beachheads apart (M10).",
+   "condition": {
+    "kind": "hold_location",
+    "locationId": "carentan",
+    "untilMinutes": 79200
+   },
+   "points": 100,
+   "status": "pending"
+  },
+  {
+   "id": "o.ger.hold_bayeux",
+   "tier": "secondary",
+   "side": "axis",
+   "title": "Hold Bayeux",
+   "description": "Deny Bayeux (taken 7 June, M05).",
+   "condition": {
+    "kind": "hold_location",
+    "locationId": "bayeux",
+    "untilMinutes": 79200
+   },
+   "points": 60,
+   "status": "pending"
+  },
+  {
+   "id": "o.ger.hold_avranches",
+   "tier": "secondary",
+   "side": "axis",
+   "title": "Keep the Avranches gateway",
+   "description": "Stop the US First Army breaking out into Brittany (M11).",
+   "condition": {
+    "kind": "hold_location",
+    "locationId": "avranches",
+    "untilMinutes": 79200
+   },
+   "points": 150,
+   "status": "pending"
+  }
+ ],
+ "terrainFile": "terrain_normandy.json",
+ "infraFile": "infra_normandy.json",
+ "supplySources": {
+  "GER": [
+   "lisieux",
+   "falaise",
+   "vire"
+  ],
+  "USA": [
+   "southampton",
+   "portsmouth",
+   "poole",
+   "weymouth",
+   "newhaven"
+  ],
+  "GBR": [
+   "southampton",
+   "portsmouth",
+   "poole",
+   "weymouth",
+   "newhaven"
+  ],
+  "CAN": [
+   "southampton",
+   "portsmouth",
+   "poole",
+   "weymouth",
+   "newhaven"
+  ]
+ },
+ "initialControl": [
+  {
+   "nation": "GER",
+   "polygon": [
+    [
+     -2.6,
+     48.4
+    ],
+    [
+     0.8,
+     48.4
+    ],
+    [
+     0.8,
+     49.9
+    ],
+    [
+     -2.6,
+     49.9
+    ]
+   ]
+  },
+  {
+   "nation": "GBR",
+   "polygon": [
+    [
+     -2.6,
+     50.3
+    ],
+    [
+     0.7999999999999999,
+     50.3
+    ],
+    [
+     0.7999999999999999,
+     51
+    ],
+    [
+     -2.6,
+     51
+    ]
+   ]
+  },
+  {
+   "nation": "USA",
+   "polygon": [
+    [
+     -1.28,
+     49.3
+    ],
+    [
+     -1.1199999999999999,
+     49.3
+    ],
+    [
+     -1.1199999999999999,
+     49.42
+    ],
+    [
+     -1.28,
+     49.42
+    ]
+   ]
+  },
+  {
+   "nation": "USA",
+   "polygon": [
+    [
+     -1,
+     49.290000000000006
+    ],
+    [
+     -0.8,
+     49.290000000000006
+    ],
+    [
+     -0.8,
+     49.39
+    ],
+    [
+     -1,
+     49.39
+    ]
+   ]
+  },
+  {
+   "nation": "GBR",
+   "polygon": [
+    [
+     -0.77,
+     49.28
+    ],
+    [
+     -0.53,
+     49.28
+    ],
+    [
+     -0.53,
+     49.379999999999995
+    ],
+    [
+     -0.77,
+     49.379999999999995
+    ]
+   ]
+  },
+  {
+   "nation": "CAN",
+   "polygon": [
+    [
+     -0.47,
+     49.27
+    ],
+    [
+     -0.37,
+     49.27
+    ],
+    [
+     -0.37,
+     49.37
+    ],
+    [
+     -0.47,
+     49.37
+    ]
+   ]
+  },
+  {
+   "nation": "GBR",
+   "polygon": [
+    [
+     -0.35,
+     49.25
+    ],
+    [
+     -0.25,
+     49.25
+    ],
+    [
+     -0.25,
+     49.349999999999994
+    ],
+    [
+     -0.35,
+     49.349999999999994
+    ]
+   ]
+  }
+ ],
+ "weatherProfile": [
+  {
+   "month": 6,
+   "probs": {
+    "clear": 0.35,
+    "cloud": 0.3,
+    "rain": 0.2,
+    "fog": 0.05,
+    "storm": 0.1
+   },
+   "tempC": 16
+  },
+  {
+   "month": 7,
+   "probs": {
+    "clear": 0.4,
+    "cloud": 0.3,
+    "rain": 0.2,
+    "fog": 0.05,
+    "storm": 0.05
+   },
+   "tempC": 19
+  }
+ ],
+ "eventTemplateIds": [
+  "nm.ev.airborne",
+  "nm.ev.d_day",
+  "nm.ev.21pz",
+  "nm.ev.12ss",
+  "nm.ev.plehr",
+  "nm.ev.carentan",
+  "nm.ev.villers_bocage",
+  "nm.ev.cotentin",
+  "nm.ev.storm",
+  "nm.ev.cherbourg",
+  "nm.ev.epsom",
+  "nm.ev.rundstedt",
+  "nm.ev.charnwood",
+  "nm.ev.saint_lo_battle",
+  "nm.ev.cherbourg_cleared",
+  "nm.ev.goodwood",
+  "nm.ev.saint_lo_falls",
+  "nm.ev.caen_falls",
+  "nm.ev.cobra",
+  "nm.ev.bluecoat",
+  "nm.ev.avranches"
+ ],
+ "specialSystems": [],
+ "airSupremacy": [
+  {
+   "side": "allies",
+   "radiusKm": 80,
+   "speedMul": 0.7
+  }
+ ],
+ "carpetBombings": [
+  {
+   "id": "cb.charnwood",
+   "atMinutes": 45900,
+   "pos": [
+    -0.38,
+    49.2
+   ],
+   "radiusKm": 4,
+   "side": "allies",
+   "casualtyPct": 0.05,
+   "orgLoss": 30
+  },
+  {
+   "id": "cb.goodwood",
+   "atMinutes": 60810,
+   "pos": [
+    -0.26,
+    49.15
+   ],
+   "radiusKm": 6,
+   "side": "allies",
+   "casualtyPct": 0.06,
+   "orgLoss": 35
+  },
+  {
+   "id": "cb.cobra",
+   "atMinutes": 71140,
+   "pos": [
+    -1.25,
+    49.15
+   ],
+   "radiusKm": 6,
+   "side": "allies",
+   "casualtyPct": 0.08,
+   "orgLoss": 40
+  }
+ ],
+ "seaSupply": true,
+ "weatherControl": {
+  "stormScale": 0
+ },
+ "captureBlockKm": 6.5,
+ "victoryTiers": {
+  "axis": {
+   "decisive": 0.8,
+   "strategic": 0.6,
+   "limited": 0.4,
+   "stalemate": 0.2
+  },
+  "allies": {
+   "decisive": 0.8,
+   "strategic": 0.6,
+   "limited": 0.4,
+   "stalemate": 0.2
+  }
+ },
+ "sources": [
+  {
+   "id": "M01",
+   "citation": "Wikipedia, \"Normandy landings\" (Operation Neptune: 6 June 1944 landings, five beaches, 24,000 airborne, storm 19-22 June, German command and armoured reserve dispute, air strength).",
+   "url": "https://en.wikipedia.org/wiki/Normandy_landings"
+  },
+  {
+   "id": "M02",
+   "citation": "Wikipedia, \"Operation Overlord\" (Battle of Normandy: timeline, Cherbourg 26 June, Caen 21 July, Arromanches 6,000 tons/day, Cherbourg cleared 16 July, Kluge replaces Rundstedt 1 July, air strengths).",
+   "url": "https://en.wikipedia.org/wiki/Operation_Overlord"
+  },
+  {
+   "id": "M03",
+   "citation": "Wikipedia, \"Utah Beach\" (US 4th Infantry Division and 70th Tank Battalion, 197 casualties among 21,000 landed; 709th Static Division, 919th Grenadier Regiment; 91st Division and 6th Fallschirmjager Regiment inland).",
+   "url": "https://en.wikipedia.org/wiki/Utah_Beach"
+  },
+  {
+   "id": "M04",
+   "citation": "Wikipedia, \"Omaha Beach\" (US 1st and 29th Infantry Divisions, Rangers; 352nd Infantry Division; 2,400 casualties, 34,000 landed; Gerow and Collins).",
+   "url": "https://en.wikipedia.org/wiki/Omaha_Beach"
+  },
+  {
+   "id": "M05",
+   "citation": "Wikipedia, \"Gold Beach\" (50th Northumbrian Division and brigades, 8th Armoured Brigade, 79th Armoured elements, XXX Corps; 716th and 352nd Divisions; Arromanches; Bayeux the next day).",
+   "url": "https://en.wikipedia.org/wiki/Gold_Beach"
+  },
+  {
+   "id": "M06",
+   "citation": "Wikipedia, \"Juno Beach\" and \"Juno Beach order of battle\" (3rd Canadian Infantry Division; objectives Carpiquet and the Caen-Bayeux railway; 716th Division; 21st Panzer).",
+   "url": "https://en.wikipedia.org/wiki/Juno_Beach"
+  },
+  {
+   "id": "M07",
+   "citation": "Wikipedia, \"Sword Beach\" (3rd Division, 27th Armoured Brigade, 1st Special Service Brigade commandos).",
+   "url": "https://en.wikipedia.org/wiki/Sword_Beach"
+  },
+  {
+   "id": "M08",
+   "citation": "Wikipedia, \"Mulberry harbour\" (Mulberry A at Omaha, B at Gold/Arromanches; 12,000 tons/day requirement; A wrecked by the 19 June storm; B used ten months).",
+   "url": "https://en.wikipedia.org/wiki/Mulberry_harbour"
+  },
+  {
+   "id": "M09",
+   "citation": "Wikipedia, \"Operation Tonga\" and \"American airborne landings in Normandy order of battle\" (British 6th Airborne Division 5-7 June, scattered drops; US 82nd and 101st Airborne under VII Corps).",
+   "url": "https://en.wikipedia.org/wiki/Operation_Tonga"
+  },
+  {
+   "id": "M10",
+   "citation": "Wikipedia, \"Battle of Carentan\" (10-14 June 1944; 101st Airborne; FJR 6; 17th SS PzG) and \"Battle of Cherbourg\" (VII Corps, von Schlieben, 21,000 men).",
+   "url": "https://en.wikipedia.org/wiki/Battle_of_Carentan"
+  },
+  {
+   "id": "M11",
+   "citation": "Wikipedia, \"Operation Epsom\" (26-30 June), \"Operation Charnwood\" (8-9 July), \"Operation Goodwood\" (18-20 July), \"Operation Cobra\" (from 25 July; Avranches 31 July), \"Operation Bluecoat\" (30 July-7 August), \"Battle of Saint-Lo\" (7-19 July), \"Bocage\".",
+   "url": "https://en.wikipedia.org/wiki/Operation_Cobra"
+  },
+  {
+   "id": "M12",
+   "citation": "Wikipedia German unit articles: \"352nd Infantry Division\", \"12th SS Panzer Division Hitlerjugend\" (committed 7 June), \"Panzer Lehr Division\" (208 tanks and assault guns on 6 June; committed 8 June), \"21st Panzer Division\".",
+   "url": "https://en.wikipedia.org/wiki/Panzer_Lehr_Division"
+  },
+  {
+   "id": "M13",
+   "citation": "Wikipedia, \"List of Allied forces in the Normandy campaign\" (heading-level only; division tables did not extract).",
+   "url": "https://en.wikipedia.org/wiki/List_of_Allied_forces_in_the_Normandy_campaign"
+  },
+  {
+   "id": "M14",
+   "citation": "Wikipedia coordinates API (prop=coordinates) for Normandy place names: Caen, Bayeux, Isigny-sur-Mer, Omaha Beach, Juno Beach, Sword Beach, Benouville, Carpiquet, Villers-Bocage, Avranches, Falaise, Caumont-l'Eventé, Bourguebus, Ouistreham, Lisieux, Mortain and others (positions only).",
+   "url": "https://www.mediawiki.org/wiki/API:Coordinates"
+  },
+  {
+   "id": "M15",
+   "citation": "OpenStreetMap Nominatim geocoder (c) OpenStreetMap contributors, ODbL: Cherbourg, Carentan, Saint-Lo, Sainte-Mere-Eglise, Arromanches-les-Bains, Port-en-Bessin, Pointe du Hoc, Tilly-sur-Seulles, Coutances, Vire, Perriers, Valognes, Saint-Laurent-sur-Mer, Ver-sur-Mer, Cagny, Utah Beach hamlet and others (positions only).",
+   "url": "https://nominatim.openstreetmap.org/"
+  },
+  {
+   "id": "M16",
+   "citation": "Wikipedia US division articles: 29th ID (entire division landed by 7 June), 9th ID (Utah 10 June), 90th ID (first elements D-Day, remainder 10 June), 2nd Armored (Omaha 9 June), 30th ID (Omaha 11 June), 79th ID (Utah 12-14 June, combat 19 June), 83rd ID (Omaha 18 June), 35th ID (Omaha 5-7 July), 5th ID (Utah 9 July), 4th Armored (Utah 11 July), 28th ID (landed 22 July), 3rd Armored (left Somerset 24 June).",
+   "url": "https://en.wikipedia.org/wiki/9th_Infantry_Division_(United_States)"
+  },
+  {
+   "id": "M17",
+   "citation": "Wikipedia British and Canadian division articles: 7th Armoured (landed Gold by end of 7 June), 51st Highland (7 June), 11th Armoured (13 June, Juno), 49th (13 June), 43rd Wessex (reconnaissance regiment off Sword 20 June), 53rd Welsh (28 June), 59th Staffordshire (late June), Guards Armoured (end of June), 2nd Canadian (ashore at the end of the first week of July), 4th Canadian Armoured (crossed to Normandy in July), 15th Scottish (Operation Epsom from 26 June).",
+   "url": "https://en.wikipedia.org/wiki/11th_Armoured_Division_(United_Kingdom)"
+  },
+  {
+   "id": "M18",
+   "citation": "Wikipedia German unit articles: 1st SS Panzer (first units night of 27-28 June, whole division about a week later), 2nd SS Panzer (arrived piecemeal 15-30 June), 9th SS Panzer (arrived 26 June), 10th SS Panzer (Epsom), 3rd Fallschirmjager (arrived 10 June), 17th SS PzG (ordered to Normandy after 6 June), 101st SS Heavy Panzer Battalion (arrived 12-13 June; 45 Tigers, 15 lost by 5 July), 275th Infantry (elements 6 June, rest mid-July), 2nd Fallschirmjager Division (6th FJR at Carentan), 243rd Static Division (Cotentin west coast).",
+   "url": "https://en.wikipedia.org/wiki/2nd_SS_Panzer_Division_Das_Reich"
+  },
+  {
+   "id": "G01",
+   "citation": "GAME-SCALE ABSTRACTION (internal): manpower, equipment, morale/experience, resources, objective points, thresholds, port ramp times, landing casualties and dispersion, air-supremacy radius and speed are nominal game values, not historical strengths. Sourced strengths used where stated: 352nd ID about 12,000 and 716th about 6,000 (M04, M05), 3rd Canadian Division about 22,500 (M06), Cherbourg garrison 21,000 (M10), Panzer Lehr 208 tanks and assault guns (M12)."
+  },
+  {
+   "id": "G02",
+   "citation": "LOCATION POLICY (internal): locations are real towns/beaches placed at Wikipedia (M14) or Nominatim (M15) coordinates, nudged to the nearest land cell of the terrain grid where needed (G02)."
+  },
+  {
+   "id": "G03",
+   "citation": "POSITION POLICY (internal): no source gives division-level start positions; unit positions are approximate sector anchors inferred from the named areas in M01-M12, with a small deterministic spread. Every unit position is APPROXIMATE."
+  },
+  {
+   "id": "G04",
+   "citation": "BORDER POLICY (internal): initialControl is one coarse German-held polygon over the whole map; the Allies hold nothing until the landings (no sourced front line for 6 June 00:00)."
+  }
+ ]
+}

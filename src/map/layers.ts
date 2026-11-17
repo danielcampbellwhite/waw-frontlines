@@ -13,7 +13,7 @@ export const NATION_COLOURS: Record<NationId, string> = {
 export const TERRAIN_COLOURS: Record<number, string> = {
   [Terrain.Sea]: 'rgba(0,0,0,0)', [Terrain.Plains]: '#d6dc94', [Terrain.Forest]: '#4b8a46', [Terrain.Hills]: '#c0a868',
   [Terrain.Mountains]: '#8d7b6c', [Terrain.Marsh]: '#79b0a6', [Terrain.Urban]: '#7d7d85', [Terrain.Desert]: '#e6d28a',
-  [Terrain.Jungle]: '#2f7a3a', [Terrain.Lake]: '#4f94cf',
+  [Terrain.Jungle]: '#2f7a3a', [Terrain.Lake]: '#4f94cf', [Terrain.Bocage]: '#8a9a5b',
 };
 
 const pt = (c: LonLat): Point => ({ type: 'Point', coordinates: c });

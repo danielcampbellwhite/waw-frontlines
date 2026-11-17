@@ -277,7 +277,7 @@ export const BARBAROSSA_AXIS: AiDoctrine = {
     ...sched(45 * D, 'uman'), // Uman pocket destroyed 8 Aug
     ...sched(54 * D, 'novgorod', 'luga'), ...sched(55 * D, 'kingisepp', 'narva'), // Novgorod 16 Aug, Kingisepp/Narva 17 Aug
     ...sched(76 * D, 'shlisselburg'), // Shlisselburg 7-8 Sep
-    ...sched(86 * D, 'kiev'), // Kiev encircled 16 Sep, taken 19 Sep
+    ...sched(76 * D, 'kiev'), // pacing: the Kiev approach opens late Aug (encirclement itself closed 16 Sep, taken 19 Sep)
     ...sched(120 * D, 'leningrad', 'moscow'), // never reached in the scenario window
   },
 };

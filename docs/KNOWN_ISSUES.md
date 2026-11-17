@@ -188,6 +188,27 @@ All fields used by doctrines.ts exist in AiDoctrine; every location id in armour
 - Normandy (captureBlockKm 6.5, seaSupply true), engine AI vs a passive human, 5 seeds: passive German player Axis 0 on all 5 (Allies 820-970; Cherbourg falls h380-456, Caen h516-1136); passive US player Axis 550/0/550/650/900 (the engine GBR/CAN AI plus idle US units: Cherbourg falls h488-1064 on 4 of 5). The shipped Allied AI therefore beats a passive German player every time; a human German defender is expected to do better than the AI German garrisons.
 - Normandy passive German player (engine Allied AI, 5 seeds, captureBlockKm 6.5): Axis 0 on every seed. Cherbourg falls h380-456, Caen h516 on one seed and h1130-1136 on the others, St-Lô at h388 on one seed (a passing capture that bypasses its objective gate). The captureBlockKm regression (6.5 km block hiding capture changes in Bulge/FoF) is fixed: the block is now opt-in (default 4 km) and only Normandy sets 6.5.
 
+## Barbarossa AI balance (ai-events-engineer)
+Measured on a frozen copy, AI_TICKS=2400, 5 seeds, passive Soviet player vs engine German AI (lower bound for a human Soviet player). Scenario: openingSurprise SOV x0.3 for 360 h, 52 start units. Doctrine: Axis armourGroups (north/centre/south) with cited pacing gates (Kiev gate 76 days, an AI pacing value, not a historical date), infantry follow-up (planFollowUp), halt-and-entrench for dry panzers, ratioToAttack 0.5; Soviet reactionMinutes 360 and no counter-attacks for 72 h.
+
+| Seed | Axis / Soviet | Minsk (h) | Smolensk (h) | Kiev (h) |
+|---|---|---|---|---|
+| 1 | 1330 / 700 | 1136 | 1640 | 2072 |
+| 2 | 1330 / 700 | 564 | 2264 | 2000 |
+| 3 | 1100 / 1010 | 836 | 1672 | not taken |
+| 4 | 800 / 1210 | 532 | 1216 | not taken |
+| 5 | 1110 / 900 | 1144 | 1600 | 2008 |
+
+Brest falls h48-56 on every seed; Vitebsk, Uman and the northern objectives (Pskov, Novgorod, Shlisselburg) fall on most seeds. No Soviet collapse.
+
+Known issues:
+- Minsk before h700 on only 2 of 5 seeds (target was most seeds); Smolensk is late on some seeds (h1640-2264 vs about h1200).
+- The south axis (1st Panzer Group) is the weakest: Zhitomir is reached early but Uman/Kiev depend on the seed; Kiev falls in 3 of 5 seeds, around h2000-2070.
+- AI German vs AI Soviet (AI_MODES=AIFRA, AI_PLAYER=GER) stalls at Axis 80-140 (Brest only, once Zhitomir): the engine Soviet defends much harder than a passive player. Accepted; no further surprise tuning.
+- A passive German player scores Axis 0 (expected).
+- Pocket seeking with infantry follow-up is deferred. Historical events (data in barbarossa.events.json) only apply a rainstorm (2 Jul, 144 h) as an effect; all other events are narrative.
+- The other campaigns' regression numbers are unchanged (armourGroups and counterattackFromMinutes are opt-in).
+
 ## Map data limits (reported by map-engineer, 2026-11-17)
 - Carentan/Douve marsh is approximated: river-flat marsh needs <= 5 m elevation, so Carentan stays Bocage; no sourced marsh extent exists.
 - OSM roads/rail fetch (Overpass 502/504/timeouts) is incomplete for Normandy (new bbox), Ardennes roads and North Africa roads/rail/tracks; those use Natural Earth roads/rail, with the schematic Via Balbia for North Africa and Ardennes rail off by design.

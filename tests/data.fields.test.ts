@@ -147,3 +147,18 @@ describe('capture-activated supply hubs', () => {
     expect(errs(d)).toMatch(/not the same side/);
   });
 });
+
+describe('openingSurprise', () => {
+  it('barbarossa sets it for SOV and others do not', () => {
+    const o = getScenarioDefinition('barbarossa.short')!.openingSurprise!;
+    expect(o.victimNations).toEqual(['SOV']); expect(o.untilHour).toBe(360); expect(o.defenceMultiplier).toBe(0.3);
+    for (const id of ['normandy.short', 'bulge.short', 'crusader.short', 'stalingrad.short']) expect(getScenarioDefinition(id)!.openingSurprise).toBeUndefined();
+  });
+  it('rejects bad values', () => {
+    const base = () => structuredClone(getScenarioDefinition('barbarossa.short')!);
+    const msg = (o: unknown) => { const d = base(); (d as { openingSurprise: unknown }).openingSurprise = o; return validateScenario(d, getScenarioSidecar('barbarossa.short')).join('|'); };
+    expect(msg({ victimNations: ['XXX'], untilHour: 240, defenceMultiplier: 0.5 })).toMatch(/victimNations/);
+    expect(msg({ victimNations: ['SOV'], untilHour: 2000, defenceMultiplier: 0.5 })).toMatch(/untilHour/);
+    expect(msg({ victimNations: ['SOV'], untilHour: 240, defenceMultiplier: 0.1 })).toMatch(/defenceMultiplier/);
+  });
+});

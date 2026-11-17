@@ -28,3 +28,6 @@ map-engineer, sim-engineer, military-engineer, ai-events-engineer, campaign-engi
 3. Not started: Britain, Italy, Pacific campaigns; Standard/Grand scales; naval/air-war systems; tutorial/tour (final polish); human playtest; audio never heard by a human.
 4. Release: public OSM tile URL and Google Fonts are GONE (self-contained basemap, local fonts); decide whether to force historical outcomes (default: no).
 5. Housekeeping: delete tests/military.tmpbis.test.ts (scratch); kill stray vite servers by PID (only this project's).
+
+## Sim: opening surprise
+Optional `openingSurprise` scenario field (see TECHNICAL_ARCHITECTURE.md "Opening surprise"); campaign-engineer sets it per scenario (e.g. Barbarossa victimNations ['SOV']). Tests: tests/sim.combat.test.ts.

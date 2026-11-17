@@ -138,6 +138,12 @@ export function validateScenario(def: ScenarioDefinition, sidecar?: ScenarioSide
   }
 
   if (def.captureBlockKm !== undefined && !(Number.isFinite(def.captureBlockKm) && def.captureBlockKm >= 4 && def.captureBlockKm <= 15)) e('captureBlockKm must be a number within 4..15');
+  if (def.openingSurprise !== undefined) {
+    const s = def.openingSurprise;
+    if (!Array.isArray(s.victimNations) || !s.victimNations.length || !s.victimNations.every((n) => def.nations.some((x) => x.id === n))) e('openingSurprise.victimNations must list nations of the scenario');
+    if (!(Number.isFinite(s.untilHour) && s.untilHour > 0 && s.untilHour <= 1000)) e('openingSurprise.untilHour must be within (0, 1000]');
+    if (!(Number.isFinite(s.defenceMultiplier) && s.defenceMultiplier >= 0.3 && s.defenceMultiplier <= 1)) e('openingSurprise.defenceMultiplier must be within 0.3..1');
+  }
   if (def.seaSupply !== undefined && typeof def.seaSupply !== 'boolean') e('seaSupply must be boolean');
   if (def.weatherControl !== undefined) {
     const wc = def.weatherControl;

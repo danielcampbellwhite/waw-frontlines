@@ -9,6 +9,8 @@ interface DuelOpts {
   terrain?: number; weather?: WeatherKind; ticks?: number; extra?: Unit[]; attCount?: number; defCount?: number;
   /** keep stepping (up to 90 ticks in all) until a battle report exists: reports are filed when a fight ends or rolls over */
   untilReport?: boolean;
+  /** extra ScenarioDefinition fields */
+  scen?: Record<string, unknown>;
 }
 const DEF_POS: [number, number] = [2.0, 51.5];
 const ATT_POS: [number, number] = [1.9423, 51.5]; // ~4 km west of the defender (contact range is 5 km)
@@ -20,6 +22,7 @@ function duel(seed: number, o: DuelOpts = {}) {
   for (let i = 0; i < nd; i++) units.push(mkUnit('D' + i, 'GER', o.defType ?? 'infantry', [DEF_POS[0], DEF_POS[1] + i * 0.012], { posture: 'defend', ...o.def }));
   units.push(...(o.extra ?? []));
   const w = makeWorld({ flat: o.terrain ?? Terrain.Plains, units, weather: { [o.weather ?? 'clear']: 1 } });
+  if (o.scen) Object.assign(w.scenario, o.scen);
   const e = createEngine(w.scenario, w.terrain, w.infra, { playerNation: 'FRA', settings: w.settings, seed, disableAI: true });
   const st = e.getState() as GameState;
   if (o.weather) st.weather = { kind: o.weather, intensity: 1, temperatureC: 10, nextChangeMinutes: 1e9 };
@@ -137,6 +140,24 @@ describe('combat outcomes are plausible', () => {
     expect(near.meanFD).toBeGreaterThan(none.meanFD);
     expect(far.meanFD).toBeCloseTo(none.meanFD, 6);
   }, 120_000);
+  it('opening surprise weakens the victim nation and fades to nothing', () => {
+    const a = { manpower: 16000, manpowerMax: 16000 };
+    const none = sweep(30, { att: a });
+    const sur = sweep(30, { att: a, scen: { openingSurprise: { victimNations: ['GER'], untilHour: 200, defenceMultiplier: 0.4 } } });
+    const other = sweep(30, { att: a, scen: { openingSurprise: { victimNations: ['FRA'], untilHour: 200, defenceMultiplier: 0.4 } } });
+    expect(sur.meanFD).toBeGreaterThan(none.meanFD * 1.2);
+    expect(other.meanFD).toBeLessThan(none.meanFD);   // the surprised side is the attacker here
+  }, 120_000);
+  it('surpriseFactor: inactive without the field, linear fade to 1 at untilHour', async () => {
+    const { surpriseFactor } = await import('../src/sim/surprise');
+    const w = makeWorld({});
+    expect(surpriseFactor(w.scenario, 'GER', 0)).toBe(1);
+    const sc = { ...w.scenario, openingSurprise: { victimNations: ['GER' as const], untilHour: 100, defenceMultiplier: 0.4 } };
+    expect(surpriseFactor(sc, 'GER', 0)).toBeCloseTo(0.4, 6);
+    expect(surpriseFactor(sc, 'GER', 50 * 60)).toBeCloseTo(0.7, 6);
+    expect(surpriseFactor(sc, 'GER', 100 * 60)).toBe(1);
+    expect(surpriseFactor(sc, 'FRA', 0)).toBe(1);
+  });
   it('morale/organisation/ammunition/weather change the result', () => {
     const base = sweep(40, { att: { manpower: 16000, manpowerMax: 16000 } });
     const tired = sweep(40, { att: { manpower: 16000, manpowerMax: 16000, organisation: 50, morale: 40 } });

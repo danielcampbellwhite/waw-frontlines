@@ -7,6 +7,7 @@ import { cellIdxOf, fastKm, getGridInfo, type GridInfo } from './gridutil';
 import { getSimMeta, type BattleMeta } from './meta';
 import { findRoute, moveClassOf, passableIce } from './pathfinding';
 import { iceOf } from './ice';
+import { surpriseFactor } from './surprise';
 import { LANDING_PENALTY, landingPenaltyActive } from './landing';
 import { SpatialHash } from './spatial';
 import { ownerSideAt } from './territory';
@@ -378,6 +379,7 @@ function evalUnit(env: Env, u: Unit, role: 'att' | 'def', opp: { armourShare: nu
     }
     mod *= ATT_WEATHER[state.weather.kind] ?? 1;
   }
+  if (env.ctx.scenario.openingSurprise) mod *= surpriseFactor(env.ctx.scenario, u.nation, state.clock.minutes); // caught unprepared in the opening days
   if (landingPenaltyActive(state, u)) mod *= LANDING_PENALTY; // beach obstacles / scattered drop
   return { u, role, base, mod };
 }

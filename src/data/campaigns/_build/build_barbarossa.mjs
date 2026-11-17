@@ -92,17 +92,33 @@ const S = (id, name, sh, type, anc, srcs, o = {}) => add(id, name, sh, 'SOV', ty
 G('ger.agn.hq', 'Army Group North HQ (Leeb)', 'HG Nord', 'hq', 'AGN_HQ', ['R02', 'R03']);
 G('ger.agc.hq', 'Army Group Centre HQ (Bock)', 'HG Mitte', 'hq', 'AGC_HQ', ['R02', 'R03', 'R04']);
 G('ger.ags.hq', 'Army Group South HQ (Rundstedt)', 'HG Sued', 'hq', 'AGS_HQ', ['R02', 'R03']);
-G('ger.18a', '18th Army', '18.A', 'infantry', 'E_PRUS_N', ['R03', 'R08'], { mp: 30000 });
-G('ger.4pg', '4th Panzer Group (Hoepner)', '4.PzGr', 'armoured', 'E_PRUS_C', ['R03', 'R08', 'R16'], { mp: 18000, tanks: 500 });
-G('ger.16a', '16th Army', '16.A', 'infantry', 'SUWALKI', ['R03', 'R08'], { mp: 30000 });
-G('ger.3pg', '3rd Panzer Group (Hoth)', '3.PzGr', 'armoured', 'NAREW_N', ['R03', 'R04', 'R12'], { mp: 18000, tanks: 500 });
-G('ger.9a', '9th Army', '9.A', 'infantry', 'NAREW_N', ['R03', 'R04'], { mp: 30000 });
-G('ger.4a', '4th Army', '4.A', 'infantry', 'BUG_N', ['R03', 'R04'], { mp: 30000 });
-G('ger.2pg', '2nd Panzer Group (Guderian)', '2.PzGr', 'armoured', 'TERESPOL', ['R03', 'R04', 'R12'], { mp: 18000, tanks: 500 });
+// Infantry armies are split into a forward and a follow-on element (game-scale split, G01); panzer groups into their sourced spearhead divisions plus a remainder element.
+const half = (id, name, sh, anc, srcs) => { G(id + 'f', name + ' (forward corps)', sh + ' fwd', 'infantry', anc, srcs, { mp: 18000 }); G(id + 'b', name + ' (follow-on corps)', sh + ' fol', 'infantry', anc, srcs, { mp: 12000 }); };
+half('ger.18a', '18th Army', '18.A', 'E_PRUS_N', ['R03', 'R08']);
+half('ger.16a', '16th Army', '16.A', 'SUWALKI', ['R03', 'R08']);
+half('ger.9a', '9th Army', '9.A', 'NAREW_N', ['R03', 'R04']);
+half('ger.4a', '4th Army', '4.A', 'BUG_N', ['R03', 'R04']);
+half('ger.6a', '6th Army', '6.A', 'LUBLIN_E', ['R03', 'R06']);
+half('ger.17a', '17th Army', '17.A', 'SAN', ['R03', 'R06']);
 G('ger.45id', '45th Infantry Division', '45.ID', 'infantry', 'BREST_W', ['R10'], { mp: 17000, exact: true });
-G('ger.6a', '6th Army', '6.A', 'infantry', 'LUBLIN_E', ['R03', 'R06'], { mp: 30000 });
-G('ger.1pg', '1st Panzer Group (Kleist)', '1.PzGr', 'armoured', 'HRUB', ['R03', 'R06', 'R11', 'R12'], { mp: 20000, tanks: 799 });
-G('ger.17a', '17th Army', '17.A', 'infantry', 'SAN', ['R03', 'R06'], { mp: 30000 });
+// 4th Panzer Group (Hoepner): only the 20th Motorised Division is named (R09); two further elements are game-scale remainders
+G('ger.4pg.20mot', '20th Motorised Division (4th Panzer Group)', '20.Mot', 'armoured', 'E_PRUS_C', ['R03', 'R09'], { mp: 12000, tanks: 160 });
+G('ger.4pg.a', '4th Panzer Group - panzer corps A (corps not retrieved)', '4.PzGr A', 'armoured', 'E_PRUS_C', ['R03', 'R08', 'R16'], { mp: 12000, tanks: 200 });
+G('ger.4pg.b', '4th Panzer Group - panzer corps B (corps not retrieved)', '4.PzGr B', 'armoured', 'E_PRUS_C', ['R03', 'R08', 'R16'], { mp: 12000, tanks: 200 });
+// 3rd Panzer Group (Hoth): 7th and 20th Panzer Divisions named in R05
+G('ger.3pg.7pz', '7th Panzer Division (3rd Panzer Group)', '7.PzD', 'armoured', 'NAREW_N', ['R04', 'R05', 'R12'], { mp: 12000, tanks: 200 });
+G('ger.3pg.20pz', '20th Panzer Division (3rd Panzer Group)', '20.PzD', 'armoured', 'NAREW_N', ['R04', 'R05', 'R12'], { mp: 12000, tanks: 200 });
+G('ger.3pg.r', '3rd Panzer Group - remaining formations (corps not retrieved)', '3.PzGr rem', 'armoured', 'NAREW_N', ['R03', 'R04', 'R12'], { mp: 12000, tanks: 160 });
+// 2nd Panzer Group (Guderian): 29th Motorised, 17th and 10th Panzer Divisions named in R05
+G('ger.2pg.29mot', '29th Motorised Division (2nd Panzer Group)', '29.Mot', 'armoured', 'TERESPOL', ['R04', 'R05', 'R12'], { mp: 12000, tanks: 120 });
+G('ger.2pg.17pz', '17th Panzer Division (2nd Panzer Group)', '17.PzD', 'armoured', 'TERESPOL', ['R04', 'R05', 'R12'], { mp: 12000, tanks: 200 });
+G('ger.2pg.10pz', '10th Panzer Division (2nd Panzer Group)', '10.PzD', 'armoured', 'TERESPOL', ['R04', 'R05', 'R12'], { mp: 12000, tanks: 200 });
+G('ger.2pg.r', '2nd Panzer Group - remaining formations (XXIV Panzer Corps and others)', '2.PzGr rem', 'armoured', 'TERESPOL', ['R03', 'R04', 'R12'], { mp: 12000, tanks: 160 });
+// 1st Panzer Group (Kleist): III, XIV and XLVIII Corps, 5 panzer + 4 motorised divisions, 799 tanks (R12); 9th, 11th, 16th Panzer named in R06
+G('ger.1pg.9pz', '9th Panzer Division (1st Panzer Group)', '9.PzD', 'armoured', 'HRUB', ['R06', 'R12'], { mp: 12000, tanks: 200 });
+G('ger.1pg.11pz', '11th Panzer Division (1st Panzer Group)', '11.PzD', 'armoured', 'HRUB', ['R06', 'R12'], { mp: 12000, tanks: 200 });
+G('ger.1pg.16pz', '16th Panzer Division (1st Panzer Group)', '16.PzD', 'armoured', 'HRUB', ['R06', 'R12'], { mp: 12000, tanks: 200 });
+G('ger.1pg.r', '1st Panzer Group - remaining formations (III, XIV, XLVIII Corps)', '1.PzGr rem', 'armoured', 'HRUB', ['R06', 'R11', 'R12'], { mp: 12000, tanks: 199 });
 
 // --- Soviet start (22 Jun). Surprise: low readiness/organisation (G01).
 S('sov.nwf.hq', 'Northwestern Front HQ (Kuznetsov)', 'NWF HQ', 'hq', 'RIGA_HQ', ['R02', 'R08']);
@@ -154,8 +170,8 @@ const mk = (r, pos) => {
   if (r.o.tanks && held.tank_medium) held.tank_medium = r.o.tanks;
   const sov = r.nation === 'SOV';
   return { id: r.id, name: r.name, shortName: r.sh, nation: r.nation, side, type: r.type, domain: 'land',
-    pos, manpower: max, manpowerMax: max, equipment: { held, authorised: { ...held } }, organisation: sov && r.start ? 60 : 90, morale: r.o.morale ?? morale, experience: r.o.exp ?? exp,
-    fuel: 100, ammo: 100, supply: 100, fatigue: 5, readiness: sov && r.start ? 50 : 90, entrenchment: r.o.ent ?? (sov ? 10 : 0), moveStatus: 'stationary', combatStatus: 'idle',
+    pos, manpower: max, manpowerMax: max, equipment: { held, authorised: { ...held } }, organisation: sov && r.start ? 40 : 90, morale: r.o.morale ?? morale, experience: r.o.exp ?? exp,
+    fuel: sov && r.start ? 60 : 100, ammo: sov && r.start ? 60 : 100, supply: sov && r.start ? 70 : 100, fatigue: 5, readiness: sov && r.start ? 30 : 90, entrenchment: r.o.ent ?? (sov ? 10 : 0), moveStatus: 'stationary', combatStatus: 'idle',
     posture: r.nation === 'GER' ? 'hold' : 'defend', orders: [], kills: 0 };
 };
 const units = U.map((r) => { const k = (cnt[r.anc] = (cnt[r.anc] ?? -1) + 1); return mk({ ...r, start: true }, r.o.exact ? [...A[r.anc]] : spread(A[r.anc], k)); });
@@ -174,7 +190,7 @@ const NATIONS = (() => {
   const mpOf = (n) => all.filter((x) => x.nation === n).reduce((a, x) => a + x.manpowerMax, 0), c = (n) => all.filter((x) => x.nation === n).length;
   const pool = (n, fs = 1) => ({ resources: { manpower: Math.max(2000, Math.round(mpOf(n) * 0.15)), fuel: Math.max(1500, Math.round(c(n) * 40 * fs)), ammo: Math.max(1500, c(n) * 50), equipment: Math.max(1500, c(n) * 100), supplyPoints: 600 },
     income: { manpower: Math.max(2, Math.ceil(mpOf(n) * 0.3 / TICKS)), fuel: Math.max(1, Math.ceil(c(n) * 0.15 * fs)), ammo: Math.max(2, Math.ceil(c(n) * 0.2)), equipment: Math.max(2, Math.ceil(c(n) * 0.4)), supplyPoints: 5 } });
-  return [['GER', 'axis', 'Germany (with allies, G04)', true, 0.7], ['SOV', 'allies', 'Soviet Union', true, 1]].map(([id, side, name, playable, fs]) => ({ id, side, name, playable, ...pool(id, fs), reinforcements: [] }));
+  return [['GER', 'axis', 'Germany (with allies, G04)', true, 3], ['SOV', 'allies', 'Soviet Union', true, 1]].map(([id, side, name, playable, fs]) => ({ id, side, name, playable, ...pool(id, fs), reinforcements: [] }));
 })();
 const END = mins(END_ISO);
 const ob = (id, tier, side, title, description, condition, points) => ({ id, tier, side, title, description, condition, points, status: 'pending' });
@@ -254,19 +270,21 @@ const def = {
     { nation: 'SOV', difficultyRating: 5, summary: 'Survive the surprise, trade space for time and hold Leningrad, Kiev and Moscow.', objectiveIds: O('allies') }],
   nations: NATIONS, locations, units, reinforcements, objectives: OBJ, terrainFile: 'terrain_barbarossa.json', infraFile: 'infra_barbarossa.json',
   supplySources, initialControl: CTRL, weatherProfile: WEATHER, eventTemplateIds: EVENTS.map((x) => x.id), specialSystems: [],
-  airSupremacy,
+  airSupremacy, openingSurprise: { victimNations: ['SOV'], untilHour: 360, defenceMultiplier: 0.3 },
   victoryTiers: { axis: { decisive: 0.8, strategic: 0.6, limited: 0.4, stalemate: 0.2 }, allies: { decisive: 0.8, strategic: 0.6, limited: 0.4, stalemate: 0.2 } },
   sources: SOURCES.map(({ id, citation, url }) => ({ id, citation, ...(url ? { url } : {}) })),
 };
 const uncertain = [
   { item: 'Secondary sources only', note: 'Every R-source is a Wikipedia article (secondary). Where the articles cite books they are: Glantz, Colossus Reborn (2005); Krivosheev, Soviet Casualties and Combat Losses in the Twentieth Century (1997); Bishop, The Military Atlas of World War II (2005) (cited by R08). Primary sources (war diaries, Boevoi sostav) are cited by the articles but were not consulted.' },
-  { item: 'Order-of-battle depth', note: 'Army and panzer-group level only; division tables did not extract. Strengths are game-scale (G01); sourced aggregates (153 divisions, 799 tanks in Panzer Group 1, Western Front 25+13+7 divisions, Brest garrison 9,000, 45th ID 17,000) anchor them. 799 tanks are entered as medium tanks without a light/medium split (not retrieved); other panzer-group and mechanised-corps tank counts are game-scale.' },
+  { item: 'Order-of-battle depth', note: 'Army level (each infantry army is split into a forward and a follow-on element, game-scale) and, for the panzer groups, the divisions named in R05, R06 and R09 plus a remainder element per group (corps not retrieved); other division tables did not extract. Strengths are game-scale (G01); sourced aggregates (153 divisions, 799 tanks in Panzer Group 1, Western Front 25+13+7 divisions, Brest garrison 9,000, 45th ID 17,000) anchor them. The 799 tanks of Panzer Group 1 are split across its four elements as 200+200+200+199 (the split is game-scale, the total is sourced) and entered as medium tanks without a light/medium split (not retrieved); all other tank counts are game-scale.' },
   { item: 'Omitted formations', note: 'Romanian Third and Fourth Armies and Finnish forces (positions and dates not retrieved), the Southern Front, 27th Army (arrival date not given in R08), Soviet second-echelon armies beyond those in R05, Axis security divisions, corps within armies, Luftwaffe and VVS units, naval forces. The Northern Front entry (Leningrad) is a placeholder: R02 gives only the front and its commander.' },
   { item: 'All start and arrival positions', note: 'Approximate sector anchors (G03); no source gives army coordinates. German start areas are inferred from the named border towns (Suwalki, Brest-Terespol, the Bug and San), Soviet start areas from the named frontier towns and fronts (R04, R08, R13, R14).' },
   { item: 'Soviet reserve arrival dates', note: 'R05 names the 20th, 21st, 22nd (Stavka reserve), 19th (forming at Vitebsk) and 16th (arriving at Smolensk) Armies in place by about 10 July but gives no dates. 20th, 21st, 22nd are set to 28 June 12:00 (so the 20th Army and its 5th and 7th Mechanised Corps are in place for the 6 July Lepiel battle), 19th to 5 July and 16th to 8 July: all approximate. The 5th and 7th Mechanised Corps are attached to the 20th Army arrival.' },
   { item: 'Lepiel battle discrepancy', note: 'R05 says 5th and 7th Mechanised Corps with about 1,500 tanks; R01 says V and VII Mechanised Corps, 832 of 2,000 tanks lost in five days. The scenario enters tank counts as game-scale and keeps the discrepancy in the event text.' },
   { item: 'Pskov capture date', note: 'R01 gives 8 July, R09 gives 10 July for Ostrov and Pskov. Both are recorded; the event uses 8 July and the objective text names both. Not silently resolved.' },
-  { item: 'Surprise', note: 'Frontier Soviet units start with readiness 50 and organisation 60 (game-scale, G01) as the abstraction of strategic surprise (R01); the engine has no surprise rule. The Western Front air force destroyed on the ground is not modelled as aircraft (no air units).' },
+  { item: 'Opening surprise field', note: 'openingSurprise {victimNations SOV, untilHour 360, defenceMultiplier 0.3} multiplies Soviet combat strength by 1-(1-0.3)*(1-h/360), fading to 1 at hour 360 (game-scale, G01): the sourced rationale is that Stalin did not order mobilisation despite intelligence and Soviet forces were largely caught unprepared, the Western Front air force was destroyed on the ground and its communications cut (R01, R04); the multiplier, the 360 h duration and the linear fade are not sourced. ' },
+  { item: 'Surprise', note: 'Frontier Soviet units start with readiness 30, organisation 40 and partial fuel/ammo (60) and supply (70) (game-scale, G01) as the abstraction of strategic surprise (R01); the engine has no surprise rule. The Western Front air force destroyed on the ground is not modelled as aircraft (no air units).' },
+  { item: 'German fuel pool', note: 'The German fuel stock and income are scaled x3 against the formula used elsewhere (game-scale, G01): with the default scale German spearheads ran out of fuel (average 21 at hour 300) and stalled. The sources describe logistics strain (R01) but give no fuel figures.' },
   { item: 'Axis air superiority window', note: 'airSupremacy for the Axis runs the first 7 days (R01: air supremacy by the end of the first week), radius 80 km and speed multiplier 0.7 are game-scale; it ends at day 7 because R01 says the Luftwaffe could not extend its dominance over the whole country.' },
   { item: 'Rail-gauge supply stretch', note: 'Not in the retrieved text. Brest, Minsk, Smolensk, Vilnius, Kaunas, Riga, Lvov, Pskov and Kiev are Soviet-owned at start and listed as German capture-activated supply sources with rampHours 240 (game-scale, G06): they supply the Germans only after capture and ramp from 10% to full over 240 h. German home sources are Warsaw, Lublin, Zamosc, Koenigsberg and Tilsit. The engine has no gauge concept, so captured Soviet rail still counts as usable rail for the Axis (too generous; KNOWN_ISSUES).' },
   { item: 'Soviet supply sources', note: 'Soviet-owned cities listed as sources (Minsk, Lvov, Kiev, Riga, Vilnius, Kaunas, Leningrad, Smolensk, Moscow, Kharkov, Gomel, Vitebsk, Novgorod, Pskov, Rovno, Tallinn) lose their status when captured; capacities are game-scale defaults (G01).' },

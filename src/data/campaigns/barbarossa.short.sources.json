@@ -30,7 +30,7 @@
    ],
    "positionApproximate": true
   },
-  "ger.18a": {
+  "ger.18af": {
    "sources": [
     "R03",
     "R08",
@@ -39,17 +39,7 @@
    ],
    "positionApproximate": true
   },
-  "ger.4pg": {
-   "sources": [
-    "R03",
-    "R08",
-    "R16",
-    "G01",
-    "G03"
-   ],
-   "positionApproximate": true
-  },
-  "ger.16a": {
+  "ger.18ab": {
    "sources": [
     "R03",
     "R08",
@@ -58,17 +48,25 @@
    ],
    "positionApproximate": true
   },
-  "ger.3pg": {
+  "ger.16af": {
    "sources": [
     "R03",
-    "R04",
-    "R12",
+    "R08",
     "G01",
     "G03"
    ],
    "positionApproximate": true
   },
-  "ger.9a": {
+  "ger.16ab": {
+   "sources": [
+    "R03",
+    "R08",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "ger.9af": {
    "sources": [
     "R03",
     "R04",
@@ -77,7 +75,7 @@
    ],
    "positionApproximate": true
   },
-  "ger.4a": {
+  "ger.9ab": {
    "sources": [
     "R03",
     "R04",
@@ -86,11 +84,55 @@
    ],
    "positionApproximate": true
   },
-  "ger.2pg": {
+  "ger.4af": {
    "sources": [
     "R03",
     "R04",
-    "R12",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "ger.4ab": {
+   "sources": [
+    "R03",
+    "R04",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "ger.6af": {
+   "sources": [
+    "R03",
+    "R06",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "ger.6ab": {
+   "sources": [
+    "R03",
+    "R06",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "ger.17af": {
+   "sources": [
+    "R03",
+    "R06",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "ger.17ab": {
+   "sources": [
+    "R03",
+    "R06",
     "G01",
     "G03"
    ],
@@ -104,30 +146,137 @@
    ],
    "positionApproximate": true
   },
-  "ger.6a": {
+  "ger.4pg.20mot": {
    "sources": [
     "R03",
-    "R06",
+    "R09",
     "G01",
     "G03"
    ],
    "positionApproximate": true
   },
-  "ger.1pg": {
+  "ger.4pg.a": {
    "sources": [
     "R03",
-    "R06",
-    "R11",
+    "R08",
+    "R16",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "ger.4pg.b": {
+   "sources": [
+    "R03",
+    "R08",
+    "R16",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "ger.3pg.7pz": {
+   "sources": [
+    "R04",
+    "R05",
     "R12",
     "G01",
     "G03"
    ],
    "positionApproximate": true
   },
-  "ger.17a": {
+  "ger.3pg.20pz": {
+   "sources": [
+    "R04",
+    "R05",
+    "R12",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "ger.3pg.r": {
    "sources": [
     "R03",
+    "R04",
+    "R12",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "ger.2pg.29mot": {
+   "sources": [
+    "R04",
+    "R05",
+    "R12",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "ger.2pg.17pz": {
+   "sources": [
+    "R04",
+    "R05",
+    "R12",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "ger.2pg.10pz": {
+   "sources": [
+    "R04",
+    "R05",
+    "R12",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "ger.2pg.r": {
+   "sources": [
+    "R03",
+    "R04",
+    "R12",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "ger.1pg.9pz": {
+   "sources": [
     "R06",
+    "R12",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "ger.1pg.11pz": {
+   "sources": [
+    "R06",
+    "R12",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "ger.1pg.16pz": {
+   "sources": [
+    "R06",
+    "R12",
+    "G01",
+    "G03"
+   ],
+   "positionApproximate": true
+  },
+  "ger.1pg.r": {
+   "sources": [
+    "R06",
+    "R11",
+    "R12",
     "G01",
     "G03"
    ],
@@ -867,7 +1016,7 @@
   },
   {
    "item": "Order-of-battle depth",
-   "note": "Army and panzer-group level only; division tables did not extract. Strengths are game-scale (G01); sourced aggregates (153 divisions, 799 tanks in Panzer Group 1, Western Front 25+13+7 divisions, Brest garrison 9,000, 45th ID 17,000) anchor them. 799 tanks are entered as medium tanks without a light/medium split (not retrieved); other panzer-group and mechanised-corps tank counts are game-scale."
+   "note": "Army level (each infantry army is split into a forward and a follow-on element, game-scale) and, for the panzer groups, the divisions named in R05, R06 and R09 plus a remainder element per group (corps not retrieved); other division tables did not extract. Strengths are game-scale (G01); sourced aggregates (153 divisions, 799 tanks in Panzer Group 1, Western Front 25+13+7 divisions, Brest garrison 9,000, 45th ID 17,000) anchor them. The 799 tanks of Panzer Group 1 are split across its four elements as 200+200+200+199 (the split is game-scale, the total is sourced) and entered as medium tanks without a light/medium split (not retrieved); all other tank counts are game-scale."
   },
   {
    "item": "Omitted formations",
@@ -890,8 +1039,16 @@
    "note": "R01 gives 8 July, R09 gives 10 July for Ostrov and Pskov. Both are recorded; the event uses 8 July and the objective text names both. Not silently resolved."
   },
   {
+   "item": "Opening surprise field",
+   "note": "openingSurprise {victimNations SOV, untilHour 360, defenceMultiplier 0.3} multiplies Soviet combat strength by 1-(1-0.3)*(1-h/360), fading to 1 at hour 360 (game-scale, G01): the sourced rationale is that Stalin did not order mobilisation despite intelligence and Soviet forces were largely caught unprepared, the Western Front air force was destroyed on the ground and its communications cut (R01, R04); the multiplier, the 360 h duration and the linear fade are not sourced. "
+  },
+  {
    "item": "Surprise",
-   "note": "Frontier Soviet units start with readiness 50 and organisation 60 (game-scale, G01) as the abstraction of strategic surprise (R01); the engine has no surprise rule. The Western Front air force destroyed on the ground is not modelled as aircraft (no air units)."
+   "note": "Frontier Soviet units start with readiness 30, organisation 40 and partial fuel/ammo (60) and supply (70) (game-scale, G01) as the abstraction of strategic surprise (R01); the engine has no surprise rule. The Western Front air force destroyed on the ground is not modelled as aircraft (no air units)."
+  },
+  {
+   "item": "German fuel pool",
+   "note": "The German fuel stock and income are scaled x3 against the formula used elsewhere (game-scale, G01): with the default scale German spearheads ran out of fuel (average 21 at hour 300) and stalled. The sources describe logistics strain (R01) but give no fuel figures."
   },
   {
    "item": "Axis air superiority window",

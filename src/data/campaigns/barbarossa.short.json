@@ -69,17 +69,17 @@
    "name": "Germany (with allies, G04)",
    "playable": true,
    "resources": {
-    "manpower": 44670,
-    "fuel": 1500,
-    "ammo": 1500,
-    "equipment": 1500,
+    "manpower": 58770,
+    "fuel": 3720,
+    "ammo": 1550,
+    "equipment": 3100,
     "supplyPoints": 600
    },
    "income": {
-    "manpower": 38,
-    "fuel": 2,
-    "ammo": 3,
-    "equipment": 6,
+    "manpower": 49,
+    "fuel": 14,
+    "ammo": 7,
+    "equipment": 13,
     "supplyPoints": 5
    },
    "reinforcements": []
@@ -815,9 +815,9 @@
    "kills": 0
   },
   {
-   "id": "ger.18a",
-   "name": "18th Army",
-   "shortName": "18.A",
+   "id": "ger.18af",
+   "name": "18th Army (forward corps)",
+   "shortName": "18.A fwd",
    "nation": "GER",
    "side": "axis",
    "type": "infantry",
@@ -826,59 +826,18 @@
     21.46,
     55.26
    ],
-   "manpower": 30000,
-   "manpowerMax": 30000,
-   "equipment": {
-    "held": {
-     "rifle": 250,
-     "gun_arty": 120,
-     "gun_at": 60
-    },
-    "authorised": {
-     "rifle": 250,
-     "gun_arty": 120,
-     "gun_at": 60
-    }
-   },
-   "organisation": 90,
-   "morale": 76,
-   "experience": 60,
-   "fuel": 100,
-   "ammo": 100,
-   "supply": 100,
-   "fatigue": 5,
-   "readiness": 90,
-   "entrenchment": 0,
-   "moveStatus": "stationary",
-   "combatStatus": "idle",
-   "posture": "hold",
-   "orders": [],
-   "kills": 0
-  },
-  {
-   "id": "ger.4pg",
-   "name": "4th Panzer Group (Hoepner)",
-   "shortName": "4.PzGr",
-   "nation": "GER",
-   "side": "axis",
-   "type": "armoured",
-   "domain": "land",
-   "pos": [
-    22.46,
-    54.51
-   ],
    "manpower": 18000,
    "manpowerMax": 18000,
    "equipment": {
     "held": {
-     "tank_medium": 500,
-     "gun_arty": 40,
-     "truck": 100
+     "rifle": 250,
+     "gun_arty": 120,
+     "gun_at": 60
     },
     "authorised": {
-     "tank_medium": 500,
-     "gun_arty": 40,
-     "truck": 100
+     "rifle": 250,
+     "gun_arty": 120,
+     "gun_at": 60
     }
    },
    "organisation": 90,
@@ -897,9 +856,50 @@
    "kills": 0
   },
   {
-   "id": "ger.16a",
-   "name": "16th Army",
-   "shortName": "16.A",
+   "id": "ger.18ab",
+   "name": "18th Army (follow-on corps)",
+   "shortName": "18.A fol",
+   "nation": "GER",
+   "side": "axis",
+   "type": "infantry",
+   "domain": "land",
+   "pos": [
+    21.52,
+    55.26
+   ],
+   "manpower": 12000,
+   "manpowerMax": 12000,
+   "equipment": {
+    "held": {
+     "rifle": 250,
+     "gun_arty": 120,
+     "gun_at": 60
+    },
+    "authorised": {
+     "rifle": 250,
+     "gun_arty": 120,
+     "gun_at": 60
+    }
+   },
+   "organisation": 90,
+   "morale": 76,
+   "experience": 60,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 0,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "hold",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "ger.16af",
+   "name": "16th Army (forward corps)",
+   "shortName": "16.A fwd",
    "nation": "GER",
    "side": "axis",
    "type": "infantry",
@@ -908,8 +908,8 @@
     22.76,
     54.06
    ],
-   "manpower": 30000,
-   "manpowerMax": 30000,
+   "manpower": 18000,
+   "manpowerMax": 18000,
    "equipment": {
     "held": {
      "rifle": 250,
@@ -938,12 +938,53 @@
    "kills": 0
   },
   {
-   "id": "ger.3pg",
-   "name": "3rd Panzer Group (Hoth)",
-   "shortName": "3.PzGr",
+   "id": "ger.16ab",
+   "name": "16th Army (follow-on corps)",
+   "shortName": "16.A fol",
    "nation": "GER",
    "side": "axis",
-   "type": "armoured",
+   "type": "infantry",
+   "domain": "land",
+   "pos": [
+    22.82,
+    54.06
+   ],
+   "manpower": 12000,
+   "manpowerMax": 12000,
+   "equipment": {
+    "held": {
+     "rifle": 250,
+     "gun_arty": 120,
+     "gun_at": 60
+    },
+    "authorised": {
+     "rifle": 250,
+     "gun_arty": 120,
+     "gun_at": 60
+    }
+   },
+   "organisation": 90,
+   "morale": 76,
+   "experience": 60,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 0,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "hold",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "ger.9af",
+   "name": "9th Army (forward corps)",
+   "shortName": "9.A fwd",
+   "nation": "GER",
+   "side": "axis",
+   "type": "infantry",
    "domain": "land",
    "pos": [
     22.31,
@@ -953,14 +994,14 @@
    "manpowerMax": 18000,
    "equipment": {
     "held": {
-     "tank_medium": 500,
-     "gun_arty": 40,
-     "truck": 100
+     "rifle": 250,
+     "gun_arty": 120,
+     "gun_at": 60
     },
     "authorised": {
-     "tank_medium": 500,
-     "gun_arty": 40,
-     "truck": 100
+     "rifle": 250,
+     "gun_arty": 120,
+     "gun_at": 60
     }
    },
    "organisation": 90,
@@ -979,9 +1020,9 @@
    "kills": 0
   },
   {
-   "id": "ger.9a",
-   "name": "9th Army",
-   "shortName": "9.A",
+   "id": "ger.9ab",
+   "name": "9th Army (follow-on corps)",
+   "shortName": "9.A fol",
    "nation": "GER",
    "side": "axis",
    "type": "infantry",
@@ -990,8 +1031,8 @@
     22.37,
     53.56
    ],
-   "manpower": 30000,
-   "manpowerMax": 30000,
+   "manpower": 12000,
+   "manpowerMax": 12000,
    "equipment": {
     "held": {
      "rifle": 250,
@@ -1020,9 +1061,9 @@
    "kills": 0
   },
   {
-   "id": "ger.4a",
-   "name": "4th Army",
-   "shortName": "4.A",
+   "id": "ger.4af",
+   "name": "4th Army (forward corps)",
+   "shortName": "4.A fwd",
    "nation": "GER",
    "side": "axis",
    "type": "infantry",
@@ -1031,8 +1072,8 @@
     22.61,
     52.51
    ],
-   "manpower": 30000,
-   "manpowerMax": 30000,
+   "manpower": 18000,
+   "manpowerMax": 18000,
    "equipment": {
     "held": {
      "rifle": 250,
@@ -1061,29 +1102,193 @@
    "kills": 0
   },
   {
-   "id": "ger.2pg",
-   "name": "2nd Panzer Group (Guderian)",
-   "shortName": "2.PzGr",
+   "id": "ger.4ab",
+   "name": "4th Army (follow-on corps)",
+   "shortName": "4.A fol",
    "nation": "GER",
    "side": "axis",
-   "type": "armoured",
+   "type": "infantry",
    "domain": "land",
    "pos": [
-    23.11,
-    52.06
+    22.67,
+    52.51
+   ],
+   "manpower": 12000,
+   "manpowerMax": 12000,
+   "equipment": {
+    "held": {
+     "rifle": 250,
+     "gun_arty": 120,
+     "gun_at": 60
+    },
+    "authorised": {
+     "rifle": 250,
+     "gun_arty": 120,
+     "gun_at": 60
+    }
+   },
+   "organisation": 90,
+   "morale": 76,
+   "experience": 60,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 0,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "hold",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "ger.6af",
+   "name": "6th Army (forward corps)",
+   "shortName": "6.A fwd",
+   "nation": "GER",
+   "side": "axis",
+   "type": "infantry",
+   "domain": "land",
+   "pos": [
+    23.06,
+    51.21
    ],
    "manpower": 18000,
    "manpowerMax": 18000,
    "equipment": {
     "held": {
-     "tank_medium": 500,
-     "gun_arty": 40,
-     "truck": 100
+     "rifle": 250,
+     "gun_arty": 120,
+     "gun_at": 60
     },
     "authorised": {
-     "tank_medium": 500,
-     "gun_arty": 40,
-     "truck": 100
+     "rifle": 250,
+     "gun_arty": 120,
+     "gun_at": 60
+    }
+   },
+   "organisation": 90,
+   "morale": 76,
+   "experience": 60,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 0,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "hold",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "ger.6ab",
+   "name": "6th Army (follow-on corps)",
+   "shortName": "6.A fol",
+   "nation": "GER",
+   "side": "axis",
+   "type": "infantry",
+   "domain": "land",
+   "pos": [
+    23.12,
+    51.21
+   ],
+   "manpower": 12000,
+   "manpowerMax": 12000,
+   "equipment": {
+    "held": {
+     "rifle": 250,
+     "gun_arty": 120,
+     "gun_at": 60
+    },
+    "authorised": {
+     "rifle": 250,
+     "gun_arty": 120,
+     "gun_at": 60
+    }
+   },
+   "organisation": 90,
+   "morale": 76,
+   "experience": 60,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 0,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "hold",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "ger.17af",
+   "name": "17th Army (forward corps)",
+   "shortName": "17.A fwd",
+   "nation": "GER",
+   "side": "axis",
+   "type": "infantry",
+   "domain": "land",
+   "pos": [
+    22.36,
+    50.11
+   ],
+   "manpower": 18000,
+   "manpowerMax": 18000,
+   "equipment": {
+    "held": {
+     "rifle": 250,
+     "gun_arty": 120,
+     "gun_at": 60
+    },
+    "authorised": {
+     "rifle": 250,
+     "gun_arty": 120,
+     "gun_at": 60
+    }
+   },
+   "organisation": 90,
+   "morale": 76,
+   "experience": 60,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 0,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "hold",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "ger.17ab",
+   "name": "17th Army (follow-on corps)",
+   "shortName": "17.A fol",
+   "nation": "GER",
+   "side": "axis",
+   "type": "infantry",
+   "domain": "land",
+   "pos": [
+    22.42,
+    50.11
+   ],
+   "manpower": 12000,
+   "manpowerMax": 12000,
+   "equipment": {
+    "held": {
+     "rifle": 250,
+     "gun_arty": 120,
+     "gun_at": 60
+    },
+    "authorised": {
+     "rifle": 250,
+     "gun_arty": 120,
+     "gun_at": 60
     }
    },
    "organisation": 90,
@@ -1143,29 +1348,29 @@
    "kills": 0
   },
   {
-   "id": "ger.6a",
-   "name": "6th Army",
-   "shortName": "6.A",
+   "id": "ger.4pg.20mot",
+   "name": "20th Motorised Division (4th Panzer Group)",
+   "shortName": "20.Mot",
    "nation": "GER",
    "side": "axis",
-   "type": "infantry",
+   "type": "armoured",
    "domain": "land",
    "pos": [
-    23.06,
-    51.21
+    22.46,
+    54.51
    ],
-   "manpower": 30000,
-   "manpowerMax": 30000,
+   "manpower": 12000,
+   "manpowerMax": 12000,
    "equipment": {
     "held": {
-     "rifle": 250,
-     "gun_arty": 120,
-     "gun_at": 60
+     "tank_medium": 160,
+     "gun_arty": 40,
+     "truck": 100
     },
     "authorised": {
-     "rifle": 250,
-     "gun_arty": 120,
-     "gun_at": 60
+     "tank_medium": 160,
+     "gun_arty": 40,
+     "truck": 100
     }
    },
    "organisation": 90,
@@ -1184,9 +1389,378 @@
    "kills": 0
   },
   {
-   "id": "ger.1pg",
-   "name": "1st Panzer Group (Kleist)",
-   "shortName": "1.PzGr",
+   "id": "ger.4pg.a",
+   "name": "4th Panzer Group - panzer corps A (corps not retrieved)",
+   "shortName": "4.PzGr A",
+   "nation": "GER",
+   "side": "axis",
+   "type": "armoured",
+   "domain": "land",
+   "pos": [
+    22.52,
+    54.51
+   ],
+   "manpower": 12000,
+   "manpowerMax": 12000,
+   "equipment": {
+    "held": {
+     "tank_medium": 200,
+     "gun_arty": 40,
+     "truck": 100
+    },
+    "authorised": {
+     "tank_medium": 200,
+     "gun_arty": 40,
+     "truck": 100
+    }
+   },
+   "organisation": 90,
+   "morale": 76,
+   "experience": 60,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 0,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "hold",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "ger.4pg.b",
+   "name": "4th Panzer Group - panzer corps B (corps not retrieved)",
+   "shortName": "4.PzGr B",
+   "nation": "GER",
+   "side": "axis",
+   "type": "armoured",
+   "domain": "land",
+   "pos": [
+    22.58,
+    54.51
+   ],
+   "manpower": 12000,
+   "manpowerMax": 12000,
+   "equipment": {
+    "held": {
+     "tank_medium": 200,
+     "gun_arty": 40,
+     "truck": 100
+    },
+    "authorised": {
+     "tank_medium": 200,
+     "gun_arty": 40,
+     "truck": 100
+    }
+   },
+   "organisation": 90,
+   "morale": 76,
+   "experience": 60,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 0,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "hold",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "ger.3pg.7pz",
+   "name": "7th Panzer Division (3rd Panzer Group)",
+   "shortName": "7.PzD",
+   "nation": "GER",
+   "side": "axis",
+   "type": "armoured",
+   "domain": "land",
+   "pos": [
+    22.43,
+    53.56
+   ],
+   "manpower": 12000,
+   "manpowerMax": 12000,
+   "equipment": {
+    "held": {
+     "tank_medium": 200,
+     "gun_arty": 40,
+     "truck": 100
+    },
+    "authorised": {
+     "tank_medium": 200,
+     "gun_arty": 40,
+     "truck": 100
+    }
+   },
+   "organisation": 90,
+   "morale": 76,
+   "experience": 60,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 0,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "hold",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "ger.3pg.20pz",
+   "name": "20th Panzer Division (3rd Panzer Group)",
+   "shortName": "20.PzD",
+   "nation": "GER",
+   "side": "axis",
+   "type": "armoured",
+   "domain": "land",
+   "pos": [
+    22.49,
+    53.56
+   ],
+   "manpower": 12000,
+   "manpowerMax": 12000,
+   "equipment": {
+    "held": {
+     "tank_medium": 200,
+     "gun_arty": 40,
+     "truck": 100
+    },
+    "authorised": {
+     "tank_medium": 200,
+     "gun_arty": 40,
+     "truck": 100
+    }
+   },
+   "organisation": 90,
+   "morale": 76,
+   "experience": 60,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 0,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "hold",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "ger.3pg.r",
+   "name": "3rd Panzer Group - remaining formations (corps not retrieved)",
+   "shortName": "3.PzGr rem",
+   "nation": "GER",
+   "side": "axis",
+   "type": "armoured",
+   "domain": "land",
+   "pos": [
+    22.31,
+    53.6
+   ],
+   "manpower": 12000,
+   "manpowerMax": 12000,
+   "equipment": {
+    "held": {
+     "tank_medium": 160,
+     "gun_arty": 40,
+     "truck": 100
+    },
+    "authorised": {
+     "tank_medium": 160,
+     "gun_arty": 40,
+     "truck": 100
+    }
+   },
+   "organisation": 90,
+   "morale": 76,
+   "experience": 60,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 0,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "hold",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "ger.2pg.29mot",
+   "name": "29th Motorised Division (2nd Panzer Group)",
+   "shortName": "29.Mot",
+   "nation": "GER",
+   "side": "axis",
+   "type": "armoured",
+   "domain": "land",
+   "pos": [
+    23.11,
+    52.06
+   ],
+   "manpower": 12000,
+   "manpowerMax": 12000,
+   "equipment": {
+    "held": {
+     "tank_medium": 120,
+     "gun_arty": 40,
+     "truck": 100
+    },
+    "authorised": {
+     "tank_medium": 120,
+     "gun_arty": 40,
+     "truck": 100
+    }
+   },
+   "organisation": 90,
+   "morale": 76,
+   "experience": 60,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 0,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "hold",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "ger.2pg.17pz",
+   "name": "17th Panzer Division (2nd Panzer Group)",
+   "shortName": "17.PzD",
+   "nation": "GER",
+   "side": "axis",
+   "type": "armoured",
+   "domain": "land",
+   "pos": [
+    23.17,
+    52.06
+   ],
+   "manpower": 12000,
+   "manpowerMax": 12000,
+   "equipment": {
+    "held": {
+     "tank_medium": 200,
+     "gun_arty": 40,
+     "truck": 100
+    },
+    "authorised": {
+     "tank_medium": 200,
+     "gun_arty": 40,
+     "truck": 100
+    }
+   },
+   "organisation": 90,
+   "morale": 76,
+   "experience": 60,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 0,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "hold",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "ger.2pg.10pz",
+   "name": "10th Panzer Division (2nd Panzer Group)",
+   "shortName": "10.PzD",
+   "nation": "GER",
+   "side": "axis",
+   "type": "armoured",
+   "domain": "land",
+   "pos": [
+    23.23,
+    52.06
+   ],
+   "manpower": 12000,
+   "manpowerMax": 12000,
+   "equipment": {
+    "held": {
+     "tank_medium": 200,
+     "gun_arty": 40,
+     "truck": 100
+    },
+    "authorised": {
+     "tank_medium": 200,
+     "gun_arty": 40,
+     "truck": 100
+    }
+   },
+   "organisation": 90,
+   "morale": 76,
+   "experience": 60,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 0,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "hold",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "ger.2pg.r",
+   "name": "2nd Panzer Group - remaining formations (XXIV Panzer Corps and others)",
+   "shortName": "2.PzGr rem",
+   "nation": "GER",
+   "side": "axis",
+   "type": "armoured",
+   "domain": "land",
+   "pos": [
+    23.29,
+    52.06
+   ],
+   "manpower": 12000,
+   "manpowerMax": 12000,
+   "equipment": {
+    "held": {
+     "tank_medium": 160,
+     "gun_arty": 40,
+     "truck": 100
+    },
+    "authorised": {
+     "tank_medium": 160,
+     "gun_arty": 40,
+     "truck": 100
+    }
+   },
+   "organisation": 90,
+   "morale": 76,
+   "experience": 60,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 0,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "hold",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "ger.1pg.9pz",
+   "name": "9th Panzer Division (1st Panzer Group)",
+   "shortName": "9.PzD",
    "nation": "GER",
    "side": "axis",
    "type": "armoured",
@@ -1195,16 +1769,16 @@
     23.01,
     50.61
    ],
-   "manpower": 20000,
-   "manpowerMax": 20000,
+   "manpower": 12000,
+   "manpowerMax": 12000,
    "equipment": {
     "held": {
-     "tank_medium": 799,
+     "tank_medium": 200,
      "gun_arty": 40,
      "truck": 100
     },
     "authorised": {
-     "tank_medium": 799,
+     "tank_medium": 200,
      "gun_arty": 40,
      "truck": 100
     }
@@ -1225,29 +1799,111 @@
    "kills": 0
   },
   {
-   "id": "ger.17a",
-   "name": "17th Army",
-   "shortName": "17.A",
+   "id": "ger.1pg.11pz",
+   "name": "11th Panzer Division (1st Panzer Group)",
+   "shortName": "11.PzD",
    "nation": "GER",
    "side": "axis",
-   "type": "infantry",
+   "type": "armoured",
    "domain": "land",
    "pos": [
-    22.36,
-    50.11
+    23.07,
+    50.61
    ],
-   "manpower": 30000,
-   "manpowerMax": 30000,
+   "manpower": 12000,
+   "manpowerMax": 12000,
    "equipment": {
     "held": {
-     "rifle": 250,
-     "gun_arty": 120,
-     "gun_at": 60
+     "tank_medium": 200,
+     "gun_arty": 40,
+     "truck": 100
     },
     "authorised": {
-     "rifle": 250,
-     "gun_arty": 120,
-     "gun_at": 60
+     "tank_medium": 200,
+     "gun_arty": 40,
+     "truck": 100
+    }
+   },
+   "organisation": 90,
+   "morale": 76,
+   "experience": 60,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 0,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "hold",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "ger.1pg.16pz",
+   "name": "16th Panzer Division (1st Panzer Group)",
+   "shortName": "16.PzD",
+   "nation": "GER",
+   "side": "axis",
+   "type": "armoured",
+   "domain": "land",
+   "pos": [
+    23.13,
+    50.61
+   ],
+   "manpower": 12000,
+   "manpowerMax": 12000,
+   "equipment": {
+    "held": {
+     "tank_medium": 200,
+     "gun_arty": 40,
+     "truck": 100
+    },
+    "authorised": {
+     "tank_medium": 200,
+     "gun_arty": 40,
+     "truck": 100
+    }
+   },
+   "organisation": 90,
+   "morale": 76,
+   "experience": 60,
+   "fuel": 100,
+   "ammo": 100,
+   "supply": 100,
+   "fatigue": 5,
+   "readiness": 90,
+   "entrenchment": 0,
+   "moveStatus": "stationary",
+   "combatStatus": "idle",
+   "posture": "hold",
+   "orders": [],
+   "kills": 0
+  },
+  {
+   "id": "ger.1pg.r",
+   "name": "1st Panzer Group - remaining formations (III, XIV, XLVIII Corps)",
+   "shortName": "1.PzGr rem",
+   "nation": "GER",
+   "side": "axis",
+   "type": "armoured",
+   "domain": "land",
+   "pos": [
+    23.19,
+    50.61
+   ],
+   "manpower": 12000,
+   "manpowerMax": 12000,
+   "equipment": {
+    "held": {
+     "tank_medium": 199,
+     "gun_arty": 40,
+     "truck": 100
+    },
+    "authorised": {
+     "tank_medium": 199,
+     "gun_arty": 40,
+     "truck": 100
     }
    },
    "organisation": 90,
@@ -1287,14 +1943,14 @@
      "rifle": 600
     }
    },
-   "organisation": 60,
+   "organisation": 40,
    "morale": 58,
    "experience": 30,
-   "fuel": 100,
-   "ammo": 100,
-   "supply": 100,
+   "fuel": 60,
+   "ammo": 60,
+   "supply": 70,
    "fatigue": 5,
-   "readiness": 50,
+   "readiness": 30,
    "entrenchment": 10,
    "moveStatus": "stationary",
    "combatStatus": "idle",
@@ -1328,14 +1984,14 @@
      "gun_at": 60
     }
    },
-   "organisation": 60,
+   "organisation": 40,
    "morale": 58,
    "experience": 30,
-   "fuel": 100,
-   "ammo": 100,
-   "supply": 100,
+   "fuel": 60,
+   "ammo": 60,
+   "supply": 70,
    "fatigue": 5,
-   "readiness": 50,
+   "readiness": 30,
    "entrenchment": 10,
    "moveStatus": "stationary",
    "combatStatus": "idle",
@@ -1369,14 +2025,14 @@
      "gun_at": 60
     }
    },
-   "organisation": 60,
+   "organisation": 40,
    "morale": 58,
    "experience": 30,
-   "fuel": 100,
-   "ammo": 100,
-   "supply": 100,
+   "fuel": 60,
+   "ammo": 60,
+   "supply": 70,
    "fatigue": 5,
-   "readiness": 50,
+   "readiness": 30,
    "entrenchment": 10,
    "moveStatus": "stationary",
    "combatStatus": "idle",
@@ -1410,14 +2066,14 @@
      "truck": 100
     }
    },
-   "organisation": 60,
+   "organisation": 40,
    "morale": 58,
    "experience": 30,
-   "fuel": 100,
-   "ammo": 100,
-   "supply": 100,
+   "fuel": 60,
+   "ammo": 60,
+   "supply": 70,
    "fatigue": 5,
-   "readiness": 50,
+   "readiness": 30,
    "entrenchment": 10,
    "moveStatus": "stationary",
    "combatStatus": "idle",
@@ -1451,14 +2107,14 @@
      "truck": 100
     }
    },
-   "organisation": 60,
+   "organisation": 40,
    "morale": 58,
    "experience": 30,
-   "fuel": 100,
-   "ammo": 100,
-   "supply": 100,
+   "fuel": 60,
+   "ammo": 60,
+   "supply": 70,
    "fatigue": 5,
-   "readiness": 50,
+   "readiness": 30,
    "entrenchment": 10,
    "moveStatus": "stationary",
    "combatStatus": "idle",
@@ -1488,14 +2144,14 @@
      "rifle": 600
     }
    },
-   "organisation": 60,
+   "organisation": 40,
    "morale": 58,
    "experience": 30,
-   "fuel": 100,
-   "ammo": 100,
-   "supply": 100,
+   "fuel": 60,
+   "ammo": 60,
+   "supply": 70,
    "fatigue": 5,
-   "readiness": 50,
+   "readiness": 30,
    "entrenchment": 10,
    "moveStatus": "stationary",
    "combatStatus": "idle",
@@ -1529,14 +2185,14 @@
      "gun_at": 60
     }
    },
-   "organisation": 60,
+   "organisation": 40,
    "morale": 58,
    "experience": 30,
-   "fuel": 100,
-   "ammo": 100,
-   "supply": 100,
+   "fuel": 60,
+   "ammo": 60,
+   "supply": 70,
    "fatigue": 5,
-   "readiness": 50,
+   "readiness": 30,
    "entrenchment": 10,
    "moveStatus": "stationary",
    "combatStatus": "idle",
@@ -1570,14 +2226,14 @@
      "gun_at": 60
     }
    },
-   "organisation": 60,
+   "organisation": 40,
    "morale": 58,
    "experience": 30,
-   "fuel": 100,
-   "ammo": 100,
-   "supply": 100,
+   "fuel": 60,
+   "ammo": 60,
+   "supply": 70,
    "fatigue": 5,
-   "readiness": 50,
+   "readiness": 30,
    "entrenchment": 10,
    "moveStatus": "stationary",
    "combatStatus": "idle",
@@ -1611,14 +2267,14 @@
      "gun_at": 60
     }
    },
-   "organisation": 60,
+   "organisation": 40,
    "morale": 58,
    "experience": 30,
-   "fuel": 100,
-   "ammo": 100,
-   "supply": 100,
+   "fuel": 60,
+   "ammo": 60,
+   "supply": 70,
    "fatigue": 5,
-   "readiness": 50,
+   "readiness": 30,
    "entrenchment": 10,
    "moveStatus": "stationary",
    "combatStatus": "idle",
@@ -1648,14 +2304,14 @@
      "rifle": 600
     }
    },
-   "organisation": 60,
+   "organisation": 40,
    "morale": 58,
    "experience": 30,
-   "fuel": 100,
-   "ammo": 100,
-   "supply": 100,
+   "fuel": 60,
+   "ammo": 60,
+   "supply": 70,
    "fatigue": 5,
-   "readiness": 50,
+   "readiness": 30,
    "entrenchment": 10,
    "moveStatus": "stationary",
    "combatStatus": "idle",
@@ -1689,14 +2345,14 @@
      "truck": 100
     }
    },
-   "organisation": 60,
+   "organisation": 40,
    "morale": 58,
    "experience": 30,
-   "fuel": 100,
-   "ammo": 100,
-   "supply": 100,
+   "fuel": 60,
+   "ammo": 60,
+   "supply": 70,
    "fatigue": 5,
-   "readiness": 50,
+   "readiness": 30,
    "entrenchment": 10,
    "moveStatus": "stationary",
    "combatStatus": "idle",
@@ -1730,14 +2386,14 @@
      "truck": 100
     }
    },
-   "organisation": 60,
+   "organisation": 40,
    "morale": 58,
    "experience": 30,
-   "fuel": 100,
-   "ammo": 100,
-   "supply": 100,
+   "fuel": 60,
+   "ammo": 60,
+   "supply": 70,
    "fatigue": 5,
-   "readiness": 50,
+   "readiness": 30,
    "entrenchment": 10,
    "moveStatus": "stationary",
    "combatStatus": "idle",
@@ -1769,14 +2425,14 @@
      "armoured_car": 60
     }
    },
-   "organisation": 60,
+   "organisation": 40,
    "morale": 58,
    "experience": 30,
-   "fuel": 100,
-   "ammo": 100,
-   "supply": 100,
+   "fuel": 60,
+   "ammo": 60,
+   "supply": 70,
    "fatigue": 5,
-   "readiness": 50,
+   "readiness": 30,
    "entrenchment": 10,
    "moveStatus": "stationary",
    "combatStatus": "idle",
@@ -1810,14 +2466,14 @@
      "gun_at": 60
     }
    },
-   "organisation": 60,
+   "organisation": 40,
    "morale": 65,
    "experience": 30,
-   "fuel": 100,
-   "ammo": 100,
-   "supply": 100,
+   "fuel": 60,
+   "ammo": 60,
+   "supply": 70,
    "fatigue": 5,
-   "readiness": 50,
+   "readiness": 30,
    "entrenchment": 60,
    "moveStatus": "stationary",
    "combatStatus": "idle",
@@ -1847,14 +2503,14 @@
      "rifle": 600
     }
    },
-   "organisation": 60,
+   "organisation": 40,
    "morale": 58,
    "experience": 30,
-   "fuel": 100,
-   "ammo": 100,
-   "supply": 100,
+   "fuel": 60,
+   "ammo": 60,
+   "supply": 70,
    "fatigue": 5,
-   "readiness": 50,
+   "readiness": 30,
    "entrenchment": 10,
    "moveStatus": "stationary",
    "combatStatus": "idle",
@@ -1888,14 +2544,14 @@
      "gun_at": 60
     }
    },
-   "organisation": 60,
+   "organisation": 40,
    "morale": 58,
    "experience": 30,
-   "fuel": 100,
-   "ammo": 100,
-   "supply": 100,
+   "fuel": 60,
+   "ammo": 60,
+   "supply": 70,
    "fatigue": 5,
-   "readiness": 50,
+   "readiness": 30,
    "entrenchment": 10,
    "moveStatus": "stationary",
    "combatStatus": "idle",
@@ -1929,14 +2585,14 @@
      "gun_at": 60
     }
    },
-   "organisation": 60,
+   "organisation": 40,
    "morale": 58,
    "experience": 30,
-   "fuel": 100,
-   "ammo": 100,
-   "supply": 100,
+   "fuel": 60,
+   "ammo": 60,
+   "supply": 70,
    "fatigue": 5,
-   "readiness": 50,
+   "readiness": 30,
    "entrenchment": 10,
    "moveStatus": "stationary",
    "combatStatus": "idle",
@@ -1970,14 +2626,14 @@
      "gun_at": 60
     }
    },
-   "organisation": 60,
+   "organisation": 40,
    "morale": 58,
    "experience": 30,
-   "fuel": 100,
-   "ammo": 100,
-   "supply": 100,
+   "fuel": 60,
+   "ammo": 60,
+   "supply": 70,
    "fatigue": 5,
-   "readiness": 50,
+   "readiness": 30,
    "entrenchment": 10,
    "moveStatus": "stationary",
    "combatStatus": "idle",
@@ -2011,14 +2667,14 @@
      "gun_at": 60
     }
    },
-   "organisation": 60,
+   "organisation": 40,
    "morale": 58,
    "experience": 30,
-   "fuel": 100,
-   "ammo": 100,
-   "supply": 100,
+   "fuel": 60,
+   "ammo": 60,
+   "supply": 70,
    "fatigue": 5,
-   "readiness": 50,
+   "readiness": 30,
    "entrenchment": 10,
    "moveStatus": "stationary",
    "combatStatus": "idle",
@@ -2052,14 +2708,14 @@
      "truck": 100
     }
    },
-   "organisation": 60,
+   "organisation": 40,
    "morale": 58,
    "experience": 30,
-   "fuel": 100,
-   "ammo": 100,
-   "supply": 100,
+   "fuel": 60,
+   "ammo": 60,
+   "supply": 70,
    "fatigue": 5,
-   "readiness": 50,
+   "readiness": 30,
    "entrenchment": 10,
    "moveStatus": "stationary",
    "combatStatus": "idle",
@@ -2093,14 +2749,14 @@
      "truck": 100
     }
    },
-   "organisation": 60,
+   "organisation": 40,
    "morale": 58,
    "experience": 30,
-   "fuel": 100,
-   "ammo": 100,
-   "supply": 100,
+   "fuel": 60,
+   "ammo": 60,
+   "supply": 70,
    "fatigue": 5,
-   "readiness": 50,
+   "readiness": 30,
    "entrenchment": 10,
    "moveStatus": "stationary",
    "combatStatus": "idle",
@@ -2134,14 +2790,14 @@
      "gun_at": 60
     }
    },
-   "organisation": 60,
+   "organisation": 40,
    "morale": 58,
    "experience": 30,
-   "fuel": 100,
-   "ammo": 100,
-   "supply": 100,
+   "fuel": 60,
+   "ammo": 60,
+   "supply": 70,
    "fatigue": 5,
-   "readiness": 50,
+   "readiness": 30,
    "entrenchment": 25,
    "moveStatus": "stationary",
    "combatStatus": "idle",
@@ -3091,6 +3747,13 @@
    "toMinutes": 10080
   }
  ],
+ "openingSurprise": {
+  "victimNations": [
+   "SOV"
+  ],
+  "untilHour": 360,
+  "defenceMultiplier": 0.3
+ },
  "victoryTiers": {
   "axis": {
    "decisive": 0.8,

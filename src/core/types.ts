@@ -367,6 +367,8 @@ export interface ScenarioDefinition {
   seaSupply?: boolean;
   /** Radius (km) within which an own, non-routed combat unit stops the enemy capturing a location; default 4 (the capture radius). Normandy uses 6.5 so an outlying garrison still counts. */
   captureBlockKm?: number;
+  /** Opening surprise (Barbarossa): combat strength of the victim nations' units is multiplied by defenceMultiplier (0.3..1), fading linearly to 1 at untilHour. Absent = no effect. */
+  openingSurprise?: { victimNations: NationId[]; untilHour: number; defenceMultiplier: number };
   airSupremacy?: AirSupremacy[];
   carpetBombings?: CarpetBombing[];
   /** Opt-in river/lake ice (hours since scenario start). Ice exists only if iceFromHour and iceFullHour are both set. */

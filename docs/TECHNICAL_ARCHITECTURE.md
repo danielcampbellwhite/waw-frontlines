@@ -97,3 +97,6 @@ Migrations: `migrations[fromVersion](state) → state` chain keyed on `schema`.
 4. Historical data accuracy → source register, validator, QA audit, never invent.
 5. Scope: Phase-gated; vertical slice (Fall of France) before other campaigns.
 6. Large saves → JSON of ControlGrid compacted (run-length), units only.
+
+## Opening surprise (optional scenario modifier)
+`ScenarioDefinition.openingSurprise?: { victimNations: NationId[]; untilHour: number; defenceMultiplier: number }` (validated 0.3..1, untilHour in (0,1000]). In `src/sim/combat.ts` (`evalUnit`) every unit of a victim nation has its combat strength multiplied by `surpriseFactor` (`src/sim/surprise.ts`): `defenceMultiplier` at hour 0, fading linearly to 1 at `untilHour`; it applies in both battle roles. Absent = no code path runs, so existing campaigns are unchanged (no extra random draws). Intended for Barbarossa (Soviet frontier forces).

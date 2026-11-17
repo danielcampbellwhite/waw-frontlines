@@ -6,7 +6,7 @@
     "author": "Bundesarchiv / Unknown author",
     "license": "CC BY-SA 3.0 de",
     "sourceUrl": "https://commons.wikimedia.org/wiki/File:Bundesarchiv_Bild_146-1981-084-34,_Maastricht,_Panzer_III_in_Marschpause.jpg",
-    "retrieved": "2026-11-16"
+    "retrieved": "2026-11-17"
   },
   {
     "id": "ger_pz4_d",
@@ -42,7 +42,7 @@
     "author": "Bundesarchiv / Gebauer",
     "license": "CC BY-SA 3.0 de",
     "sourceUrl": "https://commons.wikimedia.org/wiki/File:Bundesarchiv_Bild_101I-213-0267-12,_Russland-Nord,_Panzer_38(t)_und_Infanterie.jpg",
-    "retrieved": "2026-11-16"
+    "retrieved": "2026-11-17"
   },
   {
     "id": "ger_pz38t_crew",
@@ -384,7 +384,7 @@
     "author": "Unknown author",
     "license": "Public domain",
     "sourceUrl": "https://commons.wikimedia.org/wiki/File:Morane-Saulnier_M.S.406.jpg",
-    "retrieved": "2026-11-16"
+    "retrieved": "2026-11-17"
   },
   {
     "id": "fra_ms405",
@@ -447,7 +447,7 @@
     "author": "Unknown author",
     "license": "Public domain",
     "sourceUrl": "https://commons.wikimedia.org/wiki/File:IWM-KID-358-Cruiser-MkIII.jpg",
-    "retrieved": "2026-11-16"
+    "retrieved": "2026-11-17"
   },
   {
     "id": "gbr_cruiser4",
@@ -465,7 +465,7 @@
     "author": "Puttnam (Mr), War Office official photographer",
     "license": "Public domain",
     "sourceUrl": "https://commons.wikimedia.org/wiki/File:Vickers_Mk_VI_light_tanks_pass_through_the_village_of_Linton_in_Cambridgeshire,_30_August_1940._H3541.jpg",
-    "retrieved": "2026-11-16"
+    "retrieved": "2026-11-17"
   },
   {
     "id": "gbr_bren_a",
@@ -546,7 +546,7 @@
     "author": "Daventry B J (Mr), Royal Air Force official photographer",
     "license": "Public domain",
     "sourceUrl": "https://commons.wikimedia.org/wiki/File:Hawker_Hurricane_Mk_I_of_No._85_Squadron_RAF,_October_1940._CH1501.jpg",
-    "retrieved": "2026-11-16"
+    "retrieved": "2026-11-17"
   },
   {
     "id": "gbr_spitfire",
@@ -645,7 +645,7 @@
     "author": "War Office official photographer : Puttnam L A (Lt) : Davies (Lt)",
     "license": "Public domain",
     "sourceUrl": "https://commons.wikimedia.org/wiki/File:Georges_and_Gort_at_Arras_WWII_IWM_F_2094.jpg",
-    "retrieved": "2026-11-16"
+    "retrieved": "2026-11-17"
   },
   {
     "id": "fra_hq_georges",
@@ -654,7 +654,7 @@
     "author": "War Office official photographer : Puttnam L A (Lt) : Davies (Lt)",
     "license": "Public domain",
     "sourceUrl": "https://commons.wikimedia.org/wiki/File:Georges_and_Gort_at_Arras_WWII_IWM_F_2094.jpg",
-    "retrieved": "2026-11-16"
+    "retrieved": "2026-11-17"
   },
   {
     "id": "ger_inf_stellung",
@@ -726,7 +726,7 @@
     "author": "Gary Todd from Xinzheng, China",
     "license": "CC0",
     "sourceUrl": "https://commons.wikimedia.org/wiki/File:Hawker_Hurricane,_Veteran_of_Battle_of_France_(9817832126).jpg",
-    "retrieved": "2026-11-16"
+    "retrieved": "2026-11-17"
   },
   {
     "id": "gbr_spitfire_flight",
@@ -735,13 +735,13 @@
     "author": "Alan Wilson from Stilton, Peterborough, Cambs, UK",
     "license": "CC BY-SA 2.0",
     "sourceUrl": "https://commons.wikimedia.org/wiki/File:Supermarine_Spitfire_Ia_%27N3200_-_QV%27_(G-CFGJ)_(19795184486).jpg",
-    "retrieved": "2026-11-16"
+    "retrieved": "2026-11-17"
   },
   {
     "id": "gbr_blenheim_museum",
     "nation": "GBR",
     "subject": "Bristol Blenheim Mk I (preserved aircraft)",
-    "author": "Ad Meskens You are free to use this picture for any purpose as long as you credit its author, Ad Meskens. Example: © Ad Meskens / Wikimedia Commons If you use this work outside of the Wikimedia projects, a message or a copy is very much appreciated. This image is not in the public domain. A statement such as \"From Wikimedia Commons\" or similar is not by itself sufficient. If you do not provide clear attribution to the author you do not comply with the terms of the file's license and you may not use this file. If you are unable or unwilling to provide attribution you should contact Ad Meskens to negotiate a different license.",
+    "author": "Ad Meskens",
     "license": "CC BY-SA 4.0",
     "sourceUrl": "https://commons.wikimedia.org/wiki/File:Antwerp_Bristol_Blenheim_Mk.I_L6739_(G-BPIV)_01.jpg",
     "retrieved": "2026-11-16"
@@ -807,7 +807,7 @@
     "author": "Salis, U.S. Army Signal Corps photo 111-SC-199467",
     "license": "Public domain",
     "sourceUrl": "https://commons.wikimedia.org/wiki/File:M4_Sherman_tanks_of_the_U.S._7th_Armored_Division_near_St._Vith,_Belgium,_24_January_1945_(148727210).jpg",
-    "retrieved": "2026-11-16"
+    "retrieved": "2026-11-17"
   },
   {
     "id": "usa_m5_normandy",
@@ -816,7 +816,7 @@
     "author": "Conseil Régional de Basse-Normandie / National Archives USA",
     "license": "Public domain",
     "sourceUrl": "https://commons.wikimedia.org/wiki/File:M5_Stuart_Normandy.jpg",
-    "retrieved": "2026-11-16"
+    "retrieved": "2026-11-17"
   },
   {
     "id": "usa_m10_bailey",
@@ -1035,6 +1035,15 @@
     "retrieved": "2026-11-16"
   },
   {
+    "id": "ger_pz4_late",
+    "nation": "GER",
+    "subject": "Panzer IV with skirt armour, Eastern Front, August 1944",
+    "author": "Bundesarchiv / Unknown author",
+    "license": "CC BY-SA 3.0 de",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Bundesarchiv_Bild_101I-696-0427-03,_Mittlere_Ostfront_(Polen),_Panzer_IV.jpg",
+    "retrieved": "2026-11-17"
+  },
+  {
     "id": "ger_spah_africa",
     "nation": "GER",
     "subject": "Armoured reconnaissance car with radio mast, North Africa",
@@ -1051,6 +1060,15 @@
     "license": "CC BY-SA 3.0 de",
     "sourceUrl": "https://commons.wikimedia.org/wiki/File:Bundesarchiv_Bild_146-1981-064-16A,_Nordafrika,_Demontage_einer_Junkers_Ju_87.jpg",
     "retrieved": "2026-11-16"
+  },
+  {
+    "id": "ger_inf_flame",
+    "nation": "GER",
+    "subject": "Assault pioneers with flamethrower, Stalingrad",
+    "author": "Bundesarchiv / Unknown author",
+    "license": "CC BY-SA 3.0 de",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Bundesarchiv_Bild_101I-083-3371-11,_Stalingrad,_Infanterie_mit_Flammenwerfer.jpg",
+    "retrieved": "2026-11-17"
   },
   {
     "id": "ger_inf_ardennes",
@@ -1087,6 +1105,15 @@
     "license": "CC BY-SA 3.0 de",
     "sourceUrl": "https://commons.wikimedia.org/wiki/File:Bundesarchiv_Bild_183-J28477,_Ardennenoffensive,_Lagebesprechnung.jpg",
     "retrieved": "2026-11-16"
+  },
+  {
+    "id": "ger_pak_75",
+    "nation": "GER",
+    "subject": "7.5 cm Pak 40 crew, Eastern Front",
+    "author": "Bundesarchiv / Heuberger",
+    "license": "CC BY-SA 3.0 de",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Bundesarchiv_Bild_101I-024-3543-09,_Ostfront,_Soldaten_an_7,5cm_Pak.jpg",
+    "retrieved": "2026-11-17"
   },
   {
     "id": "sov_katyusha_battery",
@@ -1209,7 +1236,7 @@
     "id": "ita_m13_museum",
     "nation": "ITA",
     "subject": "M13/40 medium tank (preserved vehicle)",
-    "author": "The original uploader was Краљевић Марко at Serbian Wikipedia.",
+    "author": "Краљевић Марко",
     "license": "Public domain",
     "sourceUrl": "https://commons.wikimedia.org/wiki/File:M13-40.jpg",
     "retrieved": "2026-11-16"
@@ -1284,7 +1311,7 @@
     "author": "Davies L B (Lieut), No 1 Army Film & Photographic Unit",
     "license": "Public domain",
     "sourceUrl": "https://commons.wikimedia.org/wiki/File:The_British_Army_in_North_Africa_1941_E6752.jpg",
-    "retrieved": "2026-11-16"
+    "retrieved": "2026-11-17"
   },
   {
     "id": "gbr_crusader_trans",
@@ -1320,7 +1347,7 @@
     "author": "Cash (Lieut), No 1 Army Film & Photographic Unit",
     "license": "Public domain",
     "sourceUrl": "https://commons.wikimedia.org/wiki/File:The_British_Army_in_North_Africa_1941_E7002.jpg",
-    "retrieved": "2026-11-16"
+    "retrieved": "2026-11-17"
   },
   {
     "id": "gbr_valentine_museum",

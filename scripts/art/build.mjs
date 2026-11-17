@@ -18,6 +18,7 @@ const strip = s => (s||'').replace(/<[^>]+>/g,'').replace(/&amp;/g,'&').replace(
 function cleanAuthor(a) {
   a = a.replace(/^Bundesarchiv \/ /,'').replace(/&[a-z#0-9]+;/g,' ').replace(/\s+/g,' ').trim();
   a = a.replace(/^No machine-readable author provided\.\s*/i,'').replace(/\s*assumed \(based on copyright claims\)\.?$/i,'');
+  a = a.replace(/s*You are free to use this picture.*$/i,"").replace(/^The original uploader was (.+?) at .*$/i,"$1").trim(); if (a.length > 90) a = a.slice(0, 87).replace(/s+S*$/, "") + "...";
   a = a.replace(/^Canadian Forces Expired crown copyright.*$/i,'Canadian Forces (expired Crown copyright)');
   for (let n = 1; n <= a.length / 2; n++) { if (a.length % n === 0 && a.slice(0, n).repeat(a.length / n) === a && a.length / n >= 2) { a = a.slice(0, n); break; } }
   if (/^(unknown( author)?|not stated)$/i.test(a)) a = 'Unknown author';

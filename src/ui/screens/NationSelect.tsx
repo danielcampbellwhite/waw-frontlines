@@ -3,6 +3,7 @@ import { TooltipLayer } from '../components/kit';
 import type { Difficulty, GameSettings, NationId, Objective, ScenarioDefinition, SideId } from '../../core/types';
 import { NationChip, Pips, Segmented, Slider, Toggle } from '../components/kit';
 import { NATION_NAMES, UNIT_TYPE_LABEL, fmtInt, fmtIsoDay, shortTitle, sideColor } from '../format';
+import { settingsStore } from '../settings';
 import '../ui.css';
 
 export const DEFAULT_GAME_SETTINGS: GameSettings = {
@@ -34,7 +35,7 @@ const DIFF: { id: Difficulty; label: string; hint: string }[] = [
 
 export function NationSelect({ scenario, onStart, onBack, initialSettings }: NationSelectProps) {
   const [nation, setNation] = useState<NationId>(scenario.playableNations[0]?.nation as NationId);
-  const [settings, setSettings] = useState<GameSettings>(initialSettings ?? DEFAULT_GAME_SETTINGS);
+  const [settings, setSettings] = useState<GameSettings>(initialSettings ?? { ...DEFAULT_GAME_SETTINGS, difficulty: settingsStore.get().defaultDifficulty });
   const [seed, setSeed] = useState(() => Math.floor(Math.random() * 1e9));
   const set = <K extends keyof GameSettings>(k: K, v: GameSettings[K]) => setSettings(s => ({ ...s, [k]: v }));
   const pn = scenario.playableNations.find(p => p.nation === nation);

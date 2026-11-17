@@ -13,7 +13,8 @@ import { BottomPanel } from './BottomPanel';
 import { ContextMenu, EventModal, HelpModal, ObjectivesPanel, OpsPlanner, Toasts, useToastFeed } from './Overlays';
 import { SaveLoadDialog } from '../screens/SaveLoad';
 import { SettingsPanel } from '../screens/Settings';
-import { useUiSettings, eventKey, type KeyAction } from '../settings';
+import { useUiSettings, eventKey, settingsStore, type KeyAction } from '../settings';
+import { Tour } from '../tutorial/Tour';
 import { orderMeta, ORDER_META, shortTitle } from '../format';
 import { audio, useAudioBridge, useAudioSetup } from '../../audio';
 import { useEngineState } from '../hooks/useEngineState';
@@ -59,6 +60,13 @@ function GameInner({ driveEngine, onCampaignEnd, onLoaded }: { driveEngine: bool
     return () => cancelAnimationFrame(raf);
   }, [engine, driveEngine]);
 
+  // first run: show the guided tour once (UI only; it pauses the clock while open and restores the speed)
+  useEffect(() => {
+    if (settingsStore.get().tourSeen) return;
+    settingsStore.set({ tourSeen: true });
+    if (!store.get().modal) store.set({ modal: 'tour' });
+  }, [store]);
+
   // audio mixer feed
   const viewRef = useRef<MapView | null>(null);
   const getView = useCallback(() => viewRef.current, []);
@@ -75,7 +83,7 @@ function GameInner({ driveEngine, onCampaignEnd, onLoaded }: { driveEngine: bool
   // Save/load and the game menu pause the sim and restore the previous speed when they close.
   const pausedForModal = useRef(false);
   useEffect(() => {
-    const pausing = ui.modal === 'save' || ui.modal === 'menu';
+    const pausing = ui.modal === 'save' || ui.modal === 'menu' || ui.modal === 'tour';
     const c = engine.getState().clock;
     if (pausing && !pausedForModal.current && c.speed !== 0) { pausedForModal.current = true; store.set({ lastSpeed: c.speed as 1 | 2 | 4 | 8 }); engine.setSpeed(0); }
     else if (!pausing && pausedForModal.current) { pausedForModal.current = false; if (!store.get().pausedByEvent && c.speed === 0) engine.setSpeed(store.get().lastSpeed); }
@@ -127,7 +135,8 @@ function GameInner({ driveEngine, onCampaignEnd, onLoaded }: { driveEngine: bool
       <EventModal />
       {ui.modal === 'objectives' && <ObjectivesPanel onClose={closeModal} />}
       {ui.modal === 'ops' && <OpsPlanner onClose={closeModal} />}
-      {ui.modal === 'help' && <HelpModal onClose={closeModal} />}
+      {ui.modal === 'help' && <HelpModal onClose={closeModal} onTour={() => store.set({ modal: 'tour' })} />}
+      {ui.modal === 'tour' && <Tour onClose={closeModal} />}
       {ui.modal === 'settings' && <SettingsPanel onClose={closeModal} />}
       {ui.modal === 'save' && saveApi && <SaveLoadDialog api={saveApi} mode={ui.saveMode} canSave={!over} defaultName={shortTitle(scenario.title)} onClose={closeModal} onLoaded={s => { closeModal(); onLoaded?.(s); }} />}
       {ui.modal === 'save' && !saveApi && <Modal title="Save / load" onClose={closeModal}><p className="empty">Saving is not available in this build.</p></Modal>}
@@ -139,7 +148,8 @@ function GameInner({ driveEngine, onCampaignEnd, onLoaded }: { driveEngine: bool
             <button type="button" className="btn" onClick={() => store.set({ modal: 'save', saveMode: 'load' })}>Load game</button>
             <button type="button" className="btn" onClick={() => store.set({ modal: 'objectives' })}>Objectives</button>
             <button type="button" className="btn" onClick={() => store.set({ modal: 'settings' })}>Settings</button>
-            <button type="button" className="btn" onClick={() => store.set({ modal: 'help' })}>Controls</button>
+            <button type="button" className="btn" onClick={() => store.set({ modal: 'help' })}>Help and controls</button>
+            <button type="button" className="btn" onClick={() => store.set({ modal: 'tour' })}>Replay tutorial</button>
             {onExit && <button type="button" className="btn danger" onClick={() => { closeModal(); onExit(); }}>Quit to main menu</button>}
           </div>
         </Modal>

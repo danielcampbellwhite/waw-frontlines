@@ -36,7 +36,7 @@ export function TopBar() {
   const unread = Math.max(0, top.notif - seen);
   const d = simDate(scenario, top.minutes);
   const k = ui.keybinds;
-  const open = (m: 'objectives' | 'ops' | 'save' | 'menu') => store.set({ modal: m, saveMode: 'save' });
+  const open = (m: 'objectives' | 'ops' | 'save' | 'menu' | 'help') => store.set({ modal: m, saveMode: 'save' });
 
   const sp: [0 | 1 | 2 | 4 | 8, ReactNode][] = [[0, <Icon key="p" name="pause" size={14} />], [1, '1'], [2, '2'], [4, '4'], [8, '8']];
   return (
@@ -76,6 +76,7 @@ export function TopBar() {
         <Tip text={`Objectives (${keyLabel(k.panelObjectives)})`} pos="bottom"><button type="button" className="tool-btn" aria-label="Objectives" onClick={() => open('objectives')}><Icon name="flag" size={18} /></button></Tip>
         <Tip text={`Operations planner (${keyLabel(k.panelOps)})`} pos="bottom"><button type="button" className="tool-btn" aria-label="Operations planner" onClick={() => open('ops')}><Icon name="ops" size={18} /></button></Tip>
         <Tip text={`Save / load (${keyLabel(k.panelSave)})`} pos="bottom"><button type="button" className="tool-btn" aria-label="Save or load" onClick={() => open('save')}><Icon name="save" size={18} /></button></Tip>
+        <Tip text={`Help and tutorial (${keyLabel(k.panelHelp)})`} pos="bottom"><button type="button" className="tool-btn help-btn" aria-label="Help" onClick={() => open('help')}>?</button></Tip>
         <Tip text="Menu" pos="bottom"><button type="button" className="tool-btn" aria-label="Menu" onClick={() => open('menu')}><Icon name="menu" size={18} /></button></Tip>
         {onExit && null}
       </div>

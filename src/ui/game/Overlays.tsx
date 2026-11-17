@@ -8,6 +8,7 @@ import { ORDER_META, fmtDuration, fmtPos, fmtStamp, orderMeta, previewEtaMinutes
 import { buildNotifications, notifSignature } from './notifications';
 import { useGame, type PhaseDraft } from './gameStore';
 import { audio } from '../../audio';
+import { FIXED_CONTROLS } from '../tutorial/steps';
 
 // ───────────── Event choice modal
 export function EventModal() {
@@ -157,13 +158,13 @@ export function OpsPlanner({ onClose }: { onClose: () => void }) {
 }
 
 // ───────────── Help
-export function HelpModal({ onClose }: { onClose: () => void }) {
+export function HelpModal({ onClose, onTour }: { onClose: () => void; onTour?: () => void }) {
   const ui = useUiSettings();
   return (
-    <Modal title="Controls" kicker="Keys can be changed in Settings" onClose={onClose} wide>
+    <Modal title="Help and controls" kicker="Keys can be changed in Settings" onClose={onClose} wide footer={onTour ? <button type="button" className="btn primary" onClick={onTour}>Replay the tutorial</button> : undefined}>
       <div className="help-grid">
         <ul className="keylist">{KEY_ACTIONS.map(a => <li key={a.action}><kbd>{keyLabel(ui.keybinds[a.action])}</kbd><span>{a.label}</span></li>)}
-          <li><kbd>Esc</kbd><span>Cancel targeting, close menus, clear selection</span></li></ul>
+          {FIXED_CONTROLS.map(c => <li key={c.keys + c.label}><kbd>{c.keys}</kbd><span>{c.label}</span></li>)}</ul>
         <div className="help-text">
           <h4>Giving orders</h4>
           <p>Select your units (click, or Shift-drag a box on the map), choose an order in the right panel, then click the target on the map. Hold Replace/Queue to decide whether the order replaces the queue or is added to it. Right-click the map for quick orders.</p>

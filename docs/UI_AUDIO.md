@@ -59,3 +59,9 @@ Volumes (master/music/effects/ambience/mute) persist in localStorage.
 ## Integration for the app shell
 - `GameScreen` calls `useAudioSetup()` (unlock on first gesture, sync volumes) and `useAudioBridge()` (2 Hz feed from engine + map `onViewChange`).
 - `MainMenu` also unlocks audio. `audio.sfx('click'|'order'|'alert'|'confirm')` plays UI sounds.
+
+## Tutorial, Help and campaign list (finishing phase)
+- `src/ui/tutorial/steps.ts` holds the 8 tour steps (map, selecting, orders, supply/fuel, fog, reports, speed/pause, saves), each anchored to an existing UI class (`.map-wrap`, `.left-panel`, `.right-panel`, `.tb-res`, `.map-tools`, `.bottom-panel`, `.tb-speed`, `.tb-tools`); `Tour.tsx` is the in-game spotlight overlay and `TutorialDialog` the main-menu walkthrough. UI only: no engine commands; the game modal `'tour'` pauses the clock and restores the speed like Save/Menu do.
+- First run: GameScreen opens the tour once (`tourSeen` in UI settings, kept by Restore defaults). Replay: Help (?) button in the top bar (or F1) then "Replay the tutorial", or Game menu. Skip with Skip tour or Esc; arrow keys and Enter step through.
+- Settings: Game tab holds the default difficulty (preselects the nation screen); Keyboard shortcuts tab lists rebindable keys plus fixed controls (`FIXED_CONTROLS`). Both new fields are default-merged, so old stored settings still load; the settings key is unchanged.
+- Campaign select: only non-planned campaigns are cards; planned ones appear as dashed, non-interactive "Coming later" tiles and become cards automatically when their meta stops being `planned`.

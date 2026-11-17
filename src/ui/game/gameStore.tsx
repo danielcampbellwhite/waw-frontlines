@@ -7,7 +7,7 @@ import { orderMeta, fmtPos } from '../format';
 import { audio, cueForCommand } from '../../audio';
 
 export type BottomTab = 'notifications' | 'events' | 'reports' | 'history';
-export type ModalId = null | 'objectives' | 'ops' | 'help' | 'save' | 'settings' | 'menu';
+export type ModalId = null | 'objectives' | 'ops' | 'help' | 'save' | 'settings' | 'menu' | 'tour';
 export interface Toast { id: number; text: string; severity: 'info' | 'warn' | 'critical' | 'ok'; pos?: LonLat }
 export interface Targeting { kind: OrderKind; unitIds: UnitId[]; points: LonLat[]; forPhase?: number }
 export type OobStatusFilter = 'all' | 'moving' | 'combat' | 'low_supply' | 'low_org';

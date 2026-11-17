@@ -39,6 +39,8 @@ export function CampaignSelect({ scenarios, onSelect, onBack }: { scenarios: Sce
     return [...m.entries()].map(([id, list]) => ({ id, list, locked: list.every(isPlanned) }))
       .sort((a, b) => Number(a.locked) - Number(b.locked) || Date.parse(a.list[0].startDate) - Date.parse(b.list[0].startDate));
   }, [scenarios]);
+  const playable = groups.filter(g => !g.locked);
+  const later = groups.filter(g => g.locked);
   return (
     <div className="screen select-screen">
       <header className="screen-head">
@@ -47,9 +49,17 @@ export function CampaignSelect({ scenarios, onSelect, onBack }: { scenarios: Sce
       </header>
       <TooltipLayer />
       <div className="campaign-grid">
-        {groups.map(g => <CampaignCard key={g.id} list={g.list} locked={g.locked} onSelect={onSelect} />)}
-        {groups.length === 0 && <p className="empty">No campaigns are installed.</p>}
+        {playable.map(g => <CampaignCard key={g.id} list={g.list} locked={false} onSelect={onSelect} />)}
+        {playable.length === 0 && <p className="empty">No campaigns are installed.</p>}
       </div>
+      {later.length > 0 && (
+        <section className="coming-later" aria-label="Coming later">
+          <h2>Coming later</h2>
+          <ul>{later.map(g => { const m = g.list[0]; return (
+            <li key={g.id}><b>{m.campaignTitle ?? stripScale(m.title)}</b><span>{fmtIsoDay(m.startDate)} to {fmtIsoDay(m.endDate)}</span></li>
+          ); })}</ul>
+        </section>
+      )}
     </div>
   );
 }

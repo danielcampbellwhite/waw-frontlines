@@ -1,12 +1,13 @@
 import { useEffect, useState } from 'react';
 import { Modal, Segmented, Slider, Toggle } from '../components/kit';
-import { KEY_ACTIONS, DEFAULT_KEYBINDS, eventKey, keyLabel, settingsStore, useUiSettings, type KeyAction } from '../settings';
+import { FIXED_CONTROLS } from '../tutorial/steps';
+import { KEY_ACTIONS, DEFAULT_KEYBINDS, DIFFICULTIES, eventKey, keyLabel, settingsStore, useUiSettings, type KeyAction } from '../settings';
 import { audio } from '../../audio';
 import { Credits } from './Credits';
 
 export function SettingsPanel({ onClose }: { onClose: () => void }) {
   const s = useUiSettings();
-  const [tab, setTab] = useState<'audio' | 'interface' | 'keys'>('audio');
+  const [tab, setTab] = useState<'audio' | 'interface' | 'game' | 'keys'>('audio');
   const [rebind, setRebind] = useState<KeyAction | null>(null);
   const [credits, setCredits] = useState(false);
   const pct = (v: number) => `${Math.round(v * 100)}%`;
@@ -29,7 +30,7 @@ export function SettingsPanel({ onClose }: { onClose: () => void }) {
   return (
     <>
     <Modal title="Settings" onClose={onClose} wide footer={<><button type="button" className="btn" onClick={() => settingsStore.reset()}>Restore defaults</button><button type="button" className="btn primary" onClick={onClose}>Done</button></>}>
-      <Segmented value={tab} onChange={setTab} label="Settings section" options={[{ id: 'audio', label: 'Audio' }, { id: 'interface', label: 'Interface' }, { id: 'keys', label: 'Key bindings' }]} />
+      <Segmented value={tab} onChange={setTab} label="Settings section" options={[{ id: 'audio', label: 'Audio' }, { id: 'interface', label: 'Interface' }, { id: 'game', label: 'Game' }, { id: 'keys', label: 'Keyboard shortcuts' }]} />
       {tab === 'audio' && (
         <div className="settings-pane">
           <Toggle checked={s.muted} onChange={v => settingsStore.set({ muted: v })} label="Mute all audio" />
@@ -46,6 +47,13 @@ export function SettingsPanel({ onClose }: { onClose: () => void }) {
           <Slider label="Interface scale" value={s.uiScale} min={0.8} max={1.4} step={0.05} format={v => `${Math.round(v * 100)}%`} onChange={v => settingsStore.set({ uiScale: v })} hint="Scales text and panels. Useful on 4K or small laptop screens." />
         </div>
       )}
+      {tab === 'game' && (
+        <div className="settings-pane">
+          <div className="field-block"><span className="lbl">Default difficulty</span>
+            <Segmented label="Default difficulty" value={s.defaultDifficulty} onChange={v => settingsStore.set({ defaultDifficulty: v })} options={DIFFICULTIES.map(d => ({ id: d, label: d[0].toUpperCase() + d.slice(1) }))} /></div>
+          <p className="hint">Preselected when you start a new campaign. You can still change it for each campaign on the nation screen.</p>
+        </div>
+      )}
       {tab === 'keys' && (
         <div className="settings-pane">
           <ul className="keybinds">
@@ -57,7 +65,9 @@ export function SettingsPanel({ onClose }: { onClose: () => void }) {
               </li>
             ))}
           </ul>
-          <p className="hint">Esc, Enter and the map mouse controls are fixed. Assigning a key that is already used swaps the two bindings.</p>
+          <h4>Fixed controls</h4>
+          <ul className="keybinds fixed">{FIXED_CONTROLS.map(c => <li key={c.keys + c.label}><span>{c.label}</span><kbd className="keycap">{c.keys}</kbd></li>)}</ul>
+          <p className="hint">Click a key to rebind it. Assigning a key that is already used swaps the two bindings.</p>
         </div>
       )}
     </Modal>

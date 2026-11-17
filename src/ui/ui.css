@@ -347,3 +347,24 @@ table.grid th, table.grid td { padding: 0.25rem 0.5rem; border-bottom: 1px solid
 
 .link-btn{background:none;border:0;padding:0;color:var(--brass);text-decoration:underline;text-underline-offset:2px;cursor:pointer;font:inherit}
 .tb-ice{margin-left:.6rem;color:#9fd6e8;font-variant-numeric:tabular-nums;cursor:help}
+
+/* Coming later strip (campaign select) */
+.coming-later { padding: 0 2rem 3rem; }
+.coming-later h2 { font-size: 1.1rem; color: var(--text-dim); margin: 0 0 0.6rem; letter-spacing: 0.06em; }
+.coming-later ul { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 0.6rem; }
+.coming-later li { border: 1px dashed var(--line-hi); padding: 0.45rem 0.8rem; color: var(--text-dim); display: grid; gap: 0.1rem; min-width: 12rem; cursor: default; }
+.coming-later li b { color: var(--text); font-weight: 600; } .coming-later li span { font-size: 0.8rem; }
+
+/* Guided tour */
+.tour-layer { position: fixed; inset: 0; z-index: 400; }
+.tour-dim { position: absolute; inset: 0; background: rgba(5, 8, 7, .72); }
+.tour-spot { position: absolute; border: 2px solid var(--brass); box-shadow: 0 0 0 9999px rgba(5, 8, 7, .72); pointer-events: none; transition: left .2s, top .2s, width .2s, height .2s; }
+.tour-card { position: absolute; width: min(22rem, calc(100vw - 16px)); background: var(--panel); border: 1px solid var(--brass-dim); box-shadow: 0 10px 30px rgba(0,0,0,.65); padding: 0.9rem 1rem; display: grid; gap: 0.5rem; }
+.tour-card h3 { margin: 0; font-size: 1.4rem; }
+.tour-text p { margin: 0 0 0.5rem; line-height: 1.4; }
+.tour-actions { display: flex; gap: 0.5rem; align-items: center; } .tour-actions .grow { flex: 1; }
+.tour-dots { display: flex; gap: 0.4rem; }
+.tour-dots button { width: 0.7rem; height: 0.7rem; padding: 0; border: 1px solid var(--line-hi); background: transparent; transform: rotate(45deg); cursor: pointer; }
+.tour-dots button.done { background: var(--brass-dim); } .tour-dots button.on { background: var(--brass); border-color: var(--brass); }
+.help-btn { font-family: var(--display); font-weight: 700; font-size: 1.1rem; }
+.keybinds.fixed .keycap { cursor: default; min-width: 5rem; }

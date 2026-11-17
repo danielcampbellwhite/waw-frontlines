@@ -6,6 +6,7 @@ import type { SaveApi } from '../saveApi';
 import '../ui.css';
 import { useAudioSetup, audio } from '../../audio';
 import { Credits } from './Credits';
+import { TutorialDialog } from '../tutorial/Tour';
 
 export interface MainMenuProps {
   onNewCampaign: () => void;
@@ -48,7 +49,7 @@ export function StaffMapBackdrop() {
 }
 
 export function MainMenu({ onNewCampaign, onContinue, saveApi, onLoaded, version = 'v0.1' }: MainMenuProps) {
-  const [dlg, setDlg] = useState<null | 'load' | 'settings' | 'credits'>(null);
+  const [dlg, setDlg] = useState<null | 'load' | 'settings' | 'credits' | 'tutorial'>(null);
   useAudioSetup();
   const click = (fn: () => void) => () => { audio.unlock(); audio.sfx('click'); fn(); };
   return (
@@ -64,6 +65,7 @@ export function MainMenu({ onNewCampaign, onContinue, saveApi, onLoaded, version
           <button type="button" className="menu-btn primary" onClick={click(onNewCampaign)}><span>New campaign</span><small>Choose a theatre, side and scale</small></button>
           {onContinue && <button type="button" className="menu-btn" onClick={click(onContinue)}><span>Continue</span><small>Resume your latest save</small></button>}
           <button type="button" className="menu-btn" onClick={click(() => setDlg('load'))} disabled={!saveApi}><span>Load game</span><small>Saved slots and imported files</small></button>
+          <button type="button" className="menu-btn" onClick={click(() => setDlg('tutorial'))}><span>Tutorial</span><small>Learn the map, orders and supply</small></button>
           <button type="button" className="menu-btn" onClick={click(() => setDlg('settings'))}><span>Settings</span><small>Sound, interface and keys</small></button>
           <button type="button" className="menu-btn" onClick={click(() => setDlg('credits'))}><span>Credits</span><small>Sources and licences</small></button>
         </nav>
@@ -72,6 +74,7 @@ export function MainMenu({ onNewCampaign, onContinue, saveApi, onLoaded, version
       <footer className="menu-foot">{version}</footer>
       {dlg === 'load' && saveApi && <SaveLoadDialog api={saveApi} mode="load" canSave={false} onClose={() => setDlg(null)} onLoaded={s => { setDlg(null); onLoaded?.(s); }} />}
       {dlg === 'settings' && <SettingsPanel onClose={() => setDlg(null)} />}
+      {dlg === 'tutorial' && <TutorialDialog onClose={() => setDlg(null)} />}
       {dlg === 'credits' && <Credits onClose={() => setDlg(null)} />}
     </div>
   );

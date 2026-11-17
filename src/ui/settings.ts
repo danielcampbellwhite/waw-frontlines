@@ -37,14 +37,21 @@ export const DEFAULT_KEYBINDS: Record<KeyAction, string> = {
   ord_regroup: 'g', ord_rest: 't', ord_capture: 'c', ord_support: 's', ord_follow: 'f',
 };
 
+export type DefaultDifficulty = 'easy' | 'normal' | 'hard' | 'veteran';
+export const DIFFICULTIES: DefaultDifficulty[] = ['easy', 'normal', 'hard', 'veteran'];
+
 export interface UiSettings {
+  /** Difficulty preselected on the nation screen; the per-campaign choice still wins. */
+  defaultDifficulty: DefaultDifficulty;
+  /** True once the first-run tour has been shown (or skipped). */
+  tourSeen: boolean;
   master: number; music: number; sfx: number; ambience: number; muted: boolean;
   uiScale: number;
   keybinds: Record<KeyAction, string>;
 }
 
 export const DEFAULT_SETTINGS: UiSettings = {
-  master: 0.8, music: 0.5, sfx: 0.8, ambience: 0.7, muted: false, uiScale: 1, keybinds: { ...DEFAULT_KEYBINDS },
+  defaultDifficulty: 'normal', tourSeen: false, master: 0.8, music: 0.5, sfx: 0.8, ambience: 0.7, muted: false, uiScale: 1, keybinds: { ...DEFAULT_KEYBINDS },
 };
 
 const KEY = 'theatre-command.ui-settings.v1';
@@ -63,6 +70,8 @@ const clamp01 = (n: unknown, d: number) => (typeof n === 'number' && isFinite(n)
 export function sanitize(p: Partial<UiSettings>): UiSettings {
   const d = DEFAULT_SETTINGS;
   return {
+    defaultDifficulty: DIFFICULTIES.includes(p.defaultDifficulty as DefaultDifficulty) ? p.defaultDifficulty as DefaultDifficulty : d.defaultDifficulty,
+    tourSeen: !!p.tourSeen,
     master: clamp01(p.master, d.master), music: clamp01(p.music, d.music), sfx: clamp01(p.sfx, d.sfx),
     ambience: clamp01(p.ambience, d.ambience), muted: !!p.muted,
     uiScale: typeof p.uiScale === 'number' && p.uiScale >= 0.75 && p.uiScale <= 1.5 ? p.uiScale : 1,
@@ -86,7 +95,7 @@ export const settingsStore = {
     applyScale();
     listeners.forEach(l => l());
   },
-  reset() { settingsStore.set({ ...DEFAULT_SETTINGS, keybinds: { ...DEFAULT_KEYBINDS } }); },
+  reset() { settingsStore.set({ ...DEFAULT_SETTINGS, tourSeen: current.tourSeen, keybinds: { ...DEFAULT_KEYBINDS } }); },
   /** Re-read from storage (tests). */
   reload() { current = load(); applyScale(); listeners.forEach(l => l()); },
   subscribe(fn: () => void) { listeners.add(fn); return () => { listeners.delete(fn); }; },

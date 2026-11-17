@@ -119,6 +119,7 @@ Machine-readable list: `src/art/credits.json`. Regenerate with `node scripts/art
 | usa_hq_mcauliffe | USA | Brig. Gen. McAuliffe and the 101st Airborne headquarters staff, Bastogne, Christmas 1944 | Unknown, U.S. Army | Public domain | https://commons.wikimedia.org/wiki/File:Brig._Gen._Anthony_McAuliffe_and_his_staff_gathered_inside_Bastogne%27s_Heintz_Barracks_for_Christmas_dinner_Dec._25th,_1944.jpg | 2026-11-16 |
 | ger_tiger2_budapest | GER | Tiger II, Budapest 1944 | Bundesarchiv / Faupel | CC BY-SA 3.0 de | https://commons.wikimedia.org/wiki/File:Bundesarchiv_Bild_101I-680-8282A-03A,_Budapest,_Panzer_VI_(Tiger_II,_K%C3%B6nigstiger).jpg | 2026-11-16 |
 | ger_tiger2_canteloup | GER | Tiger II, Normandy 1944 | Bundesarchiv / Vennemann, Wolfgang | CC BY-SA 3.0 de | https://commons.wikimedia.org/wiki/File:Bundesarchiv_Bild_101I-721-0359-37,_Canteloup,_Panzer_VI_(Tiger_II,_K%C3%B6nigstiger).jpg | 2026-11-16 |
+| | GER | Panther in the field, Italy 1944 | Bundesarchiv / Bayer | CC BY-SA 3.0 de | https://commons.wikimedia.org/wiki/File:Bundesarchiv_Bild_101I-478-2164-28,_Italien,_Panzer_V_(Panther)_im_Gel%C3%A4nde.jpg | 2026-11-17 |
 | ger_stug_skirts | GER | Sturmgeschütz III with side skirts, Russia | Bundesarchiv / Ludwig Knobloch | CC BY-SA 3.0 de | https://commons.wikimedia.org/wiki/File:Bundesarchiv_Bild_101I-154-1986-05,_Russland,_Sturmgesch%C3%BCtz_III_mit_Seitensch%C3%BCrzen.jpg | 2026-11-16 |
 | ger_stug_stalingrad2 | GER | Sturmgeschütz III advancing, Stalingrad sector 1942 | Bundesarchiv / Schröter | CC BY-SA 3.0 de | https://commons.wikimedia.org/wiki/File:Bundesarchiv_Bild_183-J21826,_Russland,_Kampf_um_Stalingrad,_Sturmgesch%C3%BCtz.jpg | 2026-11-16 |
 | ger_pz4_late | GER | Panzer IV with skirt armour, Eastern Front, August 1944 | Bundesarchiv / Unknown author | CC BY-SA 3.0 de | https://commons.wikimedia.org/wiki/File:Bundesarchiv_Bild_101I-696-0427-03,_Mittlere_Ostfront_(Polen),_Panzer_IV.jpg | 2026-11-17 |
@@ -173,34 +174,12 @@ Machine-readable list: `src/art/credits.json`. Regenerate with `node scripts/art
 - ITA: no Bersaglieri/L3-in-action photo or Alpini accepted (see retry list); ITA HQ none.
 - Commonwealth: no Indian/South African infantry photo; NZL/AUS/IND/CAN/RSA have only infantry (1-2 photos each, when downloads succeeded).
 - Nation-neutral fallback: unitPhoto supports NEUTRAL entries for logistics/motorised/hq but none shipped yet (no genuinely unmarked generic truck/convoy photo verified).
-- Pending retry (Commons 429 throttling blocked download; re-run `node scripts/art/build.mjs scripts/art/picks.json <rawdir>` later): ger_panther_hay ger_panther_italy ger_stug_italy ger_stug_stalingrad ger_pz4_late ger_pz4_woods ger_pz4_africa ger_pz3_africa ger_flak_africa ger_bf109_africa ger_bf109_paint ger_inf_stalingrad ger_inf_house ger_para_vw ger_para_italy ger_pak_denmark ger_pak_75 ita_m13_desert ita_m13_surrender ita_bersaglieri ita_gunners rou_inf_cav rou_inf_march gbr_carrier_desert ind_carrier_desert nzl_inf_matilda aus_inf_wadi gbr_hurr_80sqn gbr_hurr_33sqn. Bofors still not retried successfully.
+- Pending retry (Commons 429 throttling blocked download; re-run `node scripts/art/build.mjs scripts/art/picks.json <rawdir>` later): ger_panther_hay ger_stug_italy ger_stug_stalingrad ger_pz4_late ger_pz4_woods ger_pz4_africa ger_pz3_africa ger_flak_africa ger_bf109_africa ger_bf109_paint ger_inf_stalingrad ger_inf_house ger_para_vw ger_para_italy ger_pak_denmark ger_pak_75 ita_m13_desert ita_m13_surrender ita_bersaglieri ita_gunners rou_inf_cav rou_inf_march gbr_carrier_desert ind_carrier_desert nzl_inf_matilda aus_inf_wadi gbr_hurr_80sqn gbr_hurr_33sqn. Bofors still not retried successfully.
 
 
 ## Rejected during verification
-- ger_panther_hay: error dl failed Bundesarchiv Bild 101I-477-2124-06A, Italien, Panzer V (Panther).jpg
-- ger_panther_italy: error dl failed Bundesarchiv Bild 101I-478-2164-28, Italien, Panzer V (Panther) im Gel
 - ger_stug_italy: error dl failed Bundesarchiv Bild 101I-310-0884-08, Italien, Sturmgeschütz III auf Lan
 - ger_stug_stalingrad: error dl failed Bundesarchiv Bild 183-B22188, Russland, Kampf um Stalingrad, Sturmgesc
 - ger_pz4_woods: error dl failed Bundesarchiv Bild 101I-695-0406-03, Russland, Panzer IV am Waldrand.jp
 - ger_pz4_africa: error dl failed Bundesarchiv Bild 101I-788-0017-19, Nordafrika, Panzer IV und Krad.jpg
 - ger_pz3_africa: error dl failed Bundesarchiv Bild 101I-782-0015-03A, Nordafrika, Panzer III in Fahrt.j
-- ger_flak_africa: error dl failed Bundesarchiv Bild 101I-443-1599-20, Nordafrika, bei Bir Hacheim, feuer
-- ger_bf109_africa: error dl failed Bundesarchiv Bild 101I-428-0485-13A, Nordafrika, Me 109 vor Einsatz.jp
-- ger_bf109_paint: error dl failed Bundesarchiv Bild 101I-431-0710-29A, Nordafrika, Flugzeug Messerschmit
-- ger_inf_stalingrad: error dl failed Bundesarchiv Bild 183-B22173, Russland, Kampf um Stalingrad, Infanteri
-- ger_inf_house: error dl failed Bundesarchiv Bild 101I-617-2571-04, Stalingrad, Soldaten beim Häuserka
-- ger_para_vw: error dl failed Bundesarchiv Bild 101I-585-2182-31A, Frankreich, Fallschirmjäger auf V
-- ger_para_italy: error dl failed Bundesarchiv Bild 101I-575-1822-22A, Italien, Fallschirmjäger bei Besp
-- ger_pak_denmark: error dl failed Bundesarchiv Bild 101I-755-0194-08, Dänemark, Pak an der Küste.jpg
-- ita_m13_desert: error dl failed Italian M13-40 tank in the desert 1942.jpg
-- ita_m13_surrender: error dl failed The British Army in North Africa 1941 E7304.jpg
-- ita_bersaglieri: error dl failed Bundesarchiv B 145 Bild-F016230-0009A, Bersaglieri in Jugoslawien.jpg
-- ita_gunners: error dl failed Bundesarchiv Bild 101I-316-1198-27, Italien, italienische Soldaten mit
-- rou_inf_cav: error dl failed Bundesarchiv Bild 101I-218-0502-32, Russland-Süd, rumänische Soldaten.
-- rou_inf_march: error dl failed Bundesarchiv N 1603 Bild-241, Rumänische Infanterie auf dem Marsch.jpg
-- gbr_carrier_desert: error dl failed The British Army in North Africa 1941 E6924.jpg
-- ind_carrier_desert: error dl failed The British Army in North Africa 1941 E6924.jpg
-- nzl_inf_matilda: error dl failed The British Army in North Africa 1941 E6920.jpg
-- aus_inf_wadi: error dl failed The British Army in North Africa 1941 E1636.jpg
-- gbr_hurr_80sqn: error dl failed Royal Air Force Operations in the Middle East and North Africa, 1939-1
-- gbr_hurr_33sqn: error dl failed 33 Squadron RAF Hurricanes Egypt IWM CM 140.jpg

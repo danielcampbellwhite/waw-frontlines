@@ -13,7 +13,7 @@ const today = new Date().toISOString().slice(0,10);
 const OK = [/^public domain/i,/^pd[-\s]/i,/^pdm/i,/^cc0/i,/^cc[-\s]by[-\s]\d/i,/^cc[-\s]by[-\s]sa[-\s]\d/i,/^no restrictions/i,/^uk government/i,/^ogl/i,/^licence ouverte/i];
 const BAD = /\bNC\b|\bND\b|non-?commercial|no-?deriv|fair use/i;
 async function getJson(u){ for(let i=0;i<8;i++){ try{ const t=await (await fetch(u,{headers:{'User-Agent':UA}})).text(); return JSON.parse(t);}catch{await sleep(15000);} } throw new Error('api'); }
-async function dl(u,f,n=8){ for(let i=0;i<n;i++){ try{ const r=await fetch(u,{headers:{'User-Agent':UA}}); if(r.ok){fs.writeFileSync(f,Buffer.from(await r.arrayBuffer()));return;} }catch{} await sleep(15000);} throw new Error('dl '+u); }
+async function dl(u,f,n=2){ for(let i=0;i<n;i++){ let wait=30000; try{ const r=await fetch(u,{headers:{'User-Agent':UA}}); if(r.ok){fs.writeFileSync(f,Buffer.from(await r.arrayBuffer()));return;} const ra=parseInt(r.headers.get('retry-after')||'',10); if(r.status===429) wait=Math.min(Math.max(ra>0?ra*1000:60000,30000),180000); }catch{} await sleep(wait);} throw new Error('dl '+u); }
 const strip = s => (s||'').replace(/<[^>]+>/g,'').replace(/&amp;/g,'&').replace(/&quot;/g,'"').replace(/&#039;/g,"'").replace(/\s+/g,' ').trim();
 function cleanAuthor(a) {
   a = a.replace(/^Bundesarchiv \/ /,'').replace(/&[a-z#0-9]+;/g,' ').replace(/\s+/g,' ').trim();
@@ -39,7 +39,7 @@ for (const p of picks) { try {
   if (!OK.some(r=>r.test(lic)) || BAD.test(lic) || BAD.test(strip(m.UsageTerms?.value))) { rejected.push([p.id,'licence '+lic]); console.log('REJECT', p.id, lic); continue; }
   const artist = strip(m.Artist?.value) || strip(m.Credit?.value) || 'Unknown';
   const raw = path.join(rawDir, p.id + '.src');
-  if (!fs.existsSync(raw)) { let ok=false; for (const w of [1600,1024,800,0]) { try { await dl('https://commons.wikimedia.org/wiki/Special:FilePath/'+encodeURIComponent(p.file.replace(/ /g,'_'))+(w?'?width='+w:''), raw, 3); ok=true; break; } catch {} } if(!ok) throw new Error('dl failed '+p.file); await sleep(1500); }
+  if (!fs.existsSync(raw)) { let ok=false; for (const w of [1024,800]) { try { await dl('https://commons.wikimedia.org/wiki/Special:FilePath/'+encodeURIComponent(p.file.replace(/ /g,'_'))+(w?'?width='+w:''), raw, 2); ok=true; break; } catch {} } if(!ok) throw new Error('dl failed '+p.file); await sleep(6000); }
   const img = sharp(raw); const meta = await img.metadata(); const W = meta.width, H = meta.height;
   const box = (c, ar) => { // c = {x,y,w,h} fractions of source; default centre crop with aspect ar
     if (c) { const h = c.h ?? c.w*W/ar/H; const left=Math.round(c.x*W), top=Math.round(c.y*H); return {left,top,width:Math.max(1,Math.min(W-left,Math.round(c.w*W))),height:Math.max(1,Math.min(H-top,Math.round(h*H)))}; }

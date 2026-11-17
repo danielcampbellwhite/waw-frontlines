@@ -4,7 +4,7 @@ import manifest from './manifest.json';
 
 describe('unitPhoto', () => {
   it('maps tank_medium to the right vehicle per nation', () => {
-    expect(unitPhoto('armoured', 'GER', 'tank_medium')?.subject).toMatch(/Panzer (III|IV)/);
+    expect(unitPhoto('armoured', 'GER', 'tank_medium')?.subject).toMatch(/Panzer (III|IV)|Panther|Sturmgesch/);
     expect(unitPhoto('armoured', 'FRA', 'tank_medium')?.subject).toMatch(/SOMUA|B1/);
     expect(unitPhoto('armoured', 'GBR', 'tank_medium')?.subject).toMatch(/Matilda|Cruiser|Crusader|Valentine/);
   });

@@ -2527,6 +2527,28 @@
     "credit": "Tiger II, Normandy 1944 - Bundesarchiv / Vennemann, Wolfgang - CC BY-SA 3.0 de - https://commons.wikimedia.org/wiki/File:Bundesarchiv_Bild_101I-721-0359-37,_Canteloup,_Panzer_VI_(Tiger_II,_K%C3%B6nigstiger).jpg"
   },
   {
+    "id": "ger_panther_italy",
+    "category": "armoured",
+    "alsoTypes": [],
+    "nation": "GER",
+    "subject": "Panther in the field, Italy 1944",
+    "equipmentKeys": [
+      "tank_medium",
+      "tank_heavy"
+    ],
+    "tags": [
+      "panther"
+    ],
+    "role": "combat",
+    "thumb": "/art/units/ger_panther_italy.thumb.webp",
+    "panel": "/art/units/ger_panther_italy.panel.jpg",
+    "license": "CC BY-SA 3.0 de",
+    "author": "Bundesarchiv / Bayer",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Bundesarchiv_Bild_101I-478-2164-28,_Italien,_Panzer_V_(Panther)_im_Gel%C3%A4nde.jpg",
+    "retrieved": "2026-11-17",
+    "credit": "Panther in the field, Italy 1944 - Bundesarchiv / Bayer - CC BY-SA 3.0 de - https://commons.wikimedia.org/wiki/File:Bundesarchiv_Bild_101I-478-2164-28,_Italien,_Panzer_V_(Panther)_im_Gel%C3%A4nde.jpg"
+  },
+  {
     "id": "ger_stug_skirts",
     "category": "armoured",
     "alsoTypes": [],

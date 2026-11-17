@@ -1017,6 +1017,15 @@
     "retrieved": "2026-11-16"
   },
   {
+    "id": "ger_panther_italy",
+    "nation": "GER",
+    "subject": "Panther in the field, Italy 1944",
+    "author": "Bundesarchiv / Bayer",
+    "license": "CC BY-SA 3.0 de",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Bundesarchiv_Bild_101I-478-2164-28,_Italien,_Panzer_V_(Panther)_im_Gel%C3%A4nde.jpg",
+    "retrieved": "2026-11-17"
+  },
+  {
     "id": "ger_stug_skirts",
     "nation": "GER",
     "subject": "Sturmgeschütz III with side skirts, Russia",

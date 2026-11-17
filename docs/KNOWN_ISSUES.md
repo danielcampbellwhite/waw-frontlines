@@ -200,3 +200,4 @@ All fields used by doctrines.ts exist in AiDoctrine; every location id in armour
 - Barbarossa region has no OSM data: roads and rail are Natural Earth only. Narew and Berezina rivers are missing unless the pending OSM query lands.
 - Pripet marsh is a proxy (flat low cells within about 28 km of the Pripyat line).
 - Borders are modern, not 1941.
+- Basemap is now self-contained (bundled Natural Earth + terrain tint + computed hillshade; no external tile server): plainer than the former OSM raster, with no road names or street detail at deep zoom, and hillshade resolution is limited by the 2-5 km terrain cells.

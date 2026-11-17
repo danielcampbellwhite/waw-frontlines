@@ -76,6 +76,9 @@ interface SimContext { terrain: TerrainGrid; infra: InfraLine[]; scenario: Scena
 `aiThink` is pure with respect to state (returns Commands; the engine dispatches them with `as = nation's side`).
 AI must read state through `engine.visibleUnits`-equivalent fog filtering (`src/sim/fog.ts: visibleTo(state, side)`).
 
+## Basemap (self-contained)
+`src/map/style.ts` builds the only basemap style: bundled Natural Earth land/lakes/borders (`public/data/basemap_*`, `boundaries_*`) with local glyphs (`public/data/fonts`). `TacticalMap` adds a faint terrain-colour tint and a hillshade, both rendered in the browser from the loaded `TerrainGrid` (`terrainImageData`, `reliefImageData` in `src/map/layers.ts`) as image sources. No tile server, DEM service or web font is contacted at runtime; UI fonts are local woff2 files in `public/fonts` (`src/index.css`). Any new map data must ship in `public/data`.
+
 ## Map ↔ Sim rendering contract
 Map reads `Readonly<GameState>` + `TerrainGrid` each frame (rAF-throttled, change-detected via `clock.minutes`).
 Units rendered as a MapLibre GeoJSON symbol layer (NATO-style canvas-generated icons). Front line = marching-squares

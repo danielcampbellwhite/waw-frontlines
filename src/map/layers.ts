@@ -151,6 +151,46 @@ export function terrainImageData(g: TerrainGrid, width = g.cols * 2): { width: n
   return { width, height, data };
 }
 
+/**
+ * Self-contained relief shading from the bundled terrain grid (replaces the external DEM tiles): a Web-Mercator RGBA image,
+ * bilinear-smoothed elevation, light from the north-west, transparent over the sea. Shadows are dark brown, lit slopes white.
+ */
+export function reliefImageData(g: TerrainGrid, width = g.cols * 3): { width: number; height: number; data: Uint8ClampedArray } {
+  const merc = (lat: number) => Math.log(Math.tan(Math.PI / 4 + (lat * Math.PI) / 360));
+  const yN = merc(g.bbox.north), yS = merc(g.bbox.south);
+  const lonSpan = ((g.bbox.east - g.bbox.west) * Math.PI) / 180;
+  const height = Math.round((width * (yN - yS)) / lonSpan);
+  const data = new Uint8ClampedArray(width * height * 4);
+  const el = g.elevationM, midLat = (g.bbox.north + g.bbox.south) / 2;
+  if (!el) return { width, height, data };
+  const cellM = g.cellDeg * 111320, cellMx = cellM * Math.cos((midLat * Math.PI) / 180);
+  const e = (c: number, r: number) => Math.max(0, el[Math.min(g.rows - 1, Math.max(0, r)) * g.cols + Math.min(g.cols - 1, Math.max(0, c))] ?? 0);
+  const bil = (fc: number, fr: number) => { // fc/fr: continuous cell coordinates (cell centres at +0.5)
+    const x = fc - 0.5, y = fr - 0.5, c0 = Math.floor(x), r0 = Math.floor(y), tx = x - c0, ty = y - r0;
+    return (e(c0, r0) * (1 - tx) + e(c0 + 1, r0) * tx) * (1 - ty) + (e(c0, r0 + 1) * (1 - tx) + e(c0 + 1, r0 + 1) * tx) * ty;
+  };
+  const EXAG = 5, lx = -0.6, ly = 0.6, lz = 0.53; // light from the north-west, fairly high
+  const ln = Math.hypot(lx, ly, lz);
+  for (let y = 0; y < height; y++) {
+    const my = yN - ((y + 0.5) / height) * (yN - yS);
+    const lat = (Math.atan(Math.sinh(my)) * 180) / Math.PI;
+    const fr = (g.bbox.north - lat) / g.cellDeg;
+    const row = Math.min(g.rows - 1, Math.max(0, Math.floor(fr)));
+    for (let x = 0; x < width; x++) {
+      const fc = (x / width) * g.cols, col = Math.min(g.cols - 1, Math.floor(fc));
+      const t = g.cells[row * g.cols + col];
+      if (t === Terrain.Sea) continue;
+      const dzdx = ((bil(fc + 0.5, fr) - bil(fc - 0.5, fr)) / cellMx) * EXAG, dzdy = ((bil(fc, fr - 0.5) - bil(fc, fr + 0.5)) / cellM) * EXAG; // dzdy: north is up
+      const nl = Math.hypot(dzdx, dzdy, 1);
+      const s = (-dzdx * lx + -dzdy * -ly + lz) / (nl * ln); // 0..1, flat ground = lz/ln
+      const flat = lz / ln, d = s - flat, o = (y * width + x) * 4;
+      if (d < 0) { data[o] = 74; data[o + 1] = 63; data[o + 2] = 51; data[o + 3] = Math.min(150, -d * 520); }
+      else { data[o] = 255; data[o + 1] = 255; data[o + 2] = 255; data[o + 3] = Math.min(110, d * 380); }
+    }
+  }
+  return { width, height, data };
+}
+
 const TYPE_WEIGHT: Partial<Record<string, number>> = { hq: 60, carrier: 58, armoured: 50, naval: 48, mechanised: 44, air_bomber: 42, air_fighter: 40, artillery: 36, motorised: 30, paratroop: 30, infantry: 26, antitank: 22, recon: 20, engineer: 16, logistics: 10 };
 /** Stack priority: which unit's picture represents a pile. */
 export const unitImportance = (u: Unit): number => (TYPE_WEIGHT[u.type] ?? 10) * 1000 + u.manpower / 10 + (u.inBattle ? 500 : 0);

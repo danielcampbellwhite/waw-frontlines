@@ -12,7 +12,7 @@ import { clusterBySide, overlapBox, separateSides } from './cluster';
 import { hashStr, loadThumb, photoFor } from './photos';
 import {
   EMPTY, NATION_COLOURS, battlesGeoJSON, boundsOfUnits, controlHash, infraGeoJSON, locationsGeoJSON, routesGeoJSON,
-  supplyGeoJSON, terrainImageData, unitImportance, visibleUnits,
+  reliefImageData, supplyGeoJSON, terrainImageData, unitImportance, visibleUnits,
 } from './layers';
 import { FONT, NE_ATTRIBUTION, dataUrl, styleFor } from './style';
 import { regionForTerrain } from './region';
@@ -61,7 +61,7 @@ export interface TacticalMapProps {
   focusRequest?: { pos: LonLat; zoom?: number; nonce: number };
   /** throttled on moveend/zoomend */
   onViewChange?(v: ViewState): void;
-  /** 'osm' raster (default, needs network) or fully offline Natural Earth vector style */
+  /** Basemap style: the self-contained Natural Earth vector style (the only one; no third-party tile servers) */
   basemap?: BasemapKind;
   /** Optional imperative handle (flyTo / fitBBox / getMap) */
   handleRef?: Ref<TacticalMapHandle>;
@@ -108,7 +108,7 @@ export function TacticalMap(props: TacticalMapProps) {
   const mapRef = useRef<MLMap | null>(null);
   const propsRef = useRef(props);
   propsRef.current = props;
-  const basemap = props.basemap ?? 'osm';
+  const basemap = props.basemap ?? 'offline';
 
   useImperativeHandle(props.handleRef, () => ({
     getMap: () => mapRef.current,
@@ -207,6 +207,19 @@ export function TacticalMap(props: TacticalMapProps) {
       for (const s of SRC) map.addSource(s, { type: 'geojson', data: EMPTY });
       map.addImage('battle', createBattleIcon(), { pixelRatio: 2 });
       const L = (l: Parameters<MLMap['addLayer']>[0]) => map.addLayer(l);
+      // self-contained basemap shading from the bundled terrain grid (no external tiles): faint terrain tint + hillshade
+      {
+        const g = propsRef.current.engine.terrain, b = g.bbox, coords: [[number, number], [number, number], [number, number], [number, number]] = [[b.west, b.north], [b.east, b.north], [b.east, b.south], [b.west, b.south]];
+        const url = (img: { width: number; height: number; data: Uint8ClampedArray }) => {
+          const cv = document.createElement('canvas'); cv.width = img.width; cv.height = img.height;
+          cv.getContext('2d')!.putImageData(new ImageData(new Uint8ClampedArray(img.data), img.width, img.height), 0, 0);
+          return cv.toDataURL();
+        };
+        map.addSource('base-tint', { type: 'image', url: url(terrainImageData(g, g.cols * 3)), coordinates: coords });
+        map.addSource('base-relief', { type: 'image', url: url(reliefImageData(g)), coordinates: coords });
+        L({ id: 'base-tint', type: 'raster', source: 'base-tint', paint: { 'raster-opacity': 0.25, 'raster-fade-duration': 0, 'raster-resampling': 'linear' } });
+        L({ id: 'base-relief', type: 'raster', source: 'base-relief', paint: { 'raster-opacity': 0.9, 'raster-fade-duration': 0, 'raster-resampling': 'linear' } });
+      }
       L({ id: 'control-fill', type: 'fill', source: 'control', paint: { 'fill-color': ['get', 'colour'], 'fill-opacity': 0.26 } });
       L({ id: 'control-line', type: 'line', source: 'control', paint: { 'line-color': ['get', 'colour'], 'line-width': 1.4, 'line-opacity': 0.7 } });
       L({ id: 'contested-fill', type: 'fill', source: 'contested', paint: { 'fill-color': '#ff9f1c', 'fill-opacity': 0.3 } });

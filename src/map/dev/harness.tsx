@@ -55,7 +55,7 @@ function App() {
   const [engine, setEngine] = useState<Engine | null>(null);
   const [sel, setSel] = useState<string[]>([]);
   const [ov, setOv] = useState<MapOverlays>({ supply: true, control: true, fog: false, terrain: false });
-  const [basemap, setBasemap] = useState<'osm' | 'offline'>((new URLSearchParams(location.search).get('base') as 'osm' | 'offline') ?? 'offline');
+  const [basemap, setBasemap] = useState<'offline'>('offline');
   const [log, setLog] = useState('');
   useEffect(() => {
     void (async () => {
@@ -87,7 +87,7 @@ function App() {
         onMapClick={(p, b) => setLog(`click ${p.map((x) => x.toFixed(3))} b${b}`)} onContextOrder={(p) => setLog(`order ${p.map((x) => x.toFixed(3))}`)} />
       <div style={{ position: 'absolute', top: 8, left: 8, background: '#fff', padding: 6, font: '12px sans-serif', zIndex: 9 }}>
         {(['supply', 'control', 'fog', 'terrain'] as const).map((k) => <label key={k} style={{ marginRight: 8 }}><input type="checkbox" checked={ov[k]} onChange={() => setOv({ ...ov, [k]: !ov[k] })} />{k}</label>)}
-        <button onClick={() => setBasemap(basemap === 'osm' ? 'offline' : 'osm')}>{basemap}</button> <button onClick={() => engine.step()}>tick</button> <span id="log">{log} sel={sel.length}</span>
+        <button onClick={() => setBasemap('offline')}>{basemap}</button> <button onClick={() => engine.step()}>tick</button> <span id="log">{log} sel={sel.length}</span>
       </div>
     </div>
   );

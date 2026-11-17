@@ -101,7 +101,8 @@ describe('campaign select: coming later', () => {
     const onSelect = vi.fn();
     render(h(CampaignSelect, { scenarios: metas, onSelect, onBack: () => {} }));
     expect(screen.getAllByRole('button', { name: 'Select campaign' })).toHaveLength(1);
-    expect(screen.getByText('Coming later')).toBeTruthy();
+    expect(screen.getByText('Coming soon')).toBeTruthy();
+    expect(screen.getAllByText('COMING SOON')).toHaveLength(2);
     expect(screen.getByText('Pacific War')).toBeTruthy();
     expect(screen.queryAllByText('Not yet available')).toHaveLength(0);
     fireEvent.click(screen.getByText('Pacific War'));

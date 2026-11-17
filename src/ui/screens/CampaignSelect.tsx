@@ -53,10 +53,10 @@ export function CampaignSelect({ scenarios, onSelect, onBack }: { scenarios: Sce
         {playable.length === 0 && <p className="empty">No campaigns are installed.</p>}
       </div>
       {later.length > 0 && (
-        <section className="coming-later" aria-label="Coming later">
-          <h2>Coming later</h2>
+        <section className="coming-later" aria-label="Coming soon">
+          <h2>Coming soon</h2>
           <ul>{later.map(g => { const m = g.list[0]; return (
-            <li key={g.id}><b>{m.campaignTitle ?? stripScale(m.title)}</b><span>{fmtIsoDay(m.startDate)} to {fmtIsoDay(m.endDate)}</span></li>
+            <li key={g.id}><em className="soon-badge">COMING SOON</em><b>{m.campaignTitle ?? stripScale(m.title)}</b><span>{fmtIsoDay(m.startDate)} to {fmtIsoDay(m.endDate)}</span></li>
           ); })}</ul>
         </section>
       )}

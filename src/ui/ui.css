@@ -368,3 +368,4 @@ table.grid th, table.grid td { padding: 0.25rem 0.5rem; border-bottom: 1px solid
 .tour-dots button.done { background: var(--brass-dim); } .tour-dots button.on { background: var(--brass); border-color: var(--brass); }
 .help-btn { font-family: var(--display); font-weight: 700; font-size: 1.1rem; }
 .keybinds.fixed .keycap { cursor: default; min-width: 5rem; }
+.coming-later .soon-badge { font-style: normal; font-family: var(--display); font-weight: 700; font-size: 0.75rem; letter-spacing: 0.1em; color: var(--brass); border: 1px solid var(--brass-dim); padding: 0.05rem 0.4rem; justify-self: start; }

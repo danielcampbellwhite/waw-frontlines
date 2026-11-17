@@ -31,6 +31,7 @@ export const PLANNED_CAMPAIGNS: PlannedCampaign[] = [
   p('stalingrad', 'Stalingrad', 'standard', '1942-08-23T00:00:00Z', '1943-02-02T00:00:00Z', [240, 480], ['GER', 'SOV'], 'The battle for the city on the Volga.'),
   p('kursk', 'Kursk', 'short', '1943-07-05T00:00:00Z', '1943-07-23T00:00:00Z', [60, 120], ['GER', 'SOV'], 'The last great German offensive in the East.'),
   p('normandy', 'Normandy 1944', 'standard', '1944-06-06T00:00:00Z', '1944-08-30T00:00:00Z', [240, 480], ['USA', 'GBR', 'CAN', 'GER'], 'The Allied invasion of north-west Europe and the breakout.'),
+  p('italy', 'Italian Campaign 1943-45', 'grand', '1943-07-10T00:00:00Z', '1945-05-02T00:00:00Z', [600, 1200], ['USA', 'GBR', 'GER', 'ITA'], 'The Allied campaign from Sicily up the Italian peninsula.'),
   p('pacific', 'Pacific War', 'grand', '1941-12-07T00:00:00Z', '1945-09-02T00:00:00Z', [720, 1500], ['USA', 'JPN', 'GBR', 'AUS'], 'The war against Japan.'),
   p('berlin_1945', 'Battle of Berlin', 'short', '1945-04-16T00:00:00Z', '1945-05-02T00:00:00Z', [60, 120], ['SOV', 'GER'], 'The final Soviet offensive in Europe.'),
 ];

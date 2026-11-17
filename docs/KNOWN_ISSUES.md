@@ -209,6 +209,10 @@ Known issues:
 - Pocket seeking with infantry follow-up is deferred. Historical events (data in barbarossa.events.json) only apply a rainstorm (2 Jul, 144 h) as an effect; all other events are narrative.
 - The other campaigns' regression numbers are unchanged (armourGroups and counterattackFromMinutes are opt-in).
 
+### Barbarossa: German-human stand-in and deferred panzer bypass (ai-events-engineer)
+- Soviet engine AI is loosened in the opening (withdraw phase 0-300 h, counter-attacks from 168 h, reaction 720 min, reserve 0.15, holds only on Minsk/Smolensk/Kiev/Leningrad/Moscow). AI-as-German vs engine Soviet (5 seeds, 2400 ticks) now scores Axis 600/440/440/140/140 (was 80-140); Minsk and Smolensk do not fall on any seed. The stand-in is a weak proxy for a human German (a human can bypass, pocket and pace fuel); a human playtest of the German side belongs on the release checklist.
+- Deferred improvement, panzer bypass: seed-4 probe showed the centre panzer group stuck on a self-position Schwerpunkt order at Bialystok for about 70 h (capture never completes), later bounds toward Minsk stopping at the first Soviet army, and the northern group out of fuel (supply 0, fuel 0) at about 25.0E 55.8N by h200 with infantry shuffling 'close up' orders behind it. Fix idea: panzer thrusts skip held waypoints (Bialystok, Lutsk) and leave them to infantry; pocket seeking with infantry follow-up.
+
 ## Map data limits (reported by map-engineer, 2026-11-17)
 - Carentan/Douve marsh is approximated: river-flat marsh needs <= 5 m elevation, so Carentan stays Bocage; no sourced marsh extent exists.
 - OSM roads/rail fetch (Overpass 502/504/timeouts) is incomplete for Normandy (new bbox), Ardennes roads and North Africa roads/rail/tracks; those use Natural Earth roads/rail, with the schematic Via Balbia for North Africa and Ardennes rail off by design.

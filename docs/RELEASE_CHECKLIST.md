@@ -19,6 +19,8 @@ Script: `tests/qa/e2e/release.e2e.mjs` (Playwright). Start `npx vite --port <fre
 Per campaign it checks: menu -> campaign -> nation -> briefing -> begin (tour skipped) -> 1 game day at 8x -> save -> export -> autosave slots listed -> import -> reload -> main menu Load -> date matches the save -> zero console errors.
 - [ ] All playable campaigns pass (see docs/TESTING_REPORT.md for the last run)
 - [ ] Manual: audio on/off at zoom, units readable at strategic and tactical zoom, settings persist, credits screen shows photo credits (docs/IMAGE_CREDITS.md)
+- [ ] Manual: human playtest of Barbarossa as GERMANY vs the Soviet AI (can the player reach Minsk/Smolensk by bypassing, pocketing and pacing fuel?) and as SOVIET vs the German AI; record outcome and pace vs KNOWN_ISSUES "Barbarossa AI balance"
+- [ ] Manual: one human playthrough of each other campaign (first 2 game days) with sound on; note anything unreadable, unfair or broken
 
 ## 4. Balance and campaign sanity (tests/qa balance suites)
 - [ ] Every campaign x playable nation x 5 seeds, passive and AI-vs-AI: every run ends (no 'none'), no zero-score anomalies

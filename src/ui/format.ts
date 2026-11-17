@@ -65,6 +65,8 @@ export function simDate(scn: Pick<ScenarioDefinition, 'startDate'>, minutes: num
   return new Date(Date.parse(scn.startDate) + minutes * 60000);
 }
 export const fmtDay = (d: Date) => `${pad(d.getUTCDate())} ${MONTHS[d.getUTCMonth()]} ${d.getUTCFullYear()}`;
+/** Night as the sim's fog of war counts it (21:00 to 05:00); the top bar must agree with what units can actually see. */
+export const isNightHour = (hour: number) => hour < 5 || hour >= 21;
 export const fmtClock = (d: Date) => `${pad(d.getUTCHours())}:${pad(d.getUTCMinutes())}`;
 export const fmtStamp = (scn: Pick<ScenarioDefinition, 'startDate'>, minutes: number) => {
   const d = simDate(scn, minutes); return `${fmtDay(d)} ${fmtClock(d)}`;

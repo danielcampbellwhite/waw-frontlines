@@ -215,7 +215,7 @@ export function Toasts() {
       {toasts.map(t => (
         <div key={t.id} className={`toast ${t.severity}`} role="status">
           <span>{t.text}</span>
-          {t.pos && <button type="button" className="mini-btn" onClick={() => { actions.focusOn(t.pos!, 8); actions.dismissToast(t.id); }}>Show</button>}
+          {t.pos && <button type="button" className="mini-btn" onClick={() => { actions.focusOn(t.pos!, 8); actions.dismissToast(t.id); }}>Go to</button>}
           <button type="button" className="icon-btn" aria-label="Dismiss" onClick={() => actions.dismissToast(t.id)}><Icon name="x" size={11} /></button>
         </div>
       ))}
@@ -250,3 +250,20 @@ export function useToastFeed() {
   }, [engine, actions, store]);
 }
 
+
+// ───────────── Order confirmation (preview found something worth a second look)
+export function OrderConfirm() {
+  const { store, actions } = useGame();
+  const p = useStore(store, s => s.pendingOrder, Object.is);
+  if (!p) return null;
+  return (
+    <div className="order-confirm" role="alertdialog" aria-label="Confirm order">
+      <div className="oc-head"><b>{orderMeta(p.order.kind).label}</b><span>{p.preview.summary}</span></div>
+      <ul>{p.preview.warnings.map((w, i) => <li key={i}>{w}</li>)}</ul>
+      <div className="oc-actions">
+        <button type="button" className="btn primary" autoFocus onClick={actions.confirmPending}>Send order anyway</button>
+        <button type="button" className="btn" onClick={actions.cancelPending}>Cancel (Esc)</button>
+      </div>
+    </div>
+  );
+}

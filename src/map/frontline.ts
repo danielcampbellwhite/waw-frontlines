@@ -1,5 +1,5 @@
 import { pointInPolygon } from '../core/geo';
-import type { ControlGrid, LonLat, NationId, SideId } from '../core/types';
+import type { BBox, ControlGrid, LonLat, NationId, SideId } from '../core/types';
 
 /** Default nation→side mapping used when the caller does not supply one. */
 export const DEFAULT_SIDE_OF = (n: NationId): SideId =>
@@ -195,4 +195,38 @@ export function computeMaskPolygons(grid: Pick<ControlGrid, 'bbox' | 'cellDeg' |
     rings.push([...sm, sm[0]]);
   }
   return rings;
+}
+
+export interface FrontUnit { pos: LonLat; side: SideId }
+
+/**
+ * Fog-respecting front line from the units the player can currently see: every lattice cell goes to the side of its nearest
+ * unit (when within rangeKm), and the boundary between the two sides' zones is traced, so the line runs between opposing
+ * formations and only exists where both sides are known. Pure & deterministic. Neutral units are ignored.
+ */
+export function computeVisibleFront(units: FrontUnit[], bbox: BBox, opts: { cellDeg?: number; rangeKm?: number; smooth?: number } = {}): LonLat[][] {
+  const ax = units.filter((u) => u.side === 'axis'), al = units.filter((u) => u.side === 'allies');
+  if (!ax.length || !al.length) return [];
+  const midLat = (bbox.north + bbox.south) / 2, kx = 111.2 * Math.cos((midLat * Math.PI) / 180), ky = 111.2;
+  const diag = Math.hypot((bbox.east - bbox.west) * kx, (bbox.north - bbox.south) * ky);
+  const cellDeg = opts.cellDeg ?? Math.max(0.04, (bbox.east - bbox.west) / 140);
+  const range = opts.rangeKm ?? Math.max(50, diag * 0.08), r2 = range * range;
+  const cols = Math.max(2, Math.ceil((bbox.east - bbox.west) / cellDeg)), rows = Math.max(2, Math.ceil((bbox.north - bbox.south) / cellDeg));
+  const owner = new Array<number>(cols * rows).fill(0);
+  const nearest = (list: FrontUnit[], x: number, y: number) => {
+    let best = Infinity;
+    for (const u of list) { const dx = (u.pos[0] - x) * kx, dy = (u.pos[1] - y) * ky, d = dx * dx + dy * dy; if (d < best) best = d; }
+    return best;
+  };
+  for (let r = 0; r < rows; r++) {
+    const y = bbox.north - (r + 0.5) * cellDeg;
+    for (let c = 0; c < cols; c++) {
+      const x = bbox.west + (c + 0.5) * cellDeg;
+      const da = nearest(ax, x, y), db = nearest(al, x, y);
+      if (Math.min(da, db) > r2) continue;
+      owner[r * cols + c] = da <= db ? 1 : 2;
+    }
+  }
+  const grid: ControlGrid = { bbox: { west: bbox.west, east: bbox.west + cols * cellDeg, north: bbox.north, south: bbox.north - rows * cellDeg }, cellDeg, cols, rows, nations: ['NEUTRAL', 'GER', 'USA'] as NationId[], owner, contested: new Array(cols * rows).fill(0) };
+  return computeFrontLine(grid, { sideOf: (n) => (n === 'GER' ? 'axis' : n === 'USA' ? 'allies' : 'neutral'), smooth: opts.smooth ?? 3 });
 }

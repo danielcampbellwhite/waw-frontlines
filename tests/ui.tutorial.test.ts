@@ -75,7 +75,7 @@ describe('tour behaviour', () => {
 
 describe('settings additions', () => {
   it('defaults and sanitises difficulty and tourSeen', () => {
-    expect(settingsStore.get().defaultDifficulty).toBe('normal'); expect(settingsStore.get().tourSeen).toBe(false);
+    expect(settingsStore.get().defaultDifficulty).toBe('normal'); expect(settingsStore.get().tourSeen).toBe(false); expect(settingsStore.get().mapDayNight).toBe(true); expect(settingsStore.get().mapWeather).toBe(true);
     expect(sanitize({ defaultDifficulty: 'bogus' as never }).defaultDifficulty).toBe('normal');
     expect(sanitize({ defaultDifficulty: 'hard' }).defaultDifficulty).toBe('hard');
   });

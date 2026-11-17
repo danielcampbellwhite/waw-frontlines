@@ -36,7 +36,7 @@ export function SettingsPanel({ onClose }: { onClose: () => void }) {
           <Toggle checked={s.muted} onChange={v => settingsStore.set({ muted: v })} label="Mute all audio" />
           <Slider label="Master" value={s.master} min={0} max={1} step={0.01} format={pct} onChange={v => settingsStore.set({ master: v })} />
           <Slider label="Music" value={s.music} min={0} max={1} step={0.01} format={pct} onChange={v => settingsStore.set({ music: v })} />
-          <Slider label="Effects" value={s.sfx} min={0} max={1} step={0.01} format={pct} onChange={v => settingsStore.set({ sfx: v })} hint="Gunfire, artillery, engines, aircraft and interface sounds" />
+          <Slider label="Effects" value={s.sfx} min={0} max={1} step={0.01} format={pct} onChange={v => settingsStore.set({ sfx: v })} hint="Gunfire, artillery, engines and interface sounds" />
           <Slider label="Ambience" value={s.ambience} min={0} max={1} step={0.01} format={pct} onChange={v => settingsStore.set({ ambience: v })} hint="Wind, weather and radio chatter" />
           <button type="button" className="btn" onClick={() => { audio.unlock(); audio.sfx('confirm'); }}>Test sound</button>
           <p className="hint">Sound effects are CC0 or public-domain recordings; music is generated live. Unit photographs come from licence-checked Wikimedia Commons sources. <button type="button" className="link-btn" onClick={() => setCredits(true)}>See Credits</button>. Levels are remembered on this device.</p>
@@ -44,6 +44,9 @@ export function SettingsPanel({ onClose }: { onClose: () => void }) {
       )}
       {tab === 'interface' && (
         <div className="settings-pane">
+          <Toggle checked={s.mapDayNight} onChange={v => settingsStore.set({ mapDayNight: v })} label="Day and night on the map" />
+          <Toggle checked={s.mapWeather} onChange={v => settingsStore.set({ mapWeather: v })} label="Weather on the map" />
+          <p className="hint">Tints the map by time of day and draws rain, snow, fog and storms. Turn them off on slower computers. They only change how the map looks.</p>
           <Slider label="Interface scale" value={s.uiScale} min={0.8} max={1.4} step={0.05} format={v => `${Math.round(v * 100)}%`} onChange={v => settingsStore.set({ uiScale: v })} hint="Scales text and panels. Useful on 4K or small laptop screens." />
         </div>
       )}
@@ -52,6 +55,8 @@ export function SettingsPanel({ onClose }: { onClose: () => void }) {
           <div className="field-block"><span className="lbl">Default difficulty</span>
             <Segmented label="Default difficulty" value={s.defaultDifficulty} onChange={v => settingsStore.set({ defaultDifficulty: v })} options={DIFFICULTIES.map(d => ({ id: d, label: d[0].toUpperCase() + d.slice(1) }))} /></div>
           <p className="hint">Preselected when you start a new campaign. You can still change it for each campaign on the nation screen.</p>
+          <Toggle checked={s.autoSlow} onChange={v => settingsStore.set({ autoSlow: v })} label="Auto-slow on action" />
+          <p className="hint">When first contact is made, a city changes hands, a unit is destroyed or routed, or a historical event fires, the game drops to 1x speed (it never pauses) and tells you where. Speed is not restored automatically.</p>
         </div>
       )}
       {tab === 'keys' && (

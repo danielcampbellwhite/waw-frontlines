@@ -6,7 +6,10 @@ import type { GeoJSONSource, MapMouseEvent } from 'maplibre-gl';
 import 'maplibre-gl/dist/maplibre-gl.css';
 import { Terrain } from '../core/types';
 import type { BBox, Engine, GameState, LonLat, SideId, TerrainGrid, Unit, UnitId } from '../core/types';
-import { computeControlPolygons, computeFrontLine, computeMaskPolygons, ringsToPolygons } from './frontline';
+import { computeControlPolygons, computeMaskPolygons, computeVisibleFront, ringsToPolygons } from './frontline';
+import { dayNightTint, sunAltitudeDeg } from './atmosphere';
+import { WeatherLayer } from './weatherLayer';
+import { getScenarioDefinition } from '../data';
 import { createBattleIcon, createIllustratedIcon, createPhotoIcon, createUnitIcon, parseIllustrationIconName, parseUnitIconName } from './icons';
 import { clusterBySide, overlapBox, separateSides } from './cluster';
 import { hashStr, loadThumb, photoFor } from './photos';
@@ -63,6 +66,10 @@ export interface TacticalMapProps {
   onViewChange?(v: ViewState): void;
   /** Basemap style: the self-contained Natural Earth vector style (the only one; no third-party tile servers) */
   basemap?: BasemapKind;
+  /** Atmosphere (rendering only): day/night tint of the basemap and weather overlay; both default on. UI setting keys: mapDayNight, mapWeather. */
+  atmosphere?: { dayNight?: boolean; weather?: boolean };
+  /** ISO scenario start (UTC) for the sun position; defaults to the scenario definition of state.scenarioId */
+  startDate?: string;
   /** Optional imperative handle (flyTo / fitBBox / getMap) */
   handleRef?: Ref<TacticalMapHandle>;
   className?: string;
@@ -199,6 +206,7 @@ export function TacticalMap(props: TacticalMapProps) {
       lastPush = now;
       (map.getSource('units') as GeoJSONSource).setData({ type: 'FeatureCollection', features });
     };
+    const weather = new WeatherLayer(el);
     let ready = false, raf = 0, lastSig = '', lastHash = -1, lastControlOn = false, terrainReady = false, fitted = false, disposed = false;
     const added = new Set<string>();
 
@@ -219,6 +227,8 @@ export function TacticalMap(props: TacticalMapProps) {
         map.addSource('base-relief', { type: 'image', url: url(reliefImageData(g)), coordinates: coords });
         L({ id: 'base-tint', type: 'raster', source: 'base-tint', paint: { 'raster-opacity': 0.25, 'raster-fade-duration': 0, 'raster-resampling': 'linear' } });
         L({ id: 'base-relief', type: 'raster', source: 'base-relief', paint: { 'raster-opacity': 0.9, 'raster-fade-duration': 0, 'raster-resampling': 'linear' } });
+        map.addSource('daynight', { type: 'geojson', data: { type: 'Feature', properties: {}, geometry: { type: 'Polygon', coordinates: [[[-180, -85], [180, -85], [180, 85], [-180, 85], [-180, -85]]] } } as never });
+        L({ id: 'daynight', type: 'fill', source: 'daynight', paint: { 'fill-color': '#1a285c', 'fill-opacity': 0, 'fill-antialias': false } });
       }
       L({ id: 'control-fill', type: 'fill', source: 'control', paint: { 'fill-color': ['get', 'colour'], 'fill-opacity': 0.26 } });
       L({ id: 'control-line', type: 'line', source: 'control', paint: { 'line-color': ['get', 'colour'], 'line-width': 1.4, 'line-opacity': 0.7 } });
@@ -227,7 +237,8 @@ export function TacticalMap(props: TacticalMapProps) {
       L({ id: 'ice-rivers', type: 'line', source: 'rivers', layout: { 'line-cap': 'butt', visibility: 'none' }, paint: { 'line-color': '#e4f2fa', 'line-opacity': 0, 'line-width': ['interpolate', ['linear'], ['zoom'], 4, 1.4, 8, 3.4, 11, 7] } });
       L({ id: 'infra-rail', type: 'line', source: 'infra', filter: ['==', ['get', 'kind'], 'rail'], layout: { visibility: 'none' }, paint: { 'line-color': '#222', 'line-width': 1.2, 'line-dasharray': [3, 2] } });
       L({ id: 'infra-road', type: 'line', source: 'infra', filter: ['==', ['get', 'kind'], 'road'], layout: { visibility: 'none' }, paint: { 'line-color': '#c98a12', 'line-width': 1.6, 'line-opacity': ['interpolate', ['linear'], ['zoom'], 7, 1, 9, ['case', ['==', ['get', 'approx'], 1], 0, 1]] as never } }); // schematic (approximate) roads fade out when zoomed in, where they would visibly miss the real road
-      L({ id: 'front-casing', type: 'line', source: 'front', layout: { 'line-join': 'round', 'line-cap': 'round' }, paint: { 'line-color': '#fff', 'line-width': 6, 'line-opacity': 0.75 } });
+      L({ id: 'front-band', type: 'line', source: 'front', layout: { 'line-join': 'round', 'line-cap': 'round' }, paint: { 'line-color': '#b3261e', 'line-width': ['interpolate', ['linear'], ['zoom'], 4, 10, 8, 22, 11, 40], 'line-opacity': 0.14, 'line-blur': 8 } });
+      L({ id: 'front-casing', type: 'line', source: 'front', layout: { 'line-join': 'round', 'line-cap': 'round' }, paint: { 'line-color': '#fff', 'line-width': 6, 'line-opacity': 0.6 } });
       L({ id: 'front', type: 'line', source: 'front', layout: { 'line-join': 'round', 'line-cap': 'round' }, paint: { 'line-color': '#8a0f0f', 'line-width': 3 } });
       // cities (Natural Earth) – three importance tiers
       const tiers: [string, number, unknown][] = [['0', 3.5, ['<=', ['get', 'rank'], 2]], ['1', 5.5, ['all', ['>', ['get', 'rank'], 2], ['<=', ['get', 'rank'], 5]]], ['2', 7.5, ['>', ['get', 'rank'], 5]]];
@@ -300,7 +311,7 @@ export function TacticalMap(props: TacticalMapProps) {
       const previewKey = JSON.stringify([ov.targetPreview, ov.planMarkers]);
       let selSig = '';
       for (const id of p.selection) { const u = st.units[id]; if (u) selSig += `${id}:${u.orders?.length ?? 0}:${u.route?.length ?? 0}:${u.routeEtaMinutes ?? 0}:${u.moveStatus};`; }
-      const sig = `${previewKey}|${st.clock.minutes}|${p.selection.join(',')}|${selSig}|${+ov.supply}${+(ov.control ?? true)}${+ov.fog}${+(ov.terrain ?? false)}${+(ov.routes ?? true)}${+(ov.battles ?? true)}|${st.playerSide}|${Object.keys(st.battles).length}|${iceOf(st)}`;
+      const sig = `${previewKey}|${st.clock.minutes}|${p.selection.join(',')}|${selSig}|${+ov.supply}${+(ov.control ?? true)}${+ov.fog}${+(ov.terrain ?? false)}${+(ov.routes ?? true)}${+(ov.battles ?? true)}|${st.playerSide}|${Object.keys(st.battles).length}|${iceOf(st)}|${st.weather.kind}${st.weather.intensity}|${+(p.atmosphere?.dayNight ?? true)}${+(p.atmosphere?.weather ?? true)}`;
       if (!force && sig === lastSig) return;
       lastSig = sig;
       const control = ov.control ?? true;
@@ -310,7 +321,7 @@ export function TacticalMap(props: TacticalMapProps) {
       applyIce(map, p.engine.terrain, iceOf(st));
       if (ov.terrain) ensureTerrain();
       vis(['terrain-img'], !!ov.terrain);
-      vis(['control-fill', 'control-line', 'contested-fill', 'front-casing', 'front'], control);
+      vis(['control-fill', 'control-line', 'contested-fill'], control);
       vis(['routes-line', 'routes-planned', 'routes-target', 'routes-eta'], ov.routes ?? true);
       vis(['battles-glow', 'battles'], ov.battles ?? true);
       const pv = ov.targetPreview ?? [];
@@ -350,6 +361,19 @@ export function TacticalMap(props: TacticalMapProps) {
         } else anim = null;
         lastMin = st.clock.minutes; lastTickAt = now;
       }
+      // fog-respecting front line from the units this side can see (land formations only)
+      (map.getSource('front') as GeoJSONSource).setData({ type: 'FeatureCollection', features: computeVisibleFront(units.filter((u) => !/^(air|naval|carrier)/.test(u.type)).map((u) => ({ pos: u.pos, side: u.side })), p.engine.terrain.bbox).map((l) => ({ type: 'Feature', properties: {}, geometry: { type: 'LineString', coordinates: l } })) });
+      // atmosphere: day/night tint of the basemap + weather overlay
+      {
+        const dn = p.atmosphere?.dayNight ?? true, startIso = p.startDate ?? getScenarioDefinition(st.scenarioId)?.startDate;
+        let tint = { r: 0, g: 0, b: 0, a: 0 };
+        if (dn && startIso && map.getLayer('daynight')) {
+          const tb2 = p.engine.terrain.bbox;
+          tint = dayNightTint(sunAltitudeDeg(Date.parse(startIso) + st.clock.minutes * 60000, (tb2.north + tb2.south) / 2, (tb2.east + tb2.west) / 2));
+        }
+        if (map.getLayer('daynight')) { map.setPaintProperty('daynight', 'fill-color', `rgb(${tint.r | 0},${tint.g | 0},${tint.b | 0})`); map.setPaintProperty('daynight', 'fill-opacity', tint.a); }
+        weather.set(st.weather.kind, st.weather.intensity, p.atmosphere?.weather ?? true);
+      }
       cur = { units, byId: new Map(units.map((u) => [u.id, u])), sel, cut, art, side: st.playerSide };
       pushUnits(now);
       (map.getSource('routes') as GeoJSONSource).setData(routesGeoJSON(units.filter((u) => sel.has(u.id) && u.side === st.playerSide), sel));
@@ -366,7 +390,6 @@ export function TacticalMap(props: TacticalMapProps) {
           (map.getSource('control') as GeoJSONSource).setData({ type: 'FeatureCollection', features: polys.map((c) => ({ type: 'Feature', properties: { nation: c.nation, colour: NATION_COLOURS[c.nation] ?? '#999' }, geometry: { type: 'MultiPolygon', coordinates: c.polygons } })) });
           const cont = ringsToPolygons(computeMaskPolygons(st.control, (i) => st.control.contested[i] >= 40));
           (map.getSource('contested') as GeoJSONSource).setData({ type: 'FeatureCollection', features: cont.length ? [{ type: 'Feature', properties: {}, geometry: { type: 'MultiPolygon', coordinates: cont } }] : [] });
-          (map.getSource('front') as GeoJSONSource).setData({ type: 'FeatureCollection', features: computeFrontLine(st.control).map((l) => ({ type: 'Feature', properties: {}, geometry: { type: 'LineString', coordinates: l } })) });
         }
       }
       lastControlOn = control;
@@ -480,6 +503,7 @@ export function TacticalMap(props: TacticalMapProps) {
       el.removeEventListener('mousedown', onDown, true);
       el.removeEventListener('contextmenu', noMenu);
       window.removeEventListener('mousemove', onMove); window.removeEventListener('mouseup', onUp);
+      weather.destroy();
       map.remove();
       mapRef.current = null;
     };

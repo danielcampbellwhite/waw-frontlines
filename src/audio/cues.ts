@@ -143,7 +143,11 @@ export function diffCues(prev: Observed | null, next: Observed, s: Snap): CueNam
   }
   if (captured) out.push('obj_captured'); else if (lost) out.push('obj_lost');
   for (const id of next.battleIds) if (!prev.battleIds.has(id)) { out.push('battle_start'); break; }
-  if (next.reports > prev.reports) out.push('report');
+  if (next.reports > prev.reports) {
+    // a lost or failed battle sounds the alert cue; every other outcome the plain report cue
+    const bad = s.reports.slice(prev.reports).some(r => r.outcome !== undefined && (r.attackerSide === s.playerSide ? r.outcome === 'defender_victory' || r.outcome === 'attacker_withdrew' : r.outcome === 'attacker_victory'));
+    out.push(bad ? 'alert' : 'report');
+  }
   for (const e of s.events) {
     if (prev.eventIds.has(e.id) || e.resolved) continue;
     if (e.side !== undefined && e.side !== s.playerSide) continue;

@@ -17,6 +17,8 @@ export interface TacticalMapProps {
   onMapClick: (pos: LonLat, button?: number) => void;
   onContextOrder: (pos: LonLat) => void;
   overlays: MapOverlays;
+  /** Optional map atmosphere: day/night tint of the basemap and a weather overlay (both default on in the map). */
+  atmosphere?: { dayNight?: boolean; weather?: boolean };
   targeting: boolean;
   focusRequest?: FocusRequest;
   onViewChange?: (v: MapView) => void;

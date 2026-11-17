@@ -1,4 +1,5 @@
 import type { GameState, LonLat, UnitId } from '../../core/types';
+import { reportHeadline } from './reportText';
 
 export type NotifKind = 'report' | 'event' | 'objective' | 'log';
 export interface Notification {
@@ -12,7 +13,7 @@ export interface Notification {
   unitId?: UnitId;
 }
 
-type Src = Pick<GameState, 'log' | 'reports' | 'events' | 'objectives' | 'playerSide'>;
+type Src = Pick<GameState, 'log' | 'reports' | 'events' | 'objectives' | 'playerSide'> & Partial<Pick<GameState, 'units' | 'nations'>>;
 
 /** Log categories that are replaced by the richer derived sources (events list, objective status). */
 const DERIVED_CATEGORIES = new Set(['event', 'objective']);
@@ -32,7 +33,7 @@ export function buildNotifications(s: Src): Notification[] {
     out.push({ id: `log:${l.t}|${l.category}|${l.text}`, t: l.t, kind: 'log', label: l.category, severity: l.severity, text: l.text, pos: l.pos, unitId: l.unitId });
   }
   for (const r of s.reports) {
-    out.push({ id: `rep:${r.id}`, t: r.endedAt, kind: 'report', label: 'report', severity: 'info', text: `${r.placeName ?? 'Battle'}: ${r.summary}`, pos: r.pos });
+    out.push({ id: `rep:${r.id}`, t: r.endedAt, kind: 'report', label: 'report', severity: 'info', text: reportHeadline(r, s.units ?? {}, id => s.nations?.[id]?.name ?? id), pos: r.pos });
   }
   for (const e of s.events) {
     if (e.side !== undefined && e.side !== s.playerSide) continue;

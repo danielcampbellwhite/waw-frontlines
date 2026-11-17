@@ -5,8 +5,9 @@ import type { FocusRequest, MapOverlays, MapView } from '../mapAdapter';
 import type { SaveApi } from '../saveApi';
 import { orderMeta, fmtPos } from '../format';
 import { audio, cueForCommand } from '../../audio';
+import { previewOrder, type OrderPreview } from './orderPreview';
 
-export type BottomTab = 'notifications' | 'events' | 'reports' | 'history';
+export type BottomTab = 'notifications' | 'dispatches' | 'events' | 'reports' | 'history';
 export type ModalId = null | 'objectives' | 'ops' | 'help' | 'save' | 'settings' | 'menu' | 'tour';
 export interface Toast { id: number; text: string; severity: 'info' | 'warn' | 'critical' | 'ok'; pos?: LonLat }
 export interface Targeting { kind: OrderKind; unitIds: UnitId[]; points: LonLat[]; forPhase?: number }
@@ -14,7 +15,12 @@ export type OobStatusFilter = 'all' | 'moving' | 'combat' | 'low_supply' | 'low_
 export interface PhaseDraft { name: string; unitIds: UnitId[]; kind: OrderKind; target?: LonLat; line?: LonLat[]; targetUnit?: UnitId; startAfterMinutes: number; priority: number }
 export interface OpsDraft { name: string; delayMinutes: number; phases: PhaseDraft[] }
 
+export type IssueOrder = Omit<Order, 'id' | 'issuedAt' | 'status' | 'priority'> & { priority?: number };
+/** An order held back because the preview found something worth confirming (out of supply, unreachable, low fuel). */
+export interface PendingOrder { unitIds: UnitId[]; order: IssueOrder; mode?: 'replace' | 'append'; preview: OrderPreview }
+
 export interface GameUi {
+  pendingOrder: PendingOrder | null;
   selection: UnitId[];
   leftOpen: boolean; rightOpen: boolean; bottomOpen: boolean;
   bottomTab: BottomTab; selectedReport?: string;
@@ -41,7 +47,7 @@ export function createGameStore(): Store<GameUi> {
     targeting: null, ctxMenu: null, modal: null, saveMode: 'save', toasts: [], view: null,
     overlays: { routes: true, supply: false, battles: true, fog: true },
     query: '', typeFilter: 'all', statusFilter: 'all', orderMode: 'replace', priority: 1,
-    draft: emptyDraft(), notifSeen: 0, lastSpeed: 1,
+    draft: emptyDraft(), notifSeen: 0, lastSpeed: 1, pendingOrder: null,
   });
 }
 
@@ -49,6 +55,9 @@ export interface GameActions {
   select(ids: UnitId[], additive?: boolean): void;
   startOrder(kind: OrderKind): void;
   cancelTargeting(): void;
+  /** Sends the order held for confirmation. */
+  confirmPending(): void;
+  cancelPending(): void;
   finishLine(): void;
   mapClick(pos: LonLat, button?: number): void;
   mapSelect(ids: UnitId[], additive: boolean): void;
@@ -109,9 +118,23 @@ export function createActions(engine: Engine, scenario: ScenarioDefinition, stor
       const ids = unitIds.filter(isOwn);
       if (!ids.length) { toast('Select one of your own units first.', 'warn'); return { ok: false, error: 'no own units' }; }
       const st = store.get();
+      let pv: OrderPreview | null = null;
+      try { pv = previewOrder(state(), engine.terrain, scenario, ids, order); } catch { pv = null; } // a preview must never block an order
+      if (pv && pv.warnings.length) {
+        store.set({ pendingOrder: { unitIds: ids, order, mode, preview: pv }, targeting: null });
+        audio.cue('error');
+        return { ok: false, error: 'Waiting for confirmation' };
+      }
       const r = dispatch({ type: 'issue_order', unitIds: ids, order: { priority: st.priority, ...order }, mode: mode ?? st.orderMode });
+      if (r.ok && pv && pv.etaMinutes > 0) toast(`${orderMeta(order.kind).label}: ${pv.summary}.`, 'info');
       return r;
     },
+    confirmPending() {
+      const p = store.get().pendingOrder; if (!p) return;
+      store.set({ pendingOrder: null });
+      dispatch({ type: 'issue_order', unitIds: p.unitIds.filter(isOwn), order: { priority: store.get().priority, ...p.order }, mode: p.mode ?? store.get().orderMode });
+    },
+    cancelPending() { store.set({ pendingOrder: null }); },
     startOrder(kind) {
       const sel = store.get().selection.filter(isOwn);
       if (!sel.length) { toast('Select one of your own units first.', 'warn'); return; }

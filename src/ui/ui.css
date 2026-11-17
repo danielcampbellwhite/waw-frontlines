@@ -369,3 +369,17 @@ table.grid th, table.grid td { padding: 0.25rem 0.5rem; border-bottom: 1px solid
 .help-btn { font-family: var(--display); font-weight: 700; font-size: 1.1rem; }
 .keybinds.fixed .keycap { cursor: default; min-width: 5rem; }
 .coming-later .soon-badge { font-style: normal; font-family: var(--display); font-weight: 700; font-size: 0.75rem; letter-spacing: 0.1em; color: var(--brass); border: 1px solid var(--brass-dim); padding: 0.05rem 0.4rem; justify-self: start; }
+
+/* Order confirmation */
+.order-confirm { position: absolute; left: 50%; bottom: 1.2rem; transform: translateX(-50%); z-index: 30; width: min(30rem, calc(100% - 2rem)); background: var(--panel); border: 1px solid #d08a3a; box-shadow: 0 8px 26px rgba(0,0,0,.6); padding: 0.7rem 0.9rem; display: grid; gap: 0.45rem; }
+.order-confirm .oc-head { display: flex; gap: 0.6rem; align-items: baseline; flex-wrap: wrap; } .order-confirm .oc-head b { color: var(--brass); font-family: var(--display); font-size: 1.1rem; } .order-confirm .oc-head span { color: var(--text-dim); }
+.order-confirm ul { margin: 0; padding-left: 1.1rem; display: grid; gap: 0.25rem; } .order-confirm li { line-height: 1.35; }
+.order-confirm .oc-actions { display: flex; gap: 0.5rem; justify-content: flex-end; }
+
+/* Dispatch feed and report headline */
+.dispatches { list-style: none; margin: 0; padding: 0.4rem 0.8rem; display: grid; gap: 0.5rem; }
+.dispatches li { display: grid; grid-template-columns: 9.5rem 1fr auto; gap: 0.8rem; align-items: start; border-left: 3px solid var(--brass-dim); padding: 0.2rem 0 0.2rem 0.7rem; }
+.dispatches time { font-family: var(--display); color: var(--brass); letter-spacing: 0.06em; text-transform: uppercase; font-size: 0.85rem; }
+.dispatches b { display: block; } .dispatches p { margin: 0.15rem 0 0; color: var(--text-dim); }
+.report .headline { font-weight: 600; margin: 0.2rem 0; }
+.tb-dn { margin-left: 0.4rem; color: var(--brass); font-size: 0.8rem; }

@@ -2,7 +2,7 @@ import type { ReactNode } from 'react';
 import { useEngineState } from '../hooks/useEngineState';
 import { useStore } from '../store';
 import { Icon, Tip } from '../components/kit';
-import { fmtClock, fmtDay, fmtK, shortTitle, simDate } from '../format';
+import { fmtClock, fmtDay, fmtK, isNightHour, shortTitle, simDate } from '../format';
 import { useGame } from './gameStore';
 import { notifCount } from './notifications';
 import { useUiSettings, keyLabel } from '../settings';
@@ -47,7 +47,7 @@ export function TopBar() {
       </div>
       <div className="tb-clock" aria-live="off">
         <div className="tb-date">{fmtDay(d)}</div>
-        <div className="tb-time">{fmtClock(d)}<span className="tb-wx">{top.weather} {Math.round(top.temp)}&deg;C</span>{top.ice > 0 && <Tip text={iceTip(top.ice)} pos="bottom"><span className="tb-ice">Ice {Math.round(top.ice * 100)}%</span></Tip>}</div>
+        <div className="tb-time">{fmtClock(d)}<span className="tb-wx">{top.weather} {Math.round(top.temp)}&deg;C</span><span className="tb-dn" aria-label={isNightHour(d.getUTCHours()) ? 'Night' : 'Daytime'}>{isNightHour(d.getUTCHours()) ? 'Night' : 'Day'}</span>{top.ice > 0 && <Tip text={iceTip(top.ice)} pos="bottom"><span className="tb-ice">Ice {Math.round(top.ice * 100)}%</span></Tip>}</div>
       </div>
       <div className="tb-speed" role="group" aria-label="Game speed">
         {sp.map(([v, label], i) => (

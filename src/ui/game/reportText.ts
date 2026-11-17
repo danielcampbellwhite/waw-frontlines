@@ -36,3 +36,32 @@ export function tidyConsequences(r: BattleReport): string[] {
 }
 
 export const uniqueRetreats = (r: BattleReport) => unique(r.retreats);
+
+const OUTCOME_TEXT: Record<BattleReport['outcome'], string> = {
+  attacker_victory: 'the attack succeeded', defender_victory: 'the defence held', stalemate: 'no decision', attacker_withdrew: 'the attacker withdrew',
+};
+
+type UnitLite = { side: string; nation: string; shortName?: string; name: string };
+
+const listNames = (xs: string[]) => (xs.length === 0 ? '' : xs.length === 1 ? xs[0] : xs.length === 2 ? `${xs[0]} and ${xs[1]}` : `${xs[0]}, ${xs[1]} and others`);
+
+/**
+ * One-line headline for a battle report: who attacked whom, where, the outcome and the losses on each side.
+ * Built only from the report and the units that fought; nothing is invented.
+ */
+export function reportHeadline(r: BattleReport, units: Record<string, UnitLite | undefined>, nationName: (id: string) => string): string {
+  const att: string[] = [], def: string[] = [];
+  let la = 0, ld = 0;
+  for (const c of r.casualties ?? []) {
+    const u = units[c.unitId];
+    const n = c.killed + c.wounded + c.captured;
+    if (u && u.side === r.attackerSide) { la += n; att.push(nationName(u.nation)); }
+    else { ld += n; def.push(u ? nationName(u.nation) : 'defenders'); }
+  }
+  const side = (s: string) => (s === 'axis' ? 'Axis' : s === 'allies' ? 'Allied' : 'The attacker');
+  const a = listNames(unique(att)) || `${side(r.attackerSide)} forces`;
+  const d = listNames(unique(def)) || 'the defenders';
+  const place = r.placeName ?? 'an unnamed position';
+  const fmt = (n: number) => n.toLocaleString('en-GB');
+  return `${a} attacked ${d} at ${place}: ${OUTCOME_TEXT[r.outcome] ?? 'outcome unknown'}. Losses: ${fmt(la)} attackers, ${fmt(ld)} defenders.`;
+}

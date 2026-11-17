@@ -85,7 +85,7 @@ export function createMockEngine(playerNation: 'GER' | 'FRA' = 'GER', settings?:
   let oid = 1;
   const ok = (ids?: string[]): CommandResult => ({ ok: true, ids });
   const engine: Engine = {
-    terrain: { bbox: scenario.bbox, cellDeg: 1, cols: 1, rows: 1, cells: [1] }, infra: [],
+    terrain: mockTerrain(scenario.bbox), infra: [],
     getState: () => st,
     dispatch(cmd: Command, as) {
       if (as && as !== st.playerSide) return { ok: false, error: 'wrong side' };
@@ -139,4 +139,10 @@ export function createMockEngine(playerNation: 'GER' | 'FRA' = 'GER', settings?:
     visibleUnits: s => Object.values(st.units).filter(u => u.side === s || !st.settings.fogOfWar || haversineKm(u.pos, [5, 50]) < 100),
   };
   return { engine, scenario };
+}
+
+/** Land everywhere inside the bbox so previews treat every map point as reachable. */
+function mockTerrain(bbox: { west: number; south: number; east: number; north: number }) {
+  const cols = Math.max(1, Math.ceil(bbox.east - bbox.west)), rows = Math.max(1, Math.ceil(bbox.north - bbox.south));
+  return { bbox, cellDeg: 1, cols, rows, cells: new Array(cols * rows).fill(1) };
 }

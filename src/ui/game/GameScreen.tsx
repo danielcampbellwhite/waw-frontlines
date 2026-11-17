@@ -10,11 +10,12 @@ import { TopBar } from './TopBar';
 import { LeftPanel } from './LeftPanel';
 import { RightPanel } from './RightPanel';
 import { BottomPanel } from './BottomPanel';
-import { ContextMenu, EventModal, HelpModal, ObjectivesPanel, OpsPlanner, Toasts, useToastFeed } from './Overlays';
+import { ContextMenu, EventModal, HelpModal, OrderConfirm, ObjectivesPanel, OpsPlanner, Toasts, useToastFeed } from './Overlays';
 import { SaveLoadDialog } from '../screens/SaveLoad';
 import { SettingsPanel } from '../screens/Settings';
 import { useUiSettings, eventKey, settingsStore, type KeyAction } from '../settings';
 import { Tour } from '../tutorial/Tour';
+import { diffAct, observeAct, summariseTriggers } from './autoSlow';
 import { orderMeta, ORDER_META, shortTitle } from '../format';
 import { audio, useAudioBridge, useAudioSetup } from '../../audio';
 import { useEngineState } from '../hooks/useEngineState';
@@ -49,6 +50,7 @@ function GameInner({ driveEngine, onCampaignEnd, onLoaded }: { driveEngine: bool
   const { engine, store, actions, saveApi, onExit, scenario } = useGame();
   useAudioSetup();
   useToastFeed();
+  const uiSet = useUiSettings();
   useKeyboard();
 
   // engine clock
@@ -66,6 +68,21 @@ function GameInner({ driveEngine, onCampaignEnd, onLoaded }: { driveEngine: bool
     settingsStore.set({ tourSeen: true });
     if (!store.get().modal) store.set({ modal: 'tour' });
   }, [store]);
+
+  // auto-slow on action: first contact, a city changes hands, a unit lost, a historical event (drops to 1x, never pauses)
+  useEffect(() => {
+    const mem = observeAct(engine.getState());
+    let lastMin = engine.getState().clock.minutes;
+    return engine.subscribe(s => {
+      if (s.clock.minutes - lastMin < 5) return; // sample every few game minutes, not every tick
+      lastMin = s.clock.minutes;
+      const sum = summariseTriggers(diffAct(mem, s));
+      if (!sum || !settingsStore.get().autoSlow) return;
+      const slowed = s.clock.speed > 1;
+      if (slowed) { store.set({ lastSpeed: 1 }); engine.setSpeed(1); }
+      actions.toast(slowed ? `Slowed to 1x. ${sum.text}` : sum.text, 'warn', sum.pos);
+    });
+  }, [engine, store, actions]);
 
   // audio mixer feed
   const viewRef = useRef<MapView | null>(null);
@@ -90,7 +107,7 @@ function GameInner({ driveEngine, onCampaignEnd, onLoaded }: { driveEngine: bool
   }, [ui.modal, engine, store]);
 
   const mapProps = {
-    engine, selection: ui.sel, targeting: !!ui.tgt, focusRequest: ui.focus, overlays,
+    engine, atmosphere: { dayNight: uiSet.mapDayNight, weather: uiSet.mapWeather }, selection: ui.sel, targeting: !!ui.tgt, focusRequest: ui.focus, overlays,
     onSelect: actions.mapSelect, onMapClick: (pos: LonLat, button?: number) => actions.mapClick(pos, button), onContextOrder: actions.contextAt,
     onViewChange: (v: MapView) => { viewRef.current = v; store.set({ view: v }); },
   };
@@ -122,6 +139,7 @@ function GameInner({ driveEngine, onCampaignEnd, onLoaded }: { driveEngine: bool
                 <button type="button" className="mini-btn" onClick={actions.cancelTargeting}>Cancel (Esc)</button>
               </div>
             )}
+            <OrderConfirm />
             <Toasts />
             {over && <div className="end-banner"><span>The campaign has ended.</span>{onCampaignEnd && <button type="button" className="btn primary" onClick={onCampaignEnd}>View results</button>}</div>}
           </div>
@@ -171,6 +189,7 @@ function useKeyboard() {
       const typing = !!t && (t.tagName === 'INPUT' || t.tagName === 'TEXTAREA' || t.tagName === 'SELECT' || t.isContentEditable);
       const st = store.get();
       if (e.key === 'Escape') {
+        if (st.pendingOrder) { actions.cancelPending(); e.preventDefault(); return; }
         if (st.targeting) { actions.cancelTargeting(); e.preventDefault(); return; }
         if (st.ctxMenu) { store.set({ ctxMenu: null }); return; }
         if (st.modal) { store.set({ modal: null }); return; }

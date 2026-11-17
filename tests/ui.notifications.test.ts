@@ -11,7 +11,8 @@ describe('notifications', () => {
     expect(notifCount(before)).toBe(0);
     const n = buildNotifications(after);
     expect(n).toHaveLength(1);
-    expect(n[0]).toMatchObject({ kind: 'report', text: 'Sedan: Held the line.', pos: [5, 50] });
+    expect(n[0]).toMatchObject({ kind: 'report', pos: [5, 50] });
+    expect(n[0].text).toContain('at Sedan');
     expect(notifSignature(after)).not.toBe(notifSignature(before));
   });
   it('includes battle/supply/system log entries, player-facing events and objective changes, newest first', () => {

@@ -43,6 +43,11 @@ export const DIFFICULTIES: DefaultDifficulty[] = ['easy', 'normal', 'hard', 'vet
 export interface UiSettings {
   /** Difficulty preselected on the nation screen; the per-campaign choice still wins. */
   defaultDifficulty: DefaultDifficulty;
+  /** Drop to 1x (never pause) when something happens: first contact, a city changes hands, a unit is lost, a historical event fires. */
+  autoSlow: boolean;
+  /** Map atmosphere: tint the basemap by time of day / draw rain, snow, fog and storms over the map. */
+  mapDayNight: boolean;
+  mapWeather: boolean;
   /** True once the first-run tour has been shown (or skipped). */
   tourSeen: boolean;
   master: number; music: number; sfx: number; ambience: number; muted: boolean;
@@ -51,7 +56,7 @@ export interface UiSettings {
 }
 
 export const DEFAULT_SETTINGS: UiSettings = {
-  defaultDifficulty: 'normal', tourSeen: false, master: 0.8, music: 0.5, sfx: 0.8, ambience: 0.7, muted: false, uiScale: 1, keybinds: { ...DEFAULT_KEYBINDS },
+  defaultDifficulty: 'normal', autoSlow: true, mapDayNight: true, mapWeather: true, tourSeen: false, master: 0.8, music: 0.5, sfx: 0.8, ambience: 0.7, muted: false, uiScale: 1, keybinds: { ...DEFAULT_KEYBINDS },
 };
 
 const KEY = 'theatre-command.ui-settings.v1';
@@ -72,6 +77,9 @@ export function sanitize(p: Partial<UiSettings>): UiSettings {
   return {
     defaultDifficulty: DIFFICULTIES.includes(p.defaultDifficulty as DefaultDifficulty) ? p.defaultDifficulty as DefaultDifficulty : d.defaultDifficulty,
     tourSeen: !!p.tourSeen,
+    autoSlow: p.autoSlow === undefined ? d.autoSlow : !!p.autoSlow,
+    mapDayNight: p.mapDayNight === undefined ? d.mapDayNight : !!p.mapDayNight,
+    mapWeather: p.mapWeather === undefined ? d.mapWeather : !!p.mapWeather,
     master: clamp01(p.master, d.master), music: clamp01(p.music, d.music), sfx: clamp01(p.sfx, d.sfx),
     ambience: clamp01(p.ambience, d.ambience), muted: !!p.muted,
     uiScale: typeof p.uiScale === 'number' && p.uiScale >= 0.75 && p.uiScale <= 1.5 ? p.uiScale : 1,

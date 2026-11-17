@@ -3,14 +3,15 @@ import type { BattleReport, GameEvent } from '../../core/types';
 import { useEngineState } from '../hooks/useEngineState';
 import { useStore } from '../store';
 import { Bar, Icon, Tip } from '../components/kit';
-import { fmtInt, fmtPos, fmtStamp } from '../format';
+import { buildDispatches } from './dispatches';
+import { NATION_NAMES, fmtInt, fmtPos, fmtStamp } from '../format';
 import { useGame, type BottomTab } from './gameStore';
 import { buildNotifications, notifCount, notifSignature, type Notification } from './notifications';
-import { equipName, tidyConsequences } from './reportText';
+import { equipName, reportHeadline, tidyConsequences } from './reportText';
 import { UnitArt } from '../components/UnitArt';
 
 const TABS: { id: BottomTab; label: string }[] = [
-  { id: 'notifications', label: 'Notifications' }, { id: 'events', label: 'Events log' }, { id: 'reports', label: 'Battle reports' }, { id: 'history', label: 'Campaign history' },
+  { id: 'notifications', label: 'Notifications' }, { id: 'dispatches', label: 'Dispatches' }, { id: 'events', label: 'Events log' }, { id: 'reports', label: 'Battle reports' }, { id: 'history', label: 'Campaign history' },
 ];
 const OUTCOME: Record<BattleReport['outcome'], string> = {
   attacker_victory: 'Attacker victory', defender_victory: 'Defender victory', stalemate: 'Stalemate', attacker_withdrew: 'Attacker withdrew',
@@ -36,11 +37,30 @@ export function BottomPanel() {
       </div>
       {ui.open && <div className="bp-body">
         {ui.tab === 'notifications' && <Notifications />}
+        {ui.tab === 'dispatches' && <Dispatches />}
         {ui.tab === 'events' && <EventsLog />}
         {ui.tab === 'reports' && <Reports />}
         {ui.tab === 'history' && <History />}
       </div>}
     </section>
+  );
+}
+
+/** Period-style feed of the campaign's own historical event text and objective results. */
+function Dispatches() {
+  const { engine, actions, scenario } = useGame();
+  const list = useEngineState(engine, s => buildDispatches(s), (a, b) => a.length === b.length && a.every((x, i) => x.id === b[i].id));
+  if (!list.length) return <p className="empty pad">No dispatches yet. Historical events and objective results are recorded here as they happen.</p>;
+  return (
+    <ul className="dispatches">
+      {list.map(d => (
+        <li key={d.id}>
+          <time>{fmtStamp(scenario, d.t)}</time>
+          <div><b>{d.headline}</b>{d.body && <p>{d.body}</p>}</div>
+          {d.pos && <button type="button" className="mini-btn" onClick={() => actions.focusOn(d.pos!, 8)}>Go to</button>}
+        </li>
+      ))}
+    </ul>
   );
 }
 
@@ -125,6 +145,7 @@ export function ReportDetail({ r, onFocus }: { r: BattleReport; onFocus?: () => 
           <div className="meta">{fmtStamp(scenario, r.startedAt)} to {fmtStamp(scenario, r.endedAt)} - attacker: {r.attackerSide}</div></div>
         {onFocus && <button type="button" className="btn" onClick={onFocus}><Icon name="target" size={14} /> Show</button>}
       </header>
+      <p className="headline">{reportHeadline(r, engine.getState().units, id => NATION_NAMES[id as keyof typeof NATION_NAMES] ?? id)}</p>
       <p className="summary">{r.summary}</p>
       <div className="report-cols">
         <div><h4>Why it happened</h4><ul className="bullets">{r.reasons.map((x, i) => <li key={i}>{x}</li>)}</ul></div>

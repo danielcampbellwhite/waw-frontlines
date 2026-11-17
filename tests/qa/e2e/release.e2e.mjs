@@ -10,7 +10,7 @@ const BASE = process.env.BASE_URL || 'http://localhost:5190/';
 const ONLY = process.env.ONLY ? process.env.ONLY.toLowerCase() : null;
 const dateOf = async (p) => (await p.evaluate(() => document.body.innerText)).match(/\d{2} [A-Z]{3} \d{4}/)?.[0] ?? null;
 const clickText = (p, re) => p.evaluate((src) => { const r = new RegExp(src); const b = [...document.querySelectorAll('button')].find((x) => r.test(x.innerText || x.getAttribute('aria-label') || '')); if (b) b.click(); return !!b; }, re.source);
-const dismiss = async (p) => { for (let i = 0; i < 6; i++) { const n = await p.evaluate(() => { const d = document.querySelector('[role=dialog]'); if (!d) return 0; const bs = [...d.querySelectorAll('button')].filter((b) => !/show location/i.test(b.innerText)); const pick = bs.find((b) => /stay|continue|ok|close|dismiss|resume|accept/i.test(b.innerText)) || bs[0]; if (pick) { pick.click(); return 1; } return 0; }); if (!n) break; await p.waitForTimeout(400); } };
+const dismiss = async (p) => { for (let i = 0; i < 6; i++) { const n = await p.evaluate(() => { const d = document.querySelector('[role=dialog]'); if (!d) return 0; const bs = [...d.querySelectorAll('button')].filter((b) => !/show location/i.test(b.innerText)); const pick = bs.find((b) => /skip|stay|continue|ok|close|dismiss|resume|accept/i.test(b.innerText)) || bs[0]; if (pick) { pick.click(); return 1; } return 0; }); if (!n) break; await p.waitForTimeout(400); } };
 const browser = await chromium.launch();
 const results = [];
 const tmp = mkdtempSync(join(tmpdir(), 'e2e-'));
@@ -31,12 +31,12 @@ for (const c of camps) {
   });
   let d0, d1;
   await step('play 1 day at 8x', async () => {
-    await dismiss(p); d0 = await dateOf(p); await p.getByRole('button', { name: '8', exact: true }).first().click();
+    await dismiss(p); d0 = await dateOf(p); await p.locator('button[aria-label="Speed 8"]').click({ timeout: 8000 });
     const t0 = Date.now(); let day0 = d0;
     while (Date.now() - t0 < 240000) { await p.waitForTimeout(2000); await dismiss(p); d1 = await dateOf(p); if (d1 && d1 !== day0) break; }
     return !!d1 && d1 !== d0;
   });
-  await clickText(p, /Pause/); await dismiss(p); const dSaved = await dateOf(p);
+  await p.locator('button[aria-label="Pause"]').click({ timeout: 5000 }).catch(() => {}); await dismiss(p); const dSaved = await dateOf(p);
   await step('save', async () => {
     await p.getByRole('button', { name: 'Save or load' }).click(); await p.waitForTimeout(600);
     await p.locator('[role=dialog] .seg button', { hasText: 'Save' }).first().click().catch(() => {});

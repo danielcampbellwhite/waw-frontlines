@@ -222,3 +222,7 @@ Known issues:
 - Pripet marsh is a proxy (flat low cells within about 28 km of the Pripyat line).
 - Borders are modern, not 1941.
 - Basemap is now self-contained (bundled Natural Earth + terrain tint + computed hillshade; no external tile server): plainer than the former OSM raster, with no road names or street detail at deep zoom, and hillshade resolution is limited by the 2-5 km terrain cells.
+
+## B1 Barbarossa balance (qa-engineer, 2026-11-17, medium)
+tests/qa/barbarossa.test.ts, 5 seeds, runs end at h2400. Passive: GER defeat 5/5 (SOV strategic 3, limited 2). AI-vs-AI: SOV decisive victory 5/5; GER AI stalemate 2, defeat 3 (score 80-380 of the German objectives). The German AI does not take enough objectives (Minsk, Smolensk, Kiev, Leningrad) against the Soviet AI, so the campaign is one-sided for the player-as-Germany AI baseline; a human German player is expected to do better but this should be tuned (owner: ai-events for doctrine, campaign for objective/strength data). playOut cap raised to 2600 ticks to cover the 2400-tick campaign.
+Other campaigns unchanged since the last re-measure (Normandy, Crusader, Stalingrad, Bulge tables in TESTING_REPORT).

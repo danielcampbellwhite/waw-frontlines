@@ -8,12 +8,12 @@ const worlds = new Map<string, ReturnType<typeof loadWorld>>();
 const worldOf = (id: string) => { if (!worlds.has(id)) worlds.set(id, loadWorld(id)); return worlds.get(id)!; };
 export interface Outcome { nation: NationId; seed: number; ending: Ending | 'none'; score: number; tick: number; mode: 'passive' | 'ai'; hash?: string }
 
-/** mode 'ai' drives the player's nation with aiThink as well (AI-vs-AI). Runs up to 1500 ticks (campaign ends at 1104 or earlier). */
+/** mode 'ai' drives the player's nation with aiThink as well (AI-vs-AI). Runs up to 2600 ticks (campaigns end at 960-2400 or earlier). */
 export function playOut(nation: NationId, seed: number, mode: 'passive' | 'ai', scenarioId = 'fall_of_france.standard', withHash = false): Outcome {
   const e = mkEngine(worldOf(scenarioId), nation, seed);
   const rng = { s: seed * 7919 + 13 };
   const ctx: AiContext = { rand: () => nextFloat(rng), gauss: () => nextGauss(rng), visibleTo };
-  for (let t = 1; t <= 1500 && !e.getState().result; t++) {
+  for (let t = 1; t <= 2600 && !e.getState().result; t++) {
     if (mode === 'ai' && t % 4 === 0) for (const c of aiThink(e.getState(), nation, ctx)) e.dispatch(c, e.getState().playerSide);
     e.step(1);
   }
